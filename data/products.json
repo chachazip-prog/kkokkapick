@@ -1,0 +1,149 @@
+{
+  "updatedAt": "2026-09-28T08:35:00+09:00",
+  "products": [
+    {
+      "id": "p1",
+      "emoji": "🧸",
+      "brand": "Little Cotton",
+      "name": "베이비 코튼 바디수트",
+      "category": "바디수트",
+      "sizes": [
+        "70",
+        "80",
+        "90"
+      ],
+      "minMonths": 0,
+      "maxMonths": 12,
+      "offers": [
+        {
+          "merchant": "제휴몰 A",
+          "price": 27900,
+          "shippingFee": 0
+        },
+        {
+          "merchant": "제휴몰 B",
+          "price": 25900,
+          "shippingFee": 3000
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "emoji": "👕",
+      "brand": "Mellow Kids",
+      "name": "키즈 데일리 상하복",
+      "category": "상하복",
+      "sizes": [
+        "80",
+        "90",
+        "100",
+        "110"
+      ],
+      "minMonths": 6,
+      "maxMonths": 48,
+      "offers": [
+        {
+          "merchant": "제휴몰 C",
+          "price": 32900,
+          "shippingFee": 0
+        },
+        {
+          "merchant": "제휴몰 D",
+          "price": 31500,
+          "shippingFee": 3000
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "emoji": "🧥",
+      "brand": "Petit Day",
+      "name": "소프트 니트 가디건",
+      "category": "아우터",
+      "sizes": [
+        "80",
+        "90",
+        "100"
+      ],
+      "minMonths": 6,
+      "maxMonths": 36,
+      "offers": [
+        {
+          "merchant": "제휴몰 A",
+          "price": 39900,
+          "shippingFee": 0
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "emoji": "👗",
+      "brand": "Bebe Garden",
+      "name": "플라워 코튼 원피스",
+      "category": "원피스",
+      "sizes": [
+        "80",
+        "90",
+        "100",
+        "110"
+      ],
+      "minMonths": 6,
+      "maxMonths": 48,
+      "offers": [
+        {
+          "merchant": "제휴몰 E",
+          "price": 34900,
+          "shippingFee": 0
+        },
+        {
+          "merchant": "제휴몰 B",
+          "price": 32900,
+          "shippingFee": 3000
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "emoji": "🌙",
+      "brand": "Tiny Night",
+      "name": "오가닉 코튼 실내복",
+      "category": "실내복",
+      "sizes": [
+        "70",
+        "80",
+        "90",
+        "100"
+      ],
+      "minMonths": 0,
+      "maxMonths": 36,
+      "offers": [
+        {
+          "merchant": "제휴몰 C",
+          "price": 21900,
+          "shippingFee": 0
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "emoji": "🧢",
+      "brand": "Mini Sunday",
+      "name": "데일리 베이비 맨투맨",
+      "category": "상의",
+      "sizes": [
+        "80",
+        "90",
+        "100"
+      ],
+      "minMonths": 6,
+      "maxMonths": 36,
+      "offers": [
+        {
+          "merchant": "제휴몰 D",
+          "price": 24900,
+          "shippingFee": 0
+        }
+      ]
+    }
+  ]
+}
