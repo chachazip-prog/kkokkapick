@@ -1,0 +1,37 @@
+name: Sync ADPICK products
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: adpick-product-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Fetch and normalize ADPICK products
+        env:
+          ADPICK_API_URL: ${{ secrets.ADPICK_API_URL }}
+        run: node scripts/sync-adpick-to-json.js
+      - name: Commit refreshed catalog
+        run: |
+          if git diff --quiet -- data/adpick-products.json; then
+            echo "No catalog changes"
+            exit 0
+          fi
+          git config user.name "kkokkapick-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/adpick-products.json
+          git commit -m "chore: refresh ADPICK catalog"
+          git push
