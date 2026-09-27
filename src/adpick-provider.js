@@ -1,50 +1,81 @@
 import { ProviderAdapter } from "./provider-adapter.js";
 
+/**
+ * ADPICK ShoppingMate recommended-products JSON adapter.
+ * The API URL is treated as a secret because it may contain account identifiers.
+ */
 export class AdpickProvider extends ProviderAdapter {
-  constructor({ apiKey, fetchImpl = fetch }) {
+  constructor({ apiUrl, fetchImpl = fetch }) {
     super({ storagePolicy: "ttl_cache", cacheTtlMinutes: 60 });
-    this.apiKey = apiKey;
+    this.apiUrl = apiUrl;
     this.fetchImpl = fetchImpl;
-    this.baseUrl = "https://biz.adpick.co.kr/api";
   }
 
-  async search(query, { limit = 20, trackingId = "" } = {}) {
-    if (!this.apiKey) throw new Error("ADPICK_API_KEY is required");
-    const safeLimit = Math.min(Math.max(limit, 1), 20);
-    const url = new URL(`${this.baseUrl}/${encodeURIComponent(this.apiKey)}/search`);
-    url.searchParams.set("q", query);
-    url.searchParams.set("limit", String(safeLimit));
-    if (trackingId) url.searchParams.set("p_data", trackingId.slice(0, 50));
-    const response = await this.fetchImpl(url);
-    if (!response.ok) throw new Error(`Adpick search failed: ${response.status}`);
+  async fetchRecommended() {
+    if (!this.apiUrl) throw new Error("ADPICK_API_URL is required");
+    const response = await this.fetchImpl(this.apiUrl, {
+      headers: { accept: "application/json" }
+    });
+    if (!response.ok) throw new Error(`ADPICK request failed: ${response.status}`);
     const payload = await response.json();
-    return (payload.data ?? []).map(item => this.normalize(item));
+    return this.normalizeResponse(payload);
   }
 
-  normalize(raw) {
+  normalizeResponse(payload) {
+    const themes = Array.isArray(payload) ? payload : [payload];
+    return themes.flatMap(theme =>
+      (theme?.list ?? []).map(item => this.normalize(item, theme))
+    );
+  }
+
+  normalize(raw, theme = {}) {
+    const salePrice = this.parseWon(raw.price_sale);
+    const originalPrice = this.parseWon(raw.price_org);
     return {
       provider: "adpick",
       externalProductId: this.stableKey(raw),
-      name: this.clean(raw.title),
+      themeCode: theme.theme_code ?? null,
+      themeTitle: theme.title ?? null,
+      themeDescription: theme.description ?? null,
+      name: String(raw.product_name ?? "").trim(),
       imageUrl: raw.photo || null,
-      merchantCode: raw.cp_code || null,
-      merchant: raw.cp_name || null,
-      merchantIconUrl: raw.cp_icon || null,
-      price: this.parseWon(raw.price),
-      shippingFee: 0,
-      affiliateUrl: raw.commissionlink || null,
-      checkedAt: new Date().toISOString(),
-      raw
+      merchantDomain: raw.mall || null,
+      merchant: raw.mall_name || raw.mall || null,
+      merchantIconUrl: raw.mall_icon || null,
+      price: salePrice > 0 ? salePrice : null,
+      originalPrice: originalPrice > 0 ? originalPrice : null,
+      priceStatus: salePrice > 0 ? "known" : "check_at_merchant",
+      commissionText: raw.commission || null,
+      commissionRate: this.parseCommission(raw.commission),
+      affiliateUrl: raw.buyurl || null,
+      checkedAt: new Date().toISOString()
     };
   }
 
   stableKey(raw) {
-    return [raw.cp_code || "", this.clean(raw.title), this.parseWon(raw.price) ?? ""].join(":");
+    // buyurl usually contains provider offer + destination and is more stable
+    // than a title/price combination. No affiliate URL is exposed to the client as an ID.
+    return this.hashish(raw.buyurl || [raw.mall, raw.product_name].join("|"));
   }
-  clean(value) { return String(value ?? "").replace(/<[^>]*>/g, "").trim(); }
+
   parseWon(value) {
     if (typeof value === "number") return value;
     const digits = String(value ?? "").replace(/[^0-9]/g, "");
-    return digits ? Number(digits) : null;
+    return digits ? Number(digits) : 0;
+  }
+
+  parseCommission(value) {
+    const match = String(value ?? "").match(/([0-9]+(?:\.[0-9]+)?)/);
+    return match ? Number(match[1]) : null;
+  }
+
+  hashish(value) {
+    // deterministic non-cryptographic key for MVP mapping
+    let h = 2166136261;
+    for (const ch of String(value ?? "")) {
+      h ^= ch.charCodeAt(0);
+      h = Math.imul(h, 16777619);
+    }
+    return "adpick_" + (h >>> 0).toString(16);
   }
 }
