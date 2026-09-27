@@ -33,7 +33,7 @@ export class AdpickBizProvider {
       originalPrice: this.parseWon(raw.price_org ?? raw.original_price),
       commissionText: raw.commission ?? null,
       affiliateUrl: raw.commissionlink ?? raw.buyurl ?? raw.link ?? null,
-      externalProductId: String(raw.product_id ?? raw.cp_code ?? raw.id ?? this.stableKey(raw)),
+      externalProductId: String(raw.product_id ?? raw.id ?? this.stableKey(raw)),
       checkedAt: new Date().toISOString()
     };
   }
