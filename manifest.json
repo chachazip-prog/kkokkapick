@@ -1,0 +1,11 @@
+{
+  "name": "꼬까픽",
+  "short_name": "꼬까픽",
+  "description": "우리 아이 옷, 한곳에서.",
+  "lang": "ko-KR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#fff8f2"
+}
