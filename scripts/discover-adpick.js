@@ -22,7 +22,11 @@ for (const q of queries) {
   await new Promise(r => setTimeout(r, 6500));
 }
 
-const products = [...map.values()];
+const apparelHints = /(신생아|아기|베이비|유아|키즈|아동|주니어|바디수트|바디슈트|우주복|배냇|내복|상하복|티셔츠|맨투맨|블라우스|셔츠|바지|레깅스|원피스|가디건|아우터|점퍼|자켓|코트|의류)/i;
+const rejectHints = /(크랭크|센서|자동차|차량용|부품|케이블|공구|휴대폰|케이스|골프|호텔|입장권|eSIM)/i;
+const products = [...map.values()].filter(p =>
+  apparelHints.test(p.name) && !rejectHints.test(p.name)
+);
 await fs.mkdir("data", { recursive: true });
 await fs.writeFile("data/adpick-biz-products.json", JSON.stringify({
   source: "adpick_biz",
