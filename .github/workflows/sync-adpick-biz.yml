@@ -1,0 +1,35 @@
+name: Sync ADPICK BIZ baby clothes
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "43 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: adpick-biz-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Search baby and kids apparel
+        env:
+          ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
+        run: node scripts/discover-adpick.js
+      - name: Commit catalog
+        run: |
+          if git diff --quiet -- data/adpick-biz-products.json; then exit 0; fi
+          git config user.name "kkokkapick-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/adpick-biz-products.json
+          git commit -m "chore: refresh ADPICK BIZ baby catalog"
+          git push
