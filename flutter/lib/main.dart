@@ -4,6 +4,9 @@ import 'repositories/catalog_repository.dart';
 import 'repositories/favorites_repository.dart';
 import 'repositories/child_profile_repository.dart';
 import 'repositories/price_alert_repository.dart';
+import 'repositories/commercial_repository.dart';
+import 'repositories/popup_preference_repository.dart';
+import 'models/commercial_content.dart';
 import 'services/kkokkafit_engine.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -29,7 +32,8 @@ class CatalogScreen extends StatefulWidget {
 
 class _CatalogScreenState extends State<CatalogScreen>{
   static final _endpoint=Uri.parse('https://chachazip-prog.github.io/kkokkapick/data/catalog.json');
-  final _catalog=CatalogRepository(),_favorites=FavoritesRepository(),_profiles=ChildProfileRepository(),_search=TextEditingController();
+  final _catalog=CatalogRepository(),_favorites=FavoritesRepository(),_profiles=ChildProfileRepository(),_popupPrefs=PopupPreferenceRepository(),_search=TextEditingController();
+  static const _commercial=CommercialRepository(supabaseUrl:String.fromEnvironment('SUPABASE_URL'),anonKey:String.fromEnvironment('SUPABASE_ANON_KEY'));
   List<CatalogProduct> _products=const[];
   Set<String> _favoriteIds={};
   String _stage='전체',_category='전체',_brand='전체';
@@ -37,6 +41,8 @@ class _CatalogScreenState extends State<CatalogScreen>{
   bool _fitOnly=false,_favoritesOnly=false,_loading=true;
   Object? _error;
   ChildProfile? _profile;
+  List<CommercialCampaign> _campaigns=const[];
+  ManagedPopup? _managedPopup;
 
   @override void initState(){super.initState();_load();}
   @override void dispose(){_search.dispose();super.dispose();}
@@ -44,9 +50,12 @@ class _CatalogScreenState extends State<CatalogScreen>{
   Future<void> _load() async {
     setState((){_loading=true;_error=null;});
     try{
-      final results=await Future.wait([_catalog.fetchCatalog(_endpoint),_favorites.load(),_profiles.load()]);
+      final results=await Future.wait([_catalog.fetchCatalog(_endpoint),_favorites.load(),_profiles.load(),_commercial.fetchHome()]);
       if(!mounted)return;
-      setState((){_products=results[0] as List<CatalogProduct>;_favoriteIds=results[1] as Set<String>;_profile=results[2] as ChildProfile?;_loading=false;});
+      setState((){_products=results[0] as List<CatalogProduct>;_favoriteIds=results[1] as Set<String>;_profile=results[2] as ChildProfile?;final commercial=results[3] as CommercialContent;_campaigns=commercial.campaigns;_loading=false;});
+      final commercial=results[3] as CommercialContent;
+      for(final p in commercial.popups){if(!await _popupPrefs.isDismissed(p)){_managedPopup=p;break;}}
+      if(mounted&&_managedPopup!=null)WidgetsBinding.instance.addPostFrameCallback((_)=>_showManagedPopup(_managedPopup!));
     }catch(e){if(mounted)setState((){_error=e;_loading=false;});}
   }
 
@@ -101,6 +110,19 @@ class _CatalogScreenState extends State<CatalogScreen>{
     if(saved!=null){await _profiles.save(saved);if(mounted)setState(()=>_profile=saved);}
   }
 
+
+  Future<void> _showManagedPopup(ManagedPopup popup) async {
+    if(!mounted)return;
+    await showDialog<void>(context:context,builder:(context)=>AlertDialog(title:Text(popup.title),content:Text(popup.body??''),actions:[TextButton(onPressed:()async{await _popupPrefs.dismiss(popup);if(context.mounted)Navigator.pop(context);},child:const Text('닫기'))]));
+    _managedPopup=null;
+  }
+
+  Future<void> _openCampaign(CommercialCampaign campaign) async {
+    final raw=campaign.destinationUrl;if(raw==null)return;final uri=Uri.tryParse(raw);
+    if(uri==null||(uri.scheme!='https'&&uri.scheme!='http'))return;
+    await launchUrl(uri,mode:LaunchMode.externalApplication);
+  }
+
   @override Widget build(BuildContext context){
     final stages=['전체','신생아','베이비','유아','토들러','키즈'];
     final categories=_values((p)=>p.category),brands=_values((p)=>p.brand??'');
@@ -108,6 +130,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
     return Scaffold(
       appBar:AppBar(title:const Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('꼬까픽',style:TextStyle(fontWeight:FontWeight.w900)),Text('우리 아이 옷, 한곳에서.',style:TextStyle(fontSize:11,fontWeight:FontWeight.normal))]),actions:[IconButton(tooltip:'아이 정보',onPressed:_editProfile,icon:Icon(_profile==null?Icons.child_care_outlined:Icons.child_care)),IconButton(onPressed:()=>setState(()=>_favoritesOnly=!_favoritesOnly),icon:Icon(_favoritesOnly?Icons.favorite:Icons.favorite_border))]),
       body:_loading?const Center(child:CircularProgressIndicator()):_error!=null?_ErrorView(onRetry:_load):RefreshIndicator(onRefresh:_load,child:CustomScrollView(slivers:[
+        if(_campaigns.isNotEmpty)SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.fromLTRB(16,12,16,0),child:Column(children:_campaigns.take(3).map((c)=>Card(child:ListTile(onTap:()=>_openCampaign(c),leading:const Icon(Icons.campaign_outlined),title:Text(c.title),subtitle:Text('${c.disclosureLabel} · ${c.partnerName??''}'),trailing:const Icon(Icons.chevron_right)))).toList()))),
         SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.all(16),child:Column(children:[
           TextField(controller:_search,onChanged:(_)=>setState((){}),decoration:const InputDecoration(prefixIcon:Icon(Icons.search),hintText:'브랜드, 상품을 검색해보세요',filled:true,border:OutlineInputBorder(borderSide:BorderSide.none,borderRadius:BorderRadius.all(Radius.circular(16))))),
           const SizedBox(height:12),
