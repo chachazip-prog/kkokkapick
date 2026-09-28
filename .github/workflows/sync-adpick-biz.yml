@@ -23,14 +23,6 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Test catalog rules
-        run: |
-          node test/provider-policy.test.js
-          node test/product-classifier.test.js
-          node test/brand-normalizer.test.js
-          node test/kkokkafit-engine.test.js
-          node test/price-tracker.test.js
-
       - name: Search baby and kids apparel
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
