@@ -27,3 +27,9 @@ export function dismissPopup(p){
   (p.dismiss_policy==='session'?sessionStorage:localStorage).setItem(key,'1');
 }
 export function safeDestination(value){return validHttpUrl(value)?value:null}
+
+export async function recordCommercialEvent(campaignId,type,{productId=null,sessionKey=null}={}){
+  if(!ready()||!campaignId||!['impression','click'].includes(type))return false;
+  const r=await fetch(cfg.supabaseUrl+'/rest/v1/rpc/record_commercial_event',{method:'POST',headers:{apikey:cfg.supabaseAnonKey,Authorization:'Bearer '+cfg.supabaseAnonKey,'Content-Type':'application/json'},body:JSON.stringify({p_campaign_id:campaignId,p_event_type:type,p_product_id:productId,p_session_key:sessionKey})});
+  return r.ok;
+}
