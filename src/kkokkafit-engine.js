@@ -17,9 +17,15 @@ function score(row, months, height, weight) {
   return s;
 }
 
+function positiveNumber(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const n = Number(value);
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
 export function evaluateFit(profile, product) {
-  const months=Number(profile?.months), height=Number(profile?.height), weight=Number(profile?.weight);
-  if(!Number.isFinite(months)||!Number.isFinite(height)||!Number.isFinite(weight))
+  const months=positiveNumber(profile?.months), height=positiveNumber(profile?.height), weight=positiveNumber(profile?.weight);
+  if(months===null||height===null||weight===null)
     return {status:"profile_required",label:"아이 정보가 더 필요해요",reason:"월령·키·몸무게를 입력하면 확인할 수 있어요"};
 
   const brand=product?.brand||detectBrand(product?.name||"");
