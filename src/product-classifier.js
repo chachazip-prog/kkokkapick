@@ -1,4 +1,5 @@
 import { normalizeBrand } from "./brand-normalizer.js";
+import { getFitEvidence } from "./brand-size-charts.js";
 
 const RULES = [
   ["바디수트", /(바디수트|바디슈트|우주복|배냇)/i],
@@ -29,5 +30,7 @@ export function classifyStage(name="", query="") {
 }
 
 export function classifyProduct(p) {
-  return {...p, brand:normalizeBrand(p.name), category:classifyCategory(p.name,p.query), stage:classifyStage(p.name,p.query)};
+  const brand=normalizeBrand(p.name);
+  const fit=getFitEvidence(brand);
+  return {...p, brand, fitStatus:fit.status, fitSource:fit.source, category:classifyCategory(p.name,p.query), stage:classifyStage(p.name,p.query)};
 }
