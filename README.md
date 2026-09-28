@@ -9,4 +9,6 @@ Settings → Pages → Build and deployment에서 Source를 **Deploy from a bran
 
 배포 후 주소: https://chachazip-prog.github.io/kkokkapick/
 
-> 현재 상품은 UX 검증용 샘플 데이터이며 실제 제휴 상품 연동 전 단계입니다.
+> 현재 GitHub Pages는 개발/UX 검증용 데모입니다. 카탈로그에는 제휴 공급원에서 동기화한 데이터가 포함될 수 있지만, 프로덕션 앱은 공급자 보존정책과 인증/사용자 데이터를 강제할 수 있는 승인된 백엔드 경계를 사용해야 합니다.
+
+릴리즈 준비 상태와 차단 항목은 `docs/release-readiness.md`를 기준으로 관리합니다.
