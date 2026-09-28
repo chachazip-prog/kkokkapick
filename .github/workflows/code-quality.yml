@@ -76,3 +76,5 @@ jobs:
           test -f supabase/migrations/016_account_data_lifecycle.sql
           grep -q "auth.uid()" supabase/migrations/016_account_data_lifecycle.sql
           grep -q "grant execute on function public.delete_my_app_data() to authenticated" supabase/migrations/016_account_data_lifecycle.sql
+          grep -q 'do $ begin' supabase/migrations/016_account_data_lifecycle.sql
+          grep -q 'end $;' supabase/migrations/016_account_data_lifecycle.sql
