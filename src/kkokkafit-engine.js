@@ -10,13 +10,13 @@ export function evaluateFit(profile, product) {
   const months=Number(profile?.months);
   const height=Number(profile?.height);
   const weight=Number(profile?.weight);
-  const sizes=product?.sizes?.length ? product.sizes : extractSizes(product?.name||"");
+  const sizes=product?.verifiedSizes?.length ? product.verifiedSizes : [];
 
   if(!Number.isFinite(months) || !Number.isFinite(height) || !Number.isFinite(weight)) {
     return {status:"profile_required",label:"아이 정보가 더 필요해요",reason:"월령·키·몸무게를 입력하면 확인할 수 있어요"};
   }
   if(!sizes.length) {
-    return {status:"insufficient_product_data",label:"사이즈 정보 확인 필요",reason:"판매처의 실제 사이즈 정보가 없어 추천하지 않았어요"};
+    return {status:"insufficient_product_data",label:"사이즈 정보 확인 필요",reason:"검증된 판매처/브랜드 사이즈 정보가 없어 추천하지 않았어요"};
   }
 
   // Numeric apparel sizes commonly track stature, but this is only a candidate
