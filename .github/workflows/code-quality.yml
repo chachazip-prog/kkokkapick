@@ -40,10 +40,12 @@ jobs:
           node test/kkokkafit-engine.test.js
           node test/price-tracker.test.js
           node test/client-product.test.js
+          node test/recommendation-ranker.test.js
       - name: Validate web module syntax
         run: |
           node --check src/kkokkafit-engine.js
           node --check src/brand-size-charts.js
           node --check src/price-tracker.js
           node --check src/client-product.js
+          node --check src/recommendation-ranker.js
           node --check scripts/build-catalog.js
