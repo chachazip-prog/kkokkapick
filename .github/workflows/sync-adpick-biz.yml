@@ -39,9 +39,9 @@ jobs:
 
       - name: Commit catalog
         run: |
-          if git diff --quiet -- data/adpick-biz-products.json data/catalog.json; then exit 0; fi
+          if git diff --quiet -- data/adpick-biz-products.json data/catalog.json data/price-history.json; then exit 0; fi
           git config user.name "kkokkapick-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/adpick-biz-products.json data/catalog.json
+          git add data/adpick-biz-products.json data/catalog.json data/price-history.json
           git commit -m "chore: refresh ADPICK BIZ baby catalog"
           git push
