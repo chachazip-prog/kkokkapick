@@ -73,3 +73,8 @@ jobs:
           ! grep -q 'price_history(product_id' supabase/migrations/004_product_read_model.sql
           grep -q 'revoke all on public.published_catalog_products from anon,authenticated' supabase/migrations/015_public_catalog_boundary.sql
           grep -q 'revoke all on public.published_catalog_offers from anon,authenticated' supabase/migrations/015_public_catalog_boundary.sql
+          test -f supabase/migrations/016_account_data_lifecycle.sql
+          grep -q "auth.uid()" supabase/migrations/016_account_data_lifecycle.sql
+          grep -q "grant execute on function public.delete_my_app_data() to authenticated" supabase/migrations/016_account_data_lifecycle.sql
+          grep -q 'do $ begin' supabase/migrations/016_account_data_lifecycle.sql
+          grep -q 'end $;' supabase/migrations/016_account_data_lifecycle.sql
