@@ -71,3 +71,5 @@ jobs:
           test -f supabase/migrations/015_public_catalog_boundary.sql
           ! grep -q 'price_history_product_observed_idx' supabase/migrations/004_product_read_model.sql
           ! grep -q 'price_history(product_id' supabase/migrations/004_product_read_model.sql
+          grep -q 'revoke all on public.published_catalog_products from anon,authenticated' supabase/migrations/015_public_catalog_boundary.sql
+          grep -q 'revoke all on public.published_catalog_offers from anon,authenticated' supabase/migrations/015_public_catalog_boundary.sql
