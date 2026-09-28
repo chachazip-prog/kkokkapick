@@ -3,7 +3,7 @@
 -- Internal provider policy fields, commission data and external provider IDs stay private.
 
 create or replace view public.published_catalog_products
-as
+with (security_invoker=false) as
 select
   p.id,
   p.brand,
@@ -24,7 +24,7 @@ where p.status='active'
   and (p.source_expires_at is null or p.source_expires_at>now());
 
 create or replace view public.published_catalog_offers
-as
+with (security_invoker=false) as
 select
   o.id,
   o.product_id,
@@ -41,6 +41,9 @@ join public.products p on p.id=o.product_id
 where o.in_stock
   and p.status='active'
   and (p.source_expires_at is null or p.source_expires_at>now());
+
+revoke all on public.published_catalog_products from anon,authenticated;
+revoke all on public.published_catalog_offers from anon,authenticated;
 
 -- RLS on the base tables deliberately blocks direct anonymous/authenticated reads.
 -- A security-definer RPC is the explicit public boundary and returns only the
