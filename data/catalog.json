@@ -1,8 +1,8 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-09-28T12:07:33.484Z",
-  "sourceCount": 196,
-  "productCount": 191,
+  "syncedAt": "2026-09-28T12:15:30.234Z",
+  "sourceCount": 195,
+  "productCount": 190,
   "products": [
     {
       "id": "adpickbiz_e9ec6f62",
@@ -4667,32 +4667,6 @@
       "offerCount": 1,
       "minPrice": 22900,
       "maxPrice": 22900,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_d8e5e13",
-      "name": "남자 양털후리스 기모 플리스 집업 자켓 보온 점퍼 아우터",
-      "normalizedName": "남자 양털후리스 기모 플리스 집업 자켓 보온 점퍼 아우터",
-      "variant": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499458002",
-      "category": "아우터",
-      "query": "키즈 아우터",
-      "offers": [
-        {
-          "merchant": "예스이십사",
-          "merchantDomain": null,
-          "price": 13900,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716417?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_d8e5e13"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 13900,
-      "maxPrice": 13900,
       "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
