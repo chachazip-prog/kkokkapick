@@ -1,6 +1,6 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-09-28T11:59:23.656Z",
+  "syncedAt": "2026-09-28T12:03:47.202Z",
   "sourceCount": 196,
   "productCount": 191,
   "products": [
@@ -156,8 +156,8 @@
       "minPrice": 76440,
       "maxPrice": 76440,
       "brand": "에뜨와",
-      "fitStatus": "unverified",
-      "fitSource": null,
+      "fitStatus": "verified",
+      "fitSource": "official_ettoimall_brand_size_guide",
       "stage": "신생아"
     },
     {
@@ -182,8 +182,8 @@
       "minPrice": 150170,
       "maxPrice": 150170,
       "brand": "에뜨와",
-      "fitStatus": "unverified",
-      "fitSource": null,
+      "fitStatus": "verified",
+      "fitSource": "official_ettoimall_brand_size_guide",
       "stage": "신생아"
     },
     {
@@ -312,8 +312,8 @@
       "minPrice": 76440,
       "maxPrice": 76440,
       "brand": "에뜨와",
-      "fitStatus": "unverified",
-      "fitSource": null,
+      "fitStatus": "verified",
+      "fitSource": "official_ettoimall_brand_size_guide",
       "stage": "신생아"
     },
     {
@@ -2044,8 +2044,8 @@
       "minPrice": 30580,
       "maxPrice": 30580,
       "brand": "에뜨와",
-      "fitStatus": "unverified",
-      "fitSource": null,
+      "fitStatus": "verified",
+      "fitSource": "official_ettoimall_brand_size_guide",
       "stage": "유아"
     },
     {
@@ -2174,8 +2174,8 @@
       "minPrice": 43060,
       "maxPrice": 43060,
       "brand": "에뜨와",
-      "fitStatus": "unverified",
-      "fitSource": null,
+      "fitStatus": "verified",
+      "fitSource": "official_ettoimall_brand_size_guide",
       "stage": "유아"
     },
     {
