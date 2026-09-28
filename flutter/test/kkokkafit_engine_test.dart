@@ -4,7 +4,7 @@ import 'package:kkokkapick/repositories/child_profile_repository.dart';
 import 'package:kkokkapick/services/kkokkafit_engine.dart';
 
 void main(){
-  const engine=KkokkafitEngine();
+  final engine=KkokkafitEngine();
   test('requires profile',(){
     final p=CatalogProduct.fromJson({'id':'1','name':'x','brand':'아가방','category':'상의','fitStatus':'verified','offers':[]});
     expect(engine.evaluate(null,p).status,'profile_required');
