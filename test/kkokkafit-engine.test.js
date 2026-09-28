@@ -7,4 +7,7 @@ assert.equal(r.status,"recommended");
 assert.ok(r.recommendedSize);
 assert.equal(r.brand,"아가방");
 assert.equal(evaluateFit({months:12,height:null,weight:10},{name:"아가방 상하복"}).status,"profile_required");
+assert.equal(evaluateFit({months:12,height:"",weight:10},{name:"아가방 상하복"}).status,"profile_required");
+assert.equal(evaluateFit({months:12,height:0,weight:10},{name:"아가방 상하복"}).status,"profile_required");
+assert.equal(evaluateFit({months:12,height:76,weight:undefined},{name:"아가방 상하복"}).status,"profile_required");
 console.log("kkokkafit tests passed");
