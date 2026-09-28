@@ -25,6 +25,7 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 3. Campaign/popup publish transitions now validate required title/disclosure/partner/schedule invariants.
 4. Commercial endpoint/network failure no longer needs to fail the core Flutter catalog experience.
 5. Admin lifecycle controls include scheduled/published/paused/ended states.
+6. Core catalog/provider/offer/price-history tables now enable RLS; public clients must use a deliberately narrow read boundary instead of direct table access.
 
 ## High-priority release backlog
 
