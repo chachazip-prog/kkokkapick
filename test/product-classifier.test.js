@@ -16,6 +16,10 @@ const candidate=classifyProduct({name:"밍크뮤 베베 우주복",query:"아기
 assert.equal(candidate.brand,"밍크뮤");
 assert.equal(candidate.fitStatus,"candidate");
 
+const ettoi=classifyProduct({name:"에뜨와 베이비 상하복",query:"아기 상하복"});
+assert.equal(ettoi.brand,"에뜨와");
+assert.equal(ettoi.fitStatus,"verified");
+
 const unknown=classifyProduct({name:"일반 유아 티셔츠",query:"유아 티셔츠"});
 assert.equal(unknown.brand,null);
 assert.equal(unknown.fitStatus,"unverified");
