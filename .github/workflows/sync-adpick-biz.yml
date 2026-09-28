@@ -24,12 +24,12 @@ jobs:
       - name: Search baby and kids apparel
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
-        run: node scripts/discover-adpick.js
+        run: |\n          node scripts/discover-adpick.js\n          node scripts/build-catalog.js
       - name: Commit catalog
         run: |
-          if git diff --quiet -- data/adpick-biz-products.json; then exit 0; fi
+          if git diff --quiet -- data/adpick-biz-products.json data/catalog.json; then exit 0; fi
           git config user.name "kkokkapick-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/adpick-biz-products.json
+          git add data/adpick-biz-products.json data/catalog.json
           git commit -m "chore: refresh ADPICK BIZ baby catalog"
           git push
