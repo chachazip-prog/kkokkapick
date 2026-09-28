@@ -1,0 +1,36 @@
+name: Flutter quality
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "flutter/**"
+      - ".github/workflows/flutter-quality.yml"
+  pull_request:
+    paths:
+      - "flutter/**"
+      - ".github/workflows/flutter-quality.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: flutter-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - working-directory: flutter
+        run: flutter pub get
+      - working-directory: flutter
+        run: flutter analyze
+      - working-directory: flutter
+        run: flutter test
