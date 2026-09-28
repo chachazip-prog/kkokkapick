@@ -16,6 +16,6 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
-    buildTypes { release { signingConfig = signingConfigs.getByName("debug") } }
+    buildTypes { release { /* Release signing is injected only by protected CI/store credentials. */ } }
 }
 flutter { source = "../.." }
