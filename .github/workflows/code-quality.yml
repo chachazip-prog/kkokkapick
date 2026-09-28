@@ -44,6 +44,7 @@ jobs:
           node test/client-product.test.js
           node test/recommendation-ranker.test.js
           node test/popup-policy.test.js
+          node test/commercial-client.test.js
       - name: Validate web module syntax
         run: |
           node --check src/kkokkafit-engine.js
@@ -52,4 +53,6 @@ jobs:
           node --check src/client-product.js
           node --check src/recommendation-ranker.js
           node --check src/popup-policy.js
+          node --check src/commercial-client.js
+          node --check admin/admin.js
           node --check scripts/build-catalog.js
