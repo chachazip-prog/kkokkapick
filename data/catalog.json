@@ -1,8 +1,8 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-09-28T11:51:48.753Z",
-  "sourceCount": 200,
-  "productCount": 195,
+  "syncedAt": "2026-09-28T11:59:23.656Z",
+  "sourceCount": 196,
+  "productCount": 191,
   "products": [
     {
       "id": "adpickbiz_e9ec6f62",
@@ -26,6 +26,8 @@
       "minPrice": 13500,
       "maxPrice": 13500,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -50,6 +52,8 @@
       "minPrice": 14790,
       "maxPrice": 14790,
       "brand": "모이몰른",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -74,6 +78,8 @@
       "minPrice": 19800,
       "maxPrice": 19800,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -97,7 +103,9 @@
       "offerCount": 1,
       "minPrice": 74760,
       "maxPrice": 74760,
-      "brand": null,
+      "brand": "콩제슬래드",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -121,7 +129,9 @@
       "offerCount": 1,
       "minPrice": 62605,
       "maxPrice": 62605,
-      "brand": null,
+      "brand": "콩제슬래드",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -146,6 +156,8 @@
       "minPrice": 76440,
       "maxPrice": 76440,
       "brand": "에뜨와",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -170,6 +182,8 @@
       "minPrice": 150170,
       "maxPrice": 150170,
       "brand": "에뜨와",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -194,6 +208,8 @@
       "minPrice": 16800,
       "maxPrice": 16800,
       "brand": "아가방",
+      "fitStatus": "verified",
+      "fitSource": "official_brand_size_guide",
       "stage": "신생아"
     },
     {
@@ -218,6 +234,8 @@
       "minPrice": 38900,
       "maxPrice": 38900,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -241,7 +259,9 @@
       "offerCount": 1,
       "minPrice": 55356,
       "maxPrice": 55356,
-      "brand": null,
+      "brand": "콩제슬래드",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -265,7 +285,9 @@
       "offerCount": 1,
       "minPrice": 62605,
       "maxPrice": 62605,
-      "brand": null,
+      "brand": "콩제슬래드",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -290,6 +312,8 @@
       "minPrice": 76440,
       "maxPrice": 76440,
       "brand": "에뜨와",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -314,6 +338,8 @@
       "minPrice": 132500,
       "maxPrice": 132500,
       "brand": "밍크뮤",
+      "fitStatus": "candidate",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -338,6 +364,8 @@
       "minPrice": 14790,
       "maxPrice": 14790,
       "brand": "모이몰른",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -362,6 +390,8 @@
       "minPrice": 27000,
       "maxPrice": 27000,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -394,6 +424,8 @@
       "minPrice": 20800,
       "maxPrice": 20800,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -417,7 +449,9 @@
       "offerCount": 1,
       "minPrice": 14630,
       "maxPrice": 14630,
-      "brand": null,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -442,6 +476,8 @@
       "minPrice": 18900,
       "maxPrice": 18900,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -465,7 +501,9 @@
       "offerCount": 1,
       "minPrice": 18026,
       "maxPrice": 18026,
-      "brand": null,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -490,6 +528,8 @@
       "minPrice": 19922,
       "maxPrice": 19922,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -514,6 +554,8 @@
       "minPrice": 36270,
       "maxPrice": 36270,
       "brand": "블루독베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -538,6 +580,8 @@
       "minPrice": 53820,
       "maxPrice": 53820,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -561,7 +605,9 @@
       "offerCount": 1,
       "minPrice": 18130,
       "maxPrice": 18130,
-      "brand": null,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -586,6 +632,8 @@
       "minPrice": 9900,
       "maxPrice": 9900,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -609,7 +657,9 @@
       "offerCount": 1,
       "minPrice": 14546,
       "maxPrice": 14546,
-      "brand": null,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -634,6 +684,8 @@
       "minPrice": 13066,
       "maxPrice": 13066,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -658,6 +710,8 @@
       "minPrice": 10900,
       "maxPrice": 10900,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -682,6 +736,8 @@
       "minPrice": 43220,
       "maxPrice": 43220,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -706,6 +762,8 @@
       "minPrice": 15600,
       "maxPrice": 15600,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -730,6 +788,8 @@
       "minPrice": 42500,
       "maxPrice": 42500,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -754,6 +814,8 @@
       "minPrice": 20150,
       "maxPrice": 20150,
       "brand": "모이몰른",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -778,6 +840,8 @@
       "minPrice": 20710,
       "maxPrice": 20710,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -802,6 +866,8 @@
       "minPrice": 19900,
       "maxPrice": 19900,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -825,7 +891,9 @@
       "offerCount": 1,
       "minPrice": 21506,
       "maxPrice": 21506,
-      "brand": null,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -858,6 +926,8 @@
       "minPrice": 60710,
       "maxPrice": 71100,
       "brand": "압소바",
+      "fitStatus": "candidate",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -882,6 +952,8 @@
       "minPrice": 17840,
       "maxPrice": 17840,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -906,6 +978,8 @@
       "minPrice": 47300,
       "maxPrice": 47300,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -930,6 +1004,8 @@
       "minPrice": 20150,
       "maxPrice": 20150,
       "brand": "모이몰른",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -953,7 +1029,9 @@
       "offerCount": 1,
       "minPrice": 16634,
       "maxPrice": 16634,
-      "brand": null,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -978,6 +1056,8 @@
       "minPrice": 71100,
       "maxPrice": 71100,
       "brand": "압소바",
+      "fitStatus": "candidate",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1002,6 +1082,8 @@
       "minPrice": 99120,
       "maxPrice": 99120,
       "brand": "압소바",
+      "fitStatus": "candidate",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1026,6 +1108,8 @@
       "minPrice": 16650,
       "maxPrice": 16650,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1050,30 +1134,8 @@
       "minPrice": 15600,
       "maxPrice": 15600,
       "brand": null,
-      "stage": "베이비"
-    },
-    {
-      "id": "adpickbiz_9e7fd4a6",
-      "name": "원피스 잠자는 조로 가방고리",
-      "normalizedName": "원피스 잠자는 조로 가방고리",
-      "variant": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499453748",
-      "category": "원피스",
-      "query": "아기 원피스",
-      "offers": [
-        {
-          "merchant": "예스이십사",
-          "merchantDomain": null,
-          "price": 13000,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716201?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_9e7fd4a6"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 13000,
-      "maxPrice": 13000,
-      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1098,6 +1160,8 @@
       "minPrice": 32300,
       "maxPrice": 32300,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1122,6 +1186,8 @@
       "minPrice": 44520,
       "maxPrice": 44520,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1146,6 +1212,8 @@
       "minPrice": 238310,
       "maxPrice": 238310,
       "brand": "몽클레르키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1170,6 +1238,8 @@
       "minPrice": 19030,
       "maxPrice": 19030,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1194,6 +1264,8 @@
       "minPrice": 16500,
       "maxPrice": 16500,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1218,6 +1290,8 @@
       "minPrice": 25650,
       "maxPrice": 25650,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1242,6 +1316,8 @@
       "minPrice": 40000,
       "maxPrice": 40000,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1266,6 +1342,8 @@
       "minPrice": 39312,
       "maxPrice": 39312,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1290,6 +1368,8 @@
       "minPrice": 239419,
       "maxPrice": 239419,
       "brand": "몽클레르키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1314,6 +1394,8 @@
       "minPrice": 116100,
       "maxPrice": 116100,
       "brand": "압소바",
+      "fitStatus": "candidate",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1338,6 +1420,8 @@
       "minPrice": 116220,
       "maxPrice": 116220,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1362,6 +1446,8 @@
       "minPrice": 25700,
       "maxPrice": 25700,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1386,6 +1472,8 @@
       "minPrice": 30900,
       "maxPrice": 30900,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1410,6 +1498,8 @@
       "minPrice": 40850,
       "maxPrice": 40850,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1434,6 +1524,8 @@
       "minPrice": 19800,
       "maxPrice": 19800,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1458,6 +1550,8 @@
       "minPrice": 38399,
       "maxPrice": 38399,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1482,6 +1576,8 @@
       "minPrice": 40850,
       "maxPrice": 40850,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1506,6 +1602,8 @@
       "minPrice": 33000,
       "maxPrice": 33000,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1530,6 +1628,8 @@
       "minPrice": 36100,
       "maxPrice": 36100,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1553,7 +1653,9 @@
       "offerCount": 1,
       "minPrice": 43000,
       "maxPrice": 43000,
-      "brand": null,
+      "brand": "베이비맥스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1578,6 +1680,8 @@
       "minPrice": 26880,
       "maxPrice": 26880,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1602,6 +1706,8 @@
       "minPrice": 22325,
       "maxPrice": 22325,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1626,6 +1732,8 @@
       "minPrice": 23750,
       "maxPrice": 23750,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1650,6 +1758,8 @@
       "minPrice": 63710,
       "maxPrice": 63710,
       "brand": "페리미츠",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1674,6 +1784,8 @@
       "minPrice": 26100,
       "maxPrice": 26100,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1698,6 +1810,8 @@
       "minPrice": 22570,
       "maxPrice": 22570,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1721,7 +1835,9 @@
       "offerCount": 1,
       "minPrice": 33000,
       "maxPrice": 33000,
-      "brand": null,
+      "brand": "베이비맥스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1746,31 +1862,9 @@
       "minPrice": 25709,
       "maxPrice": 25709,
       "brand": "모이몰른",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
-    },
-    {
-      "id": "adpickbiz_4f4cdc54",
-      "name": "[해외] 다민니 5인치 투야 베이비 모니터 2K 고화질 와이파이 원격 모바일 앱 제어 상하좌우 회전 짐벌 카메라",
-      "normalizedName": "다민니 5인치 투야 베이비 모니터 2k 고화질 와이파이 원격 모바일 앱 제어 상하좌우 회전 짐벌 카메라",
-      "variant": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455105",
-      "category": "상하복",
-      "query": "유아 상하복",
-      "offers": [
-        {
-          "merchant": "알리익스프레스",
-          "merchantDomain": null,
-          "price": 102800,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716243?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_4f4cdc54"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 102800,
-      "maxPrice": 102800,
-      "brand": null,
-      "stage": "베이비"
     },
     {
       "id": "adpickbiz_1e554549",
@@ -1794,6 +1888,8 @@
       "minPrice": 21160,
       "maxPrice": 21160,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -1818,6 +1914,8 @@
       "minPrice": 47300,
       "maxPrice": 47300,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -1842,6 +1940,8 @@
       "minPrice": 12400,
       "maxPrice": 12400,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -1866,6 +1966,8 @@
       "minPrice": 19000,
       "maxPrice": 19000,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1889,7 +1991,9 @@
       "offerCount": 1,
       "minPrice": 30744,
       "maxPrice": 30744,
-      "brand": null,
+      "brand": "삠뽀요",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -1914,6 +2018,8 @@
       "minPrice": 22842,
       "maxPrice": 22842,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1938,6 +2044,8 @@
       "minPrice": 30580,
       "maxPrice": 30580,
       "brand": "에뜨와",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -1962,6 +2070,8 @@
       "minPrice": 25110,
       "maxPrice": 25110,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -1986,6 +2096,8 @@
       "minPrice": 23090,
       "maxPrice": 23090,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -2009,7 +2121,9 @@
       "offerCount": 1,
       "minPrice": 43848,
       "maxPrice": 43848,
-      "brand": null,
+      "brand": "삠뽀요",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -2034,6 +2148,8 @@
       "minPrice": 17860,
       "maxPrice": 17860,
       "brand": "해피프린스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -2058,6 +2174,8 @@
       "minPrice": 43060,
       "maxPrice": 43060,
       "brand": "에뜨와",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2082,6 +2200,8 @@
       "minPrice": 11570,
       "maxPrice": 11570,
       "brand": "페리미츠",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2122,6 +2242,8 @@
       "minPrice": 19250,
       "maxPrice": 26150,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -2146,6 +2268,8 @@
       "minPrice": 22700,
       "maxPrice": 22700,
       "brand": "모이몰른",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2170,6 +2294,8 @@
       "minPrice": 20691,
       "maxPrice": 20691,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "신생아"
     },
     {
@@ -2194,6 +2320,8 @@
       "minPrice": 23350,
       "maxPrice": 23350,
       "brand": "모이몰른",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2218,6 +2346,8 @@
       "minPrice": 43060,
       "maxPrice": 43060,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2242,6 +2372,8 @@
       "minPrice": 19400,
       "maxPrice": 19400,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2265,7 +2397,9 @@
       "offerCount": 1,
       "minPrice": 14920,
       "maxPrice": 14920,
-      "brand": null,
+      "brand": "삠뽀요",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -2290,6 +2424,8 @@
       "minPrice": 33800,
       "maxPrice": 33800,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -2313,7 +2449,9 @@
       "offerCount": 1,
       "minPrice": 25116,
       "maxPrice": 25116,
-      "brand": null,
+      "brand": "삠뽀요",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -2338,6 +2476,8 @@
       "minPrice": 40050,
       "maxPrice": 40050,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -2362,6 +2502,8 @@
       "minPrice": 53020,
       "maxPrice": 53020,
       "brand": "압소바",
+      "fitStatus": "candidate",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2386,6 +2528,8 @@
       "minPrice": 13500,
       "maxPrice": 13500,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2409,7 +2553,9 @@
       "offerCount": 1,
       "minPrice": 13370,
       "maxPrice": 13370,
-      "brand": null,
+      "brand": "삠뽀요",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -2434,6 +2580,8 @@
       "minPrice": 8330,
       "maxPrice": 8330,
       "brand": "모이몰른",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2458,6 +2606,8 @@
       "minPrice": 34900,
       "maxPrice": 34900,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -2481,7 +2631,9 @@
       "offerCount": 1,
       "minPrice": 104600,
       "maxPrice": 104600,
-      "brand": null,
+      "brand": "쇼콜라",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2506,6 +2658,8 @@
       "minPrice": 17500,
       "maxPrice": 17500,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -2530,6 +2684,8 @@
       "minPrice": 6040,
       "maxPrice": 6040,
       "brand": "모이몰른",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2554,6 +2710,8 @@
       "minPrice": 85054,
       "maxPrice": 85054,
       "brand": "페리미츠",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -2577,7 +2735,9 @@
       "offerCount": 1,
       "minPrice": 92990,
       "maxPrice": 92990,
-      "brand": null,
+      "brand": "쇼콜라",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2601,7 +2761,9 @@
       "offerCount": 1,
       "minPrice": 127780,
       "maxPrice": 127780,
-      "brand": null,
+      "brand": "쇼콜라",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2626,6 +2788,8 @@
       "minPrice": 52210,
       "maxPrice": 52210,
       "brand": "페리미츠",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -2650,6 +2814,8 @@
       "minPrice": 23500,
       "maxPrice": 23500,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2674,6 +2840,8 @@
       "minPrice": 64680,
       "maxPrice": 64680,
       "brand": "페리미츠",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2697,7 +2865,9 @@
       "offerCount": 1,
       "minPrice": 33670,
       "maxPrice": 33670,
-      "brand": null,
+      "brand": "베이비맥스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -2722,6 +2892,8 @@
       "minPrice": 37700,
       "maxPrice": 37700,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2746,6 +2918,8 @@
       "minPrice": 170100,
       "maxPrice": 170100,
       "brand": "밍크뮤",
+      "fitStatus": "candidate",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2770,6 +2944,8 @@
       "minPrice": 33516,
       "maxPrice": 33516,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2794,6 +2970,8 @@
       "minPrice": 131040,
       "maxPrice": 131040,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2818,6 +2996,8 @@
       "minPrice": 100800,
       "maxPrice": 100800,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -2842,6 +3022,8 @@
       "minPrice": 173880,
       "maxPrice": 173880,
       "brand": "밍크뮤",
+      "fitStatus": "candidate",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2866,31 +3048,9 @@
       "minPrice": 183600,
       "maxPrice": 183600,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
-    },
-    {
-      "id": "adpickbiz_fe92ad23",
-      "name": "[기타] 가디건 일패턴 아가 니트 브이 잠바 남성 블루종 점퍼 야구 가을 ...[이마트몰]",
-      "normalizedName": "가디건 일패턴 아가 니트 브이 잠바 남성 블루종 점퍼 야구 가을 ...",
-      "variant": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499456749",
-      "category": "아우터",
-      "query": "유아 아우터",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 66639,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716332?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_fe92ad23"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 66639,
-      "maxPrice": 66639,
-      "brand": null,
-      "stage": "유아"
     },
     {
       "id": "adpickbiz_102b8007",
@@ -2914,6 +3074,8 @@
       "minPrice": 107280,
       "maxPrice": 107280,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2938,6 +3100,8 @@
       "minPrice": 170100,
       "maxPrice": 170100,
       "brand": "밍크뮤",
+      "fitStatus": "candidate",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2962,6 +3126,8 @@
       "minPrice": 156209,
       "maxPrice": 156209,
       "brand": "밍크뮤",
+      "fitStatus": "candidate",
+      "fitSource": null,
       "stage": "유아"
     },
     {
@@ -2986,6 +3152,8 @@
       "minPrice": 37200,
       "maxPrice": 37200,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3010,6 +3178,8 @@
       "minPrice": 107400,
       "maxPrice": 107400,
       "brand": "빈폴키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3033,7 +3203,9 @@
       "offerCount": 1,
       "minPrice": 51000,
       "maxPrice": 51000,
-      "brand": null,
+      "brand": "베이비맥스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -3057,7 +3229,9 @@
       "offerCount": 1,
       "minPrice": 98238,
       "maxPrice": 98238,
-      "brand": null,
+      "brand": "휠라키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3082,6 +3256,8 @@
       "minPrice": 80280,
       "maxPrice": 80280,
       "brand": "빈폴키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3105,7 +3281,9 @@
       "offerCount": 1,
       "minPrice": 39990,
       "maxPrice": 39990,
-      "brand": null,
+      "brand": "아디다스키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3130,6 +3308,8 @@
       "minPrice": 63360,
       "maxPrice": 63360,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3154,6 +3334,8 @@
       "minPrice": 27800,
       "maxPrice": 27800,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3178,6 +3360,8 @@
       "minPrice": 104900,
       "maxPrice": 104900,
       "brand": "NBA키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3201,7 +3385,9 @@
       "offerCount": 1,
       "minPrice": 58000,
       "maxPrice": 58000,
-      "brand": null,
+      "brand": "베이비맥스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -3225,7 +3411,9 @@
       "offerCount": 1,
       "minPrice": 80758,
       "maxPrice": 80758,
-      "brand": null,
+      "brand": "휠라키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3250,6 +3438,8 @@
       "minPrice": 107350,
       "maxPrice": 107350,
       "brand": "빈폴키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3273,7 +3463,9 @@
       "offerCount": 1,
       "minPrice": 74520,
       "maxPrice": 74520,
-      "brand": null,
+      "brand": "노스페이스키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3298,6 +3490,8 @@
       "minPrice": 36200,
       "maxPrice": 36200,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3322,6 +3516,8 @@
       "minPrice": 107400,
       "maxPrice": 107400,
       "brand": "빈폴키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3346,6 +3542,8 @@
       "minPrice": 55737,
       "maxPrice": 55737,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3370,6 +3568,8 @@
       "minPrice": 16200,
       "maxPrice": 16200,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3394,6 +3594,8 @@
       "minPrice": 59000,
       "maxPrice": 59000,
       "brand": "헤지스키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3418,6 +3620,8 @@
       "minPrice": 27920,
       "maxPrice": 27920,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3442,6 +3646,8 @@
       "minPrice": 213000,
       "maxPrice": 213000,
       "brand": "몽클레르키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3466,6 +3672,8 @@
       "minPrice": 108464,
       "maxPrice": 108464,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3489,7 +3697,9 @@
       "offerCount": 1,
       "minPrice": 36010,
       "maxPrice": 36010,
-      "brand": null,
+      "brand": "캉골키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3514,6 +3724,8 @@
       "minPrice": 54930,
       "maxPrice": 54930,
       "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3538,6 +3750,8 @@
       "minPrice": 58210,
       "maxPrice": 58210,
       "brand": "나이키키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3562,6 +3776,8 @@
       "minPrice": 22500,
       "maxPrice": 22500,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3586,6 +3802,8 @@
       "minPrice": 59000,
       "maxPrice": 59000,
       "brand": "헤지스키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3609,7 +3827,9 @@
       "offerCount": 1,
       "minPrice": 28000,
       "maxPrice": 28000,
-      "brand": null,
+      "brand": "베이비맥스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -3634,6 +3854,8 @@
       "minPrice": 66795,
       "maxPrice": 66795,
       "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3657,7 +3879,9 @@
       "offerCount": 1,
       "minPrice": 96600,
       "maxPrice": 96600,
-      "brand": null,
+      "brand": "모스키노키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3681,7 +3905,9 @@
       "offerCount": 1,
       "minPrice": 79140,
       "maxPrice": 79140,
-      "brand": null,
+      "brand": "캉골키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3706,6 +3932,8 @@
       "minPrice": 64240,
       "maxPrice": 64240,
       "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3730,6 +3958,8 @@
       "minPrice": 62960,
       "maxPrice": 62960,
       "brand": "나이키키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3754,6 +3984,8 @@
       "minPrice": 65520,
       "maxPrice": 65520,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3778,6 +4010,8 @@
       "minPrice": 484700,
       "maxPrice": 484700,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3801,7 +4035,9 @@
       "offerCount": 1,
       "minPrice": 72200,
       "maxPrice": 72200,
-      "brand": null,
+      "brand": "보보쇼즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3826,6 +4062,8 @@
       "minPrice": 76100,
       "maxPrice": 76100,
       "brand": "디스커버리키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3850,6 +4088,8 @@
       "minPrice": 98500,
       "maxPrice": 98500,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3874,6 +4114,8 @@
       "minPrice": 29520,
       "maxPrice": 29520,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3897,7 +4139,9 @@
       "offerCount": 1,
       "minPrice": 43200,
       "maxPrice": 43200,
-      "brand": null,
+      "brand": "베이비맥스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -3922,6 +4166,8 @@
       "minPrice": 518440,
       "maxPrice": 518440,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3945,7 +4191,9 @@
       "offerCount": 1,
       "minPrice": 79800,
       "maxPrice": 79800,
-      "brand": null,
+      "brand": "보보쇼즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3970,6 +4218,8 @@
       "minPrice": 70310,
       "maxPrice": 70310,
       "brand": "디스커버리키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -3993,7 +4243,9 @@
       "offerCount": 1,
       "minPrice": 70350,
       "maxPrice": 70350,
-      "brand": null,
+      "brand": "MLB키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4018,6 +4270,8 @@
       "minPrice": 10400,
       "maxPrice": 10400,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4042,6 +4296,8 @@
       "minPrice": 29900,
       "maxPrice": 29900,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4066,6 +4322,8 @@
       "minPrice": 104300,
       "maxPrice": 104300,
       "brand": "헤지스키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4090,6 +4348,8 @@
       "minPrice": 91560,
       "maxPrice": 91560,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4122,6 +4382,8 @@
       "minPrice": 102880,
       "maxPrice": 107398,
       "brand": "빈폴키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4146,6 +4408,8 @@
       "minPrice": 37200,
       "maxPrice": 37200,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4170,30 +4434,8 @@
       "minPrice": 166650,
       "maxPrice": 166650,
       "brand": "헤지스키즈",
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_9b10fad0",
-      "name": "[해외] 20pcs 11mm 캔디 컬러 두 구멍 진주 빛 스타 불가사리 버튼 어린이 드레스 의류 액세서리에 대한 수지 불규칙 버튼",
-      "normalizedName": "20pcs 11mm 캔디 컬러 두 구멍 진주 빛 스타 불가사리 버튼 어린이 드레스 의류 액세서리에 대한 수지 불규칙 버튼",
-      "variant": "컬러",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499457779",
-      "category": "원피스",
-      "query": "키즈 원피스",
-      "offers": [
-        {
-          "merchant": "알리익스프레스",
-          "merchantDomain": null,
-          "price": 2400,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716405?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_9b10fad0"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 2400,
-      "maxPrice": 2400,
-      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4218,6 +4460,8 @@
       "minPrice": 33000,
       "maxPrice": 33000,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4242,6 +4486,8 @@
       "minPrice": 104300,
       "maxPrice": 104300,
       "brand": "헤지스키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4265,7 +4511,9 @@
       "offerCount": 1,
       "minPrice": 42000,
       "maxPrice": 42000,
-      "brand": null,
+      "brand": "베이비맥스",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "베이비"
     },
     {
@@ -4290,6 +4538,8 @@
       "minPrice": 90720,
       "maxPrice": 90720,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4314,6 +4564,8 @@
       "minPrice": 93455,
       "maxPrice": 93455,
       "brand": "빈폴키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4338,6 +4590,8 @@
       "minPrice": 93840,
       "maxPrice": 93840,
       "brand": "빈폴키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4361,7 +4615,9 @@
       "offerCount": 1,
       "minPrice": 44530,
       "maxPrice": 44530,
-      "brand": null,
+      "brand": "프렌치캣",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4386,6 +4642,8 @@
       "minPrice": 56110,
       "maxPrice": 56110,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4410,6 +4668,8 @@
       "minPrice": 22900,
       "maxPrice": 22900,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4434,6 +4694,8 @@
       "minPrice": 13900,
       "maxPrice": 13900,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4458,6 +4720,8 @@
       "minPrice": 79000,
       "maxPrice": 79000,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4482,6 +4746,8 @@
       "minPrice": 141930,
       "maxPrice": 141930,
       "brand": "디스커버리키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4506,6 +4772,8 @@
       "minPrice": 152240,
       "maxPrice": 152240,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4530,6 +4798,8 @@
       "minPrice": 1553030,
       "maxPrice": 1553030,
       "brand": "몽클레르키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4554,6 +4824,8 @@
       "minPrice": 127980,
       "maxPrice": 127980,
       "brand": "빈폴키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4578,6 +4850,8 @@
       "minPrice": 21800,
       "maxPrice": 21800,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4602,6 +4876,8 @@
       "minPrice": 22960,
       "maxPrice": 22960,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4626,6 +4902,8 @@
       "minPrice": 99000,
       "maxPrice": 99000,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4650,6 +4928,8 @@
       "minPrice": 125685,
       "maxPrice": 125685,
       "brand": "디스커버리키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4674,6 +4954,8 @@
       "minPrice": 152240,
       "maxPrice": 152240,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4697,7 +4979,9 @@
       "offerCount": 1,
       "minPrice": 788670,
       "maxPrice": 788670,
-      "brand": null,
+      "brand": "스톤아일랜드키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     },
     {
@@ -4722,6 +5006,8 @@
       "minPrice": 137180,
       "maxPrice": 137180,
       "brand": "빈폴키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
       "stage": "키즈"
     }
   ]
