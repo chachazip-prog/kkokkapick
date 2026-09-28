@@ -15,6 +15,9 @@ Current state:
 - 밍크뮤: candidate
 - 압소바: candidate
 - 모이몰른: unverified
-- 에뜨와: unverified
+- 에뜨와: verified
 
 Retailer pages may be used to identify what should be verified next, not as silent substitutes for first-party evidence.
+
+
+`verified` status must be backed by a recorded first-party source marker and verification date in the maintained size-chart/evidence data; documentation alone never promotes a brand.
