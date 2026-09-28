@@ -38,6 +38,7 @@ jobs:
         working-directory: flutter
         run: |
           grep -q 'gradle-8.14.3-bin.zip' android/gradle/wrapper/gradle-wrapper.properties
+          grep -q 'com.android.application.*8.11.1' android/settings.gradle.kts
           grep -q 'includeBuild.*flutter_tools/gradle' android/settings.gradle.kts
       - name: Reject debug signing in release config
         working-directory: flutter
