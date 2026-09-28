@@ -13,6 +13,7 @@ class CommercialRepository {
   bool get enabled=>supabaseUrl.isNotEmpty&&anonKey.isNotEmpty;
   Future<CommercialContent> fetchHome() async {
     if(!enabled)return const CommercialContent([],[]);
+    try {
     final headers={'apikey':anonKey,'Authorization':'Bearer $anonKey'};
     final rs=await Future.wait([
       http.get(Uri.parse('$supabaseUrl/rest/v1/published_commercial_campaigns?select=*&placement=eq.home&order=priority.desc'),headers:headers),
@@ -22,5 +23,9 @@ class CommercialRepository {
     return CommercialContent(
       (jsonDecode(rs[0].body) as List).map((e)=>CommercialCampaign.fromJson(e)).toList(),
       (jsonDecode(rs[1].body) as List).map((e)=>ManagedPopup.fromJson(e)).toList());
+    } catch (_) {
+      // Commercial content must never take down the shopping experience.
+      return const CommercialContent([],[]);
+    }
   }
 }
