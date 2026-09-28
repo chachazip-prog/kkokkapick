@@ -1,4 +1,18 @@
 export const BRAND_SIZE_CHARTS = {
+  "에뜨와": {
+    source: "official_ettoimall_brand_size_guide",
+    verified: true,
+    verifiedAt: "2026-09-28",
+    rows: [
+      {size:"70", months:[0,3], height:64, weight:null},
+      {size:"75", months:[3,6], height:70, weight:null},
+      {size:"80", months:[6,12], height:74, weight:null},
+      {size:"90", months:[12,24], height:80, weight:null},
+      {size:"100", months:[24,36], height:87, weight:null},
+      {size:"3Y", months:[36,48], height:95, weight:null},
+      {size:"4Y", months:[36,48], height:105, weight:null}
+    ]
+  },
   "아가방": {
     source: "official_brand_size_guide",
     verified: true,
@@ -44,8 +58,8 @@ export const BRAND_SIZE_CANDIDATES = Object.freeze({
     reason: "No first-party size chart verified yet."
   },
   "에뜨와": {
-    status: "unverified",
-    reason: "No first-party size chart verified yet."
+    status: "verified",
+    reason: "Official Ettoi Mall brand size guide verified."
   }
 });
 
