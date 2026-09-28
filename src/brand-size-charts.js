@@ -48,3 +48,14 @@ export const BRAND_SIZE_CANDIDATES = Object.freeze({
     reason: "No first-party size chart verified yet."
   }
 });
+
+export function getFitEvidence(brand) {
+  if (!brand) return { status: "unverified", source: null };
+  const verified = BRAND_SIZE_CHARTS[brand];
+  if (verified?.verified) {
+    return { status: "verified", source: verified.source, verifiedAt: verified.verifiedAt };
+  }
+  const candidate = BRAND_SIZE_CANDIDATES[brand];
+  if (candidate) return { status: candidate.status, source: null };
+  return { status: "unverified", source: null };
+}
