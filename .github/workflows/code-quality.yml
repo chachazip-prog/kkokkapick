@@ -8,6 +8,8 @@ on:
       - "test/**"
       - "scripts/**"
       - "index.html"
+      - "admin/**"
+      - "supabase/**"
       - "flutter/**"
       - ".github/workflows/**"
   pull_request:
@@ -16,6 +18,8 @@ on:
       - "test/**"
       - "scripts/**"
       - "index.html"
+      - "admin/**"
+      - "supabase/**"
       - "flutter/**"
 
 permissions:
@@ -57,3 +61,10 @@ jobs:
           node --check src/public-commercial-client.js
           node --check admin/admin.js
           node --check scripts/build-catalog.js
+      - name: Security sanity checks
+        run: |
+          if grep -R -n -E '(service_role|SUPABASE_SERVICE_ROLE|ADPICK_BIZ_API_KEY)[[:space:]]*[:=][[:space:]]*["'\''"][^"'\'']+' admin src flutter supabase --exclude='*.md'; then
+            echo "Potential secret-like assignment found in client/repository code"
+            exit 1
+          fi
+          test -f supabase/migrations/013_catalog_rls_hardening.sql
