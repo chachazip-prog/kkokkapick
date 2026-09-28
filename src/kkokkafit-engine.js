@@ -1,6 +1,6 @@
 import { detectBrand, getVerifiedChart } from "./brand-size-charts.js";
 
-const SIZE_TOKEN = /(?:^|[^0-9])(60|70|75|80|85|90|95|100|105|110|120|130|140|150|160)(?:[^0-9]|$)/g;
+const SIZE_TOKEN = /(?<![0-9])(60|70|75|80|85|90|95|100|105|110|120|130|140|150|160)(?![0-9])/g;
 
 export function extractSizes(text="") {
   const out=new Set();
