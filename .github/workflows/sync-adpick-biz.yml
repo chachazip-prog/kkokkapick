@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Search baby and kids apparel
+      - name: Test catalog rules\n        run: |\n          node test/provider-policy.test.js\n          node test/product-classifier.test.js\n      - name: Search baby and kids apparel
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
         run: |
