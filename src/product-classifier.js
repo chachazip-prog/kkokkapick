@@ -1,3 +1,5 @@
+import { normalizeBrand } from "./brand-normalizer.js";
+
 const RULES = [
   ["바디수트", /(바디수트|바디슈트|우주복|배냇)/i],
   ["실내복", /(내복|내의|실내복|잠옷|파자마)/i],
@@ -27,5 +29,5 @@ export function classifyStage(name="", query="") {
 }
 
 export function classifyProduct(p) {
-  return {...p, category:classifyCategory(p.name,p.query), stage:classifyStage(p.name,p.query)};
+  return {...p, brand:normalizeBrand(p.name), category:classifyCategory(p.name,p.query), stage:classifyStage(p.name,p.query)};
 }
