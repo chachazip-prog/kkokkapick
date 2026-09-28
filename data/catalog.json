@@ -1,6 +1,6 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-09-28T12:03:47.202Z",
+  "syncedAt": "2026-09-28T12:07:33.484Z",
   "sourceCount": 196,
   "productCount": 191,
   "products": [
@@ -77,7 +77,7 @@
       "offerCount": 1,
       "minPrice": 19800,
       "maxPrice": 19800,
-      "brand": null,
+      "brand": "위드오가닉",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "신생아"
@@ -475,7 +475,7 @@
       "offerCount": 1,
       "minPrice": 18900,
       "maxPrice": 18900,
-      "brand": null,
+      "brand": "말랑하니",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "베이비"
@@ -527,7 +527,7 @@
       "offerCount": 1,
       "minPrice": 19922,
       "maxPrice": 19922,
-      "brand": null,
+      "brand": "슈슈페",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "베이비"
@@ -631,7 +631,7 @@
       "offerCount": 1,
       "minPrice": 9900,
       "maxPrice": 9900,
-      "brand": null,
+      "brand": "보누맘",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "베이비"
@@ -683,7 +683,7 @@
       "offerCount": 1,
       "minPrice": 13066,
       "maxPrice": 13066,
-      "brand": null,
+      "brand": "키키스토리",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "베이비"
@@ -709,7 +709,7 @@
       "offerCount": 1,
       "minPrice": 10900,
       "maxPrice": 10900,
-      "brand": null,
+      "brand": "더오투투",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "베이비"
@@ -839,7 +839,7 @@
       "offerCount": 1,
       "minPrice": 20710,
       "maxPrice": 20710,
-      "brand": null,
+      "brand": "엠케이베이비",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "베이비"
@@ -1185,7 +1185,7 @@
       "offerCount": 1,
       "minPrice": 44520,
       "maxPrice": 44520,
-      "brand": null,
+      "brand": "아림클로젯",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "베이비"
@@ -1315,7 +1315,7 @@
       "offerCount": 1,
       "minPrice": 40000,
       "maxPrice": 40000,
-      "brand": null,
+      "brand": "알콩단잠",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "베이비"
@@ -1341,7 +1341,7 @@
       "offerCount": 1,
       "minPrice": 39312,
       "maxPrice": 39312,
-      "brand": null,
+      "brand": "아림클로젯",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "베이비"
@@ -1679,7 +1679,7 @@
       "offerCount": 1,
       "minPrice": 26880,
       "maxPrice": 26880,
-      "brand": null,
+      "brand": "아림클로젯",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "베이비"
@@ -2069,7 +2069,7 @@
       "offerCount": 1,
       "minPrice": 25110,
       "maxPrice": 25110,
-      "brand": null,
+      "brand": "달퐁",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "베이비"
@@ -2293,7 +2293,7 @@
       "offerCount": 1,
       "minPrice": 20691,
       "maxPrice": 20691,
-      "brand": null,
+      "brand": "리틀무무",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "신생아"
@@ -2371,7 +2371,7 @@
       "offerCount": 1,
       "minPrice": 19400,
       "maxPrice": 19400,
-      "brand": null,
+      "brand": "몽글하우스",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "유아"
@@ -2605,7 +2605,7 @@
       "offerCount": 1,
       "minPrice": 34900,
       "maxPrice": 34900,
-      "brand": null,
+      "brand": "오즈키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -2943,7 +2943,7 @@
       "offerCount": 1,
       "minPrice": 33516,
       "maxPrice": 33516,
-      "brand": null,
+      "brand": "케어베어",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "유아"
@@ -3541,7 +3541,7 @@
       "offerCount": 1,
       "minPrice": 55737,
       "maxPrice": 55737,
-      "brand": null,
+      "brand": "탈렌트키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -3619,7 +3619,7 @@
       "offerCount": 1,
       "minPrice": 27920,
       "maxPrice": 27920,
-      "brand": null,
+      "brand": "비비홈",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -3775,7 +3775,7 @@
       "offerCount": 1,
       "minPrice": 22500,
       "maxPrice": 22500,
-      "brand": null,
+      "brand": "베리나그랑",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -3983,7 +3983,7 @@
       "offerCount": 1,
       "minPrice": 65520,
       "maxPrice": 65520,
-      "brand": null,
+      "brand": "타오키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -4009,7 +4009,7 @@
       "offerCount": 1,
       "minPrice": 484700,
       "maxPrice": 484700,
-      "brand": null,
+      "brand": "펜디키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -4165,7 +4165,7 @@
       "offerCount": 1,
       "minPrice": 518440,
       "maxPrice": 518440,
-      "brand": null,
+      "brand": "구찌키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -4347,7 +4347,7 @@
       "offerCount": 1,
       "minPrice": 91560,
       "maxPrice": 91560,
-      "brand": null,
+      "brand": "메이릴리키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -4407,7 +4407,7 @@
       "offerCount": 1,
       "minPrice": 37200,
       "maxPrice": 37200,
-      "brand": null,
+      "brand": "리바이스키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -4537,7 +4537,7 @@
       "offerCount": 1,
       "minPrice": 90720,
       "maxPrice": 90720,
-      "brand": null,
+      "brand": "메이릴리키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -4641,7 +4641,7 @@
       "offerCount": 1,
       "minPrice": 56110,
       "maxPrice": 56110,
-      "brand": null,
+      "brand": "탈렌트키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -4719,7 +4719,7 @@
       "offerCount": 1,
       "minPrice": 79000,
       "maxPrice": 79000,
-      "brand": null,
+      "brand": "플레이키즈프로",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -4875,7 +4875,7 @@
       "offerCount": 1,
       "minPrice": 22960,
       "maxPrice": 22960,
-      "brand": null,
+      "brand": "바브키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
@@ -4901,7 +4901,7 @@
       "offerCount": 1,
       "minPrice": 99000,
       "maxPrice": 99000,
-      "brand": null,
+      "brand": "플레이키즈프로",
       "fitStatus": "unverified",
       "fitSource": null,
       "stage": "키즈"
