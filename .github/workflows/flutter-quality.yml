@@ -34,6 +34,13 @@ jobs:
         run: flutter analyze
       - working-directory: flutter
         run: flutter test
+      - name: Reject debug signing in release config
+        working-directory: flutter
+        run: |
+          if grep -q 'release.*signingConfig.*debug' android/app/build.gradle.kts; then
+            echo "Release build must not use debug signing"
+            exit 1
+          fi
       - name: Build Android debug artifact
         working-directory: flutter
         run: flutter build apk --debug
