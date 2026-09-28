@@ -3,7 +3,7 @@
 -- Internal provider policy fields, commission data and external provider IDs stay private.
 
 create or replace view public.published_catalog_products
-with (security_invoker=true) as
+as
 select
   p.id,
   p.brand,
@@ -24,7 +24,7 @@ where p.status='active'
   and (p.source_expires_at is null or p.source_expires_at>now());
 
 create or replace view public.published_catalog_offers
-with (security_invoker=true) as
+as
 select
   o.id,
   o.product_id,
