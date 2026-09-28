@@ -48,11 +48,6 @@ function priceAlertHtml(p){
  const reached=Number(v)>0&&Number(p.price)>0&&Number(p.price)<=Number(v);
  return priceChangeHtml(p)+'<div class="offer"><div><b>희망 가격</b><br><span>현재 '+won(p.price)+(reached?' · 희망가 도달':'')+'</span></div><div><input id="alertPrice" type="number" value="'+esc(v)+'" placeholder="예: 30000" style="width:105px;padding:9px;border:1px solid #ddd;border-radius:8px"><button class="buy" onclick="savePriceAlert(\\''+String(p.id).replace(/'/g,"\\\\'")+'\\')">저장</button></div></div><p class="note">현재 데모에서는 희망 가격만 이 기기에 저장합니다. 실제 알림 발송은 로그인·백엔드 연동 후 제공됩니다.</p>';
 }
-function __oldPriceAlertHtml_unused(p){
- const alerts=JSON.parse(localStorage.getItem('priceAlerts')||'{}');
- const v=alerts[p.id]||'';
- return '<div class="offer"><div><b>희망 가격</b><br><span>현재 '+won(p.price)+'</span></div><div><input id="alertPrice" type="number" value="'+esc(v)+'" placeholder="예: 30000" style="width:105px;padding:9px;border:1px solid #ddd;border-radius:8px"><button class="buy" onclick="savePriceAlert(\''+String(p.id).replace(/'/g,"\\'")+'\')">저장</button></div></div><p class="note">현재 데모에서는 희망 가격만 이 기기에 저장합니다. 실제 알림 발송은 로그인·백엔드 연동 후 제공됩니다.</p>';
-}
 function savePriceAlert(id){
  const input=document.getElementById('alertPrice'); const value=Number(input?.value);
  const alerts=JSON.parse(localStorage.getItem('priceAlerts')||'{}');
