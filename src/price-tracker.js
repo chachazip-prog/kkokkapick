@@ -21,8 +21,18 @@ export function positivePrice(value){
   return Number.isFinite(n)&&n>0?n:null;
 }
 export function latestPriceChange(events=[], productId){
-  for(let i=events.length-1;i>=0;i--) if(String(events[i].productId)===String(productId)) return events[i];
-  return null;
+  let latest=null;
+  let latestTime=-Infinity;
+  for(const event of events){
+    if(String(event.productId)!==String(productId)) continue;
+    const time=Date.parse(event.observedAt);
+    if(!Number.isFinite(time)) continue;
+    if(time>=latestTime){
+      latest=event;
+      latestTime=time;
+    }
+  }
+  return latest;
 }
 export function isTargetPriceReached(currentPrice,targetPrice){
   const current=positivePrice(currentPrice), target=positivePrice(targetPrice);

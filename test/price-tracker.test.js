@@ -10,7 +10,13 @@ const changes=buildPriceChanges(
 assert.equal(changes.length,2);
 assert.deepEqual(changes[0],{productId:"a",observedAt:at,previousPrice:30000,price:25000,direction:"down",changeAmount:-5000});
 assert.equal(changes[1].direction,"up");
-assert.equal(latestPriceChange([...changes,{productId:"a",price:24000}],"a").price,24000);
+const unordered=[
+  {productId:"a",observedAt:"2026-09-28T14:00:00.000Z",price:24000},
+  {productId:"a",observedAt:"2026-09-28T13:00:00.000Z",price:24500},
+  {productId:"a",observedAt:"2026-09-28T15:00:00.000Z",price:23000}
+];
+assert.equal(latestPriceChange(unordered,"a").price,23000);
+assert.equal(latestPriceChange([{productId:"a",observedAt:"invalid",price:1}],"a"),null);
 assert.equal(latestPriceChange(changes,"missing"),null);
 assert.equal(isTargetPriceReached(25000,30000),true);
 assert.equal(isTargetPriceReached(35000,30000),false);
