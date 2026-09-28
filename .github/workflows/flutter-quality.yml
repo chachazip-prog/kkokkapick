@@ -34,6 +34,11 @@ jobs:
         run: flutter analyze
       - working-directory: flutter
         run: flutter test
+      - name: Guard Android toolchain baseline
+        working-directory: flutter
+        run: |
+          grep -q 'gradle-8.14.3-bin.zip' android/gradle/wrapper/gradle-wrapper.properties
+          grep -q 'includeBuild.*flutter_tools/gradle' android/settings.gradle.kts
       - name: Reject debug signing in release config
         working-directory: flutter
         run: |
