@@ -18,15 +18,23 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Test catalog rules\n        run: |\n          node test/provider-policy.test.js\n          node test/product-classifier.test.js\n      - name: Search baby and kids apparel
+
+      - name: Test catalog rules
+        run: |
+          node test/provider-policy.test.js
+          node test/product-classifier.test.js
+
+      - name: Search baby and kids apparel
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
         run: |
           node scripts/discover-adpick.js
           node scripts/build-catalog.js
+
       - name: Commit catalog
         run: |
           if git diff --quiet -- data/adpick-biz-products.json data/catalog.json; then exit 0; fi
