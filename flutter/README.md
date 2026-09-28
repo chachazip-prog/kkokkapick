@@ -11,3 +11,16 @@ Current scope:
 The current GitHub Pages catalog URL is suitable for development/demo reads only. Production should read through the approved backend/Supabase boundary so provider retention, authentication, favorites and alerts can be enforced server-side.
 
 Do not embed ADPICK or other provider API secrets in Flutter.
+
+
+Implemented MVP surfaces:
+- live catalog grid
+- multi-term search
+- stage/category/brand filters
+- KKOKKAFIT availability filter
+- deterministic recommendation / price sorting
+- local favorites
+- product detail bottom sheet
+- merchant price comparison
+
+Next client work: external affiliate handoff, child profile + shared KKOKKAFIT implementation, authenticated favorites/price alerts, and Supabase production endpoint.
