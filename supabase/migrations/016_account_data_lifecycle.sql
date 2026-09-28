@@ -5,9 +5,12 @@
 alter table public.child_profiles
   add column if not exists updated_at timestamptz not null default now();
 
-alter table public.price_alerts
-  add constraint price_alerts_target_price_positive
-  check (target_price is null or target_price > 0);
+do $ begin
+  alter table public.price_alerts
+    add constraint price_alerts_target_price_positive
+    check (target_price is null or target_price > 0);
+exception when duplicate_object then null;
+end $;
 
 create unique index if not exists child_profiles_one_per_user_idx
   on public.child_profiles(user_id);
