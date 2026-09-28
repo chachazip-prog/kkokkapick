@@ -34,3 +34,6 @@ jobs:
         run: flutter analyze
       - working-directory: flutter
         run: flutter test
+      - name: Build Android debug artifact
+        working-directory: flutter
+        run: flutter build apk --debug
