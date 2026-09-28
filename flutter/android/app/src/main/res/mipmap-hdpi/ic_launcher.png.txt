@@ -1,1 +1,0 @@
-Placeholder marker: replace with generated binary launcher icon before external beta. CI intentionally verifies release assets separately.
