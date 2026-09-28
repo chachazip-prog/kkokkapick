@@ -1,5 +1,5 @@
 const CACHE='kkokkapick-demo-v2';
-const ASSETS=['./','./index.html','./manifest.json','./src/kkokkafit-engine.js','./src/brand-size-charts.js','./data/catalog.json','./data/price-history.json'];
+const ASSETS=['./','./index.html','./manifest.json','./src/kkokkafit-engine.js','./src/brand-size-charts.js','./src/price-tracker.js','./src/recommendation-ranker.js','./data/catalog.json','./data/price-history.json'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))).then(()=>self.skipWaiting()));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))).then(()=>self.clients.claim()));
 self.addEventListener('fetch',e=>{
