@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'models/catalog_product.dart';
 import 'repositories/catalog_repository.dart';
 import 'repositories/favorites_repository.dart';
+import 'repositories/child_profile_repository.dart';
+import 'repositories/price_alert_repository.dart';
+import 'services/kkokkafit_engine.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main()=>runApp(const KkokkapickApp());
 
@@ -25,13 +29,14 @@ class CatalogScreen extends StatefulWidget {
 
 class _CatalogScreenState extends State<CatalogScreen>{
   static final _endpoint=Uri.parse('https://chachazip-prog.github.io/kkokkapick/data/catalog.json');
-  final _catalog=CatalogRepository(),_favorites=FavoritesRepository(),_search=TextEditingController();
+  final _catalog=CatalogRepository(),_favorites=FavoritesRepository(),_profiles=ChildProfileRepository(),_search=TextEditingController();
   List<CatalogProduct> _products=const[];
   Set<String> _favoriteIds={};
   String _stage='전체',_category='전체',_brand='전체';
   CatalogSort _sort=CatalogSort.recommended;
   bool _fitOnly=false,_favoritesOnly=false,_loading=true;
   Object? _error;
+  ChildProfile? _profile;
 
   @override void initState(){super.initState();_load();}
   @override void dispose(){_search.dispose();super.dispose();}
@@ -39,9 +44,9 @@ class _CatalogScreenState extends State<CatalogScreen>{
   Future<void> _load() async {
     setState((){_loading=true;_error=null;});
     try{
-      final results=await Future.wait([_catalog.fetchCatalog(_endpoint),_favorites.load()]);
+      final results=await Future.wait([_catalog.fetchCatalog(_endpoint),_favorites.load(),_profiles.load()]);
       if(!mounted)return;
-      setState((){_products=results[0] as List<CatalogProduct>;_favoriteIds=results[1] as Set<String>;_loading=false;});
+      setState((){_products=results[0] as List<CatalogProduct>;_favoriteIds=results[1] as Set<String>;_profile=results[2] as ChildProfile?;_loading=false;});
     }catch(e){if(mounted)setState((){_error=e;_loading=false;});}
   }
 
@@ -83,12 +88,25 @@ class _CatalogScreenState extends State<CatalogScreen>{
 
   void _reset(){setState((){_search.clear();_stage=_category=_brand='전체';_fitOnly=_favoritesOnly=false;_sort=CatalogSort.recommended;});}
 
+  Future<void> _editProfile() async {
+    final m=TextEditingController(text:_profile?.months.toString()??'');
+    final ht=TextEditingController(text:_profile?.heightCm.toString()??'');
+    final wt=TextEditingController(text:_profile?.weightKg.toString()??'');
+    final saved=await showDialog<ChildProfile>(context:context,builder:(context)=>AlertDialog(title:const Text('아이 정보'),content:Column(mainAxisSize:MainAxisSize.min,children:[
+      TextField(controller:m,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'월령')),
+      TextField(controller:ht,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'키 cm')),
+      TextField(controller:wt,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'몸무게 kg')),
+    ]),actions:[TextButton(onPressed:()=>Navigator.pop(context),child:const Text('취소')),FilledButton(onPressed:(){final p=ChildProfile(months:int.tryParse(m.text)??0,heightCm:double.tryParse(ht.text)??0,weightKg:double.tryParse(wt.text)??0);if(p.months>0&&p.heightCm>0&&p.weightKg>0)Navigator.pop(context,p);},child:const Text('저장'))]));
+    m.dispose();ht.dispose();wt.dispose();
+    if(saved!=null){await _profiles.save(saved);if(mounted)setState(()=>_profile=saved);}
+  }
+
   @override Widget build(BuildContext context){
     final stages=['전체','신생아','베이비','유아','토들러','키즈'];
     final categories=_values((p)=>p.category),brands=_values((p)=>p.brand??'');
     final items=_visible;
     return Scaffold(
-      appBar:AppBar(title:const Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('꼬까픽',style:TextStyle(fontWeight:FontWeight.w900)),Text('우리 아이 옷, 한곳에서.',style:TextStyle(fontSize:11,fontWeight:FontWeight.normal))]),actions:[IconButton(onPressed:()=>setState(()=>_favoritesOnly=!_favoritesOnly),icon:Icon(_favoritesOnly?Icons.favorite:Icons.favorite_border))]),
+      appBar:AppBar(title:const Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('꼬까픽',style:TextStyle(fontWeight:FontWeight.w900)),Text('우리 아이 옷, 한곳에서.',style:TextStyle(fontSize:11,fontWeight:FontWeight.normal))]),actions:[IconButton(tooltip:'아이 정보',onPressed:_editProfile,icon:Icon(_profile==null?Icons.child_care_outlined:Icons.child_care)),IconButton(onPressed:()=>setState(()=>_favoritesOnly=!_favoritesOnly),icon:Icon(_favoritesOnly?Icons.favorite:Icons.favorite_border))]),
       body:_loading?const Center(child:CircularProgressIndicator()):_error!=null?_ErrorView(onRetry:_load):RefreshIndicator(onRefresh:_load,child:CustomScrollView(slivers:[
         SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.all(16),child:Column(children:[
           TextField(controller:_search,onChanged:(_)=>setState((){}),decoration:const InputDecoration(prefixIcon:Icon(Icons.search),hintText:'브랜드, 상품을 검색해보세요',filled:true,border:OutlineInputBorder(borderSide:BorderSide.none,borderRadius:BorderRadius.all(Radius.circular(16))))),
@@ -100,7 +118,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
           Row(children:[Text('${items.length}개',style:Theme.of(context).textTheme.titleMedium),const Spacer(),TextButton(onPressed:_reset,child:const Text('필터 초기화'))])
         ]))),
         if(items.isEmpty)const SliverFillRemaining(child:Center(child:Text('검색 결과가 없어요.')))
-        else SliverPadding(padding:const EdgeInsets.fromLTRB(16,0,16,24),sliver:SliverGrid.builder(gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,crossAxisSpacing:10,mainAxisSpacing:18,childAspectRatio:.60),itemCount:items.length,itemBuilder:(context,i)=>_ProductCard(product:items[i],favorite:_favoriteIds.contains(items[i].id),onFavorite:()=>_toggleFavorite(items[i].id),onTap:()=>showModalBottomSheet(context:context,isScrollControlled:true,showDragHandle:true,builder:(_)=>_ProductDetail(items[i])))))
+        else SliverPadding(padding:const EdgeInsets.fromLTRB(16,0,16,24),sliver:SliverGrid.builder(gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,crossAxisSpacing:10,mainAxisSpacing:18,childAspectRatio:.60),itemCount:items.length,itemBuilder:(context,i)=>_ProductCard(product:items[i],favorite:_favoriteIds.contains(items[i].id),onFavorite:()=>_toggleFavorite(items[i].id),onTap:()=>showModalBottomSheet(context:context,isScrollControlled:true,showDragHandle:true,builder:(_)=>_ProductDetail(items[i],profile:_profile)))))
       ])),
     );
   }
@@ -122,17 +140,25 @@ class _ProductCard extends StatelessWidget{
   ]));
 }
 
-class _ProductDetail extends StatelessWidget{
-  const _ProductDetail(this.product);final CatalogProduct product;
+class _ProductDetail extends StatefulWidget{
+  const _ProductDetail(this.product,{required this.profile});final CatalogProduct product;final ChildProfile? profile;
+  @override State<_ProductDetail> createState()=>_ProductDetailState();
+}
+class _ProductDetailState extends State<_ProductDetail>{
+  final _alerts=PriceAlertRepository(); final _fit=KkokkafitEngine(); int? _target;
+  CatalogProduct get product=>widget.product;
+  @override void initState(){super.initState();_alerts.get(product.id).then((v){if(mounted)setState(()=>_target=v);});}
   String _won(int? n)=>n==null?'가격 확인':'${n.toString().replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d))'),(m)=>',')}원';
   @override Widget build(BuildContext context){final offers=[...product.offers]..sort((a,b)=>(a.price??1<<62).compareTo(b.price??1<<62));return SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:ListView(shrinkWrap:true,children:[
     if(product.imageUrl!=null)ClipRRect(borderRadius:BorderRadius.circular(18),child:AspectRatio(aspectRatio:1.4,child:Image.network(product.imageUrl!,fit:BoxFit.cover))),
     const SizedBox(height:14),if(product.brand!=null)Text(product.brand!,style:const TextStyle(fontWeight:FontWeight.bold)),Text(product.name,style:Theme.of(context).textTheme.titleLarge),const SizedBox(height:8),Text('${product.category} · ${product.stage??'월령 확인'}'),
-    const SizedBox(height:18),Text('꼬까핏',style:Theme.of(context).textTheme.titleMedium),Text(product.fitStatus=='verified'?'공식 브랜드 사이즈표를 확인할 수 있는 상품이에요.':'검증된 공식 사이즈표가 없어 임의로 사이즈를 추천하지 않아요.'),
-    const SizedBox(height:18),Text('판매처 가격 비교',style:Theme.of(context).textTheme.titleMedium),
-    ...offers.asMap().entries.map((e)=>ListTile(contentPadding:EdgeInsets.zero,title:Text(e.value.merchant),subtitle:e.value.originalPrice!=null&&e.value.originalPrice!>(e.value.price??0)?Text('정가 ${_won(e.value.originalPrice)}'):null,trailing:Column(mainAxisAlignment:MainAxisAlignment.center,crossAxisAlignment:CrossAxisAlignment.end,children:[Text(_won(e.value.price),style:const TextStyle(fontWeight:FontWeight.bold)),if(e.key==0&&offers.length>1)const Text('최저가',style:TextStyle(fontSize:11))]))),
-    const SizedBox(height:8),const Text('가격·옵션·배송정보는 판매처에서 최종 확인하세요. 구매 링크 연결은 다음 앱 배치에서 안전한 외부 브라우저 처리로 추가합니다.',style:TextStyle(fontSize:11))
+    const SizedBox(height:18),Text('꼬까핏',style:Theme.of(context).textTheme.titleMedium),Builder(builder:(_){final r=_fit.evaluate(widget.profile,product);return Text(r.status=='recommended'?r.label:r.label);}),
+    const SizedBox(height:18),Text('가격 알림',style:Theme.of(context).textTheme.titleMedium),ListTile(contentPadding:EdgeInsets.zero,title:Text(_target==null?'희망 가격을 설정해보세요':'희망 가격 ${_won(_target)}'),subtitle:_target!=null&&product.minPrice!=null&&product.minPrice!<=_target!?const Text('희망가에 도달했어요'):null,trailing:TextButton(onPressed:_editAlert,child:const Text('설정'))),const SizedBox(height:18),Text('판매처 가격 비교',style:Theme.of(context).textTheme.titleMedium),
+    ...offers.asMap().entries.map((e)=>ListTile(onTap:()=>_openOffer(e.value),contentPadding:EdgeInsets.zero,title:Text(e.value.merchant),subtitle:e.value.originalPrice!=null&&e.value.originalPrice!>(e.value.price??0)?Text('정가 ${_won(e.value.originalPrice)}'):null,trailing:Column(mainAxisAlignment:MainAxisAlignment.center,crossAxisAlignment:CrossAxisAlignment.end,children:[Text(_won(e.value.price),style:const TextStyle(fontWeight:FontWeight.bold)),if(e.key==0&&offers.length>1)const Text('최저가',style:TextStyle(fontSize:11)),const Text('구매하기 ›',style:TextStyle(fontSize:11))]))),
+    const SizedBox(height:8),const Text('가격·옵션·배송정보는 판매처에서 최종 확인하세요. 구매하기는 제휴 추적 링크를 외부 브라우저에서 엽니다.',style:TextStyle(fontSize:11))
   ]));}
+  Future<void> _openOffer(ProductOffer offer) async {final uri=Uri.tryParse(offer.affiliateUrl);if(uri!=null&&(uri.scheme=='https'||uri.scheme=='http'))await launchUrl(uri,mode:LaunchMode.externalApplication);}
+  Future<void> _editAlert() async {final c=TextEditingController(text:_target?.toString()??'');final v=await showDialog<int?>(context:context,builder:(context)=>AlertDialog(title:const Text('희망 가격'),content:TextField(controller:c,keyboardType:TextInputType.number,decoration:const InputDecoration(suffixText:'원')),actions:[TextButton(onPressed:()=>Navigator.pop(context,0),child:const Text('삭제')),FilledButton(onPressed:()=>Navigator.pop(context,int.tryParse(c.text)),child:const Text('저장'))]));c.dispose();if(v!=null){await _alerts.set(product.id,v>0?v:null);if(mounted)setState(()=>_target=v>0?v:null);}}
 }
 
 class _ErrorView extends StatelessWidget{
