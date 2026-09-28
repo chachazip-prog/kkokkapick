@@ -1,6 +1,6 @@
 {
   "source": "adpick_biz",
-  "syncedAt": "2026-09-28T11:39:12.235Z",
+  "syncedAt": "2026-09-28T11:51:48.753Z",
   "queries": [
     "신생아 바디수트",
     "아기 내복",
@@ -18,7 +18,7 @@
     "키즈 원피스",
     "키즈 아우터"
   ],
-  "count": 249,
+  "count": 200,
   "products": [
     {
       "provider": "adpick_biz",
@@ -32,7 +32,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716128?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e9ec6f62",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -46,7 +46,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716129?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6dbe134d",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -60,7 +60,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716130?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6b8deb87",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -74,7 +74,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716131?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3e472e34",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -88,7 +88,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716132?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_581c1575",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -102,7 +102,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716133?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5b35a54a",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -116,35 +116,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716134?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a70042ab",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "신생아 바디수트",
-      "name": "포코우주복딸랑이SET 07T517513/출산신생아 백일선물바디수트",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499452477",
-      "merchant": "롯데홈쇼핑",
-      "merchantDomain": null,
-      "price": 55540,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716135?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_d3574c38",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "신생아 바디수트",
-      "name": "[해외] Righttrack 철인 3 종 경기 레이스 슈트 바디수트, 민소매 사이클링 스킨수트, Mtb 로드 바이크 점프수트, 라이딩 수영 러닝 의류 키트",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499452498",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 35700,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4722473?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_ce6792b8",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -158,7 +130,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716137?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_dd25291e",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -172,7 +144,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716138?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_10f9998f",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -186,7 +158,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716139?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_56b7f79c",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -200,7 +172,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716140?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1f099c94",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -214,7 +186,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716141?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_23979f67",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -228,21 +200,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716142?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_37864aa",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "신생아 바디수트",
-      "name": "아멜슬림우주복헤어밴드SET 07T517503/출산신생아 백일선물바디수트",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499452478",
-      "merchant": "롯데홈쇼핑",
-      "merchantDomain": null,
-      "price": 49300,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716143?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_cfae23d5",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -256,7 +214,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716145?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2b70d90b",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -270,7 +228,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716146?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f2e8b57e",
-      "checkedAt": "2026-09-28T11:36:54.836Z"
+      "checkedAt": "2026-09-28T11:49:32.742Z"
     },
     {
       "provider": "adpick_biz",
@@ -284,7 +242,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716149?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a6e111ef",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -298,7 +256,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716150?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a89c3b59",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -312,7 +270,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716151?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_dacc30ce",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -326,7 +284,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716152?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c105345b",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -340,7 +298,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716153?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a5f80128",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -354,21 +312,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716154?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_55cacea5",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 내복",
-      "name": "[현대백화점] [압소바][백일/돌선물] (아기유아내복) 레나 내의 (AB26D1AN02) +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499452879",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 39960,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716155?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_4155f9ba",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -382,7 +326,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716156?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c2812577",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -396,7 +340,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716158?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5fc9221",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -410,7 +354,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716159?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_27f84bb6",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -424,7 +368,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716160?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_47985276",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -438,7 +382,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716161?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_82c40be1",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -452,7 +396,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4722474?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_532c5bf5",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -466,21 +410,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716163?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c24d9343",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 내복",
-      "name": "[현대백화점] [압소바][백일/돌선물] (아기유아내복) 코나 내의 (AB26D1AN21) +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499452880",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 24590,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716164?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_ae487722",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -494,7 +424,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716165?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_91477b0d",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -508,7 +438,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716167?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8a95d83f",
-      "checkedAt": "2026-09-28T11:37:04.435Z"
+      "checkedAt": "2026-09-28T11:49:42.203Z"
     },
     {
       "provider": "adpick_biz",
@@ -522,7 +452,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716182?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_50aebce6",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -536,7 +466,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716183?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7c4ef751",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -550,7 +480,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716184?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a736cebc",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -564,7 +494,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716186?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e79dd392",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -578,7 +508,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716185?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_97a005af",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -592,7 +522,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716187?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e90d8abd",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -606,7 +536,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716188?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a36dd958",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -620,21 +550,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716189?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b63b4ecb",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 상하복",
-      "name": "[해외] 두꺼운 재질로 제작된 접이식 아기 욕조, 공간 활용도가 높은 휴대용 어린이 욕조, 녹색과 흰색, 가정, 캠핑, 여행 시 유아 목욕에 적합",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499453179",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 18550,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716190?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_2c08b1b5",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -648,7 +564,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716191?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8481638a",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -662,35 +578,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716192?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bbf3b5c7",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 상하복",
-      "name": "마이하우스 방수 어린이집 유치원 유아앞치마 4종 세트 (앞치마+두건+팔토시+가방)",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499453154",
-      "merchant": "오늘의집",
-      "merchantDomain": null,
-      "price": 20900,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716193?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_de68db74",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 상하복",
-      "name": "[NS홈쇼핑] (압소바출산백일돌아기상하복선물)베티오버올상하세트(AB2652SE18)..[이마트몰] [AB2652SE18]",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499453199",
-      "merchant": "SSG",
-      "merchantDomain": null,
-      "price": 105070,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716194?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_352e42e9",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -704,7 +592,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716195?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e83585e",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -718,7 +606,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716196?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1b8c36eb",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -732,7 +620,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716197?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d7154578",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -746,7 +634,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716198?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e176a2dd",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -760,21 +648,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716199?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d7ee3332",
-      "checkedAt": "2026-09-28T11:37:13.650Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 원피스",
-      "name": "[해외] 여자아이 우아한 흰색 성찬식 파티 드레스 유아 어린이 결혼식 생일 졸업식 민소매 비즈 장식 공주 튤 드레스",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499453868",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 20950,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716200?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_837a2111",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:49:50.947Z"
     },
     {
       "provider": "adpick_biz",
@@ -788,7 +662,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716201?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9e7fd4a6",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -802,21 +676,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716202?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b5535133",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 원피스",
-      "name": "스테이지어라운드 아기 방수 어린이집 앞치마 유아 공주 원피스 유치원 에이프런 세트",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499453791",
-      "merchant": "오늘의집",
-      "merchantDomain": null,
-      "price": 29800,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716203?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_e3f58be0",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -830,7 +690,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716204?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8669a27d",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -844,35 +704,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716205?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_86d0a352",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 원피스",
-      "name": "[ 현대백화점 ][블루독베이비] 레드 미니플라워드레스세트 46A1440001 백일 돌 유아 베스트 원피스 아기옷 46A 46A1440001",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499453933",
-      "merchant": "GS SHOP",
-      "merchantDomain": null,
-      "price": 100080,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716206?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_c458256f",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 원피스",
-      "name": "[현대백화점] [블루독베이비]26FW 레드 러브러브 드레스SET46C1340002유아 원피스 백일 돌 선물 아가 4646C1340002 +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499453669",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 104890,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716207?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_7c14a37c",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -886,7 +718,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716208?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4d1e3709",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -900,7 +732,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716210?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e8112ec",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -914,7 +746,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716211?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b76bff5f",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -928,7 +760,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716212?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_67178942",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -942,7 +774,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716213?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_87ed742d",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -956,7 +788,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716214?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_634d8a50",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -970,21 +802,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716215?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6fb43063",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 원피스",
-      "name": "[현대백화점] [블루독베이비]26FW(YE)러블리드레스세트 46C1440001 원피스 유아 백일 돌 선물 아가 46C146C1440001 +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499453670",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 112440,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716216?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_9d4c6b16",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -998,21 +816,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716217?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c0295501",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 원피스",
-      "name": "[해외] 수제 A라인 플라워 걸 드레스 순수 새틴 핑크 프롬 가운 여자아이 드레스 아기 드레스 어린이 맞춤 생일 가운",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499453873",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 60050,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716218?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_bf606b44",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -1026,21 +830,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716219?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_57969257",
-      "checkedAt": "2026-09-28T11:37:22.884Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 가디건",
-      "name": "[해외] 따뜻한 면 소재 오픈 가디건 베이스 조끼 (강아지와 고양이용) 테디 비숑 소형견 아기 애완동물 옷 캐주얼 스타일 야외 데일리룩",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499454388",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 10800,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716220?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_84d8b16b",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:00.474Z"
     },
     {
       "provider": "adpick_biz",
@@ -1054,7 +844,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716221?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4061bff8",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1068,21 +858,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716222?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9e7abd69",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 가디건",
-      "name": "포몽드 슬림 모달 인견 아기 여름 얇은 차렵이불 M/SS",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499454364",
-      "merchant": "오늘의집",
-      "merchantDomain": null,
-      "price": 64900,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716223?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_77cfd2de",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1096,7 +872,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716224?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_25403047",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1110,7 +886,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716225?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_47b555f4",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1124,35 +900,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716234?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_eb8fd17a",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 가디건",
-      "name": "[현대백화점] [에뜨와](에뜨와) (아기가디건)리오CDG (07S521402) (유아/출산/백일/돌선물/조카선물) +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499454317",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 41130,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716227?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_edcdde0a",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 가디건",
-      "name": "아담저지가디건 07T521402/출산백일돌선물조카선물쌍둥이유아가디건",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499454368",
-      "merchant": "롯데홈쇼핑",
-      "merchantDomain": null,
-      "price": 68020,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716228?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_d5caed93",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1166,7 +914,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716229?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_51debac0",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1180,7 +928,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716230?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6362898e",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1194,7 +942,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716231?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6dbdbb19",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1208,7 +956,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716232?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d09533e8",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1222,7 +970,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716233?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2fdc91b",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1236,21 +984,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4720312?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1a7d3eb6",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "아기 가디건",
-      "name": "[현대백화점] [압소바][백일/돌선물] (아기외출복) 코찬 가디건 (AB2672CK02) +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499454318",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 99120,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716235?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_56b13865",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1264,7 +998,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716236?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_195b8624",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1278,7 +1012,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716237?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_92215437",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1292,7 +1026,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716238?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d343c576",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1306,7 +1040,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716239?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e6f7ee1",
-      "checkedAt": "2026-09-28T11:37:32.518Z"
+      "checkedAt": "2026-09-28T11:50:10.717Z"
     },
     {
       "provider": "adpick_biz",
@@ -1320,35 +1054,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716240?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a6c84e95",
-      "checkedAt": "2026-09-28T11:37:41.650Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 상하복",
-      "name": "[ 현대백화점 ][밍크뮤] OR 아미엘뮤포켓상하세트 백일 돌 유아 상하복 등원룩 선물 36A7067204 36A7067204",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455164",
-      "merchant": "GS SHOP",
-      "merchantDomain": null,
-      "price": 54750,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716241?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_1a8f8a6a",
-      "checkedAt": "2026-09-28T11:37:41.650Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 상하복",
-      "name": "[현대백화점] [밍크뮤]PK 아미엘뮤테리상하세트 백일 돌 유아 상하복 등원룩 선물 36A7067206 +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455029",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 60450,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716242?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_ad7c1527",
-      "checkedAt": "2026-09-28T11:37:41.650Z"
+      "checkedAt": "2026-09-28T11:50:19.802Z"
     },
     {
       "provider": "adpick_biz",
@@ -1362,7 +1068,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716243?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4f4cdc54",
-      "checkedAt": "2026-09-28T11:37:41.650Z"
+      "checkedAt": "2026-09-28T11:50:19.802Z"
     },
     {
       "provider": "adpick_biz",
@@ -1376,35 +1082,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716244?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1e554549",
-      "checkedAt": "2026-09-28T11:37:41.650Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 상하복",
-      "name": "[ 현대백화점 ][밍크뮤] NY 아미엘뮤포켓상하세트 백일 돌 유아 상하복 등원룩 선물 36A7067203 36A7067203",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455165",
-      "merchant": "GS SHOP",
-      "merchantDomain": null,
-      "price": 54750,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716245?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_8e3fa73e",
-      "checkedAt": "2026-09-28T11:37:41.650Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 상하복",
-      "name": "[현대백화점] [밍크뮤]BL 아미엘뮤테리상하세트 백일 돌 유아 상하복 등원룩 선물 36A7067205 +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455032",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 60450,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716246?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_8dbc28cb",
-      "checkedAt": "2026-09-28T11:37:41.650Z"
+      "checkedAt": "2026-09-28T11:50:19.802Z"
     },
     {
       "provider": "adpick_biz",
@@ -1418,21 +1096,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716247?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7aeeb358",
-      "checkedAt": "2026-09-28T11:37:41.650Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 티셔츠",
-      "name": "[해외] 아기 생일 파티 모자 남아 여아 천 체크무늬 숫자 100 백일 한국 스타일 어린이 돌잔치 모자",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455348",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 8960,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716254?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_742f0b1c",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:19.802Z"
     },
     {
       "provider": "adpick_biz",
@@ -1446,7 +1110,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716255?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2e70ad0f",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:28.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -1460,21 +1124,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716256?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e881ed72",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 티셔츠",
-      "name": "키친유 베어 물병 350ml 유아 아동 키즈 곰 캐릭터 나들이 소풍 트라이탄물통 어린이집 준비물",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455308",
-      "merchant": "오늘의집",
-      "merchantDomain": null,
-      "price": 4900,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716257?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_a589621d",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:28.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -1488,7 +1138,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716259?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c477562b",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:28.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -1502,7 +1152,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716268?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2bcd9ff7",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:28.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -1516,21 +1166,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716260?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_af9d4aff",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 티셔츠",
-      "name": "[현대백화점] [블루독베이비]26FW(GN)원터프렌즈 스웨트셔츠 46C1433404 티셔츠 유아 백일 돌 선물 아가46C1433404 +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455251",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 52070,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716261?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_b269fd8c",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:28.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -1544,35 +1180,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716262?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8b3526cd",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 티셔츠",
-      "name": "[해외] 아기 100일 기념 행잉 커튼 배너 장식 장면 연출 남아 여아 100일 배경 천 소품",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455349",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 13050,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716263?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_76382e2",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 티셔츠",
-      "name": "베베 유아옷걸이 (하트/비행기모양) 20p",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455292",
-      "merchant": "예스이십사",
-      "merchantDomain": null,
-      "price": 13500,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716264?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_a6aa5d03",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:28.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -1586,21 +1194,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716265?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_74e19a70",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 티셔츠",
-      "name": "홈앤힐 코노 생활방수 이지클린 가죽 아기 1인 소파 의자",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455309",
-      "merchant": "오늘의집",
-      "merchantDomain": null,
-      "price": 99000,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716266?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_6f490ca1",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:28.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -1614,7 +1208,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716267?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9144c636",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:28.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -1628,7 +1222,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716258?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f0ce5fb8",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:28.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -1642,21 +1236,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716269?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f86380e4",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 티셔츠",
-      "name": "[현대백화점] [블루독베이비]26FW(MG)원터프렌즈 스웨트셔츠 46C1433403 티셔츠 유아 백일 돌 선물 아가46C1433403 +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455252",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 52070,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716270?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_d2a60a52",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:28.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -1670,35 +1250,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716271?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d23f097d",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 티셔츠",
-      "name": "[해외] DY0398 티셔츠 금형, 부츠/신발 아기 옷 수지 에폭시 실리콘 금형 공예, 전화 그립을위한 Grippy 간호사 수지 금형",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455350",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 2280,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716272?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_c7ea0a7c",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 티셔츠",
-      "name": "베베 유아옷걸이 (하트/비행기모양) 10p",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455293",
-      "merchant": "예스이십사",
-      "merchantDomain": null,
-      "price": 8900,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716273?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_102d8c6f",
-      "checkedAt": "2026-09-28T11:37:51.094Z"
+      "checkedAt": "2026-09-28T11:50:28.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -1712,7 +1264,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716276?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2fcaf2e0",
-      "checkedAt": "2026-09-28T11:38:00.596Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1726,7 +1278,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716278?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6cc4df2a",
-      "checkedAt": "2026-09-28T11:38:00.596Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1740,7 +1292,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716279?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_38fa9e55",
-      "checkedAt": "2026-09-28T11:38:00.596Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1754,7 +1306,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716280?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2f14af39",
-      "checkedAt": "2026-09-28T11:38:00.596Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1768,7 +1320,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716283?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_12a60388",
-      "checkedAt": "2026-09-28T11:38:00.596Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1782,7 +1334,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716284?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bb954385",
-      "checkedAt": "2026-09-28T11:38:00.597Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1796,7 +1348,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716285?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b6669c1a",
-      "checkedAt": "2026-09-28T11:38:00.597Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1810,7 +1362,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716286?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a36bf957",
-      "checkedAt": "2026-09-28T11:38:00.597Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1824,21 +1376,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716287?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b35d244",
-      "checkedAt": "2026-09-28T11:38:00.597Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 바지",
-      "name": "[NS홈쇼핑] (압소바출산.백일.돌.유아바지)타프팬츠(A15-24101)[35686779][이마트몰] [A15-24101]",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455878",
-      "merchant": "SSG",
-      "merchantDomain": null,
-      "price": 35720,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716288?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_bfebc01",
-      "checkedAt": "2026-09-28T11:38:00.597Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1852,7 +1390,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716289?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e921d216",
-      "checkedAt": "2026-09-28T11:38:00.597Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1866,7 +1404,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716290?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_938abcf4",
-      "checkedAt": "2026-09-28T11:38:00.597Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1880,21 +1418,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716291?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_71159747",
-      "checkedAt": "2026-09-28T11:38:00.597Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 바지",
-      "name": "퍼빗블루머 07T022901/임신출산신생아백일유아바지조카선물",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499455838",
-      "merchant": "롯데홈쇼핑",
-      "merchantDomain": null,
-      "price": 38220,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716292?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_39a3450a",
-      "checkedAt": "2026-09-28T11:38:00.597Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1908,7 +1432,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716294?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8c3726f8",
-      "checkedAt": "2026-09-28T11:38:00.597Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1922,7 +1446,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716295?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d0ae186b",
-      "checkedAt": "2026-09-28T11:38:00.597Z"
+      "checkedAt": "2026-09-28T11:50:37.763Z"
     },
     {
       "provider": "adpick_biz",
@@ -1936,7 +1460,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716299?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a485b74f",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -1950,7 +1474,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716300?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e35bb0fe",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -1964,7 +1488,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716301?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_201a1f09",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -1978,7 +1502,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716302?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3d720c18",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -1992,7 +1516,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716303?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1be3d48b",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -2006,7 +1530,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4720326?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_58880091",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -2020,7 +1544,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716305?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c0211f55",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -2034,7 +1558,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716306?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f7c9814",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -2048,7 +1572,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716307?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_140a9ae7",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -2062,7 +1586,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716308?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_717bbca6",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -2076,7 +1600,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716309?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_56760911",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -2090,21 +1614,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716310?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b1782fdb",
-      "checkedAt": "2026-09-28T11:38:09.745Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 아우터",
-      "name": "[해외] 2025 아기 소녀용 레인코트 코트 십대용 케이프 스타일 방수 판초 유치원 레인코트 소년용 만화 외투 레인 기어",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499456747",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 29200,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716313?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_cb3f2c4e",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:47.097Z"
     },
     {
       "provider": "adpick_biz",
@@ -2118,7 +1628,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716314?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b2f420f7",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:55.972Z"
     },
     {
       "provider": "adpick_biz",
@@ -2132,21 +1642,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716315?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7f8a01e4",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 아우터",
-      "name": "마더웍스 베이지 핑크 유아용 어린이 우비 레인코트 프릴형",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499456725",
-      "merchant": "오늘의집",
-      "merchantDomain": null,
-      "price": 44900,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716316?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_463dca25",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:55.972Z"
     },
     {
       "provider": "adpick_biz",
@@ -2160,35 +1656,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716318?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2dd0de03",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 아우터",
-      "name": "[ 현대백화점 ][밍크뮤] LV 뮤엘플라워패딩아우터우주복 유아 겨울 백일 돌 경량패딩 퀼팅우주복 선물 36A1460302 36A1460302",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499456787",
-      "merchant": "GS SHOP",
-      "merchantDomain": null,
-      "price": 103260,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716319?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_fc081b70",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 아우터",
-      "name": "[현대백화점] [밍크뮤]LV 뮤엘플라워패딩아우터우주복 유아 겨울 백일 돌 경량패딩 퀼팅우주복 선물 36A1460302 +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499456680",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 101200,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716320?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_fb558c1c",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:55.972Z"
     },
     {
       "provider": "adpick_biz",
@@ -2202,7 +1670,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716321?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b5972e0f",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:55.972Z"
     },
     {
       "provider": "adpick_biz",
@@ -2216,7 +1684,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716322?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6fa86e72",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:55.972Z"
     },
     {
       "provider": "adpick_biz",
@@ -2230,7 +1698,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716323?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2cafe31d",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:55.972Z"
     },
     {
       "provider": "adpick_biz",
@@ -2244,7 +1712,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716326?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_be472446",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:55.972Z"
     },
     {
       "provider": "adpick_biz",
@@ -2258,35 +1726,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716332?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_fe92ad23",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 아우터",
-      "name": "[ 현대백화점 ][밍크뮤] IV 베베퀼팅아우터우주복 유아 겨울 백일 돌 경량패딩 선물 36A1211301 36A1211301",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499456788",
-      "merchant": "GS SHOP",
-      "merchantDomain": null,
-      "price": 126130,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716327?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_41487e31",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 아우터",
-      "name": "[현대백화점] [밍크뮤]IV 베베퀼팅아우터우주복 유아 겨울 백일 돌 경량패딩 선물 36A1211301 +할인쿠폰",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499456681",
-      "merchant": "Hmall",
-      "merchantDomain": null,
-      "price": 123610,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716328?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_e2e4c2b4",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:55.972Z"
     },
     {
       "provider": "adpick_biz",
@@ -2300,21 +1740,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716329?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_102b8007",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "유아 아우터",
-      "name": "제이밀크 A5 링제본 수유일지(신생아일지)-아기기차놀이",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499456722",
-      "merchant": "예스이십사",
-      "merchantDomain": null,
-      "price": 11900,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716330?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_670594c1",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:55.972Z"
     },
     {
       "provider": "adpick_biz",
@@ -2328,7 +1754,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716331?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_463f8cd6",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:55.972Z"
     },
     {
       "provider": "adpick_biz",
@@ -2342,7 +1768,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716325?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e7a97c53",
-      "checkedAt": "2026-09-28T11:38:18.905Z"
+      "checkedAt": "2026-09-28T11:50:55.972Z"
     },
     {
       "provider": "adpick_biz",
@@ -2356,7 +1782,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716341?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_fe15ceed",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2370,7 +1796,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716342?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_323fd5ac",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2384,7 +1810,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716343?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bc59481f",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2398,7 +1824,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716344?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9214f3d6",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2412,7 +1838,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716345?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b2dafbc1",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2426,7 +1852,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716346?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2891e110",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2440,7 +1866,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716347?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4a681423",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2454,7 +1880,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716348?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_cedfc3da",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2468,7 +1894,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716349?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_87fec645",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2482,7 +1908,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716350?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d3e8682f",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2496,7 +1922,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716351?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e37f313c",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2510,7 +1936,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716352?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2555ed3d",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2524,7 +1950,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716354?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_477cf9f3",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2538,7 +1964,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716355?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_fac1a2a0",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2552,7 +1978,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716356?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b89759d1",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2566,7 +1992,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716358?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_12439da7",
-      "checkedAt": "2026-09-28T11:38:27.856Z"
+      "checkedAt": "2026-09-28T11:51:05.514Z"
     },
     {
       "provider": "adpick_biz",
@@ -2580,7 +2006,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716360?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_210f530",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2594,7 +2020,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716361?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b2c08ec3",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2608,7 +2034,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716362?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_380b4df6",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2622,7 +2048,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716364?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8ad7b34c",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2636,7 +2062,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716363?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_73370761",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2650,7 +2076,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716365?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7b08d3bf",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2664,7 +2090,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716366?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9ebb72a2",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2678,7 +2104,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716367?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_81ba768d",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2692,7 +2118,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716369?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_67c5519b",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2706,7 +2132,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716370?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_42bbc485",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2720,7 +2146,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716371?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3d8d1d1a",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2734,7 +2160,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716372?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2a927a57",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2748,7 +2174,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716373?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_925c5344",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2762,7 +2188,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716374?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b63b3039",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2776,7 +2202,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716375?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d997dbae",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2790,21 +2216,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716376?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e178683b",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "키즈 티셔츠",
-      "name": "보노 티셔츠 트레이 50P 옷 수납 폴더 반팔티 정리 적층 보관",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499457179",
-      "merchant": "예스이십사",
-      "merchantDomain": null,
-      "price": 23310,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716377?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_99cc8488",
-      "checkedAt": "2026-09-28T11:38:37.220Z"
+      "checkedAt": "2026-09-28T11:51:14.965Z"
     },
     {
       "provider": "adpick_biz",
@@ -2818,7 +2230,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716380?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c2f71106",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2832,7 +2244,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716388?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_286cc25e",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2846,7 +2258,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716383?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8667dd13",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2860,7 +2272,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716384?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f1d79d32",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2874,7 +2286,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716385?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_fb600cdd",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2888,7 +2300,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716386?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c18f12dc",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2902,7 +2314,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716387?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_94d3fcf",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2916,7 +2328,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716382?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_27baa40",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2930,7 +2342,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716389?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4f17ace9",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2944,7 +2356,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716390?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_20511fe3",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2958,7 +2370,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716391?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_13ea79d0",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2972,7 +2384,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716392?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_70c64481",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -2986,21 +2398,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716393?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4de95a96",
-      "checkedAt": "2026-09-28T11:38:47.542Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "키즈 원피스",
-      "name": "[해외] 푹신한 소녀 드레스 핑크 베이비 드레스 트레인 꽃 소녀 드레스 보우 귀여운 아이의 어린이 생일 드레스 Frist Communion",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499457778",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 73600,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716396?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_388a63ad",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:23.744Z"
     },
     {
       "provider": "adpick_biz",
@@ -3014,7 +2412,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716397?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_17b478c2",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3028,21 +2426,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716398?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bf196fbb",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "키즈 원피스",
-      "name": "더웜스 키즈 프릴 원피스 앞치마_Gray",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499457737",
-      "merchant": "오늘의집",
-      "merchantDomain": null,
-      "price": 55000,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716399?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_776d8c08",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3056,7 +2440,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716400?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ef2f6fdf",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3070,7 +2454,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716401?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4644836c",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3084,7 +2468,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716402?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bfb0e4ad",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3098,7 +2482,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716403?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9edaf9c2",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3112,7 +2496,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716404?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a777a0e3",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3126,7 +2510,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716405?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9b10fad0",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3140,7 +2524,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716406?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f7ecc581",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3154,7 +2538,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716407?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d50fdb96",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3168,7 +2552,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716408?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8f5a02d7",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3182,7 +2566,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716410?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_78fe1e32",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3196,7 +2580,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716409?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f723dbc4",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3210,7 +2594,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716411?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_82868ddd",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3224,7 +2608,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716412?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_48b593dc",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3238,7 +2622,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716413?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9073c0cf",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3252,21 +2636,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716414?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4a1d9206",
-      "checkedAt": "2026-09-28T11:38:56.593Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "키즈 아우터",
-      "name": "[해외] 두꺼운 산악 자전거 이너 및 아우터 타이어 (12, 14, 120, 22, 24, 26인치) 어린이용 아우터 타이어 자전거 라이딩 장비 액세서리",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499458034",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 14550,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716416?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_89a22b40",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:32.835Z"
     },
     {
       "provider": "adpick_biz",
@@ -3280,21 +2650,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716417?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d8e5e13",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "키즈 아우터",
-      "name": "Luvo 심플팩트 압축 수납 파우치(XL/XXL)이불 토퍼 아우터 의류 정리 보관 수납 압축팩 - 베이지_XL(60L)",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499458005",
-      "merchant": "오늘의집",
-      "merchantDomain": null,
-      "price": 28000,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716419?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_cd189cb5",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3308,7 +2664,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716420?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_cfb591f5",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3322,7 +2678,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4722477?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_395774b4",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3336,7 +2692,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716422?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e3276807",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3350,7 +2706,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716423?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b5e0aab4",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3364,21 +2720,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716424?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2daaa729",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "키즈 아우터",
-      "name": "[해외] 50cm 70cm 75cm 80cm 90cm 천연 밍크 모피 칼라 DIY 의류 봉제 어린이 모피 칼라 장식을위한 푹신한 트리밍 패브릭",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499458035",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 15250,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716425?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_54bea59e",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3392,7 +2734,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716426?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1e99bf2b",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3406,21 +2748,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716427?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4af0c8b8",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "키즈 아우터",
-      "name": "쁘띠라뺑 몬테스 루프 아늑한 아동 침대(색상 택1) - 내추럴_비수도권",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499458006",
-      "merchant": "오늘의집",
-      "merchantDomain": null,
-      "price": 610000,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716428?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_ffabcb1d",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3434,7 +2762,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716429?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_42a45672",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3448,7 +2776,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4722478?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_97bb3031",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3462,7 +2790,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716431?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ed16c1b3",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3476,7 +2804,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716432?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d6434526",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     },
     {
       "provider": "adpick_biz",
@@ -3490,21 +2818,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716433?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bb3d9191",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
-    },
-    {
-      "provider": "adpick_biz",
-      "query": "키즈 아우터",
-      "name": "[해외] 품질 성인 키즈 매직 옷 폴더 T 셔츠 점퍼 주최자 접이식 빠른 옷 접는 보드 옷 홀더 NJ70919",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=499458036",
-      "merchant": "알리익스프레스",
-      "merchantDomain": null,
-      "price": 5720,
-      "originalPrice": null,
-      "commissionText": null,
-      "affiliateUrl": "https://biz.adpick.co.kr/r4716434?p_data=kkokkapick_catalog",
-      "externalProductId": "adpickbiz_b3d813fc",
-      "checkedAt": "2026-09-28T11:39:05.731Z"
+      "checkedAt": "2026-09-28T11:51:42.249Z"
     }
   ]
 }
