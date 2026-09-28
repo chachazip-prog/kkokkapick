@@ -17,6 +17,8 @@ create table if not exists products (
   brand text,
   name text not null,
   category text not null,
+  stage text,
+  fit_status text not null default 'unverified' check (fit_status in ('unverified','candidate','verified')),
   image_url text,
   min_months integer,
   max_months integer,
@@ -45,6 +47,7 @@ create table if not exists offers (
   affiliate_url text,
   in_stock boolean not null default true,
   checked_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
   unique(provider_id,external_product_id)
 );
 create index if not exists offers_product_stock_idx on offers(product_id,in_stock,price);

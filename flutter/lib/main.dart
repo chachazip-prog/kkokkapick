@@ -32,10 +32,12 @@ class CatalogScreen extends StatefulWidget {
 }
 
 class _CatalogScreenState extends State<CatalogScreen>{
-  static final _endpoint=Uri.parse('https://chachazip-prog.github.io/kkokkapick/data/catalog.json');
+  static final _demoEndpoint=Uri.parse('https://chachazip-prog.github.io/kkokkapick/data/catalog.json');
+  static const _supabaseUrl=String.fromEnvironment('SUPABASE_URL');
+  static const _supabaseAnonKey=String.fromEnvironment('SUPABASE_ANON_KEY');
   final _catalog=CatalogRepository(),_favorites=FavoritesRepository(),_profiles=ChildProfileRepository(),_popupPrefs=PopupPreferenceRepository(),_search=TextEditingController();
-  static const _commercial=CommercialRepository(supabaseUrl:String.fromEnvironment('SUPABASE_URL'),anonKey:String.fromEnvironment('SUPABASE_ANON_KEY'));
-  static const _attribution=CommercialAttributionRepository(supabaseUrl:String.fromEnvironment('SUPABASE_URL'),anonKey:String.fromEnvironment('SUPABASE_ANON_KEY'));
+  static const _commercial=CommercialRepository(supabaseUrl:_supabaseUrl,anonKey:_supabaseAnonKey);
+  static const _attribution=CommercialAttributionRepository(supabaseUrl:_supabaseUrl,anonKey:_supabaseAnonKey);
   List<CatalogProduct> _products=const[];
   Set<String> _favoriteIds={};
   String _stage='전체',_category='전체',_brand='전체';
@@ -52,7 +54,10 @@ class _CatalogScreenState extends State<CatalogScreen>{
   Future<void> _load() async {
     setState((){_loading=true;_error=null;});
     try{
-      final results=await Future.wait([_catalog.fetchCatalog(_endpoint),_favorites.load(),_profiles.load(),_commercial.fetchHome()]);
+      final catalogFuture=_supabaseUrl.isNotEmpty&&_supabaseAnonKey.isNotEmpty
+          ? _catalog.fetchSupabase(supabaseUrl:_supabaseUrl,anonKey:_supabaseAnonKey)
+          : _catalog.fetchCatalog(_demoEndpoint);
+      final results=await Future.wait([catalogFuture,_favorites.load(),_profiles.load(),_commercial.fetchHome()]);
       if(!mounted)return;
       setState((){_products=results[0] as List<CatalogProduct>;_favoriteIds=results[1] as Set<String>;_profile=results[2] as ChildProfile?;final commercial=results[3] as CommercialContent;_campaigns=commercial.campaigns;_loading=false;});
       final commercial=results[3] as CommercialContent;
