@@ -1,5 +1,6 @@
 {
-  "syncedAt": "2026-09-28T00:07:48.799Z",
+  "storagePolicy": "ttl_cache",
+  "syncedAt": "2026-09-28T00:59:29.854Z",
   "sourceCount": 249,
   "productCount": 242,
   "products": [
