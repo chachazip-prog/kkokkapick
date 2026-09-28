@@ -43,11 +43,20 @@ export function groupProducts(rows) {
       });
     }
   }
-  return groups.map(g=>({
-    ...g,
-    offerCount:g.offers.length,
-    minPrice:Math.min(...g.offers.map(o=>o.price||Infinity)),
-    maxPrice:Math.max(...g.offers.map(o=>o.price||0))
-  }));
+  return groups.map(g=>{
+    const seen=new Set();
+    g.offers=g.offers.filter(o=>{
+      const key=(o.merchant||"")+"|"+(o.affiliateUrl||o.externalProductId||"");
+      if(seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+    return {
+      ...g,
+      offerCount:g.offers.length,
+      minPrice:Math.min(...g.offers.map(o=>o.price||Infinity)),
+      maxPrice:Math.max(...g.offers.map(o=>o.price||0))
+    };
+  });
 }
 function toOffer(p){return {merchant:p.merchant,merchantDomain:p.merchantDomain,price:p.price,originalPrice:p.originalPrice,affiliateUrl:p.affiliateUrl,externalProductId:p.externalProductId}}
