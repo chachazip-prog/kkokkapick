@@ -45,4 +45,9 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data/adpick-biz-products.json data/catalog.json data/price-history.json
           git commit -m "chore: refresh ADPICK BIZ baby catalog"
-          git push
+          # main may move while the long provider sync is running (for example,
+          # when product code is updated). Rebase the generated data commit
+          # instead of failing with a non-fast-forward push.
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
