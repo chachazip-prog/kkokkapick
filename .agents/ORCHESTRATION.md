@@ -88,3 +88,11 @@ Invoke Growth/Business only for commercial/growth questions.
 ## Stop conditions
 Stop and ask Product Owner when an escalation condition in root AGENTS.md is reached.
 Do not merge automatically unless Product Owner has explicitly authorized that operating mode.
+
+
+## Auditable QA sign-off
+The QA gate must leave an auditable repository artifact.
+Preferred: a native GitHub review from a distinct reviewer identity when available.
+Fallback: a top-level PR conversation comment beginning with `[QA_AGENT]` and containing the exact QA return envelope.
+A CI success is evidence, not QA_PASS by itself.
+Team Lead may mark a PR ready only after CI success (when configured) and an auditable QA_PASS artifact.
