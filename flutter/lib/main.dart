@@ -6,6 +6,7 @@ import 'repositories/child_profile_repository.dart';
 import 'repositories/price_alert_repository.dart';
 import 'repositories/commercial_repository.dart';
 import 'repositories/popup_preference_repository.dart';
+import 'repositories/commercial_attribution_repository.dart';
 import 'models/commercial_content.dart';
 import 'services/kkokkafit_engine.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -34,6 +35,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
   static final _endpoint=Uri.parse('https://chachazip-prog.github.io/kkokkapick/data/catalog.json');
   final _catalog=CatalogRepository(),_favorites=FavoritesRepository(),_profiles=ChildProfileRepository(),_popupPrefs=PopupPreferenceRepository(),_search=TextEditingController();
   static const _commercial=CommercialRepository(supabaseUrl:String.fromEnvironment('SUPABASE_URL'),anonKey:String.fromEnvironment('SUPABASE_ANON_KEY'));
+  static const _attribution=CommercialAttributionRepository(supabaseUrl:String.fromEnvironment('SUPABASE_URL'),anonKey:String.fromEnvironment('SUPABASE_ANON_KEY'));
   List<CatalogProduct> _products=const[];
   Set<String> _favoriteIds={};
   String _stage='전체',_category='전체',_brand='전체';
@@ -55,6 +57,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
       setState((){_products=results[0] as List<CatalogProduct>;_favoriteIds=results[1] as Set<String>;_profile=results[2] as ChildProfile?;final commercial=results[3] as CommercialContent;_campaigns=commercial.campaigns;_loading=false;});
       final commercial=results[3] as CommercialContent;
       for(final p in commercial.popups){if(!await _popupPrefs.isDismissed(p)){_managedPopup=p;break;}}
+      for(final c in commercial.campaigns.take(3)){_attribution.impression(campaignId:c.id);}
       if(mounted&&_managedPopup!=null)WidgetsBinding.instance.addPostFrameCallback((_)=>_showManagedPopup(_managedPopup!));
     }catch(e){if(mounted)setState((){_error=e;_loading=false;});}
   }
@@ -120,6 +123,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
   Future<void> _openCampaign(CommercialCampaign campaign) async {
     final raw=campaign.destinationUrl;if(raw==null)return;final uri=Uri.tryParse(raw);
     if(uri==null||(uri.scheme!='https'&&uri.scheme!='http'))return;
+    await _attribution.click(campaignId:campaign.id);
     await launchUrl(uri,mode:LaunchMode.externalApplication);
   }
 
