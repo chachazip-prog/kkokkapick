@@ -54,5 +54,6 @@ jobs:
           node --check src/recommendation-ranker.js
           node --check src/popup-policy.js
           node --check src/commercial-client.js
+          node --check src/public-commercial-client.js
           node --check admin/admin.js
           node --check scripts/build-catalog.js
