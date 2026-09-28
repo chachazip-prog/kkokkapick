@@ -18,12 +18,12 @@ const AGABANG_CHART=[
 function fitForProduct(p){
  let m=Number(localStorage.getItem('months')),hh=Number(localStorage.getItem('height')),ww=Number(localStorage.getItem('weight'));
  if(!m||!hh||!ww)return{kind:'profile',html:'<div class="offer"><div><b>꼬까핏</b><br><span>월령·키·몸무게를 등록하면 확인할 수 있어요.</span></div><button class="buy" onclick="closeDetail();openFit()">아이 정보 입력</button></div>'};
- if(/아가방/i.test(p.name||'')){
+ if(p.brand==='아가방'){
    let score=r=>Math.abs(hh-r.h)+(r.w==null?0:Math.abs(ww-r.w)*1.5)+(m<r.lo?(r.lo-m)*.6:m>r.hi?(m-r.hi)*.6:0);
    let best=AGABANG_CHART.slice().sort((a,b)=>score(a)-score(b))[0];
    return{kind:'verified',html:'<div class="offer"><div><b>꼬까핏 · '+esc(best.size)+' 우선 확인</b><br><span>아가방 공식 권장 사이즈표의 연령·신장·몸무게 기준</span></div><span class="fit">공식 기준</span></div><p class="note">아이 체형과 상품별 핏에 따라 달라질 수 있으므로 판매처의 실제 옵션과 상세 사이즈를 최종 확인하세요.</p>'};
  }
- if(/밍크뮤|압소바/i.test(p.name||''))return{kind:'candidate',html:'<div class="offer"><div><b>꼬까핏 · 공식 사이즈표 확인 중</b><br><span>판매처 자료는 확인했지만 브랜드 공식 원문 검증 전이라 사이즈를 추천하지 않아요.</span></div></div>'};
+ if(p.brand==='밍크뮤'||p.brand==='압소바')return{kind:'candidate',html:'<div class="offer"><div><b>꼬까핏 · 공식 사이즈표 확인 중</b><br><span>판매처 자료는 확인했지만 브랜드 공식 원문 검증 전이라 사이즈를 추천하지 않아요.</span></div></div>'};
  return{kind:'unknown',html:'<div class="offer"><div><b>꼬까핏 · 사이즈 정보 확인 필요</b><br><span>검증된 브랜드 사이즈표가 없어 임의로 추천하지 않아요.</span></div></div>'};
 }
 function openDetail(id){let p=products.find(x=>String(x.id)===String(id));let offers=(p.offers||[]).slice().sort((a,b)=>(a.price||Infinity)-(b.price||Infinity));let rows=offers.map((o,i)=>'<div class="offer"><div><b>'+esc(o.merchant||'판매처')+'</b><br><strong>'+won(o.price)+'</strong>'+(i===0&&offers.length>1?' <span class="fit">최저가</span>':'')+'</div><button class="buy" data-buy="'+encodeURIComponent(o.affiliateUrl||'')+'">구매</button></div>').join('');let fit=fitForProduct(p);document.getElementById('detailPanel').innerHTML='<button class="close" onclick="closeDetail()">×</button><div class="detailpic"><img src="'+esc(p.imageUrl)+'" alt=""></div><div class="merchant">'+esc(p.cat)+(offers.length>1?' · '+offers.length+'개 판매처':'')+'</div><h2>'+esc(p.name)+'</h2><h3>꼬까핏</h3>'+fit.html+'<h3>판매처 가격 비교</h3>'+rows+'<p class="note">판매처에서 가격·옵션·배송정보를 최종 확인하세요. 구매 버튼은 제휴 추적 링크로 이동합니다.</p>';document.querySelectorAll('[data-buy]').forEach(x=>x.onclick=()=>window.open(decodeURIComponent(x.dataset.buy),'_blank','noopener'));document.getElementById('detail').classList.add('on')}
