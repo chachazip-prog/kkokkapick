@@ -28,3 +28,23 @@ export function getVerifiedChart(brand) {
   const c=BRAND_SIZE_CHARTS[brand];
   return c?.verified ? c : null;
 }
+
+
+export const BRAND_SIZE_CANDIDATES = Object.freeze({
+  "밍크뮤": {
+    status: "candidate",
+    reason: "Consistent size chart found on multiple retailer product pages, but first-party brand source not yet verified."
+  },
+  "압소바": {
+    status: "candidate",
+    reason: "Detailed STANDARD SIZE chart found on retailer product pages, but first-party brand source not yet verified."
+  },
+  "모이몰른": {
+    status: "unverified",
+    reason: "No first-party size chart verified yet."
+  },
+  "에뜨와": {
+    status: "unverified",
+    reason: "No first-party size chart verified yet."
+  }
+});
