@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
-import 'package:kkokkapick/services/account_sync.dart';
 import 'package:kkokkapick/services/app_session_orchestrator.dart';
 import 'package:kkokkapick/services/authentication.dart';
 import 'package:kkokkapick/services/local_account_data_store.dart';
