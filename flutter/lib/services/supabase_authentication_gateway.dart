@@ -32,7 +32,7 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
   @override Future<void> createEmailAccount({required String email,required String password}) async {
     final r=await _client.post(_auth('signup'),headers:_headers,body:jsonEncode({'email':email,'password':password}));
     _requireSuccess(r);
-    _captureTokens(r);
+    await _captureTokens(r);
   }
 
   @override Future<void> signInWithSocial(AuthMethod method) async {
