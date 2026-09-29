@@ -5,6 +5,7 @@ import '../repositories/catalog_repository.dart';
 import '../repositories/child_profile_repository.dart';
 import '../repositories/favorites_repository.dart';
 import '../repositories/price_alert_repository.dart';
+import '../screens/approved_my_release.dart';
 import '../screens/approved_tabs.dart';
 import '../services/account_snapshot_adapter.dart';
 import '../services/account_sync.dart';
@@ -637,7 +638,7 @@ class _ApprovedCatalogAppState extends State<ApprovedCatalogApp> {
         onProductTap: _openProduct,
         onExplore: () => setState(() => _navIndex = 1),
       ),
-      ApprovedMyTab(
+      ApprovedMyReleaseTab(
         profile: _profile,
         favoriteCount: _favoriteIds.length,
         alertCount: _priceAlerts.length,
