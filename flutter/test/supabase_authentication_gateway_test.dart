@@ -9,6 +9,9 @@ final class _Store implements SessionTokenStore{
   @override Future<StoredSessionTokens?> read()async=>value;
   @override Future<void> write(StoredSessionTokens tokens)async{value=tokens;}
   @override Future<void> clear()async{value=null;}
+}
+
+void main(){
   test('restores stored refresh token and rotates persisted session',()async{
     final store=_Store()..value=const StoredSessionTokens(accessToken:'old-access',refreshToken:'old-refresh');
     final client=MockClient((r)async{
@@ -25,9 +28,6 @@ final class _Store implements SessionTokenStore{
     final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',tokenStore:store,client:MockClient((_)async=>http.Response('{}',401)));
     expect(await g.restoreSession(),isFalse);expect(g.tokens,isNull);expect(store.value,isNull);
   });
-}
-
-void main(){
   test('email sign-in uses Supabase password grant without secret credentials',()async{
     final client=MockClient((r)async{
       expect(r.url.path,endsWith('/auth/v1/token'));
