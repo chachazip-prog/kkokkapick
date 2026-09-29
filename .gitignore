@@ -3,3 +3,12 @@
 !.env.example
 node_modules/
 .DS_Store
+
+# Mobile signing / store credentials
+*.jks
+*.keystore
+*.p12
+*.p8
+*.mobileprovision
+android/key.properties
+flutter/android/key.properties
