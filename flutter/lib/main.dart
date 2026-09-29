@@ -254,11 +254,30 @@ class _CatalogScreenState extends State<CatalogScreen>{
     email.dispose();password.dispose();
   }
 
+  Future<void> _deleteAppData() async {
+    final confirmed=await showDialog<bool>(context:context,builder:(context)=>AlertDialog(
+      title:const Text('앱 데이터를 삭제할까요?'),
+      content:Text(_signedIn?'이 계정의 아이 정보·찜·가격 알림과 이 기기의 동일 데이터를 삭제해요. 계정 자체는 유지됩니다.':'이 기기의 아이 정보·찜·가격 알림을 삭제해요.'),
+      actions:[TextButton(onPressed:()=>Navigator.pop(context,false),child:const Text('취소')),FilledButton(onPressed:()=>Navigator.pop(context,true),child:const Text('삭제'))],
+    ))??false;
+    if(!confirmed||!mounted)return;
+    setState(()=>_authBusy=true);
+    try{
+      if(_signedIn)await _session.account.deleteAppData();
+      await _localAccountData.clearAppData();
+      if(!mounted)return;
+      setState((){_favoriteIds=<String>{};_profile=null;});
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('앱 데이터를 삭제했어요.')));
+    }catch(_){
+      if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('삭제를 완료하지 못했어요. 기기 데이터는 유지했어요.')));
+    }finally{if(mounted)setState(()=>_authBusy=false);}
+  }
+
   Future<void> _showPrivacyData() async {
     await coordinatedModal<void>(context:context,coordinator:_overlays,builder:(context)=>SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
       Text('개인정보 및 데이터',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
       const SizedBox(height:8),const Text('아이 정보·찜·가격 알림은 현재 이 기기에 저장돼요.',style:TextStyle(color:KkokkapickTheme.muted)),
-      const SizedBox(height:16),ListTile(contentPadding:EdgeInsets.zero,leading:Icon(Icons.delete_outline),title:Text('앱 데이터 삭제'),subtitle:Text('계정 자체 삭제와는 별개의 기능이에요.'),trailing:Icon(Icons.chevron_right)),
+      const SizedBox(height:16),ListTile(contentPadding:EdgeInsets.zero,leading:const Icon(Icons.delete_outline),title:const Text('앱 데이터 삭제'),subtitle:const Text('계정 자체 삭제와는 별개의 기능이에요.'),trailing:const Icon(Icons.chevron_right),onTap:_authBusy?null:_deleteAppData),
       const ListTile(contentPadding:EdgeInsets.zero,leading:Icon(Icons.person_off_outlined),title:Text('계정 삭제'),subtitle:Text('로그인 기능 연결 후 제공돼요.'),enabled:false),
     ]))));
   }
