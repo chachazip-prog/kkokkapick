@@ -9,6 +9,18 @@ final class _Session implements AuthSession{
   final String? token;
   @override bool get isAuthenticated=>token!=null;
   @override String? get accessToken=>token;
+  test('requires public Supabase configuration',()async{
+    final g=SupabaseAccountGateway(baseUrl:'',anonKey:'',session:const _Session('user-token'),client:MockClient((_)async=>http.Response('{}',200)));
+    expect(g.fetch(),throwsA(isA<StateError>()));
+  });
+  test('maps malformed success payload to safe domain error',()async{
+    final g=SupabaseAccountGateway(baseUrl:'https://example.supabase.co',anonKey:'public',session:const _Session('user-token'),client:MockClient((_)async=>http.Response('<html>',200)));
+    expect(g.fetch(),throwsA(isA<AccountPayloadException>()));
+  });
+  test('does not leak server response body in HTTP error',()async{
+    final g=SupabaseAccountGateway(baseUrl:'https://example.supabase.co',anonKey:'public',session:const _Session('user-token'),client:MockClient((_)async=>http.Response('sensitive upstream details',401)));
+    try{await g.fetch();fail('expected error');}on AccountGatewayException catch(e){expect(e.statusCode,401);expect(e.toString(),isNot(contains('sensitive')));}
+  });
 }
 
 void main(){
