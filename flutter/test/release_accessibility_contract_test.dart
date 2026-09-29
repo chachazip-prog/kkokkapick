@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kkokkapick/theme/kkokkapick_theme.dart';
+import 'package:kkokkapick/widgets/discovery_experience.dart';
+import 'package:kkokkapick/models/catalog_product.dart';
 
 void main() {
   testWidgets('release shell survives large text scaling and exposes semantic navigation', (tester) async {
@@ -57,3 +59,18 @@ void main() {
     expect(deleted,isFalse);
   });
 }
+
+
+testWidgets('production product card primitives survive release phone widths and 200% text', (tester) async {
+  final product=CatalogProduct(id:'qa-product',name:'긴 상품명도 두 줄 안에서 안정적으로 보여야 하는 베이비 상하복 세트',merchant:'테스트 판매처',brand:'아가방',category:'상하복',stage:'베이비',imageUrl:null,minPrice:32900,offerCount:2,fitStatus:'verified',fitSource:'official_brand_size_guide',offers:const [],availableSizes:const [],sizeGuide:null);
+  for(final width in [320.0,360.0,390.0,430.0]){
+    await tester.binding.setSurfaceSize(Size(width,844));
+    await tester.pumpWidget(MaterialApp(theme:KkokkapickTheme.light(),builder:(context,child)=>MediaQuery(data:MediaQuery.of(context).copyWith(textScaler:const TextScaler.linear(2)),child:child!),home:Scaffold(body:SafeArea(child:ListView(children:[const ServiceGuideStrip(),SizedBox(height:360,child:SwipePickDeck(products:[product],favoriteIds:const {},onFavorite:(_){},onTap:(_){},)),const ProductImage(url:null)])))));
+    await tester.pump();
+    expect(tester.takeException(),isNull,reason:'overflow/exception at width $width');
+    expect(find.text('꼬까픽'),findsWidgets);
+    expect(find.text('꼬까핏'),findsWidgets);
+    expect(find.text('상품 이미지 준비 중'),findsWidgets);
+  }
+  await tester.binding.setSurfaceSize(null);
+});
