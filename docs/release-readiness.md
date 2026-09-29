@@ -35,7 +35,7 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 - Implement authentication and server persistence for favorites, child profile and price alerts.
 - Account deletion path is implemented with authenticated identity/app-data/push-token cleanup and a regression contract; deployed production E2E verification remains.
 - iOS unsigned release generation/build is CI-verified; settle final iOS/Android application identifiers, commit final native release artifacts and configure protected signing before store registration.
-- iOS unsigned release CI is implemented; Android unsigned release/signing-secret guard is tracked in PR #39. Signed-store CI remains gated on final identifiers and protected credentials.
+- iOS unsigned release CI is implemented; Android unsigned release/signing-secret guard is CI-verified and merged. Signed-store CI remains gated on final identifiers and protected credentials.
 - Verify provider production rights and attribution requirements.
 - Price-alert DB pipeline is implemented through bounded retry/dead-letter semantics; connect credentialed FCM/APNs sender, invalid-token cleanup and duplicate mitigation.
 - Public privacy/support/account-deletion release-draft pages are implemented; finalize legal identity/contact/data inventory before submission.
@@ -86,4 +86,4 @@ Further production activation requires information or access that must not be in
 - Account deletion includes directly owned profile/child/favorite/alert/push-device data plus auth identity, with a regression contract; production E2E is still required.
 - macOS CI successfully generated the official Flutter iOS project and built an unsigned release Runner.app.
 - Release operations/rollback and production-activation checklists are committed.
-- Android unsigned release and signing/secret guard is under PR #39 and must not be marked complete until its workflow and independent review pass.
+- Android unsigned release APK, signing-material/secret guard and independent QA/Security review are complete. Public commercial-event opaque-session rate/replay controls and their CI contract are also complete; production edge/load verification remains.
