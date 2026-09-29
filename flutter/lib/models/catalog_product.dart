@@ -74,8 +74,18 @@ class CatalogProduct {
     var value=name.trim();
     // Provider titles often prepend one or more offer-channel tags. They are
     // not product identity: the same canonical item may have multiple offers.
-    value=value.replaceFirst(RegExp(r'^(?:\\s*\\[[^\\]]+\\]\\s*)+'), '');
-    value=value.replaceFirst(RegExp(r'^(?:보리보리|롯데백화점|롯데ON|롯데온|SSG|G마켓|옥션|11번가|GS SHOP|GSSHOP|CJ온스타일|현대Hmall|현대홈쇼핑)\\s*[-:|]?\\s*',caseSensitive:false), '');
+    const channels=['보리보리','롯데백화점','롯데ON','롯데온','SSG','G마켓','옥션','11번가','GS SHOP','GSSHOP','CJ온스타일','현대Hmall','현대홈쇼핑'];
+    // Strip only bracket groups that identify an offer channel. Preserve
+    // bracketed brand/style information such as [에뜨와].
+    var changed=true;
+    while(changed){
+      changed=false;
+      final match=RegExp(r'^\\s*\\[\\s*([^\\]]+)\\s*\\]\\s*').firstMatch(value);
+      if(match!=null&&channels.any((channel)=>match.group(1)!.toLowerCase().contains(channel.toLowerCase()))){
+        value=value.substring(match.end);changed=true;
+      }
+    }
+    value=value.replaceFirst(RegExp('^(?:'+channels.map(RegExp.escape).join('|')+')\\\\s*[-:|]?\\\\s*',caseSensitive:false), '');
     return value.trim().isEmpty?name:value.trim();
   }
 }
