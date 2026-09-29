@@ -51,6 +51,7 @@ jobs:
           node test/commercial-client.test.js
           node test/account-deletion-contract.test.js
           node test/commercial-event-abuse-contract.test.js
+          node test/release-artifact-contract.test.js
       - name: Validate web module syntax
         run: |
           node --check src/kkokkafit-engine.js
