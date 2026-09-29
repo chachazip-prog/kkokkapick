@@ -22,6 +22,7 @@ void main(){
     final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',tokenStore:store,client:client);
     expect(await g.restoreSession(),isTrue);
     expect(g.tokens?.accessToken,'new-access');expect(store.value?.refreshToken,'new-refresh');
+    expect(g.tokens?.userId,store.value?.userId);
   });
   test('failed restore clears invalid stored session',()async{
     final store=_Store()..value=const StoredSessionTokens(accessToken:'old',refreshToken:'bad');
