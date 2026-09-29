@@ -141,7 +141,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
       TextField(controller:wt,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'몸무게 kg')),
     ]),actions:[TextButton(onPressed:()=>Navigator.pop(context),child:const Text('취소')),FilledButton(onPressed:(){final p=ChildProfile(months:int.tryParse(m.text)??0,heightCm:double.tryParse(ht.text)??0,weightKg:double.tryParse(wt.text)??0);if(p.months>0&&p.heightCm>0&&p.weightKg>0)Navigator.pop(context,p);},child:const Text('저장'))]));
     m.dispose();ht.dispose();wt.dispose();
-    if(saved!=null){await _profiles.save(saved);if(mounted)setState(()=>_profile=saved);}
+    if(saved!=null){await _profiles.save(saved);if(mounted)setState(()=>_profile=saved);if(_signedIn){try{await _session.setChildProfile({'birthDate':null,'heightCm':saved.heightCm,'weightKg':saved.weightKg,'usualSize':null,'nickname':null});}catch(_){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('아이 정보는 기기에 저장했어요. 계정 동기화는 나중에 다시 시도할게요.')));}}}
   }
 
 
