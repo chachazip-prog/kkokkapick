@@ -1,25 +1,20 @@
 import fs from "node:fs/promises";
 import { AdpickBizProvider } from "../src/adpick-biz-provider.js";
+import { ADPICK_DISCOVERY_QUERIES as queries, ADPICK_SEARCH_LIMIT, ADPICK_DISCOVERY_PACING_MS } from "../src/adpick-discovery-plan.js";
 
 const apiKey = process.env.ADPICK_BIZ_API_KEY;
 if (!apiKey) throw new Error("Missing ADPICK_BIZ_API_KEY");
 
-const queries = [
-  "신생아 바디수트", "아기 내복", "아기 상하복", "아기 원피스", "아기 가디건",
-  "유아 상하복", "유아 티셔츠", "유아 바지", "유아 원피스", "유아 아우터",
-  "키즈 상하복", "키즈 티셔츠", "키즈 바지", "키즈 원피스", "키즈 아우터"
-];
-
 const provider = new AdpickBizProvider({ apiKey });
 const map = new Map();
 for (const q of queries) {
-  const products = await provider.search(q, { limit: 20 });
+  const products = await provider.search(q, { limit: ADPICK_SEARCH_LIMIT });
   for (const p of products) {
     const key = p.externalProductId || p.affiliateUrl;
     if (!map.has(key)) map.set(key, p);
   }
   // Conservative pacing until the current account's documented quota is verified.
-  await new Promise(r => setTimeout(r, 6500));
+  await new Promise(r => setTimeout(r, ADPICK_DISCOVERY_PACING_MS));
 }
 
 const apparelHints = /(신생아|아기|베이비|유아|키즈|아동|주니어|바디수트|바디슈트|우주복|배냇|내복|상하복|티셔츠|맨투맨|블라우스|셔츠|바지|레깅스|원피스|가디건|아우터|점퍼|자켓|코트|의류)/i;
