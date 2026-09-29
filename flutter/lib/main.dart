@@ -346,16 +346,11 @@ class _CatalogScreenState extends State<CatalogScreen>{
         SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.all(16),child:Column(children:[
           if(_navIndex==0)...[
             _HomeIntro(profile:_profile,onProfile:onEditProfileProxy,onExplore:()=>setState(()=>_navIndex=1)),
-            const SizedBox(height:18),
+            const SizedBox(height:14),
             _CategoryShortcuts(categories:categories,onSelected:(v)=>setState((){_category=v;_navIndex=1;})),
-            if(items.isNotEmpty)...[const SizedBox(height:24),SwipePickDeck(products:items.take(8).toList(),favoriteIds:_favoriteIds,onFavorite:(id)=>_toggleFavorite(id),onTap:(p)=>coordinatedModal(context:context,coordinator:_overlays,builder:(_)=>_ProductDetail(p,profile:_profile,onPriceAlertChanged:_signedIn?(productId,target)=>_session.setPriceAlert(productId,target):null)))],
-            if(_products.any((p)=>p.fitStatus=='verified'))...[
-              const SizedBox(height:18),
-              _KkokkafitTryCard(count:_products.where((p)=>p.fitStatus=='verified').length,profile:_profile,onProfile:_editProfile,onShowProducts:_showKkokkafitProducts),
-            ],
-            const SizedBox(height:18),
-            Row(children:[Expanded(child:Text('더 둘러보기',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800))),TextButton(onPressed:()=>setState(()=>_navIndex=1),child:const Text('전체 보기'))]),
-            const SizedBox(height:8),
+            const SizedBox(height:22),
+            Row(children:[Expanded(child:Text('추천 상품',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800))),TextButton(onPressed:()=>setState(()=>_navIndex=1),child:const Text('전체 보기'))]),
+            const SizedBox(height:10),
           ],
           if(_navIndex==1)TextField(controller:_search,onChanged:(_)=>setState((){}),decoration:const InputDecoration(prefixIcon:Icon(Icons.search),hintText:'브랜드, 상품을 검색해보세요',filled:true,border:OutlineInputBorder(borderSide:BorderSide.none,borderRadius:BorderRadius.all(Radius.circular(16))))),
           if(_navIndex==1)...[
@@ -367,7 +362,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
         ]))),
         if(items.isEmpty)SliverFillRemaining(child:_EmptyCatalogView(onReset:_reset,favoritesOnly:_favoritesOnly))
         else SliverPadding(
-          padding:const EdgeInsets.fromLTRB(16,0,16,24),
+          padding:const EdgeInsets.fromLTRB(16,0,16,96),
           sliver:SliverLayoutBuilder(builder:(context,constraints){
             final columns=constraints.crossAxisExtent>=900?4:constraints.crossAxisExtent>=600?3:2;
             final textScale=MediaQuery.textScalerOf(context).scale(16)/16;
@@ -510,16 +505,21 @@ class _MyPage extends StatelessWidget{
 class _HomeIntro extends StatelessWidget{
   const _HomeIntro({required this.profile,required this.onProfile,required this.onExplore});
   final ChildProfile? profile; final VoidCallback onProfile,onExplore;
-  @override Widget build(BuildContext context)=>Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
-    Text(profile==null?'아기옷 둘러보기':'${profile!.months}개월 추천 상품',style:Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight:FontWeight.w800)),
-    const SizedBox(height:6),Text(profile==null?'여러 판매처의 상품과 가격을 한곳에서 비교해보세요.':'월령에 맞는 상품을 둘러보고 가격을 비교해보세요.',style:const TextStyle(color:KkokkapickTheme.muted,height:1.4)),
-    const SizedBox(height:12),Wrap(spacing:8,runSpacing:8,children:[FilledButton(onPressed:onExplore,child:const Text('상품 보기')),TextButton(onPressed:onProfile,child:Text(profile==null?'아이 정보 등록':'아이 정보 수정'))])
+  @override Widget build(BuildContext context)=>Row(crossAxisAlignment:CrossAxisAlignment.center,children:[
+    Expanded(child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
+      Text(profile==null?'오늘의 아기옷':'${profile!.months}개월 추천',style:Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight:FontWeight.w800)),
+      const SizedBox(height:4),Text(profile==null?'브랜드와 판매처를 한 번에 비교해보세요.':'아이 정보에 맞춰 상품을 살펴보세요.',style:const TextStyle(color:KkokkapickTheme.muted)),
+    ])),
+    TextButton(onPressed:onProfile,child:Text(profile==null?'아이 정보':'정보 수정')),
   ]);
 }
 class _CategoryShortcuts extends StatelessWidget{
   const _CategoryShortcuts({required this.categories,required this.onSelected});
   final List<String> categories; final ValueChanged<String> onSelected;
-  @override Widget build(BuildContext context){final values=categories.where((e)=>e!='전체').take(5).toList();return Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('카테고리로 찾기',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),const SizedBox(height:10),Wrap(spacing:8,runSpacing:8,children:values.map((v)=>ActionChip(avatar:const Icon(Icons.checkroom_outlined,size:18),label:Text(v),onPressed:()=>onSelected(v))).toList())]);}
+  @override Widget build(BuildContext context){
+    final values=categories.where((e)=>e!='전체').take(5).toList();
+    return SizedBox(height:38,child:ListView.separated(scrollDirection:Axis.horizontal,itemCount:values.length,separatorBuilder:(_,__)=>const SizedBox(width:8),itemBuilder:(context,i)=>OutlinedButton(onPressed:()=>onSelected(values[i]),style:OutlinedButton.styleFrom(padding:const EdgeInsets.symmetric(horizontal:14),minimumSize:Size.zero,shape:RoundedRectangleBorder(borderRadius:BorderRadius.circular(8)),side:const BorderSide(color:Color(0xFFE7E5EA))),child:Text(values[i],style:const TextStyle(color:KkokkapickTheme.ink,fontWeight:FontWeight.w600)))));
+  }
 }
 
 
