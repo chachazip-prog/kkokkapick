@@ -57,14 +57,13 @@ class SwipePickDeck extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-    Row(children: [
+    Wrap(alignment:WrapAlignment.spaceBetween,crossAxisAlignment:WrapCrossAlignment.center,spacing:12,runSpacing:4,children: [
       Text('오늘의 스와이프 픽', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900)),
-      const Spacer(),
       const Text('옆으로 넘겨보세요', style: TextStyle(fontSize: 12, color: KkokkapickTheme.muted)),
     ]),
     const SizedBox(height: 10),
     SizedBox(
-      height: 350,
+      height: MediaQuery.textScalerOf(context).scale(16)>24 ? 390 : 350,
       child: PageView.builder(
         controller: PageController(viewportFraction: .88),
         padEnds: false,
@@ -89,9 +88,8 @@ class SwipePickDeck extends StatelessWidget {
                       const SizedBox(height: 3),
                       Text(p.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800)),
                       const SizedBox(height: 6),
-                      Row(children: [
+                      Wrap(spacing:10,runSpacing:6,crossAxisAlignment:WrapCrossAlignment.center,children: [
                         Text(_won(p.minPrice), style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w900)),
-                        const Spacer(),
                         MerchantMark(name: p.merchant),
                       ]),
                     ]),
