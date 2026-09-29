@@ -14,7 +14,7 @@ The release UI should move away from a generic marketplace grid toward a warm, e
 - Home discovery gets a swipe-first recommendation deck before the conventional catalog list. The grid remains available for deliberate comparison/search.
 - Add concise in-product guides for **꼬까픽** (multi-store discovery/price comparison) and **꼬까핏** (child profile + verified size evidence).
 - Merchant identity should use approved official logo assets when redistribution/trademark use is cleared; until then use text merchant marks rather than scraping logos.
-- Splash/logo assets are a Product Owner visual-review gate. Do not commit generated brand marks into production assets before review.
+- Splash/logo/brand-system selection is delegated to Planner + UX/UI for this release cycle. Apply the selected production assets after independent QA; retain Product Owner escalation only for external rights, material cost/privacy/legal exposure, or final public-store actions.
 
 ### Responsive QA matrix
 320 / 360 / 390 / 430 logical-pixel phone widths, compact tablet, large tablet/web preview; text scale 100% and 200%. No horizontal overflow, clipped CTA, overlapping favorite control, or inaccessible filter state is accepted.
