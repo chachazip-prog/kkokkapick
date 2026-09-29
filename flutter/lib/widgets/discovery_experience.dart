@@ -28,10 +28,10 @@ class SwipePickDeck extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-    Row(children: [Expanded(child:Text('지금 둘러볼 옷', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900))),const SizedBox(width:8),const Text('옆으로 보기', style: TextStyle(fontSize: 12, color: KkokkapickTheme.muted))]),
+    Wrap(alignment:WrapAlignment.spaceBetween,crossAxisAlignment:WrapCrossAlignment.center,spacing:10,runSpacing:4,children:[Text('지금 둘러볼 옷',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w900)),const Text('옆으로 보기',style:TextStyle(fontSize:12,color:KkokkapickTheme.muted))]),
     const SizedBox(height: 10),
     SizedBox(
-      height: 350,
+      height: MediaQuery.textScalerOf(context).scale(16)>24 ? 540 : 350,
       child: PageView.builder(
         controller: PageController(viewportFraction: .88),
         padEnds: false,
@@ -56,11 +56,7 @@ class SwipePickDeck extends StatelessWidget {
                       const SizedBox(height: 3),
                       Text(p.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800)),
                       const SizedBox(height: 6),
-                      Row(children: [
-                        Text(_won(p.minPrice), style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w900)),
-                        const Spacer(),
-                        MerchantMark(name: p.merchant),
-                      ]),
+                      Wrap(spacing:10,runSpacing:6,crossAxisAlignment:WrapCrossAlignment.center,children:[Text(_won(p.minPrice),style:const TextStyle(fontSize:17,fontWeight:FontWeight.w900)),MerchantMark(name:p.merchant)]),
                     ]),
                   ),
                 ]),
