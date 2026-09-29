@@ -13,6 +13,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'theme/kkokkapick_theme.dart';
 import 'services/overlay_coordinator.dart';
 import 'services/local_account_data_store.dart';
+import 'services/authentication.dart';
 
 void main()=>runApp(const KkokkapickApp());
 
@@ -147,9 +148,35 @@ class _CatalogScreenState extends State<CatalogScreen>{
     await coordinatedModal<void>(context:context,coordinator:_overlays,builder:(context)=>SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
       Text('계정과 동기화',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
       const SizedBox(height:8),Text('현재 찜 $count개와 아이 정보, 가격 알림은 이 기기에 저장돼 있어요.',style:const TextStyle(color:KkokkapickTheme.muted)),
-      const SizedBox(height:16),const Card(child:ListTile(leading:Icon(Icons.lock_outline),title:Text('로그인 연결 준비 중'),subtitle:Text('로그인만으로 기기 데이터가 자동 업로드되지는 않아요. 동기화 전에 선택을 받아요.'))),
-      const SizedBox(height:8),FilledButton(onPressed:null,child:Text('로그인 연결 후 사용 가능')),
+      const SizedBox(height:16),const Card(child:ListTile(leading:Icon(Icons.lock_outline),title:Text('로그인 후에도 자동 업로드하지 않아요'),subtitle:Text('로그인에 성공하면 이 기기 데이터를 동기화할지 먼저 선택해요.'))),
+      const SizedBox(height:12),Wrap(spacing:8,runSpacing:8,children:[
+        for(final method in [AuthMethod.google,AuthMethod.kakao,AuthMethod.naver,AuthMethod.apple])
+          OutlinedButton(onPressed:()=>_showAuthSetupPending(context,method.label),child:Text(method.label)),
+      ]),
+      const SizedBox(height:8),FilledButton.tonal(onPressed:()=>_showEmailAuthSheet(context),child:const Text('이메일로 계속하기')),
     ]))));
+  }
+
+  void _showAuthSetupPending(BuildContext sheetContext,String provider){
+    Navigator.of(sheetContext).pop();
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text('$provider 로그인은 운영 인증 설정 연결 후 사용할 수 있어요.')));
+  }
+
+  Future<void> _showEmailAuthSheet(BuildContext sheetContext) async {
+    Navigator.of(sheetContext).pop();
+    final email=TextEditingController(),password=TextEditingController();
+    await coordinatedModal<void>(context:context,coordinator:_overlays,isScrollControlled:true,builder:(context)=>SafeArea(child:Padding(
+      padding:EdgeInsets.fromLTRB(20,0,20,MediaQuery.viewInsetsOf(context).bottom+24),
+      child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
+        Text('이메일로 계속하기',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
+        const SizedBox(height:12),TextField(controller:email,keyboardType:TextInputType.emailAddress,autocorrect:false,decoration:const InputDecoration(labelText:'이메일')),
+        const SizedBox(height:10),TextField(controller:password,obscureText:true,decoration:const InputDecoration(labelText:'비밀번호')),
+        const SizedBox(height:14),FilledButton(onPressed:null,child:const Text('로그인')),
+        const SizedBox(height:6),OutlinedButton(onPressed:null,child:const Text('새 계정 만들기')),
+        const SizedBox(height:8),const Text('운영 인증 연결 전에는 입력값을 전송하거나 저장하지 않아요.',style:TextStyle(fontSize:12,color:KkokkapickTheme.muted)),
+      ]),
+    )));
+    email.dispose();password.dispose();
   }
 
   Future<void> _showPrivacyData() async {
