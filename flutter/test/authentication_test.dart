@@ -7,15 +7,7 @@ final class _Gateway implements AuthenticationGateway {
   bool created=false;
   @override Future<void> signInWithSocial(AuthMethod method)async{socialMethod=method;}
   @override Future<void> signInWithEmail({required String email,required String password})async{this.email=email;}
-  @override Future<void> createEmailAccount({required String email,required String password})async{this.email=email;created=true;}  test('rejects social routing for email method',()async{
-    final g=_Gateway();
-    expect(()=>AuthenticationCoordinator(g).social(AuthMethod.emailPassword),throwsArgumentError);
-  });
-  test('rejects empty email credentials',()async{
-    final g=_Gateway();
-    expect(()=>AuthenticationCoordinator(g).email(email:' ',password:'x',create:false),throwsArgumentError);
-    expect(()=>AuthenticationCoordinator(g).email(email:'user@example.com',password:'',create:false),throwsArgumentError);
-  });
+  @override Future<void> createEmailAccount({required String email,required String password})async{this.email=email;created=true;}
 }
 
 void main(){
@@ -28,5 +20,14 @@ void main(){
   test('normalizes email account creation',()async{
     final g=_Gateway();await AuthenticationCoordinator(g).email(email:' USER@Example.COM ',password:'secret',create:true);
     expect(g.email,'user@example.com');expect(g.created,isTrue);
+  });
+  test('rejects social routing for email method',()async{
+    final g=_Gateway();
+    expect(()=>AuthenticationCoordinator(g).social(AuthMethod.emailPassword),throwsArgumentError);
+  });
+  test('rejects empty email credentials',()async{
+    final g=_Gateway();
+    expect(()=>AuthenticationCoordinator(g).email(email:' ',password:'x',create:false),throwsArgumentError);
+    expect(()=>AuthenticationCoordinator(g).email(email:'user@example.com',password:'',create:false),throwsArgumentError);
   });
 }
