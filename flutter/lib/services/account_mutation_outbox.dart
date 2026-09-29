@@ -18,37 +18,38 @@ final class PendingAccountMutation {
 
 /// Durable, coalescing outbox. The latest intent for the same logical key wins.
 final class AccountMutationOutbox {
-  static const _storageKey='account_mutation_outbox_v1';
+  static const _storageKey='account_mutation_outbox_v2';
+  String _key(String owner)=>'${_storageKey}_${owner.replaceAll(RegExp(r'[^A-Za-z0-9._-]'),'_')}';
 
-  Future<List<PendingAccountMutation>> load() async {
+  Future<List<PendingAccountMutation>> load([String owner='guest']) async {
     final p=await SharedPreferences.getInstance();
-    final raw=p.getString(_storageKey);
+    final raw=p.getString(_key(owner));
     if(raw==null||raw.isEmpty)return const [];
     final decoded=jsonDecode(raw);
     if(decoded is! List)return const [];
     return decoded.whereType<Map>().map((e)=>PendingAccountMutation.fromJson(Map<String,Object?>.from(e))).toList();
   }
 
-  Future<void> put(PendingAccountMutation mutation) async {
-    final items=List<PendingAccountMutation>.of(await load());
+  Future<void> put(PendingAccountMutation mutation,[String owner='guest']) async {
+    final items=List<PendingAccountMutation>.of(await load(owner));
     items.removeWhere((x)=>x.kind==mutation.kind&&x.key==mutation.key);
     items.add(mutation);
-    await _save(items);
+    await _save(items,owner);
   }
 
-  Future<void> remove(AccountMutationKind kind,String key) async {
+  Future<void> remove(AccountMutationKind kind,String key,[String owner='guest']) async {
     final items=await load();
     items.removeWhere((x)=>x.kind==kind&&x.key==key);
     await _save(items);
   }
 
-  Future<void> clear() async {
+  Future<void> clear([String owner='guest']) async {
     final p=await SharedPreferences.getInstance();
-    await p.remove(_storageKey);
+    await p.remove(_key(owner));
   }
 
-  Future<void> _save(List<PendingAccountMutation> items) async {
+  Future<void> _save(List<PendingAccountMutation> items,String owner) async {
     final p=await SharedPreferences.getInstance();
-    await p.setString(_storageKey,jsonEncode(items.map((e)=>e.toJson()).toList()));
+    await p.setString(_key(owner),jsonEncode(items.map((e)=>e.toJson()).toList()));
   }
 }
