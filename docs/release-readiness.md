@@ -11,11 +11,11 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 | Product | Core discovery, filtering, favorites, child profile, fit evidence, affiliate handoff exist in prototype/mobile code | Freeze v1 scope and acceptance criteria; remove demo-only behavior |
 | Source/Data | ADPICK ingestion and canonical catalog exist; retention is fail-closed by provider policy | Written production rights/retention classification; production catalog served from approved backend rather than GitHub Pages |
 | UX/UI | Mobile-first discovery flow exists | Accessibility, empty/error/loading states, destructive actions, external-link disclosure, small/large device QA |
-| Mobile | Flutter feature foundation exists; Android Gradle platform baseline is committed and exercised by Flutter CI | iOS platform project still needs verification/creation; final identifiers, signing, icons/launch assets, deep links and release builds remain |
+| Mobile | Flutter feature foundation exists; Android Gradle platform baseline is committed and exercised by Flutter CI | macOS CI now generates the official iOS project and verifies an unsigned release build; final identifiers, committed native release artifacts, signing, icons/launch assets and deep links remain |
 | Backend | Supabase schema/RLS/admin/commercial migrations exist; push token ownership, threshold evaluation, atomic claim/finalize and bounded retry ledger are implemented | Apply migrations to a real environment; connect auth/persistence and a credentialed provider sender/scheduler |
 | Security/Privacy | Secrets are kept out of clients; user tables have owner RLS; admin uses allow-list | Verify grants/view/RPC exposure in deployed Supabase; privacy/data retention inventory; deletion/export behavior; dependency/security review |
 | Commercial | Sponsored content is separated from organic fit ranking; public event boundary excludes conversion/revenue writes | Provider-confirmed conversion ingestion; disclosure QA; abuse/rate controls and event deduplication |
-| Operations | Node/Flutter CI exists; provider sync separated from fast CI | Production environments, backups/restore, monitoring, incident/rollback runbook, release build pipeline |
+| Operations | Node/Flutter CI exists; provider sync separated from fast CI | Production environments, backup/restore rehearsal and monitoring; incident/rollback runbook exists and unsigned mobile release validation is being completed |
 | Store compliance | Not yet packaged | Privacy policy, terms/support/account deletion URLs, Apple privacy answers, Google Data Safety, store metadata/screenshots/reviewer access |
 
 ## Findings corrected in this review
@@ -33,12 +33,12 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 - Create production Supabase project/environment and apply/verify migrations.
 - Replace GitHub Pages catalog endpoint in Flutter with the approved production read boundary.
 - Implement authentication and server persistence for favorites, child profile and price alerts.
-- Implement account deletion and personal-data deletion path.
-- Verify/create the remaining iOS platform project and settle final iOS/Android application identifiers before store registration.
-- Add release build/signing CI without committing signing secrets.
+- Account deletion path is implemented with authenticated identity/app-data/push-token cleanup and a regression contract; deployed production E2E verification remains.
+- iOS unsigned release generation/build is CI-verified; settle final iOS/Android application identifiers, commit final native release artifacts and configure protected signing before store registration.
+- iOS unsigned release CI is implemented; Android unsigned release/signing-secret guard is tracked in PR #39. Signed-store CI remains gated on final identifiers and protected credentials.
 - Verify provider production rights and attribution requirements.
 - Price-alert DB pipeline is implemented through bounded retry/dead-letter semantics; connect credentialed FCM/APNs sender, invalid-token cleanup and duplicate mitigation.
-- Add privacy/support/account-deletion web pages.
+- Public privacy/support/account-deletion release-draft pages are implemented; finalize legal identity/contact/data inventory before submission.
 
 ### P1 — required before store submission
 - End-to-end tests for sign-in, profile, search, fit, favorite, alert, merchant handoff and deletion.
@@ -79,3 +79,11 @@ Completed without production credentials or paid-service activation:
 
 ### Current owner/external-system boundary
 Further production activation requires information or access that must not be invented in-repo: a production Supabase environment, chosen authentication providers, final application identifiers/signing, FCM/APNs credentials/configuration, provider production-rights confirmation, and legal/business identity/URLs for store/privacy materials. Actual store submission remains an explicit Product Owner gate.
+
+
+### 2026-09-29 release-foundation progress
+- Public privacy, support and account-deletion draft pages are present without invented legal/contact identity.
+- Account deletion includes directly owned profile/child/favorite/alert/push-device data plus auth identity, with a regression contract; production E2E is still required.
+- macOS CI successfully generated the official Flutter iOS project and built an unsigned release Runner.app.
+- Release operations/rollback and production-activation checklists are committed.
+- Android unsigned release and signing/secret guard is under PR #39 and must not be marked complete until its workflow and independent review pass.
