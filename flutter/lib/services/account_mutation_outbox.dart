@@ -30,7 +30,7 @@ final class AccountMutationOutbox {
   }
 
   Future<void> put(PendingAccountMutation mutation) async {
-    final items=await load();
+    final items=List<PendingAccountMutation>.of(await load());
     items.removeWhere((x)=>x.kind==mutation.kind&&x.key==mutation.key);
     items.add(mutation);
     await _save(items);
