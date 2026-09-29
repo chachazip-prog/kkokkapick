@@ -26,7 +26,7 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
   @override Future<void> signInWithEmail({required String email,required String password}) async {
     final r=await _client.post(_auth('token?grant_type=password'),headers:_headers,body:jsonEncode({'email':email,'password':password}));
     _requireSuccess(r);
-    await _captureTokens(r);
+    if(!await _captureTokens(r))throw const AuthenticationPayloadException();
   }
 
   @override Future<void> createEmailAccount({required String email,required String password}) async {
