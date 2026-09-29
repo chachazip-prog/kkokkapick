@@ -74,7 +74,7 @@ final class AppSessionOrchestrator {
     }
   }
 
-  String get _outboxOwner=>session.accessToken??'guest';
+  String get _outboxOwner=>authentication.tokens?.userId??session.accessToken??'guest';
 
   Future<void> _sendOrQueue(PendingAccountMutation m) async {
     final owner=_outboxOwner;

@@ -3,8 +3,9 @@ import 'package:http/http.dart' as http;
 import 'authentication.dart';
 
 final class AuthTokens {
-  const AuthTokens({required this.accessToken,required this.refreshToken});
+  const AuthTokens({required this.accessToken,required this.refreshToken,this.userId});
   final String accessToken,refreshToken;
+  final String? userId;
 }
 
 final class SupabaseAuthenticationGateway implements AuthenticationGateway {
@@ -50,8 +51,10 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
     if(access is! String||access.isEmpty||refresh is! String||refresh.isEmpty){
       throw const AuthenticationPayloadException();
     }
-    _tokens=AuthTokens(accessToken:access,refreshToken:refresh);
-    await tokenStore?.write(StoredSessionTokens(accessToken:access,refreshToken:refresh));
+    final user=raw['user'];
+    final userId=user is Map&&user['id'] is String?(user['id'] as String):_tokens?.userId;
+    _tokens=AuthTokens(accessToken:access,refreshToken:refresh,userId:userId);
+    await tokenStore?.write(StoredSessionTokens(accessToken:access,refreshToken:refresh,userId:userId));
     return true;
   }
 
@@ -66,7 +69,7 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
   Future<bool> restoreSession() async {
     final stored=await tokenStore?.read();
     if(stored==null)return false;
-    _tokens=AuthTokens(accessToken:stored.accessToken,refreshToken:stored.refreshToken);
+    _tokens=AuthTokens(accessToken:stored.accessToken,refreshToken:stored.refreshToken,userId:stored.userId);
     try{
       await refreshSession();
       return true;

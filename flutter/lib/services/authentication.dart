@@ -47,6 +47,7 @@ abstract interface class SessionTokenStore {
 }
 
 final class StoredSessionTokens {
-  const StoredSessionTokens({required this.accessToken,required this.refreshToken});
+  const StoredSessionTokens({required this.accessToken,required this.refreshToken,this.userId});
   final String accessToken,refreshToken;
+  final String? userId;
 }

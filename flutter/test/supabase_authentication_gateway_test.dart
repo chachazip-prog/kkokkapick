@@ -22,6 +22,7 @@ void main(){
     final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',tokenStore:store,client:client);
     expect(await g.restoreSession(),isTrue);
     expect(g.tokens?.accessToken,'new-access');expect(store.value?.refreshToken,'new-refresh');
+    expect(g.tokens?.userId,store.value?.userId);
   });
   test('failed restore clears invalid stored session',()async{
     final store=_Store()..value=const StoredSessionTokens(accessToken:'old',refreshToken:'bad');
@@ -102,5 +103,12 @@ void main(){
   test('refresh requires an existing authenticated session',()async{
     final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public');
     expect(()=>g.refreshSession(),throwsA(isA<AuthSessionUnavailable>()));
+  });
+  test('captures stable user id from authenticated payload',() async{
+    final store=_Store();
+    final gateway=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',tokenStore:store,
+      client:MockClient((r)async=>http.Response('{"access_token":"a","refresh_token":"r","user":{"id":"user-123"}}',200)));
+    await gateway.signInWithEmail(email:'a@b.com',password:'password');
+    expect(gateway.tokens?.userId,'user-123');
   });
 }
