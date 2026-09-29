@@ -1,0 +1,29 @@
+name: Release preflight
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      require_production_config:
+        description: "Require configured production public backend"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  repository-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      REQUIRE_PRODUCTION_CONFIG: ${{ inputs.require_production_config && '1' || '0' }}
+      SUPABASE_URL: ${{ secrets.PRODUCTION_SUPABASE_URL }}
+      SUPABASE_ANON_KEY: ${{ secrets.PRODUCTION_SUPABASE_ANON_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run release preflight
+        run: bash scripts/release-preflight.sh
