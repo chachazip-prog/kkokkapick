@@ -506,29 +506,6 @@ class _CategoryShortcuts extends StatelessWidget{
 }
 
 
-class _CatalogLoadingView extends StatelessWidget{
-  const _CatalogLoadingView();
-  @override Widget build(BuildContext context)=>SafeArea(child:Column(children:[
-    const LinearProgressIndicator(minHeight:2),
-    Expanded(child:ListView(padding:const EdgeInsets.all(16),children:[
-      Container(height:92,decoration:BoxDecoration(color:KkokkapickTheme.fit,borderRadius:BorderRadius.circular(18)),child:const Center(child:Column(mainAxisSize:MainAxisSize.min,children:[Icon(Icons.checkroom_outlined,size:30),SizedBox(height:8),Text('꼬까픽이 우리 아이 옷을 찾고 있어요',style:TextStyle(fontWeight:FontWeight.w700))]))),
-      const SizedBox(height:18),
-      const _LoadingBar(width:double.infinity,height:48),
-      const SizedBox(height:18),
-      Row(children:const [Expanded(child:_LoadingCard()),SizedBox(width:10),Expanded(child:_LoadingCard())]),
-    ])),
-  ]));
-}
-class _LoadingBar extends StatelessWidget{
-  const _LoadingBar({required this.width,required this.height});final double width,height;
-  @override Widget build(BuildContext context)=>Container(width:width,height:height,decoration:BoxDecoration(color:KkokkapickTheme.surface,borderRadius:BorderRadius.circular(14)));
-}
-class _LoadingCard extends StatelessWidget{
-  const _LoadingCard();
-  @override Widget build(BuildContext context)=>Column(crossAxisAlignment:CrossAxisAlignment.start,children:[const AspectRatio(aspectRatio:1,child:_LoadingBar(width:double.infinity,height:120)),const SizedBox(height:9),const _LoadingBar(width:90,height:12),const SizedBox(height:7),const _LoadingBar(width:double.infinity,height:16),const SizedBox(height:7),const _LoadingBar(width:72,height:16)]);
-}
-
-
 class _SponsoredSection extends StatelessWidget{
   const _SponsoredSection({required this.campaigns,required this.onTap});
   final List<CommercialCampaign> campaigns; final ValueChanged<CommercialCampaign> onTap;
