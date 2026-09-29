@@ -19,7 +19,7 @@ final class PendingAccountMutation {
 /// Durable, coalescing outbox. The latest intent for the same logical key wins.
 final class AccountMutationOutbox {
   static const _storageKey='account_mutation_outbox_v2';
-  String _key(String owner)=>'${_storageKey}_${owner.replaceAll(RegExp(r'[^A-Za-z0-9._-]'),'_')}';
+  String _key(String owner)=>'${_storageKey}_${base64Url.encode(utf8.encode(owner)).replaceAll('=','')}';
 
   Future<List<PendingAccountMutation>> load([String owner='guest']) async {
     final p=await SharedPreferences.getInstance();
