@@ -6,9 +6,9 @@ class ProductImage extends StatelessWidget {
   const ProductImage({super.key,required this.url,this.fit=BoxFit.cover});
   final String? url; final BoxFit fit;
   @override Widget build(BuildContext context){
-    final fallback=Container(decoration:const BoxDecoration(gradient:LinearGradient(begin:Alignment.topLeft,end:Alignment.bottomRight,colors:[KkokkapickTheme.lavenderSoft,KkokkapickTheme.surface])),alignment:Alignment.center,child:const Column(mainAxisSize:MainAxisSize.min,children:[Icon(Icons.image_outlined,size:30,color:KkokkapickTheme.lavender),SizedBox(height:7),Text('이미지를 불러올 수 없어요',style:TextStyle(fontSize:11,color:KkokkapickTheme.muted))]));
+    final fallback=Container(decoration:const BoxDecoration(gradient:LinearGradient(begin:Alignment.topLeft,end:Alignment.bottomRight,colors:[KkokkapickTheme.lavenderSoft,KkokkapickTheme.surface])),alignment:Alignment.center,child:const Icon(Icons.image_outlined,size:28,color:Color(0xFFB8B5BC)));
     if(url==null||url!.trim().isEmpty)return fallback;
-    return Image.network(url!,fit:fit,webHtmlElementStrategy:WebHtmlElementStrategy.fallback,loadingBuilder:(context,child,progress)=>progress==null?child:Container(color:KkokkapickTheme.surface,alignment:Alignment.center,child:const SizedBox(width:24,height:24,child:CircularProgressIndicator(strokeWidth:2))),errorBuilder:(_,__,___)=>fallback);
+    return Image.network(url!,fit:fit,webHtmlElementStrategy:WebHtmlElementStrategy.prefer,loadingBuilder:(context,child,progress)=>progress==null?child:Container(color:KkokkapickTheme.surface,alignment:Alignment.center,child:const SizedBox(width:24,height:24,child:CircularProgressIndicator(strokeWidth:2))),errorBuilder:(_,__,___)=>fallback);
   }
 }
 
@@ -56,7 +56,7 @@ class SwipePickDeck extends StatelessWidget {
                       const SizedBox(height: 3),
                       Text(p.displayName, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800)),
                       const SizedBox(height: 6),
-                      Wrap(spacing:10,runSpacing:6,crossAxisAlignment:WrapCrossAlignment.center,children:[Text(_won(p.minPrice),style:const TextStyle(fontSize:17,fontWeight:FontWeight.w900)),MerchantMark(name:p.merchant)]),
+                      Text(_won(p.minPrice),style:const TextStyle(fontSize:17,fontWeight:FontWeight.w900)),
                     ]),
                   ),
                 ]),

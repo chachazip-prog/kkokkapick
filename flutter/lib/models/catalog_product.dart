@@ -72,8 +72,10 @@ class CatalogProduct {
   String get merchant=>offers.isEmpty?'판매처':offers.first.merchant;
   String get displayName {
     var value=name.trim();
-    value=value.replaceFirst(RegExp(r'^\\s*\\[[^\\]]+\\]\\s*'), '');
-    value=value.replaceFirst(RegExp(r'^(?:보리보리|롯데백화점|GS SHOP|GSSHOP)\\s*[-:|]?\\s*',caseSensitive:false), '');
+    // Provider titles often prepend one or more offer-channel tags. They are
+    // not product identity: the same canonical item may have multiple offers.
+    value=value.replaceFirst(RegExp(r'^(?:\\s*\\[[^\\]]+\\]\\s*)+'), '');
+    value=value.replaceFirst(RegExp(r'^(?:보리보리|롯데백화점|롯데ON|롯데온|SSG|G마켓|옥션|11번가|GS SHOP|GSSHOP|CJ온스타일|현대Hmall|현대홈쇼핑)\\s*[-:|]?\\s*',caseSensitive:false), '');
     return value.trim().isEmpty?name:value.trim();
   }
 }
