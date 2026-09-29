@@ -18,3 +18,6 @@ iOS native project generation is now exercised on macOS CI from the Flutter sour
 - deep-link/auth callback schemes match enabled login providers;
 - no production secrets compiled into the app;
 - privacy/support/account-deletion URLs are production reachable.
+
+## Final application identifier decision
+Product Owner approved `com.kkokkapick.app` for both Android applicationId and iOS bundle ID. Android is already configured with this identifier; disposable iOS CI now rewrites and verifies the same identifier before unsigned release build. Store registration/signing remains deferred.
