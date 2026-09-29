@@ -8,7 +8,7 @@ for(const p of ['.github/workflows/sync-adpick.yml','.github/workflows/sync-adpi
    if(!s.includes('main moved during provider sync; refusing stale catalog publication'))throw new Error(p+' must reject stale generated catalog');
    if(s.includes('git rebase origin/main'))throw new Error(p+' must not rebase stale provider data onto a newer main');
  }
- if(p.endsWith('sync-adpick-biz.yml')){
+ if(p.endsWith('sync-adpick.yml')){\n   if(!s.includes('main moved during provider sync; refusing stale catalog publication'))throw new Error(p+' must reject stale generated catalog');\n   if(s.includes('git rebase origin/main'))throw new Error(p+' must not rebase stale provider data onto a newer main');\n }\n if(p.endsWith('sync-adpick-biz.yml')){
    if(!s.includes('Refusing legacy discovery plan'))throw new Error(p+' must reject legacy discovery plan');
    if(!s.includes('main moved during provider sync; refusing stale catalog publication'))throw new Error(p+' must reject stale generated catalog');
    if(s.includes('git rebase origin/main'))throw new Error(p+' must not rebase stale provider data onto a newer main');
