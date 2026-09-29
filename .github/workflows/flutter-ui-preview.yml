@@ -1,0 +1,36 @@
+name: Flutter UI preview
+
+on:
+  pull_request:
+    paths:
+      - "flutter/**"
+      - ".github/workflows/flutter-ui-preview.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview-readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - working-directory: flutter
+        run: flutter pub get
+      - working-directory: flutter
+        run: flutter analyze
+      - working-directory: flutter
+        run: flutter test
+      - name: Verify preview platform boundary
+        run: |
+          test -f flutter/lib/main.dart
+          if [ -d flutter/web ]; then
+            echo "Flutter web platform present; browser preview can be built."
+          else
+            echo "::notice::Flutter web platform is not committed. External browser preview remains gated until the web platform is intentionally added."
+          fi
