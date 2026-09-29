@@ -164,6 +164,8 @@ class _CatalogScreenState extends State<CatalogScreen>{
 
   Future<void> _showEmailAuthSheet(BuildContext sheetContext) async {
     Navigator.of(sheetContext).pop();
+    await Future<void>.delayed(Duration.zero);
+    if(!mounted)return;
     final email=TextEditingController(),password=TextEditingController();
     await coordinatedModal<void>(context:context,coordinator:_overlays,builder:(context)=>SafeArea(child:Padding(
       padding:EdgeInsets.fromLTRB(20,0,20,MediaQuery.viewInsetsOf(context).bottom+24),
