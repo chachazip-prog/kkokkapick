@@ -6,9 +6,9 @@ class ProductImage extends StatelessWidget {
   const ProductImage({super.key,required this.url,this.fit=BoxFit.cover});
   final String? url; final BoxFit fit;
   @override Widget build(BuildContext context){
-    final fallback=Container(color:KkokkapickTheme.surface,alignment:Alignment.center,child:const Column(mainAxisSize:MainAxisSize.min,children:[Icon(Icons.checkroom_outlined,size:34,color:KkokkapickTheme.muted),SizedBox(height:6),Text('상품 이미지 준비 중',style:TextStyle(fontSize:11,color:KkokkapickTheme.muted))]));
+    final fallback=Container(color:KkokkapickTheme.surface,alignment:Alignment.center,child:const Column(mainAxisSize:MainAxisSize.min,children:[Icon(Icons.checkroom_outlined,size:34,color:KkokkapickTheme.muted),SizedBox(height:6),Text('이미지를 불러올 수 없어요',style:TextStyle(fontSize:11,color:KkokkapickTheme.muted))]));
     if(url==null||url!.trim().isEmpty)return fallback;
-    return Image.network(url!,fit:fit,loadingBuilder:(context,child,progress)=>progress==null?child:Container(color:KkokkapickTheme.surface,alignment:Alignment.center,child:const SizedBox(width:24,height:24,child:CircularProgressIndicator(strokeWidth:2))),errorBuilder:(_,__,___)=>fallback);
+    return Image.network(url!,fit:fit,webHtmlElementStrategy:WebHtmlElementStrategy.fallback,loadingBuilder:(context,child,progress)=>progress==null?child:Container(color:KkokkapickTheme.surface,alignment:Alignment.center,child:const SizedBox(width:24,height:24,child:CircularProgressIndicator(strokeWidth:2))),errorBuilder:(_,__,___)=>fallback);
   }
 }
 
@@ -28,7 +28,7 @@ class SwipePickDeck extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-    Wrap(alignment:WrapAlignment.spaceBetween,crossAxisAlignment:WrapCrossAlignment.center,spacing:10,runSpacing:4,children:[Text('지금 둘러볼 옷',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w900)),const Text('옆으로 보기',style:TextStyle(fontSize:12,color:KkokkapickTheme.muted))]),
+    Row(children:[Expanded(child:Text('추천 상품',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800))),const Icon(Icons.swipe_left_alt,size:18,color:KkokkapickTheme.muted)]),
     const SizedBox(height: 10),
     SizedBox(
       height: MediaQuery.textScalerOf(context).scale(16)>24 ? 540 : 350,
