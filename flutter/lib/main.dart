@@ -323,7 +323,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
           Row(children:[Text('${items.length}개',style:Theme.of(context).textTheme.titleMedium),const Spacer(),TextButton(onPressed:_reset,child:const Text('필터 초기화'))])],
         ]))),
         if(items.isEmpty)SliverFillRemaining(child:_EmptyCatalogView(onReset:_reset,favoritesOnly:_favoritesOnly))
-        else SliverPadding(padding:const EdgeInsets.fromLTRB(16,0,16,24),sliver:SliverGrid.builder(gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,crossAxisSpacing:10,mainAxisSpacing:18,childAspectRatio:.60),itemCount:items.length,itemBuilder:(context,i)=>_ProductCard(product:items[i],favorite:_favoriteIds.contains(items[i].id),onFavorite:()=>_toggleFavorite(items[i].id),onTap:()=>coordinatedModal(context:context,coordinator:_overlays,builder:(_)=>_ProductDetail(items[i],profile:_profile)))))
+        else SliverPadding(padding:const EdgeInsets.fromLTRB(16,0,16,24),sliver:SliverGrid.builder(gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,crossAxisSpacing:10,mainAxisSpacing:18,childAspectRatio:.60),itemCount:items.length,itemBuilder:(context,i)=>_ProductCard(product:items[i],favorite:_favoriteIds.contains(items[i].id),onFavorite:()=>_toggleFavorite(items[i].id),onTap:()=>coordinatedModal(context:context,coordinator:_overlays,builder:(_)=>_ProductDetail(items[i],profile:_profile,onPriceAlertChanged:_signedIn?(productId,target)=>_session.setPriceAlert(productId,target):null)))))
       ])),
     );
   }
@@ -346,7 +346,7 @@ class _ProductCard extends StatelessWidget{
 }
 
 class _ProductDetail extends StatefulWidget{
-  const _ProductDetail(this.product,{required this.profile});final CatalogProduct product;final ChildProfile? profile;
+  const _ProductDetail(this.product,{required this.profile,this.onPriceAlertChanged});final CatalogProduct product;final ChildProfile? profile;final Future<void> Function(String,int?)? onPriceAlertChanged;
   @override State<_ProductDetail> createState()=>_ProductDetailState();
 }
 class _ProductDetailState extends State<_ProductDetail>{
@@ -363,7 +363,7 @@ class _ProductDetailState extends State<_ProductDetail>{
     const SizedBox(height:8),const Text('가격·옵션·배송정보는 판매처에서 최종 확인하세요. 구매하기는 제휴 추적 링크를 외부 브라우저에서 엽니다.',style:TextStyle(fontSize:11))
   ])));}
   Future<void> _openOffer(ProductOffer offer) async {final uri=Uri.tryParse(offer.affiliateUrl);if(uri==null||(uri.scheme!='https'&&uri.scheme!='http')){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('구매 링크를 확인할 수 없어요.')));return;}final opened=await launchUrl(uri,mode:LaunchMode.externalApplication);if(!opened&&mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('판매처를 열지 못했어요. 잠시 후 다시 시도해 주세요.')));}
-  Future<void> _editAlert() async {final c=TextEditingController(text:_target?.toString()??'');final v=await showDialog<int?>(context:context,builder:(context)=>AlertDialog(title:const Text('희망 가격'),content:TextField(controller:c,keyboardType:TextInputType.number,decoration:const InputDecoration(suffixText:'원')),actions:[TextButton(onPressed:()=>Navigator.pop(context,0),child:const Text('삭제')),FilledButton(onPressed:()=>Navigator.pop(context,int.tryParse(c.text)),child:const Text('저장'))]));c.dispose();if(v!=null){await _alerts.set(product.id,v>0?v:null);if(mounted)setState(()=>_target=v>0?v:null);}}
+  Future<void> _editAlert() async {final c=TextEditingController(text:_target?.toString()??'');final v=await showDialog<int?>(context:context,builder:(context)=>AlertDialog(title:const Text('희망 가격'),content:TextField(controller:c,keyboardType:TextInputType.number,decoration:const InputDecoration(suffixText:'원')),actions:[TextButton(onPressed:()=>Navigator.pop(context,0),child:const Text('삭제')),FilledButton(onPressed:()=>Navigator.pop(context,int.tryParse(c.text)),child:const Text('저장'))]));c.dispose();if(v!=null){final target=v>0?v:null;await _alerts.set(product.id,target);if(mounted)setState(()=>_target=target);final sync=widget.onPriceAlertChanged;if(sync!=null){try{await sync(product.id,target);}catch(_){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('가격 알림은 기기에 저장했어요. 계정 동기화는 나중에 다시 시도할게요.')));}}}}
 }
 
 class _ErrorView extends StatelessWidget{
