@@ -14,6 +14,7 @@ concurrency:
 
 jobs:
   sync:
+    if: github.repository == 'chachazip-prog/kkokkapick'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
