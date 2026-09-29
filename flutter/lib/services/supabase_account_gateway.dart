@@ -15,6 +15,9 @@ final class SupabaseAccountGateway implements AccountSyncGateway {
   final http.Client _client;
 
   Map<String,String> get _headers {
+    if(baseUrl.trim().isEmpty||anonKey.trim().isEmpty) {
+      throw StateError('Supabase public configuration required');
+    }
     final token=session.accessToken;
     if(!session.isAuthenticated||token==null||token.isEmpty) {
       throw StateError('Authenticated session required');
@@ -46,9 +49,10 @@ final class SupabaseAccountGateway implements AccountSyncGateway {
 
   AccountSyncSnapshot _decode(http.Response r) {
     _requireSuccess(r);
-    final raw=jsonDecode(r.body);
+    dynamic raw;
+    try { raw=jsonDecode(r.body); } on FormatException { throw const AccountPayloadException(); }
     final data=raw is List&&raw.length==1?raw.first:raw;
-    if(data is! Map)throw const FormatException('Invalid account payload');
+    if(data is! Map)throw const AccountPayloadException();
     final m=Map<String,dynamic>.from(data);
     final ids=(m['favoriteProductIds'] as List? ?? const []).whereType<String>().toSet();
     final profile=m['profile'] is Map?Map<String,Object?>.from(m['profile'] as Map):null;
@@ -65,6 +69,11 @@ final class SupabaseAccountGateway implements AccountSyncGateway {
   void _requireSuccess(http.Response r){
     if(r.statusCode<200||r.statusCode>=300)throw AccountGatewayException(r.statusCode);
   }
+}
+
+final class AccountPayloadException implements Exception {
+  const AccountPayloadException();
+  @override String toString()=> 'AccountPayloadException(invalid server payload)';
 }
 
 final class AccountGatewayException implements Exception {
