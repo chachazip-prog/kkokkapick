@@ -6,6 +6,9 @@ const r=evaluateFit({months:12,height:76,weight:10},{name:"아가방 아기 상�
 assert.equal(r.status,"recommended");
 assert.ok(r.recommendedSize);
 assert.equal(r.brand,"아가방");
+const ettoi=evaluateFit({months:8,height:72,weight:9},{name:"ETTOI 에뜨와 베이비 바디수트"});
+assert.equal(ettoi.status,"recommended");
+assert.equal(ettoi.brand,"에뜨와");
 assert.equal(evaluateFit({months:12,height:null,weight:10},{name:"아가방 상하복"}).status,"profile_required");
 assert.equal(evaluateFit({months:12,height:"",weight:10},{name:"아가방 상하복"}).status,"profile_required");
 assert.equal(evaluateFit({months:12,height:0,weight:10},{name:"아가방 상하복"}).status,"profile_required");
