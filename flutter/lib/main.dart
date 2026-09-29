@@ -123,6 +123,10 @@ class _CatalogScreenState extends State<CatalogScreen>{
   Future<void> _toggleFavorite(String id) async{
     setState(()=>_favoriteIds.contains(id)?_favoriteIds.remove(id):_favoriteIds.add(id));
     await _favorites.save(_favoriteIds);
+    if(_signedIn){
+      try{await _session.setFavorite(id,_favoriteIds.contains(id));}
+      catch(_){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('찜은 기기에 저장했어요. 계정 동기화는 나중에 다시 시도할게요.')));}
+    }
   }
 
   void _reset(){setState((){_search.clear();_stage=_category=_brand='전체';_fitOnly=_favoritesOnly=false;_sort=CatalogSort.recommended;});}
