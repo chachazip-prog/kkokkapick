@@ -18,12 +18,13 @@ final class AppSessionOrchestrator {
     required this.localData,
     required String supabaseUrl,
     required String anonKey,
+    SupabaseAccountGateway Function(AuthenticationSessionBridge session)? accountFactory,
   }): session=AuthenticationSessionBridge(authentication),
-      account=SupabaseAccountGateway(
+      account=(accountFactory??((session)=>SupabaseAccountGateway(
         baseUrl:supabaseUrl,
         anonKey:anonKey,
-        session:AuthenticationSessionBridge(authentication),
-      );
+        session:session,
+      )))(AuthenticationSessionBridge(authentication));
 
   final SupabaseAuthenticationGateway authentication;
   final LocalAccountDataStore localData;
