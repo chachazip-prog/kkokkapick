@@ -6,7 +6,7 @@ Android/iOS native projects are release artifacts, not disposable generated outp
 
 Android project scaffolding is committed first so CI can build an installable debug artifact. The application ID is an engineering placeholder until Product Owner approves the final store identifier. Release signing MUST NOT use debug signing for external distribution; the current release block is a build scaffold only.
 
-iOS requires Xcode project artifacts generated from a Flutter-capable macOS environment. Do not hand-author an incomplete pbxproj. Add iOS in the release-signing batch and validate with xcodebuild/Flutter on macOS CI.
+iOS native project generation is now exercised on macOS CI from the Flutter source using `flutter create --platforms=ios`, followed by an unsigned release build. This deliberately avoids hand-authoring an incomplete pbxproj. The generated project is disposable until the Product Owner settles the final bundle identifier; at that gate, commit the native iOS artifacts and configure Apple signing/capabilities.
 
 ## Gates before external beta
 
