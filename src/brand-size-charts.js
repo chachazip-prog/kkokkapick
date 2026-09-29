@@ -34,7 +34,8 @@ export const BRAND_SIZE_CHARTS = {
 };
 
 export function detectBrand(name="") {
-  if(/아가방/i.test(name)) return "아가방";
+  if(/(?:아가방|AGABANG)/i.test(name)) return "아가방";
+  if(/(?:에뜨와(?:HB)?|ETTOI)/i.test(name)) return "에뜨와";
   return null;
 }
 
