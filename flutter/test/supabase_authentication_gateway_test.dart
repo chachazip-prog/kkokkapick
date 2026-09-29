@@ -4,6 +4,29 @@ import 'package:http/testing.dart';
 import 'package:kkokkapick/services/authentication.dart';
 import 'package:kkokkapick/services/supabase_authentication_gateway.dart';
 
+final class _Store implements SessionTokenStore{
+  StoredSessionTokens? value;
+  @override Future<StoredSessionTokens?> read()async=>value;
+  @override Future<void> write(StoredSessionTokens tokens)async{value=tokens;}
+  @override Future<void> clear()async{value=null;}
+  test('restores stored refresh token and rotates persisted session',()async{
+    final store=_Store()..value=const StoredSessionTokens(accessToken:'old-access',refreshToken:'old-refresh');
+    final client=MockClient((r)async{
+      expect(r.url.queryParameters['grant_type'],'refresh_token');
+      expect(r.body,contains('old-refresh'));
+      return http.Response('{"access_token":"new-access","refresh_token":"new-refresh"}',200);
+    });
+    final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',tokenStore:store,client:client);
+    expect(await g.restoreSession(),isTrue);
+    expect(g.tokens?.accessToken,'new-access');expect(store.value?.refreshToken,'new-refresh');
+  });
+  test('failed restore clears invalid stored session',()async{
+    final store=_Store()..value=const StoredSessionTokens(accessToken:'old',refreshToken:'bad');
+    final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',tokenStore:store,client:MockClient((_)async=>http.Response('{}',401)));
+    expect(await g.restoreSession(),isFalse);expect(g.tokens,isNull);expect(store.value,isNull);
+  });
+}
+
 void main(){
   test('email sign-in uses Supabase password grant without secret credentials',()async{
     final client=MockClient((r)async{
@@ -46,7 +69,7 @@ void main(){
     expect(g.tokens?.accessToken,'access-1');
     await g.refreshSession();
     expect(refresh,isTrue);expect(g.tokens?.accessToken,'access-2');
-    g.clearSession();expect(g.tokens,isNull);
+    await g.clearSession();expect(g.tokens,isNull);
   });
   test('refresh requires an existing authenticated session',()async{
     final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public');
