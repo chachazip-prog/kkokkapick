@@ -38,6 +38,7 @@ jobs:
         working-directory: flutter
         run: flutter build web --release --base-href /kkokkapick/flutter-preview/
       - name: Publish preview into active Pages source
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           set -euo pipefail
           test -f flutter/build/web/index.html
