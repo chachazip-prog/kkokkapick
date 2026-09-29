@@ -411,12 +411,16 @@ class _ProductDetailState extends State<_ProductDetail>{
   CatalogProduct get product=>widget.product;
   @override void initState(){super.initState();_alerts.get(product.id).then((v){if(mounted)setState(()=>_target=v);});}
   String _won(int? n)=>n==null?'가격 확인':'${n.toString().replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d))'),(m)=>',')}원';
-  @override Widget build(BuildContext context){final offers=[...product.offers]..sort((a,b)=>(a.price??1<<62).compareTo(b.price??1<<62));return SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:ListView(shrinkWrap:true,children:[
-    ClipRRect(borderRadius:BorderRadius.circular(18),child:AspectRatio(aspectRatio:1.4,child:ProductImage(url:product.imageUrl))),
-    const SizedBox(height:14),if(product.brand!=null)Text(product.brand!,style:const TextStyle(fontWeight:FontWeight.bold)),Text(product.displayName,style:Theme.of(context).textTheme.titleLarge),const SizedBox(height:8),Text('${product.category} · ${product.stage??'월령 확인'}'),
-    const SizedBox(height:18),Text('꼬까핏',style:Theme.of(context).textTheme.titleMedium),Builder(builder:(_){final r=_fit.evaluate(widget.profile,product);return Text(r.status=='recommended'?r.label:r.label);}),
-    const SizedBox(height:18),_ProductSizeSection(product:product),
-    const SizedBox(height:18),Text('가격 알림',style:Theme.of(context).textTheme.titleMedium),ListTile(contentPadding:EdgeInsets.zero,title:Text(_target==null?'희망 가격을 설정해보세요':'희망 가격 ${_won(_target)}'),subtitle:_target!=null&&product.minPrice!=null&&product.minPrice!<=_target!?const Text('희망가에 도달했어요'):null,trailing:TextButton(onPressed:_editAlert,child:const Text('설정'))),const SizedBox(height:18),Text('판매처 가격 비교',style:Theme.of(context).textTheme.titleMedium),
+  @override Widget build(BuildContext context){final offers=[...product.offers]..sort((a,b)=>(a.price??1<<62).compareTo(b.price??1<<62));return SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(16,0,16,28),child:ListView(shrinkWrap:true,children:[
+    ClipRRect(borderRadius:BorderRadius.circular(10),child:AspectRatio(aspectRatio:1.15,child:ProductImage(url:product.imageUrl))),
+    const SizedBox(height:16),if(product.brand!=null)Text(product.brand!,style:const TextStyle(fontSize:13,fontWeight:FontWeight.w700,color:KkokkapickTheme.muted)),
+    const SizedBox(height:4),Text(product.displayName,maxLines:3,overflow:TextOverflow.ellipsis,style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w700,height:1.28)),
+    const SizedBox(height:10),Text(_won(product.minPrice),style:Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight:FontWeight.w900)),
+    const SizedBox(height:6),Text('${product.category} · ${product.stage??'월령 확인'}',style:const TextStyle(color:KkokkapickTheme.muted)),
+    const Divider(height:32),Text('꼬까핏',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),const SizedBox(height:6),Builder(builder:(_){final r=_fit.evaluate(widget.profile,product);return Text(r.label);}),
+    const SizedBox(height:22),_ProductSizeSection(product:product),
+    const Divider(height:32),Row(children:[Expanded(child:Text('가격 알림',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800))),TextButton(onPressed:_editAlert,child:Text(_target==null?'설정':'변경'))]),Text(_target==null?'희망 가격을 설정해보세요':'희망 가격 ${_won(_target)}'),if(_target!=null&&product.minPrice!=null&&product.minPrice!<=_target!)const Padding(padding:EdgeInsets.only(top:4),child:Text('희망가에 도달했어요')),
+    const Divider(height:32),Text('판매처 가격 비교',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),
     ...offers.asMap().entries.map((e)=>ListTile(onTap:()=>_openOffer(e.value),contentPadding:EdgeInsets.zero,title:Text(e.value.merchant),subtitle:e.value.originalPrice!=null&&e.value.originalPrice!>(e.value.price??0)?Text('정가 ${_won(e.value.originalPrice)}'):null,trailing:Column(mainAxisAlignment:MainAxisAlignment.center,crossAxisAlignment:CrossAxisAlignment.end,children:[Text(_won(e.value.price),style:const TextStyle(fontWeight:FontWeight.bold)),if(e.key==0&&offers.length>1)const Text('최저가',style:TextStyle(fontSize:11)),const Text('구매하기 ›',style:TextStyle(fontSize:11))]))),
     const SizedBox(height:8),const Text('가격·옵션·배송정보는 판매처에서 최종 확인하세요. 구매하기는 제휴 추적 링크를 외부 브라우저에서 엽니다.',style:TextStyle(fontSize:11))
   ])));}
