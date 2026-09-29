@@ -62,12 +62,17 @@ final class AccountSnapshotAdapter {
       }
     }
 
-    if (months == null || months <= 0 || height == null || height <= 0 || weight == null || weight <= 0) {
+    if (months == null ||
+        months <= 0 ||
+        height == null ||
+        height <= 0 ||
+        weight == null ||
+        weight <= 0) {
       return null;
     }
 
     return ChildProfile(
-      months: months.clamp(1, 216),
+      months: months.clamp(1, 216).toInt(),
       heightCm: height,
       weightKg: weight,
     );
