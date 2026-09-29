@@ -1,0 +1,50 @@
+name: Android unsigned release
+
+on:
+  pull_request:
+    paths:
+      - "flutter/**"
+      - ".github/workflows/android-release.yml"
+  push:
+    branches: [main]
+    paths:
+      - "flutter/**"
+      - ".github/workflows/android-release.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unsigned-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - working-directory: flutter
+        run: flutter pub get
+      - name: Reject committed signing material
+        run: |
+          set -euo pipefail
+          if git ls-files | grep -E '\.(jks|keystore|p12|p8|mobileprovision)$'; then
+            echo "Signing material must never be committed"
+            exit 1
+          fi
+          if git grep -nE '(storePassword|keyPassword|service_role|SUPABASE_SERVICE_ROLE|BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY)' -- ':!docs/**' ':!*.md'; then
+            echo "Potential secret/signing credential found in tracked runtime files"
+            exit 1
+          fi
+      - name: Guard release signing boundary
+        run: |
+          set -euo pipefail
+          ! grep -Eq 'release[^}]*signingConfig[^}]*debug' flutter/android/app/build.gradle.kts
+          grep -q 'Release signing is injected only by protected CI/store credentials' flutter/android/app/build.gradle.kts
+      - name: Build unsigned Android release APK
+        working-directory: flutter
+        run: flutter build apk --release
+      - name: Verify release artifact
+        run: test -s flutter/build/app/outputs/flutter-apk/app-release.apk
