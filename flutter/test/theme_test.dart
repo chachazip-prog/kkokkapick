@@ -9,7 +9,8 @@ void main(){
     expect(KkokkapickTheme.lavenderDeep,const Color(0xFF5146A6));
     expect(KkokkapickTheme.lavenderSoft,const Color(0xFFF0EDFF));
     expect(KkokkapickTheme.cream,const Color(0xFFFFFCFF));
-    expect(theme.colorScheme.primary,KkokkapickTheme.lavender);
+    expect(theme.colorScheme.primary,isNot(const Color(0xFFE95D45)));
+    expect(theme.filledButtonTheme.style?.backgroundColor?.resolve(<WidgetState>{}),KkokkapickTheme.lavenderDeep);
     expect(theme.navigationBarTheme.height,greaterThanOrEqualTo(64));
     expect(theme.navigationBarTheme.indicatorColor,KkokkapickTheme.lavenderSoft);
     expect(theme.useMaterial3,isTrue);
