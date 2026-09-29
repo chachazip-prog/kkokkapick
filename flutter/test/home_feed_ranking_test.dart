@@ -43,20 +43,34 @@ void main() {
     final complete = product('complete', offerCount: 2, discounted: true);
     final incomplete = product('incomplete', imageUrl: null, minPrice: null);
 
-    final result = service.rankPersonalized([incomplete, complete], const HomeFeedSignals());
+    final result =
+        service.rankPersonalized([incomplete, complete], const HomeFeedSignals());
 
     expect(result.evidence, HomeFeedEvidence.discoveryFallback);
     expect(result.supportsPopularityClaim, isFalse);
     expect(result.items.first.id, 'complete');
   });
 
-  test('behavioral snapshot enables a truthful trending evidence state', () {
+  test('raw engagement scores alone do not authorize a trending claim', () {
+    final result = service.rankTrending(
+      [product('a'), product('b')],
+      engagementScores: const {'b': 80},
+    );
+
+    expect(result.evidence, HomeFeedEvidence.discoveryFallback);
+    expect(result.supportsPopularityClaim, isFalse);
+    // Scores may still improve ordering without changing the evidence label.
+    expect(result.items.first.id, 'b');
+  });
+
+  test('qualified behavioral snapshot enables a truthful trending state', () {
     final a = product('a');
     final b = product('b');
 
     final result = service.rankTrending(
       [a, b],
       engagementScores: const {'b': 80},
+      behavioralEvidenceQualified: true,
     );
 
     expect(result.evidence, HomeFeedEvidence.behavioralTrending);
@@ -84,8 +98,10 @@ void main() {
 
     expect(result.evidence, HomeFeedEvidence.personalized);
     expect(result.items.first.id, 'related');
-    expect(result.items.indexWhere((p) => p.id == 'related'),
-        lessThan(result.items.indexWhere((p) => p.id == 'unrelated')));
+    expect(
+      result.items.indexWhere((p) => p.id == 'related'),
+      lessThan(result.items.indexWhere((p) => p.id == 'unrelated')),
+    );
   });
 
   test('fixed inputs produce deterministic stable ordering', () {
@@ -93,8 +109,10 @@ void main() {
     final b = product('b');
     final c = product('c');
 
-    final first = service.rankTrending([c, b, a]).items.map((p) => p.id).toList();
-    final second = service.rankTrending([b, a, c]).items.map((p) => p.id).toList();
+    final first =
+        service.rankTrending([c, b, a]).items.map((p) => p.id).toList();
+    final second =
+        service.rankTrending([b, a, c]).items.map((p) => p.id).toList();
 
     expect(first, second);
     expect(first, ['a', 'b', 'c']);
