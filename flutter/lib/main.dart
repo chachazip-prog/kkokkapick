@@ -12,7 +12,6 @@ import 'services/kkokkafit_engine.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'theme/kkokkapick_theme.dart';
 import 'services/overlay_coordinator.dart';
-import 'services/account_sync.dart';
 import 'services/local_account_data_store.dart';
 
 void main()=>runApp(const KkokkapickApp());
