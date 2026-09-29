@@ -66,6 +66,8 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
     if(!await _captureTokens(r))throw const AuthenticationPayloadException();
   }
 
+  Future<bool> hasPersistedSession() async => await tokenStore?.read()!=null;
+
   Future<bool> restoreSession() async {
     final stored=await tokenStore?.read();
     if(stored==null)return false;
@@ -79,13 +81,14 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
         await tokenStore?.clear();
         return false;
       }
-      // A transient auth-service failure is not proof that the stored session
-      // is invalid. Keep the last known tokens so the app can enter its
-      // offline-authenticated state and retry refresh on a later launch.
+      // A transient service failure is not proof that persisted credentials are
+      // invalid, but the stale access token must not remain active in memory.
+      _tokens=null;
       rethrow;
     } catch (_) {
-      // Network/parsing/service failures likewise must not erase a stored
-      // session unless Supabase explicitly rejected its credentials above.
+      // Keep persisted credentials for a later retry while preventing stale
+      // tokens from being used for remote account operations in this session.
+      _tokens=null;
       rethrow;
     }
   }
