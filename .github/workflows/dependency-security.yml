@@ -1,0 +1,40 @@
+name: Dependency security
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "flutter/pubspec.yaml"
+      - "flutter/pubspec.lock"
+      - ".github/workflows/dependency-security.yml"
+  pull_request:
+    paths:
+      - "flutter/pubspec.yaml"
+      - "flutter/pubspec.lock"
+      - ".github/workflows/dependency-security.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  flutter-dependencies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Resolve locked dependencies
+        working-directory: flutter
+        run: flutter pub get
+      - name: Verify dependency lock is reproducible
+        run: git diff --exit-code -- flutter/pubspec.lock
+      - name: Report outdated dependencies
+        working-directory: flutter
+        run: flutter pub outdated || true
+      - name: Analyze after dependency resolution
+        working-directory: flutter
+        run: flutter analyze
