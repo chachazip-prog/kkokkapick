@@ -143,11 +143,15 @@ class _CatalogScreenState extends State<CatalogScreen>{
     final m=TextEditingController(text:_profile?.months.toString()??'');
     final ht=TextEditingController(text:_profile?.heightCm.toString()??'');
     final wt=TextEditingController(text:_profile?.weightKg.toString()??'');
-    final saved=await showDialog<ChildProfile>(context:context,builder:(context)=>AlertDialog(title:const Text('아이 정보'),content:Column(mainAxisSize:MainAxisSize.min,children:[
-      TextField(controller:m,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'월령')),
-      TextField(controller:ht,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'키 cm')),
-      TextField(controller:wt,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'몸무게 kg')),
-    ]),actions:[TextButton(onPressed:()=>Navigator.pop(context),child:const Text('취소')),FilledButton(onPressed:(){final p=ChildProfile(months:int.tryParse(m.text)??0,heightCm:double.tryParse(ht.text)??0,weightKg:double.tryParse(wt.text)??0);if(p.months>0&&p.heightCm>0&&p.weightKg>0)Navigator.pop(context,p);},child:const Text('저장'))]));
+    final saved=await showModalBottomSheet<ChildProfile>(context:context,isScrollControlled:true,backgroundColor:Colors.white,showDragHandle:true,builder:(context)=>SafeArea(child:SingleChildScrollView(padding:EdgeInsets.fromLTRB(20,4,20,MediaQuery.viewInsetsOf(context).bottom+20),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
+      Text('아이 정보',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
+      const SizedBox(height:6),const Text('꼬까핏 사이즈 추천에만 사용해요.',style:TextStyle(color:KkokkapickTheme.muted)),
+      const SizedBox(height:18),TextField(controller:m,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'월령',hintText:'예: 8')),
+      const SizedBox(height:10),TextField(controller:ht,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'키',suffixText:'cm')),
+      const SizedBox(height:10),TextField(controller:wt,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'몸무게',suffixText:'kg')),
+      const SizedBox(height:18),FilledButton(onPressed:(){final p=ChildProfile(months:int.tryParse(m.text)??0,heightCm:double.tryParse(ht.text)??0,weightKg:double.tryParse(wt.text)??0);if(p.months>0&&p.heightCm>0&&p.weightKg>0)Navigator.pop(context,p);},child:const Text('저장')),
+      TextButton(onPressed:()=>Navigator.pop(context),child:const Text('취소')),
+    ]))));
     m.dispose();ht.dispose();wt.dispose();
     if(saved!=null){await _profiles.save(saved);if(mounted)setState(()=>_profile=saved);if(_signedIn){try{await _session.setChildProfile({'birthDate':null,'heightCm':saved.heightCm,'weightKg':saved.weightKg,'usualSize':null,'nickname':null});}catch(_){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('아이 정보는 기기에 저장했어요. 계정 동기화는 나중에 다시 시도할게요.')));}}}
   }
