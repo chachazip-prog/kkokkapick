@@ -34,8 +34,8 @@ abstract final class KkokkapickTheme {
     inputDecorationTheme:InputDecorationTheme(
       filled:true,fillColor:surface,
       border:OutlineInputBorder(borderSide:BorderSide.none,borderRadius:BorderRadius.circular(10)),
-      enabledBorder:OutlineInputBorder(borderSide:BorderSide.none,borderRadius:BorderRadius.circular(18)),
-      focusedBorder:OutlineInputBorder(borderSide:const BorderSide(color:lavender,width:1.2),borderRadius:BorderRadius.circular(18)),
+      enabledBorder:OutlineInputBorder(borderSide:BorderSide.none,borderRadius:BorderRadius.circular(10)),
+      focusedBorder:OutlineInputBorder(borderSide:const BorderSide(color:lavender,width:1.2),borderRadius:BorderRadius.circular(10)),
       contentPadding:const EdgeInsets.symmetric(horizontal:16,vertical:14),
     ),
     chipTheme:ChipThemeData(backgroundColor:Colors.white,selectedColor:lavenderSoft,labelStyle:const TextStyle(color:ink),shape:RoundedRectangleBorder(borderRadius:BorderRadius.circular(999)),side:const BorderSide(color:Color(0xFFECE9F2))),
