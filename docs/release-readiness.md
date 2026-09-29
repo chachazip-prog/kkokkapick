@@ -34,7 +34,7 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 - Replace GitHub Pages catalog endpoint in Flutter with the approved production read boundary.
 - Authentication/account persistence client and RPC contracts are implemented; configure chosen production auth providers and verify deployed persistence/RLS E2E.
 - Account deletion path is implemented with authenticated identity/app-data/push-token cleanup and a regression contract; deployed production E2E verification remains.
-- iOS unsigned release generation/build is CI-verified; settle final iOS/Android application identifiers, commit final native release artifacts and configure protected signing before store registration.
+- iOS unsigned release generation/build is CI-verified; final application identifier is `com.kkokkapick.app`; commit final native release artifacts and configure protected signing before store registration.
 - iOS unsigned release CI is implemented; Android unsigned release/signing-secret guard is CI-verified and merged. Signed-store CI remains gated on final identifiers and protected credentials.
 - Verify provider production rights and attribution requirements.
 - Price-alert DB pipeline plus production sender operating contract are implemented; connect credentialed FCM/APNs sender and verify invalid-token cleanup/device delivery.
@@ -44,7 +44,7 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 - Mock-boundary account flow contract covers sign-in session, profile, favorite, alert and deletion RPCs; complete deployed E2E plus search/fit/merchant-handoff device flow.
 - CI covers 200% text scaling/core navigation/destructive confirmation; complete final semantics/contrast/tap-target/screen-reader and device pass after UI freeze.
 - Reviewer/store submission pack and technical privacy inventory exist; finalize assets, declarations, URLs and reviewer account against production configuration.
-- Crash/error telemetry chosen under the Product Owner privacy/cost boundary.
+- Crash/error telemetry direction is Firebase Crashlytics with no Analytics/advertising identifiers solely for crash reporting; production SDK/configuration and privacy-safe verification remain.
 - Backup/restore and rollback rehearsal.
 - Public commercial events have DB replay/rate controls plus same-session concurrency serialization; verify production edge/load behavior and configure authentication-provider abuse controls.
 
@@ -58,8 +58,6 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 
 Ask only when execution reaches the gate:
 - production service/account connection or meaningful recurring cost;
-- final iOS bundle ID / Android application ID before store registration;
-- authentication providers and any resulting personal-data scope;
 - legal/business identity required for policies/store listing;
 - provider terms that require accepting material commercial/legal constraints;
 - final submission/release authorization.
@@ -78,7 +76,7 @@ Completed without production credentials or paid-service activation:
 - Provider errors are constrained to short classifications/codes in the delivery ledger; raw provider responses/tokens must not be persisted there.
 
 ### Current owner/external-system boundary
-Further production activation requires information or access that must not be invented in-repo: a production Supabase environment, chosen authentication providers, final application identifiers/signing, FCM/APNs credentials/configuration, provider production-rights confirmation, and legal/business identity/URLs for store/privacy materials. Actual store submission remains an explicit Product Owner gate.
+Further production activation requires information or access that must not be invented in-repo: a production Supabase environment, production configuration for the chosen Apple/Google/Kakao/Email auth paths plus the Naver adapter, protected application signing, FCM/APNs credentials/configuration, provider production-rights confirmation, and legal/business identity/URLs for store/privacy materials. Actual store submission remains an explicit Product Owner gate.
 
 
 ### 2026-09-29 release-foundation progress

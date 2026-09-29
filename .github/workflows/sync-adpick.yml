@@ -36,5 +36,4 @@ jobs:
           git add data/adpick-products.json
           git commit -m "chore: refresh ADPICK catalog"
           git fetch origin main
-          git rebase origin/main
-          git push origin HEAD:main
+          # Provider data generated from an older code revision must never be rebased onto newer main.\n          if [ \"$(git rev-parse origin/main)\" != \"${GITHUB_SHA}\" ]; then\n            echo \"main moved during provider sync; refusing stale catalog publication\"\n            exit 1\n          fi\n          git push origin HEAD:main
