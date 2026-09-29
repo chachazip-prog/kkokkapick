@@ -121,6 +121,20 @@ class _CatalogScreenState extends State<CatalogScreen>{
   }
 
 
+  void onEditProfileProxy()=>_editProfile();
+
+  Future<void> _showFilters() async {
+    final choice=await showModalBottomSheet<String>(context:context,showDragHandle:true,builder:(context)=>SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
+      Text('빠른 필터',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
+      const SizedBox(height:8),const Text('자주 쓰는 조건을 빠르게 적용해요.',style:TextStyle(color:KkokkapickTheme.muted)),
+      const SizedBox(height:16),
+      FilledButton.tonal(onPressed:()=>Navigator.pop(context,'fit'),child:const Text('꼬까핏 가능한 상품만')),
+      TextButton(onPressed:()=>Navigator.pop(context,'reset'),child:const Text('필터 모두 초기화')),
+    ]))));
+    if(choice=='fit')setState(()=>_fitOnly=true);
+    if(choice=='reset')_reset();
+  }
+
   Future<void> _showManagedPopup(ManagedPopup popup) async {
     if(!mounted)return;
     await showDialog<void>(context:context,builder:(context)=>AlertDialog(title:Text(popup.title),content:Text(popup.body??''),actions:[TextButton(onPressed:()async{await _popupPrefs.dismiss(popup);if(context.mounted)Navigator.pop(context);},child:const Text('닫기'))]));
@@ -139,18 +153,26 @@ class _CatalogScreenState extends State<CatalogScreen>{
     final categories=_values((p)=>p.category),brands=_values((p)=>p.brand??'');
     final items=_visible;
     return Scaffold(
+      floatingActionButton:_navIndex==1?FloatingActionButton.extended(onPressed:_showFilters,icon:const Icon(Icons.tune),label:const Text('필터')):null,
       bottomNavigationBar:NavigationBar(selectedIndex:_navIndex,onDestinationSelected:(i)=>setState((){_navIndex=i;if(i==0||i==1)_favoritesOnly=false;if(i==2)_favoritesOnly=true;}),destinations:const [NavigationDestination(icon:Icon(Icons.home_outlined),selectedIcon:Icon(Icons.home),label:'홈'),NavigationDestination(icon:Icon(Icons.search),label:'찾기'),NavigationDestination(icon:Icon(Icons.favorite_border),selectedIcon:Icon(Icons.favorite),label:'찜'),NavigationDestination(icon:Icon(Icons.person_outline),selectedIcon:Icon(Icons.person),label:'마이')]),
       appBar:AppBar(title:const Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('꼬까픽',style:TextStyle(fontWeight:FontWeight.w900)),Text('우리 아이 옷, 한곳에서.',style:TextStyle(fontSize:11,fontWeight:FontWeight.normal))]),actions:[IconButton(tooltip:'아이 정보',onPressed:_editProfile,icon:Icon(_profile==null?Icons.child_care_outlined:Icons.child_care)),IconButton(onPressed:()=>setState(()=>_favoritesOnly=!_favoritesOnly),icon:Icon(_favoritesOnly?Icons.favorite:Icons.favorite_border))]),
       body:_navIndex==3?_MyPage(profile:_profile,onEditProfile:_editProfile):_loading?const Center(child:CircularProgressIndicator()):_error!=null?_ErrorView(onRetry:_load):RefreshIndicator(onRefresh:_load,child:CustomScrollView(slivers:[
         if(_campaigns.isNotEmpty)SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.fromLTRB(16,12,16,0),child:Column(children:_campaigns.take(3).map((c)=>Card(child:ListTile(onTap:()=>_openCampaign(c),leading:const Icon(Icons.campaign_outlined),title:Text(c.title),subtitle:Text('${c.disclosureLabel} · ${c.partnerName??''}'),trailing:const Icon(Icons.chevron_right)))).toList()))),
         SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.all(16),child:Column(children:[
+          if(_navIndex==0)...[
+            _HomeIntro(profile:_profile,onProfile:onEditProfileProxy),
+            const SizedBox(height:16),
+            _CategoryShortcuts(categories:categories,onSelected:(v)=>setState((){_category=v;_navIndex=1;})),
+            const SizedBox(height:16),
+          ],
           TextField(controller:_search,onChanged:(_)=>setState((){}),decoration:const InputDecoration(prefixIcon:Icon(Icons.search),hintText:'브랜드, 상품을 검색해보세요',filled:true,border:OutlineInputBorder(borderSide:BorderSide.none,borderRadius:BorderRadius.all(Radius.circular(16))))),
           const SizedBox(height:12),
+          if(_navIndex==1)...[
           _FilterRow(values:stages,value:_stage,onChanged:(v)=>setState(()=>_stage=v)),
           _FilterRow(values:categories,value:_category,onChanged:(v)=>setState(()=>_category=v)),
           _FilterRow(values:brands,value:_brand,onChanged:(v)=>setState(()=>_brand=v)),
           Row(children:[FilterChip(label:const Text('꼬까핏 가능'),selected:_fitOnly,onSelected:(v)=>setState(()=>_fitOnly=v)),const Spacer(),DropdownButton<CatalogSort>(value:_sort,underline:const SizedBox(),items:const [DropdownMenuItem(value:CatalogSort.recommended,child:Text('추천순')),DropdownMenuItem(value:CatalogSort.low,child:Text('낮은 가격순')),DropdownMenuItem(value:CatalogSort.high,child:Text('높은 가격순'))],onChanged:(v)=>setState(()=>_sort=v!))]),
-          Row(children:[Text('${items.length}개',style:Theme.of(context).textTheme.titleMedium),const Spacer(),TextButton(onPressed:_reset,child:const Text('필터 초기화'))])
+          Row(children:[Text('${items.length}개',style:Theme.of(context).textTheme.titleMedium),const Spacer(),TextButton(onPressed:_reset,child:const Text('필터 초기화'))])],
         ]))),
         if(items.isEmpty)const SliverFillRemaining(child:Center(child:Text('검색 결과가 없어요.')))
         else SliverPadding(padding:const EdgeInsets.fromLTRB(16,0,16,24),sliver:SliverGrid.builder(gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,crossAxisSpacing:10,mainAxisSpacing:18,childAspectRatio:.60),itemCount:items.length,itemBuilder:(context,i)=>_ProductCard(product:items[i],favorite:_favoriteIds.contains(items[i].id),onFavorite:()=>_toggleFavorite(items[i].id),onTap:()=>showModalBottomSheet(context:context,isScrollControlled:true,showDragHandle:true,builder:(_)=>_ProductDetail(items[i],profile:_profile)))))
@@ -223,4 +245,16 @@ class _MyPage extends StatelessWidget{
     ])),
     const SizedBox(height:16),const Text('아이 정보는 맞춤 탐색과 꼬까핏에만 사용하며 광고 타기팅 정보로 전달하지 않아요.',style:TextStyle(fontSize:12,color:KkokkapickTheme.muted)),
   ]));
+}
+
+
+class _HomeIntro extends StatelessWidget{
+  const _HomeIntro({required this.profile,required this.onProfile});
+  final ChildProfile? profile; final VoidCallback onProfile;
+  @override Widget build(BuildContext context)=>Container(padding:const EdgeInsets.all(18),decoration:BoxDecoration(color:KkokkapickTheme.fit,borderRadius:BorderRadius.circular(18)),child:Row(children:[Expanded(child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text(profile==null?'우리 아이에게 맞는 옷을 찾아볼까요?':'${profile!.months}개월 · ${profile!.stage} 추천',style:const TextStyle(fontSize:17,fontWeight:FontWeight.w800)),const SizedBox(height:5),Text(profile==null?'아이 정보를 등록하면 월령과 꼬까핏 기준으로 탐색할 수 있어요.':'아이 정보와 검증된 사이즈표를 기준으로 살펴보세요.',style:const TextStyle(color:KkokkapickTheme.muted))])),const SizedBox(width:10),TextButton(onPressed:onProfile,child:Text(profile==null?'등록':'수정'))]));
+}
+class _CategoryShortcuts extends StatelessWidget{
+  const _CategoryShortcuts({required this.categories,required this.onSelected});
+  final List<String> categories; final ValueChanged<String> onSelected;
+  @override Widget build(BuildContext context){final values=categories.where((e)=>e!='전체').take(5).toList();return Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('카테고리로 찾기',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),const SizedBox(height:10),Wrap(spacing:8,runSpacing:8,children:values.map((v)=>ActionChip(avatar:const Icon(Icons.checkroom_outlined,size:18),label:Text(v),onPressed:()=>onSelected(v))).toList())]);}
 }
