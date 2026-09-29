@@ -15,6 +15,7 @@ import 'services/overlay_coordinator.dart';
 import 'services/local_account_data_store.dart';
 import 'services/authentication.dart';
 import 'services/app_session_orchestrator.dart';
+import 'services/account_sync.dart';
 import 'services/secure_session_token_store.dart';
 import 'services/supabase_authentication_gateway.dart';
 
