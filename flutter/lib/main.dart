@@ -390,7 +390,7 @@ class _ProductCard extends StatelessWidget{
   final CatalogProduct product;final bool favorite;final VoidCallback onFavorite,onTap;
   String _won(int? n)=>n==null?'가격 확인':'${n.toString().replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d))'),(m)=>',')}원';
   @override Widget build(BuildContext context)=>InkWell(onTap:onTap,borderRadius:BorderRadius.circular(16),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
-    Expanded(child:Stack(fit:StackFit.expand,children:[ClipRRect(borderRadius:BorderRadius.circular(16),child:product.imageUrl==null?const ColoredBox(color:Color(0xfff5f5f5)):Image.network(product.imageUrl!,fit:BoxFit.cover,errorBuilder:(_,__,___)=>const ColoredBox(color:Color(0xfff5f5f5)))),Positioned(right:6,top:6,child:IconButton.filledTonal(onPressed:onFavorite,icon:Icon(favorite?Icons.favorite:Icons.favorite_border),visualDensity:VisualDensity.compact))])),
+    Expanded(child:Stack(fit:StackFit.expand,children:[ClipRRect(borderRadius:BorderRadius.circular(16),child:ProductImage(url:product.imageUrl)),Positioned(right:6,top:6,child:IconButton.filledTonal(onPressed:onFavorite,icon:Icon(favorite?Icons.favorite:Icons.favorite_border),visualDensity:VisualDensity.compact))])),
     const SizedBox(height:7),if(product.brand!=null)Text(product.brand!,style:const TextStyle(fontSize:12,fontWeight:FontWeight.bold)),Text(product.name,maxLines:2,overflow:TextOverflow.ellipsis),const SizedBox(height:3),Text(_won(product.minPrice),style:const TextStyle(fontWeight:FontWeight.w800)),Row(children:[Flexible(child:MerchantMark(name:product.merchant)),if(product.offerCount>1)...[const SizedBox(width:5),Text('${product.offerCount}개 판매처',style:Theme.of(context).textTheme.bodySmall)]]),if(product.fitStatus=='verified')const Padding(padding:EdgeInsets.only(top:4),child:Chip(label:Text('꼬까핏 가능',style:TextStyle(fontSize:10)),visualDensity:VisualDensity.compact))
   ]));
 }
@@ -405,7 +405,7 @@ class _ProductDetailState extends State<_ProductDetail>{
   @override void initState(){super.initState();_alerts.get(product.id).then((v){if(mounted)setState(()=>_target=v);});}
   String _won(int? n)=>n==null?'가격 확인':'${n.toString().replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d))'),(m)=>',')}원';
   @override Widget build(BuildContext context){final offers=[...product.offers]..sort((a,b)=>(a.price??1<<62).compareTo(b.price??1<<62));return SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:ListView(shrinkWrap:true,children:[
-    if(product.imageUrl!=null)ClipRRect(borderRadius:BorderRadius.circular(18),child:AspectRatio(aspectRatio:1.4,child:Image.network(product.imageUrl!,fit:BoxFit.cover))),
+    ClipRRect(borderRadius:BorderRadius.circular(18),child:AspectRatio(aspectRatio:1.4,child:ProductImage(url:product.imageUrl))),
     const SizedBox(height:14),if(product.brand!=null)Text(product.brand!,style:const TextStyle(fontWeight:FontWeight.bold)),Text(product.name,style:Theme.of(context).textTheme.titleLarge),const SizedBox(height:8),Text('${product.category} · ${product.stage??'월령 확인'}'),
     const SizedBox(height:18),Text('꼬까핏',style:Theme.of(context).textTheme.titleMedium),Builder(builder:(_){final r=_fit.evaluate(widget.profile,product);return Text(r.status=='recommended'?r.label:r.label);}),
     const SizedBox(height:18),_ProductSizeSection(product:product),
