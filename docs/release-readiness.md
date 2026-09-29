@@ -11,7 +11,7 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 | Product | Core discovery, filtering, favorites, child profile, fit evidence, affiliate handoff exist in prototype/mobile code | Freeze v1 scope and acceptance criteria; remove demo-only behavior |
 | Source/Data | ADPICK ingestion and canonical catalog exist; retention is fail-closed by provider policy | Written production rights/retention classification; production catalog served from approved backend rather than GitHub Pages |
 | UX/UI | Mobile-first discovery flow exists; CI contracts cover 200% text scaling, core navigation and destructive confirmation | Final screen-reader/contrast/tap-target and small/large physical-device QA after UI feedback |
-| Mobile | Flutter feature foundation exists; Android Gradle platform baseline is committed and exercised by Flutter CI | macOS CI now generates the official iOS project and verifies an unsigned release build; final identifiers, committed native release artifacts, signing, icons/launch assets and deep links remain |
+| Mobile | Flutter feature foundation exists; Android Gradle platform baseline is committed and exercised by Flutter CI | macOS CI now generates the official iOS project and verifies an unsigned release build; final identifier `com.kkokkapick.app` is fixed; committed native release artifacts, protected signing and deep-link production verification remain |
 | Backend | Supabase schema/RLS/admin/commercial migrations exist; push token ownership, threshold evaluation, atomic claim/finalize and bounded retry ledger are implemented | Apply migrations to a real environment; connect auth/persistence and a credentialed provider sender/scheduler |
 | Security/Privacy | Secrets are kept out of clients; user tables have owner RLS; admin uses allow-list; technical privacy inventory and dependency reproducibility gate exist | Verify grants/view/RPC exposure, retention/deletion/session behavior and ecosystem advisories against deployed production configuration |
 | Commercial | Sponsored content is separated from organic fit ranking; public event boundary excludes conversion/revenue writes; opaque-session rate/replay controls exist | Provider-confirmed conversion ingestion, final disclosure QA and production edge/load abuse verification |
@@ -35,7 +35,7 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 - Authentication/account persistence client and RPC contracts are implemented; configure chosen production auth providers and verify deployed persistence/RLS E2E.
 - Account deletion path is implemented with authenticated identity/app-data/push-token cleanup and a regression contract; deployed production E2E verification remains.
 - iOS unsigned release generation/build is CI-verified; final application identifier is `com.kkokkapick.app`; commit final native release artifacts and configure protected signing before store registration.
-- iOS unsigned release CI is implemented; Android unsigned release/signing-secret guard is CI-verified and merged. Signed-store CI remains gated on final identifiers and protected credentials.
+- iOS unsigned release CI is implemented; Android unsigned release/signing-secret guard is CI-verified and merged. Signed-store CI remains gated on protected credentials and store-account setup.
 - Verify provider production rights and attribution requirements.
 - Price-alert DB pipeline plus production sender operating contract are implemented; connect credentialed FCM/APNs sender and verify invalid-token cleanup/device delivery.
 - Public privacy/support/account-deletion release-draft pages are implemented; finalize legal identity/contact/data inventory before submission.
@@ -76,7 +76,7 @@ Completed without production credentials or paid-service activation:
 - Provider errors are constrained to short classifications/codes in the delivery ledger; raw provider responses/tokens must not be persisted there.
 
 ### Current owner/external-system boundary
-Further production activation requires information or access that must not be invented in-repo: a production Supabase environment, production configuration for the chosen Apple/Google/Kakao/Email auth paths plus the Naver adapter, protected application signing, FCM/APNs credentials/configuration, provider production-rights confirmation, and legal/business identity/URLs for store/privacy materials. Actual store submission remains an explicit Product Owner gate.
+Further production activation requires information or access that must not be invented in-repo: a production Supabase environment, production configuration for the chosen Apple/Google/Kakao/Email auth paths plus the Naver adapter, protected application signing, FCM/APNs credentials/configuration, provider production-rights confirmation (including direct image delivery/attribution), and legal/business identity/URLs for store/privacy materials. Actual store submission remains an explicit Product Owner gate.
 
 
 ### 2026-09-29 release-foundation progress
@@ -93,3 +93,10 @@ Further production activation requires information or access that must not be in
 - Push sender claim/send/finalize/invalid-token/no-secret-logging contract is CI-checked; credentials/device validation remain external.
 - Commercial public-event DB controls now serialize same-session rate/replay checks; rotating session keys remains an edge-control concern.
 - Remaining repository work is limited to changes triggered by final UI feedback or newly supplied production/provider/store decisions.
+
+
+### 2026-09-29 truth pass after mobile preview review
+- Brand primitives and launch/loading surface are merged. Commerce-first UI v4 passed all six release workflows plus independent QA; production physical-device review still remains before UI freeze.
+- Canonical catalog currently has 186 products. All 186 records carry HTTPS image URLs and positive prices; 136/186 have normalized brands and 6/186 are currently verified for KKOKKAFIT evidence. URL presence does not prove provider-hosted images render in Flutter Web, so hotlink/CORS/rights verification remains open.
+- The expanded ADPICK discovery plan contains at least 45 queries, but the prior expanded scheduled run was cancelled by its old 10-minute timeout. The workflow timeout has been increased; do not claim expanded production coverage until a subsequent scheduled run publishes a newer dataset.
+- Initial marketing creative/copy and measurement planning are repository-only and zero-spend. Paid acquisition remains explicitly gated on Product Owner authorization and production measurement readiness.
