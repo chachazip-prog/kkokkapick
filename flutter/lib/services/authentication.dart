@@ -38,3 +38,15 @@ final class AuthenticationCoordinator {
       : gateway.signInWithEmail(email:normalized,password:password);
   }
 }
+
+
+abstract interface class SessionTokenStore {
+  Future<StoredSessionTokens?> read();
+  Future<void> write(StoredSessionTokens tokens);
+  Future<void> clear();
+}
+
+final class StoredSessionTokens {
+  const StoredSessionTokens({required this.accessToken,required this.refreshToken});
+  final String accessToken,refreshToken;
+}
