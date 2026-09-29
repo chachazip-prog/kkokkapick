@@ -60,3 +60,7 @@ North-star launch learning metric: cost per qualified activation, where qualifie
 
 ## Dependencies / gates
 Paid launch depends on stable production URL/store listing, production analytics/crash boundary, sufficient verified catalog/fit coverage, legal/support identity, provider/trademark rights, and explicit Product Owner spend authorization.
+
+
+## Future AI try-on growth hypothesis
+AI virtual try-on is a candidate post-core-release acquisition/conversion hook, not part of the initial KRW 100k paid plan. Do not advertise it until the privacy/security/provider gates in docs/ai-virtual-tryon-feasibility.md pass and a production-quality beta exists. If approved later, test qualified merchant handoff and paid conversion lift against a control; generation count or shares alone are not success metrics.
