@@ -54,7 +54,7 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
     final user=raw['user'];
     final userId=user is Map&&user['id'] is String?(user['id'] as String):_tokens?.userId;
     _tokens=AuthTokens(accessToken:access,refreshToken:refresh,userId:userId);
-    await tokenStore?.write(StoredSessionTokens(accessToken:access,refreshToken:refresh));
+    await tokenStore?.write(StoredSessionTokens(accessToken:access,refreshToken:refresh,userId:userId));
     return true;
   }
 
@@ -69,7 +69,7 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
   Future<bool> restoreSession() async {
     final stored=await tokenStore?.read();
     if(stored==null)return false;
-    _tokens=AuthTokens(accessToken:stored.accessToken,refreshToken:stored.refreshToken);
+    _tokens=AuthTokens(accessToken:stored.accessToken,refreshToken:stored.refreshToken,userId:stored.userId);
     try{
       await refreshSession();
       return true;
