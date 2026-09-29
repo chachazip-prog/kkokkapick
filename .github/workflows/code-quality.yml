@@ -59,7 +59,10 @@ jobs:
           node test/provider-sync-workflow-contract.test.js
           node test/push-worker-contract.test.js
           node test/commercial-event-concurrency-contract.test.js
-      - name: Check catalog image URL coverage\n        run: node scripts/catalog-image-quality.js\n\n      - name: Validate web module syntax
+      - name: Check catalog image URL coverage
+        run: node scripts/catalog-image-quality.js
+
+      - name: Validate web module syntax
         run: |
           node --check src/adpick-discovery-plan.js
           node --check scripts/discover-adpick.js
