@@ -6,5 +6,7 @@ void main(){
     final theme=KkokkapickTheme.light();
     expect(theme.navigationBarTheme.height,greaterThanOrEqualTo(64));
     expect(theme.useMaterial3,isTrue);
+    expect(theme.inputDecorationTheme.filled,isTrue);
+    expect(theme.cardTheme.elevation,0);
   });
 }
