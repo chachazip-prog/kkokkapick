@@ -63,7 +63,7 @@ class SwipePickDeck extends StatelessWidget {
     ]),
     const SizedBox(height: 10),
     SizedBox(
-      height: MediaQuery.textScalerOf(context).scale(16)>24 ? 390 : 350,
+      height: MediaQuery.textScalerOf(context).scale(16)>24 ? 540 : 350,
       child: PageView.builder(
         controller: PageController(viewportFraction: .88),
         padEnds: false,
