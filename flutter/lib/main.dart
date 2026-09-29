@@ -37,6 +37,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
   static const _supabaseUrl=String.fromEnvironment('SUPABASE_URL');
   static const _supabaseAnonKey=String.fromEnvironment('SUPABASE_ANON_KEY');
   final _catalog=CatalogRepository(),_favorites=FavoritesRepository(),_profiles=ChildProfileRepository(),_popupPrefs=PopupPreferenceRepository(),_search=TextEditingController();
+  final Set<String> _impressedCampaignIds=<String>{};
   static const _commercial=CommercialRepository(supabaseUrl:_supabaseUrl,anonKey:_supabaseAnonKey);
   static const _attribution=CommercialAttributionRepository(supabaseUrl:_supabaseUrl,anonKey:_supabaseAnonKey);
   List<CatalogProduct> _products=const[];
@@ -64,7 +65,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
       setState((){_products=results[0] as List<CatalogProduct>;_favoriteIds=results[1] as Set<String>;_profile=results[2] as ChildProfile?;final commercial=results[3] as CommercialContent;_campaigns=commercial.campaigns;_loading=false;});
       final commercial=results[3] as CommercialContent;
       for(final p in commercial.popups){if(!await _popupPrefs.isDismissed(p)){_managedPopup=p;break;}}
-      for(final c in commercial.campaigns.take(3)){_attribution.impression(campaignId:c.id);}
+      for(final c in commercial.campaigns.take(3)){if(_impressedCampaignIds.add(c.id))_attribution.impression(campaignId:c.id);}
       if(mounted&&_managedPopup!=null)WidgetsBinding.instance.addPostFrameCallback((_)=>_showManagedPopup(_managedPopup!));
     }catch(e){if(mounted)setState((){_error=e;_loading=false;});}
   }
