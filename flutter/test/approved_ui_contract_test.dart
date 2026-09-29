@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kkokkapick/models/catalog_product.dart';
+import 'package:kkokkapick/repositories/child_profile_repository.dart';
+import 'package:kkokkapick/screens/approved_my_release.dart';
 import 'package:kkokkapick/theme/kkokkapick_theme.dart';
 import 'package:kkokkapick/widgets/approved_commerce.dart';
 
@@ -86,5 +88,31 @@ void main() {
     for (final label in ['홈', '검색', '찜', '마이']) {
       expect(find.text(label), findsOneWidget);
     }
+  });
+
+  testWidgets('release My page exposes real support/privacy paths, not dead settings',
+      (tester) async {
+    await tester.binding.setSurfaceSize(const Size(390, 844));
+    await tester.pumpWidget(MaterialApp(
+      theme: KkokkapickTheme.light(),
+      home: ApprovedMyReleaseTab(
+        profile: const ChildProfile(months: 8, heightCm: 70, weightKg: 8.2),
+        favoriteCount: 3,
+        alertCount: 2,
+        signedIn: true,
+        offlineAuthenticated: false,
+        onEditProfile: () {},
+        onAuth: () {},
+        onSignOut: () {},
+        onDeleteAccount: () {},
+      ),
+    ));
+    await tester.pump();
+    expect(find.text('고객지원'), findsOneWidget);
+    expect(find.text('개인정보 안내'), findsOneWidget);
+    expect(find.text('계정 삭제 안내'), findsOneWidget);
+    expect(find.textContaining('릴리즈 준비 중'), findsNothing);
+    expect(tester.takeException(), isNull);
+    await tester.binding.setSurfaceSize(null);
   });
 }
