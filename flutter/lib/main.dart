@@ -10,6 +10,7 @@ import 'repositories/commercial_attribution_repository.dart';
 import 'models/commercial_content.dart';
 import 'services/kkokkafit_engine.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'theme/kkokkapick_theme.dart';
 
 void main()=>runApp(const KkokkapickApp());
 
@@ -19,7 +20,7 @@ class KkokkapickApp extends StatelessWidget {
   Widget build(BuildContext context)=>MaterialApp(
     title:'꼬까픽',
     debugShowCheckedModeBanner:false,
-    theme:ThemeData(useMaterial3:true,colorSchemeSeed:const Color(0xffff7043),scaffoldBackgroundColor:Colors.white),
+    theme:KkokkapickTheme.light(),
     home:const CatalogScreen(),
   );
 }
@@ -43,6 +44,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
   String _stage='전체',_category='전체',_brand='전체';
   CatalogSort _sort=CatalogSort.recommended;
   bool _fitOnly=false,_favoritesOnly=false,_loading=true;
+  int _navIndex=0;
   Object? _error;
   ChildProfile? _profile;
   List<CommercialCampaign> _campaigns=const[];
@@ -137,6 +139,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
     final categories=_values((p)=>p.category),brands=_values((p)=>p.brand??'');
     final items=_visible;
     return Scaffold(
+      bottomNavigationBar:NavigationBar(selectedIndex:_navIndex,onDestinationSelected:(i)=>setState((){_navIndex=i;if(i==1)_favoritesOnly=false;if(i==2)_favoritesOnly=true;if(i==3){_navIndex=0;_editProfile();}}),destinations:const [NavigationDestination(icon:Icon(Icons.home_outlined),selectedIcon:Icon(Icons.home),label:'홈'),NavigationDestination(icon:Icon(Icons.search),label:'찾기'),NavigationDestination(icon:Icon(Icons.favorite_border),selectedIcon:Icon(Icons.favorite),label:'찜'),NavigationDestination(icon:Icon(Icons.person_outline),label:'마이')]),
       appBar:AppBar(title:const Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('꼬까픽',style:TextStyle(fontWeight:FontWeight.w900)),Text('우리 아이 옷, 한곳에서.',style:TextStyle(fontSize:11,fontWeight:FontWeight.normal))]),actions:[IconButton(tooltip:'아이 정보',onPressed:_editProfile,icon:Icon(_profile==null?Icons.child_care_outlined:Icons.child_care)),IconButton(onPressed:()=>setState(()=>_favoritesOnly=!_favoritesOnly),icon:Icon(_favoritesOnly?Icons.favorite:Icons.favorite_border))]),
       body:_loading?const Center(child:CircularProgressIndicator()):_error!=null?_ErrorView(onRetry:_load):RefreshIndicator(onRefresh:_load,child:CustomScrollView(slivers:[
         if(_campaigns.isNotEmpty)SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.fromLTRB(16,12,16,0),child:Column(children:_campaigns.take(3).map((c)=>Card(child:ListTile(onTap:()=>_openCampaign(c),leading:const Icon(Icons.campaign_outlined),title:Text(c.title),subtitle:Text('${c.disclosureLabel} · ${c.partnerName??''}'),trailing:const Icon(Icons.chevron_right)))).toList()))),
