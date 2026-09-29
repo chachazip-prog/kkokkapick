@@ -37,7 +37,18 @@ final class AppSessionOrchestrator {
   late final SupabaseAccountGateway account;
 
   Future<AppSessionBootstrapResult> restore() async {
-    final restored=await authentication.restoreSession();
+    bool restored;
+    try {
+      restored=await authentication.restoreSession();
+    } catch (_) {
+      // A transient refresh/network failure must not make app startup fail.
+      // SupabaseAuthenticationGateway preserves the last known stored session
+      // unless credentials were explicitly rejected, so local account data can
+      // remain available in an offline-authenticated state.
+      return authentication.tokens!=null
+        ? const AppSessionBootstrapResult(AppSessionState.offlineAuthenticated)
+        : const AppSessionBootstrapResult(AppSessionState.guest);
+    }
     if(!restored)return const AppSessionBootstrapResult(AppSessionState.guest);
     try {
       final remote=await account.fetch();
