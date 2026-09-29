@@ -1,0 +1,40 @@
+enum AuthMethod { google, kakao, naver, apple, emailPassword }
+
+extension AuthMethodMetadata on AuthMethod {
+  String get label=>switch(this){
+    AuthMethod.google=>'Google',
+    AuthMethod.kakao=>'카카오',
+    AuthMethod.naver=>'네이버',
+    AuthMethod.apple=>'Apple',
+    AuthMethod.emailPassword=>'이메일',
+  };
+  bool get isSocial=>this!=AuthMethod.emailPassword;
+}
+
+abstract interface class AuthenticationGateway {
+  Future<void> signInWithSocial(AuthMethod method);
+  Future<void> signInWithEmail({required String email,required String password});
+  Future<void> createEmailAccount({required String email,required String password});
+}
+
+final class AuthenticationCoordinator {
+  const AuthenticationCoordinator(this.gateway);
+  final AuthenticationGateway gateway;
+
+  static const supportedMethods=<AuthMethod>{
+    AuthMethod.google,AuthMethod.kakao,AuthMethod.naver,AuthMethod.apple,AuthMethod.emailPassword,
+  };
+
+  Future<void> social(AuthMethod method) {
+    if(!method.isSocial||!supportedMethods.contains(method))throw ArgumentError.value(method,'method');
+    return gateway.signInWithSocial(method);
+  }
+
+  Future<void> email({required String email,required String password,required bool create}) {
+    final normalized=email.trim().toLowerCase();
+    if(normalized.isEmpty||password.isEmpty)throw ArgumentError('Email and password are required');
+    return create
+      ? gateway.createEmailAccount(email:normalized,password:password)
+      : gateway.signInWithEmail(email:normalized,password:password);
+  }
+}
