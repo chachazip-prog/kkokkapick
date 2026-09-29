@@ -28,6 +28,31 @@ void main(){
     final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',tokenStore:store,client:MockClient((_)async=>http.Response('{}',401)));
     expect(await g.restoreSession(),isFalse);expect(g.tokens,isNull);expect(store.value,isNull);
   });
+  test('transient restore failure preserves persisted refresh token',()async{
+    final store=_Store()..value=const StoredSessionTokens(accessToken:'old',refreshToken:'keep-me');
+    final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',tokenStore:store,client:MockClient((_)async=>http.Response('{}',503)));
+    await expectLater(g.restoreSession(),throwsA(isA<AuthenticationException>()));
+    expect(g.tokens,isNull);
+    expect(store.value?.refreshToken,'keep-me');
+  });
+  test('malformed successful refresh payload is rejected without deleting stored session',()async{
+    final store=_Store()..value=const StoredSessionTokens(accessToken:'old',refreshToken:'keep-me');
+    final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',tokenStore:store,client:MockClient((_)async=>http.Response('{bad json',200)));
+    await expectLater(g.restoreSession(),throwsA(isA<AuthenticationPayloadException>()));
+    expect(g.tokens,isNull);
+    expect(store.value?.refreshToken,'keep-me');
+  });
+  test('signup without session tokens is valid pending-confirmation response',()async{
+    final store=_Store();
+    final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',tokenStore:store,client:MockClient((_)async=>http.Response('{"user":{"id":"u1"}}',200)));
+    await g.createEmailAccount(email:'user@example.com',password:'secret');
+    expect(g.tokens,isNull);
+    expect(store.value,isNull);
+  });
+  test('email sign-in rejects tokenless successful response',()async{
+    final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',client:MockClient((_)async=>http.Response('{"user":{"id":"u1"}}',200)));
+    await expectLater(g.signInWithEmail(email:'user@example.com',password:'secret'),throwsA(isA<AuthenticationPayloadException>()));
+  });
   test('email sign-in uses Supabase password grant without secret credentials',()async{
     final client=MockClient((r)async{
       expect(r.url.path,endsWith('/auth/v1/token'));
