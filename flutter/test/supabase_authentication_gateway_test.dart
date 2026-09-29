@@ -59,7 +59,7 @@ void main(){
       expect(r.url.queryParameters['grant_type'],'password');
       expect(r.headers['apikey'],'public-anon');
       expect(r.body,contains('user@example.com'));
-      return http.Response('{"access_token":"token"}',200);
+      return http.Response('{"access_token":"token","refresh_token":"refresh"}',200);
     });
     await SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public-anon',client:client)
       .signInWithEmail(email:'user@example.com',password:'secret');
