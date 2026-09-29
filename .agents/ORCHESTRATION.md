@@ -36,18 +36,46 @@ QA MUST NOT inherit an implementation agent's reasoning as authoritative context
 
 ## Execution graph
 INTAKE
-  -> PLAN/DISCOVER (parallel only if independent)
+  -> PLAN/DISCOVER
+  -> split into independent tracks when applicable:
+
+VISUAL TRACK
+  -> UX/UI DESIGN EXPLORATION
+  -> 10 DISTINCT PROPOSALS
+  -> TEAM LEAD comparability check
+  -> PRODUCT OWNER DESIGN SELECTION GATE
+      -> NO SELECTION / ANOTHER ROUND: visual implementation remains blocked
+      -> SELECTED: UX/UI refines selected proposal only
+  -> VISUAL IMPLEMENTATION (Mobile FE)
+  -> IMPLEMENTATION SELF-CHECK
+  -> INDEPENDENT VISUAL QA
+
+NON-VISUAL ENGINEERING TRACK
   -> INTERFACE GATE
-  -> IMPLEMENT (parallel FE/BE/Data only on non-overlapping ownership)
+  -> IMPLEMENT (parallel FE logic/BE/Data only on non-overlapping ownership)
   -> IMPLEMENTATION SELF-CHECK
   -> INDEPENDENT QA
-      -> FAIL: route defects to owning implementation agent
-      -> fix
-      -> INDEPENDENT QA again
-      -> PASS
+
+TRACKS JOIN
+  -> QA FAIL: route defects to owning implementation agent
+  -> fix
+  -> INDEPENDENT QA again
+  -> QA PASS
   -> SECURITY/DATA/FINOPS conditional gates
   -> TEAM LEAD final gate
   -> PR ready
+
+## Design Selection Gate — hard rule
+For any new or materially changed user-facing visual direction:
+- UX/UI must return exactly 10 reviewable, genuinely distinct proposals before visual implementation begins.
+- A proposal set must be numbered `D01`–`D10` and use a comparable presentation format.
+- Each proposal must cover affected key surfaces, not just a palette or mood board. For app-wide redesigns, include at minimum home/discovery, catalog/search, product detail, and changed modal/sheet/navigation patterns.
+- Each proposal must document rationale, hierarchy/navigation intent, accessibility, responsive behavior, and implementation risks.
+- Team Lead may reject a weak proposal set and request stronger differentiation before showing it to the Product Owner.
+- Mobile Frontend must not implement the new visual direction until the Product Owner explicitly selects one proposal ID.
+- After selection, UX/UI may refine the selected proposal, but may not combine rejected concepts or materially deviate without Product Owner re-approval.
+- Design-agnostic engineering work must continue in parallel when dependency boundaries allow it.
+- Design-selection evidence and the selected proposal ID must be retained in `docs/` or the relevant PR/issue for auditability.
 
 ## QA independence — hard rule
 QA/Reviewer is never the author of the feature implementation it approves.
@@ -56,6 +84,7 @@ Team Lead routes each defect back to the responsible implementation agent.
 After fixes, QA performs a fresh verification pass.
 An implementation agent's own unit tests are necessary evidence, never final approval.
 Only QA may emit QA_PASS / QA_FAIL / QA_BLOCKED.
+For material visual work, QA must verify the implementation against the Product Owner-selected proposal ID as well as responsive/accessibility acceptance criteria.
 
 ## Required handoff envelopes
 Implementation agent return:
@@ -67,11 +96,23 @@ RISKS:
 COST_IMPACT:
 SECURITY_PRIVACY_IMPACT:
 DATA_PROVIDER_IMPACT:
+DESIGN_SELECTION_ID: N/A | D01..D10
 QA_NOTES:
+
+UX/UI proposal return:
+DESIGN_SET_STATUS: READY | REVISE | BLOCKED
+PROPOSALS: D01..D10
+SURFACES_COVERED:
+DIFFERENTIATION_CHECK:
+ACCESSIBILITY_NOTES:
+RESPONSIVE_NOTES:
+IMPLEMENTATION_RISKS:
+PRODUCT_OWNER_SELECTION_REQUIRED: YES
 
 QA return:
 QA_STATUS: QA_PASS | QA_FAIL | QA_BLOCKED
 AC_RESULTS:
+DESIGN_SELECTION_MATCH: N/A | PASS | FAIL
 TESTS_RUN:
 DEFECTS:
 REGRESSION_RISKS:
@@ -89,8 +130,8 @@ Invoke Online Marketing for launch acquisition, ASO/SEO, campaign experiments, r
 
 ## Stop conditions
 Stop and ask Product Owner when an escalation condition in root AGENTS.md is reached.
+For material visual work, stop only the visual implementation track at the Design Selection Gate; independent non-visual work continues.
 Do not merge automatically unless Product Owner has explicitly authorized that operating mode.
-
 
 ## Auditable QA sign-off
 The QA gate must leave an auditable repository artifact.
