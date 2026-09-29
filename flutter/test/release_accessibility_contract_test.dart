@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kkokkapick/theme/kkokkapick_theme.dart';
+import 'package:kkokkapick/widgets/discovery_experience.dart';
+import 'package:kkokkapick/models/catalog_product.dart';
 
 void main() {
   testWidgets('release shell survives large text scaling and exposes semantic navigation', (tester) async {
@@ -55,5 +57,17 @@ void main() {
     await tester.tap(find.text('취소'));
     await tester.pumpAndSettle();
     expect(deleted,isFalse);
+  });
+
+  testWidgets('commerce discovery survives release phone widths at 200% text',(tester)async{
+    final product=CatalogProduct(id:'qa',name:'긴 상품명도 안정적으로 보여야 하는 베이비 상하복 세트',brand:'아가방',category:'상하복',stage:'베이비',imageUrl:null,minPrice:32900,offerCount:0,fitStatus:'verified',offers:const [],availableSizes:const [],sizeGuide:null);
+    for(final width in [320.0,360.0,390.0,430.0]){
+      await tester.binding.setSurfaceSize(Size(width,844));
+      await tester.pumpWidget(MaterialApp(theme:KkokkapickTheme.light(),builder:(context,child)=>MediaQuery(data:MediaQuery.of(context).copyWith(textScaler:const TextScaler.linear(2)),child:child!),home:Scaffold(body:SafeArea(child:ListView(children:[SwipePickDeck(products:[product],favoriteIds:const <String>{},onFavorite:(_){},onTap:(_){ }),const SizedBox(height:160,child:ProductImage(url:null))])))));
+      await tester.pump();
+      expect(tester.takeException(),isNull,reason:'commerce discovery overflow at width $width');
+      expect(find.text('지금 둘러볼 옷'),findsOneWidget);expect(find.text('상품 이미지 준비 중'),findsWidgets);
+    }
+    await tester.binding.setSurfaceSize(null);
   });
 }
