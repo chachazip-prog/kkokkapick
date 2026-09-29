@@ -272,12 +272,29 @@ class _CatalogScreenState extends State<CatalogScreen>{
     finally{if(mounted)setState(()=>_authBusy=false);}
   }
 
+  Future<void> _deleteAccount() async {
+    if(!_signedIn)return;
+    final confirmed=await showDialog<bool>(context:context,builder:(context)=>AlertDialog(
+      title:const Text('계정을 삭제할까요?'),
+      content:const Text('아이 정보, 찜, 가격 알림과 로그인 계정을 모두 삭제해요. 삭제 후에는 되돌릴 수 없어요.'),
+      actions:[TextButton(onPressed:()=>Navigator.pop(context,false),child:const Text('취소')),FilledButton(onPressed:()=>Navigator.pop(context,true),child:const Text('계정 삭제'))]));
+    if(confirmed!=true||!mounted)return;
+    setState(()=>_authBusy=true);
+    try{
+      await _session.deleteAccount();
+      if(!mounted)return;
+      setState((){_favoriteIds=<String>{};_profile=null;_sessionState=AppSessionState.guest;});
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('계정을 삭제했어요.')));
+    }catch(_){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('계정을 삭제하지 못했어요. 계정과 기기 데이터는 유지돼요.')));}
+    finally{if(mounted)setState(()=>_authBusy=false);}
+  }
+
   Future<void> _showPrivacyData() async {
     await coordinatedModal<void>(context:context,coordinator:_overlays,builder:(context)=>SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
       Text('개인정보 및 데이터',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
       const SizedBox(height:8),const Text('아이 정보·찜·가격 알림은 현재 이 기기에 저장돼요.',style:TextStyle(color:KkokkapickTheme.muted)),
       const SizedBox(height:16),ListTile(contentPadding:EdgeInsets.zero,leading:const Icon(Icons.delete_outline),title:const Text('앱 데이터 삭제'),subtitle:Text(_signedIn?'아이 정보·찜·가격 알림을 계정과 이 기기에서 삭제해요.':'로그인 후 계정에 저장된 데이터까지 함께 삭제할 수 있어요.'),trailing:const Icon(Icons.chevron_right),enabled:_signedIn&&!_authBusy,onTap:_signedIn&&!_authBusy?(){Navigator.pop(context);_deleteAppData();}:null),
-      const ListTile(contentPadding:EdgeInsets.zero,leading:Icon(Icons.person_off_outlined),title:Text('계정 삭제'),subtitle:Text('로그인 기능 연결 후 제공돼요.'),enabled:false),
+      ListTile(contentPadding:EdgeInsets.zero,leading:const Icon(Icons.person_off_outlined),title:const Text('계정 삭제'),subtitle:Text(_signedIn?'로그인 계정과 연결된 앱 데이터를 모두 삭제해요.':'로그인 후 계정을 삭제할 수 있어요.'),trailing:const Icon(Icons.chevron_right),enabled:_signedIn&&!_authBusy,onTap:_signedIn&&!_authBusy?(){Navigator.pop(context);_deleteAccount();}:null),
     ]))));
   }
 
