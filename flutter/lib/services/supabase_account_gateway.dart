@@ -42,6 +42,21 @@ final class SupabaseAccountGateway implements AccountSyncGateway {
     return _decode(r);
   }
 
+  Future<void> setFavorite(String productId,bool favorite) async {
+    final r=await _client.post(_rpc('set_my_favorite'),headers:_headers,body:jsonEncode({'p_product_id':productId,'p_favorite':favorite}));
+    _requireSuccess(r);
+  }
+
+  Future<void> setPriceAlert(String productId,int? targetPrice) async {
+    final r=await _client.post(_rpc('set_my_price_alert'),headers:_headers,body:jsonEncode({'p_product_id':productId,'p_target_price':targetPrice}));
+    _requireSuccess(r);
+  }
+
+  Future<void> setChildProfile(Map<String,Object?>? profile) async {
+    final r=await _client.post(_rpc('set_my_child_profile'),headers:_headers,body:jsonEncode({'p_profile':profile}));
+    _requireSuccess(r);
+  }
+
   @override Future<void> deleteAppData() async {
     final r=await _client.post(_rpc('delete_my_app_data'),headers:_headers,body:'{}');
     _requireSuccess(r);
