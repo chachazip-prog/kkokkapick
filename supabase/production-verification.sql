@@ -4,6 +4,7 @@ begin read only;
 
 select to_regprocedure('public.get_published_catalog(integer,integer)') is not null as catalog_rpc_present;
 select to_regprocedure('public.get_my_app_data()') is not null as account_read_rpc_present;
+select to_regprocedure('public.sync_my_app_data(uuid[],jsonb,jsonb)') is not null as account_sync_rpc_present;
 select to_regprocedure('public.delete_my_account()') is not null as account_delete_rpc_present;
 select to_regprocedure('public.record_commercial_event(uuid,text,uuid,text)') is not null as commercial_event_rpc_present;
 
