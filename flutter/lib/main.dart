@@ -418,9 +418,9 @@ class _ProductSizeSection extends StatelessWidget {
   final CatalogProduct product;
   String _rowLabel(BrandSizeRow row) {
     final parts=<String>[];
-    if(row.months!=null&&row.months!.isNotEmpty) parts.add(row.months!.length>1?'\${row.months!.first}~\${row.months!.last}개월':'\${row.months!.first}개월');
-    if(row.heightCm!=null) parts.add('키 \${row.heightCm!.toStringAsFixed(row.heightCm!%1==0?0:1)}cm');
-    if(row.weightKg!=null) parts.add('\${row.weightKg!.toStringAsFixed(row.weightKg!%1==0?0:1)}kg');
+    if(row.months!=null&&row.months!.isNotEmpty) parts.add(row.months!.length>1?'${row.months!.first}~${row.months!.last}개월':'${row.months!.first}개월');
+    if(row.heightCm!=null) parts.add('키 ${row.heightCm!.toStringAsFixed(row.heightCm!%1==0?0:1)}cm');
+    if(row.weightKg!=null) parts.add('${row.weightKg!.toStringAsFixed(row.weightKg!%1==0?0:1)}kg');
     return parts.join(' · ');
   }
   @override Widget build(BuildContext context) {
@@ -432,7 +432,7 @@ class _ProductSizeSection extends StatelessWidget {
         Wrap(spacing:6,runSpacing:6,children:product.availableSizes.map((s)=>Chip(label:Text(s))).toList()),const SizedBox(height:10),
       ],
       if(guide!=null&&guide.rows.isNotEmpty)...[
-        Text('\${product.brand??'브랜드'} 공식 사이즈 가이드',style:const TextStyle(fontWeight:FontWeight.w700)),const SizedBox(height:6),
+        Text('${product.brand??'브랜드'} 공식 사이즈 가이드',style:const TextStyle(fontWeight:FontWeight.w700)),const SizedBox(height:6),
         ...guide.rows.map((row)=>Padding(padding:const EdgeInsets.only(bottom:4),child:Row(children:[
           SizedBox(width:54,child:Text(row.size,style:const TextStyle(fontWeight:FontWeight.w800))),
           Expanded(child:Text(_rowLabel(row).isEmpty?'공식 표 참고':_rowLabel(row),style:Theme.of(context).textTheme.bodySmall)),
