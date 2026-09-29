@@ -73,3 +73,14 @@ export function getFitEvidence(brand) {
   if (candidate) return { status: candidate.status, source: null };
   return { status: "unverified", source: null };
 }
+
+export function getBrandSizeGuide(brand) {
+  const chart=getVerifiedChart(brand);
+  if(!chart) return null;
+  return {
+    kind:"brand_official",
+    source:chart.source,
+    verifiedAt:chart.verifiedAt,
+    rows:chart.rows.map(row=>({size:String(row.size),months:row.months??null,height:row.height??null,weight:row.weight??null}))
+  };
+}
