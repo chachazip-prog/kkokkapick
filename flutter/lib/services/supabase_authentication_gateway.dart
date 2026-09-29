@@ -40,29 +40,48 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
     throw const AuthConfigurationRequired();
   }
 
-  Future<void> _captureTokens(http.Response r) async {
-    if(r.body.trim().isEmpty)return;
-    final raw=jsonDecode(r.body);
-    if(raw is! Map)return;
+  Future<bool> _captureTokens(http.Response r) async {
+    if(r.body.trim().isEmpty)return false;
+    Object? raw;
+    try{raw=jsonDecode(r.body);}on FormatException{throw const AuthenticationPayloadException();}
+    if(raw is! Map)throw const AuthenticationPayloadException();
     final access=raw['access_token'],refresh=raw['refresh_token'];
-    if(access is String&&access.isNotEmpty&&refresh is String&&refresh.isNotEmpty){
-      _tokens=AuthTokens(accessToken:access,refreshToken:refresh);
-      await tokenStore?.write(StoredSessionTokens(accessToken:access,refreshToken:refresh));
+    if(access==null&&refresh==null)return false;
+    if(access is! String||access.isEmpty||refresh is! String||refresh.isEmpty){
+      throw const AuthenticationPayloadException();
     }
+    _tokens=AuthTokens(accessToken:access,refreshToken:refresh);
+    await tokenStore?.write(StoredSessionTokens(accessToken:access,refreshToken:refresh));
+    return true;
   }
 
   Future<void> refreshSession() async {
     final refresh=_tokens?.refreshToken;
     if(refresh==null||refresh.isEmpty)throw const AuthSessionUnavailable();
     final r=await _client.post(_auth('token?grant_type=refresh_token'),headers:_headers,body:jsonEncode({'refresh_token':refresh}));
-    _requireSuccess(r);await _captureTokens(r);
+    _requireSuccess(r);
+    if(!await _captureTokens(r))throw const AuthenticationPayloadException();
   }
 
   Future<bool> restoreSession() async {
     final stored=await tokenStore?.read();
     if(stored==null)return false;
     _tokens=AuthTokens(accessToken:stored.accessToken,refreshToken:stored.refreshToken);
-    try{await refreshSession();return true;}catch(_){_tokens=null;await tokenStore?.clear();return false;}
+    try{
+      await refreshSession();
+      return true;
+    } on AuthenticationException catch(e) {
+      if(e.statusCode==400||e.statusCode==401||e.statusCode==403){
+        _tokens=null;
+        await tokenStore?.clear();
+        return false;
+      }
+      _tokens=null;
+      rethrow;
+    } catch (_) {
+      _tokens=null;
+      rethrow;
+    }
   }
 
   Future<void> clearSession() async {_tokens=null;await tokenStore?.clear();}
@@ -83,3 +102,7 @@ final class AuthenticationException implements Exception {
 }
 
 final class AuthSessionUnavailable implements Exception { const AuthSessionUnavailable(); }
+
+final class AuthenticationPayloadException implements Exception {
+  const AuthenticationPayloadException();
+}
