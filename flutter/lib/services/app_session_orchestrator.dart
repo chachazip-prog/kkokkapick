@@ -1,4 +1,5 @@
 import 'account_sync.dart';
+import 'account_mutation_outbox.dart';
 import 'authentication_session_bridge.dart';
 import 'local_account_data_store.dart';
 import 'supabase_account_gateway.dart';
@@ -19,7 +20,8 @@ final class AppSessionOrchestrator {
     required String supabaseUrl,
     required String anonKey,
     SupabaseAccountGateway Function(AuthenticationSessionBridge session)? accountFactory,
-  }) {
+    AccountMutationOutbox? outbox,
+  }):outbox=outbox??AccountMutationOutbox() {
     session=AuthenticationSessionBridge(authentication);
     account=(accountFactory??((session)=>SupabaseAccountGateway(
       baseUrl:supabaseUrl,
@@ -30,6 +32,7 @@ final class AppSessionOrchestrator {
 
   final SupabaseAuthenticationGateway authentication;
   final LocalAccountDataStore localData;
+  final AccountMutationOutbox outbox;
   late final AuthenticationSessionBridge session;
   late final SupabaseAccountGateway account;
 
@@ -37,6 +40,7 @@ final class AppSessionOrchestrator {
     final restored=await authentication.restoreSession();
     if(!restored)return const AppSessionBootstrapResult(AppSessionState.guest);
     try {
+      await replayPendingMutations();
       final remote=await account.fetch();
       return AppSessionBootstrapResult(AppSessionState.authenticated,remote:remote);
     } on AccountGatewayException catch(e) {
@@ -55,13 +59,36 @@ final class AppSessionOrchestrator {
     return AccountSyncCoordinator(account).handleFirstAuthenticatedSession(choice:choice,local:local);
   }
 
-  Future<void> setFavorite(String productId,bool favorite)=>account.setFavorite(productId,favorite);
-  Future<void> setPriceAlert(String productId,int? targetPrice)=>account.setPriceAlert(productId,targetPrice);
-  Future<void> setChildProfile(Map<String,Object?>? profile)=>account.setChildProfile(profile);
+  Future<void> setFavorite(String productId,bool favorite)=>_sendOrQueue(
+    PendingAccountMutation(AccountMutationKind.favorite,productId,{'favorite':favorite}));
+  Future<void> setPriceAlert(String productId,int? targetPrice)=>_sendOrQueue(
+    PendingAccountMutation(AccountMutationKind.priceAlert,productId,{'targetPrice':targetPrice}));
+  Future<void> setChildProfile(Map<String,Object?>? profile)=>_sendOrQueue(
+    PendingAccountMutation(AccountMutationKind.childProfile,'profile',{'profile':profile}));
+
+  Future<void> _send(PendingAccountMutation m) {
+    switch(m.kind){
+      case AccountMutationKind.favorite:return account.setFavorite(m.key,m.payload['favorite'] as bool);
+      case AccountMutationKind.priceAlert:return account.setPriceAlert(m.key,m.payload['targetPrice'] as int?);
+      case AccountMutationKind.childProfile:return account.setChildProfile(m.payload['profile'] as Map<String,Object?>?);
+    }
+  }
+
+  Future<void> _sendOrQueue(PendingAccountMutation m) async {
+    await outbox.put(m);
+    try{await _send(m);await outbox.remove(m.kind,m.key);}catch(_){rethrow;}
+  }
+
+  Future<void> replayPendingMutations() async {
+    for(final m in await outbox.load()){
+      try{await _send(m);await outbox.remove(m.kind,m.key);}catch(_){/* retain for later retry */}
+    }
+  }
 
   Future<void> deleteAppData() async {
     await AccountSyncCoordinator(account).deleteAppData();
     await localData.clearAppData();
+    await outbox.clear();
   }
 
   Future<void> signOut()=>authentication.clearSession();
