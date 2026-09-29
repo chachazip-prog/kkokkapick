@@ -38,9 +38,9 @@ final class AccountMutationOutbox {
   }
 
   Future<void> remove(AccountMutationKind kind,String key,[String owner='guest']) async {
-    final items=await load();
+    final items=List<PendingAccountMutation>.of(await load(owner));
     items.removeWhere((x)=>x.kind==kind&&x.key==key);
-    await _save(items);
+    await _save(items,owner);
   }
 
   Future<void> clear([String owner='guest']) async {
