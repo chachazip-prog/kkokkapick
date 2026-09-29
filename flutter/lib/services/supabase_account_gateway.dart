@@ -52,6 +52,16 @@ final class SupabaseAccountGateway implements AccountSyncGateway {
     _requireSuccess(r);
   }
 
+  Future<void> setPushDevice({required String platform,required String token,bool enabled=true}) async {
+    final r=await _client.post(_rpc('set_my_push_device'),headers:_headers,body:jsonEncode({'p_platform':platform,'p_token':token,'p_enabled':enabled}));
+    _requireSuccess(r);
+  }
+
+  Future<void> removePushDevice(String token) async {
+    final r=await _client.post(_rpc('remove_my_push_device'),headers:_headers,body:jsonEncode({'p_token':token}));
+    _requireSuccess(r);
+  }
+
   Future<void> setChildProfile(Map<String,Object?>? profile) async {
     final r=await _client.post(_rpc('set_my_child_profile'),headers:_headers,body:jsonEncode({'p_profile':profile}));
     _requireSuccess(r);
