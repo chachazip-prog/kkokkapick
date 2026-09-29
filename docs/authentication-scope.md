@@ -34,3 +34,7 @@ Provider credentials and callback URLs belong in provider/Supabase consoles, not
 3. provider applications/credentials,
 4. privacy/support/account-deletion URLs,
 5. App Store login-policy review before submission.
+
+
+## Session-to-account boundary
+The authenticated access token is exposed to account RPCs through `AuthenticationSessionBridge`. The bridge reads the current in-memory token, including rotated tokens after refresh, and returns to guest state immediately after session clear. It never exposes the refresh token to the account-data gateway.
