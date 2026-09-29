@@ -95,5 +95,13 @@ final class AppSessionOrchestrator {
     await outbox.clear(_outboxOwner);
   }
 
+  Future<void> deleteAccount() async {
+    final owner=_outboxOwner;
+    await account.deleteAccountIdentity();
+    await localData.clearAppData();
+    await outbox.clear(owner);
+    await authentication.clearSession();
+  }
+
   Future<void> signOut()=>authentication.clearSession();
 }
