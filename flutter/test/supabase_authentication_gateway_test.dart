@@ -42,12 +42,13 @@ void main(){
   test('email signup uses public signup endpoint',()async{
     final client=MockClient((r)async{
       expect(r.url.path,endsWith('/auth/v1/signup'));
-      return http.Response('{}',200);
+      return http.Response('{"access_token":"signup-access","refresh_token":"signup-refresh"}',200);
     });
     final store=_Store();
     await SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public-anon',tokenStore:store,client:client)
       .createEmailAccount(email:'user@example.com',password:'secret');
-    expect(store.value,isNull);
+    expect(store.value?.accessToken,'signup-access');
+    expect(store.value?.refreshToken,'signup-refresh');
   });
   test('social auth remains closed until callback/provider config exists',()async{
     final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public');
