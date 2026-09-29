@@ -37,8 +37,17 @@ jobs:
       - name: Build Flutter preview
         working-directory: flutter
         run: flutter build web --release --base-href /kkokkapick/flutter-preview/
-      - name: Verify preview bundle
+      - name: Publish preview into active Pages source
         run: |
+          set -euo pipefail
           test -f flutter/build/web/index.html
           test -f flutter/build/web/flutter_bootstrap.js
-          echo "Preview bundle is valid. Pages currently publishes from main/root, so the reviewed bundle must be committed under /flutter-preview/ on main."
+          rm -rf flutter-preview
+          mkdir -p flutter-preview
+          cp -R flutter/build/web/. flutter-preview/
+          git add -f flutter-preview
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Deploy Flutter UI preview [skip ci]"
+          git push origin HEAD:main
