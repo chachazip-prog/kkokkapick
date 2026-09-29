@@ -55,6 +55,7 @@ jobs:
           node test/production-config-contract.test.js
           node test/production-verification-contract.test.js
           node test/provider-sync-workflow-contract.test.js
+          node test/push-worker-contract.test.js
           node test/commercial-event-concurrency-contract.test.js
       - name: Validate web module syntax
         run: |
