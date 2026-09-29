@@ -70,4 +70,10 @@ class CatalogProduct {
   }
 
   String get merchant=>offers.isEmpty?'판매처':offers.first.merchant;
+  String get displayName {
+    var value=name.trim();
+    value=value.replaceFirst(RegExp(r'^\\s*\\[[^\\]]+\\]\\s*'), '');
+    value=value.replaceFirst(RegExp(r'^(?:보리보리|롯데백화점|GS SHOP|GSSHOP)\\s*[-:|]?\\s*',caseSensitive:false), '');
+    return value.trim().isEmpty?name:value.trim();
+  }
 }
