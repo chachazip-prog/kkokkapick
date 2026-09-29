@@ -90,6 +90,11 @@ class _CatalogScreenState extends State<CatalogScreen>{
   }
 
   List<String> _values(String Function(CatalogProduct) pick)=>['전체',...{for(final p in _products) if(pick(p).isNotEmpty) pick(p)}.toList()..sort()];
+  List<String> get _availableBrands {
+    final candidates=_products.where((p)=>_stageMatches(p)&&(_category=='전체'||p.category==_category)&&(!_fitOnly||p.fitStatus=='verified'));
+    final values={for(final p in candidates) if((p.brand??'').isNotEmpty) p.brand!}.toList()..sort();
+    return ['전체',...values];
+  }
   bool _stageMatches(CatalogProduct p)=>_stage=='전체'||p.stage==_stage||(_stage=='토들러'&&(p.stage=='유아'||p.stage=='키즈'));
 
   List<CatalogProduct> get _visible {
@@ -315,7 +320,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
 
   @override Widget build(BuildContext context){
     final stages=['전체','신생아','베이비','유아','토들러','키즈'];
-    final categories=_values((p)=>p.category),brands=_values((p)=>p.brand??'');
+    final categories=_values((p)=>p.category),brands=_availableBrands;
     final items=_visible;
     return Scaffold(
       floatingActionButton:_navIndex==1?FloatingActionButton.extended(onPressed:_showFilters,icon:const Icon(Icons.tune),label:const Text('필터')):null,
@@ -340,7 +345,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
           Row(children:[Text('${items.length}개',style:Theme.of(context).textTheme.titleMedium),const Spacer(),TextButton(onPressed:_reset,child:const Text('필터 초기화'))])],
         ]))),
         if(items.isEmpty)SliverFillRemaining(child:_EmptyCatalogView(onReset:_reset,favoritesOnly:_favoritesOnly))
-        else SliverPadding(padding:const EdgeInsets.fromLTRB(16,0,16,24),sliver:SliverGrid.builder(gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,crossAxisSpacing:10,mainAxisSpacing:18,childAspectRatio:.60),itemCount:items.length,itemBuilder:(context,i)=>_ProductCard(product:items[i],favorite:_favoriteIds.contains(items[i].id),onFavorite:()=>_toggleFavorite(items[i].id),onTap:()=>coordinatedModal(context:context,coordinator:_overlays,builder:(_)=>_ProductDetail(items[i],profile:_profile,onPriceAlertChanged:_signedIn?(productId,target)=>_session.setPriceAlert(productId,target):null)))))
+        else SliverPadding(padding:const EdgeInsets.fromLTRB(16,0,16,24),sliver:SliverLayoutBuilder(builder:(context,constraints){final columns=constraints.crossAxisExtent>=900?4:constraints.crossAxisExtent>=600?3:2;return SliverGrid.builder(gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:columns,crossAxisSpacing:12,mainAxisSpacing:18,mainAxisExtent:330),itemCount:items.length,itemBuilder:(context,i)=>_ProductCard(product:items[i],favorite:_favoriteIds.contains(items[i].id),onFavorite:()=>_toggleFavorite(items[i].id),onTap:()=>coordinatedModal(context:context,coordinator:_overlays,builder:(_)=>_ProductDetail(items[i],profile:_profile,onPriceAlertChanged:_signedIn?(productId,target)=>_session.setPriceAlert(productId,target):null)));}))
       ])),
     );
   }
