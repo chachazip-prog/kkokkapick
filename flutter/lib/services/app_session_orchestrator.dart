@@ -19,17 +19,19 @@ final class AppSessionOrchestrator {
     required String supabaseUrl,
     required String anonKey,
     SupabaseAccountGateway Function(AuthenticationSessionBridge session)? accountFactory,
-  }): session=AuthenticationSessionBridge(authentication),
-      account=(accountFactory??((session)=>SupabaseAccountGateway(
-        baseUrl:supabaseUrl,
-        anonKey:anonKey,
-        session:session,
-      )))(AuthenticationSessionBridge(authentication));
+  }) {
+    session=AuthenticationSessionBridge(authentication);
+    account=(accountFactory??((session)=>SupabaseAccountGateway(
+      baseUrl:supabaseUrl,
+      anonKey:anonKey,
+      session:session,
+    )))(session);
+  }
 
   final SupabaseAuthenticationGateway authentication;
   final LocalAccountDataStore localData;
-  final AuthenticationSessionBridge session;
-  final SupabaseAccountGateway account;
+  late final AuthenticationSessionBridge session;
+  late final SupabaseAccountGateway account;
 
   Future<AppSessionBootstrapResult> restore() async {
     final restored=await authentication.restoreSession();
