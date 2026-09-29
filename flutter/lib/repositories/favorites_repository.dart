@@ -12,4 +12,5 @@ class FavoritesRepository {
     final prefs=await SharedPreferences.getInstance();
     await prefs.setStringList(_key,ids.toList()..sort());
   }
+  Future<void> clear() async=>(await SharedPreferences.getInstance()).remove(_key);
 }

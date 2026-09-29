@@ -13,6 +13,10 @@ class ChildProfileRepository {
     final m=p.getInt('child_months'),h=p.getDouble('child_height'),w=p.getDouble('child_weight');
     return m!=null&&m>0&&h!=null&&h>0&&w!=null&&w>0?ChildProfile(months:m,heightCm:h,weightKg:w):null;
   }
+  Future<void> clear() async {
+    final p=await SharedPreferences.getInstance();
+    await Future.wait([p.remove('child_months'),p.remove('child_height'),p.remove('child_weight')]);
+  }
   Future<void> save(ChildProfile v) async {
     final p=await SharedPreferences.getInstance();
     await p.setInt('child_months',v.months);
