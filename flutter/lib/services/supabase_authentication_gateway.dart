@@ -66,6 +66,10 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
     if(!await _captureTokens(r))throw const AuthenticationPayloadException();
   }
 
+  Future<bool> hasPersistedSession() async {
+    try{return await tokenStore?.read()!=null;}catch(_){return false;}
+  }
+
   Future<bool> restoreSession() async {
     final stored=await tokenStore?.read();
     if(stored==null)return false;
@@ -79,9 +83,13 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
         await tokenStore?.clear();
         return false;
       }
+      // A transient service failure is not proof that persisted credentials are
+      // invalid, but the stale access token must not remain active in memory.
       _tokens=null;
       rethrow;
     } catch (_) {
+      // Keep persisted credentials for a later retry while preventing stale
+      // tokens from being used for remote account operations in this session.
       _tokens=null;
       rethrow;
     }

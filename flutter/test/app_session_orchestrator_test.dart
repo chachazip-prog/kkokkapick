@@ -40,6 +40,25 @@ void main(){
     expect(result.remote?.favoriteProductIds,{'p1'});
   });
 
+  test('transient auth refresh failure preserves offline-authenticated session without activating stale token',()async{
+    final store=_Store(const StoredSessionTokens(accessToken:'old',refreshToken:'refresh',userId:'u1'));
+    final auth=_auth(store,refreshStatus:503);
+    final app=AppSessionOrchestrator(authentication:auth,localData:LocalAccountDataStore(),supabaseUrl:'https://example.supabase.co',anonKey:'public');
+    final result=await app.restore();
+    expect(result.state,AppSessionState.offlineAuthenticated);
+    expect(auth.tokens,isNull);
+    expect(store.value?.userId,'u1');
+  });
+
+  test('invalid refresh credentials clear stored session and return guest',()async{
+    final store=_Store(const StoredSessionTokens(accessToken:'old',refreshToken:'refresh',userId:'u1'));
+    final auth=_auth(store,refreshStatus:401);
+    final app=AppSessionOrchestrator(authentication:auth,localData:LocalAccountDataStore(),supabaseUrl:'https://example.supabase.co',anonKey:'public');
+    expect((await app.restore()).state,AppSessionState.guest);
+    expect(auth.tokens,isNull);
+    expect(store.value,isNull);
+  });
+
   test('transient account failure preserves authenticated session',()async{
     final store=_Store(const StoredSessionTokens(accessToken:'old',refreshToken:'refresh'));
     final auth=_auth(store);
