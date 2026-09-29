@@ -66,7 +66,9 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
     if(!await _captureTokens(r))throw const AuthenticationPayloadException();
   }
 
-  Future<bool> hasPersistedSession() async => await tokenStore?.read()!=null;
+  Future<bool> hasPersistedSession() async {
+    try{return await tokenStore?.read()!=null;}catch(_){return false;}
+  }
 
   Future<bool> restoreSession() async {
     final stored=await tokenStore?.read();
