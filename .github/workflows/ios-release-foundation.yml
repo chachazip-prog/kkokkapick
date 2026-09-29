@@ -44,9 +44,9 @@ jobs:
       - name: Apply final bundle identifier
         working-directory: flutter
         run: |
-          sed -i '' 's/com\.example\.kkokkapick/com.kkokkapick.app/g' ios/Runner.xcodeproj/project.pbxproj
+          sed -i '' -E 's/PRODUCT_BUNDLE_IDENTIFIER = [^;]+;/PRODUCT_BUNDLE_IDENTIFIER = com.kkokkapick.app;/g' ios/Runner.xcodeproj/project.pbxproj
           grep -q 'PRODUCT_BUNDLE_IDENTIFIER = com.kkokkapick.app;' ios/Runner.xcodeproj/project.pbxproj
-          ! grep -q 'com.example.kkokkapick' ios/Runner.xcodeproj/project.pbxproj
+          ! grep -Eq 'PRODUCT_BUNDLE_IDENTIFIER = (com\\.example|com\\.kkokkapick\\.kkokkapick)' ios/Runner.xcodeproj/project.pbxproj
       - name: Build unsigned iOS release
         working-directory: flutter
         run: flutter build ios --release --no-codesign
