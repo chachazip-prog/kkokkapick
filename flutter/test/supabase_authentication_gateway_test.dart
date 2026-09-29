@@ -32,4 +32,24 @@ void main(){
     final g=SupabaseAuthenticationGateway(baseUrl:'',anonKey:'');
     expect(()=>g.signInWithEmail(email:'a@b.com',password:'x'),throwsA(isA<StateError>()));
   });
+  test('captures, refreshes, and clears authenticated session tokens',()async{
+    var refresh=false;
+    final client=MockClient((r)async{
+      if(r.url.queryParameters['grant_type']=='refresh_token'){
+        refresh=true;expect(r.body,contains('refresh-1'));
+        return http.Response('{"access_token":"access-2","refresh_token":"refresh-2"}',200);
+      }
+      return http.Response('{"access_token":"access-1","refresh_token":"refresh-1"}',200);
+    });
+    final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public',client:client);
+    await g.signInWithEmail(email:'user@example.com',password:'secret');
+    expect(g.tokens?.accessToken,'access-1');
+    await g.refreshSession();
+    expect(refresh,isTrue);expect(g.tokens?.accessToken,'access-2');
+    g.clearSession();expect(g.tokens,isNull);
+  });
+  test('refresh requires an existing authenticated session',()async{
+    final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public');
+    expect(()=>g.refreshSession(),throwsA(isA<AuthSessionUnavailable>()));
+  });
 }
