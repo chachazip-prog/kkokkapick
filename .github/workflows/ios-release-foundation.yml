@@ -1,0 +1,54 @@
+name: iOS release foundation
+
+on:
+  pull_request:
+    paths:
+      - "flutter/**"
+      - ".github/workflows/ios-release-foundation.yml"
+  push:
+    branches: [main]
+    paths:
+      - "flutter/**"
+      - ".github/workflows/ios-release-foundation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-release-foundation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ios-unsigned:
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Resolve Flutter packages
+        working-directory: flutter
+        run: flutter pub get
+      - name: Analyze
+        working-directory: flutter
+        run: flutter analyze
+      - name: Test
+        working-directory: flutter
+        run: flutter test
+      - name: Generate disposable iOS project
+        working-directory: flutter
+        run: flutter create --platforms=ios --project-name=kkokkapick .
+      - name: Guard placeholder bundle identifier
+        working-directory: flutter
+        run: |
+          grep -R "PRODUCT_BUNDLE_IDENTIFIER" ios/Runner.xcodeproj/project.pbxproj
+          echo "Final bundle identifier remains a Product Owner/store-registration gate."
+      - name: Build unsigned iOS release
+        working-directory: flutter
+        run: flutter build ios --release --no-codesign
+      - name: Verify release artifact
+        working-directory: flutter
+        run: test -d build/ios/iphoneos/Runner.app
