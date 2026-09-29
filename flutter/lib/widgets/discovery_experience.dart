@@ -31,6 +31,16 @@ class _GuideCard extends StatelessWidget {
   );
 }
 
+class ProductImage extends StatelessWidget {
+  const ProductImage({super.key,required this.url,this.fit=BoxFit.cover});
+  final String? url; final BoxFit fit;
+  @override Widget build(BuildContext context){
+    final fallback=Container(color:KkokkapickTheme.surface,alignment:Alignment.center,child:const Column(mainAxisSize:MainAxisSize.min,children:[Icon(Icons.checkroom_outlined,size:34,color:KkokkapickTheme.muted),SizedBox(height:6),Text('상품 이미지 준비 중',style:TextStyle(fontSize:11,color:KkokkapickTheme.muted))]));
+    if(url==null||url!.trim().isEmpty)return fallback;
+    return Image.network(url!,fit:fit,loadingBuilder:(context,child,progress)=>progress==null?child:Container(color:KkokkapickTheme.surface,alignment:Alignment.center,child:const SizedBox(width:24,height:24,child:CircularProgressIndicator(strokeWidth:2))),errorBuilder:(_,__,___)=>fallback);
+  }
+}
+
 class SwipePickDeck extends StatelessWidget {
   const SwipePickDeck({super.key, required this.products, required this.favoriteIds, required this.onFavorite, required this.onTap});
   final List<CatalogProduct> products;
@@ -69,9 +79,7 @@ class SwipePickDeck extends StatelessWidget {
                 onTap: () => onTap(p),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Expanded(child: Stack(fit: StackFit.expand, children: [
-                    p.imageUrl == null
-                      ? const ColoredBox(color: KkokkapickTheme.surface)
-                      : Image.network(p.imageUrl!, fit: BoxFit.cover, errorBuilder: (_, __, ___) => const ColoredBox(color: KkokkapickTheme.surface)),
+                    ProductImage(url:p.imageUrl),
                     Positioned(right: 10, top: 10, child: IconButton.filled(onPressed: () => onFavorite(p.id), icon: Icon(favoriteIds.contains(p.id) ? Icons.favorite : Icons.favorite_border))),
                   ])),
                   Padding(
