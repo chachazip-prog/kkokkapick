@@ -14,6 +14,9 @@ import 'theme/kkokkapick_theme.dart';
 import 'services/overlay_coordinator.dart';
 import 'services/local_account_data_store.dart';
 import 'services/authentication.dart';
+import 'services/app_session_orchestrator.dart';
+import 'services/secure_session_token_store.dart';
+import 'services/supabase_authentication_gateway.dart';
 
 void main()=>runApp(const KkokkapickApp());
 
@@ -43,6 +46,10 @@ class _CatalogScreenState extends State<CatalogScreen>{
   final Set<String> _impressedCampaignIds=<String>{};
   final _overlays=OverlayCoordinator();
   final _localAccountData=LocalAccountDataStore();
+  late final SupabaseAuthenticationGateway _authentication;
+  late final AppSessionOrchestrator _session;
+  AppSessionState _sessionState=AppSessionState.guest;
+  bool _authBusy=false;
   static const _commercial=CommercialRepository(supabaseUrl:_supabaseUrl,anonKey:_supabaseAnonKey);
   static const _attribution=CommercialAttributionRepository(supabaseUrl:_supabaseUrl,anonKey:_supabaseAnonKey);
   List<CatalogProduct> _products=const[];
@@ -56,7 +63,13 @@ class _CatalogScreenState extends State<CatalogScreen>{
   List<CommercialCampaign> _campaigns=const[];
   ManagedPopup? _managedPopup;
 
-  @override void initState(){super.initState();_load();}
+  @override void initState(){
+    super.initState();
+    _authentication=SupabaseAuthenticationGateway(baseUrl:_supabaseUrl,anonKey:_supabaseAnonKey,tokenStore:SecureSessionTokenStore());
+    _session=AppSessionOrchestrator(authentication:_authentication,localData:_localAccountData,supabaseUrl:_supabaseUrl,anonKey:_supabaseAnonKey);
+    _restoreSession();
+    _load();
+  }
   @override void dispose(){_search.dispose();super.dispose();}
 
   Future<void> _load() async {
@@ -141,6 +154,65 @@ class _CatalogScreenState extends State<CatalogScreen>{
     if(choice=='reset')_reset();
   }
 
+  bool get _authConfigured=>_supabaseUrl.isNotEmpty&&_supabaseAnonKey.isNotEmpty;
+  bool get _signedIn=>_sessionState==AppSessionState.authenticated||_sessionState==AppSessionState.offlineAuthenticated;
+
+  Future<void> _restoreSession() async {
+    if(!_authConfigured)return;
+    if(mounted)setState(()=>_sessionState=AppSessionState.restoring);
+    try{
+      final result=await _session.restore();
+      if(mounted)setState(()=>_sessionState=result.state);
+    }catch(_){
+      if(mounted)setState(()=>_sessionState=AppSessionState.guest);
+    }
+  }
+
+  Future<void> _authenticateEmail(String email,String password,{required bool create}) async {
+    if(!_authConfigured)return;
+    setState(()=>_authBusy=true);
+    try{
+      await AuthenticationCoordinator(_authentication).email(email:email,password:password,create:create);
+      if(!mounted)return;
+      if(_authentication.tokens==null){
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('가입 확인 메일을 확인해 주세요.')));
+        Navigator.of(context).pop();
+        return;
+      }
+      setState(()=>_sessionState=AppSessionState.authenticated);
+      Navigator.of(context).pop();
+      await _askFirstSignInSync();
+    } on AuthenticationException catch(e){
+      if(mounted)ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text('로그인에 실패했어요. (HTTP ${e.statusCode})')));
+    } on AuthenticationPayloadException {
+      if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('인증 응답을 확인할 수 없어요. 잠시 후 다시 시도해 주세요.')));
+    } catch(_){
+      if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('인증 중 문제가 발생했어요. 잠시 후 다시 시도해 주세요.')));
+    } finally{
+      if(mounted)setState(()=>_authBusy=false);
+    }
+  }
+
+  Future<void> _askFirstSignInSync() async {
+    if(!_signedIn)return;
+    final choice=await coordinatedModal<FirstSignInDataChoice>(context:context,coordinator:_overlays,builder:(context)=>SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
+      Text('이 기기 데이터를 동기화할까요?',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
+      const SizedBox(height:8),const Text('찜·아이 정보·가격 알림은 동의하기 전까지 서버로 올리지 않아요.',style:TextStyle(color:KkokkapickTheme.muted)),
+      const SizedBox(height:16),FilledButton(onPressed:()=>Navigator.pop(context,FirstSignInDataChoice.syncDeviceData),child:const Text('이 기기 데이터 동기화')),
+      const SizedBox(height:6),TextButton(onPressed:()=>Navigator.pop(context,FirstSignInDataChoice.keepDeviceOnly),child:const Text('이 기기에만 유지')),
+    ]))));
+    if(choice==null)return;
+    setState(()=>_authBusy=true);
+    try{await _session.applyFirstSignInChoice(choice);}
+    catch(_){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('동기화를 완료하지 못했어요. 기기 데이터는 그대로 유지돼요.')));}
+    finally{if(mounted)setState(()=>_authBusy=false);}
+  }
+
+  Future<void> _signOut() async {
+    await _session.signOut();
+    if(mounted)setState(()=>_sessionState=AppSessionState.guest);
+  }
+
   Future<void> _showAccountSyncInfo() async {
     final local=await _localAccountData.snapshot();
     if(!mounted)return;
@@ -171,11 +243,11 @@ class _CatalogScreenState extends State<CatalogScreen>{
       padding:EdgeInsets.fromLTRB(20,0,20,MediaQuery.viewInsetsOf(context).bottom+24),
       child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
         Text('이메일로 계속하기',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
-        const SizedBox(height:12),TextField(controller:email,keyboardType:TextInputType.emailAddress,autocorrect:false,decoration:const InputDecoration(labelText:'이메일')),
-        const SizedBox(height:10),TextField(controller:password,obscureText:true,decoration:const InputDecoration(labelText:'비밀번호')),
-        const SizedBox(height:14),FilledButton(onPressed:null,child:const Text('로그인')),
-        const SizedBox(height:6),OutlinedButton(onPressed:null,child:const Text('새 계정 만들기')),
-        const SizedBox(height:8),const Text('운영 인증 연결 전에는 입력값을 전송하거나 저장하지 않아요.',style:TextStyle(fontSize:12,color:KkokkapickTheme.muted)),
+        const SizedBox(height:12),TextField(controller:email,enabled:!_authBusy,keyboardType:TextInputType.emailAddress,autocorrect:false,decoration:const InputDecoration(labelText:'이메일')),
+        const SizedBox(height:10),TextField(controller:password,enabled:!_authBusy,obscureText:true,decoration:const InputDecoration(labelText:'비밀번호')),
+        const SizedBox(height:14),FilledButton(onPressed:_authConfigured&&!_authBusy?()=>_authenticateEmail(email.text,password.text,create:false):null,child:Text(_authBusy?'처리 중…':'로그인')),
+        const SizedBox(height:6),OutlinedButton(onPressed:_authConfigured&&!_authBusy?()=>_authenticateEmail(email.text,password.text,create:true):null,child:const Text('새 계정 만들기')),
+        const SizedBox(height:8),Text(_authConfigured?'로그인 전에는 기기 데이터를 서버에 업로드하지 않아요.':'운영 인증 설정 연결 전에는 입력값을 전송하거나 저장하지 않아요.',style:const TextStyle(fontSize:12,color:KkokkapickTheme.muted)),
       ]),
     )));
     email.dispose();password.dispose();
@@ -213,7 +285,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
       floatingActionButton:_navIndex==1?FloatingActionButton.extended(onPressed:_showFilters,icon:const Icon(Icons.tune),label:const Text('필터')):null,
       bottomNavigationBar:NavigationBar(selectedIndex:_navIndex,onDestinationSelected:(i)=>setState((){_navIndex=i;if(i==0||i==1)_favoritesOnly=false;if(i==2)_favoritesOnly=true;}),destinations:const [NavigationDestination(icon:Icon(Icons.home_outlined),selectedIcon:Icon(Icons.home),label:'홈'),NavigationDestination(icon:Icon(Icons.search),label:'찾기'),NavigationDestination(icon:Icon(Icons.favorite_border),selectedIcon:Icon(Icons.favorite),label:'찜'),NavigationDestination(icon:Icon(Icons.person_outline),selectedIcon:Icon(Icons.person),label:'마이')]),
       appBar:AppBar(title:const Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('꼬까픽',style:TextStyle(fontWeight:FontWeight.w900)),Text('우리 아이 옷, 한곳에서.',style:TextStyle(fontSize:11,fontWeight:FontWeight.normal))]),actions:[IconButton(tooltip:'아이 정보',onPressed:_editProfile,icon:Icon(_profile==null?Icons.child_care_outlined:Icons.child_care)),IconButton(onPressed:()=>setState(()=>_favoritesOnly=!_favoritesOnly),icon:Icon(_favoritesOnly?Icons.favorite:Icons.favorite_border))]),
-      body:_navIndex==3?_MyPage(profile:_profile,onEditProfile:_editProfile,onAccountSync:_showAccountSyncInfo,onPrivacyData:_showPrivacyData):_loading?const _CatalogLoadingView():_error!=null?_ErrorView(onRetry:_load):RefreshIndicator(onRefresh:_load,child:CustomScrollView(slivers:[
+      body:_navIndex==3?_MyPage(profile:_profile,sessionState:_sessionState,onEditProfile:_editProfile,onAccountSync:_showAccountSyncInfo,onPrivacyData:_showPrivacyData,onSignOut:_signedIn?_signOut:null):_loading?const _CatalogLoadingView():_error!=null?_ErrorView(onRetry:_load):RefreshIndicator(onRefresh:_load,child:CustomScrollView(slivers:[
         if(_campaigns.isNotEmpty&&_navIndex==0)SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.fromLTRB(16,12,16,0),child:_SponsoredSection(campaigns:_campaigns.take(3).toList(),onTap:_openCampaign))),
         SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.all(16),child:Column(children:[
           if(_navIndex==0)...[
@@ -282,16 +354,17 @@ class _ErrorView extends StatelessWidget{
 
 
 class _MyPage extends StatelessWidget{
-  const _MyPage({required this.profile,required this.onEditProfile,required this.onAccountSync,required this.onPrivacyData});
-  final ChildProfile? profile;
-  final VoidCallback onEditProfile,onAccountSync,onPrivacyData;
+  const _MyPage({required this.profile,required this.sessionState,required this.onEditProfile,required this.onAccountSync,required this.onPrivacyData,required this.onSignOut});
+  final ChildProfile? profile; final AppSessionState sessionState;
+  final VoidCallback onEditProfile,onAccountSync,onPrivacyData; final VoidCallback? onSignOut;
   @override Widget build(BuildContext context)=>SafeArea(child:ListView(padding:const EdgeInsets.fromLTRB(20,20,20,32),children:[
     Text('마이',style:Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight:FontWeight.w800)),
     const SizedBox(height:6),const Text('아이 정보와 꼬까픽 이용 설정을 관리해요.',style:TextStyle(color:KkokkapickTheme.muted)),
     const SizedBox(height:22),
     Card(child:ListTile(contentPadding:const EdgeInsets.symmetric(horizontal:16,vertical:8),leading:const CircleAvatar(child:Icon(Icons.child_care)),title:Text(profile==null?'아이 정보를 등록해 주세요':'${profile!.months}개월 · ${profile!.stage}'),subtitle:Text(profile==null?'꼬까핏과 월령별 탐색에 사용돼요':'키 ${profile!.heightCm.toStringAsFixed(1)}cm · 몸무게 ${profile!.weightKg.toStringAsFixed(1)}kg'),trailing:const Icon(Icons.chevron_right),onTap:onEditProfile)),
     const SizedBox(height:18),Text('계정과 동기화',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),
-    const SizedBox(height:6),Card(child:ListTile(leading:const Icon(Icons.cloud_outlined),title:const Text('현재 이 기기에 저장 중'),subtitle:const Text('로그인 없이도 둘러보기와 찜을 사용할 수 있어요.'),trailing:const Icon(Icons.chevron_right),onTap:onAccountSync)),
+    const SizedBox(height:6),Card(child:ListTile(leading:Icon(sessionState==AppSessionState.authenticated||sessionState==AppSessionState.offlineAuthenticated?Icons.cloud_done_outlined:Icons.cloud_outlined),title:Text(sessionState==AppSessionState.restoring?'로그인 상태 확인 중':sessionState==AppSessionState.authenticated?'계정 동기화 사용 중':sessionState==AppSessionState.offlineAuthenticated?'로그인됨 · 연결 확인 필요':'현재 이 기기에 저장 중'),subtitle:Text(sessionState==AppSessionState.guest?'로그인 없이도 둘러보기와 찜을 사용할 수 있어요.':'기기 데이터는 명시적으로 동의한 경우에만 동기화해요.'),trailing:const Icon(Icons.chevron_right),onTap:onAccountSync)),
+    if(onSignOut!=null)Align(alignment:Alignment.centerRight,child:TextButton(onPressed:onSignOut,child:const Text('로그아웃'))),
     const SizedBox(height:18),Text('설정',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),
     Card(child:Column(children:[
       const ListTile(leading:Icon(Icons.notifications_none),title:Text('가격 알림'),subtitle:Text('로그인 후 여러 기기에서 알림을 받을 수 있어요.'),trailing:Icon(Icons.chevron_right)),
