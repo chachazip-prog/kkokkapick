@@ -403,12 +403,45 @@ class _ProductDetailState extends State<_ProductDetail>{
     if(product.imageUrl!=null)ClipRRect(borderRadius:BorderRadius.circular(18),child:AspectRatio(aspectRatio:1.4,child:Image.network(product.imageUrl!,fit:BoxFit.cover))),
     const SizedBox(height:14),if(product.brand!=null)Text(product.brand!,style:const TextStyle(fontWeight:FontWeight.bold)),Text(product.name,style:Theme.of(context).textTheme.titleLarge),const SizedBox(height:8),Text('${product.category} · ${product.stage??'월령 확인'}'),
     const SizedBox(height:18),Text('꼬까핏',style:Theme.of(context).textTheme.titleMedium),Builder(builder:(_){final r=_fit.evaluate(widget.profile,product);return Text(r.status=='recommended'?r.label:r.label);}),
+    const SizedBox(height:18),_ProductSizeSection(product:product),
     const SizedBox(height:18),Text('가격 알림',style:Theme.of(context).textTheme.titleMedium),ListTile(contentPadding:EdgeInsets.zero,title:Text(_target==null?'희망 가격을 설정해보세요':'희망 가격 ${_won(_target)}'),subtitle:_target!=null&&product.minPrice!=null&&product.minPrice!<=_target!?const Text('희망가에 도달했어요'):null,trailing:TextButton(onPressed:_editAlert,child:const Text('설정'))),const SizedBox(height:18),Text('판매처 가격 비교',style:Theme.of(context).textTheme.titleMedium),
     ...offers.asMap().entries.map((e)=>ListTile(onTap:()=>_openOffer(e.value),contentPadding:EdgeInsets.zero,title:Text(e.value.merchant),subtitle:e.value.originalPrice!=null&&e.value.originalPrice!>(e.value.price??0)?Text('정가 ${_won(e.value.originalPrice)}'):null,trailing:Column(mainAxisAlignment:MainAxisAlignment.center,crossAxisAlignment:CrossAxisAlignment.end,children:[Text(_won(e.value.price),style:const TextStyle(fontWeight:FontWeight.bold)),if(e.key==0&&offers.length>1)const Text('최저가',style:TextStyle(fontSize:11)),const Text('구매하기 ›',style:TextStyle(fontSize:11))]))),
     const SizedBox(height:8),const Text('가격·옵션·배송정보는 판매처에서 최종 확인하세요. 구매하기는 제휴 추적 링크를 외부 브라우저에서 엽니다.',style:TextStyle(fontSize:11))
   ])));}
   Future<void> _openOffer(ProductOffer offer) async {final uri=Uri.tryParse(offer.affiliateUrl);if(uri==null||(uri.scheme!='https'&&uri.scheme!='http')){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('구매 링크를 확인할 수 없어요.')));return;}final opened=await launchUrl(uri,mode:LaunchMode.externalApplication);if(!opened&&mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('판매처를 열지 못했어요. 잠시 후 다시 시도해 주세요.')));}
   Future<void> _editAlert() async {final c=TextEditingController(text:_target?.toString()??'');final v=await showDialog<int?>(context:context,builder:(context)=>AlertDialog(title:const Text('희망 가격'),content:TextField(controller:c,keyboardType:TextInputType.number,decoration:const InputDecoration(suffixText:'원')),actions:[TextButton(onPressed:()=>Navigator.pop(context,0),child:const Text('삭제')),FilledButton(onPressed:()=>Navigator.pop(context,int.tryParse(c.text)),child:const Text('저장'))]));c.dispose();if(v!=null){final target=v>0?v:null;await _alerts.set(product.id,target);if(mounted)setState(()=>_target=target);final sync=widget.onPriceAlertChanged;if(sync!=null){try{await sync(product.id,target);}catch(_){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('가격 알림은 기기에 저장했어요. 계정 동기화는 나중에 다시 시도할게요.')));}}}}
+}
+
+
+class _ProductSizeSection extends StatelessWidget {
+  const _ProductSizeSection({required this.product});
+  final CatalogProduct product;
+  String _rowLabel(BrandSizeRow row) {
+    final parts=<String>[];
+    if(row.months!=null&&row.months!.isNotEmpty) parts.add(row.months!.length>1?'${row.months!.first}~${row.months!.last}개월':'${row.months!.first}개월');
+    if(row.heightCm!=null) parts.add('키 ${row.heightCm!.toStringAsFixed(row.heightCm!%1==0?0:1)}cm');
+    if(row.weightKg!=null) parts.add('${row.weightKg!.toStringAsFixed(row.weightKg!%1==0?0:1)}kg');
+    return parts.join(' · ');
+  }
+  @override Widget build(BuildContext context) {
+    final guide=product.sizeGuide;
+    return Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
+      Text('사이즈 정보',style:Theme.of(context).textTheme.titleMedium),const SizedBox(height:8),
+      if(product.availableSizes.isNotEmpty)...[
+        const Text('이 상품에서 확인된 사이즈',style:TextStyle(fontWeight:FontWeight.w700)),const SizedBox(height:6),
+        Wrap(spacing:6,runSpacing:6,children:product.availableSizes.map((s)=>Chip(label:Text(s))).toList()),const SizedBox(height:10),
+      ],
+      if(guide!=null&&guide.rows.isNotEmpty)...[
+        Text('${product.brand??'브랜드'} 공식 사이즈 가이드',style:const TextStyle(fontWeight:FontWeight.w700)),const SizedBox(height:6),
+        ...guide.rows.map((row)=>Padding(padding:const EdgeInsets.only(bottom:4),child:Row(children:[
+          SizedBox(width:54,child:Text(row.size,style:const TextStyle(fontWeight:FontWeight.w800))),
+          Expanded(child:Text(_rowLabel(row).isEmpty?'공식 표 참고':_rowLabel(row),style:Theme.of(context).textTheme.bodySmall)),
+        ]))),
+        const SizedBox(height:4),const Text('브랜드 공통 가이드이며 실제 상품의 재고·옵션과 다를 수 있어요.',style:TextStyle(fontSize:11,color:KkokkapickTheme.muted)),
+      ] else if(product.availableSizes.isEmpty)
+        const Text('제공된 상품 데이터에 사이즈 옵션이 없어요. 실제 선택 가능한 사이즈와 재고는 판매처에서 확인해 주세요.',style:TextStyle(color:KkokkapickTheme.muted)),
+    ]);
+  }
 }
 
 class _ErrorView extends StatelessWidget{

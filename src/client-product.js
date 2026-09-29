@@ -12,6 +12,8 @@ export function toClientProduct(product={}) {
     imageUrl:product.imageUrl||null,
     fitStatus:["verified","candidate","unverified"].includes(product.fitStatus)?product.fitStatus:"unverified",
     fitSource:product.fitSource||null,
+    sizeGuide:normalizeSizeGuide(product.sizeGuide),
+    availableSizes:Array.isArray(product.availableSizes)?product.availableSizes.map(String).filter(Boolean):[],
     minPrice:prices.length?Math.min(...prices):nullableNumber(product.minPrice),
     maxPrice:prices.length?Math.max(...prices):nullableNumber(product.maxPrice),
     offerCount:offers.length,
@@ -34,4 +36,9 @@ function nullableNumber(v){
   if(v===null||v===undefined||v==="") return null;
   const n=Number(v);
   return Number.isFinite(n)&&n>=0?n:null;
+}
+
+function normalizeSizeGuide(guide){
+  if(!guide||guide.kind!=="brand_official"||!Array.isArray(guide.rows)) return null;
+  return {kind:"brand_official",source:guide.source||null,verifiedAt:guide.verifiedAt||null,rows:guide.rows.map(r=>({size:String(r.size||""),months:Array.isArray(r.months)?r.months:null,height:nullableNumber(r.height),weight:nullableNumber(r.weight)})).filter(r=>r.size)};
 }
