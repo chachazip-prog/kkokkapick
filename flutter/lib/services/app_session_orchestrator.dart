@@ -85,7 +85,7 @@ final class AppSessionOrchestrator {
   Future<void> replayPendingMutations() async {
     final owner=_outboxOwner;
     for(final m in await outbox.load(owner)){
-      try{await _send(m);await outbox.remove(m.kind,m.key);}catch(_){/* retain for later retry */}
+      try{await _send(m);await outbox.remove(m.kind,m.key,owner);}catch(_){/* retain for later retry */}
     }
   }
 
