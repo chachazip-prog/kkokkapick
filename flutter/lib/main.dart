@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'design/kkokka_theme.dart';
 import 'models/catalog_product.dart';
 import 'repositories/catalog_repository.dart';
 import 'repositories/favorites_repository.dart';
@@ -19,7 +20,7 @@ class KkokkapickApp extends StatelessWidget {
   Widget build(BuildContext context)=>MaterialApp(
     title:'꼬까픽',
     debugShowCheckedModeBanner:false,
-    theme:ThemeData(useMaterial3:true,colorSchemeSeed:const Color(0xffff7043),scaffoldBackgroundColor:Colors.white),
+    theme:buildKkokkaTheme(),
     home:const CatalogScreen(),
   );
 }
@@ -141,13 +142,13 @@ class _CatalogScreenState extends State<CatalogScreen>{
       body:_loading?const Center(child:CircularProgressIndicator()):_error!=null?_ErrorView(onRetry:_load):RefreshIndicator(onRefresh:_load,child:CustomScrollView(slivers:[
         if(_campaigns.isNotEmpty)SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.fromLTRB(16,12,16,0),child:Column(children:_campaigns.take(3).map((c)=>Card(child:ListTile(onTap:()=>_openCampaign(c),leading:const Icon(Icons.campaign_outlined),title:Text(c.title),subtitle:Text('${c.disclosureLabel} · ${c.partnerName??''}'),trailing:const Icon(Icons.chevron_right)))).toList()))),
         SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.all(16),child:Column(children:[
-          TextField(controller:_search,onChanged:(_)=>setState((){}),decoration:const InputDecoration(prefixIcon:Icon(Icons.search),hintText:'브랜드, 상품을 검색해보세요',filled:true,border:OutlineInputBorder(borderSide:BorderSide.none,borderRadius:BorderRadius.all(Radius.circular(16))))),
+          TextField(controller:_search,onChanged:(_)=>setState((){}),decoration:const InputDecoration(prefixIcon:Icon(Icons.search),hintText:'어떤 옷을 찾으세요?',filled:true,border:OutlineInputBorder(borderSide:BorderSide.none,borderRadius:BorderRadius.all(Radius.circular(16))))),
           const SizedBox(height:12),
           _FilterRow(values:stages,value:_stage,onChanged:(v)=>setState(()=>_stage=v)),
           _FilterRow(values:categories,value:_category,onChanged:(v)=>setState(()=>_category=v)),
           _FilterRow(values:brands,value:_brand,onChanged:(v)=>setState(()=>_brand=v)),
           Row(children:[FilterChip(label:const Text('꼬까핏 가능'),selected:_fitOnly,onSelected:(v)=>setState(()=>_fitOnly=v)),const Spacer(),DropdownButton<CatalogSort>(value:_sort,underline:const SizedBox(),items:const [DropdownMenuItem(value:CatalogSort.recommended,child:Text('추천순')),DropdownMenuItem(value:CatalogSort.low,child:Text('낮은 가격순')),DropdownMenuItem(value:CatalogSort.high,child:Text('높은 가격순'))],onChanged:(v)=>setState(()=>_sort=v!))]),
-          Row(children:[Text('${items.length}개',style:Theme.of(context).textTheme.titleMedium),const Spacer(),TextButton(onPressed:_reset,child:const Text('필터 초기화'))])
+          Row(children:[Text(_profile==null?'아이에게 맞는 옷을 찾아보세요':'${_profile!.stage} 맞춤 · ${items.length}개',style:Theme.of(context).textTheme.titleMedium),const Spacer(),TextButton(onPressed:_reset,child:const Text('필터 초기화'))])
         ]))),
         if(items.isEmpty)const SliverFillRemaining(child:Center(child:Text('검색 결과가 없어요.')))
         else SliverPadding(padding:const EdgeInsets.fromLTRB(16,0,16,24),sliver:SliverGrid.builder(gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,crossAxisSpacing:10,mainAxisSpacing:18,childAspectRatio:.60),itemCount:items.length,itemBuilder:(context,i)=>_ProductCard(product:items[i],favorite:_favoriteIds.contains(items[i].id),onFavorite:()=>_toggleFavorite(items[i].id),onTap:()=>showModalBottomSheet(context:context,isScrollControlled:true,showDragHandle:true,builder:(_)=>_ProductDetail(items[i],profile:_profile)))))
