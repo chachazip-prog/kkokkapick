@@ -137,8 +137,6 @@ class _CatalogScreenState extends State<CatalogScreen>{
   }
 
   void _reset(){setState((){_search.clear();_stage=_category=_brand='전체';_fitOnly=_favoritesOnly=false;_sort=CatalogSort.recommended;});}
-  void _showKkokkafitProducts(){setState((){_search.clear();_stage=_category=_brand='전체';_fitOnly=true;_favoritesOnly=false;_sort=CatalogSort.recommended;_navIndex=1;});}
-
   Future<void> _editProfile() async {
     final m=TextEditingController(text:_profile?.months.toString()??'');
     final ht=TextEditingController(text:_profile?.heightCm.toString()??'');
@@ -427,18 +425,6 @@ class _ProductDetailState extends State<_ProductDetail>{
 }
 
 
-class _KkokkafitTryCard extends StatelessWidget {
-  const _KkokkafitTryCard({required this.count,required this.profile,required this.onProfile,required this.onShowProducts});
-  final int count; final ChildProfile? profile; final VoidCallback onProfile,onShowProducts;
-  @override Widget build(BuildContext context)=>Card(child:Padding(padding:const EdgeInsets.all(16),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
-    Row(children:[const Icon(Icons.straighten),const SizedBox(width:8),Expanded(child:Text('꼬까핏 바로 테스트',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)))]),
-    const SizedBox(height:6),Text('공식 사이즈표가 확인된 상품 $count개가 있어요. ${profile==null?'아이 정보를 등록한 뒤 추천 사이즈를 확인해 보세요.':'현재 아이 정보로 추천 사이즈를 확인할 수 있어요.'}',style:const TextStyle(color:KkokkapickTheme.muted)),
-    const SizedBox(height:12),Wrap(spacing:8,runSpacing:8,children:[
-      if(profile==null)OutlinedButton(onPressed:onProfile,child:const Text('아이 정보 등록')),
-      FilledButton.tonal(onPressed:onShowProducts,child:const Text('테스트 상품 보기')),
-    ])
-  ])));
-}
 
 class _ProductSizeSection extends StatelessWidget {
   const _ProductSizeSection({required this.product});
