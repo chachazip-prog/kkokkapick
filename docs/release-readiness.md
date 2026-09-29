@@ -16,7 +16,7 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 | Security/Privacy | Secrets are kept out of clients; user tables have owner RLS; admin uses allow-list; technical privacy inventory and dependency reproducibility gate exist | Verify grants/view/RPC exposure, retention/deletion/session behavior and ecosystem advisories against deployed production configuration |
 | Commercial | Sponsored content is separated from organic fit ranking; public event boundary excludes conversion/revenue writes; opaque-session rate/replay controls exist | Provider-confirmed conversion ingestion, final disclosure QA and production edge/load abuse verification |
 | Operations | Node/Flutter CI, Android/iOS unsigned release validation, dependency gate and incident/rollback runbook exist | Production environment monitoring plus backup/restore and rollback rehearsal |
-| Store compliance | Not yet packaged | Privacy policy, terms/support/account deletion URLs, Apple privacy answers, Google Data Safety, store metadata/screenshots/reviewer access |
+| Store compliance | Draft public policy/support/deletion pages, technical data inventory and reviewer/store submission pack exist | Final legal/contact fields, production-derived Apple Privacy/Google Data Safety answers, final assets and reviewer access |
 
 ## Findings corrected in this review
 
@@ -37,7 +37,7 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 - iOS unsigned release generation/build is CI-verified; settle final iOS/Android application identifiers, commit final native release artifacts and configure protected signing before store registration.
 - iOS unsigned release CI is implemented; Android unsigned release/signing-secret guard is CI-verified and merged. Signed-store CI remains gated on final identifiers and protected credentials.
 - Verify provider production rights and attribution requirements.
-- Price-alert DB pipeline is implemented through bounded retry/dead-letter semantics; connect credentialed FCM/APNs sender, invalid-token cleanup and duplicate mitigation.
+- Price-alert DB pipeline plus production sender operating contract are implemented; connect credentialed FCM/APNs sender and verify invalid-token cleanup/device delivery.
 - Public privacy/support/account-deletion release-draft pages are implemented; finalize legal identity/contact/data inventory before submission.
 
 ### P1 — required before store submission
@@ -46,7 +46,7 @@ This is the Team Lead roll-up of Product, Source/Data, UX/UI, Mobile FE, Backend
 - Reviewer/store submission pack and technical privacy inventory exist; finalize assets, declarations, URLs and reviewer account against production configuration.
 - Crash/error telemetry chosen under the Product Owner privacy/cost boundary.
 - Backup/restore and rollback rehearsal.
-- Public commercial events have DB replay/rate controls; verify production edge/load behavior and configure authentication-provider abuse controls.
+- Public commercial events have DB replay/rate controls plus same-session concurrency serialization; verify production edge/load behavior and configure authentication-provider abuse controls.
 
 ### P2 — post-beta quality
 - Improve multi-offer coverage and price-history depth only where provider rights permit.
@@ -87,3 +87,11 @@ Further production activation requires information or access that must not be in
 - macOS CI successfully generated the official Flutter iOS project and built an unsigned release Runner.app.
 - Release operations/rollback and production-activation checklists are committed.
 - Android unsigned release APK, signing-material/secret guard and independent QA/Security review are complete. Public commercial-event opaque-session rate/replay controls and their CI contract are also complete; production edge/load verification remains.
+
+### Team Lead repository-complete checkpoint
+- Aggregate release preflight is implemented and green on repository-only mode.
+- Read-only production DB verification/evidence pack is ready for the future Supabase environment.
+- Scheduled provider sync workflows are serialized, canonical-repository guarded and race-safe against a moving main branch.
+- Push sender claim/send/finalize/invalid-token/no-secret-logging contract is CI-checked; credentials/device validation remain external.
+- Commercial public-event DB controls now serialize same-session rate/replay checks; rotating session keys remains an edge-control concern.
+- Remaining repository work is limited to changes triggered by final UI feedback or newly supplied production/provider/store decisions.
