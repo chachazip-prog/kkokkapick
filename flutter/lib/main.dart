@@ -137,17 +137,19 @@ class _CatalogScreenState extends State<CatalogScreen>{
   }
 
   void _reset(){setState((){_search.clear();_stage=_category=_brand='전체';_fitOnly=_favoritesOnly=false;_sort=CatalogSort.recommended;});}
-  void _showKkokkafitProducts(){setState((){_search.clear();_stage=_category=_brand='전체';_fitOnly=true;_favoritesOnly=false;_sort=CatalogSort.recommended;_navIndex=1;});}
-
   Future<void> _editProfile() async {
     final m=TextEditingController(text:_profile?.months.toString()??'');
     final ht=TextEditingController(text:_profile?.heightCm.toString()??'');
     final wt=TextEditingController(text:_profile?.weightKg.toString()??'');
-    final saved=await showDialog<ChildProfile>(context:context,builder:(context)=>AlertDialog(title:const Text('아이 정보'),content:Column(mainAxisSize:MainAxisSize.min,children:[
-      TextField(controller:m,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'월령')),
-      TextField(controller:ht,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'키 cm')),
-      TextField(controller:wt,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'몸무게 kg')),
-    ]),actions:[TextButton(onPressed:()=>Navigator.pop(context),child:const Text('취소')),FilledButton(onPressed:(){final p=ChildProfile(months:int.tryParse(m.text)??0,heightCm:double.tryParse(ht.text)??0,weightKg:double.tryParse(wt.text)??0);if(p.months>0&&p.heightCm>0&&p.weightKg>0)Navigator.pop(context,p);},child:const Text('저장'))]));
+    final saved=await showModalBottomSheet<ChildProfile>(context:context,isScrollControlled:true,backgroundColor:Colors.white,showDragHandle:true,builder:(context)=>SafeArea(child:SingleChildScrollView(padding:EdgeInsets.fromLTRB(20,4,20,MediaQuery.viewInsetsOf(context).bottom+20),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
+      Text('아이 정보',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
+      const SizedBox(height:6),const Text('꼬까핏 사이즈 추천에만 사용해요.',style:TextStyle(color:KkokkapickTheme.muted)),
+      const SizedBox(height:18),TextField(controller:m,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'월령',hintText:'예: 8')),
+      const SizedBox(height:10),TextField(controller:ht,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'키',suffixText:'cm')),
+      const SizedBox(height:10),TextField(controller:wt,keyboardType:TextInputType.number,decoration:const InputDecoration(labelText:'몸무게',suffixText:'kg')),
+      const SizedBox(height:18),FilledButton(onPressed:(){final p=ChildProfile(months:int.tryParse(m.text)??0,heightCm:double.tryParse(ht.text)??0,weightKg:double.tryParse(wt.text)??0);if(p.months>0&&p.heightCm>0&&p.weightKg>0)Navigator.pop(context,p);},child:const Text('저장')),
+      TextButton(onPressed:()=>Navigator.pop(context),child:const Text('취소')),
+    ]))));
     m.dispose();ht.dispose();wt.dispose();
     if(saved!=null){await _profiles.save(saved);if(mounted)setState(()=>_profile=saved);if(_signedIn){try{await _session.setChildProfile({'birthDate':null,'heightCm':saved.heightCm,'weightKg':saved.weightKg,'usualSize':null,'nickname':null});}catch(_){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('아이 정보는 기기에 저장했어요. 계정 동기화는 나중에 다시 시도할게요.')));}}}
   }
@@ -342,16 +344,11 @@ class _CatalogScreenState extends State<CatalogScreen>{
         SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.all(16),child:Column(children:[
           if(_navIndex==0)...[
             _HomeIntro(profile:_profile,onProfile:onEditProfileProxy,onExplore:()=>setState(()=>_navIndex=1)),
-            const SizedBox(height:18),
+            const SizedBox(height:14),
             _CategoryShortcuts(categories:categories,onSelected:(v)=>setState((){_category=v;_navIndex=1;})),
-            if(items.isNotEmpty)...[const SizedBox(height:24),SwipePickDeck(products:items.take(8).toList(),favoriteIds:_favoriteIds,onFavorite:(id)=>_toggleFavorite(id),onTap:(p)=>coordinatedModal(context:context,coordinator:_overlays,builder:(_)=>_ProductDetail(p,profile:_profile,onPriceAlertChanged:_signedIn?(productId,target)=>_session.setPriceAlert(productId,target):null)))],
-            if(_products.any((p)=>p.fitStatus=='verified'))...[
-              const SizedBox(height:18),
-              _KkokkafitTryCard(count:_products.where((p)=>p.fitStatus=='verified').length,profile:_profile,onProfile:_editProfile,onShowProducts:_showKkokkafitProducts),
-            ],
-            const SizedBox(height:18),
-            Row(children:[Expanded(child:Text('더 둘러보기',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800))),TextButton(onPressed:()=>setState(()=>_navIndex=1),child:const Text('전체 보기'))]),
-            const SizedBox(height:8),
+            const SizedBox(height:22),
+            Row(children:[Expanded(child:Text('추천 상품',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800))),TextButton(onPressed:()=>setState(()=>_navIndex=1),child:const Text('전체 보기'))]),
+            const SizedBox(height:10),
           ],
           if(_navIndex==1)TextField(controller:_search,onChanged:(_)=>setState((){}),decoration:const InputDecoration(prefixIcon:Icon(Icons.search),hintText:'브랜드, 상품을 검색해보세요',filled:true,border:OutlineInputBorder(borderSide:BorderSide.none,borderRadius:BorderRadius.all(Radius.circular(16))))),
           if(_navIndex==1)...[
@@ -363,7 +360,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
         ]))),
         if(items.isEmpty)SliverFillRemaining(child:_EmptyCatalogView(onReset:_reset,favoritesOnly:_favoritesOnly))
         else SliverPadding(
-          padding:const EdgeInsets.fromLTRB(16,0,16,24),
+          padding:const EdgeInsets.fromLTRB(16,0,16,96),
           sliver:SliverLayoutBuilder(builder:(context,constraints){
             final columns=constraints.crossAxisExtent>=900?4:constraints.crossAxisExtent>=600?3:2;
             final textScale=MediaQuery.textScalerOf(context).scale(16)/16;
@@ -414,12 +411,16 @@ class _ProductDetailState extends State<_ProductDetail>{
   CatalogProduct get product=>widget.product;
   @override void initState(){super.initState();_alerts.get(product.id).then((v){if(mounted)setState(()=>_target=v);});}
   String _won(int? n)=>n==null?'가격 확인':'${n.toString().replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d))'),(m)=>',')}원';
-  @override Widget build(BuildContext context){final offers=[...product.offers]..sort((a,b)=>(a.price??1<<62).compareTo(b.price??1<<62));return SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:ListView(shrinkWrap:true,children:[
-    ClipRRect(borderRadius:BorderRadius.circular(18),child:AspectRatio(aspectRatio:1.4,child:ProductImage(url:product.imageUrl))),
-    const SizedBox(height:14),if(product.brand!=null)Text(product.brand!,style:const TextStyle(fontWeight:FontWeight.bold)),Text(product.displayName,style:Theme.of(context).textTheme.titleLarge),const SizedBox(height:8),Text('${product.category} · ${product.stage??'월령 확인'}'),
-    const SizedBox(height:18),Text('꼬까핏',style:Theme.of(context).textTheme.titleMedium),Builder(builder:(_){final r=_fit.evaluate(widget.profile,product);return Text(r.status=='recommended'?r.label:r.label);}),
-    const SizedBox(height:18),_ProductSizeSection(product:product),
-    const SizedBox(height:18),Text('가격 알림',style:Theme.of(context).textTheme.titleMedium),ListTile(contentPadding:EdgeInsets.zero,title:Text(_target==null?'희망 가격을 설정해보세요':'희망 가격 ${_won(_target)}'),subtitle:_target!=null&&product.minPrice!=null&&product.minPrice!<=_target!?const Text('희망가에 도달했어요'):null,trailing:TextButton(onPressed:_editAlert,child:const Text('설정'))),const SizedBox(height:18),Text('판매처 가격 비교',style:Theme.of(context).textTheme.titleMedium),
+  @override Widget build(BuildContext context){final offers=[...product.offers]..sort((a,b)=>(a.price??1<<62).compareTo(b.price??1<<62));return SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(16,0,16,28),child:ListView(shrinkWrap:true,children:[
+    ClipRRect(borderRadius:BorderRadius.circular(10),child:AspectRatio(aspectRatio:1.15,child:ProductImage(url:product.imageUrl))),
+    const SizedBox(height:16),if(product.brand!=null)Text(product.brand!,style:const TextStyle(fontSize:13,fontWeight:FontWeight.w700,color:KkokkapickTheme.muted)),
+    const SizedBox(height:4),Text(product.displayName,maxLines:3,overflow:TextOverflow.ellipsis,style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w700,height:1.28)),
+    const SizedBox(height:10),Text(_won(product.minPrice),style:Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight:FontWeight.w900)),
+    const SizedBox(height:6),Text('${product.category} · ${product.stage??'월령 확인'}',style:const TextStyle(color:KkokkapickTheme.muted)),
+    const Divider(height:32),Text('꼬까핏',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),const SizedBox(height:6),Builder(builder:(_){final r=_fit.evaluate(widget.profile,product);return Text(r.label);}),
+    const SizedBox(height:22),_ProductSizeSection(product:product),
+    const Divider(height:32),Row(children:[Expanded(child:Text('가격 알림',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800))),TextButton(onPressed:_editAlert,child:Text(_target==null?'설정':'변경'))]),Text(_target==null?'희망 가격을 설정해보세요':'희망 가격 ${_won(_target)}'),if(_target!=null&&product.minPrice!=null&&product.minPrice!<=_target!)const Padding(padding:EdgeInsets.only(top:4),child:Text('희망가에 도달했어요')),
+    const Divider(height:32),Text('판매처 가격 비교',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),
     ...offers.asMap().entries.map((e)=>ListTile(onTap:()=>_openOffer(e.value),contentPadding:EdgeInsets.zero,title:Text(e.value.merchant),subtitle:e.value.originalPrice!=null&&e.value.originalPrice!>(e.value.price??0)?Text('정가 ${_won(e.value.originalPrice)}'):null,trailing:Column(mainAxisAlignment:MainAxisAlignment.center,crossAxisAlignment:CrossAxisAlignment.end,children:[Text(_won(e.value.price),style:const TextStyle(fontWeight:FontWeight.bold)),if(e.key==0&&offers.length>1)const Text('최저가',style:TextStyle(fontSize:11)),const Text('구매하기 ›',style:TextStyle(fontSize:11))]))),
     const SizedBox(height:8),const Text('가격·옵션·배송정보는 판매처에서 최종 확인하세요. 구매하기는 제휴 추적 링크를 외부 브라우저에서 엽니다.',style:TextStyle(fontSize:11))
   ])));}
@@ -428,18 +429,6 @@ class _ProductDetailState extends State<_ProductDetail>{
 }
 
 
-class _KkokkafitTryCard extends StatelessWidget {
-  const _KkokkafitTryCard({required this.count,required this.profile,required this.onProfile,required this.onShowProducts});
-  final int count; final ChildProfile? profile; final VoidCallback onProfile,onShowProducts;
-  @override Widget build(BuildContext context)=>Card(child:Padding(padding:const EdgeInsets.all(16),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
-    Row(children:[const Icon(Icons.straighten),const SizedBox(width:8),Expanded(child:Text('꼬까핏 바로 테스트',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)))]),
-    const SizedBox(height:6),Text('공식 사이즈표가 확인된 상품 $count개가 있어요. ${profile==null?'아이 정보를 등록한 뒤 추천 사이즈를 확인해 보세요.':'현재 아이 정보로 추천 사이즈를 확인할 수 있어요.'}',style:const TextStyle(color:KkokkapickTheme.muted)),
-    const SizedBox(height:12),Wrap(spacing:8,runSpacing:8,children:[
-      if(profile==null)OutlinedButton(onPressed:onProfile,child:const Text('아이 정보 등록')),
-      FilledButton.tonal(onPressed:onShowProducts,child:const Text('테스트 상품 보기')),
-    ])
-  ])));
-}
 
 class _ProductSizeSection extends StatelessWidget {
   const _ProductSizeSection({required this.product});
@@ -506,16 +495,21 @@ class _MyPage extends StatelessWidget{
 class _HomeIntro extends StatelessWidget{
   const _HomeIntro({required this.profile,required this.onProfile,required this.onExplore});
   final ChildProfile? profile; final VoidCallback onProfile,onExplore;
-  @override Widget build(BuildContext context)=>Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
-    Text(profile==null?'아기옷 둘러보기':'${profile!.months}개월 추천 상품',style:Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight:FontWeight.w800)),
-    const SizedBox(height:6),Text(profile==null?'여러 판매처의 상품과 가격을 한곳에서 비교해보세요.':'월령에 맞는 상품을 둘러보고 가격을 비교해보세요.',style:const TextStyle(color:KkokkapickTheme.muted,height:1.4)),
-    const SizedBox(height:12),Wrap(spacing:8,runSpacing:8,children:[FilledButton(onPressed:onExplore,child:const Text('상품 보기')),TextButton(onPressed:onProfile,child:Text(profile==null?'아이 정보 등록':'아이 정보 수정'))])
+  @override Widget build(BuildContext context)=>Row(crossAxisAlignment:CrossAxisAlignment.center,children:[
+    Expanded(child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
+      Text(profile==null?'오늘의 아기옷':'${profile!.months}개월 추천',style:Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight:FontWeight.w800)),
+      const SizedBox(height:4),Text(profile==null?'브랜드와 판매처를 한 번에 비교해보세요.':'아이 정보에 맞춰 상품을 살펴보세요.',style:const TextStyle(color:KkokkapickTheme.muted)),
+    ])),
+    TextButton(onPressed:onProfile,child:Text(profile==null?'아이 정보':'정보 수정')),
   ]);
 }
 class _CategoryShortcuts extends StatelessWidget{
   const _CategoryShortcuts({required this.categories,required this.onSelected});
   final List<String> categories; final ValueChanged<String> onSelected;
-  @override Widget build(BuildContext context){final values=categories.where((e)=>e!='전체').take(5).toList();return Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('카테고리로 찾기',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),const SizedBox(height:10),Wrap(spacing:8,runSpacing:8,children:values.map((v)=>ActionChip(avatar:const Icon(Icons.checkroom_outlined,size:18),label:Text(v),onPressed:()=>onSelected(v))).toList())]);}
+  @override Widget build(BuildContext context){
+    final values=categories.where((e)=>e!='전체').take(5).toList();
+    return SizedBox(height:38,child:ListView.separated(scrollDirection:Axis.horizontal,itemCount:values.length,separatorBuilder:(_,__)=>const SizedBox(width:8),itemBuilder:(context,i)=>OutlinedButton(onPressed:()=>onSelected(values[i]),style:OutlinedButton.styleFrom(padding:const EdgeInsets.symmetric(horizontal:14),minimumSize:Size.zero,shape:RoundedRectangleBorder(borderRadius:BorderRadius.circular(8)),side:const BorderSide(color:Color(0xFFE7E5EA))),child:Text(values[i],style:const TextStyle(color:KkokkapickTheme.ink,fontWeight:FontWeight.w600)))));
+  }
 }
 
 
