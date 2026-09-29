@@ -41,11 +41,12 @@ jobs:
       - name: Generate disposable iOS project
         working-directory: flutter
         run: flutter create --platforms=ios --project-name=kkokkapick .
-      - name: Guard placeholder bundle identifier
+      - name: Apply final bundle identifier
         working-directory: flutter
         run: |
-          grep -R "PRODUCT_BUNDLE_IDENTIFIER" ios/Runner.xcodeproj/project.pbxproj
-          echo "Final bundle identifier remains a Product Owner/store-registration gate."
+          sed -i '' 's/com\.example\.kkokkapick/com.kkokkapick.app/g' ios/Runner.xcodeproj/project.pbxproj
+          grep -q 'PRODUCT_BUNDLE_IDENTIFIER = com.kkokkapick.app;' ios/Runner.xcodeproj/project.pbxproj
+          ! grep -q 'com.example.kkokkapick' ios/Runner.xcodeproj/project.pbxproj
       - name: Build unsigned iOS release
         working-directory: flutter
         run: flutter build ios --release --no-codesign
