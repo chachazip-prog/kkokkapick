@@ -55,5 +55,10 @@ final class AppSessionOrchestrator {
     return AccountSyncCoordinator(account).handleFirstAuthenticatedSession(choice:choice,local:local);
   }
 
+  Future<void> deleteAppData() async {
+    await AccountSyncCoordinator(account).deleteAppData();
+    await localData.clearAppData();
+  }
+
   Future<void> signOut()=>authentication.clearSession();
 }
