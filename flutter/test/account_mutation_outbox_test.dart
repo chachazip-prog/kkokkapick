@@ -18,4 +18,10 @@ void main(){
     await o.put(const PendingAccountMutation(AccountMutationKind.priceAlert,'p1',{'targetPrice':12000}));
     expect(await o.load(),hasLength(2));
   });
+  test('owner scopes cannot see each other mutations',() async{
+    final o=AccountMutationOutbox();
+    await o.put(const PendingAccountMutation(AccountMutationKind.favorite,'p1',{'favorite':true}),'account-a');
+    expect(await o.load('account-b'),isEmpty);
+    expect(await o.load('account-a'),hasLength(1));
+  });
 }
