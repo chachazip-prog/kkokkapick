@@ -40,8 +40,8 @@ final class AppSessionOrchestrator {
     final restored=await authentication.restoreSession();
     if(!restored)return const AppSessionBootstrapResult(AppSessionState.guest);
     try {
-      await replayPendingMutations();
       final remote=await account.fetch();
+      await replayPendingMutations();
       return AppSessionBootstrapResult(AppSessionState.authenticated,remote:remote);
     } on AccountGatewayException catch(e) {
       if(e.statusCode==401||e.statusCode==403){
