@@ -2,35 +2,6 @@ import 'package:flutter/material.dart';
 import '../models/catalog_product.dart';
 import '../theme/kkokkapick_theme.dart';
 
-class ServiceGuideStrip extends StatelessWidget {
-  const ServiceGuideStrip({super.key});
-  @override
-  Widget build(BuildContext context) => Row(children: const [
-    Expanded(child: _GuideCard(icon: Icons.auto_awesome_outlined, title: '꼬까픽', body: '여러 판매처의 아기옷을 한곳에서 발견하고 비교해요.')),
-    SizedBox(width: 10),
-    Expanded(child: _GuideCard(icon: Icons.straighten_outlined, title: '꼬까핏', body: '아이 정보와 검증된 사이즈표를 바탕으로 핏을 도와요.')),
-  ]);
-}
-
-class _GuideCard extends StatelessWidget {
-  const _GuideCard({required this.icon, required this.title, required this.body});
-  final IconData icon;
-  final String title, body;
-  @override
-  Widget build(BuildContext context) => Container(
-    constraints: const BoxConstraints(minHeight: 118),
-    padding: const EdgeInsets.all(14),
-    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(22), border: Border.all(color: const Color(0xFFEAE6DE))),
-    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Icon(icon, size: 22, color: KkokkapickTheme.coral),
-      const SizedBox(height: 9),
-      Text(title, style: const TextStyle(fontWeight: FontWeight.w900)),
-      const SizedBox(height: 4),
-      Text(body, maxLines: 3, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 12, height: 1.35, color: KkokkapickTheme.muted)),
-    ]),
-  );
-}
-
 class ProductImage extends StatelessWidget {
   const ProductImage({super.key,required this.url,this.fit=BoxFit.cover});
   final String? url; final BoxFit fit;
@@ -57,11 +28,7 @@ class SwipePickDeck extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-    Row(children: [
-      Text('오늘의 스와이프 픽', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900)),
-      const Spacer(),
-      const Text('옆으로 넘겨보세요', style: TextStyle(fontSize: 12, color: KkokkapickTheme.muted)),
-    ]),
+    Row(children: [Expanded(child:Text('지금 둘러볼 옷', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900))),const SizedBox(width:8),const Text('옆으로 보기', style: TextStyle(fontSize: 12, color: KkokkapickTheme.muted))]),
     const SizedBox(height: 10),
     SizedBox(
       height: 350,
