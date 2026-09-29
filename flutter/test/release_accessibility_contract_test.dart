@@ -41,7 +41,7 @@ void main() {
         builder:(context,child)=>MediaQuery(data:MediaQuery.of(context).copyWith(textScaler:const TextScaler.linear(2)),child:child!),
         home:Scaffold(body:SafeArea(child:ListView(children:[
           const ServiceGuideStrip(),
-          SizedBox(height:420,child:SwipePickDeck(products:[product],favoriteIds:const <String>{},onFavorite:(_){},onTap:(_){ })),
+          SwipePickDeck(products:[product],favoriteIds:const <String>{},onFavorite:(_){},onTap:(_){ }),
           const SizedBox(height:160,child:ProductImage(url:null)),
         ]))),
       ));
