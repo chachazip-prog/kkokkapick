@@ -366,8 +366,10 @@ class _CatalogScreenState extends State<CatalogScreen>{
           padding:const EdgeInsets.fromLTRB(16,0,16,24),
           sliver:SliverLayoutBuilder(builder:(context,constraints){
             final columns=constraints.crossAxisExtent>=900?4:constraints.crossAxisExtent>=600?3:2;
+            final textScale=MediaQuery.textScalerOf(context).scale(16)/16;
+            final extent=330+((textScale-1).clamp(0,1)*90);
             return SliverGrid.builder(
-              gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:columns,crossAxisSpacing:12,mainAxisSpacing:18,mainAxisExtent:330),
+              gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:columns,crossAxisSpacing:12,mainAxisSpacing:18,mainAxisExtent:extent),
               itemCount:items.length,
               itemBuilder:(context,i)=>_ProductCard(
                 product:items[i],
@@ -399,7 +401,7 @@ class _ProductCard extends StatelessWidget{
   String _won(int? n)=>n==null?'가격 확인':'${n.toString().replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d))'),(m)=>',')}원';
   @override Widget build(BuildContext context)=>InkWell(onTap:onTap,borderRadius:BorderRadius.circular(16),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
     Expanded(child:Stack(fit:StackFit.expand,children:[ClipRRect(borderRadius:BorderRadius.circular(16),child:ProductImage(url:product.imageUrl)),Positioned(right:6,top:6,child:IconButton.filledTonal(onPressed:onFavorite,icon:Icon(favorite?Icons.favorite:Icons.favorite_border),visualDensity:VisualDensity.compact))])),
-    const SizedBox(height:7),if(product.brand!=null)Text(product.brand!,style:const TextStyle(fontSize:12,fontWeight:FontWeight.bold)),Text(product.name,maxLines:2,overflow:TextOverflow.ellipsis),const SizedBox(height:3),Text(_won(product.minPrice),style:const TextStyle(fontWeight:FontWeight.w800)),Row(children:[Flexible(child:MerchantMark(name:product.merchant)),if(product.offerCount>1)...[const SizedBox(width:5),Text('${product.offerCount}개 판매처',style:Theme.of(context).textTheme.bodySmall)]]),if(product.fitStatus=='verified')const Padding(padding:EdgeInsets.only(top:4),child:Chip(label:Text('꼬까핏 가능',style:TextStyle(fontSize:10)),visualDensity:VisualDensity.compact))
+    const SizedBox(height:8),Row(children:[Expanded(child:Text(product.brand??product.merchant,maxLines:1,overflow:TextOverflow.ellipsis,style:const TextStyle(fontSize:12,fontWeight:FontWeight.bold,color:KkokkapickTheme.muted))),if(product.fitStatus=='verified')const Padding(padding:EdgeInsets.only(left:4),child:Icon(Icons.straighten,size:15,color:KkokkapickTheme.coral))]),Text(product.name,maxLines:2,overflow:TextOverflow.ellipsis,style:const TextStyle(height:1.25)),const SizedBox(height:5),Text(_won(product.minPrice),style:const TextStyle(fontSize:16,fontWeight:FontWeight.w900)),const SizedBox(height:4),Wrap(spacing:5,runSpacing:4,crossAxisAlignment:WrapCrossAlignment.center,children:[MerchantMark(name:product.merchant),if(product.offerCount>1)Text('${product.offerCount}개 판매처',style:Theme.of(context).textTheme.bodySmall),if(product.fitStatus=='verified')const Text('꼬까핏',style:TextStyle(fontSize:10,fontWeight:FontWeight.w800,color:KkokkapickTheme.coral))])
   ]));
 }
 
