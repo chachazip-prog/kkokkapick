@@ -19,6 +19,7 @@ Suggested task names:
 - devops-finops
 - architect (conditional)
 - growth-business (conditional)
+- online-marketing (launch/growth planning; paid activation requires Product Owner approval)
 
 Every spawned task receives:
 1. ROLE: point to the matching .agents/<role>.md
@@ -83,7 +84,8 @@ Invoke Security/Privacy when root AGENTS.md says mandatory.
 Invoke Source/Data review for provider/data-policy/freshness/normalization changes.
 Invoke DevOps/FinOps for infrastructure, schedules, storage growth, third-party services, sync frequency, deployment.
 Invoke Architect only for high-reversal-cost cross-cutting decisions.
-Invoke Growth/Business only for commercial/growth questions.
+Invoke Growth/Business for commercial/economics questions.
+Invoke Online Marketing for launch acquisition, ASO/SEO, campaign experiments, retention messaging and funnel measurement. Planning is repository-safe; external campaign activation or spend requires Product Owner approval.
 
 ## Stop conditions
 Stop and ask Product Owner when an escalation condition in root AGENTS.md is reached.
