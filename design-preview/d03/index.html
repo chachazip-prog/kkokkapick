@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>꼬까픽 D03 Design Prototype</title>
+<style>
+:root{
+  --brand:#7567D8;--brand-deep:#5146A6;--brand-soft:#F0EDFF;
+  --ink:#25232B;--muted:#77737F;--surface:#F7F6FA;--line:#ECE9F2;
+  --white:#fff;--danger:#E65757;--success:#39785A;--phone:390px;
+  --gutter:16px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:var(--ink);background:#ECECF1}
+button,input{font:inherit}
+button{cursor:pointer}
+.prototype-toolbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;background:rgba(236,236,241,.94);backdrop-filter:blur(14px);border-bottom:1px solid #dddde5}
+.prototype-toolbar strong{font-size:12px;margin-right:4px}
+.prototype-toolbar button{border:1px solid #d4d2df;background:#fff;border-radius:999px;padding:7px 10px;font-size:12px;color:#5f5b69}
+.prototype-toolbar button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.stage{display:flex;justify-content:center;padding:20px 10px 48px}
+.phone{width:min(var(--phone),100%);height:844px;max-height:calc(100vh - 82px);position:relative;background:#fff;overflow:hidden;border-radius:30px;box-shadow:0 18px 60px rgba(35,32,49,.18);border:1px solid #dedde5}
+.app{height:100%;overflow:auto;padding-bottom:88px;scrollbar-width:none;background:#fff}
+.app::-webkit-scrollbar{display:none}
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);padding:14px var(--gutter) 10px;border-bottom:1px solid rgba(236,233,242,.7)}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:23px;line-height:1;font-weight:900;letter-spacing:-1.1px;color:#17161b}.logo em{font-style:normal;color:var(--brand)}
+.icon-actions{display:flex;gap:4px}.iconbtn{width:42px;height:42px;border:0;background:transparent;border-radius:50%;display:grid;place-items:center;color:var(--ink);font-size:18px}.iconbtn:active{background:var(--surface)}
+.search{margin-top:10px;height:46px;border-radius:13px;background:var(--surface);display:flex;align-items:center;gap:9px;padding:0 13px;color:var(--muted)}
+.search input{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:14px}.search input::placeholder{color:#9a96a2}
+.categories{display:flex;gap:8px;overflow:auto;padding:14px var(--gutter) 4px;scrollbar-width:none}.categories::-webkit-scrollbar{display:none}
+.chip{height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:#5c5962;font-size:13px;font-weight:600;white-space:nowrap}.chip.on{background:var(--brand-soft);border-color:transparent;color:var(--brand-deep);font-weight:800}
+.hero{margin:12px var(--gutter) 22px;min-height:194px;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(130deg,#EEF2FF 0%,#F5F0FF 52%,#F8F5F1 100%);display:grid;grid-template-columns:1.12fr .88fr}
+.hero-copy{padding:23px 0 22px 20px;position:relative;z-index:2}.eyebrow{font-size:11px;color:var(--brand-deep);font-weight:800;letter-spacing:.2px}.hero h1{font-size:25px;line-height:1.16;letter-spacing:-1.1px;margin:9px 0 9px;max-width:190px}.hero p{font-size:12px;line-height:1.5;color:#686472;margin:0 0 15px;max-width:180px}.primary{border:0;background:var(--ink);color:#fff;height:39px;padding:0 15px;border-radius:10px;font-size:12px;font-weight:800}.hero-visual{position:relative;overflow:hidden}.hero-circle{position:absolute;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.72);right:-26px;bottom:-18px}.hero-figure{position:absolute;right:12px;bottom:10px;width:112px;height:144px;border-radius:60px 60px 30px 30px;background:linear-gradient(#F0D8BF,#CDAF93);box-shadow:inset 0 -38px 0 #8395D4}.hero-figure:before{content:"";position:absolute;width:50px;height:50px;border-radius:50%;background:#F3D1B9;left:31px;top:15px;box-shadow:0 -8px 0 2px #3B302A}.hero-figure:after{content:"✦";position:absolute;color:#fff;font-size:28px;left:43px;top:80px}
+.section{padding:0 var(--gutter);margin:0 0 26px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-bottom:13px}.section-head h2{font-size:19px;line-height:1.2;letter-spacing:-.55px;margin:0}.section-head button{border:0;background:transparent;color:var(--muted);font-size:12px;padding:4px 0}.count{font-size:12px;color:var(--muted);font-weight:500;margin-left:5px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 11px}.product{min-width:0;position:relative}.photo{position:relative;width:100%;aspect-ratio:1/1;border-radius:14px;background:#f1f0f3;overflow:hidden}.photo img{display:block;width:100%;height:100%;object-fit:cover}.photo .ph{height:100%;display:grid;place-items:center;font-size:28px;color:#c2bfca}.heart{position:absolute;right:7px;top:7px;width:39px;height:39px;border:0;border-radius:50%;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(30,28,40,.08);font-size:18px;color:var(--ink)}.heart.on{color:var(--brand-deep)}
+.brand{font-size:11px;font-weight:800;color:#5c5865;margin-top:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.name{font-size:14px;line-height:1.42;font-weight:550;margin-top:3px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;letter-spacing:-.22px}.price-row{display:flex;align-items:baseline;gap:6px;margin-top:6px;flex-wrap:wrap}.price{font-size:16px;font-weight:850;letter-spacing:-.35px}.discount{font-size:12px;font-weight:800;color:var(--brand-deep)}.meta{font-size:11px;color:var(--muted);margin-top:5px}.fit{display:inline-flex;align-items:center;height:22px;padding:0 7px;border-radius:6px;background:#EFF8F3;color:var(--success);font-size:10px;font-weight:800;margin-top:6px}
+.toolbar{padding:12px var(--gutter) 4px;display:flex;align-items:center;justify-content:space-between;gap:10px}.toolbar .summary{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sort{border:0;background:transparent;color:var(--ink);font-size:12px;font-weight:700;padding:8px 0}
+.bottom{position:absolute;left:0;right:0;bottom:0;z-index:30;min-height:73px;padding:7px 10px max(8px,env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-top:1px solid var(--line)}
+.nav{border:0;background:transparent;border-radius:12px;color:#77737F;font-size:10px;font-weight:600;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}.nav b{font-size:18px;font-weight:500;line-height:1}.nav.on{color:var(--brand-deep);font-weight:800}.nav.on b{width:32px;height:25px;border-radius:999px;background:var(--brand-soft);display:grid;place-items:center}
+.sheet-mask{display:none;position:absolute;inset:0;z-index:60;background:rgba(20,18,25,.38);align-items:flex-end}.sheet-mask.on{display:flex}.sheet{width:100%;max-height:88%;overflow:auto;background:#fff;border-radius:24px 24px 0 0;padding:10px var(--gutter) max(18px,env(safe-area-inset-bottom));box-shadow:0 -16px 50px rgba(23,21,29,.16)}.grab{width:38px;height:4px;border-radius:9px;background:#d7d4dc;margin:2px auto 18px}.sheet-head{display:flex;justify-content:space-between;gap:10px;align-items:start}.sheet h2{font-size:22px;margin:0;letter-spacing:-.6px}.sheet .desc{font-size:13px;line-height:1.55;color:var(--muted);margin:8px 0 20px}.close{border:0;background:var(--surface);width:36px;height:36px;border-radius:50%;font-size:18px}.field{margin:0 0 13px}.field label{display:block;font-size:12px;font-weight:750;margin-bottom:7px}.fieldbox{height:50px;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;padding:0 14px;gap:8px;background:#fff}.fieldbox input{min-width:0;flex:1;border:0;outline:0;font-size:15px}.unit{font-size:12px;color:var(--muted)}.save{width:100%;height:50px;border:0;border-radius:12px;background:var(--brand-deep);color:#fff;font-size:14px;font-weight:800;margin-top:5px}
+.detail{display:none;background:#fff;min-height:100%}.detail.on{display:block}.detail-image{aspect-ratio:1/1;background:#f2f1f5;overflow:hidden}.detail-image img{width:100%;height:100%;object-fit:cover}.detail-body{padding:18px var(--gutter) 30px}.detail-brand{font-size:12px;font-weight:800;color:#625e69}.detail-title{font-size:21px;line-height:1.35;letter-spacing:-.65px;margin:5px 0 12px}.detail-price{font-size:23px;font-weight:900}.detail-block{margin-top:26px}.detail-block h3{font-size:17px;margin:0 0 11px}.offer{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:13px 0}.offer:first-of-type{border-top:0}.offer .merchant{font-size:13px;font-weight:750}.offer .offer-price{font-size:14px;font-weight:850;margin-top:3px}.buy{height:38px;border:0;border-radius:10px;background:var(--ink);color:#fff;padding:0 14px;font-size:12px;font-weight:800}.lowest{display:inline-flex;padding:2px 6px;border-radius:5px;background:var(--brand-soft);color:var(--brand-deep);font-size:9px;font-weight:850;margin-left:4px}
+.back{position:absolute;top:14px;left:12px;z-index:10;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.9);font-size:20px}
+.empty{grid-column:1/-1;padding:40px 0;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:340px){:root{--gutter:14px}.hero{grid-template-columns:1.2fr .8fr}.hero h1{font-size:22px}.hero p{display:none}.hero-figure{right:-3px;width:94px}.grid{gap:23px 9px}.name{font-size:13px}.price{font-size:15px}}
+@media(min-width:421px){:root{--gutter:20px}}
+</style>
+</head>
+<body>
+<div class="prototype-toolbar" aria-label="디자인 프로토타입 뷰포트 도구">
+  <strong>D03 prototype</strong>
+  <button data-w="320">320</button><button data-w="360">360</button><button data-w="390" class="on">390</button><button data-w="430">430</button>
+</div>
+<div class="stage">
+  <main class="phone" id="phone">
+    <div class="app" id="homeView">
+      <header class="top">
+        <div class="topline"><div class="logo">꼬까<em>픽</em></div><div class="icon-actions"><button class="iconbtn" aria-label="찜">♡</button><button class="iconbtn" aria-label="내 정보" onclick="openProfile()">○</button></div></div>
+        <label class="search">⌕ <input id="searchInput" placeholder="브랜드와 아기옷을 검색해보세요" autocomplete="off"></label>
+      </header>
+      <div class="categories" id="categories"></div>
+      <section class="hero">
+        <div class="hero-copy"><div class="eyebrow">KKOKKAPICK EDIT</div><h1>매일 입히고 싶은<br>좋은 아기옷.</h1><p>여러 판매처의 상품을 한곳에서 보고, 우리 아이에게 맞는 옷을 더 쉽게 골라보세요.</p><button class="primary" onclick="scrollProducts()">지금 둘러보기</button></div>
+        <div class="hero-visual"><div class="hero-circle"></div><div class="hero-figure"></div></div>
+      </section>
+      <section class="section" id="productSection">
+        <div class="section-head"><h2 id="sectionTitle">지금 많이 보는 아기옷 <span class="count" id="count"></span></h2><button onclick="resetFilters()">전체보기</button></div>
+        <div class="grid" id="grid"></div>
+      </section>
+    </div>
+
+    <section class="detail" id="detailView" aria-hidden="true"><button class="back" onclick="closeDetail()" aria-label="뒤로">‹</button><div id="detailContent"></div></section>
+
+    <nav class="bottom" id="bottomNav">
+      <button class="nav on" data-nav="home"><b>⌂</b>홈</button>
+      <button class="nav" data-nav="search"><b>⌕</b>검색</button>
+      <button class="nav" data-nav="fav"><b>♡</b>찜</button>
+      <button class="nav" data-nav="profile" onclick="openProfile()"><b>○</b>마이</button>
+    </nav>
+
+    <div class="sheet-mask" id="profileMask" onclick="maskClose(event)"><section class="sheet" role="dialog" aria-modal="true" aria-label="아이 정보"><div class="grab"></div><div class="sheet-head"><div><h2>우리 아이 정보</h2><p class="desc">월령과 키·몸무게를 등록하면 검증된 브랜드 사이즈표가 있는 상품에서만 꼬까핏을 안내해요.</p></div><button class="close" onclick="closeProfile()" aria-label="닫기">×</button></div><div class="field"><label for="months">월령</label><div class="fieldbox"><input id="months" inputmode="numeric" placeholder="예: 8"><span class="unit">개월</span></div></div><div class="field"><label for="height">키</label><div class="fieldbox"><input id="height" inputmode="decimal" placeholder="예: 72"><span class="unit">cm</span></div></div><div class="field"><label for="weight">몸무게</label><div class="fieldbox"><input id="weight" inputmode="decimal" placeholder="예: 8.4"><span class="unit">kg</span></div></div><button class="save" onclick="closeProfile()">아이 정보 저장</button></section></div>
+  </main>
+</div>
+<script>
+const state={products:[],category:'전체',query:'',favs:new Set()};
+const merchantPrefixes=['보리보리','롯데백화점','롯데ON','롯데온','SSG','G마켓','옥션','11번가','GS SHOP','GSSHOP','CJ온스타일','현대Hmall','현대홈쇼핑'];
+function cleanName(v=''){let s=String(v).trim(),changed=true;while(changed){changed=false;const m=s.match(/^\s*\[\s*([^\]]+)\s*\]\s*/);if(m&&merchantPrefixes.some(x=>m[1].toLowerCase().includes(x.toLowerCase()))){s=s.slice(m[0].length);changed=true}}for(const x of merchantPrefixes){const re=new RegExp('^'+x.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\s*[-:|]?\\s*','i');s=s.replace(re,'')}return s.trim()||String(v)}
+function won(n){return Number.isFinite(Number(n))?Number(n).toLocaleString('ko-KR')+'원':'가격 확인'}
+function productPrice(p){const xs=(p.offers||[]).map(o=>Number(o.price)).filter(Number.isFinite);return xs.length?Math.min(...xs):Number(p.minPrice)||0}
+function brandOf(p){return p.brand||String(cleanName(p.name)).match(/^\[([^\]]+)\]/)?.[1]||'꼬까픽 셀렉트'}
+function catOf(p){return p.category||'기타'}
+function card(p){const id=String(p.id);const isFav=state.favs.has(id);return `<article class="product" data-id="${id}"><div class="photo">${p.imageUrl?`<img src="${p.imageUrl}" alt="" loading="lazy" onerror="this.outerHTML='<div class=ph>KK</div>'">`:'<div class="ph">KK</div>'}<button class="heart ${isFav?'on':''}" data-heart="${id}" aria-label="찜">${isFav?'♥':'♡'}</button></div><div class="brand">${brandOf(p)}</div><div class="name">${cleanName(p.name)}</div><div class="price-row"><strong class="price">${won(productPrice(p))}</strong>${(p.offers||[]).length>1?'<span class="discount">최저가부터</span>':''}</div><div class="meta">${catOf(p)}${(p.offers||[]).length>1?' · '+p.offers.length+'개 판매처':''}</div>${p.fitStatus==='verified'?'<span class="fit">꼬까핏 가능</span>':''}</article>`}
+function renderCategories(){const cats=['전체',...new Set(state.products.map(catOf).filter(x=>x&&x!=='기타'))].slice(0,9);document.getElementById('categories').innerHTML=cats.map(x=>`<button class="chip ${state.category===x?'on':''}" data-cat="${x}">${x}</button>`).join('');document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{state.category=b.dataset.cat;render()})}
+function filtered(){const q=state.query.trim().toLowerCase();return state.products.filter(p=>(state.category==='전체'||catOf(p)===state.category)&&(!q||`${cleanName(p.name)} ${brandOf(p)} ${catOf(p)}`.toLowerCase().includes(q)))}
+function render(){renderCategories();const xs=filtered();document.getElementById('count').textContent=`${xs.length}개`;document.getElementById('sectionTitle').firstChild.textContent=state.query?'검색 결과 ':'지금 많이 보는 아기옷 ';document.getElementById('grid').innerHTML=xs.length?xs.slice(0,24).map(card).join(''):'<div class="empty">조건에 맞는 상품이 없어요.</div>';document.querySelectorAll('.product').forEach(el=>el.onclick=e=>{if(e.target.closest('[data-heart]'))return;openDetail(el.dataset.id)});document.querySelectorAll('[data-heart]').forEach(b=>b.onclick=e=>{e.stopPropagation();const id=b.dataset.heart;state.favs.has(id)?state.favs.delete(id):state.favs.add(id);render()})}
+function openDetail(id){const p=state.products.find(x=>String(x.id)===String(id));if(!p)return;const offers=(p.offers||[]).slice().sort((a,b)=>(Number(a.price)||Infinity)-(Number(b.price)||Infinity));document.getElementById('detailContent').innerHTML=`<div class="detail-image">${p.imageUrl?`<img src="${p.imageUrl}" alt="">`:'<div class="ph">KK</div>'}</div><div class="detail-body"><div class="detail-brand">${brandOf(p)}</div><h1 class="detail-title">${cleanName(p.name)}</h1><div class="detail-price">${won(productPrice(p))}${offers.length>1?'부터':''}</div>${p.fitStatus==='verified'?'<span class="fit">검증된 꼬까핏 안내 가능</span>':''}<section class="detail-block"><h3>판매처 가격 비교</h3>${offers.length?offers.map((o,i)=>`<div class="offer"><div><div class="merchant">${o.merchant||'판매처'}${i===0&&offers.length>1?'<span class="lowest">최저가</span>':''}</div><div class="offer-price">${won(Number(o.price))}</div></div><button class="buy">구매</button></div>`).join(''):'<div class="meta">판매처 정보를 확인 중이에요.</div>'}</section><section class="detail-block"><h3>상품 확인 안내</h3><div class="meta" style="font-size:12px;line-height:1.6">가격·옵션·배송 정보는 판매처에서 최종 확인하세요. 판매채널 정보는 상품명과 분리해 보여줍니다.</div></section></div>`;document.getElementById('homeView').style.display='none';document.getElementById('detailView').classList.add('on');document.getElementById('detailView').setAttribute('aria-hidden','false');document.getElementById('bottomNav').style.display='none';document.getElementById('phone').scrollTop=0}
+function closeDetail(){document.getElementById('detailView').classList.remove('on');document.getElementById('detailView').setAttribute('aria-hidden','true');document.getElementById('homeView').style.display='block';document.getElementById('bottomNav').style.display='grid'}
+function openProfile(){document.getElementById('profileMask').classList.add('on');setTimeout(()=>document.getElementById('months').focus(),120)}function closeProfile(){document.getElementById('profileMask').classList.remove('on');document.activeElement?.blur()}function maskClose(e){if(e.target===document.getElementById('profileMask'))closeProfile()}
+function resetFilters(){state.category='전체';state.query='';document.getElementById('searchInput').value='';render()}function scrollProducts(){document.getElementById('productSection').scrollIntoView({behavior:'smooth',block:'start'})}
+document.getElementById('searchInput').addEventListener('input',e=>{state.query=e.target.value;render()});
+document.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{document.documentElement.style.setProperty('--phone',b.dataset.w+'px');document.querySelectorAll('[data-w]').forEach(x=>x.classList.toggle('on',x===b))});
+document.querySelectorAll('[data-nav]').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.nav==='profile')return;document.querySelectorAll('[data-nav]').forEach(x=>x.classList.toggle('on',x===b));if(b.dataset.nav==='search')document.getElementById('searchInput').focus();if(b.dataset.nav==='fav'){const only=[...state.products].filter(p=>state.favs.has(String(p.id)));document.getElementById('grid').innerHTML=only.length?only.map(card).join(''):'<div class="empty">찜한 상품이 아직 없어요.</div>';document.getElementById('sectionTitle').firstChild.textContent='찜한 상품 ';document.getElementById('count').textContent=`${only.length}개`;document.getElementById('productSection').scrollIntoView({behavior:'smooth'})}}));
+async function boot(){try{const r=await fetch('../../data/catalog.json?design='+Date.now());const d=await r.json();state.products=(d.products||[]).filter(p=>p.imageUrl).slice(0,120);render()}catch(e){state.products=[{id:'sample1',name:'[에뜨와] 베이비 코튼 가디건',brand:'에뜨와',category:'아우터',imageUrl:'',offers:[{merchant:'판매처 A',price:32000},{merchant:'판매처 B',price:35000}],fitStatus:'verified'},{id:'sample2',name:'부드러운 코튼 베이비 셔츠와 팬츠 세트',brand:'모이몰른',category:'상하복',imageUrl:'',offers:[{merchant:'판매처',price:28000}]}];render()}}
+boot();
+</script>
+</body>
+</html>
