@@ -30,13 +30,14 @@ jobs:
         run: |
           node scripts/discover-adpick.js
           node scripts/build-catalog.js
+          node scripts/catalog-quality-report.js | tee catalog-quality-report.json
 
       - name: Commit catalog
         run: |
-          if git diff --quiet -- data/adpick-biz-products.json data/catalog.json data/price-history.json; then exit 0; fi
+          if git diff --quiet -- data/adpick-biz-products.json data/catalog.json data/price-history.json catalog-quality-report.json; then exit 0; fi
           git config user.name "kkokkapick-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/adpick-biz-products.json data/catalog.json data/price-history.json
+          git add data/adpick-biz-products.json data/catalog.json data/price-history.json catalog-quality-report.json
           git commit -m "chore: refresh ADPICK BIZ baby catalog"
           # main may move while the long provider sync is running (for example,
           # when product code is updated). Rebase the generated data commit
