@@ -80,12 +80,12 @@ class CatalogProduct {
     var changed=true;
     while(changed){
       changed=false;
-      final match=RegExp(r'^\\s*\\[\\s*([^\\]]+)\\s*\\]\\s*').firstMatch(value);
+      final match=RegExp(r'^\s*\[\s*([^\]]+)\s*\]\s*').firstMatch(value);
       if(match!=null&&channels.any((channel)=>match.group(1)!.toLowerCase().contains(channel.toLowerCase()))){
         value=value.substring(match.end);changed=true;
       }
     }
-    value=value.replaceFirst(RegExp('^(?:'+channels.map(RegExp.escape).join('|')+')\\\\s*[-:|]?\\\\s*',caseSensitive:false), '');
+    value=value.replaceFirst(RegExp('^(?:'+channels.map(RegExp.escape).join('|')+')\\s*[-:|]?\\s*',caseSensitive:false), '');
     return value.trim().isEmpty?name:value.trim();
   }
 }
