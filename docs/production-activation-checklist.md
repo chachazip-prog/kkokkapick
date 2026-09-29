@@ -1,0 +1,22 @@
+# Production activation checklist
+
+- [ ] Final release SHA selected
+- [ ] Code Quality green
+- [ ] Flutter analyze/tests green
+- [ ] Android release configuration contains no debug signing
+- [ ] iOS unsigned release build green
+- [ ] Independent QA_PASS recorded
+- [ ] Security/Privacy has no unresolved high-risk finding
+- [ ] Production Supabase created and migration backup/restore path verified
+- [ ] Migrations applied and grants/RLS/RPC exposure audited
+- [ ] Account deletion E2E verified in deployed environment
+- [ ] Production catalog read boundary configured; GitHub Pages fallback not used for production
+- [ ] Authentication providers approved/configured
+- [ ] Final Android applicationId and iOS bundle ID approved
+- [ ] Signing credentials stored only in protected CI/store secret storage
+- [ ] FCM/APNs sender and invalid-token cleanup verified
+- [ ] Provider production rights/attribution confirmed
+- [ ] Privacy/support/account-deletion pages finalized with real legal/contact/data inventory
+- [ ] Backup/restore and rollback rehearsal recorded
+- [ ] Store metadata/privacy declarations/reviewer access ready
+- [ ] Product Owner final release/submission authorization
