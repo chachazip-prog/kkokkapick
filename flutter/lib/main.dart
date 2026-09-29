@@ -155,6 +155,14 @@ class _CatalogScreenState extends State<CatalogScreen>{
 
   void onEditProfileProxy()=>_editProfile();
 
+  Future<void> _showBrandPicker(List<String> brands) async {
+    final selected=await coordinatedModal<String>(context:context,coordinator:_overlays,builder:(context)=>SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.start,children:[
+      Text('브랜드',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w900)),const SizedBox(height:12),
+      Wrap(spacing:8,runSpacing:8,children:brands.map((b)=>ChoiceChip(label:Text(b),selected:b==_brand,onSelected:(_)=>Navigator.pop(context,b))).toList()),
+    ]))));
+    if(selected!=null)setState(()=>_brand=selected);
+  }
+
   Future<void> _showFilters() async {
     final choice=await coordinatedModal<String>(context:context,coordinator:_overlays,builder:(context)=>SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
       Text('빠른 필터',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
@@ -349,10 +357,9 @@ class _CatalogScreenState extends State<CatalogScreen>{
           if(_navIndex==1)...[
           const SizedBox(height:12),
           _FilterRow(values:stages,value:_stage,onChanged:(v)=>setState(()=>_stage=v)),
-          _FilterRow(values:categories,value:_category,onChanged:(v)=>setState(()=>_category=v)),
-          _FilterRow(values:brands,value:_brand,onChanged:(v)=>setState(()=>_brand=v)),
-          Row(children:[FilterChip(label:const Text('꼬까핏 가능'),selected:_fitOnly,onSelected:(v)=>setState(()=>_fitOnly=v)),const Spacer(),DropdownButton<CatalogSort>(value:_sort,underline:const SizedBox(),items:const [DropdownMenuItem(value:CatalogSort.recommended,child:Text('추천순')),DropdownMenuItem(value:CatalogSort.low,child:Text('낮은 가격순')),DropdownMenuItem(value:CatalogSort.high,child:Text('높은 가격순'))],onChanged:(v)=>setState(()=>_sort=v!))]),
-          Row(children:[Text('${items.length}개',style:Theme.of(context).textTheme.titleMedium),const Spacer(),TextButton(onPressed:_reset,child:const Text('필터 초기화'))])],
+          const SizedBox(height:6),_FilterRow(values:categories,value:_category,onChanged:(v)=>setState(()=>_category=v)),
+          const SizedBox(height:8),Row(children:[FilterChip(label:Text(_brand=='전체'?'브랜드':'브랜드 · $_brand'),selected:_brand!='전체',avatar:const Icon(Icons.sell_outlined,size:16),onSelected:(_)=>_showBrandPicker(brands)),const SizedBox(width:8),FilterChip(label:const Text('꼬까핏'),selected:_fitOnly,onSelected:(v)=>setState(()=>_fitOnly=v)),const Spacer(),DropdownButton<CatalogSort>(value:_sort,underline:const SizedBox(),items:const [DropdownMenuItem(value:CatalogSort.recommended,child:Text('추천순')),DropdownMenuItem(value:CatalogSort.low,child:Text('낮은 가격순')),DropdownMenuItem(value:CatalogSort.high,child:Text('높은 가격순'))],onChanged:(v)=>setState(()=>_sort=v!))]),
+          Row(children:[Text('${items.length}개',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),const Spacer(),if(_stage!='전체'||_category!='전체'||_brand!='전체'||_fitOnly||_search.text.isNotEmpty)TextButton(onPressed:_reset,child:const Text('초기화'))])],
         ]))),
         if(items.isEmpty)SliverFillRemaining(child:_EmptyCatalogView(onReset:_reset,favoritesOnly:_favoritesOnly))
         else SliverPadding(
