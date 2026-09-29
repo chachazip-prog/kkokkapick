@@ -16,17 +16,20 @@ KKOKKAPICK is a discovery utility, not a generic marketplace. The first viewport
 Avoid repeated badges, oversized hero panels, large empty regions, and marketplace prefixes in customer-facing names.
 
 ## Tokens
-- background: warm cream #FFFBF5
-- primary accent: coral #E95D45
-- ink: #202124
-- secondary text: #6F7378
-- neutral media/loading surface: #F7F5F0
-- Kkokkafit support surface: #EAF5EF
+- background: soft off-white #FFFCFF
+- primary: lavender #7567D8
+- primary deep: #5146A6
+- primary soft surface: #F0EDFF
+- secondary blush surface: #FFEEF4
+- ink: #25232B
+- secondary text: #77737F
+- neutral media/loading surface: #F7F6FA
+- Kkokkafit support surface: #EFF8F3
 - cards: white with subtle neutral border, no decorative elevation
 - radius: 14 input/chip, 16 product media, 22 utility cards
 - mobile horizontal gutter: 16px
 
-Accent is reserved for primary action/selection.
+Lavender is the brand/action language; blush is a restrained editorial accent. Mint is reserved for Kkokkafit evidence. Avoid the previous cream/coral retail-template look.
 
 ## Screen rules
 ### Home
