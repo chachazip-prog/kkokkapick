@@ -1,11 +1,36 @@
 export const PRODUCT_CONTRACT_VERSION = 1;
 
+const MERCHANT_CHANNEL_PREFIXES=[
+  "보리보리","롯데백화점","롯데ON","롯데온","SSG","G마켓","옥션","11번가",
+  "GS SHOP","GSSHOP","CJ온스타일","현대Hmall","현대홈쇼핑"
+];
+
+export function normalizeProductDisplayName(name){
+  const original=String(name||"");
+  let value=original.trim();
+  let changed=true;
+  while(changed){
+    changed=false;
+    const match=value.match(/^\s*\[\s*([^\]]+)\s*\]\s*/);
+    if(match&&MERCHANT_CHANNEL_PREFIXES.some(channel=>match[1].toLowerCase().includes(channel.toLowerCase()))){
+      value=value.slice(match[0].length);
+      changed=true;
+    }
+  }
+  const escaped=MERCHANT_CHANNEL_PREFIXES.map(v=>v.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"));
+  value=value.replace(new RegExp(`^(?:${escaped.join("|")})\\s*[-:|]?\\s*`,"i"),"");
+  const normalized=value.trim();
+  return normalized||original;
+}
+
 export function toClientProduct(product={}) {
   const offers=(product.offers||[]).map(toClientOffer).filter(o=>o.affiliateUrl);
   const prices=offers.map(o=>o.price).filter(Number.isFinite);
+  const name=String(product.name||"");
   return {
     id:String(product.id||""),
-    name:String(product.name||""),
+    name,
+    displayName:normalizeProductDisplayName(name),
     brand:product.brand||null,
     category:product.category||"기타",
     stage:product.stage||null,
