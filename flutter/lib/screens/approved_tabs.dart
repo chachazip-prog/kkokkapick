@@ -47,7 +47,7 @@ class ApprovedHomeTab extends StatelessWidget {
     final discovery = ranking.rankTrending(products, limit: 8);
     final categories = <String>[
       '전체',
-      ...{for (final p in products) p.category}.where((e) => e.trim().isNotEmpty).take(7),
+      ...{for (final p in products) if (p.category.trim().isNotEmpty) p.category}.take(7),
     ];
 
     return CustomScrollView(
@@ -83,11 +83,16 @@ class ApprovedHomeTab extends StatelessWidget {
                     const Icon(Icons.auto_awesome_rounded,
                         size: 17, color: KkokkapickTheme.lavenderDeep),
                     const SizedBox(width: 7),
-                    Text('${profile!.months}개월 · ${profile!.heightCm.toStringAsFixed(0)}cm 기준 추천',
+                    Expanded(
+                      child: Text(
+                        '${profile!.months}개월 · ${profile!.heightCm.toStringAsFixed(0)}cm 기준 추천',
                         style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w700,
-                            color: KkokkapickTheme.lavenderDeep)),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700,
+                          color: KkokkapickTheme.lavenderDeep,
+                        ),
+                      ),
+                    ),
                   ]),
                 ),
               CommerceSectionHeader(
@@ -152,28 +157,22 @@ class _ProfileNudge extends StatelessWidget {
           child: InkWell(
             borderRadius: BorderRadius.circular(16),
             onTap: onTap,
-            child: Padding(
-              padding: const EdgeInsets.all(15),
+            child: const Padding(
+              padding: EdgeInsets.all(15),
               child: Row(children: [
-                Container(
-                  width: 42,
-                  height: 42,
-                  decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-                  child: const Icon(Icons.child_care_rounded,
-                      color: KkokkapickTheme.lavenderDeep),
-                ),
-                const SizedBox(width: 12),
-                const Expanded(
+                _ProfileIcon(),
+                SizedBox(width: 12),
+                Expanded(
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text('아이 정보를 알려주세요',
-                        style: TextStyle(fontWeight: FontWeight.w900)),
+                    Text('아이 정보를 알려주세요', style: TextStyle(fontWeight: FontWeight.w900)),
                     SizedBox(height: 3),
-                    Text('월령·키·몸무게로 추천과 꼬까핏을 더 정확하게 만들어요',
-                        style: TextStyle(
-                            fontSize: 12, color: KkokkapickTheme.muted, height: 1.35)),
+                    Text(
+                      '월령·키·몸무게로 추천과 꼬까핏을 더 정확하게 만들어요',
+                      style: TextStyle(fontSize: 12, color: KkokkapickTheme.muted, height: 1.35),
+                    ),
                   ]),
                 ),
-                const Icon(Icons.chevron_right_rounded),
+                Icon(Icons.chevron_right_rounded),
               ]),
             ),
           ),
@@ -181,7 +180,26 @@ class _ProfileNudge extends StatelessWidget {
       );
 }
 
+class _ProfileIcon extends StatelessWidget {
+  const _ProfileIcon();
+  @override
+  Widget build(BuildContext context) => Container(
+        width: 42,
+        height: 42,
+        decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+        child: const Icon(Icons.child_care_rounded, color: KkokkapickTheme.lavenderDeep),
+      );
+}
+
 enum ApprovedSort { recommended, low, high }
+
+extension on ApprovedSort {
+  String get label => switch (this) {
+        ApprovedSort.recommended => '추천순',
+        ApprovedSort.low => '낮은 가격순',
+        ApprovedSort.high => '높은 가격순',
+      };
+}
 
 class ApprovedSearchTab extends StatefulWidget {
   const ApprovedSearchTab({
@@ -214,10 +232,14 @@ class _ApprovedSearchTabState extends State<ApprovedSearchTab> {
     super.dispose();
   }
 
-  List<String> get _categories => <String>[
-        '전체',
-        ...{for (final p in widget.products) p.category}.where((e) => e.trim().isNotEmpty).toList()..sort(),
-      ];
+  List<String> get _categories {
+    final values = {
+      for (final p in widget.products)
+        if (p.category.trim().isNotEmpty) p.category,
+    }.toList()
+      ..sort();
+    return ['전체', ...values];
+  }
 
   List<CatalogProduct> get _visible {
     final terms = _controller.text
@@ -232,17 +254,17 @@ class _ApprovedSearchTabState extends State<ApprovedSearchTab> {
           (!_fitOnly || p.fitStatus == 'verified') &&
           terms.every(hay.contains);
     }).toList();
+
     switch (_sort) {
       case ApprovedSort.low:
         out.sort((a, b) => (a.minPrice ?? 1 << 62).compareTo(b.minPrice ?? 1 << 62));
+        return out;
       case ApprovedSort.high:
         out.sort((a, b) => (b.minPrice ?? 0).compareTo(a.minPrice ?? 0));
+        return out;
       case ApprovedSort.recommended:
-        const ranking = HomeFeedRankingService();
-        final order = ranking.rankTrending(out, limit: out.length).items;
-        return order;
+        return const HomeFeedRankingService().rankTrending(out, limit: out.length).items;
     }
-    return out;
   }
 
   Future<void> _showFilterSheet() async {
@@ -254,55 +276,73 @@ class _ApprovedSearchTabState extends State<ApprovedSearchTab> {
       backgroundColor: Colors.white,
       showDragHandle: true,
       shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
       builder: (context) => StatefulBuilder(
         builder: (context, setSheetState) => SafeArea(
           top: false,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 4, 20, 24),
-            child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text('필터와 정렬',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge
-                      ?.copyWith(fontWeight: FontWeight.w900)),
-              const SizedBox(height: 18),
-              const Text('정렬', style: TextStyle(fontWeight: FontWeight.w800)),
-              const SizedBox(height: 8),
-              ...ApprovedSort.values.map((value) => RadioListTile<ApprovedSort>(
-                    contentPadding: EdgeInsets.zero,
-                    value: value,
-                    groupValue: nextSort,
-                    onChanged: (v) => setSheetState(() => nextSort = v!),
-                    title: Text(switch (value) {
-                      ApprovedSort.recommended => '추천순',
-                      ApprovedSort.low => '낮은 가격순',
-                      ApprovedSort.high => '높은 가격순',
-                    }),
-                  )),
-              const Divider(height: 28),
-              SwitchListTile(
-                contentPadding: EdgeInsets.zero,
-                value: nextFit,
-                onChanged: (v) => setSheetState(() => nextFit = v),
-                title: const Text('꼬까핏 가능한 상품만',
-                    style: TextStyle(fontWeight: FontWeight.w800)),
-                subtitle: const Text('검증된 사이즈 정보가 있는 상품만 보여줘요'),
-              ),
-              const SizedBox(height: 14),
-              SizedBox(
-                width: double.infinity,
-                child: FilledButton(
-                  onPressed: () => Navigator.pop(context, true),
-                  child: const Text('적용하기'),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '필터와 정렬',
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900),
                 ),
-              ),
-            ]),
+                const SizedBox(height: 18),
+                const Text('정렬', style: TextStyle(fontWeight: FontWeight.w800)),
+                const SizedBox(height: 8),
+                ...ApprovedSort.values.map(
+                  (value) => ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    minTileHeight: 48,
+                    onTap: () => setSheetState(() => nextSort = value),
+                    leading: Icon(
+                      value == nextSort
+                          ? Icons.radio_button_checked_rounded
+                          : Icons.radio_button_off_rounded,
+                      color: value == nextSort
+                          ? KkokkapickTheme.lavenderDeep
+                          : KkokkapickTheme.muted,
+                    ),
+                    title: Text(
+                      value.label,
+                      style: TextStyle(
+                        fontWeight: value == nextSort ? FontWeight.w800 : FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+                const Divider(height: 28),
+                SwitchListTile(
+                  contentPadding: EdgeInsets.zero,
+                  value: nextFit,
+                  onChanged: (v) => setSheetState(() => nextFit = v),
+                  title: const Text('꼬까핏 가능한 상품만', style: TextStyle(fontWeight: FontWeight.w800)),
+                  subtitle: const Text('검증된 사이즈 정보가 있는 상품만 보여줘요'),
+                ),
+                const SizedBox(height: 14),
+                SizedBox(
+                  width: double.infinity,
+                  child: FilledButton(
+                    onPressed: () => Navigator.pop(context, true),
+                    child: const Text('적용하기'),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
-    if (result == true) setState(() { _fitOnly = nextFit; _sort = nextSort; });
+    if (result == true) {
+      setState(() {
+        _fitOnly = nextFit;
+        _sort = nextSort;
+      });
+    }
   }
 
   @override
@@ -331,8 +371,7 @@ class _ApprovedSearchTabState extends State<ApprovedSearchTab> {
                 padding: const EdgeInsets.fromLTRB(16, 10, 16, 16),
                 child: Row(children: [
                   Expanded(
-                    child: Text('총 ${visible.length}개 상품',
-                        style: const TextStyle(fontWeight: FontWeight.w800)),
+                    child: Text('총 ${visible.length}개 상품', style: const TextStyle(fontWeight: FontWeight.w800)),
                   ),
                   OutlinedButton.icon(
                     onPressed: _showFilterSheet,
@@ -421,10 +460,11 @@ class _ApprovedFavoritesTabState extends State<ApprovedFavoritesTab> {
                   onSelectionChanged: (value) => setState(() => _segment = value.first),
                   style: ButtonStyle(
                     visualDensity: VisualDensity.compact,
-                    backgroundColor: WidgetStateProperty.resolveWith((s) =>
-                        s.contains(WidgetState.selected)
-                            ? KkokkapickTheme.lavenderSoft
-                            : Colors.white),
+                    backgroundColor: WidgetStateProperty.resolveWith(
+                      (states) => states.contains(WidgetState.selected)
+                          ? KkokkapickTheme.lavenderSoft
+                          : Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -472,6 +512,7 @@ class ApprovedMyTab extends StatelessWidget {
     required this.onSignOut,
     required this.onDeleteAccount,
   });
+
   final ChildProfile? profile;
   final int favoriteCount;
   final int alertCount;
@@ -495,22 +536,27 @@ class ApprovedMyTab extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(18),
                 decoration: BoxDecoration(
-                    color: KkokkapickTheme.surface,
-                    borderRadius: BorderRadius.circular(18)),
+                  color: KkokkapickTheme.surface,
+                  borderRadius: BorderRadius.circular(18),
+                ),
                 child: Row(children: [
                   Container(
                     width: 56,
                     height: 56,
                     decoration: const BoxDecoration(
-                        color: KkokkapickTheme.lavenderSoft, shape: BoxShape.circle),
+                      color: KkokkapickTheme.lavenderSoft,
+                      shape: BoxShape.circle,
+                    ),
                     child: const Icon(Icons.person_rounded,
                         color: KkokkapickTheme.lavenderDeep, size: 28),
                   ),
                   const SizedBox(width: 14),
                   Expanded(
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      Text(signedIn ? '꼬까픽 계정' : '게스트로 이용 중',
-                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900)),
+                      Text(
+                        signedIn ? '꼬까픽 계정' : '게스트로 이용 중',
+                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900),
+                      ),
                       const SizedBox(height: 4),
                       Text(
                         offlineAuthenticated
@@ -518,13 +564,11 @@ class ApprovedMyTab extends StatelessWidget {
                             : signedIn
                                 ? '찜과 아이 정보를 안전하게 동기화해요.'
                                 : '로그인하면 기기 변경 후에도 데이터를 이어볼 수 있어요.',
-                        style: const TextStyle(
-                            fontSize: 12, color: KkokkapickTheme.muted, height: 1.4),
+                        style: const TextStyle(fontSize: 12, color: KkokkapickTheme.muted, height: 1.4),
                       ),
                     ]),
                   ),
-                  if (!signedIn)
-                    TextButton(onPressed: onAuth, child: const Text('로그인')),
+                  if (!signedIn) TextButton(onPressed: onAuth, child: const Text('로그인')),
                 ]),
               ),
             ),
@@ -542,74 +586,30 @@ class ApprovedMyTab extends StatelessWidget {
               child: Material(
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    side: const BorderSide(color: Color(0xFFECE9F2))),
+                  borderRadius: BorderRadius.circular(16),
+                  side: const BorderSide(color: Color(0xFFECE9F2)),
+                ),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(16),
                   onTap: onEditProfile,
                   child: Padding(
                     padding: const EdgeInsets.all(16),
-                    child: profile == null
-                        ? const Row(children: [
-                            Icon(Icons.add_circle_outline_rounded,
-                                color: KkokkapickTheme.lavenderDeep),
-                            SizedBox(width: 12),
-                            Expanded(
-                              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                Text('아이 정보 등록',
-                                    style: TextStyle(fontWeight: FontWeight.w900)),
-                                SizedBox(height: 3),
-                                Text('추천과 꼬까핏 정확도를 높여요',
-                                    style: TextStyle(
-                                        fontSize: 12, color: KkokkapickTheme.muted)),
-                              ]),
-                            ),
-                            Icon(Icons.chevron_right_rounded),
-                          ])
-                        : Row(children: [
-                            Container(
-                              width: 46,
-                              height: 46,
-                              decoration: const BoxDecoration(
-                                  color: KkokkapickTheme.lavenderSoft,
-                                  shape: BoxShape.circle),
-                              child: const Icon(Icons.child_care_rounded,
-                                  color: KkokkapickTheme.lavenderDeep),
-                            ),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                const Text('우리 아이',
-                                    style: TextStyle(fontWeight: FontWeight.w900)),
-                                const SizedBox(height: 4),
-                                Wrap(spacing: 6, runSpacing: 6, children: [
-                                  MetricPill(
-                                      icon: Icons.calendar_today_outlined,
-                                      label: '${profile!.months}개월'),
-                                  MetricPill(
-                                      icon: Icons.height_rounded,
-                                      label: '${profile!.heightCm.toStringAsFixed(0)}cm'),
-                                  MetricPill(
-                                      icon: Icons.monitor_weight_outlined,
-                                      label: '${profile!.weightKg.toStringAsFixed(1)}kg'),
-                                ]),
-                              ]),
-                            ),
-                            const Icon(Icons.chevron_right_rounded),
-                          ]),
+                    child: profile == null ? const _EmptyProfileRow() : _ProfileRow(profile: profile!),
                   ),
                 ),
               ),
             ),
             const CommerceSectionHeader(title: '서비스'),
-            _MenuTile(
-                icon: Icons.help_outline_rounded,
-                title: '고객지원',
-                subtitle: '문의와 자주 묻는 질문'),
-            _MenuTile(
-                icon: Icons.settings_outlined,
-                title: '앱 설정',
-                subtitle: '알림·개인정보·약관'),
+            const _MenuTile(
+              icon: Icons.help_outline_rounded,
+              title: '고객지원',
+              subtitle: '문의와 자주 묻는 질문',
+            ),
+            const _MenuTile(
+              icon: Icons.settings_outlined,
+              title: '앱 설정',
+              subtitle: '알림·개인정보·약관',
+            ),
             if (signedIn) ...[
               const SizedBox(height: 12),
               Padding(
@@ -631,23 +631,74 @@ class ApprovedMyTab extends StatelessWidget {
       );
 }
 
+class _EmptyProfileRow extends StatelessWidget {
+  const _EmptyProfileRow();
+  @override
+  Widget build(BuildContext context) => const Row(children: [
+        Icon(Icons.add_circle_outline_rounded, color: KkokkapickTheme.lavenderDeep),
+        SizedBox(width: 12),
+        Expanded(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('아이 정보 등록', style: TextStyle(fontWeight: FontWeight.w900)),
+            SizedBox(height: 3),
+            Text('추천과 꼬까핏 정확도를 높여요',
+                style: TextStyle(fontSize: 12, color: KkokkapickTheme.muted)),
+          ]),
+        ),
+        Icon(Icons.chevron_right_rounded),
+      ]);
+}
+
+class _ProfileRow extends StatelessWidget {
+  const _ProfileRow({required this.profile});
+  final ChildProfile profile;
+  @override
+  Widget build(BuildContext context) => Row(children: [
+        Container(
+          width: 46,
+          height: 46,
+          decoration: const BoxDecoration(
+            color: KkokkapickTheme.lavenderSoft,
+            shape: BoxShape.circle,
+          ),
+          child: const Icon(Icons.child_care_rounded, color: KkokkapickTheme.lavenderDeep),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const Text('우리 아이', style: TextStyle(fontWeight: FontWeight.w900)),
+            const SizedBox(height: 4),
+            Wrap(spacing: 6, runSpacing: 6, children: [
+              MetricPill(icon: Icons.calendar_today_outlined, label: '${profile.months}개월'),
+              MetricPill(icon: Icons.height_rounded, label: '${profile.heightCm.toStringAsFixed(0)}cm'),
+              MetricPill(
+                icon: Icons.monitor_weight_outlined,
+                label: '${profile.weightKg.toStringAsFixed(1)}kg',
+              ),
+            ]),
+          ]),
+        ),
+        const Icon(Icons.chevron_right_rounded),
+      ]);
+}
+
 class _CountCard extends StatelessWidget {
   const _CountCard({required this.label, required this.count});
   final String label;
   final int count;
+
   @override
   Widget build(BuildContext context) => Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: const Color(0xFFECE9F2))),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: const Color(0xFFECE9F2)),
+        ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('$count',
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
+          Text('$count', style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
           const SizedBox(height: 4),
-          Text(label,
-              style: const TextStyle(fontSize: 12, color: KkokkapickTheme.muted)),
+          Text(label, style: const TextStyle(fontSize: 12, color: KkokkapickTheme.muted)),
         ]),
       );
 }
@@ -657,6 +708,7 @@ class _MenuTile extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
+
   @override
   Widget build(BuildContext context) => ListTile(
         contentPadding: const EdgeInsets.symmetric(horizontal: 20),
@@ -664,8 +716,9 @@ class _MenuTile extends StatelessWidget {
         title: Text(title, style: const TextStyle(fontWeight: FontWeight.w800)),
         subtitle: Text(subtitle),
         trailing: const Icon(Icons.chevron_right_rounded),
-        onTap: () => ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text('$title 화면은 릴리즈 준비 중이에요.'))),
+        onTap: () => ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('$title 화면은 릴리즈 준비 중이에요.')),
+        ),
       );
 }
 
@@ -680,6 +733,7 @@ class ApprovedProductDetailPage extends StatefulWidget {
     required this.onSetAlert,
     required this.onEditProfile,
   });
+
   final CatalogProduct product;
   final ChildProfile? profile;
   final bool favorite;
@@ -693,7 +747,7 @@ class ApprovedProductDetailPage extends StatefulWidget {
 }
 
 class _ApprovedProductDetailPageState extends State<ApprovedProductDetailPage> {
-  bool _favorite = false;
+  late bool _favorite;
   int? _alertPrice;
 
   @override
@@ -705,50 +759,60 @@ class _ApprovedProductDetailPageState extends State<ApprovedProductDetailPage> {
 
   Future<void> _priceAlert() async {
     final controller = TextEditingController(
-        text: _alertPrice?.toString() ??
-            ((widget.product.minPrice ?? 0) > 0
-                ? ((widget.product.minPrice! * .9).round()).toString()
-                : ''));
+      text: _alertPrice?.toString() ??
+          ((widget.product.minPrice ?? 0) > 0
+              ? ((widget.product.minPrice! * .9).round()).toString()
+              : ''),
+    );
     final result = await showModalBottomSheet<int?>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.white,
       showDragHandle: true,
       shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
       builder: (context) => SafeArea(
         top: false,
         child: SingleChildScrollView(
           padding: EdgeInsets.fromLTRB(
-              20, 4, 20, MediaQuery.viewInsetsOf(context).bottom + 20),
-          child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Text('가격 알림 설정',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge
-                    ?.copyWith(fontWeight: FontWeight.w900)),
-            const SizedBox(height: 6),
-            const Text('원하는 가격 이하가 되면 알려드릴게요.',
-                style: TextStyle(color: KkokkapickTheme.muted)),
-            const SizedBox(height: 18),
-            TextField(
-              controller: controller,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: '희망 가격', prefixText: '₩ '),
-            ),
-            const SizedBox(height: 16),
-            FilledButton(
-              onPressed: () {
-                final value = int.tryParse(controller.text.replaceAll(',', ''));
-                if (value != null && value > 0) Navigator.pop(context, value);
-              },
-              child: const Text('가격 알림 설정하기'),
-            ),
-            if (_alertPrice != null)
-              TextButton(
+            20,
+            4,
+            20,
+            MediaQuery.viewInsetsOf(context).bottom + 20,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                '가격 알림 설정',
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900),
+              ),
+              const SizedBox(height: 6),
+              const Text('원하는 가격 이하가 되면 알려드릴게요.',
+                  style: TextStyle(color: KkokkapickTheme.muted)),
+              const SizedBox(height: 18),
+              TextField(
+                controller: controller,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(labelText: '희망 가격', prefixText: '₩ '),
+              ),
+              const SizedBox(height: 16),
+              FilledButton(
+                onPressed: () {
+                  final value = int.tryParse(controller.text.replaceAll(',', ''));
+                  if (value != null && value > 0) Navigator.pop(context, value);
+                },
+                child: const Text('가격 알림 설정하기'),
+              ),
+              if (_alertPrice != null)
+                TextButton(
                   onPressed: () => Navigator.pop(context, -1),
-                  child: const Text('가격 알림 해제')),
-          ]),
+                  child: const Text('가격 알림 해제'),
+                ),
+            ],
+          ),
         ),
       ),
     );
@@ -775,9 +839,11 @@ class _ApprovedProductDetailPageState extends State<ApprovedProductDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    final p = widget.product;
-    final fit = KkokkafitEngine().evaluate(widget.profile, p);
-    final offers = [...p.offers]..sort((a, b) => (a.price ?? 1 << 62).compareTo(b.price ?? 1 << 62));
+    final product = widget.product;
+    final fit = KkokkafitEngine().evaluate(widget.profile, product);
+    final offers = [...product.offers]
+      ..sort((a, b) => (a.price ?? 1 << 62).compareTo(b.price ?? 1 << 62));
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: CustomScrollView(slivers: [
@@ -785,8 +851,7 @@ class _ApprovedProductDetailPageState extends State<ApprovedProductDetailPage> {
           pinned: true,
           backgroundColor: Colors.white,
           foregroundColor: KkokkapickTheme.ink,
-          title: Text(p.brand ?? '상품 상세',
-              maxLines: 1, overflow: TextOverflow.ellipsis),
+          title: Text(product.brand ?? '상품 상세', maxLines: 1, overflow: TextOverflow.ellipsis),
           actions: [
             IconButton(
               tooltip: _favorite ? '찜 해제' : '찜하기',
@@ -794,8 +859,10 @@ class _ApprovedProductDetailPageState extends State<ApprovedProductDetailPage> {
                 widget.onFavorite();
                 setState(() => _favorite = !_favorite);
               },
-              icon: Icon(_favorite ? Icons.favorite : Icons.favorite_border,
-                  color: _favorite ? KkokkapickTheme.lavenderDeep : null),
+              icon: Icon(
+                _favorite ? Icons.favorite : Icons.favorite_border,
+                color: _favorite ? KkokkapickTheme.lavenderDeep : null,
+              ),
             ),
           ],
         ),
@@ -806,7 +873,7 @@ class _ApprovedProductDetailPageState extends State<ApprovedProductDetailPage> {
               margin: const EdgeInsets.symmetric(horizontal: 16),
               clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(18)),
-              child: ProductImage(url: p.imageUrl),
+              child: ProductImage(url: product.imageUrl),
             ),
           ),
         ),
@@ -814,28 +881,36 @@ class _ApprovedProductDetailPageState extends State<ApprovedProductDetailPage> {
           child: Padding(
             padding: const EdgeInsets.fromLTRB(16, 18, 16, 0),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(p.brand ?? '브랜드 확인',
-                  style: const TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w800,
-                      color: KkokkapickTheme.muted)),
+              Text(
+                product.brand ?? '브랜드 확인',
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w800,
+                  color: KkokkapickTheme.muted,
+                ),
+              ),
               const SizedBox(height: 6),
-              Text(p.displayName,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge
-                      ?.copyWith(fontSize: 22, height: 1.3, fontWeight: FontWeight.w900)),
+              Text(
+                product.displayName,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontSize: 22,
+                      height: 1.3,
+                      fontWeight: FontWeight.w900,
+                    ),
+              ),
               const SizedBox(height: 10),
-              Text(won(p.minPrice),
+              Text(won(product.minPrice),
                   style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
               const SizedBox(height: 18),
               Row(children: [
                 Expanded(
                   child: OutlinedButton.icon(
                     onPressed: _priceAlert,
-                    icon: Icon(_alertPrice == null
-                        ? Icons.notifications_none_rounded
-                        : Icons.notifications_active_outlined),
+                    icon: Icon(
+                      _alertPrice == null
+                          ? Icons.notifications_none_rounded
+                          : Icons.notifications_active_outlined,
+                    ),
                     label: Text(_alertPrice == null ? '가격 알림' : won(_alertPrice)),
                   ),
                 ),
@@ -849,38 +924,30 @@ class _ApprovedProductDetailPageState extends State<ApprovedProductDetailPage> {
               ]),
               const SizedBox(height: 26),
               Text('꼬까핏',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.w900)),
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w900)),
               const SizedBox(height: 10),
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                    color: fit.status == 'recommended'
-                        ? KkokkapickTheme.fit
-                        : KkokkapickTheme.surface,
-                    borderRadius: BorderRadius.circular(14)),
+                  color: fit.status == 'recommended' ? KkokkapickTheme.fit : KkokkapickTheme.surface,
+                  borderRadius: BorderRadius.circular(14),
+                ),
                 child: Row(children: [
-                  Icon(fit.status == 'recommended'
-                      ? Icons.check_circle_outline_rounded
-                      : Icons.info_outline_rounded),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Text(fit.label,
-                        style: const TextStyle(fontWeight: FontWeight.w800)),
+                  Icon(
+                    fit.status == 'recommended'
+                        ? Icons.check_circle_outline_rounded
+                        : Icons.info_outline_rounded,
                   ),
+                  const SizedBox(width: 10),
+                  Expanded(child: Text(fit.label, style: const TextStyle(fontWeight: FontWeight.w800))),
                   if (widget.profile == null)
                     TextButton(onPressed: widget.onEditProfile, child: const Text('입력')),
                 ]),
               ),
               const SizedBox(height: 26),
               Text('판매처 비교',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.w900)),
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w900)),
               const SizedBox(height: 10),
             ]),
           ),
@@ -902,20 +969,20 @@ class _ApprovedProductDetailPageState extends State<ApprovedProductDetailPage> {
               return ListTile(
                 contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
                 leading: CircleAvatar(
-                  backgroundColor: index == 0
-                      ? KkokkapickTheme.lavenderSoft
-                      : KkokkapickTheme.surface,
-                  child: Text('${index + 1}',
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w800,
-                          color: KkokkapickTheme.lavenderDeep)),
+                  backgroundColor:
+                      index == 0 ? KkokkapickTheme.lavenderSoft : KkokkapickTheme.surface,
+                  child: Text(
+                    '${index + 1}',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w800,
+                      color: KkokkapickTheme.lavenderDeep,
+                    ),
+                  ),
                 ),
-                title: Text(offer.merchant,
-                    style: const TextStyle(fontWeight: FontWeight.w800)),
+                title: Text(offer.merchant, style: const TextStyle(fontWeight: FontWeight.w800)),
                 subtitle: index == 0 ? const Text('현재 최저가') : null,
                 trailing: Row(mainAxisSize: MainAxisSize.min, children: [
-                  Text(won(offer.price),
-                      style: const TextStyle(fontWeight: FontWeight.w900)),
+                  Text(won(offer.price), style: const TextStyle(fontWeight: FontWeight.w900)),
                   const SizedBox(width: 8),
                   const Icon(Icons.open_in_new_rounded, size: 18),
                 ]),
