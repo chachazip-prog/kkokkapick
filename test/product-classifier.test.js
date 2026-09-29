@@ -11,6 +11,9 @@ assert.equal(classifyStage("유아 상하복"),"유아");
 const verified=classifyProduct({name:"아가방 베이비 상하복",query:"아기 상하복"});
 assert.equal(verified.brand,"아가방");
 assert.equal(verified.fitStatus,"verified");
+assert.equal(verified.sizeGuide.kind,"brand_official");
+assert.ok(verified.sizeGuide.rows.length>0);
+assert.deepEqual(verified.availableSizes,[]);
 
 const candidate=classifyProduct({name:"밍크뮤 베베 우주복",query:"아기 우주복"});
 assert.equal(candidate.brand,"밍크뮤");
