@@ -9,10 +9,11 @@ The Product Owner is the final decision maker for business direction.
 Agents MUST escalate before:
 - adding meaningful recurring cost or a paid external API/service;
 - changing monetization, affiliate economics, or commercial-provider policy;
-- materially changing core UX or product positioning;
 - expanding personal-data collection, retention, authentication scope, or privacy exposure;
 - removing an existing user-visible capability;
 - accepting a material security, legal, compliance, or data-source-policy risk.
+
+For the current release cycle, the Product Owner has delegated product planning, brand identity, logo/splash selection, UI/UX direction and reversible implementation choices to the agent team. Escalate only when the remaining boundaries below require external owner authority or materially change cost/privacy/legal/commercial exposure.
 
 Agents SHOULD NOT ask about routine engineering details. Choose reasonable defaults for naming, refactors, test structure, minor UI details, implementation libraries with negligible cost, indexing, endpoint naming, and equivalent reversible decisions.
 
@@ -32,6 +33,7 @@ Default active roles:
 Conditional specialists:
 - Architect: invoke for cross-domain architecture, irreversible schema/platform choices, migrations, or substantial technical debt.
 - Growth / Business: invoke for monetization, affiliate economics, acquisition, ASO/SEO, analytics funnels, or commercial experiments.
+- Online Marketing: invoke for launch acquisition, messaging, campaign experiments and retention planning.
 
 ## Orchestration
 The Team Lead owns decomposition, sequencing, integration, and final reporting.
