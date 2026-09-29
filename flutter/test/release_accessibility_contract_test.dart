@@ -66,7 +66,7 @@ void main() {
       await tester.pumpWidget(MaterialApp(theme:KkokkapickTheme.light(),builder:(context,child)=>MediaQuery(data:MediaQuery.of(context).copyWith(textScaler:const TextScaler.linear(2)),child:child!),home:Scaffold(body:SafeArea(child:ListView(children:[SwipePickDeck(products:[product],favoriteIds:const <String>{},onFavorite:(_){},onTap:(_){ }),const SizedBox(height:160,child:ProductImage(url:null))])))));
       await tester.pump();
       expect(tester.takeException(),isNull,reason:'commerce discovery overflow at width $width');
-      expect(find.text('지금 둘러볼 옷'),findsOneWidget);expect(find.text('상품 이미지 준비 중'),findsWidgets);
+      expect(find.text('추천 상품'),findsOneWidget);expect(find.text('이미지를 불러올 수 없어요'),findsWidgets);
     }
     await tester.binding.setSurfaceSize(null);
   });
