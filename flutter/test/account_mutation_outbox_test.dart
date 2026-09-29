@@ -9,13 +9,13 @@ void main(){
     await o.put(const PendingAccountMutation(AccountMutationKind.favorite,'p1',{'favorite':true}));
     await o.put(const PendingAccountMutation(AccountMutationKind.favorite,'p1',{'favorite':false}));
     final loaded=await AccountMutationOutbox().load();
-    expect(loaded,length(1));
+    expect(loaded,hasLength(1));
     expect(loaded.single.payload['favorite'],false);
   });
   test('different logical keys are retained',() async{
     final o=AccountMutationOutbox();
     await o.put(const PendingAccountMutation(AccountMutationKind.favorite,'p1',{'favorite':true}));
     await o.put(const PendingAccountMutation(AccountMutationKind.priceAlert,'p1',{'targetPrice':12000}));
-    expect(await o.load(),length(2));
+    expect(await o.load(),hasLength(2));
   });
 }
