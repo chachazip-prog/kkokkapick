@@ -6,7 +6,7 @@ class ProductImage extends StatelessWidget {
   const ProductImage({super.key,required this.url,this.fit=BoxFit.cover});
   final String? url; final BoxFit fit;
   @override Widget build(BuildContext context){
-    final fallback=Container(color:KkokkapickTheme.surface,alignment:Alignment.center,child:const Column(mainAxisSize:MainAxisSize.min,children:[Icon(Icons.checkroom_outlined,size:34,color:KkokkapickTheme.muted),SizedBox(height:6),Text('이미지를 불러올 수 없어요',style:TextStyle(fontSize:11,color:KkokkapickTheme.muted))]));
+    final fallback=Container(decoration:const BoxDecoration(gradient:LinearGradient(begin:Alignment.topLeft,end:Alignment.bottomRight,colors:[KkokkapickTheme.lavenderSoft,KkokkapickTheme.surface])),alignment:Alignment.center,child:const Column(mainAxisSize:MainAxisSize.min,children:[Icon(Icons.image_outlined,size:30,color:KkokkapickTheme.lavender),SizedBox(height:7),Text('이미지를 불러올 수 없어요',style:TextStyle(fontSize:11,color:KkokkapickTheme.muted))]));
     if(url==null||url!.trim().isEmpty)return fallback;
     return Image.network(url!,fit:fit,webHtmlElementStrategy:WebHtmlElementStrategy.fallback,loadingBuilder:(context,child,progress)=>progress==null?child:Container(color:KkokkapickTheme.surface,alignment:Alignment.center,child:const SizedBox(width:24,height:24,child:CircularProgressIndicator(strokeWidth:2))),errorBuilder:(_,__,___)=>fallback);
   }
@@ -47,14 +47,14 @@ class SwipePickDeck extends StatelessWidget {
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Expanded(child: Stack(fit: StackFit.expand, children: [
                     ProductImage(url:p.imageUrl),
-                    Positioned(right: 10, top: 10, child: IconButton.filled(onPressed: () => onFavorite(p.id), icon: Icon(favoriteIds.contains(p.id) ? Icons.favorite : Icons.favorite_border))),
+                    Positioned(right: 10, top: 10, child: IconButton.filledTonal(onPressed: () => onFavorite(p.id), icon: Icon(favoriteIds.contains(p.id) ? Icons.favorite : Icons.favorite_border),style:IconButton.styleFrom(backgroundColor:Colors.white.withValues(alpha:.92),foregroundColor:KkokkapickTheme.lavenderDeep))),
                   ])),
                   Padding(
                     padding: const EdgeInsets.all(14),
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                       Text(p.brand ?? p.merchant, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: KkokkapickTheme.muted)),
                       const SizedBox(height: 3),
-                      Text(p.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800)),
+                      Text(p.displayName, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800)),
                       const SizedBox(height: 6),
                       Wrap(spacing:10,runSpacing:6,crossAxisAlignment:WrapCrossAlignment.center,children:[Text(_won(p.minPrice),style:const TextStyle(fontSize:17,fontWeight:FontWeight.w900)),MerchantMark(name:p.merchant)]),
                     ]),
@@ -76,7 +76,7 @@ class MerchantMark extends StatelessWidget {
   Widget build(BuildContext context) => Container(
     constraints: const BoxConstraints(maxWidth: 110),
     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-    decoration: BoxDecoration(color: KkokkapickTheme.surface, borderRadius: BorderRadius.circular(999)),
+    decoration: BoxDecoration(color: KkokkapickTheme.lavenderSoft, borderRadius: BorderRadius.circular(999)),
     child: Text(name, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w800)),
   );
 }
