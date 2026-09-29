@@ -34,6 +34,7 @@ void main(){
           expect(r.headers['authorization'],'Bearer fresh');
           return http.Response('{"favoriteProductIds":["p1"],"profile":null,"priceAlerts":[]}',200);
         })));
+    expect(identical(app.account.session,app.session),isTrue);
     final result=await app.restore();
     expect(result.state,AppSessionState.authenticated);
     expect(result.remote?.favoriteProductIds,{'p1'});
