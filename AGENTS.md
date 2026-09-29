@@ -13,9 +13,18 @@ Agents MUST escalate before:
 - removing an existing user-visible capability;
 - accepting a material security, legal, compliance, or data-source-policy risk.
 
-For the current release cycle, the Product Owner has delegated product planning, brand identity, logo/splash selection, UI/UX direction and reversible implementation choices to the agent team. Escalate only when the remaining boundaries below require external owner authority or materially change cost/privacy/legal/commercial exposure.
+For the current release cycle, the Product Owner delegates product planning and reversible technical implementation choices to the agent team. **Material visual-design direction is NOT delegated.** Any new or materially changed user-facing visual direction must pass the Design Selection Gate below before implementation.
 
-Agents SHOULD NOT ask about routine engineering details. Choose reasonable defaults for naming, refactors, test structure, minor UI details, implementation libraries with negligible cost, indexing, endpoint naming, and equivalent reversible decisions.
+### Design Selection Gate — Product Owner hard approval
+1. UX/UI prepares **10 genuinely distinct visual proposals** before Mobile Frontend implements the visual redesign. Minor color-only or spacing-only variants do not count as separate proposals.
+2. Each proposal must make the intended production experience reviewable across the key surfaces affected by the work (at minimum: home/discovery, catalog/search, product detail, and any changed modal/sheet/navigation pattern).
+3. Each proposal must include a concise design rationale, hierarchy/navigation intent, accessibility considerations, responsive behavior, and implementation-risk notes.
+4. Team Lead reports all 10 proposals to the Product Owner in a comparable numbered set. The Product Owner selects one proposal (or explicitly requests another round).
+5. Only the selected proposal may proceed to visual refinement and implementation. Agents must not silently blend rejected directions into the selected design.
+6. A material deviation from the selected proposal requires Product Owner re-approval.
+7. **Non-visual engineering work continues in parallel** when it is independent of the unselected design: backend, data/provider pipelines, contracts, auth/security, tests, observability, release automation, cost work, and other design-agnostic implementation must not be blocked by the visual selection gate.
+
+Agents SHOULD NOT ask about routine engineering details. Choose reasonable defaults for naming, refactors, test structure, implementation libraries with negligible cost, indexing, endpoint naming, and equivalent reversible decisions.
 
 ## Roles
 Role playbooks live in `.agents/`.
@@ -45,12 +54,13 @@ Specialists return findings/changes to Team Lead; they do not silently broaden s
 1. INTAKE — Team Lead classifies request and escalation needs.
 2. PLAN — Planner defines user story, acceptance criteria, edge cases, and non-goals when needed.
 3. DISCOVER — Source/Data and/or UX/UI research constraints when relevant.
-4. DESIGN — Team Lead or conditional Architect fixes interfaces and ownership boundaries.
-5. IMPLEMENT — Mobile FE, Backend, Source/Data may work in parallel on non-overlapping files.
-6. VERIFY — QA/Reviewer tests acceptance criteria and regression risk. Security/Privacy reviews sensitive changes.
-7. OPERATE — DevOps/FinOps checks deployability, observability, and cost impact when relevant.
-8. GATE — Team Lead verifies Definition of Done and escalates owner decisions.
-9. DELIVER — PR summary states behavior, tests, risks, cost impact, migrations, rollback, and owner decisions.
+4. DESIGN SELECTION — for material visual work, UX/UI produces 10 proposals and Team Lead obtains Product Owner selection before visual implementation.
+5. INTERFACE/DESIGN — Team Lead or conditional Architect fixes technical interfaces and ownership boundaries; UX/UI refines only the selected design direction.
+6. IMPLEMENT — Mobile FE, Backend, Source/Data may work in parallel on non-overlapping files. Design-agnostic engineering does not wait for visual selection.
+7. VERIFY — QA/Reviewer tests acceptance criteria and regression risk. Security/Privacy reviews sensitive changes.
+8. OPERATE — DevOps/FinOps checks deployability, observability, and cost impact when relevant.
+9. GATE — Team Lead verifies Definition of Done and escalates owner decisions.
+10. DELIVER — PR summary states behavior, tests, risks, cost impact, migrations, rollback, design-selection evidence when applicable, and owner decisions.
 
 ## Definition of Done
 A change is done only when applicable:
@@ -64,6 +74,7 @@ A change is done only when applicable:
 - regression and failure paths are reviewed;
 - cost impact is classified: none / negligible / meaningful;
 - documentation is updated for changed contracts or operating procedures;
+- material visual changes include the 10-proposal evidence and explicit Product Owner selection identifier;
 - QA/Reviewer returns PASS, or unresolved exceptions are explicitly approved by Product Owner.
 
 ## Repository ownership hints
@@ -99,6 +110,7 @@ Always summarize:
 - What changed
 - Acceptance criteria status
 - Tests/checks
+- Design Selection Gate status / selected proposal ID when applicable
 - Security/privacy impact
 - Data/provider impact
 - Cost impact
