@@ -12,6 +12,8 @@ import 'services/kkokkafit_engine.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'theme/kkokkapick_theme.dart';
 import 'services/overlay_coordinator.dart';
+import 'services/account_sync.dart';
+import 'services/local_account_data_store.dart';
 
 void main()=>runApp(const KkokkapickApp());
 
@@ -40,6 +42,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
   final _catalog=CatalogRepository(),_favorites=FavoritesRepository(),_profiles=ChildProfileRepository(),_popupPrefs=PopupPreferenceRepository(),_search=TextEditingController();
   final Set<String> _impressedCampaignIds=<String>{};
   final _overlays=OverlayCoordinator();
+  final _localAccountData=LocalAccountDataStore();
   static const _commercial=CommercialRepository(supabaseUrl:_supabaseUrl,anonKey:_supabaseAnonKey);
   static const _attribution=CommercialAttributionRepository(supabaseUrl:_supabaseUrl,anonKey:_supabaseAnonKey);
   List<CatalogProduct> _products=const[];
@@ -138,6 +141,27 @@ class _CatalogScreenState extends State<CatalogScreen>{
     if(choice=='reset')_reset();
   }
 
+  Future<void> _showAccountSyncInfo() async {
+    final local=await _localAccountData.snapshot();
+    if(!mounted)return;
+    final count=local.favoriteProductIds.length;
+    await coordinatedModal<void>(context:context,coordinator:_overlays,builder:(context)=>SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
+      Text('계정과 동기화',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
+      const SizedBox(height:8),Text('현재 찜 $count개와 아이 정보, 가격 알림은 이 기기에 저장돼 있어요.',style:const TextStyle(color:KkokkapickTheme.muted)),
+      const SizedBox(height:16),const Card(child:ListTile(leading:Icon(Icons.lock_outline),title:Text('로그인 연결 준비 중'),subtitle:Text('로그인만으로 기기 데이터가 자동 업로드되지는 않아요. 동기화 전에 선택을 받아요.'))),
+      const SizedBox(height:8),FilledButton(onPressed:null,child:Text('로그인 연결 후 사용 가능')),
+    ]))));
+  }
+
+  Future<void> _showPrivacyData() async {
+    await coordinatedModal<void>(context:context,coordinator:_overlays,builder:(context)=>SafeArea(child:Padding(padding:const EdgeInsets.fromLTRB(20,0,20,24),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
+      Text('개인정보 및 데이터',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
+      const SizedBox(height:8),const Text('아이 정보·찜·가격 알림은 현재 이 기기에 저장돼요.',style:TextStyle(color:KkokkapickTheme.muted)),
+      const SizedBox(height:16),ListTile(contentPadding:EdgeInsets.zero,leading:Icon(Icons.delete_outline),title:Text('앱 데이터 삭제'),subtitle:Text('계정 자체 삭제와는 별개의 기능이에요.'),trailing:Icon(Icons.chevron_right)),
+      const ListTile(contentPadding:EdgeInsets.zero,leading:Icon(Icons.person_off_outlined),title:Text('계정 삭제'),subtitle:Text('로그인 기능 연결 후 제공돼요.'),enabled:false),
+    ]))));
+  }
+
   Future<void> _showManagedPopup(ManagedPopup popup) async {
     if(!mounted)return;
     if(!_overlays.begin(OverlayKind.managedPopup))return;
@@ -161,7 +185,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
       floatingActionButton:_navIndex==1?FloatingActionButton.extended(onPressed:_showFilters,icon:const Icon(Icons.tune),label:const Text('필터')):null,
       bottomNavigationBar:NavigationBar(selectedIndex:_navIndex,onDestinationSelected:(i)=>setState((){_navIndex=i;if(i==0||i==1)_favoritesOnly=false;if(i==2)_favoritesOnly=true;}),destinations:const [NavigationDestination(icon:Icon(Icons.home_outlined),selectedIcon:Icon(Icons.home),label:'홈'),NavigationDestination(icon:Icon(Icons.search),label:'찾기'),NavigationDestination(icon:Icon(Icons.favorite_border),selectedIcon:Icon(Icons.favorite),label:'찜'),NavigationDestination(icon:Icon(Icons.person_outline),selectedIcon:Icon(Icons.person),label:'마이')]),
       appBar:AppBar(title:const Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('꼬까픽',style:TextStyle(fontWeight:FontWeight.w900)),Text('우리 아이 옷, 한곳에서.',style:TextStyle(fontSize:11,fontWeight:FontWeight.normal))]),actions:[IconButton(tooltip:'아이 정보',onPressed:_editProfile,icon:Icon(_profile==null?Icons.child_care_outlined:Icons.child_care)),IconButton(onPressed:()=>setState(()=>_favoritesOnly=!_favoritesOnly),icon:Icon(_favoritesOnly?Icons.favorite:Icons.favorite_border))]),
-      body:_navIndex==3?_MyPage(profile:_profile,onEditProfile:_editProfile):_loading?const _CatalogLoadingView():_error!=null?_ErrorView(onRetry:_load):RefreshIndicator(onRefresh:_load,child:CustomScrollView(slivers:[
+      body:_navIndex==3?_MyPage(profile:_profile,onEditProfile:_editProfile,onAccountSync:_showAccountSyncInfo,onPrivacyData:_showPrivacyData):_loading?const _CatalogLoadingView():_error!=null?_ErrorView(onRetry:_load):RefreshIndicator(onRefresh:_load,child:CustomScrollView(slivers:[
         if(_campaigns.isNotEmpty&&_navIndex==0)SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.fromLTRB(16,12,16,0),child:_SponsoredSection(campaigns:_campaigns.take(3).toList(),onTap:_openCampaign))),
         SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.all(16),child:Column(children:[
           if(_navIndex==0)...[
@@ -230,21 +254,21 @@ class _ErrorView extends StatelessWidget{
 
 
 class _MyPage extends StatelessWidget{
-  const _MyPage({required this.profile,required this.onEditProfile});
+  const _MyPage({required this.profile,required this.onEditProfile,required this.onAccountSync,required this.onPrivacyData});
   final ChildProfile? profile;
-  final VoidCallback onEditProfile;
+  final VoidCallback onEditProfile,onAccountSync,onPrivacyData;
   @override Widget build(BuildContext context)=>SafeArea(child:ListView(padding:const EdgeInsets.fromLTRB(20,20,20,32),children:[
     Text('마이',style:Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight:FontWeight.w800)),
     const SizedBox(height:6),const Text('아이 정보와 꼬까픽 이용 설정을 관리해요.',style:TextStyle(color:KkokkapickTheme.muted)),
     const SizedBox(height:22),
     Card(child:ListTile(contentPadding:const EdgeInsets.symmetric(horizontal:16,vertical:8),leading:const CircleAvatar(child:Icon(Icons.child_care)),title:Text(profile==null?'아이 정보를 등록해 주세요':'${profile!.months}개월 · ${profile!.stage}'),subtitle:Text(profile==null?'꼬까핏과 월령별 탐색에 사용돼요':'키 ${profile!.heightCm.toStringAsFixed(1)}cm · 몸무게 ${profile!.weightKg.toStringAsFixed(1)}kg'),trailing:const Icon(Icons.chevron_right),onTap:onEditProfile)),
     const SizedBox(height:18),Text('계정과 동기화',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),
-    const SizedBox(height:6),const Card(child:ListTile(leading:Icon(Icons.cloud_outlined),title:Text('현재 이 기기에 저장 중'),subtitle:Text('로그인 없이도 둘러보기와 찜을 사용할 수 있어요.'),trailing:Icon(Icons.chevron_right))),
+    const SizedBox(height:6),Card(child:ListTile(leading:const Icon(Icons.cloud_outlined),title:const Text('현재 이 기기에 저장 중'),subtitle:const Text('로그인 없이도 둘러보기와 찜을 사용할 수 있어요.'),trailing:const Icon(Icons.chevron_right),onTap:onAccountSync)),
     const SizedBox(height:18),Text('설정',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),
-    const Card(child:Column(children:[
-      ListTile(leading:Icon(Icons.notifications_none),title:Text('가격 알림'),subtitle:Text('로그인 후 여러 기기에서 알림을 받을 수 있어요.'),trailing:Icon(Icons.chevron_right)),
-      Divider(height:1,indent:56),
-      ListTile(leading:Icon(Icons.shield_outlined),title:Text('개인정보 및 데이터'),subtitle:Text('저장 데이터와 삭제 기능을 관리해요.'),trailing:Icon(Icons.chevron_right)),
+    Card(child:Column(children:[
+      const ListTile(leading:Icon(Icons.notifications_none),title:Text('가격 알림'),subtitle:Text('로그인 후 여러 기기에서 알림을 받을 수 있어요.'),trailing:Icon(Icons.chevron_right)),
+      const Divider(height:1,indent:56),
+      ListTile(leading:const Icon(Icons.shield_outlined),title:const Text('개인정보 및 데이터'),subtitle:const Text('저장 데이터와 삭제 기능을 관리해요.'),trailing:const Icon(Icons.chevron_right),onTap:onPrivacyData),
       Divider(height:1,indent:56),
       ListTile(leading:Icon(Icons.help_outline),title:Text('도움말 및 문의'),trailing:Icon(Icons.chevron_right)),
     ])),
