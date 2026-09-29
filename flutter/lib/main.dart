@@ -165,7 +165,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
   Future<void> _showEmailAuthSheet(BuildContext sheetContext) async {
     Navigator.of(sheetContext).pop();
     final email=TextEditingController(),password=TextEditingController();
-    await coordinatedModal<void>(context:context,coordinator:_overlays,isScrollControlled:true,builder:(context)=>SafeArea(child:Padding(
+    await coordinatedModal<void>(context:context,coordinator:_overlays,builder:(context)=>SafeArea(child:Padding(
       padding:EdgeInsets.fromLTRB(20,0,20,MediaQuery.viewInsetsOf(context).bottom+24),
       child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.stretch,children:[
         Text('이메일로 계속하기',style:Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight:FontWeight.w800)),
