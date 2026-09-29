@@ -53,6 +53,7 @@ jobs:
           node test/commercial-event-abuse-contract.test.js
           node test/release-artifact-contract.test.js
           node test/production-config-contract.test.js
+          node test/production-verification-contract.test.js
       - name: Validate web module syntax
         run: |
           node --check src/kkokkafit-engine.js
