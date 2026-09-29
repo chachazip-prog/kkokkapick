@@ -42,18 +42,21 @@ final class HomeFeedSignals {
 /// Low-operations home-feed ranking.
 ///
 /// V1 is deterministic and works entirely from catalog + existing account
-/// signals. [engagementScores] is an optional product-level aggregate snapshot;
-/// when it is absent the service deliberately reports discovery fallback rather
-/// than making an unsupported popularity claim.
+/// signals. [engagementScores] is an optional product-level aggregate snapshot.
+/// A caller must also assert [behavioralEvidenceQualified] after checking the
+/// backend snapshot's minimum sample/freshness policy before the result may
+/// support a popularity/trending claim.
 final class HomeFeedRankingService {
   const HomeFeedRankingService();
 
   RankedHomeFeed rankTrending(
     List<CatalogProduct> products, {
     Map<String, double> engagementScores = const {},
+    bool behavioralEvidenceQualified = false,
     int limit = 12,
   }) {
-    final hasBehavioralEvidence = engagementScores.values.any((v) => v > 0);
+    final hasBehavioralEvidence = behavioralEvidenceQualified &&
+        engagementScores.values.any((v) => v > 0);
     final ranked = products
         .map((p) => _ScoredProduct(
               p,
@@ -74,12 +77,14 @@ final class HomeFeedRankingService {
     List<CatalogProduct> products,
     HomeFeedSignals signals, {
     Map<String, double> engagementScores = const {},
+    bool behavioralEvidenceQualified = false,
     int limit = 12,
   }) {
     if (!signals.hasPersonalizationSignal) {
       return rankTrending(
         products,
         engagementScores: engagementScores,
+        behavioralEvidenceQualified: behavioralEvidenceQualified,
         limit: limit,
       );
     }
