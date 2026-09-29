@@ -136,6 +136,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
   }
 
   void _reset(){setState((){_search.clear();_stage=_category=_brand='전체';_fitOnly=_favoritesOnly=false;_sort=CatalogSort.recommended;});}
+  void _showKkokkafitProducts(){setState((){_search.clear();_stage=_category=_brand='전체';_fitOnly=true;_favoritesOnly=false;_sort=CatalogSort.recommended;_navIndex=1;});}
 
   Future<void> _editProfile() async {
     final m=TextEditingController(text:_profile?.months.toString()??'');
@@ -336,6 +337,10 @@ class _CatalogScreenState extends State<CatalogScreen>{
             _CategoryShortcuts(categories:categories,onSelected:(v)=>setState((){_category=v;_navIndex=1;})),
             const SizedBox(height:16),
             const ServiceGuideStrip(),
+            if(_products.any((p)=>p.fitStatus=='verified'))...[
+              const SizedBox(height:16),
+              _KkokkafitTryCard(count:_products.where((p)=>p.fitStatus=='verified').length,profile:_profile,onProfile:_editProfile,onShowProducts:_showKkokkafitProducts),
+            ],
             if(items.isNotEmpty)...[const SizedBox(height:20),SwipePickDeck(products:items.take(8).toList(),favoriteIds:_favoriteIds,onFavorite:(id)=>_toggleFavorite(id),onTap:(p)=>coordinatedModal(context:context,coordinator:_overlays,builder:(_)=>_ProductDetail(p,profile:_profile,onPriceAlertChanged:_signedIn?(productId,target)=>_session.setPriceAlert(productId,target):null)))],
             const SizedBox(height:16),
           ],
@@ -412,6 +417,19 @@ class _ProductDetailState extends State<_ProductDetail>{
   Future<void> _editAlert() async {final c=TextEditingController(text:_target?.toString()??'');final v=await showDialog<int?>(context:context,builder:(context)=>AlertDialog(title:const Text('희망 가격'),content:TextField(controller:c,keyboardType:TextInputType.number,decoration:const InputDecoration(suffixText:'원')),actions:[TextButton(onPressed:()=>Navigator.pop(context,0),child:const Text('삭제')),FilledButton(onPressed:()=>Navigator.pop(context,int.tryParse(c.text)),child:const Text('저장'))]));c.dispose();if(v!=null){final target=v>0?v:null;await _alerts.set(product.id,target);if(mounted)setState(()=>_target=target);final sync=widget.onPriceAlertChanged;if(sync!=null){try{await sync(product.id,target);}catch(_){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('가격 알림은 기기에 저장했어요. 계정 동기화는 나중에 다시 시도할게요.')));}}}}
 }
 
+
+class _KkokkafitTryCard extends StatelessWidget {
+  const _KkokkafitTryCard({required this.count,required this.profile,required this.onProfile,required this.onShowProducts});
+  final int count; final ChildProfile? profile; final VoidCallback onProfile,onShowProducts;
+  @override Widget build(BuildContext context)=>Card(child:Padding(padding:const EdgeInsets.all(16),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
+    Row(children:[const Icon(Icons.straighten),const SizedBox(width:8),Expanded(child:Text('꼬까핏 바로 테스트',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)))]),
+    const SizedBox(height:6),Text('공식 사이즈표가 확인된 상품 $count개가 있어요. ${profile==null?'아이 정보를 등록한 뒤 추천 사이즈를 확인해 보세요.':'현재 아이 정보로 추천 사이즈를 확인할 수 있어요.'}',style:const TextStyle(color:KkokkapickTheme.muted)),
+    const SizedBox(height:12),Wrap(spacing:8,runSpacing:8,children:[
+      if(profile==null)OutlinedButton(onPressed:onProfile,child:const Text('아이 정보 등록')),
+      FilledButton.tonal(onPressed:onShowProducts,child:const Text('테스트 상품 보기')),
+    ])
+  ])));
+}
 
 class _ProductSizeSection extends StatelessWidget {
   const _ProductSizeSection({required this.product});
