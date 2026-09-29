@@ -41,11 +41,10 @@ final class AppSessionOrchestrator {
     try {
       restored=await authentication.restoreSession();
     } catch (_) {
-      // A transient refresh/network failure must not make app startup fail.
-      // SupabaseAuthenticationGateway preserves the last known stored session
-      // unless credentials were explicitly rejected, so local account data can
-      // remain available in an offline-authenticated state.
-      return authentication.tokens!=null
+      // A transient refresh/network failure must not crash startup. Persisted
+      // credentials may remain available for a later retry, while stale access
+      // tokens stay inactive so no remote account mutation can use them.
+      return await authentication.hasPersistedSession()
         ? const AppSessionBootstrapResult(AppSessionState.offlineAuthenticated)
         : const AppSessionBootstrapResult(AppSessionState.guest);
     }
