@@ -57,6 +57,11 @@ final class SupabaseAccountGateway implements AccountSyncGateway {
     _requireSuccess(r);
   }
 
+  Future<void> deleteAccountIdentity() async {
+    final r=await _client.post(_rpc('delete_my_account'),headers:_headers,body:'{}');
+    _requireSuccess(r);
+  }
+
   @override Future<void> deleteAppData() async {
     final r=await _client.post(_rpc('delete_my_app_data'),headers:_headers,body:'{}');
     _requireSuccess(r);
