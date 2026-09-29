@@ -55,6 +55,10 @@ final class AppSessionOrchestrator {
     return AccountSyncCoordinator(account).handleFirstAuthenticatedSession(choice:choice,local:local);
   }
 
+  Future<void> setFavorite(String productId,bool favorite)=>account.setFavorite(productId,favorite);
+  Future<void> setPriceAlert(String productId,int? targetPrice)=>account.setPriceAlert(productId,targetPrice);
+  Future<void> setChildProfile(Map<String,Object?>? profile)=>account.setChildProfile(profile);
+
   Future<void> deleteAppData() async {
     await AccountSyncCoordinator(account).deleteAppData();
     await localData.clearAppData();
