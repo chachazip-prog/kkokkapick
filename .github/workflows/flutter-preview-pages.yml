@@ -46,11 +46,15 @@ jobs:
           rm -rf flutter-preview
           mkdir -p flutter-preview
           cp -R flutter/build/web/. flutter-preview/
+          printf '%s\n' "$GITHUB_SHA" > flutter-preview/SOURCE_REVISION
+          printf '{"sourceSha":"%s","sourceRef":"%s","workflowRunId":"%s"}\n' \
+            "$GITHUB_SHA" "$GITHUB_REF" "$GITHUB_RUN_ID" > flutter-preview/release-evidence.json
           git add -f flutter-preview
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Deploy Flutter UI preview [skip ci]"
+          short_sha="${GITHUB_SHA:0:12}"
+          git commit -m "Deploy Flutter UI preview from ${short_sha} [skip ci]"
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
