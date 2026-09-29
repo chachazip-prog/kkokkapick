@@ -367,7 +367,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
           sliver:SliverLayoutBuilder(builder:(context,constraints){
             final columns=constraints.crossAxisExtent>=900?4:constraints.crossAxisExtent>=600?3:2;
             final textScale=MediaQuery.textScalerOf(context).scale(16)/16;
-            final extent=330+((textScale-1).clamp(0,1)*90);
+            final extent=(330+((textScale-1).clamp(0,1)*90)).toDouble();
             return SliverGrid.builder(
               gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:columns,crossAxisSpacing:12,mainAxisSpacing:18,mainAxisExtent:extent),
               itemCount:items.length,
