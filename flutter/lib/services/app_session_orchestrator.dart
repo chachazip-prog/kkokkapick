@@ -74,13 +74,17 @@ final class AppSessionOrchestrator {
     }
   }
 
+  String get _outboxOwner=>session.accessToken??'guest';
+
   Future<void> _sendOrQueue(PendingAccountMutation m) async {
-    await outbox.put(m);
-    try{await _send(m);await outbox.remove(m.kind,m.key);}catch(_){rethrow;}
+    final owner=_outboxOwner;
+    await outbox.put(m,owner);
+    try{await _send(m);await outbox.remove(m.kind,m.key,owner);}catch(_){rethrow;}
   }
 
   Future<void> replayPendingMutations() async {
-    for(final m in await outbox.load()){
+    final owner=_outboxOwner;
+    for(final m in await outbox.load(owner)){
       try{await _send(m);await outbox.remove(m.kind,m.key);}catch(_){/* retain for later retry */}
     }
   }
@@ -88,7 +92,7 @@ final class AppSessionOrchestrator {
   Future<void> deleteAppData() async {
     await AccountSyncCoordinator(account).deleteAppData();
     await localData.clearAppData();
-    await outbox.clear();
+    await outbox.clear(_outboxOwner);
   }
 
   Future<void> signOut()=>authentication.clearSession();
