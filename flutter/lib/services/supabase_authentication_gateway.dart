@@ -79,10 +79,13 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
         await tokenStore?.clear();
         return false;
       }
-      _tokens=null;
+      // A transient auth-service failure is not proof that the stored session
+      // is invalid. Keep the last known tokens so the app can enter its
+      // offline-authenticated state and retry refresh on a later launch.
       rethrow;
     } catch (_) {
-      _tokens=null;
+      // Network/parsing/service failures likewise must not erase a stored
+      // session unless Supabase explicitly rejected its credentials above.
       rethrow;
     }
   }
