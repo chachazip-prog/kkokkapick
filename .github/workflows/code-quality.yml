@@ -59,6 +59,7 @@ jobs:
           node test/provider-sync-workflow-contract.test.js
           node test/push-worker-contract.test.js
           node test/commercial-event-concurrency-contract.test.js
+          node test/child-profile-sync-contract.test.js
       - name: Check catalog image URL coverage
         run: node scripts/catalog-image-quality.js
 
@@ -93,3 +94,5 @@ jobs:
           grep -q "grant execute on function public.delete_my_app_data() to authenticated" supabase/migrations/016_account_data_lifecycle.sql
           grep -Fq 'do $$ begin' supabase/migrations/016_account_data_lifecycle.sql
           grep -Fq 'end $$;' supabase/migrations/016_account_data_lifecycle.sql
+          test -f supabase/migrations/029_child_profile_age_months_sync.sql
+          grep -q 'age_months integer' supabase/migrations/029_child_profile_age_months_sync.sql
