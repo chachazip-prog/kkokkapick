@@ -44,8 +44,10 @@ void main(){
       expect(r.url.path,endsWith('/auth/v1/signup'));
       return http.Response('{}',200);
     });
-    await SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public-anon',client:client)
+    final store=_Store();
+    await SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public-anon',tokenStore:store,client:client)
       .createEmailAccount(email:'user@example.com',password:'secret');
+    expect(store.value,isNull);
   });
   test('social auth remains closed until callback/provider config exists',()async{
     final g=SupabaseAuthenticationGateway(baseUrl:'https://example.supabase.co',anonKey:'public');
