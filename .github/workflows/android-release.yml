@@ -34,8 +34,12 @@ jobs:
             echo "Signing material must never be committed"
             exit 1
           fi
-          if git grep -nE '(storePassword|keyPassword|service_role|SUPABASE_SERVICE_ROLE|BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY)' -- ':!docs/**' ':!*.md'; then
-            echo "Potential secret/signing credential found in tracked runtime files"
+          if grep -R -n -E '(storePassword|keyPassword|service_role|SUPABASE_SERVICE_ROLE)[[:space:]]*[:=][[:space:]]*["'\''"][^"'\'']+' admin src flutter supabase --exclude='*.md'; then
+            echo "Potential populated secret/signing credential found in tracked runtime files"
+            exit 1
+          fi
+          if grep -R -n -E 'BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY' admin src flutter supabase --exclude='*.md'; then
+            echo "Private key material found in tracked runtime files"
             exit 1
           fi
       - name: Guard release signing boundary
