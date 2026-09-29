@@ -162,7 +162,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
       bottomNavigationBar:NavigationBar(selectedIndex:_navIndex,onDestinationSelected:(i)=>setState((){_navIndex=i;if(i==0||i==1)_favoritesOnly=false;if(i==2)_favoritesOnly=true;}),destinations:const [NavigationDestination(icon:Icon(Icons.home_outlined),selectedIcon:Icon(Icons.home),label:'홈'),NavigationDestination(icon:Icon(Icons.search),label:'찾기'),NavigationDestination(icon:Icon(Icons.favorite_border),selectedIcon:Icon(Icons.favorite),label:'찜'),NavigationDestination(icon:Icon(Icons.person_outline),selectedIcon:Icon(Icons.person),label:'마이')]),
       appBar:AppBar(title:const Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text('꼬까픽',style:TextStyle(fontWeight:FontWeight.w900)),Text('우리 아이 옷, 한곳에서.',style:TextStyle(fontSize:11,fontWeight:FontWeight.normal))]),actions:[IconButton(tooltip:'아이 정보',onPressed:_editProfile,icon:Icon(_profile==null?Icons.child_care_outlined:Icons.child_care)),IconButton(onPressed:()=>setState(()=>_favoritesOnly=!_favoritesOnly),icon:Icon(_favoritesOnly?Icons.favorite:Icons.favorite_border))]),
       body:_navIndex==3?_MyPage(profile:_profile,onEditProfile:_editProfile):_loading?const _CatalogLoadingView():_error!=null?_ErrorView(onRetry:_load):RefreshIndicator(onRefresh:_load,child:CustomScrollView(slivers:[
-        if(_campaigns.isNotEmpty)SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.fromLTRB(16,12,16,0),child:Column(children:_campaigns.take(3).map((c)=>Card(child:ListTile(onTap:()=>_openCampaign(c),leading:const Icon(Icons.campaign_outlined),title:Text(c.title),subtitle:Text('${c.disclosureLabel} · ${c.partnerName??''}'),trailing:const Icon(Icons.chevron_right)))).toList()))),
+        if(_campaigns.isNotEmpty&&_navIndex==0)SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.fromLTRB(16,12,16,0),child:_SponsoredSection(campaigns:_campaigns.take(3).toList(),onTap:_openCampaign))),
         SliverToBoxAdapter(child:Padding(padding:const EdgeInsets.all(16),child:Column(children:[
           if(_navIndex==0)...[
             _HomeIntro(profile:_profile,onProfile:onEditProfileProxy),
@@ -179,7 +179,7 @@ class _CatalogScreenState extends State<CatalogScreen>{
           Row(children:[FilterChip(label:const Text('꼬까핏 가능'),selected:_fitOnly,onSelected:(v)=>setState(()=>_fitOnly=v)),const Spacer(),DropdownButton<CatalogSort>(value:_sort,underline:const SizedBox(),items:const [DropdownMenuItem(value:CatalogSort.recommended,child:Text('추천순')),DropdownMenuItem(value:CatalogSort.low,child:Text('낮은 가격순')),DropdownMenuItem(value:CatalogSort.high,child:Text('높은 가격순'))],onChanged:(v)=>setState(()=>_sort=v!))]),
           Row(children:[Text('${items.length}개',style:Theme.of(context).textTheme.titleMedium),const Spacer(),TextButton(onPressed:_reset,child:const Text('필터 초기화'))])],
         ]))),
-        if(items.isEmpty)const SliverFillRemaining(child:Center(child:Text('검색 결과가 없어요.')))
+        if(items.isEmpty)SliverFillRemaining(child:_EmptyCatalogView(onReset:_reset,favoritesOnly:_favoritesOnly))
         else SliverPadding(padding:const EdgeInsets.fromLTRB(16,0,16,24),sliver:SliverGrid.builder(gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,crossAxisSpacing:10,mainAxisSpacing:18,childAspectRatio:.60),itemCount:items.length,itemBuilder:(context,i)=>_ProductCard(product:items[i],favorite:_favoriteIds.contains(items[i].id),onFavorite:()=>_toggleFavorite(items[i].id),onTap:()=>coordinatedModal(context:context,coordinator:_overlays,builder:(_)=>_ProductDetail(items[i],profile:_profile)))))
       ])),
     );
@@ -285,4 +285,25 @@ class _LoadingBar extends StatelessWidget{
 class _LoadingCard extends StatelessWidget{
   const _LoadingCard();
   @override Widget build(BuildContext context)=>Column(crossAxisAlignment:CrossAxisAlignment.start,children:[const AspectRatio(aspectRatio:1,child:_LoadingBar(width:double.infinity,height:120)),const SizedBox(height:9),const _LoadingBar(width:90,height:12),const SizedBox(height:7),const _LoadingBar(width:double.infinity,height:16),const SizedBox(height:7),const _LoadingBar(width:72,height:16)]);
+}
+
+
+class _SponsoredSection extends StatelessWidget{
+  const _SponsoredSection({required this.campaigns,required this.onTap});
+  final List<CommercialCampaign> campaigns; final ValueChanged<CommercialCampaign> onTap;
+  @override Widget build(BuildContext context)=>Container(padding:const EdgeInsets.all(14),decoration:BoxDecoration(color:const Color(0xFFFFF8F5),borderRadius:BorderRadius.circular(18)),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
+    const Row(children:[Icon(Icons.campaign_outlined,size:18),SizedBox(width:6),Text('추천 프로모션',style:TextStyle(fontWeight:FontWeight.w800)),Spacer(),Text('광고',style:TextStyle(fontSize:11,color:KkokkapickTheme.muted))]),
+    const SizedBox(height:8),
+    ...campaigns.map((c)=>ListTile(contentPadding:EdgeInsets.zero,dense:true,onTap:()=>onTap(c),title:Text(c.title,maxLines:1,overflow:TextOverflow.ellipsis),subtitle:Text(c.partnerName??c.disclosureLabel),trailing:const Icon(Icons.chevron_right))),
+  ]));
+}
+class _EmptyCatalogView extends StatelessWidget{
+  const _EmptyCatalogView({required this.onReset,required this.favoritesOnly});
+  final VoidCallback onReset; final bool favoritesOnly;
+  @override Widget build(BuildContext context)=>Center(child:Padding(padding:const EdgeInsets.all(28),child:Column(mainAxisSize:MainAxisSize.min,children:[
+    Icon(favoritesOnly?Icons.favorite_border:Icons.search_off,size:42,color:KkokkapickTheme.muted),
+    const SizedBox(height:12),Text(favoritesOnly?'아직 찜한 상품이 없어요':'조건에 맞는 상품이 없어요',style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight:FontWeight.w800)),
+    const SizedBox(height:6),Text(favoritesOnly?'마음에 드는 옷의 하트를 눌러 모아보세요.':'필터를 조금 넓히면 더 많은 옷을 볼 수 있어요.',textAlign:TextAlign.center,style:const TextStyle(color:KkokkapickTheme.muted)),
+    if(!favoritesOnly)...[const SizedBox(height:14),FilledButton.tonal(onPressed:onReset,child:const Text('필터 초기화'))],
+  ])));
 }
