@@ -62,7 +62,7 @@ void main() {
 
 
 testWidgets('production product card primitives survive release phone widths and 200% text', (tester) async {
-  final product=CatalogProduct(id:'qa-product',name:'긴 상품명도 두 줄 안에서 안정적으로 보여야 하는 베이비 상하복 세트',merchant:'테스트 판매처',brand:'아가방',category:'상하복',stage:'베이비',imageUrl:null,minPrice:32900,offerCount:2,fitStatus:'verified',offers:const [],availableSizes:const [],sizeGuide:null);
+  final product=CatalogProduct(id:'qa-product',name:'긴 상품명도 두 줄 안에서 안정적으로 보여야 하는 베이비 상하복 세트',brand:'아가방',category:'상하복',stage:'베이비',imageUrl:null,minPrice:32900,offerCount:0,fitStatus:'verified',offers:const [],availableSizes:const [],sizeGuide:null);
   for(final width in [320.0,360.0,390.0,430.0]){
     await tester.binding.setSurfaceSize(Size(width,844));
     await tester.pumpWidget(MaterialApp(theme:KkokkapickTheme.light(),builder:(context,child)=>MediaQuery(data:MediaQuery.of(context).copyWith(textScaler:const TextScaler.linear(2)),child:child!),home:Scaffold(body:SafeArea(child:ListView(children:[const ServiceGuideStrip(),SizedBox(height:360,child:SwipePickDeck(products:[product],favoriteIds:const {},onFavorite:(_){},onTap:(_){},)),const ProductImage(url:null)])))));
