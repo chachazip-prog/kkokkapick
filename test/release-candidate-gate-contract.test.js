@@ -47,7 +47,7 @@ for (const placeholder of [
 }
 
 const accountPage = fs.readFileSync('flutter/lib/widgets/v10_account_page.dart', 'utf8');
-if (!accountPage.includes("title: const Text('고객지원')")) {
+if (!accountPage.includes("title: Text('고객지원')")) {
   throw new Error('My page must expose the customer-support release state');
 }
 if (!accountPage.includes('enabled: false')) {
