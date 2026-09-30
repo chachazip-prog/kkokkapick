@@ -212,22 +212,22 @@ class _AccountStatCard extends StatelessWidget {
   final VoidCallback onTap;
 
   @override
-  Widget build(BuildContext context) => InkWell(
+  Widget build(BuildContext context) => Material(
+        color: KkokkapickTheme.surface,
         borderRadius: BorderRadius.circular(18),
-        onTap: onTap,
-        child: Ink(
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: KkokkapickTheme.surface,
-            borderRadius: BorderRadius.circular(18),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(label, style: const TextStyle(color: KkokkapickTheme.muted)),
-              const SizedBox(height: 8),
-              Text(value, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
-            ],
+        child: InkWell(
+          borderRadius: BorderRadius.circular(18),
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(label, style: const TextStyle(color: KkokkapickTheme.muted)),
+                const SizedBox(height: 8),
+                Text(value, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
+              ],
+            ),
           ),
         ),
       );
