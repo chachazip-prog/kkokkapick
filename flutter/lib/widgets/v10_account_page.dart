@@ -36,6 +36,104 @@ class V10AccountPage extends StatelessWidget {
   bool get _onlineAuthenticated => sessionState == AppSessionState.authenticated;
   bool get _offlineAuthenticated => sessionState == AppSessionState.offlineAuthenticated;
 
+  Future<void> _showAppSettings(BuildContext context) => showModalBottomSheet<void>(
+        context: context,
+        showDragHandle: true,
+        backgroundColor: Colors.white,
+        builder: (context) => SafeArea(
+          top: false,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '앱 설정',
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge
+                      ?.copyWith(fontWeight: FontWeight.w900),
+                ),
+                const SizedBox(height: 14),
+                _SettingsInfoRow(
+                  icon: Icons.person_outline_rounded,
+                  label: '계정 기능',
+                  value: sessionConfigured
+                      ? (_authenticated ? '계정 연결 사용 중' : '필요할 때 로그인 가능')
+                      : '프로덕션 인증 설정 연결 전',
+                ),
+                const SizedBox(height: 12),
+                const _SettingsInfoRow(
+                  icon: Icons.phone_iphone_rounded,
+                  label: '기기 데이터',
+                  value: '비로그인 상태에서도 찜·아이 정보·가격 알림을 기기에 저장',
+                ),
+                const SizedBox(height: 12),
+                _SettingsInfoRow(
+                  icon: _offlineAuthenticated
+                      ? Icons.cloud_off_outlined
+                      : Icons.cloud_done_outlined,
+                  label: '동기화 상태',
+                  value: _offlineAuthenticated
+                      ? '오프라인 · 오래된 토큰으로 서버 작업하지 않음'
+                      : (_onlineAuthenticated ? '온라인 계정 연결됨' : '기기 우선'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+
+  Future<void> _showPrivacyAndData(BuildContext context) => showModalBottomSheet<void>(
+        context: context,
+        showDragHandle: true,
+        backgroundColor: Colors.white,
+        isScrollControlled: true,
+        builder: (context) => SafeArea(
+          top: false,
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '개인정보 및 데이터',
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge
+                      ?.copyWith(fontWeight: FontWeight.w900),
+                ),
+                const SizedBox(height: 14),
+                const _SettingsInfoRow(
+                  icon: Icons.storage_outlined,
+                  label: '기기에 저장되는 정보',
+                  value: '찜한 상품, 아이 월령·키·몸무게, 가격 알림 설정',
+                ),
+                const SizedBox(height: 12),
+                const _SettingsInfoRow(
+                  icon: Icons.sync_lock_rounded,
+                  label: '계정 동기화',
+                  value: '처음 로그인할 때 명시적으로 동의한 경우에만 기존 기기 데이터를 계정에 동기화',
+                ),
+                const SizedBox(height: 12),
+                const _SettingsInfoRow(
+                  icon: Icons.delete_outline_rounded,
+                  label: '삭제',
+                  value: '이 화면을 닫은 뒤 마이의 삭제 메뉴에서 앱 데이터 또는 계정을 직접 삭제할 수 있음',
+                ),
+                const SizedBox(height: 12),
+                const _SettingsInfoRow(
+                  icon: Icons.policy_outlined,
+                  label: '개인정보처리방침',
+                  value: '운영 주체·공식 연락처·보관기간과 실제 프로덕션 처리 항목이 확정된 뒤 최종 방침을 연결할 예정',
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+
   @override
   Widget build(BuildContext context) => SafeArea(
         bottom: false,
@@ -138,6 +236,14 @@ class V10AccountPage extends StatelessWidget {
               children: [
                 ListTile(
                   contentPadding: EdgeInsets.zero,
+                  leading: const Icon(Icons.shield_outlined),
+                  title: const Text('개인정보 및 데이터 안내'),
+                  subtitle: const Text('저장·동기화·삭제 원칙을 확인합니다.'),
+                  trailing: const Icon(Icons.chevron_right_rounded),
+                  onTap: () => _showPrivacyAndData(context),
+                ),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
                   leading: const Icon(Icons.delete_sweep_outlined),
                   title: Text(_offlineAuthenticated ? '이 기기의 꼬까픽 데이터 삭제' : '꼬까픽 데이터 삭제'),
                   subtitle: Text(_offlineAuthenticated
@@ -162,6 +268,27 @@ class V10AccountPage extends StatelessWidget {
                     title: Text('계정 삭제는 연결 후 가능해요'),
                     subtitle: Text('서버 계정 삭제는 유효한 로그인 세션을 다시 확인한 뒤에만 실행합니다.'),
                   ),
+              ],
+            ),
+            const SizedBox(height: 18),
+            _AccountSection(
+              title: '앱 및 지원',
+              children: [
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: const Icon(Icons.settings_outlined),
+                  title: const Text('앱 설정'),
+                  subtitle: const Text('현재 계정·저장·동기화 상태를 확인합니다.'),
+                  trailing: const Icon(Icons.chevron_right_rounded),
+                  onTap: () => _showAppSettings(context),
+                ),
+                const ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  enabled: false,
+                  leading: Icon(Icons.help_outline_rounded),
+                  title: Text('고객지원'),
+                  subtitle: Text('공식 운영 주체와 고객지원 채널 확정 후 제공됩니다.'),
+                ),
               ],
             ),
             const SizedBox(height: 18),
@@ -233,5 +360,33 @@ class _AccountStatCard extends StatelessWidget {
             ),
           ),
         ),
+      );
+}
+
+class _SettingsInfoRow extends StatelessWidget {
+  const _SettingsInfoRow({required this.icon, required this.label, required this.value});
+  final IconData icon;
+  final String label, value;
+
+  @override
+  Widget build(BuildContext context) => Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, size: 22, color: KkokkapickTheme.lavenderDeep),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(label, style: const TextStyle(fontWeight: FontWeight.w900)),
+                const SizedBox(height: 3),
+                Text(
+                  value,
+                  style: const TextStyle(color: KkokkapickTheme.muted, height: 1.4),
+                ),
+              ],
+            ),
+          ),
+        ],
       );
 }
