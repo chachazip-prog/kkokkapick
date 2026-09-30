@@ -1,13 +1,31 @@
-const STOP = [
-  "롯데백화점","현대백화점","신세계백화점","보리보리","해외","할인쿠폰",
-  "무료배송","공식","국내공식","정품","신상품","택1","종택"
+const CHANNELS = [
+  "롯데백화점","현대백화점","신세계백화점","보리보리","롯데ON","롯데온",
+  "SSG","G마켓","옥션","11번가","GS SHOP","GSSHOP","CJ온스타일","현대Hmall","현대홈쇼핑"
 ];
+const NOISE = ["해외","할인쿠폰","무료배송","공식","국내공식","정품","신상품","택1","종택"];
 const VARIANT = /(\d+\s*(?:종|개|장|팩|세트|SET)|[0-9]+\+[0-9]+|컬러|색상)/i;
+const MODEL_CODE = /\b[A-Z0-9]{5,}(?:[-_][A-Z0-9]{2,})*\b/i;
+
+function stripLeadingChannelTags(value="") {
+  let s=String(value);
+  let changed=true;
+  while(changed){
+    changed=false;
+    const m=/^\s*\[\s*([^\]]+)\s*\]\s*/.exec(s);
+    if(m&&CHANNELS.some(channel=>m[1].toLowerCase().includes(channel.toLowerCase()))){
+      s=s.slice(m[0].length);changed=true;
+    }
+  }
+  return s.replace(new RegExp(`^(?:${CHANNELS.map(escapeRegExp).join("|")})\\s*[-:|]?\\s*`,`i`),"");
+}
+
+function escapeRegExp(value){return value.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}
 
 export function normalizeProductName(name="") {
-  let s = String(name).normalize("NFKC").toLowerCase();
-  for (const x of STOP) s=s.replaceAll(x.toLowerCase()," ");
-  return s.replace(/\[[^\]]*\]|\([^)]*\)/g," ")
+  let s=stripLeadingChannelTags(String(name).normalize("NFKC")).toLowerCase();
+  for (const x of NOISE) s=s.replaceAll(x.toLowerCase()," ");
+  // Keep bracket contents because they may contain brand/model identity such as [에뜨와].
+  return s.replace(/[\[\]()]/g," ")
     .replace(/[+\/,_:·|~-]+/g," ")
     .replace(/\s+/g," ").trim();
 }
@@ -15,28 +33,40 @@ export function normalizeProductName(name="") {
 function tokens(s){return new Set(normalizeProductName(s).split(" ").filter(x=>x.length>=2))}
 function jaccard(a,b){const A=tokens(a),B=tokens(b);if(!A.size||!B.size)return 0;let i=0;for(const x of A)if(B.has(x))i++;return i/(A.size+B.size-i)}
 function variantSignature(s){return (String(s).match(VARIANT)||[])[0]?.toLowerCase()||""}
+function modelCode(s){return (String(s).toUpperCase().match(MODEL_CODE)||[])[0]||""}
+function validPrice(value){return Number.isFinite(value)&&value>0?value:null}
+function validHttps(value){try{const u=new URL(value);return u.protocol==="https:"?u.toString():null}catch{return null}}
 
 export function groupProducts(rows) {
   const groups=[];
   for (const p of rows) {
     const norm=normalizeProductName(p.name);
+    if(!norm) continue;
     const variant=variantSignature(p.name);
+    const code=modelCode(p.name);
     let best=null,bestScore=0;
     for (const g of groups) {
       if (variant && g.variant && variant!==g.variant) continue;
+      if (code && g.modelCode && code!==g.modelCode) continue;
       const score=jaccard(norm,g.normalizedName);
       if(score>bestScore){best=g;bestScore=score}
     }
-    if(best && bestScore>=0.82){
+    const strongCodeMatch=Boolean(code&&best?.modelCode&&code===best.modelCode);
+    if(best && (strongCodeMatch||bestScore>=0.82)){
       best.offers.push(toOffer(p));
+      const image=validHttps(p.imageUrl);
+      if(image&&!best.imageUrls.includes(image))best.imageUrls.push(image);
       if((p.name||"").length < best.name.length) best.name=p.name;
     } else {
+      const image=validHttps(p.imageUrl);
       groups.push({
         id:p.externalProductId,
         name:p.name,
         normalizedName:norm,
         variant,
-        imageUrl:p.imageUrl,
+        modelCode:code,
+        imageUrl:image,
+        imageUrls:image?[image]:[],
         category:p.cat||null,
         query:p.query||null,
         offers:[toOffer(p)]
@@ -51,12 +81,14 @@ export function groupProducts(rows) {
       seen.add(key);
       return true;
     });
+    const prices=g.offers.map(o=>o.price).filter(p=>p!=null);
     return {
       ...g,
+      imageUrl:g.imageUrls[0]||null,
       offerCount:g.offers.length,
-      minPrice:Math.min(...g.offers.map(o=>o.price||Infinity)),
-      maxPrice:Math.max(...g.offers.map(o=>o.price||0))
+      minPrice:prices.length?Math.min(...prices):null,
+      maxPrice:prices.length?Math.max(...prices):null
     };
   });
 }
-function toOffer(p){return {merchant:p.merchant,merchantDomain:p.merchantDomain,price:p.price,originalPrice:p.originalPrice,affiliateUrl:p.affiliateUrl,externalProductId:p.externalProductId}}
+function toOffer(p){return {merchant:p.merchant,merchantDomain:p.merchantDomain,price:validPrice(p.price),originalPrice:validPrice(p.originalPrice),affiliateUrl:p.affiliateUrl,externalProductId:p.externalProductId}}
