@@ -110,6 +110,12 @@ class V9CategoryStrip extends StatelessWidget {
   final List<String> categories;
   final ValueChanged<String> onSelected;
 
+  static const _labelStyle = TextStyle(
+    fontSize: 11.5,
+    fontWeight: FontWeight.w600,
+    color: KkokkapickTheme.ink,
+  );
+
   IconData _icon(String label, int index) {
     final value = label.toLowerCase();
     if (value.contains('상의')) return Icons.checkroom_rounded;
@@ -126,6 +132,16 @@ class V9CategoryStrip extends StatelessWidget {
     };
   }
 
+  double _itemWidth(BuildContext context, String label) {
+    final painter = TextPainter(
+      text: const TextSpan(style: _labelStyle).copyWith(text: label),
+      maxLines: 1,
+      textDirection: Directionality.of(context),
+      textScaler: MediaQuery.textScalerOf(context),
+    )..layout();
+    return painter.width + 28 < 68 ? 68 : painter.width + 28;
+  }
+
   @override
   Widget build(BuildContext context) => SizedBox(
         height: 92,
@@ -136,7 +152,7 @@ class V9CategoryStrip extends StatelessWidget {
           separatorBuilder: (_, __) => const SizedBox(width: 12),
           itemBuilder: (context, index) {
             final label = categories[index];
-            final width = (label.runes.length * 12.0 + 28).clamp(68.0, 92.0);
+            final width = _itemWidth(context, label);
             return InkWell(
               borderRadius: BorderRadius.circular(20),
               onTap: () => onSelected(label),
@@ -157,7 +173,7 @@ class V9CategoryStrip extends StatelessWidget {
                       maxLines: 1,
                       softWrap: false,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(fontSize: 11.5, fontWeight: FontWeight.w600, color: KkokkapickTheme.ink),
+                      style: _labelStyle,
                     ),
                   ],
                 ),
