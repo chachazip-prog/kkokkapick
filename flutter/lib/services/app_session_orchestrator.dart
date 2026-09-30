@@ -1,3 +1,5 @@
+export 'account_sync.dart' show FirstSignInDataChoice;
+
 import 'account_sync.dart';
 import 'account_mutation_outbox.dart';
 import 'authentication_session_bridge.dart';
