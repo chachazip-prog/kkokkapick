@@ -4,6 +4,7 @@ fail=0
 check(){ if "$@"; then printf 'PASS  %s\n' "$*"; else printf 'FAIL  %s\n' "$*"; fail=1; fi; }
 
 check test -f docs/release-readiness.md
+check test -f docs/release-candidate-gate-matrix.md
 check test -f docs/production-activation-checklist.md
 check test -f docs/technical-privacy-inventory.md
 check test -f docs/store-submission-pack.md
@@ -16,6 +17,7 @@ check test -f account-deletion.html
 node test/account-deletion-contract.test.js || fail=1
 node test/commercial-event-abuse-contract.test.js || fail=1
 node test/release-artifact-contract.test.js || fail=1
+node test/release-candidate-gate-contract.test.js || fail=1
 node test/production-config-contract.test.js || fail=1
 
 if git ls-files | grep -E '\.(jks|keystore|p12|p8|mobileprovision)$'; then
