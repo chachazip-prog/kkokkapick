@@ -28,6 +28,19 @@ void main() {
     );
   }
 
+  Future<void> revealAndTap(WidgetTester tester, Finder finder) async {
+    await tester.scrollUntilVisible(
+      finder,
+      260,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(finder);
+    await tester.pumpAndSettle();
+    await tester.tap(finder);
+    await tester.pumpAndSettle();
+  }
+
   testWidgets('guest preview does not expose fake login when auth is unconfigured',
       (tester) async {
     await tester.pumpWidget(app(configured: false));
@@ -57,13 +70,7 @@ void main() {
 
   testWidgets('privacy and data entry opens a real explanatory surface', (tester) async {
     await tester.pumpWidget(app());
-    await tester.scrollUntilVisible(
-      find.text('개인정보 및 데이터 안내'),
-      240,
-      scrollable: find.byType(Scrollable).first,
-    );
-    await tester.tap(find.text('개인정보 및 데이터 안내'));
-    await tester.pumpAndSettle();
+    await revealAndTap(tester, find.text('개인정보 및 데이터 안내'));
 
     expect(find.text('개인정보 및 데이터'), findsOneWidget);
     expect(find.text('기기에 저장되는 정보'), findsOneWidget);
@@ -73,13 +80,7 @@ void main() {
 
   testWidgets('app settings entry opens current operational settings surface', (tester) async {
     await tester.pumpWidget(app(state: AppSessionState.offlineAuthenticated));
-    await tester.scrollUntilVisible(
-      find.text('앱 설정'),
-      280,
-      scrollable: find.byType(Scrollable).first,
-    );
-    await tester.tap(find.text('앱 설정'));
-    await tester.pumpAndSettle();
+    await revealAndTap(tester, find.text('앱 설정'));
 
     expect(find.text('계정 기능'), findsOneWidget);
     expect(find.text('기기 데이터'), findsOneWidget);
