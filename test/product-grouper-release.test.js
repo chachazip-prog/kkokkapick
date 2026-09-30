@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { displayProductName, groupProducts } from "../src/product-grouper.js";
 
+// Release regression for #110 title-cleanliness and real gallery aggregation.
 assert.equal(
   displayProductName("[롯데백화점] [에뜨와] 미우 배냇수트"),
   "[에뜨와] 미우 배냇수트",
