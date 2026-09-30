@@ -967,11 +967,11 @@ class V10EditorialFooter extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(18),
+              Padding(
+                padding: const EdgeInsets.all(18),
                 child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 220),
-                  child: Column(
+                  constraints: const BoxConstraints(maxWidth: 220),
+                  child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
