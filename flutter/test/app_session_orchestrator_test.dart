@@ -21,6 +21,11 @@ SupabaseAuthenticationGateway _auth(_Store store,{int refreshStatus=200})=>Supab
   client:MockClient((r)async=>http.Response(
     refreshStatus==200?'{"access_token":"fresh","refresh_token":"rotated"}':'{}',refreshStatus)));
 
+final class _FailingLocalDataStore extends LocalAccountDataStore {
+  @override
+  Future<void> clearAppData() async => throw StateError('local cleanup failed');
+}
+
 void main(){
   test('startup without stored session remains guest',()async{
     final app=AppSessionOrchestrator(authentication:_auth(_Store(null)),localData:LocalAccountDataStore(),supabaseUrl:'https://example.supabase.co',anonKey:'public');
@@ -125,4 +130,56 @@ void main(){
     expect(await outbox.load('user-b'),isEmpty);
     expect((await outbox.load('user-a')).map((m)=>m.key),contains('from-a'));
   });
+  test('account deletion still clears session when local cleanup fails after remote deletion',()async{
+    SharedPreferences.setMockInitialValues({});
+    final store=_Store(const StoredSessionTokens(
+      accessToken:'token',refreshToken:'refresh',userId:'user-delete'));
+    final auth=SupabaseAuthenticationGateway(
+      baseUrl:'https://example.supabase.co',
+      anonKey:'public',
+      tokenStore:store,
+      client:MockClient((r)async{
+        if(r.url.queryParameters['grant_type']=='refresh_token'){
+          return http.Response(
+            '{"access_token":"token","refresh_token":"refresh","user":{"id":"user-delete"}}',
+            200,
+          );
+        }
+        return http.Response('{}',404);
+      }),
+    );
+    expect(await auth.restoreSession(),isTrue);
+    final outbox=AccountMutationOutbox();
+    await outbox.put(
+      const PendingAccountMutation(AccountMutationKind.favorite,'p1',{'favorite':true}),
+      'user-delete',
+    );
+    var remoteDeleted=false;
+    final app=AppSessionOrchestrator(
+      authentication:auth,
+      localData:_FailingLocalDataStore(),
+      supabaseUrl:'https://example.supabase.co',
+      anonKey:'public',
+      outbox:outbox,
+      accountFactory:(session)=>SupabaseAccountGateway(
+        baseUrl:'https://example.supabase.co',
+        anonKey:'public',
+        session:session,
+        client:MockClient((r)async{
+          if(r.url.path.endsWith('/delete_my_account')){
+            remoteDeleted=true;
+            return http.Response('',204);
+          }
+          return http.Response('{}',404);
+        }),
+      ),
+    );
+
+    await expectLater(app.deleteAccount(),throwsStateError);
+    expect(remoteDeleted,isTrue);
+    expect(auth.tokens,isNull);
+    expect(store.value,isNull);
+    expect(await outbox.load('user-delete'),isEmpty);
+  });
+
 }

@@ -3,7 +3,7 @@ import '../repositories/favorites_repository.dart';
 import '../repositories/price_alert_repository.dart';
 import 'account_sync.dart';
 
-final class LocalAccountDataStore {
+class LocalAccountDataStore {
   LocalAccountDataStore({
     FavoritesRepository? favorites,
     ChildProfileRepository? profiles,

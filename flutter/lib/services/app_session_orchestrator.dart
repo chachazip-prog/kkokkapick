@@ -110,9 +110,24 @@ final class AppSessionOrchestrator {
   Future<void> deleteAccount() async {
     final owner=_outboxOwner;
     await account.deleteAccountIdentity();
-    await localData.clearAppData();
-    await outbox.clear(owner);
-    await authentication.clearSession();
+
+    Object? cleanupError;
+    StackTrace? cleanupStack;
+    for (final cleanup in <Future<void> Function()>[
+      localData.clearAppData,
+      () => outbox.clear(owner),
+      authentication.clearSession,
+    ]) {
+      try {
+        await cleanup();
+      } catch (error, stack) {
+        cleanupError ??= error;
+        cleanupStack ??= stack;
+      }
+    }
+    if (cleanupError != null) {
+      Error.throwWithStackTrace(cleanupError, cleanupStack!);
+    }
   }
 
   Future<void> signOut()=>authentication.clearSession();
