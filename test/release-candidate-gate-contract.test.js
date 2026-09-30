@@ -3,6 +3,7 @@ const fs = require('fs');
 const required = [
   'docs/release-candidate-gate-matrix.md',
   'docs/production-activation-checklist.md',
+  'docs/physical-device-release-qa.md',
   'docs/store-submission-pack.md',
   'flutter/lib/widgets/v10_account_page.dart',
   'flutter/test/v10_account_page_test.dart',
@@ -33,6 +34,18 @@ for (const term of [
   'Product Owner final release/submission authorization',
 ]) {
   if (!checklist.includes(term)) throw new Error(`production checklist missing: ${term}`);
+}
+
+const physicalQa = fs.readFileSync('docs/physical-device-release-qa.md', 'utf8');
+for (const term of [
+  '320 px logical width',
+  '430 px logical width',
+  'iOS Safari',
+  'Account switch',
+  'Customer Support is visibly unavailable and non-tappable',
+  'PHYSICAL_DEVICE_QA_PASS',
+]) {
+  if (!physicalQa.includes(term)) throw new Error(`physical-device QA checklist missing: ${term}`);
 }
 
 const storePack = fs.readFileSync('docs/store-submission-pack.md', 'utf8');
