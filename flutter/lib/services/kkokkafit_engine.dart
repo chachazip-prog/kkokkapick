@@ -7,6 +7,8 @@ class FitResult {
 }
 
 class KkokkafitEngine {
+  const KkokkafitEngine();
+
   // Only first-party verified charts belong here. Numeric tokens in product names are never evidence.
   static const _charts=<String,List<_SizeRow>>{
     '아가방':[
