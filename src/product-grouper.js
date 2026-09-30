@@ -21,6 +21,12 @@ function stripLeadingChannelTags(value="") {
 
 function escapeRegExp(value){return value.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}
 
+export function displayProductName(name="") {
+  const original=String(name).normalize("NFKC").trim();
+  const cleaned=stripLeadingChannelTags(original).replace(/\s+/g," ").trim();
+  return cleaned||original;
+}
+
 export function normalizeProductName(name="") {
   let s=stripLeadingChannelTags(String(name).normalize("NFKC")).toLowerCase();
   for (const x of NOISE) s=s.replaceAll(x.toLowerCase()," ");
@@ -42,6 +48,7 @@ export function groupProducts(rows) {
   for (const p of rows) {
     const norm=normalizeProductName(p.name);
     if(!norm) continue;
+    const displayName=displayProductName(p.name);
     const variant=variantSignature(p.name);
     const code=modelCode(p.name);
     let best=null,bestScore=0;
@@ -56,12 +63,12 @@ export function groupProducts(rows) {
       best.offers.push(toOffer(p));
       const image=validHttps(p.imageUrl);
       if(image&&!best.imageUrls.includes(image))best.imageUrls.push(image);
-      if((p.name||"").length < best.name.length) best.name=p.name;
+      if(displayName.length < best.name.length) best.name=displayName;
     } else {
       const image=validHttps(p.imageUrl);
       groups.push({
         id:p.externalProductId,
-        name:p.name,
+        name:displayName,
         normalizedName:norm,
         variant,
         modelCode:code,
