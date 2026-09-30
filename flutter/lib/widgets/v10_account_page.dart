@@ -33,6 +33,8 @@ class V10AccountPage extends StatelessWidget {
   bool get _authenticated =>
       sessionState == AppSessionState.authenticated ||
       sessionState == AppSessionState.offlineAuthenticated;
+  bool get _onlineAuthenticated => sessionState == AppSessionState.authenticated;
+  bool get _offlineAuthenticated => sessionState == AppSessionState.offlineAuthenticated;
 
   @override
   Widget build(BuildContext context) => SafeArea(
@@ -54,7 +56,7 @@ class V10AccountPage extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               _authenticated
-                  ? (sessionState == AppSessionState.offlineAuthenticated
+                  ? (_offlineAuthenticated
                       ? '오프라인 계정 모드 · 연결되면 다시 동기화해요.'
                       : '계정에 연결되어 있어요.')
                   : '로그인 없이도 찜과 아이 정보는 이 기기에 저장돼요.',
@@ -113,11 +115,11 @@ class V10AccountPage extends StatelessWidget {
                 else ...[
                   ListTile(
                     contentPadding: EdgeInsets.zero,
-                    leading: const Icon(Icons.cloud_done_outlined),
-                    title: Text(sessionState == AppSessionState.offlineAuthenticated
-                        ? '계정 연결 대기 중'
-                        : '계정 연결됨'),
-                    subtitle: Text(sessionState == AppSessionState.offlineAuthenticated
+                    leading: Icon(_offlineAuthenticated
+                        ? Icons.cloud_off_outlined
+                        : Icons.cloud_done_outlined),
+                    title: Text(_offlineAuthenticated ? '계정 연결 대기 중' : '계정 연결됨'),
+                    subtitle: Text(_offlineAuthenticated
                         ? '저장된 로그인 정보는 유지하지만 오래된 토큰은 사용하지 않아요.'
                         : '찜·아이 정보·가격 알림을 계정과 동기화할 수 있어요.'),
                   ),
@@ -137,11 +139,13 @@ class V10AccountPage extends StatelessWidget {
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: const Icon(Icons.delete_sweep_outlined),
-                  title: const Text('꼬까픽 데이터 삭제'),
-                  subtitle: const Text('찜, 아이 정보, 가격 알림 데이터를 삭제합니다.'),
+                  title: Text(_offlineAuthenticated ? '이 기기의 꼬까픽 데이터 삭제' : '꼬까픽 데이터 삭제'),
+                  subtitle: Text(_offlineAuthenticated
+                      ? '현재 오프라인이라 서버 데이터는 건드리지 않고 이 기기의 찜, 아이 정보, 가격 알림만 삭제합니다.'
+                      : '찜, 아이 정보, 가격 알림 데이터를 삭제합니다.'),
                   onTap: sessionBusy ? null : () => onDeleteAppData(),
                 ),
-                if (_authenticated)
+                if (_onlineAuthenticated)
                   ListTile(
                     contentPadding: EdgeInsets.zero,
                     leading: const Icon(Icons.person_remove_outlined),
@@ -150,6 +154,13 @@ class V10AccountPage extends StatelessWidget {
                     textColor: Theme.of(context).colorScheme.error,
                     iconColor: Theme.of(context).colorScheme.error,
                     onTap: sessionBusy ? null : () => onDeleteAccount(),
+                  )
+                else if (_offlineAuthenticated)
+                  const ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    leading: Icon(Icons.wifi_off_rounded),
+                    title: Text('계정 삭제는 연결 후 가능해요'),
+                    subtitle: Text('서버 계정 삭제는 유효한 로그인 세션을 다시 확인한 뒤에만 실행합니다.'),
                   ),
               ],
             ),
