@@ -5,7 +5,7 @@ const required = [
   'docs/production-activation-checklist.md',
   'docs/store-submission-pack.md',
   'flutter/lib/widgets/v10_account_page.dart',
-  'test/v10_account_page_test.dart',
+  'flutter/test/v10_account_page_test.dart',
 ];
 for (const p of required) {
   if (!fs.existsSync(p)) throw new Error(`release candidate gate artifact missing: ${p}`);
