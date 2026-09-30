@@ -136,7 +136,7 @@ class V9CategoryStrip extends StatelessWidget {
           separatorBuilder: (_, __) => const SizedBox(width: 12),
           itemBuilder: (context, index) {
             final label = categories[index];
-            final width = (label.characters.length * 12.0 + 28).clamp(68.0, 92.0);
+            final width = (label.runes.length * 12.0 + 28).clamp(68.0, 92.0);
             return InkWell(
               borderRadius: BorderRadius.circular(20),
               onTap: () => onSelected(label),
@@ -318,7 +318,7 @@ class _V9ProductCardState extends State<V9ProductCard> {
               const SizedBox(height:9),
               Text(product.brand??product.merchant,maxLines:1,overflow:TextOverflow.ellipsis,style:const TextStyle(fontSize:11,fontWeight:FontWeight.w800,color:KkokkapickTheme.muted)),
               const SizedBox(height:3),
-              Text(product.displayName,maxLines:3,overflow:TextOverflow.ellipsis,style:const TextStyle(fontSize:13,height:1.28,fontWeight:FontWeight.w650)),
+              Text(product.displayName,maxLines:3,overflow:TextOverflow.ellipsis,style:const TextStyle(fontSize:13,height:1.28,fontWeight:FontWeight.w600)),
               if(specs.isNotEmpty)...[
                 const SizedBox(height:6),
                 Wrap(
