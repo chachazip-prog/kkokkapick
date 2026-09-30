@@ -135,11 +135,20 @@ void main(){
     final store=_Store(const StoredSessionTokens(
       accessToken:'token',refreshToken:'refresh',userId:'user-delete'));
     final auth=SupabaseAuthenticationGateway(
-      baseUrl:'https://example.supabase.co',anonKey:'public',tokenStore:store);
-    await auth.captureAuthenticatedPayload({
-      'access_token':'token','refresh_token':'refresh',
-      'user':{'id':'user-delete'},
-    });
+      baseUrl:'https://example.supabase.co',
+      anonKey:'public',
+      tokenStore:store,
+      client:MockClient((r)async{
+        if(r.url.queryParameters['grant_type']=='refresh_token'){
+          return http.Response(
+            '{"access_token":"token","refresh_token":"refresh","user":{"id":"user-delete"}}',
+            200,
+          );
+        }
+        return http.Response('{}',404);
+      }),
+    );
+    expect(await auth.restoreSession(),isTrue);
     final outbox=AccountMutationOutbox();
     await outbox.put(
       const PendingAccountMutation(AccountMutationKind.favorite,'p1',{'favorite':true}),
