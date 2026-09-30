@@ -180,7 +180,7 @@ class V10AccountPage extends StatelessWidget {
                   child: _AccountStatCard(
                     label: '가격 다운 알림',
                     value: '$alertCount',
-                    onTap: onFavorites,
+                    helper: '상품 상세에서 관리',
                   ),
                 ),
               ],
@@ -337,9 +337,10 @@ class _AccountSection extends StatelessWidget {
 }
 
 class _AccountStatCard extends StatelessWidget {
-  const _AccountStatCard({required this.label, required this.value, required this.onTap});
+  const _AccountStatCard({required this.label, required this.value, this.helper, this.onTap});
   final String label, value;
-  final VoidCallback onTap;
+  final String? helper;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) => Material(
@@ -356,6 +357,10 @@ class _AccountStatCard extends StatelessWidget {
                 Text(label, style: const TextStyle(color: KkokkapickTheme.muted)),
                 const SizedBox(height: 8),
                 Text(value, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
+                if (helper != null) ...[
+                  const SizedBox(height: 4),
+                  Text(helper!, style: const TextStyle(fontSize: 11, color: KkokkapickTheme.muted)),
+                ],
               ],
             ),
           ),
