@@ -14,13 +14,7 @@ class ProductOffer {
 }
 
 class ProductReviewSummary {
-  const ProductReviewSummary({
-    required this.source,
-    required this.count,
-    this.rating,
-    this.url,
-    this.observedAt,
-  });
+  const ProductReviewSummary({required this.source,required this.count,this.rating,this.url,this.observedAt});
   final String source;
   final int count;
   final double? rating;
@@ -36,21 +30,10 @@ class ProductReviewSummary {
 }
 
 class ProductSpecs {
-  const ProductSpecs({
-    this.material,
-    this.season,
-    this.thickness,
-    this.colorCount,
-  });
+  const ProductSpecs({this.material,this.season,this.thickness,this.colorCount});
   final String? material,season,thickness;
   final int? colorCount;
-
-  bool get hasAny=>
-      (material?.trim().isNotEmpty??false)||
-      (season?.trim().isNotEmpty??false)||
-      (thickness?.trim().isNotEmpty??false)||
-      (colorCount??0)>0;
-
+  bool get hasAny=>(material?.trim().isNotEmpty??false)||(season?.trim().isNotEmpty??false)||(thickness?.trim().isNotEmpty??false)||(colorCount??0)>0;
   factory ProductSpecs.fromJson(Map<String,dynamic> json)=>ProductSpecs(
     material:json['material']?.toString()??json['composition']?.toString(),
     season:json['season']?.toString(),
@@ -78,31 +61,15 @@ class BrandSizeGuide {
   final String? source,verifiedAt;
   final List<BrandSizeRow> rows;
   factory BrandSizeGuide.fromJson(Map<String,dynamic> json)=>BrandSizeGuide(
-    kind:(json['kind']??'').toString(),
-    source:json['source']?.toString(),
-    verifiedAt:json['verifiedAt']?.toString(),
+    kind:(json['kind']??'').toString(),source:json['source']?.toString(),verifiedAt:json['verifiedAt']?.toString(),
     rows:(json['rows'] as List? ?? const []).whereType<Map>().map((e)=>BrandSizeRow.fromJson(Map<String,dynamic>.from(e))).toList(),
   );
 }
 
 class CatalogProduct {
   const CatalogProduct({
-    required this.id,
-    required this.name,
-    required this.category,
-    required this.fitStatus,
-    required this.offers,
-    required this.offerCount,
-    required this.availableSizes,
-    this.brand,
-    this.stage,
-    this.imageUrl,
-    this.imageUrls=const [],
-    this.minPrice,
-    this.maxPrice,
-    this.sizeGuide,
-    this.specs=const ProductSpecs(),
-    this.reviews=const [],
+    required this.id,required this.name,required this.category,required this.fitStatus,required this.offers,required this.offerCount,required this.availableSizes,
+    this.brand,this.stage,this.imageUrl,this.imageUrls=const [],this.minPrice,this.maxPrice,this.sizeGuide,this.specs=const ProductSpecs(),this.reviews=const [],
   });
   final String id,name,category,fitStatus;
   final String? brand,stage,imageUrl;
@@ -130,33 +97,14 @@ class CatalogProduct {
     final primary=json['imageUrl']?.toString();
     if(primary!=null&&primary.trim().isNotEmpty&&!parsedImages.contains(primary.trim()))parsedImages.insert(0,primary.trim());
     final reviews=(json['reviews'] as List? ?? json['reviewSummaries'] as List? ?? const [])
-        .whereType<Map>()
-        .map((e)=>ProductReviewSummary.fromJson(Map<String,dynamic>.from(e)))
-        .where((e)=>e.source.trim().isNotEmpty&&e.count>0)
-        .toList();
+        .whereType<Map>().map((e)=>ProductReviewSummary.fromJson(Map<String,dynamic>.from(e))).where((e)=>e.source.trim().isNotEmpty&&e.count>0).toList();
     return CatalogProduct(
-      id:(json['id']??'').toString(),
-      name:(json['name']??'').toString(),
-      brand:json['brand']?.toString(),
-      category:(json['category']??'기타').toString(),
-      stage:json['stage']?.toString(),
-      imageUrl:primary,
-      imageUrls:parsedImages,
-      fitStatus:(json['fitStatus']??'unverified').toString(),
-      minPrice:(json['minPrice'] as num?)?.toInt(),
-      maxPrice:(json['maxPrice'] as num?)?.toInt(),
-      offerCount:(json['offerCount'] as num?)?.toInt()??offers.length,
-      offers:offers,
+      id:(json['id']??'').toString(),name:(json['name']??'').toString(),brand:json['brand']?.toString(),category:(json['category']??'기타').toString(),stage:json['stage']?.toString(),
+      imageUrl:primary,imageUrls:parsedImages,fitStatus:(json['fitStatus']??'unverified').toString(),minPrice:(json['minPrice'] as num?)?.toInt(),maxPrice:(json['maxPrice'] as num?)?.toInt(),
+      offerCount:(json['offerCount'] as num?)?.toInt()??offers.length,offers:offers,
       availableSizes:(json['availableSizes'] as List? ?? const []).map((e)=>e.toString()).where((e)=>e.isNotEmpty).toList(),
       sizeGuide:rawGuide is Map?BrandSizeGuide.fromJson(Map<String,dynamic>.from(rawGuide)):null,
-      specs:rawSpecs is Map
-          ? ProductSpecs.fromJson(Map<String,dynamic>.from(rawSpecs))
-          : ProductSpecs(
-              material:json['material']?.toString()??json['composition']?.toString(),
-              season:json['season']?.toString(),
-              thickness:json['thickness']?.toString(),
-              colorCount:(json['colorCount'] as num?)?.toInt(),
-            ),
+      specs:rawSpecs is Map?ProductSpecs.fromJson(Map<String,dynamic>.from(rawSpecs)):ProductSpecs(material:json['material']?.toString()??json['composition']?.toString(),season:json['season']?.toString(),thickness:json['thickness']?.toString(),colorCount:(json['colorCount'] as num?)?.toInt()),
       reviews:reviews,
     );
   }
@@ -173,30 +121,39 @@ class CatalogProduct {
     if(usable.isEmpty)return null;
     final weight=usable.fold<int>(0,(sum,item)=>sum+item.count);
     if(weight==0)return null;
-    final value=usable.fold<double>(0,(sum,item)=>sum+(item.rating!*item.count));
-    return value/weight;
+    return usable.fold<double>(0,(sum,item)=>sum+(item.rating!*item.count))/weight;
   }
   String? get sizeRangeLabel {
     if(availableSizes.isEmpty)return null;
     if(availableSizes.length==1)return availableSizes.first;
     return '${availableSizes.first}–${availableSizes.last}';
   }
+
+  static const _channels=[
+    '보리보리','롯데백화점','현대백화점','신세계백화점','갤러리아백화점','AK플라자',
+    '롯데ON','롯데온','SSG','G마켓','옥션','11번가','쿠팡','네이버','GS SHOP','GSSHOP',
+    'CJ온스타일','현대Hmall','현대홈쇼핑','Hmall','하프클럽','패션플러스'
+  ];
+
+  static bool _isChannelLabel(String raw) {
+    final label=raw.trim().toLowerCase();
+    if(label.contains('백화점')||label.contains('홈쇼핑'))return true;
+    return _channels.any((channel)=>label.contains(channel.toLowerCase()));
+  }
+
   String get displayName {
     var value=name.trim();
-    // Provider titles often prepend one or more offer-channel tags. They are
-    // not product identity: the same canonical item may have multiple offers.
-    const channels=['보리보리','롯데백화점','롯데ON','롯데온','SSG','G마켓','옥션','11번가','GS SHOP','GSSHOP','CJ온스타일','현대Hmall','현대홈쇼핑'];
-    // Strip only bracket groups that identify an offer channel. Preserve
-    // bracketed brand/style information such as [에뜨와].
+    // Repeatedly strip leading bracket groups only when they are merchant/channel labels.
+    // Brand/style brackets such as [에뜨와] are deliberately preserved.
     var changed=true;
     while(changed){
       changed=false;
       final match=RegExp(r'^\s*\[\s*([^\]]+)\s*\]\s*').firstMatch(value);
-      if(match!=null&&channels.any((channel)=>match.group(1)!.toLowerCase().contains(channel.toLowerCase()))){
+      if(match!=null&&_isChannelLabel(match.group(1)!)){
         value=value.substring(match.end);changed=true;
       }
     }
-    value=value.replaceFirst(RegExp('^(?:'+channels.map(RegExp.escape).join('|')+')\\s*[-:|]?\\s*',caseSensitive:false), '');
+    value=value.replaceFirst(RegExp('^(?:'+_channels.map(RegExp.escape).join('|')+')\\s*[-:|]?\\s*',caseSensitive:false),'');
     return value.trim().isEmpty?name:value.trim();
   }
 }
