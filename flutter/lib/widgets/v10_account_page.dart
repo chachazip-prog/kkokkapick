@@ -182,7 +182,7 @@ class _AccountSection extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: KkokkapickTheme.border),
+          border: Border.all(color: const Color(0xFFEDEAF2)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,7 +207,7 @@ class _AccountStatCard extends StatelessWidget {
         child: Ink(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: KkokkapickTheme.softSurface,
+            color: KkokkapickTheme.surface,
             borderRadius: BorderRadius.circular(18),
           ),
           child: Column(
