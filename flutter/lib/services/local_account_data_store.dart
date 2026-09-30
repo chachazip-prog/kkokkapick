@@ -32,6 +32,28 @@ final class LocalAccountDataStore {
     );
   }
 
+  Future<void> replaceWith(AccountSyncSnapshot snapshot) async {
+    final profile = snapshot.profile;
+    await Future.wait([
+      favorites.save(snapshot.favoriteProductIds),
+      profile == null
+          ? profiles.clear()
+          : profiles.save(ChildProfile(
+              months: profile['months'] as int,
+              heightCm: (profile['heightCm'] as num).toDouble(),
+              weightKg: (profile['weightKg'] as num).toDouble(),
+            )),
+      _replacePriceAlerts(snapshot.priceAlerts),
+    ]);
+  }
+
+  Future<void> _replacePriceAlerts(Map<String, int> next) async {
+    await alerts.clear();
+    for (final entry in next.entries) {
+      await alerts.set(entry.key, entry.value);
+    }
+  }
+
   Future<void> clearAppData() async {
     await Future.wait([favorites.clear(),profiles.clear(),alerts.clear()]);
   }

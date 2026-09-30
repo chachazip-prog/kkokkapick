@@ -526,7 +526,11 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
     );
     if (choice == null) return;
     try {
-      await _session?.applyFirstSignInChoice(choice);
+      final merged = await _session?.applyFirstSignInChoice(choice);
+      if (merged != null) {
+        await _localData.replaceWith(merged);
+        await _reloadLocalState();
+      }
       _toast(choice == FirstSignInDataChoice.syncDeviceData
           ? '기기 데이터를 계정에 동기화했어요.'
           : '기기 데이터는 이 기기에만 유지합니다.');
