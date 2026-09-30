@@ -134,7 +134,7 @@ class V9CategoryStrip extends StatelessWidget {
 
   double _itemWidth(BuildContext context, String label) {
     final painter = TextPainter(
-      text: const TextSpan(style: _labelStyle).copyWith(text: label),
+      text: TextSpan(text: label, style: _labelStyle),
       maxLines: 1,
       textDirection: Directionality.of(context),
       textScaler: MediaQuery.textScalerOf(context),
