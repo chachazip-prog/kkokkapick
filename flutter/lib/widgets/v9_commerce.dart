@@ -132,56 +132,65 @@ class V9CategoryStrip extends StatelessWidget {
     };
   }
 
+  TextPainter _labelPainter(BuildContext context, String label) => TextPainter(
+        text: TextSpan(text: label, style: _labelStyle),
+        maxLines: 1,
+        textDirection: Directionality.of(context),
+        textScaler: MediaQuery.textScalerOf(context),
+      )..layout();
+
   double _itemWidth(BuildContext context, String label) {
-    final painter = TextPainter(
-      text: TextSpan(text: label, style: _labelStyle),
-      maxLines: 1,
-      textDirection: Directionality.of(context),
-      textScaler: MediaQuery.textScalerOf(context),
-    )..layout();
-    return painter.width + 28 < 68 ? 68 : painter.width + 28;
+    final required = _labelPainter(context, label).width + 28;
+    return required < 68 ? 68 : required;
+  }
+
+  double _stripHeight(BuildContext context) {
+    final required = 58 + 7 + _labelPainter(context, '가').height;
+    return required < 92 ? 92 : required;
   }
 
   @override
-  Widget build(BuildContext context) => SizedBox(
-        height: 92,
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.only(right: 6),
-          itemCount: categories.length,
-          separatorBuilder: (_, __) => const SizedBox(width: 12),
-          itemBuilder: (context, index) {
-            final label = categories[index];
-            final width = _itemWidth(context, label);
-            return InkWell(
-              borderRadius: BorderRadius.circular(20),
-              onTap: () => onSelected(label),
-              child: SizedBox(
-                width: width,
-                child: Column(
-                  children: [
-                    Container(
-                      width: 58,
-                      height: 58,
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Color(0xFFF8F6FB)),
-                      alignment: Alignment.center,
-                      child: Icon(_icon(label, index), size: 24),
-                    ),
-                    const SizedBox(height: 7),
-                    Text(
-                      label,
-                      maxLines: 1,
-                      softWrap: false,
-                      textAlign: TextAlign.center,
-                      style: _labelStyle,
-                    ),
-                  ],
-                ),
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: _stripHeight(context),
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.only(right: 6),
+        itemCount: categories.length,
+        separatorBuilder: (_, __) => const SizedBox(width: 12),
+        itemBuilder: (context, index) {
+          final label = categories[index];
+          final width = _itemWidth(context, label);
+          return InkWell(
+            borderRadius: BorderRadius.circular(20),
+            onTap: () => onSelected(label),
+            child: SizedBox(
+              width: width,
+              child: Column(
+                children: [
+                  Container(
+                    width: 58,
+                    height: 58,
+                    decoration: const BoxDecoration(shape: BoxShape.circle, color: Color(0xFFF8F6FB)),
+                    alignment: Alignment.center,
+                    child: Icon(_icon(label, index), size: 24),
+                  ),
+                  const SizedBox(height: 7),
+                  Text(
+                    label,
+                    maxLines: 1,
+                    softWrap: false,
+                    textAlign: TextAlign.center,
+                    style: _labelStyle,
+                  ),
+                ],
               ),
-            );
-          },
-        ),
-      );
+            ),
+          );
+        },
+      ),
+    );
+  }
 }
 
 class V9EditorialStrip extends StatelessWidget {
