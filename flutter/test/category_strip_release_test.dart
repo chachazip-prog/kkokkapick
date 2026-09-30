@@ -24,7 +24,7 @@ void main() {
               home: Scaffold(
                 body: SafeArea(
                   child: V9CategoryStrip(
-                    categories: const [label],
+                    categories: [label],
                     onSelected: (_) {},
                   ),
                 ),
