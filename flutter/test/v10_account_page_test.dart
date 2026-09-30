@@ -45,10 +45,13 @@ void main() {
     expect(find.text('계정 삭제'), findsOneWidget);
   });
 
-  testWidgets('offline authenticated state explains stale-token boundary',
+  testWidgets('offline authenticated state keeps destructive server action disabled',
       (tester) async {
     await tester.pumpWidget(app(state: AppSessionState.offlineAuthenticated));
     expect(find.text('계정 연결 대기 중'), findsOneWidget);
     expect(find.textContaining('오래된 토큰은 사용하지 않아요'), findsOneWidget);
+    expect(find.text('이 기기의 꼬까픽 데이터 삭제'), findsOneWidget);
+    expect(find.text('계정 삭제'), findsNothing);
+    expect(find.text('계정 삭제는 연결 후 가능해요'), findsOneWidget);
   });
 }
