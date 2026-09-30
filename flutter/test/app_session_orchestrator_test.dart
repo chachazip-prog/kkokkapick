@@ -1,11 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
+import 'package:kkokkapick/services/account_mutation_outbox.dart';
 import 'package:kkokkapick/services/app_session_orchestrator.dart';
 import 'package:kkokkapick/services/authentication.dart';
 import 'package:kkokkapick/services/local_account_data_store.dart';
 import 'package:kkokkapick/services/supabase_account_gateway.dart';
 import 'package:kkokkapick/services/supabase_authentication_gateway.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final class _Store implements SessionTokenStore{
   _Store(this.value); StoredSessionTokens? value;
@@ -75,5 +77,52 @@ void main(){
       accountFactory:(session)=>SupabaseAccountGateway(baseUrl:'https://example.supabase.co',anonKey:'public',session:session,client:MockClient((_)async=>http.Response('{}',401))));
     expect((await app.restore()).state,AppSessionState.guest);
     expect(auth.tokens,isNull);expect(store.value,isNull);
+  });
+
+  test('account switch replays only the active user outbox',()async{
+    SharedPreferences.setMockInitialValues({});
+    final outbox=AccountMutationOutbox();
+    await outbox.put(
+      const PendingAccountMutation(AccountMutationKind.favorite,'from-a',{'favorite':true}),
+      'user-a',
+    );
+    await outbox.put(
+      const PendingAccountMutation(AccountMutationKind.favorite,'from-b',{'favorite':true}),
+      'user-b',
+    );
+
+    final calls=<String>[];
+    final auth=_auth(_Store(const StoredSessionTokens(
+      accessToken:'old-b',refreshToken:'refresh-b',userId:'user-b')));
+    final app=AppSessionOrchestrator(
+      authentication:auth,
+      localData:LocalAccountDataStore(),
+      supabaseUrl:'https://example.supabase.co',
+      anonKey:'public',
+      outbox:outbox,
+      accountFactory:(session)=>SupabaseAccountGateway(
+        baseUrl:'https://example.supabase.co',
+        anonKey:'public',
+        session:session,
+        client:MockClient((r)async{
+          expect(r.headers['authorization'],'Bearer fresh');
+          if(r.url.path.endsWith('/get_my_app_data')){
+            return http.Response('{"favoriteProductIds":[],"profile":null,"priceAlerts":[]}',200);
+          }
+          if(r.url.path.endsWith('/set_my_favorite')){
+            calls.add(r.body);
+            return http.Response('',204);
+          }
+          return http.Response('{}',404);
+        }),
+      ),
+    );
+
+    expect((await app.restore()).state,AppSessionState.authenticated);
+    expect(calls,hasLength(1));
+    expect(calls.single,contains('from-b'));
+    expect(calls.single,isNot(contains('from-a')));
+    expect(await outbox.load('user-b'),isEmpty);
+    expect((await outbox.load('user-a')).map((m)=>m.key),contains('from-a'));
   });
 }
