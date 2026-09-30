@@ -155,7 +155,7 @@ class V10AccountPage extends StatelessWidget {
             Text(
               _authenticated
                   ? (_offlineAuthenticated
-                      ? '오프라인 계정 모드 · 연결되면 다시 동기화해요.'
+                      ? '오프라인 계정 모드 · 연결 후 다시 동기화할 수 있어요.'
                       : '계정에 연결되어 있어요.')
                   : '로그인 없이도 찜과 아이 정보는 이 기기에 저장돼요.',
               style: const TextStyle(color: KkokkapickTheme.muted),
