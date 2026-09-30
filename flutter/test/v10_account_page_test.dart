@@ -63,9 +63,24 @@ void main() {
     await tester.pumpWidget(app(state: AppSessionState.offlineAuthenticated));
     expect(find.text('계정 연결 대기 중'), findsOneWidget);
     expect(find.textContaining('오래된 토큰은 사용하지 않아요'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('이 기기의 꼬까픽 데이터 삭제'),
+      240,
+      scrollable: find.byType(Scrollable).first,
+    );
     expect(find.text('이 기기의 꼬까픽 데이터 삭제'), findsOneWidget);
     expect(find.text('계정 삭제'), findsNothing);
     expect(find.text('계정 삭제는 연결 후 가능해요'), findsOneWidget);
+  });
+
+  testWidgets('price alert stat is informational until dedicated management exists', (tester) async {
+    await tester.pumpWidget(app());
+    final label = find.text('가격 다운 알림');
+    expect(label, findsOneWidget);
+    final ink = find.ancestor(of: label, matching: find.byType(InkWell));
+    expect(ink, findsOneWidget);
+    expect(tester.widget<InkWell>(ink).onTap, isNull);
+    expect(find.text('상품 상세에서 관리'), findsOneWidget);
   });
 
   testWidgets('privacy and data entry opens a real explanatory surface', (tester) async {
