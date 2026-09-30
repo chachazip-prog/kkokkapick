@@ -60,6 +60,7 @@ jobs:
           node test/push-worker-contract.test.js
           node test/commercial-event-concurrency-contract.test.js
           node test/child-profile-sync-contract.test.js
+          node test/preview-parity.test.js
       - name: Check catalog image URL coverage
         run: node scripts/catalog-image-quality.js
 
