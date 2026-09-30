@@ -63,6 +63,8 @@ void main() {
     await tester.pumpWidget(app(state: AppSessionState.offlineAuthenticated));
     expect(find.text('계정 연결 대기 중'), findsOneWidget);
     expect(find.textContaining('오래된 토큰은 사용하지 않아요'), findsOneWidget);
+    expect(find.text('오프라인 계정 모드 · 연결 후 다시 동기화할 수 있어요.'), findsOneWidget);
+    expect(find.textContaining('연결되면 다시 동기화해요'), findsNothing);
     await tester.scrollUntilVisible(
       find.text('이 기기의 꼬까픽 데이터 삭제'),
       240,
