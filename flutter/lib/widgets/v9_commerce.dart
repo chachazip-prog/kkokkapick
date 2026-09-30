@@ -16,99 +16,109 @@ class V9HeroBanner extends StatelessWidget {
   final VoidCallback onTap;
 
   @override
-  Widget build(BuildContext context) => InkWell(
-        borderRadius: BorderRadius.circular(24),
-        onTap: onTap,
-        child: Container(
-          height: 196,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(24),
-            gradient: const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Color(0xFFF3EBE2), Color(0xFFEDE2D7)],
-            ),
-          ),
-          child: Stack(
-            children: [
-              if (product?.imageUrl != null)
-                Positioned(
-                  right: -4,
-                  top: 0,
-                  bottom: 0,
-                  width: 190,
-                  child: Opacity(
-                    opacity: .94,
-                    child: ProductImage(url: product!.imageUrl, fit: BoxFit.cover),
-                  ),
-                ),
-              Positioned.fill(
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                      colors: [
-                        const Color(0xFFF3EBE2).withValues(alpha: .99),
-                        const Color(0xFFF3EBE2).withValues(alpha: .88),
-                        const Color(0xFFF3EBE2).withValues(alpha: .06),
-                      ],
-                      stops: const [0, .55, 1],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 20, 16, 18),
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 226),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'KIDS FASHION, SIMPLIFIED',
-                        style: TextStyle(fontSize: 9, letterSpacing: 1.6, color: Color(0xFF776B60), fontWeight: FontWeight.w700),
-                      ),
-                      const SizedBox(height: 10),
-                      const Text(
-                        '작은 일상이\n특별한 스타일이 되는 순간',
-                        style: TextStyle(height: 1.12, fontSize: 21, fontWeight: FontWeight.w900, letterSpacing: -.9, color: KkokkapickTheme.ink),
-                      ),
-                      const SizedBox(height: 7),
-                      const Text(
-                        '같은 상품은 모아 보고, 최저가와 사이즈까지 한눈에',
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(fontSize: 11, height: 1.35, color: Color(0xFF665D55)),
-                      ),
-                      const Spacer(),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
-                        decoration: BoxDecoration(color: KkokkapickTheme.lavender, borderRadius: BorderRadius.circular(999)),
-                        child: const Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text('오늘의 스타일 보기', style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w800)),
-                            SizedBox(width: 4),
-                            Icon(Icons.chevron_right_rounded, size: 15, color: Colors.white),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
+  Widget build(BuildContext context) {
+    final textScale = MediaQuery.textScalerOf(context).scale(16) / 16;
+    final extraHeight = ((textScale - 1).clamp(0.0, 1.0)) * 48;
+    return InkWell(
+      borderRadius: BorderRadius.circular(24),
+      onTap: onTap,
+      child: Container(
+        height: 220 + extraHeight,
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(24),
+          gradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFFF3EBE2), Color(0xFFEDE2D7)],
           ),
         ),
-      );
+        child: Stack(
+          children: [
+            if (product?.imageUrl != null)
+              Positioned(
+                right: -4,
+                top: 0,
+                bottom: 0,
+                width: 190,
+                child: Opacity(
+                  opacity: .94,
+                  child: ProductImage(url: product!.imageUrl, fit: BoxFit.cover),
+                ),
+              ),
+            Positioned.fill(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [
+                      const Color(0xFFF3EBE2).withValues(alpha: .99),
+                      const Color(0xFFF3EBE2).withValues(alpha: .88),
+                      const Color(0xFFF3EBE2).withValues(alpha: .06),
+                    ],
+                    stops: const [0, .55, 1],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 20, 16, 18),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 226),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'KIDS FASHION, SIMPLIFIED',
+                      style: TextStyle(fontSize: 9, letterSpacing: 1.6, color: Color(0xFF776B60), fontWeight: FontWeight.w700),
+                    ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      '작은 일상이\n특별한 스타일이 되는 순간',
+                      style: TextStyle(height: 1.12, fontSize: 21, fontWeight: FontWeight.w900, letterSpacing: -.9, color: KkokkapickTheme.ink),
+                    ),
+                    const SizedBox(height: 7),
+                    const Text(
+                      '같은 상품은 모아 보고, 최저가와 사이즈까지 한눈에',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 11, height: 1.35, color: Color(0xFF665D55)),
+                    ),
+                    const Spacer(),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+                      decoration: BoxDecoration(color: KkokkapickTheme.lavender, borderRadius: BorderRadius.circular(999)),
+                      child: const Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text('오늘의 스타일 보기', style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w800)),
+                          SizedBox(width: 4),
+                          Icon(Icons.chevron_right_rounded, size: 15, color: Colors.white),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class V9CategoryStrip extends StatelessWidget {
   const V9CategoryStrip({super.key, required this.categories, required this.onSelected});
   final List<String> categories;
   final ValueChanged<String> onSelected;
+
+  static const _labelStyle = TextStyle(
+    fontSize: 11.5,
+    fontWeight: FontWeight.w600,
+    color: KkokkapickTheme.ink,
+  );
 
   IconData _icon(String label, int index) {
     final value = label.toLowerCase();
@@ -126,46 +136,65 @@ class V9CategoryStrip extends StatelessWidget {
     };
   }
 
+  TextPainter _labelPainter(BuildContext context, String label) => TextPainter(
+        text: TextSpan(text: label, style: _labelStyle),
+        maxLines: 1,
+        textDirection: Directionality.of(context),
+        textScaler: MediaQuery.textScalerOf(context),
+      )..layout();
+
+  double _itemWidth(BuildContext context, String label) {
+    final required = _labelPainter(context, label).width + 28;
+    return required < 68 ? 68 : required;
+  }
+
+  double _stripHeight(BuildContext context) {
+    final required = 58 + 7 + _labelPainter(context, '가').height + 16;
+    return required < 92 ? 92 : required;
+  }
+
   @override
-  Widget build(BuildContext context) => SizedBox(
-        height: 92,
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.only(right: 6),
-          itemCount: categories.length,
-          separatorBuilder: (_, __) => const SizedBox(width: 12),
-          itemBuilder: (context, index) {
-            final label = categories[index];
-            final width = (label.runes.length * 12.0 + 28).clamp(68.0, 92.0);
-            return InkWell(
-              borderRadius: BorderRadius.circular(20),
-              onTap: () => onSelected(label),
-              child: SizedBox(
-                width: width,
-                child: Column(
-                  children: [
-                    Container(
-                      width: 58,
-                      height: 58,
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Color(0xFFF8F6FB)),
-                      alignment: Alignment.center,
-                      child: Icon(_icon(label, index), size: 24),
-                    ),
-                    const SizedBox(height: 7),
-                    Text(
-                      label,
-                      maxLines: 1,
-                      softWrap: false,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(fontSize: 11.5, fontWeight: FontWeight.w600, color: KkokkapickTheme.ink),
-                    ),
-                  ],
-                ),
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: _stripHeight(context),
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.only(right: 6),
+        itemCount: categories.length,
+        separatorBuilder: (_, __) => const SizedBox(width: 12),
+        itemBuilder: (context, index) {
+          final label = categories[index];
+          final width = _itemWidth(context, label);
+          return InkWell(
+            borderRadius: BorderRadius.circular(20),
+            onTap: () => onSelected(label),
+            child: SizedBox(
+              width: width,
+              child: Column(
+                children: [
+                  Container(
+                    width: 58,
+                    height: 58,
+                    decoration: const BoxDecoration(shape: BoxShape.circle, color: Color(0xFFF8F6FB)),
+                    alignment: Alignment.center,
+                    child: Icon(_icon(label, index), size: 24),
+                  ),
+                  const SizedBox(height: 7),
+                  Text(
+                    label,
+                    maxLines: 1,
+                    softWrap: false,
+                    textAlign: TextAlign.center,
+                    style: _labelStyle,
+                  ),
+                ],
               ),
-            );
-          },
-        ),
-      );
+            ),
+          );
+        },
+      ),
+    );
+  }
 }
 
 class V9EditorialStrip extends StatelessWidget {
@@ -249,6 +278,11 @@ class _V9ProductCardState extends State<V9ProductCard> {
       if(product.specs.season?.trim().isNotEmpty??false)product.specs.season!.trim(),
     ];
     final rating=product.weightedRating;
+    final metadata=<String>[
+      if(product.merchantCount>1)'${product.merchantCount}개 판매처',
+      if(rating!=null)'★ ${rating.toStringAsFixed(1)}',
+      if(product.totalReviewCount>0)'리뷰 ${product.totalReviewCount}',
+    ].join(' · ');
     return Material(
       color:Colors.white,
       elevation:.35,
@@ -341,17 +375,21 @@ class _V9ProductCardState extends State<V9ProductCard> {
               const SizedBox(height:5),
               Row(
                 children:[
-                  if(product.merchantCount>1)Text('${product.merchantCount}개 판매처',style:const TextStyle(fontSize:10,color:KkokkapickTheme.muted)),
-                  if(product.merchantCount>1&&(rating!=null||product.totalReviewCount>0))const Text(' · ',style:TextStyle(fontSize:10,color:KkokkapickTheme.muted)),
-                  if(rating!=null)Text('★ ${rating.toStringAsFixed(1)}',style:const TextStyle(fontSize:10,color:KkokkapickTheme.muted)),
-                  if(product.totalReviewCount>0)Text(' (${product.totalReviewCount})',style:const TextStyle(fontSize:10,color:KkokkapickTheme.muted)),
-                  const Spacer(),
+                  Expanded(
+                    child:Text(
+                      metadata,
+                      maxLines:1,
+                      overflow:TextOverflow.ellipsis,
+                      style:const TextStyle(fontSize:10,color:KkokkapickTheme.muted),
+                    ),
+                  ),
+                  const SizedBox(width:4),
                   GestureDetector(
                     onTap:widget.onAlert,
                     child:Row(mainAxisSize:MainAxisSize.min,children:[
                       Icon(widget.alertEnabled?Icons.notifications_active_rounded:Icons.notifications_none_rounded,size:14,color:widget.alertEnabled?KkokkapickTheme.lavenderDeep:KkokkapickTheme.muted),
                       const SizedBox(width:2),
-                      Text(widget.alertEnabled?'가격↓ 알림 중':'가격↓ 알림',style:TextStyle(fontSize:9,fontWeight:FontWeight.w700,color:widget.alertEnabled?KkokkapickTheme.lavenderDeep:KkokkapickTheme.muted)),
+                      Text(widget.alertEnabled?'알림 중':'가격↓',style:TextStyle(fontSize:9,fontWeight:FontWeight.w700,color:widget.alertEnabled?KkokkapickTheme.lavenderDeep:KkokkapickTheme.muted)),
                     ]),
                   ),
                 ],
