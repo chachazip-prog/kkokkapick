@@ -145,7 +145,7 @@ class V9CategoryStrip extends StatelessWidget {
   }
 
   double _stripHeight(BuildContext context) {
-    final required = 58 + 7 + _labelPainter(context, '가').height;
+    final required = 58 + 7 + _labelPainter(context, '가').height + 8;
     return required < 92 ? 92 : required;
   }
 
