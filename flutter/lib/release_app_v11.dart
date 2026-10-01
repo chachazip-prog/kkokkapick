@@ -11,6 +11,7 @@ import 'services/app_session_orchestrator.dart';
 import 'services/authentication.dart';
 import 'services/home_feed_ranking.dart';
 import 'services/local_account_data_store.dart';
+import 'services/overlay_coordinator.dart';
 import 'services/secure_session_token_store.dart';
 import 'services/supabase_authentication_gateway.dart';
 import 'theme/kkokkapick_theme.dart';
@@ -42,6 +43,8 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
   static final _demoEndpoint = Uri.parse(
     'https://chachazip-prog.github.io/kkokkapick/data/catalog.json',
   );
+  static const _appEnvironment =
+      String.fromEnvironment('APP_ENV', defaultValue: 'preview');
   static const _supabaseUrl = String.fromEnvironment('SUPABASE_URL');
   static const _supabaseAnonKey = String.fromEnvironment('SUPABASE_ANON_KEY');
 
@@ -52,6 +55,7 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
   final _ranking = const HomeFeedRankingService();
   final _search = TextEditingController();
   final _localData = LocalAccountDataStore();
+  final _overlayCoordinator = OverlayCoordinator();
 
   List<CatalogProduct> _products = const [];
   Set<String> _favoriteIds = <String>{};
@@ -70,6 +74,7 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
 
   bool get _sessionConfigured =>
       _supabaseUrl.trim().isNotEmpty && _supabaseAnonKey.trim().isNotEmpty;
+  bool get _productionCandidate => _appEnvironment == 'production';
 
   @override
   void initState() {
@@ -107,6 +112,11 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
       _error = null;
     });
     try {
+      if (_productionCandidate && !_sessionConfigured) {
+        throw StateError(
+          'Production candidate requires Supabase public configuration.',
+        );
+      }
       final catalogFuture = _sessionConfigured
           ? _catalog.fetchSupabase(
               supabaseUrl: _supabaseUrl,
@@ -267,9 +277,9 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
     final months = TextEditingController(text: _profile?.months.toString() ?? '');
     final height = TextEditingController(text: _profile?.heightCm.toString() ?? '');
     final weight = TextEditingController(text: _profile?.weightKg.toString() ?? '');
-    final saved = await showModalBottomSheet<ChildProfile>(
+    final saved = await coordinatedModal<ChildProfile>(
       context: context,
-      isScrollControlled: true,
+      coordinator: _overlayCoordinator,
       backgroundColor: Colors.white,
       showDragHandle: true,
       builder: (context) => SafeArea(
@@ -359,9 +369,11 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
   }
 
   Future<void> _showProduct(CatalogProduct product) async {
-    await showModalBottomSheet<void>(
+    await coordinatedModal<void>(
       context: context,
+      coordinator: _overlayCoordinator,
       isScrollControlled: true,
+      showDragHandle: false,
       useSafeArea: true,
       backgroundColor: Colors.white,
       builder: (context) => V10ProductDetailSheet(
@@ -426,8 +438,9 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
     final email = TextEditingController();
     final password = TextEditingController();
     bool create = false;
-    final result = await showModalBottomSheet<_EmailCredentials>(
+    final result = await coordinatedModal<_EmailCredentials>(
       context: context,
+      coordinator: _overlayCoordinator,
       isScrollControlled: true,
       backgroundColor: Colors.white,
       showDragHandle: true,
