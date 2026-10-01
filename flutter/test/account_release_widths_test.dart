@@ -51,6 +51,13 @@ void main() {
         isNull,
         reason: 'authenticated My overflowed at width $width and 200% text',
       );
+
+      await tester.scrollUntilVisible(
+        find.text('계정 연결됨'),
+        260,
+        scrollable: find.byType(Scrollable).first,
+      );
+      await tester.pumpAndSettle();
       expect(find.text('계정 연결됨'), findsOneWidget);
       expect(find.text('로그아웃'), findsOneWidget);
 
