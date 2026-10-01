@@ -40,12 +40,12 @@ class V10AccountPage extends StatelessWidget {
         context: context,
         showDragHandle: true,
         backgroundColor: Colors.white,
+        isScrollControlled: true,
         builder: (context) => SafeArea(
           top: false,
-          child: Padding(
+          child: SingleChildScrollView(
             padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
             child: Column(
-              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
