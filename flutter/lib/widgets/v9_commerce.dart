@@ -293,6 +293,7 @@ class _V9ProductCardState extends State<V9ProductCard> {
   Widget build(BuildContext context) {
     final product=widget.product;
     final images=product.galleryUrls;
+    final largeText = MediaQuery.textScalerOf(context).scale(14) > 21;
     final specs=<String>[
       if(product.sizeRangeLabel!=null)'사이즈 ${product.sizeRangeLabel}',
       if(product.specs.material?.trim().isNotEmpty??false)product.specs.material!.trim(),
@@ -373,8 +374,8 @@ class _V9ProductCardState extends State<V9ProductCard> {
               const SizedBox(height:9),
               Text(product.brand??product.merchant,maxLines:1,overflow:TextOverflow.ellipsis,style:const TextStyle(fontSize:11,fontWeight:FontWeight.w800,color:KkokkapickTheme.muted)),
               const SizedBox(height:3),
-              Text(product.displayName,maxLines:3,overflow:TextOverflow.ellipsis,style:const TextStyle(fontSize:13,height:1.28,fontWeight:FontWeight.w600)),
-              if(specs.isNotEmpty)...[
+              Text(product.displayName,maxLines:largeText?2:3,overflow:TextOverflow.ellipsis,style:const TextStyle(fontSize:13,height:1.28,fontWeight:FontWeight.w600)),
+              if(!largeText && specs.isNotEmpty)...[
                 const SizedBox(height:6),
                 Wrap(
                   spacing:4,runSpacing:4,
@@ -396,14 +397,17 @@ class _V9ProductCardState extends State<V9ProductCard> {
               const SizedBox(height:5),
               Row(
                 children:[
-                  Expanded(
-                    child:Text(
-                      metadata,
-                      maxLines:1,
-                      overflow:TextOverflow.ellipsis,
-                      style:const TextStyle(fontSize:10,color:KkokkapickTheme.muted),
-                    ),
-                  ),
+                  if(!largeText)
+                    Expanded(
+                      child:Text(
+                        metadata,
+                        maxLines:1,
+                        overflow:TextOverflow.ellipsis,
+                        style:const TextStyle(fontSize:10,color:KkokkapickTheme.muted),
+                      ),
+                    )
+                  else
+                    const Spacer(),
                   const SizedBox(width:4),
                   GestureDetector(
                     onTap:widget.onAlert,
