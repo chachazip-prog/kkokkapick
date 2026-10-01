@@ -1,0 +1,39 @@
+name: Catalog image health
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catalog-image-health
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Probe deterministic catalog image sample
+        env:
+          IMAGE_HEALTH_SAMPLE_SIZE: "40"
+          IMAGE_HEALTH_TIMEOUT_MS: "5000"
+          IMAGE_HEALTH_CONCURRENCY: "5"
+          IMAGE_HEALTH_MIN_SUCCESS_RATE: "0.8"
+          IMAGE_HEALTH_REPORT: artifacts/catalog-image-health.json
+        run: node scripts/catalog-image-health.js
+      - name: Upload health evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalog-image-health
+          path: artifacts/catalog-image-health.json
+          if-no-files-found: warn
+          retention-days: 14
