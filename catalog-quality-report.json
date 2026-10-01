@@ -1,16 +1,16 @@
 {
-  "syncedAt": "2026-10-01T07:08:20.623Z",
-  "sourceProducts": 562,
-  "canonicalProducts": 516,
+  "syncedAt": "2026-10-01T13:08:32.552Z",
+  "sourceProducts": 566,
+  "canonicalProducts": 520,
   "queries": 48,
-  "recognizedBrandProducts": 335,
-  "recognizedBrandRatePct": 64.9,
+  "recognizedBrandProducts": 339,
+  "recognizedBrandRatePct": 65.2,
   "officialBrandGuideProducts": 28,
   "officialBrandGuideRatePct": 5.4,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "multiImageProducts": 37,
-  "multiImageRatePct": 7.2,
+  "multiImageRatePct": 7.1,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
@@ -55,6 +55,10 @@
       "count": 12
     },
     {
+      "name": "블루독베이비",
+      "count": 12
+    },
+    {
       "name": "베이비맥스",
       "count": 12
     },
@@ -63,7 +67,11 @@
       "count": 12
     },
     {
-      "name": "블루독베이비",
+      "name": "페리미츠",
+      "count": 11
+    },
+    {
+      "name": "쇼콜라",
       "count": 11
     },
     {
@@ -71,23 +79,15 @@
       "count": 11
     },
     {
-      "name": "페리미츠",
-      "count": 10
-    },
-    {
-      "name": "쇼콜라",
-      "count": 10
-    },
-    {
       "name": "밍크뮤",
+      "count": 10
+    },
+    {
+      "name": "나이키키즈",
       "count": 9
     },
     {
       "name": "달퐁",
-      "count": 8
-    },
-    {
-      "name": "나이키키즈",
       "count": 8
     },
     {
@@ -102,11 +102,11 @@
     },
     {
       "name": "아우터",
-      "count": 117
+      "count": 118
     },
     {
       "name": "바디수트",
-      "count": 74
+      "count": 76
     },
     {
       "name": "하의",
@@ -126,17 +126,17 @@
     },
     {
       "name": "기타",
-      "count": 24
+      "count": 25
     }
   ],
   "stages": [
     {
       "name": "키즈",
-      "count": 229
+      "count": 230
     },
     {
       "name": "베이비",
-      "count": 208
+      "count": 211
     },
     {
       "name": "신생아",
