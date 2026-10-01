@@ -1,6 +1,6 @@
 # KKOKKAPICK release execution board
 
-Updated: 2026-09-30
+Updated: 2026-10-01
 Owner: Team Lead / Product Owner gate
 Purpose: one execution board from remaining planning through release QA. This board distinguishes repository evidence from external/physical-device evidence and must not treat role-based review in a single execution context as independent-agent approval.
 
@@ -19,10 +19,10 @@ Every release item moves through the same sequence unless marked external-only:
 
 | Track | Plan | Implementation | Automated QA | External / independent gate | Current next action |
 | --- | --- | --- | --- | --- | --- |
-| Visual RC / #110 | locked to approved D03 reference and ten-item checklist | in progress | in progress | 320/360/390/430 physical devices + iOS Safari + independent visual QA | finish #124 layout fixes, then make #126 visual contracts green against main; deployed Pages comparison follows |
+| Visual RC / #110 | locked to approved D03 reference and ten-item checklist | repository corrections substantially complete; #124 and #126 merged | #126 PR had all six repository workflows green; Flutter preview deployed from source `fc098c81235f` | 320/360/390/430 physical devices + iOS Safari + approved-reference independent visual QA | freeze `fc098c81235f` as the visual evidence source and execute deployed/physical-device comparison; any defect returns to FE |
 | Account/data / #104 | guest-first, explicit first-sync consent, truthful offline state | repository path substantially complete | account switch, restore, deletion and local snapshot contracts exist | production Supabase/auth/RLS/deletion E2E | keep issue open until production environment evidence exists |
 | Production backend | Supabase / narrow public catalog boundary selected | migrations/RLS/RPC repository foundation exists | repository preflight exists | create production project, apply migrations, run verification pack | Product Owner/DevOps activation input required |
-| Catalog/provider | ADPICK server-side only, TTL fail-closed pending final rights | ingestion/grouping/title/gallery logic exists | canonical grouping release regression is wired to CI | written retention/redisplay/image/attribution rights + regenerated production evidence | next successful catalog build must prove clean titles and real multi-image coverage |
+| Catalog/provider | ADPICK server-side only, TTL fail-closed pending final rights | ingestion/grouping/title/gallery logic exists | canonical grouping release regression wired to CI; 2026-10-01 catalog report: 515 canonical, 35 multi-image, 0 channel-prefixed display titles | written retention/redisplay/image/attribution rights + real image renderability/hotlink evidence | keep scheduled refresh healthy; provider-rights and renderability evidence remain external |
 | Auth providers | Apple/Google/Kakao/Naver/Email target set | email/session foundation exists; social paths remain gated | auth boundary tests exist | provider apps/callbacks/credentials; Naver compatibility | Product Owner/DevOps external setup |
 | Push price alerts | threshold, ownership, claim/finalize/retry contracts exist | repository worker/DB foundation exists | push worker contract exists | credentialed FCM/APNs device delivery + invalid-token cleanup | DevOps external setup |
 | Native signing | app id `com.kkokkapick.app` fixed; unsigned CI is the repository gate | Android/iOS unsigned foundations exist | Android/iOS unsigned workflows | protected Apple/Google signing + signed checksums | store-account/signing setup |
@@ -50,15 +50,21 @@ Every release item moves through the same sequence unless marked external-only:
 | # | Requirement | Repository status | Promotion rule |
 | ---: | --- | --- | --- |
 | 1 | Home/Search job separation | merged via #122 | keep contract green |
-| 2 | category labels complete at release widths | #124 in progress | automated release-width/200% test green + device check |
-| 3 | approved black wordmark + warm accent | implementation exists; #126 contract in progress | widget contract + deployed/device comparison |
-| 4 | product-card visible boundary and robust small layout | boundary exists; #124 fixes overflow found by #126 | no layout exception + deployed/device comparison |
-| 5 | real multi-image aggregation/swipe | canonical aggregation + CI regression merged; existing dataset has multi-image evidence | regenerated catalog QA + card/detail device test |
-| 6 | clean merchant/channel prefixes | canonical cleanup + CI regression merged | regenerated catalog reports zero known channel-prefixed display titles |
-| 7 | recommendation editorial hierarchy | implementation exists; contract in progress | approved-reference comparison, no awkward wrap |
-| 8 | rich product detail | implementation exists; detail widget contract passes on draft #126 | keep contract green + device visual QA |
-| 9 | horizontal editorial/recommendation + vertical discovery feed | implementation exists; #126 contract in progress | lazy-sliver-aware contract + device scroll QA |
-| 10 | approved D03 rhythm, not generic dashboard styling | partially evidenced by code/preview only | final approved-reference and physical-device visual sign-off |
+| 2 | category labels complete at release widths | merged via #124 with 320/360/390/430 + 100%/200% automated coverage | physical-device check |
+| 3 | approved black wordmark + warm accent | implementation + #126 widget contract merged | deployed/device comparison |
+| 4 | product-card visible boundary and robust small layout | boundary + narrow-layout hardening merged via #124; #126 locks boundary | deployed/device comparison |
+| 5 | real multi-image aggregation/swipe | canonical aggregation + CI regression merged; latest catalog has 35 multi-image products | real-source card/detail render/device test + provider rights |
+| 6 | clean merchant/channel prefixes | canonical cleanup + CI regression merged; latest catalog reports 0 known channel-prefixed display titles | keep catalog QA at zero |
+| 7 | recommendation editorial hierarchy | implementation + #126 home contract merged | approved-reference comparison and no awkward device wrap |
+| 8 | rich product detail | implementation + #126 detail hierarchy contract merged | device visual QA with real catalog evidence |
+| 9 | horizontal editorial/recommendation + vertical discovery feed | implementation + #126 home composition contract merged | device scroll QA |
+| 10 | approved D03 rhythm, not generic dashboard styling | structurally evidenced by implementation/contracts, not independently signed off | final approved-reference and physical-device visual sign-off |
+
+## Frozen visual evidence source
+- Flutter source revision: `fc098c81235fb170f5621585f5ff1ab20fd97f3f`
+- Preview deployment commit: `7b40c0117a4d686ce7efe123531088720b76cf06`
+- The preview deployment updates `flutter-preview/SOURCE_REVISION` and `release-evidence.json` to the source revision above.
+- Scheduled catalog refreshes may advance `main`; physical visual QA must record the source revision it actually verifies rather than assuming current main equals the frozen UI source.
 
 ## Evidence rules
 - CI SUCCESS proves only the scope that the workflow actually executes.
