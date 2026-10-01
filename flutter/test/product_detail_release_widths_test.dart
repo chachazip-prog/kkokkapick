@@ -49,6 +49,10 @@ void main() {
   testWidgets('rich product detail survives release widths at 200% text',
       (tester) async {
     for (final width in [320.0, 360.0, 390.0, 430.0]) {
+      // Reset the widget tree between widths so the ListView/PageView state from
+      // the previous viewport cannot leak its scroll position into the next one.
+      await tester.pumpWidget(const SizedBox.shrink());
+      await tester.pump();
       await tester.binding.setSurfaceSize(Size(width, 844));
       await tester.pumpWidget(
         MaterialApp(
@@ -86,12 +90,7 @@ void main() {
       expect(list, findsOneWidget);
 
       for (final label in ['상품 정보', '사이즈', '소재', '시즌', '두께', '색상', '판매처']) {
-        await tester.scrollUntilVisible(
-          find.text(label),
-          260,
-          scrollable: find.byType(Scrollable).first,
-        );
-        await tester.pumpAndSettle();
+        await _scrollForwardUntilVisible(tester, list, find.text(label));
         expect(find.text(label), findsOneWidget, reason: 'missing $label at $width');
         expect(
           tester.takeException(),
@@ -101,12 +100,7 @@ void main() {
       }
 
       for (final label in ['판매처별 리뷰', '가격 내려가면 알림받기', '판매처 비교', '판매처B']) {
-        await tester.scrollUntilVisible(
-          find.text(label),
-          300,
-          scrollable: find.byType(Scrollable).first,
-        );
-        await tester.pumpAndSettle();
+        await _scrollForwardUntilVisible(tester, list, find.text(label));
         expect(find.text(label), findsOneWidget, reason: 'missing $label at $width');
         expect(
           tester.takeException(),
@@ -118,6 +112,17 @@ void main() {
 
     await tester.binding.setSurfaceSize(null);
   });
+}
+
+Future<void> _scrollForwardUntilVisible(
+  WidgetTester tester,
+  Finder scrollable,
+  Finder target,
+) async {
+  for (var attempt = 0; attempt < 14 && target.evaluate().isEmpty; attempt++) {
+    await tester.drag(scrollable, const Offset(0, -240));
+    await tester.pumpAndSettle();
+  }
 }
 
 void _noop() {}
