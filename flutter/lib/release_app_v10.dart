@@ -649,15 +649,48 @@ class V10CategoryPage extends StatelessWidget {
                 child: Text('${products.length}개 상품',style: const TextStyle(color: KkokkapickTheme.muted,fontWeight: FontWeight.w700)),
               ),
             ),
-            V10ProductGrid(
-              products: products,
-              favorites: favorites,
-              alerts: alerts,
-              onFavorite: onFavorite,
-              onAlert: onAlert,
-              onProduct: onProduct,
-              bottomPadding: 40,
-            ),
+            if (products.isEmpty)
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(24, 24, 24, 48),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(Icons.inventory_2_outlined, size: 42, color: KkokkapickTheme.muted),
+                        const SizedBox(height: 14),
+                        const Text(
+                          '이 카테고리에는 아직 상품이 없어요',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontWeight: FontWeight.w900, height: 1.35),
+                        ),
+                        const SizedBox(height: 8),
+                        const Text(
+                          '다른 카테고리를 둘러보세요.',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: KkokkapickTheme.muted, height: 1.4),
+                        ),
+                        const SizedBox(height: 18),
+                        OutlinedButton(
+                          onPressed: () => Navigator.maybePop(context),
+                          child: const Text('다른 카테고리 보기'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            else
+              V10ProductGrid(
+                products: products,
+                favorites: favorites,
+                alerts: alerts,
+                onFavorite: onFavorite,
+                onAlert: onAlert,
+                onProduct: onProduct,
+                bottomPadding: 40,
+              ),
           ],
         ),
       );
