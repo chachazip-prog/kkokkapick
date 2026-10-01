@@ -559,7 +559,7 @@ class V10SearchPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     SizedBox(
-                      height: 42,
+                      height: MediaQuery.textScalerOf(context).scale(14) > 20 ? 58 : 42,
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemCount: categories.length,
@@ -902,13 +902,16 @@ class V10ProductGrid extends StatelessWidget {
           builder: (context, constraints) {
             final width = constraints.crossAxisExtent;
             final columns = width >= 900 ? 4 : width >= 600 ? 3 : 2;
+            final textScale = MediaQuery.textScalerOf(context).scale(14) / 14;
+            final baseAspect = width < 340 ? .43 : .47;
+            final childAspectRatio = textScale > 1.5 ? baseAspect * .78 : baseAspect;
             return SliverGrid.builder(
               itemCount: products.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: columns,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 16,
-                childAspectRatio: width < 340 ? .43 : .47,
+                childAspectRatio: childAspectRatio,
               ),
               itemBuilder: (context, index) {
                 final product = products[index];
