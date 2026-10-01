@@ -85,28 +85,35 @@ void main() {
       final list = find.byType(ListView);
       expect(list, findsOneWidget);
 
-      await tester.drag(list, const Offset(0, -650));
-      await tester.pumpAndSettle();
-      expect(
-        tester.takeException(),
-        isNull,
-        reason: 'detail specs overflowed at width $width and 200% text',
-      );
       for (final label in ['상품 정보', '사이즈', '소재', '시즌', '두께', '색상', '판매처']) {
+        await tester.scrollUntilVisible(
+          find.text(label),
+          260,
+          scrollable: find.byType(Scrollable).first,
+        );
+        await tester.pumpAndSettle();
         expect(find.text(label), findsOneWidget, reason: 'missing $label at $width');
+        expect(
+          tester.takeException(),
+          isNull,
+          reason: 'detail specs overflowed at $label / width $width and 200% text',
+        );
       }
 
-      await tester.drag(list, const Offset(0, -900));
-      await tester.pumpAndSettle();
-      expect(
-        tester.takeException(),
-        isNull,
-        reason: 'detail actions overflowed at width $width and 200% text',
-      );
-      expect(find.text('판매처별 리뷰'), findsOneWidget);
-      expect(find.text('가격 내려가면 알림받기'), findsOneWidget);
-      expect(find.text('판매처 비교'), findsOneWidget);
-      expect(find.text('판매처B'), findsOneWidget);
+      for (final label in ['판매처별 리뷰', '가격 내려가면 알림받기', '판매처 비교', '판매처B']) {
+        await tester.scrollUntilVisible(
+          find.text(label),
+          300,
+          scrollable: find.byType(Scrollable).first,
+        );
+        await tester.pumpAndSettle();
+        expect(find.text(label), findsOneWidget, reason: 'missing $label at $width');
+        expect(
+          tester.takeException(),
+          isNull,
+          reason: 'detail actions overflowed at $label / width $width and 200% text',
+        );
+      }
     }
 
     await tester.binding.setSurfaceSize(null);
