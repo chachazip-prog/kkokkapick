@@ -19,8 +19,8 @@ class V9HeroBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     final textScale = MediaQuery.textScalerOf(context).scale(16) / 16;
     final largeText = textScale > 1.5;
-    final heroHeight = largeText
-        ? 480.0
+    final double? heroHeight = largeText
+        ? null
         : 220.0 + ((textScale - 1).clamp(0.0, .5)) * 80;
     return InkWell(
       borderRadius: BorderRadius.circular(24),
@@ -70,6 +70,7 @@ class V9HeroBanner extends StatelessWidget {
               child: ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 226),
                 child: Column(
+                  mainAxisSize: largeText ? MainAxisSize.min : MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
@@ -88,7 +89,10 @@ class V9HeroBanner extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(fontSize: 11, height: 1.35, color: Color(0xFF665D55)),
                     ),
-                    const Spacer(),
+                    if (largeText)
+                      const SizedBox(height: 20)
+                    else
+                      const Spacer(),
                     Container(
                       width: largeText ? 226 : null,
                       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
