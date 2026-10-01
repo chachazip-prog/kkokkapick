@@ -1119,13 +1119,16 @@ class _ProductGrid extends StatelessWidget {
           builder: (context, constraints) {
             final width = constraints.crossAxisExtent;
             final columns = width >= 900 ? 4 : width >= 600 ? 3 : 2;
+            final textScale = MediaQuery.textScalerOf(context).scale(14) / 14;
+            final baseAspect = width < 340 ? .48 : .52;
+            final childAspectRatio = textScale > 1.5 ? baseAspect * .78 : baseAspect;
             return SliverGrid.builder(
               itemCount: products.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: columns,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 24,
-                childAspectRatio: width < 340 ? .48 : .52,
+                childAspectRatio: childAspectRatio,
               ),
               itemBuilder: (context, index) {
                 final product = products[index];
