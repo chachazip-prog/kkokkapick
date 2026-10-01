@@ -1,0 +1,75 @@
+name: Store candidate foundation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: store-candidate-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  APP_ENV: production
+  SUPABASE_URL: ${{ secrets.PRODUCTION_SUPABASE_URL }}
+  SUPABASE_ANON_KEY: ${{ secrets.PRODUCTION_SUPABASE_ANON_KEY }}
+
+jobs:
+  production-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require production public configuration
+        env:
+          REQUIRE_PRODUCTION_CONFIG: "1"
+        run: bash scripts/release-preflight.sh
+
+  android-foundation:
+    needs: production-preflight
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - working-directory: flutter
+        run: flutter pub get
+      - working-directory: flutter
+        run: flutter analyze
+      - working-directory: flutter
+        run: flutter test
+      - name: Build production-configured Android App Bundle foundation
+        working-directory: flutter
+        run: >-
+          flutter build appbundle --release
+          --dart-define=APP_ENV=$APP_ENV
+          --dart-define=SUPABASE_URL=$SUPABASE_URL
+          --dart-define=SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY
+      - name: Verify Android candidate artifact
+        run: test -s flutter/build/app/outputs/bundle/release/app-release.aab
+
+  ios-foundation:
+    needs: production-preflight
+    runs-on: macos-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - working-directory: flutter
+        run: flutter pub get
+      - name: Build production-configured iOS foundation without signing
+        working-directory: flutter
+        run: >-
+          flutter build ios --release --no-codesign
+          --dart-define=APP_ENV=$APP_ENV
+          --dart-define=SUPABASE_URL=$SUPABASE_URL
+          --dart-define=SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY
+      - name: Verify iOS candidate foundation
+        run: test -d flutter/build/ios/iphoneos/Runner.app
