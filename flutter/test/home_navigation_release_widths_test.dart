@@ -4,6 +4,7 @@ import 'package:kkokkapick/models/catalog_product.dart';
 import 'package:kkokkapick/release_app_v10.dart';
 import 'package:kkokkapick/services/home_feed_ranking.dart';
 import 'package:kkokkapick/theme/kkokkapick_theme.dart';
+import 'package:kkokkapick/widgets/v9_commerce.dart';
 
 CatalogProduct _product(int index) => CatalogProduct(
       id: 'home-$index',
@@ -30,7 +31,100 @@ CatalogProduct _product(int index) => CatalogProduct(
       reviews: const [],
     );
 
+Widget _scaled({required double width, required Widget child}) => MaterialApp(
+      theme: KkokkapickTheme.light(),
+      builder: (context, built) => MediaQuery(
+        data: MediaQuery.of(context).copyWith(
+          textScaler: const TextScaler.linear(2),
+        ),
+        child: built!,
+      ),
+      home: child,
+    );
+
+const _destinations = [
+  NavigationDestination(
+    icon: Icon(Icons.home_outlined),
+    selectedIcon: Icon(Icons.home_rounded),
+    label: '홈',
+  ),
+  NavigationDestination(icon: Icon(Icons.search_rounded), label: '검색'),
+  NavigationDestination(
+    icon: Icon(Icons.favorite_border_rounded),
+    selectedIcon: Icon(Icons.favorite_rounded),
+    label: '찜',
+  ),
+  NavigationDestination(
+    icon: Icon(Icons.person_outline_rounded),
+    selectedIcon: Icon(Icons.person_rounded),
+    label: '마이',
+  ),
+];
+
 void main() {
+  testWidgets('diagnostic: hero survives 320 at 200% text', (tester) async {
+    await tester.binding.setSurfaceSize(const Size(320, 844));
+    await tester.pumpWidget(
+      _scaled(
+        width: 320,
+        child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.all(16),
+            child: V9HeroBanner(product: _product(0), onTap: _noop),
+          ),
+        ),
+      ),
+    );
+    await tester.pump();
+    expect(tester.takeException(), isNull);
+    await tester.binding.setSurfaceSize(null);
+  });
+
+  testWidgets('diagnostic: navigation bar survives 320 at 200% text', (tester) async {
+    await tester.binding.setSurfaceSize(const Size(320, 844));
+    await tester.pumpWidget(
+      _scaled(
+        width: 320,
+        child: Scaffold(
+          body: const SizedBox.expand(),
+          bottomNavigationBar: NavigationBar(
+            selectedIndex: 0,
+            destinations: _destinations,
+          ),
+        ),
+      ),
+    );
+    await tester.pump();
+    expect(tester.takeException(), isNull);
+    await tester.binding.setSurfaceSize(null);
+  });
+
+  testWidgets('diagnostic: product rail survives 320 at 200% text', (tester) async {
+    final products = List.generate(8, _product);
+    await tester.binding.setSurfaceSize(const Size(320, 844));
+    await tester.pumpWidget(
+      _scaled(
+        width: 320,
+        child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.all(16),
+            child: V10ProductRail(
+              products: products,
+              favorites: const {},
+              alerts: const {},
+              onFavorite: _noopProduct,
+              onAlert: _noopProduct,
+              onProduct: _noopProduct,
+            ),
+          ),
+        ),
+      ),
+    );
+    await tester.pump();
+    expect(tester.takeException(), isNull);
+    await tester.binding.setSurfaceSize(null);
+  });
+
   testWidgets('D03 Home survives release widths at 200% text', (tester) async {
     final products = List.generate(14, _product);
     final feed = RankedHomeFeed(
@@ -69,24 +163,7 @@ void main() {
             bottomNavigationBar: NavigationBar(
               selectedIndex: 0,
               onDestinationSelected: (_) {},
-              destinations: const [
-                NavigationDestination(
-                  icon: Icon(Icons.home_outlined),
-                  selectedIcon: Icon(Icons.home_rounded),
-                  label: '홈',
-                ),
-                NavigationDestination(icon: Icon(Icons.search_rounded), label: '검색'),
-                NavigationDestination(
-                  icon: Icon(Icons.favorite_border_rounded),
-                  selectedIcon: Icon(Icons.favorite_rounded),
-                  label: '찜',
-                ),
-                NavigationDestination(
-                  icon: Icon(Icons.person_outline_rounded),
-                  selectedIcon: Icon(Icons.person_rounded),
-                  label: '마이',
-                ),
-              ],
+              destinations: _destinations,
             ),
           ),
         ),
