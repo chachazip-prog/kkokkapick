@@ -18,12 +18,15 @@ class V9HeroBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textScale = MediaQuery.textScalerOf(context).scale(16) / 16;
-    final extraHeight = ((textScale - 1).clamp(0.0, 1.0)) * 48;
+    final largeText = textScale > 1.5;
+    final heroHeight = largeText
+        ? 480.0
+        : 220.0 + ((textScale - 1).clamp(0.0, .5)) * 80;
     return InkWell(
       borderRadius: BorderRadius.circular(24),
       onTap: onTap,
       child: Container(
-        height: 220 + extraHeight,
+        height: heroHeight,
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
@@ -87,14 +90,28 @@ class V9HeroBanner extends StatelessWidget {
                     ),
                     const Spacer(),
                     Container(
+                      width: largeText ? 226 : null,
                       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
                       decoration: BoxDecoration(color: KkokkapickTheme.lavender, borderRadius: BorderRadius.circular(999)),
-                      child: const Row(
-                        mainAxisSize: MainAxisSize.min,
+                      child: Row(
+                        mainAxisSize: largeText ? MainAxisSize.max : MainAxisSize.min,
                         children: [
-                          Text('오늘의 스타일 보기', style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w800)),
-                          SizedBox(width: 4),
-                          Icon(Icons.chevron_right_rounded, size: 15, color: Colors.white),
+                          if (largeText)
+                            const Expanded(
+                              child: Text(
+                                '오늘의 스타일 보기',
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w800),
+                              ),
+                            )
+                          else
+                            const Text(
+                              '오늘의 스타일 보기',
+                              style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w800),
+                            ),
+                          const SizedBox(width: 4),
+                          const Icon(Icons.chevron_right_rounded, size: 15, color: Colors.white),
                         ],
                       ),
                     ),
