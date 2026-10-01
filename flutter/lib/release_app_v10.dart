@@ -969,49 +969,53 @@ class V10EditorialFooter extends StatelessWidget {
   final VoidCallback onTap;
 
   @override
-  Widget build(BuildContext context) => InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(20),
-        child: Container(
-          height: 142,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: const Color(0xFFF1ECE5),
-            border: Border.all(color: const Color(0xFFE8E1D9)),
-          ),
-          child: Stack(
-            children: [
-              if (product?.imageUrl != null)
-                Positioned(right: 0,top: 0,bottom: 0,width: 155,child: ProductImage(url: product!.imageUrl,fit: BoxFit.cover)),
-              Positioned.fill(
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.centerLeft,end: Alignment.centerRight,
-                      colors: [const Color(0xFFF1ECE5),const Color(0xFFF1ECE5).withValues(alpha: .96),const Color(0xFFF1ECE5).withValues(alpha: .12)],
-                      stops: const [0,.60,1],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(18),
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 220),
-                  child: const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('꼬까픽이 제안하는\n이번 주 스타일',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w900,height: 1.2,letterSpacing: -.5)),
-                      SizedBox(height: 8),
-                      Text('같은 상품은 모아 보고, 판매처별 가격은 비교해보세요.',style: TextStyle(fontSize: 11,color: KkokkapickTheme.muted,height: 1.4)),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+  Widget build(BuildContext context) {
+    final largeText = MediaQuery.textScalerOf(context).scale(14) > 21;
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(20),
+      child: Container(
+        height: largeText ? null : 142,
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: const Color(0xFFF1ECE5),
+          border: Border.all(color: const Color(0xFFE8E1D9)),
         ),
-      );
+        child: Stack(
+          children: [
+            if (product?.imageUrl != null)
+              Positioned(right: 0,top: 0,bottom: 0,width: 155,child: ProductImage(url: product!.imageUrl,fit: BoxFit.cover)),
+            Positioned.fill(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.centerLeft,end: Alignment.centerRight,
+                    colors: [const Color(0xFFF1ECE5),const Color(0xFFF1ECE5).withValues(alpha: .96),const Color(0xFFF1ECE5).withValues(alpha: .12)],
+                    stops: const [0,.60,1],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(18),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 220),
+                child: Column(
+                  mainAxisSize: largeText ? MainAxisSize.min : MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: largeText ? MainAxisAlignment.start : MainAxisAlignment.center,
+                  children: const [
+                    Text('꼬까픽이 제안하는\n이번 주 스타일',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w900,height: 1.2,letterSpacing: -.5)),
+                    SizedBox(height: 8),
+                    Text('같은 상품은 모아 보고, 판매처별 가격은 비교해보세요.',style: TextStyle(fontSize: 11,color: KkokkapickTheme.muted,height: 1.4)),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
