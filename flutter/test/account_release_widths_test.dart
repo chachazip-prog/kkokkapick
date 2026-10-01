@@ -52,22 +52,13 @@ void main() {
         reason: 'authenticated My overflowed at width $width and 200% text',
       );
 
-      await tester.scrollUntilVisible(
-        find.text('계정 연결됨'),
-        260,
-        scrollable: find.byType(Scrollable).first,
-      );
+      await tester.drag(find.byType(ListView), const Offset(0, -620));
       await tester.pumpAndSettle();
       expect(find.text('계정 연결됨'), findsOneWidget);
       expect(find.text('로그아웃'), findsOneWidget);
 
-      await tester.scrollUntilVisible(
-        find.text('계정 삭제'),
-        320,
-        scrollable: find.byType(Scrollable).first,
-      );
+      await tester.drag(find.byType(ListView), const Offset(0, -760));
       await tester.pumpAndSettle();
-
       expect(find.text('계정 삭제'), findsOneWidget);
       expect(
         tester.takeException(),
