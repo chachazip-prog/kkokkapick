@@ -19,8 +19,8 @@ class V9HeroBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     final textScale = MediaQuery.textScalerOf(context).scale(16) / 16;
     final largeText = textScale > 1.5;
-    final double? heroHeight = largeText
-        ? null
+    final heroHeight = largeText
+        ? 460.0
         : 220.0 + ((textScale - 1).clamp(0.0, .5)) * 80;
     return InkWell(
       borderRadius: BorderRadius.circular(24),
@@ -94,7 +94,7 @@ class V9HeroBanner extends StatelessWidget {
                     else
                       const Spacer(),
                     Container(
-                      width: largeText ? 226 : null,
+                      width: largeText ? double.infinity : null,
                       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
                       decoration: BoxDecoration(color: KkokkapickTheme.lavender, borderRadius: BorderRadius.circular(999)),
                       child: Row(
