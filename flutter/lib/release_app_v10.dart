@@ -746,14 +746,39 @@ class _V10ProductDetailSheetState extends State<V10ProductDetailSheet> {
           Text(product.displayName,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900,height: 1.28)),
           const SizedBox(height: 14),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(right: 7),
-                child: Text('최저가',style: TextStyle(color: KkokkapickTheme.lavenderDeep,fontWeight: FontWeight.w800)),
+              Expanded(
+                child: Wrap(
+                  spacing: 7,
+                  runSpacing: 2,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    const Text(
+                      '최저가',
+                      style: TextStyle(
+                        color: KkokkapickTheme.lavenderDeep,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    Text(
+                      v9Won(product.minPrice),
+                      style: const TextStyle(
+                        fontSize: 23,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              Text(v9Won(product.minPrice),style: const TextStyle(fontSize: 23,fontWeight: FontWeight.w900)),
-              const Spacer(),
-              IconButton(onPressed: widget.onFavorite,icon: Icon(widget.favorite ? Icons.favorite_rounded : Icons.favorite_border_rounded)),
+              IconButton(
+                onPressed: widget.onFavorite,
+                icon: Icon(
+                  widget.favorite
+                      ? Icons.favorite_rounded
+                      : Icons.favorite_border_rounded,
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 18),
