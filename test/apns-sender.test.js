@@ -22,6 +22,8 @@ const transport=async(args)=>{
   assert.equal(args.headers['apns-push-type'],'alert');
   assert.match(args.headers.authorization,/^bearer /);
   assert.equal(args.payload.kkokkapick.deliveryId,'delivery-1');
+  assert.equal('productId' in args.payload.kkokkapick,false);
+  assert.equal('observedPrice' in args.payload.kkokkapick,false);
   return {status:200,body:''};
 };
 const sender=new ApnsSender({
