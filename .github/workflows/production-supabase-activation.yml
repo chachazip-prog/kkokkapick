@@ -1,0 +1,91 @@
+name: Production Supabase activation verification
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_read_only_verification:
+        description: "Run read-only production schema verification and non-destructive email-auth smoke"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-supabase-verification
+  cancel-in-progress: false
+
+jobs:
+  schema-verification:
+    if: ${{ inputs.confirm_read_only_verification }}
+    environment: production
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PRODUCTION_DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Require protected database connection
+        run: |
+          set -euo pipefail
+          test -n "$PRODUCTION_DATABASE_URL"
+      - name: Ensure PostgreSQL client
+        run: |
+          if ! command -v psql >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y postgresql-client
+          fi
+          psql --version
+      - name: Generate migration integrity manifest
+        env:
+          PRODUCTION_MIGRATION_MANIFEST: artifacts/production-migration-manifest.json
+        run: node scripts/production-migration-manifest.js
+      - name: Run read-only production verification
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          psql "$PRODUCTION_DATABASE_URL" -X -qAt -v ON_ERROR_STOP=1             -f supabase/production-verification.sql             > artifacts/production-verification.json
+      - name: Validate production verification evidence
+        run: node scripts/validate-production-verification.js artifacts/production-verification.json
+      - name: Upload schema evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-supabase-schema-evidence
+          path: |
+            artifacts/production-migration-manifest.json
+            artifacts/production-verification.json
+          if-no-files-found: error
+          retention-days: 30
+
+  email-auth-smoke:
+    if: ${{ inputs.confirm_read_only_verification }}
+    needs: schema-verification
+    environment: production
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PRODUCTION_SUPABASE_URL: ${{ secrets.PRODUCTION_SUPABASE_URL }}
+      PRODUCTION_SUPABASE_ANON_KEY: ${{ secrets.PRODUCTION_SUPABASE_ANON_KEY }}
+      PRODUCTION_TEST_EMAIL: ${{ secrets.PRODUCTION_TEST_EMAIL }}
+      PRODUCTION_TEST_PASSWORD: ${{ secrets.PRODUCTION_TEST_PASSWORD }}
+      PRODUCTION_AUTH_SMOKE_REPORT: artifacts/production-email-auth-smoke.json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run non-destructive email authentication smoke
+        run: node scripts/production-email-auth-smoke.js
+      - name: Upload auth smoke evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-email-auth-smoke
+          path: artifacts/production-email-auth-smoke.json
+          if-no-files-found: error
+          retention-days: 30
