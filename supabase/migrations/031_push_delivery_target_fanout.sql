@@ -31,7 +31,8 @@ create index if not exists price_alert_delivery_targets_processing_idx
 create or replace function public.claim_price_alert_delivery_targets(
   p_limit integer default 100,
   p_stale_after interval default interval '15 minutes',
-  p_max_attempts integer default 5
+  p_max_attempts integer default 5,
+  p_platform text default null
 )
 returns table(
   target_id uuid,
@@ -54,6 +55,9 @@ begin
     raise exception 'stale interval out of range';
   end if;
   if p_max_attempts<1 or p_max_attempts>10 then raise exception 'max attempts out of range'; end if;
+  if p_platform is not null and p_platform not in ('ios','android') then
+    raise exception 'unsupported platform';
+  end if;
 
   -- Freeze the active device set the first time a parent delivery is processed.
   insert into public.price_alert_delivery_targets(delivery_id,device_id,platform)
@@ -109,6 +113,7 @@ begin
     where t.status='pending'
       and t.next_attempt_at<=now()
       and t.attempt_count<p_max_attempts
+      and (p_platform is null or t.platform=p_platform)
     order by t.next_attempt_at,t.created_at,t.id
     for update skip locked
     limit p_limit
@@ -223,19 +228,19 @@ revoke all on function public.claim_price_alert_deliveries(integer,interval,inte
 revoke all on function public.complete_price_alert_delivery(uuid,boolean,boolean,text,integer)
   from service_role;
 
-revoke all on function public.claim_price_alert_delivery_targets(integer,interval,integer)
+revoke all on function public.claim_price_alert_delivery_targets(integer,interval,integer,text)
   from public,anon,authenticated;
 revoke all on function public.complete_price_alert_delivery_target(uuid,boolean,boolean,boolean,text,integer)
   from public,anon,authenticated;
 
-grant execute on function public.claim_price_alert_delivery_targets(integer,interval,integer)
+grant execute on function public.claim_price_alert_delivery_targets(integer,interval,integer,text)
   to service_role;
 grant execute on function public.complete_price_alert_delivery_target(uuid,boolean,boolean,boolean,text,integer)
   to service_role;
 
 comment on table public.price_alert_delivery_targets is
   'Server-only per-device fan-out ledger; prevents retrying targets that already succeeded.';
-comment on function public.claim_price_alert_delivery_targets(integer,interval,integer) is
+comment on function public.claim_price_alert_delivery_targets(integer,interval,integer,text) is
   'Service-role atomic claim boundary returning raw push tokens only to the trusted sender.';
 comment on function public.complete_price_alert_delivery_target(uuid,boolean,boolean,boolean,text,integer) is
   'Service-role target finalization with bounded retry and invalid-token disablement.';
