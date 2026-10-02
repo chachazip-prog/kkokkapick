@@ -88,15 +88,6 @@ final class AppSessionOrchestrator {
 
   Future<void> removePushDevice(String token)=>account.removePushDevice(token);
 
-  // Push tokens are intentionally not placed in the offline mutation outbox.
-  // A stale token must never be replayed under a different account after sign-out.
-  Future<void> setPushDevice({
-    required String platform,
-    required String token,
-    bool enabled=true,
-  })=>account.setPushDevice(platform:platform,token:token,enabled:enabled);
-
-  Future<void> removePushDevice(String token)=>account.removePushDevice(token);
 
   Future<void> _send(PendingAccountMutation m) {
     switch(m.kind){
