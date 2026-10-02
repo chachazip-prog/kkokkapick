@@ -29,7 +29,8 @@ Additional overnight evidence on 2026-10-02 showed that at roughly 86–90 minut
 Repository policy:
 - refresh the ADPICK BIZ discovery catalog every hour;
 - validate returned HTTPS image URLs with a browser-like HTTP/MIME probe before publication;
-- run catalog image health immediately after each catalog publish and again around the middle of the hourly freshness window;
+- run catalog image health inline in the sync job immediately after publication and retain the evidence artifact;
+- run the standalone scheduled health check around the middle of the hourly freshness window;
 - require at least 80% live-image health before publishing a newly generated catalog;
 - fail closed per product by omitting an image URL that does not return a successful `image/*` response;
 - retain UI image fallback for transient delivery failures;
