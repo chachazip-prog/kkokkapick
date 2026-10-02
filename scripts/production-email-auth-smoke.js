@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 async function jsonResponse(response, label) {
   if (!response.ok) throw new Error(`${label}_http_${response.status}`);
   let body;
@@ -89,7 +91,14 @@ async function runProductionEmailAuthSmoke({
 
 if (require.main === module) {
   runProductionEmailAuthSmoke()
-    .then(result => console.log(JSON.stringify(result, null, 2)))
+    .then(result => {
+      const report = process.env.PRODUCTION_AUTH_SMOKE_REPORT;
+      if (report) {
+        fs.mkdirSync(path.dirname(report), { recursive: true });
+        fs.writeFileSync(report, JSON.stringify(result, null, 2) + '\n');
+      }
+      console.log(JSON.stringify(result, null, 2));
+    })
     .catch(error => {
       console.error(JSON.stringify({ status: 'FAIL', code: String(error?.message || error) }));
       process.exitCode = 1;
