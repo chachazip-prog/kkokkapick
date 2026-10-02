@@ -1,14 +1,25 @@
 {
-  "syncedAt": "2026-10-02T07:07:47.862Z",
-  "sourceProducts": 563,
-  "canonicalProducts": 516,
+  "syncedAt": "2026-10-02T12:41:50.680Z",
+  "sourceProducts": 564,
+  "canonicalProducts": 517,
   "queries": 48,
-  "recognizedBrandProducts": 334,
-  "recognizedBrandRatePct": 64.7,
+  "recognizedBrandProducts": 335,
+  "recognizedBrandRatePct": 64.8,
   "officialBrandGuideProducts": 25,
   "officialBrandGuideRatePct": 4.8,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
+  "sourceImageHealth": {
+    "checked": 564,
+    "ok": 564,
+    "failed": 0,
+    "statuses": {
+      "200": 564
+    },
+    "rate": 1
+  },
+  "canonicalImageProducts": 517,
+  "canonicalImageRatePct": 100,
   "multiImageProducts": 38,
   "multiImageRatePct": 7.4,
   "channelPrefixedDisplayTitles": 0,
@@ -48,7 +59,7 @@
     },
     {
       "name": "모이몰른",
-      "count": 13
+      "count": 14
     },
     {
       "name": "베이비맥스",
@@ -121,11 +132,11 @@
       "count": 39
     },
     {
-      "name": "실내복",
-      "count": 27
+      "name": "기타",
+      "count": 28
     },
     {
-      "name": "기타",
+      "name": "실내복",
       "count": 27
     }
   ],
@@ -144,7 +155,7 @@
     },
     {
       "name": "유아",
-      "count": 36
+      "count": 37
     },
     {
       "name": "토들러",
