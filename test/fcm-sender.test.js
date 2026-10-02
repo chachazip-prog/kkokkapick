@@ -33,7 +33,7 @@ const fetchImpl=async(url,options)=>{
   assert.equal(options.headers.authorization,'Bearer access-token');
   const body=JSON.parse(options.body);
   assert.match(body.message.token,/^device-token-secret-value(?:-2)?$/);
-  assert.equal(body.message.data.deliveryId,'delivery-1');
+  assert.match(body.message.data.deliveryId,/^delivery-[12]$/);
   assert.equal('productId' in body.message.data,false);
   assert.equal('observedPrice' in body.message.data,false);
   return new Response(JSON.stringify({name:'projects/project-1/messages/1'}),{
