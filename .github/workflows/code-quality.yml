@@ -66,6 +66,11 @@ jobs:
           node test/image-health.test.js
           node test/physical-qa-snapshot.test.js
           node test/external-beta-readiness.test.js
+          node test/production-boundary-reconciliation.test.js
+          node test/production-migration-manifest.test.js
+          node test/production-verification-validator.test.js
+          node test/production-email-auth-smoke.test.js
+          node test/production-supabase-activation-workflow.test.js
       - name: Check catalog image URL coverage
         run: node scripts/catalog-image-quality.js
 
@@ -89,6 +94,9 @@ jobs:
           node --check src/image-health.js
           node --check scripts/physical-qa-snapshot.js
           node --check scripts/external-beta-readiness.js
+          node --check scripts/production-migration-manifest.js
+          node --check scripts/validate-production-verification.js
+          node --check scripts/production-email-auth-smoke.js
       - name: Security sanity checks
         run: |
           if grep -R -n -E '(service_role|SUPABASE_SERVICE_ROLE|ADPICK_BIZ_API_KEY)[[:space:]]*[:=][[:space:]]*["'\''"][^"'\'']+' admin src flutter supabase --exclude='*.md'; then
@@ -108,3 +116,7 @@ jobs:
           grep -Fq 'end $$;' supabase/migrations/016_account_data_lifecycle.sql
           test -f supabase/migrations/029_child_profile_age_months_sync.sql
           grep -q 'age_months integer' supabase/migrations/029_child_profile_age_months_sync.sql
+          test -f supabase/migrations/030_production_boundary_reconciliation.sql
+          grep -q 'alter table public.profiles enable row level security' supabase/migrations/030_production_boundary_reconciliation.sql
+          grep -q 'alter table public.provider_themes enable row level security' supabase/migrations/030_production_boundary_reconciliation.sql
+          grep -q 'revoke all on public.product_price_summary from public,anon,authenticated' supabase/migrations/030_production_boundary_reconciliation.sql
