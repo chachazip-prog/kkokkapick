@@ -38,8 +38,8 @@ async function probe(url) {
       redirect: 'follow',
       signal: controller.signal,
       headers: {
-        'user-agent': 'kkokkapick-catalog-image-health/1.0',
-        'range': 'bytes=0-1023',
+        'user-agent': 'Mozilla/5.0 (compatible; KKOKKAPICKImageHealth/1.0)',
+        'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
       },
     });
     const contentType = (response.headers.get('content-type') || '').toLowerCase();

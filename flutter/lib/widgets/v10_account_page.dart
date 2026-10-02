@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../repositories/child_profile_repository.dart';
 import '../services/app_session_orchestrator.dart';
+import '../services/overlay_coordinator.dart';
 import '../theme/kkokkapick_theme.dart';
 import 'brand_identity.dart';
 
@@ -21,6 +22,7 @@ class V10AccountPage extends StatelessWidget {
     required this.onSignOut,
     required this.onDeleteAppData,
     required this.onDeleteAccount,
+    this.overlayCoordinator,
   });
 
   final ChildProfile? profile;
@@ -29,6 +31,7 @@ class V10AccountPage extends StatelessWidget {
   final bool sessionConfigured, sessionBusy;
   final VoidCallback onEditProfile, onFavorites, onSearch;
   final Future<void> Function() onSignIn, onSignOut, onDeleteAppData, onDeleteAccount;
+  final OverlayCoordinator? overlayCoordinator;
 
   bool get _authenticated =>
       sessionState == AppSessionState.authenticated ||
@@ -36,11 +39,32 @@ class V10AccountPage extends StatelessWidget {
   bool get _onlineAuthenticated => sessionState == AppSessionState.authenticated;
   bool get _offlineAuthenticated => sessionState == AppSessionState.offlineAuthenticated;
 
-  Future<void> _showAppSettings(BuildContext context) => showModalBottomSheet<void>(
+  Future<T?> _showUserModal<T>({
+    required BuildContext context,
+    required WidgetBuilder builder,
+  }) {
+    final coordinator = overlayCoordinator;
+    if (coordinator == null) {
+      return showModalBottomSheet<T>(
         context: context,
         showDragHandle: true,
         backgroundColor: Colors.white,
         isScrollControlled: true,
+        builder: builder,
+      );
+    }
+    return coordinatedModal<T>(
+      context: context,
+      coordinator: coordinator,
+      showDragHandle: true,
+      backgroundColor: Colors.white,
+      isScrollControlled: true,
+      builder: builder,
+    );
+  }
+
+  Future<void> _showAppSettings(BuildContext context) => _showUserModal<void>(
+        context: context,
         builder: (context) => SafeArea(
           top: false,
           child: SingleChildScrollView(
@@ -85,11 +109,8 @@ class V10AccountPage extends StatelessWidget {
         ),
       );
 
-  Future<void> _showPrivacyAndData(BuildContext context) => showModalBottomSheet<void>(
+  Future<void> _showPrivacyAndData(BuildContext context) => _showUserModal<void>(
         context: context,
-        showDragHandle: true,
-        backgroundColor: Colors.white,
-        isScrollControlled: true,
         builder: (context) => SafeArea(
           top: false,
           child: SingleChildScrollView(
