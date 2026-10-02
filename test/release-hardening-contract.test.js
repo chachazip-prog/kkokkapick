@@ -28,8 +28,20 @@ for (const term of [
   'coordinatedModal<ChildProfile>',
   'coordinatedModal<void>',
   'coordinatedModal<_EmailCredentials>',
+  'overlayCoordinator: _overlayCoordinator',
 ]) {
   if (!releaseApp.includes(term)) throw new Error(`release app hardening missing: ${term}`);
+}
+
+const accountPage = read('flutter/lib/widgets/v10_account_page.dart');
+for (const term of [
+  "services/overlay_coordinator.dart",
+  'final OverlayCoordinator? overlayCoordinator;',
+  'coordinatedModal<T>',
+  '_showAppSettings',
+  '_showPrivacyAndData',
+]) {
+  if (!accountPage.includes(term)) throw new Error(`account overlay hardening missing: ${term}`);
 }
 
 const imageScript = read('scripts/catalog-image-health.js');
