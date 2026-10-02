@@ -140,9 +140,9 @@ export class ApnsSender {
           sound: 'default',
         },
         kkokkapick: {
+          // Do not embed previous-account product identity or price in a push.
+          // The current signed-in app session resolves authorized detail.
           deliveryId: String(target.deliveryId),
-          productId: String(target.productId),
-          observedPrice: Number(target.observedPrice),
         },
       },
     });
