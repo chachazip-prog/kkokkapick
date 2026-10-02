@@ -8,6 +8,8 @@ for(const term of [
   "p_platform text default null",
   "t.platform=p_platform",
   "set enabled=false",
+  "pd.user_id=a.user_id",
+  "push_device_disabled_or_reassigned",
   "last_error='all_push_targets_failed'",
   'grant execute on function public.claim_price_alert_delivery_targets(integer,interval,integer,text)',
   'to service_role',
@@ -18,3 +20,8 @@ for(const term of [
 if(!sql.includes("status in ('pending','processing','sent','failed')"))throw new Error('target lifecycle constraint missing');
 if(!sql.includes("when p_retryable and not p_invalid_token and attempts<p_max_attempts then 'pending'"))throw new Error('invalid tokens must never retry');
 console.log('push target fanout DB contract PASS');
+
+const fcm=fs.readFileSync('src/fcm-sender.js','utf8');
+const apns=fs.readFileSync('src/apns-sender.js','utf8');
+if(/productId|observedPrice/.test(fcm.split('data: {')[1]?.split('}')[0]||''))throw new Error('FCM transport must not expose product identity/price');
+if(/productId|observedPrice/.test(apns.split('kkokkapick: {')[1]?.split('}')[0]||''))throw new Error('APNs transport must not expose product identity/price');
