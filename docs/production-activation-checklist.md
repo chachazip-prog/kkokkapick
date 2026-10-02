@@ -29,7 +29,9 @@ This checklist is for the final external-beta/store candidate. Repository-only r
 
 ## Push / provider / data rights
 
-- [ ] FCM/APNs sender and invalid-token cleanup verified on real devices if price-drop push is enabled
+- [ ] Native iOS/Android push token acquisition wired and real-device registration/rotation verified
+- [ ] FCM/APNs protected test-device smoke succeeds on each enabled platform
+- [ ] Per-device price-alert worker invalid-token cleanup, retry/dead-letter and multi-device partial-success behavior verified in production
 - [ ] Provider production rights/retention/attribution confirmed
 - [ ] Production catalog freshness and canonical offer aggregation verified against the approved provider boundary
 - [ ] No unsupported review bodies/specifications/popularity claims are introduced by production data
@@ -46,7 +48,7 @@ This checklist is for the final external-beta/store candidate. Repository-only r
 - [ ] Product Owner final release/submission authorization
 
 ## Repository gates already implemented
-- [x] Production migration set is continuous through 030 and has a SHA-256 manifest contract
+- [x] Production migration set is continuous through 031 and has a SHA-256 manifest contract
 - [x] Production schema verification emits machine-readable read-only RLS/RPC/grant/view evidence with strict validation
 - [x] Protected manual Production Supabase verification workflow exists and is non-destructive
 - [x] Non-destructive Email auth/session/account/catalog smoke contract exists
@@ -54,6 +56,10 @@ This checklist is for the final external-beta/store candidate. Repository-only r
 - [x] Social OAuth PKCE/deep-link callback transport is repository-wired on Android/iOS while the release UI still enables Email/password only
 - [x] Social callbacks without a locally pending secure PKCE flow cannot create a session
 - [x] Current release truthfully enables Email/password only; Google/Kakao/Naver/Apple remain target scope until provider configuration and real-device E2E exist
+- [x] Per-device push fan-out ledger prevents successful sibling devices from being resent during retries
+- [x] FCM HTTP v1 and APNs HTTP/2 sender adapters classify success/retry/invalid-token/terminal outcomes without logging tokens
+- [x] Push token registration/rotation coordinator avoids the offline account mutation outbox and supports remote detach before sign-out
+- [x] Production push smoke and bounded live worker workflows are protected, manual-only and emit sanitized evidence
 
 - [x] Product Owner-selected D03/v10 visual rebuild foundation merged
 - [x] Account/session release wiring for guest, authenticated and offline-authenticated states
