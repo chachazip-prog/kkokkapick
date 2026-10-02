@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-02T21:06:41.506Z",
-  "sourceCount": 555,
-  "productCount": 508,
-  "priceChangeCount": 22,
+  "syncedAt": "2026-10-02T21:43:04.201Z",
+  "sourceCount": 566,
+  "productCount": 519,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_e9ec6f62",
@@ -17260,6 +17260,358 @@
       "minPrice": 11070,
       "maxPrice": 11070,
       "brand": "헤지스키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_6e2bc05b",
+      "name": "[베네통키즈] QAMT14661QATP08661-그래픽 포인트 맨투맨상하세트 [QAMT14661TP08661]",
+      "normalizedName": "베네통키즈 qamt14661qatp08661 그래픽 포인트 맨투맨상하세트 qamt14661tp08661",
+      "variant": "",
+      "modelCode": "QAMT14661QATP08661",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065326",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065326"
+      ],
+      "category": "상하복",
+      "query": "베네통키즈 아동복",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 62400,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4739249?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_6e2bc05b"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 62400,
+      "maxPrice": 62400,
+      "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_531e8d28",
+      "name": "디즈니스토어/[공식] 미키와친구들 미키마우스 베이비 신생아용품 세트 (1000090052)/셋업 셋업",
+      "normalizedName": "디즈니스토어 미키와친구들 미키마우스 베이비 신생아용품 세트 1000090052 셋업 셋업",
+      "variant": "",
+      "modelCode": "1000090052",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065497",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065497"
+      ],
+      "category": "상하복",
+      "query": "베네통키즈 아동복",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 49500,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4739248?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_531e8d28"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 49500,
+      "maxPrice": 49500,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "신생아"
+    },
+    {
+      "id": "adpickbiz_382f6d5a",
+      "name": "[베네통키즈]26FW베네통키즈 그래픽 포인트 맨투맨,팬츠상하세트",
+      "normalizedName": "베네통키즈 26fw베네통키즈 그래픽 포인트 맨투맨 팬츠상하세트",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065411",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065411"
+      ],
+      "category": "상하복",
+      "query": "베네통키즈 아동복",
+      "offers": [
+        {
+          "merchant": "GS SHOP",
+          "merchantDomain": null,
+          "price": 48980,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4735228?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_382f6d5a"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 48980,
+      "maxPrice": 48980,
+      "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_568ab117",
+      "name": "[베네통키즈] 주니어 루즈핏 그래픽 맨투맨 QAMT15661 QAMT15661 +할인쿠폰",
+      "normalizedName": "베네통키즈 주니어 루즈핏 그래픽 맨투맨 qamt15661 qamt15661",
+      "variant": "",
+      "modelCode": "QAMT15661",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065156",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065156"
+      ],
+      "category": "상의",
+      "query": "베네통키즈 아동복",
+      "offers": [
+        {
+          "merchant": "Hmall",
+          "merchantDomain": null,
+          "price": 34160,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4739252?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_568ab117"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 34160,
+      "maxPrice": 34160,
+      "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_3d3811af",
+      "name": "26FW베네통키즈 그래픽 포인트 맨투맨팬츠상하세트QAMT01641TP01641",
+      "normalizedName": "26fw베네통키즈 그래픽 포인트 맨투맨팬츠상하세트qamt01641tp01641",
+      "variant": "",
+      "modelCode": "QAMT01641TP01641",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065245",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065245"
+      ],
+      "category": "상하복",
+      "query": "베네통키즈 아동복",
+      "offers": [
+        {
+          "merchant": "롯데홈쇼핑",
+          "merchantDomain": null,
+          "price": 45600,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4735230?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_3d3811af"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 45600,
+      "maxPrice": 45600,
+      "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_44d207c3",
+      "name": "베네통 키즈 골 벨로아 스?? 맨투맨_QAMT18661BR",
+      "normalizedName": "베네통 키즈 골 벨로아 스?? 맨투맨 qamt18661br",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065177",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065177"
+      ],
+      "category": "상의",
+      "query": "베네통키즈 아동복",
+      "offers": [
+        {
+          "merchant": "보리보리",
+          "merchantDomain": null,
+          "price": 58500,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4763372?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_44d207c3"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 58500,
+      "maxPrice": 58500,
+      "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_adf24cda",
+      "name": "[베네통키즈] QAKC07661/QASK06661- 페어아일 니트 집업 가디건 스커트 세트 [QAKC07661QASK06661]",
+      "normalizedName": "베네통키즈 qakc07661 qask06661 페어아일 니트 집업 가디건 스커트 세트 qakc07661qask06661",
+      "variant": "",
+      "modelCode": "QAKC07661",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065328",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065328"
+      ],
+      "category": "아우터",
+      "query": "베네통키즈 아동복",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 283100,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4739251?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_adf24cda"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 283100,
+      "maxPrice": 283100,
+      "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_b3b7bda3",
+      "name": "삠뽀요/포인 여아 벨로아 상하복/셋업 셋업",
+      "normalizedName": "삠뽀요 포인 여아 벨로아 상하복 셋업 셋업",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065499",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065499"
+      ],
+      "category": "상하복",
+      "query": "베네통키즈 아동복",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 60813,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4735227?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_b3b7bda3"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 60813,
+      "maxPrice": 60813,
+      "brand": "삠뽀요",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_669d01cf",
+      "name": "[베네통키즈]26S-뷔스티에 레이어드 티셔츠셋트 QATS13611,QASK07611",
+      "normalizedName": "베네통키즈 26s 뷔스티에 레이어드 티셔츠셋트 qats13611 qask07611",
+      "variant": "",
+      "modelCode": "QATS13611",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065413",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065413"
+      ],
+      "category": "상의",
+      "query": "베네통키즈 아동복",
+      "offers": [
+        {
+          "merchant": "GS SHOP",
+          "merchantDomain": null,
+          "price": 150480,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4771528?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_669d01cf"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 150480,
+      "maxPrice": 150480,
+      "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_64114c20",
+      "name": "[베네통키즈] 우븐 매치 양면 피케 맨투맨 QAMT03641 QAMT03641 +할인쿠폰",
+      "normalizedName": "베네통키즈 우븐 매치 양면 피케 맨투맨 qamt03641 qamt03641",
+      "variant": "",
+      "modelCode": "QAMT03641",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065157",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065157"
+      ],
+      "category": "상의",
+      "query": "베네통키즈 아동복",
+      "offers": [
+        {
+          "merchant": "Hmall",
+          "merchantDomain": null,
+          "price": 54150,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4735235?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_64114c20"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 54150,
+      "maxPrice": 54150,
+      "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_21e70351",
+      "name": "[베네통] 베네통키즈 피치 여아 원마일웨어 상하의 6종세트",
+      "normalizedName": "베네통 베네통키즈 피치 여아 원마일웨어 상하의 6종세트",
+      "variant": "6종",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065247",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507065247"
+      ],
+      "category": "기타",
+      "query": "베네통키즈 아동복",
+      "offers": [
+        {
+          "merchant": "롯데홈쇼핑",
+          "merchantDomain": null,
+          "price": 48960,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4735236?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_21e70351"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 48960,
+      "maxPrice": 48960,
+      "brand": "베네통키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
