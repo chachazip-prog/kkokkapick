@@ -43,7 +43,8 @@ const repoChecks = {
     auth.includes('static const supportedMethods=<AuthMethod>{AuthMethod.emailPassword}') &&
     auth.includes('Social authentication is not enabled in this release.') &&
     socialAuth.includes("const socialAuthCallbackUri = 'kkokkapick://auth/callback'") &&
-    socialAuth.includes("'s256'") &&
+    socialGateway.includes("code_challenge_method") &&
+    socialGateway.includes("'s256'") &&
     socialGateway.includes("token?grant_type=pkce") &&
     androidManifest.includes('android:scheme="kkokkapick"') &&
     iosWorkflow.includes('CFBundleURLSchemes') &&
