@@ -9,17 +9,17 @@ const ios=fs.readFileSync('.github/workflows/ios-release-foundation.yml','utf8')
 const auth=fs.readFileSync('flutter/lib/services/authentication.dart','utf8');
 const pub=fs.readFileSync('flutter/pubspec.yaml','utf8');
 
-for(const term of [
-  "const socialAuthCallbackUri = 'kkokkapick://auth/callback'",
-  "code_challenge_method",
-  "'s256'",
-]) if(!social.includes(term)) throw new Error('social OAuth contract missing: '+term);
+if(!social.includes("const socialAuthCallbackUri = 'kkokkapick://auth/callback'")) {
+  throw new Error('social OAuth callback constant missing');
+}
 
 for(const term of [
+  "code_challenge_method",
+  "'s256'",
   "token?grant_type=pkce",
   "'auth_code': parsed.code",
   "'code_verifier': pending.codeVerifier",
-]) if(!gateway.includes(term)) throw new Error('Supabase PKCE exchange missing: '+term);
+]) if(!gateway.includes(term)) throw new Error('Supabase PKCE authorize/exchange missing: '+term);
 
 if(!manifest.includes('android:scheme="kkokkapick"')||
    !manifest.includes('android:host="auth"')||
