@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-02T19:02:50.239Z",
+  "updatedAt": "2026-10-02T21:06:41.506Z",
   "retention": "bounded_demo_events",
   "events": [
     {
@@ -1906,6 +1906,182 @@
       "price": 64210,
       "direction": "down",
       "changeAmount": -7700
+    },
+    {
+      "productId": "adpickbiz_27f84bb6",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 16840,
+      "price": 18130,
+      "direction": "up",
+      "changeAmount": 1290
+    },
+    {
+      "productId": "adpickbiz_a89c3b59",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 13590,
+      "price": 14630,
+      "direction": "up",
+      "changeAmount": 1040
+    },
+    {
+      "productId": "adpickbiz_3ba2760c",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 12940,
+      "price": 13930,
+      "direction": "up",
+      "changeAmount": 990
+    },
+    {
+      "productId": "adpickbiz_a736cebc",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 20928,
+      "price": 20492,
+      "direction": "down",
+      "changeAmount": -436
+    },
+    {
+      "productId": "adpickbiz_3ef5c6c",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 14890,
+      "price": 16030,
+      "direction": "up",
+      "changeAmount": 1140
+    },
+    {
+      "productId": "adpickbiz_7b335584",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 12940,
+      "price": 13930,
+      "direction": "up",
+      "changeAmount": 990
+    },
+    {
+      "productId": "adpickbiz_1030c2e4",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 8390,
+      "price": 9030,
+      "direction": "up",
+      "changeAmount": 640
+    },
+    {
+      "productId": "adpickbiz_bf8f258",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 10340,
+      "price": 11130,
+      "direction": "up",
+      "changeAmount": 790
+    },
+    {
+      "productId": "adpickbiz_86f175a9",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 10340,
+      "price": 11130,
+      "direction": "up",
+      "changeAmount": 790
+    },
+    {
+      "productId": "adpickbiz_b8086161",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 15540,
+      "price": 16730,
+      "direction": "up",
+      "changeAmount": 1190
+    },
+    {
+      "productId": "adpickbiz_f791e8c3",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 12290,
+      "price": 13230,
+      "direction": "up",
+      "changeAmount": 940
+    },
+    {
+      "productId": "adpickbiz_c708bc84",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 12290,
+      "price": 13230,
+      "direction": "up",
+      "changeAmount": 940
+    },
+    {
+      "productId": "adpickbiz_f8d896b6",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 7740,
+      "price": 8330,
+      "direction": "up",
+      "changeAmount": 590
+    },
+    {
+      "productId": "adpickbiz_b550b6e9",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 58440,
+      "price": 62930,
+      "direction": "up",
+      "changeAmount": 4490
+    },
+    {
+      "productId": "adpickbiz_51d4050a",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 15540,
+      "price": 16730,
+      "direction": "up",
+      "changeAmount": 1190
+    },
+    {
+      "productId": "adpickbiz_92c562eb",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 98380,
+      "price": 86990,
+      "direction": "down",
+      "changeAmount": -11390
+    },
+    {
+      "productId": "adpickbiz_2d4a40f8",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 62250,
+      "price": 55880,
+      "direction": "down",
+      "changeAmount": -6370
+    },
+    {
+      "productId": "adpickbiz_4399b965",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 30880,
+      "price": 27530,
+      "direction": "down",
+      "changeAmount": -3350
+    },
+    {
+      "productId": "adpickbiz_a000d05d",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 151050,
+      "price": 121510,
+      "direction": "down",
+      "changeAmount": -29540
+    },
+    {
+      "productId": "adpickbiz_e75f0737",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 170050,
+      "price": 150360,
+      "direction": "down",
+      "changeAmount": -19690
+    },
+    {
+      "productId": "adpickbiz_1ee6d78f",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 269330,
+      "price": 194520,
+      "direction": "down",
+      "changeAmount": -74810
+    },
+    {
+      "productId": "adpickbiz_97f30ea9",
+      "observedAt": "2026-10-02T21:06:41.506Z",
+      "previousPrice": 269330,
+      "price": 194520,
+      "direction": "down",
+      "changeAmount": -74810
     }
   ]
 }
