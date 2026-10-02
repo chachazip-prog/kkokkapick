@@ -99,10 +99,11 @@ void main() {
   });
 
   test('valid callback exchanges auth code with saved PKCE verifier and stores session', () async {
+    final verifier = _verifier();
     final pending = _PendingStore()
       ..value = PendingSocialAuth(
         method: AuthMethod.google,
-        codeVerifier: _verifier(),
+        codeVerifier: verifier,
         createdAt: DateTime.utc(2026, 10, 3, 1),
       );
     final tokens = _TokenStore();
@@ -111,7 +112,7 @@ void main() {
       expect(request.url.queryParameters['grant_type'], 'pkce');
       expect(request.headers['apikey'], 'public');
       expect(request.body, contains('"auth_code":"oauth-code"'));
-      expect(request.body, contains('"code_verifier":"NaN"'));
+      expect(request.body, contains('"code_verifier":"$verifier"'));
       return http.Response(
         '{"access_token":"access","refresh_token":"refresh","user":{"id":"u1"}}',
         200,
