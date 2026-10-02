@@ -11,7 +11,7 @@ execFileSync(process.execPath, ['scripts/external-beta-readiness.js'], {
 });
 const snapshot = JSON.parse(fs.readFileSync(output, 'utf8'));
 if (snapshot.status !== 'REPOSITORY_READY_EXTERNAL_BLOCKED') throw new Error('repository readiness snapshot must distinguish external blockers');
-if (!snapshot.latestMigration?.startsWith('030_')) throw new Error('latest migration evidence changed');
+if (!snapshot.latestMigration?.startsWith('031_')) throw new Error('latest migration evidence changed');
 if (snapshot.gates.length !== 10) throw new Error('expected ten external beta gates');
 for (const gate of snapshot.gates) {
   if (gate.repository !== 'REPOSITORY_READY') throw new Error('repository gap remains: ' + gate.id);
