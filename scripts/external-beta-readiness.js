@@ -10,6 +10,9 @@ const latestMigration = migrations.at(-1) || null;
 
 const verificationSql = read('supabase/production-verification.sql');
 const auth = read('flutter/lib/services/authentication.dart');
+const socialAuth = read('flutter/lib/services/social_auth.dart');
+const socialGateway = read('flutter/lib/services/supabase_authentication_gateway.dart');
+const androidManifest = read('flutter/android/app/src/main/AndroidManifest.xml');
 const storeWorkflow = read('.github/workflows/store-candidate.yml');
 const androidGradle = read('flutter/android/app/build.gradle.kts');
 const iosWorkflow = read('.github/workflows/ios-release-foundation.yml');
@@ -38,7 +41,14 @@ const repoChecks = {
   authTruthfulness:
     auth.includes('static const targetMethods') &&
     auth.includes('static const supportedMethods=<AuthMethod>{AuthMethod.emailPassword}') &&
-    auth.includes('Social authentication is not enabled in this release.'),
+    auth.includes('Social authentication is not enabled in this release.') &&
+    socialAuth.includes("const socialAuthCallbackUri = 'kkokkapick://auth/callback'") &&
+    socialGateway.includes("code_challenge_method") &&
+    socialGateway.includes("'s256'") &&
+    socialGateway.includes("token?grant_type=pkce") &&
+    androidManifest.includes('android:scheme="kkokkapick"') &&
+    iosWorkflow.includes('CFBundleURLSchemes') &&
+    iosWorkflow.includes('string kkokkapick'),
   pushWorkerBoundary:
     pushContract.includes('never log raw tokens') &&
     pushContract.includes('Invalid-token cleanup') &&
@@ -79,7 +89,7 @@ const gates = [
     id: 'social_auth',
     repository: repoChecks.authTruthfulness ? 'REPOSITORY_READY' : 'REPOSITORY_GAP',
     external: 'BLOCKED_EXTERNAL',
-    requires: 'Provider apps/credentials, callbacks/deep links, client OAuth return handling and provider E2E. Email/password is the only enabled method today.',
+    requires: 'Provider apps/credentials, Supabase provider enablement + redirect allow-list and real-device provider E2E. PKCE/deep-link client transport is repository-ready; Email/password is the only enabled method today.',
   },
   {
     id: 'push_delivery',

@@ -5,6 +5,7 @@ This is an engineering inventory for release review. It is not final legal wordi
 | Data/category | Purpose | Storage/boundary | Deletion behavior | Store-review note |
 | --- | --- | --- | --- | --- |
 | Account identity / email when email auth is enabled | authentication | chosen Supabase Auth environment | identity removed by authenticated account-deletion RPC | auth providers are Product Owner gate |
+| OAuth PKCE verifier / pending provider method | protect an in-progress social login from code interception | secure local device storage only while one OAuth flow is pending | cleared on success, provider denial, invalid terminal exchange, cancellation or expiry | not analytics; never upload/log verifier |
 | Child age/months, height, weight | fit recommendation | local device; account profile only after explicit sync | local app-data clear + account deletion | child profile is about clothing fit; do not collect child identity |
 | Favorites | saved products | local device; account storage after explicit sync | local clear + account deletion | app functionality |
 | Price-alert target | price notification | local/account storage | local clear + account deletion | app functionality |

@@ -71,6 +71,7 @@ jobs:
           node test/production-verification-validator.test.js
           node test/production-email-auth-smoke.test.js
           node test/production-supabase-activation-workflow.test.js
+          node test/social-auth-platform-contract.test.js
       - name: Check catalog image URL coverage
         run: node scripts/catalog-image-quality.js
 

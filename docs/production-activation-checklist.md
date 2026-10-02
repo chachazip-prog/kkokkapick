@@ -23,7 +23,7 @@ This checklist is for the final external-beta/store candidate. Repository-only r
 - [ ] Account deletion contract is green and deployed environment E2E verifies deletion/cascades/session invalidation
 - [ ] Production config preflight is green; approved catalog read boundary configured and GitHub Pages fallback absent from store candidate
 - [ ] Email/password production auth verified
-- [ ] Social authentication providers approved/configured and client callback/deep-link return handling implemented before any social method is enabled
+- [ ] Social authentication providers approved/configured, `kkokkapick://auth/callback` allow-listed, and real-device provider E2E approved before any social method is enabled
 - [ ] Guest -> authenticated -> sign-out -> different-account switch E2E confirms server/account isolation
 - [ ] First-sign-in device-data sync consent is verified against the deployed account boundary
 
@@ -51,7 +51,9 @@ This checklist is for the final external-beta/store candidate. Repository-only r
 - [x] Protected manual Production Supabase verification workflow exists and is non-destructive
 - [x] Non-destructive Email auth/session/account/catalog smoke contract exists
 - [x] Production operator runbook separates backup, migration, smoke, deletion E2E and restore evidence
-- [x] Current release truthfully enables Email/password only; Google/Kakao/Naver/Apple remain target scope until callback wiring and provider E2E exist
+- [x] Social OAuth PKCE/deep-link callback transport is repository-wired on Android/iOS while the release UI still enables Email/password only
+- [x] Social callbacks without a locally pending secure PKCE flow cannot create a session
+- [x] Current release truthfully enables Email/password only; Google/Kakao/Naver/Apple remain target scope until provider configuration and real-device E2E exist
 
 - [x] Product Owner-selected D03/v10 visual rebuild foundation merged
 - [x] Account/session release wiring for guest, authenticated and offline-authenticated states

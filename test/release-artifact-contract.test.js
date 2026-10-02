@@ -9,7 +9,7 @@ const required=[
 ];
 for(const p of required)if(!fs.existsSync(p))throw new Error('release artifact missing: '+p);
 const pub=fs.readFileSync('flutter/pubspec.yaml','utf8');
-for(const dep of ['http:','shared_preferences:','flutter_secure_storage:','url_launcher:'])if(!pub.includes(dep))throw new Error('dependency inventory changed; review privacy/security impact: '+dep);
+for(const dep of ['http:','shared_preferences:','flutter_secure_storage:','url_launcher:','app_links:','crypto:'])if(!pub.includes(dep))throw new Error('dependency inventory changed; review privacy/security impact: '+dep);
 for(const p of ['scripts/production-migration-manifest.js','scripts/validate-production-verification.js','scripts/production-email-auth-smoke.js','.github/workflows/production-supabase-activation.yml'])if(!fs.existsSync(p))throw new Error('production activation artifact missing: '+p);
 const privacy=fs.readFileSync('docs/technical-privacy-inventory.md','utf8');
 for(const term of ['Child age/months, height, weight','Push token','Opaque commercial session key','Provider catalog/product/offer data'])if(!privacy.includes(term))throw new Error('technical privacy inventory missing: '+term);

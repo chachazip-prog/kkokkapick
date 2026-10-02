@@ -13,6 +13,9 @@ import 'services/home_feed_ranking.dart';
 import 'services/local_account_data_store.dart';
 import 'services/overlay_coordinator.dart';
 import 'services/secure_session_token_store.dart';
+import 'services/secure_social_auth_store.dart';
+import 'services/social_auth.dart';
+import 'services/social_auth_callback_router.dart';
 import 'services/supabase_authentication_gateway.dart';
 import 'theme/kkokkapick_theme.dart';
 import 'widgets/brand_identity.dart';
@@ -70,6 +73,7 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
   AppSessionState _sessionState = AppSessionState.guest;
   bool _sessionBusy = false;
   SupabaseAuthenticationGateway? _authentication;
+  SocialAuthCallbackRouter? _socialAuthRouter;
   AppSessionOrchestrator? _session;
 
   bool get _sessionConfigured =>
@@ -84,7 +88,14 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
         baseUrl: _supabaseUrl,
         anonKey: _supabaseAnonKey,
         tokenStore: SecureSessionTokenStore(),
+        socialFlowStore: SecurePendingSocialAuthStore(),
       );
+      _socialAuthRouter = SocialAuthCallbackRouter(
+        authentication: _authentication!,
+        source: AppLinksSocialAuthLinkSource(),
+        onAuthenticated: _handleSocialAuthenticated,
+        onError: _handleSocialAuthError,
+      )..start();
       _session = AppSessionOrchestrator(
         authentication: _authentication!,
         localData: _localData,
@@ -97,8 +108,20 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
 
   @override
   void dispose() {
+    _socialAuthRouter?.dispose();
     _search.dispose();
     super.dispose();
+  }
+
+  Future<void> _handleSocialAuthenticated() async {
+    if (!mounted) return;
+    setState(() => _sessionState = AppSessionState.authenticated);
+    await _askFirstSignInSync();
+  }
+
+  void _handleSocialAuthError(Object error) {
+    if (!mounted || error is SocialAuthFlowUnavailable) return;
+    _toast('소셜 로그인 연결을 완료하지 못했어요.');
   }
 
   Future<void> _bootstrap() async {
