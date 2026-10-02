@@ -1,6 +1,6 @@
 # Production activation checklist
 
-Updated: 2026-09-30
+Updated: 2026-10-03
 
 This checklist is for the final external-beta/store candidate. Repository-only readiness and production activation are intentionally separated.
 
@@ -46,6 +46,11 @@ This checklist is for the final external-beta/store candidate. Repository-only r
 - [ ] Product Owner final release/submission authorization
 
 ## Repository gates already implemented
+- [x] Production migration set is continuous through 030 and has a SHA-256 manifest contract
+- [x] Production schema verification emits machine-readable read-only RLS/RPC/grant/view evidence with strict validation
+- [x] Protected manual Production Supabase verification workflow exists and is non-destructive
+- [x] Non-destructive Email auth/session/account/catalog smoke contract exists
+- [x] Production operator runbook separates backup, migration, smoke, deletion E2E and restore evidence
 - [x] Current release truthfully enables Email/password only; Google/Kakao/Naver/Apple remain target scope until callback wiring and provider E2E exist
 
 - [x] Product Owner-selected D03/v10 visual rebuild foundation merged
