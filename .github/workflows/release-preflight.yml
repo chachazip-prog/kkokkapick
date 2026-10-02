@@ -21,6 +21,7 @@ jobs:
     timeout-minutes: 5
     env:
       REQUIRE_PRODUCTION_CONFIG: ${{ inputs.require_production_config && '1' || '0' }}
+      APP_ENV: ${{ inputs.require_production_config && 'production' || 'preview' }}
       SUPABASE_URL: ${{ secrets.PRODUCTION_SUPABASE_URL }}
       SUPABASE_ANON_KEY: ${{ secrets.PRODUCTION_SUPABASE_ANON_KEY }}
     steps:
