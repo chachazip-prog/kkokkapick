@@ -6,11 +6,11 @@ This is the independent QA execution sheet for the Product Owner-selected D03/v1
 
 ## Current frozen candidate
 
-- Release/source SHA: `31b92cabaa8618f649310ac527ca33beb23498f5`
-- Preview deployment commit: `cbcca68138f7b1494a827ae65c520cb76d6c0c33`
-- Preview workflow run: `37004324037` (`Deploy Flutter UI preview`)
+- Release/source SHA: `9122831786ff3fa335e4f8806954bc4f375f229e`
+- Preview deployment commit: `edd22cbce11fa7e7c77f07eb1b1cb1507dea6b18`
+- Preview workflow run: `37071754360` (`Deploy Flutter UI preview` #38)
 - Freeze date: 2026-10-03
-- This candidate includes #153 My/overlay hardening. Physical-device evidence must record this exact Flutter source SHA.
+- This candidate includes #159 external-beta/auth truthfulness hardening. Physical-device evidence must record this exact Flutter source SHA.
 - Catalog evidence is runtime data and may advance independently through the scheduled ADPICK refresh; record the catalog `syncedAt` visible/verified during the device run.
 
 ## Test matrix
