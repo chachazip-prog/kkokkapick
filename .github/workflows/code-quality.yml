@@ -64,6 +64,7 @@ jobs:
           node test/preview-parity.test.js
           node test/release-hardening-contract.test.js
           node test/image-health.test.js
+          node test/physical-qa-snapshot.test.js
       - name: Check catalog image URL coverage
         run: node scripts/catalog-image-quality.js
 
@@ -85,6 +86,7 @@ jobs:
           node --check scripts/catalog-image-health.js
           node --check scripts/adpick-image-diagnostic.js
           node --check src/image-health.js
+          node --check scripts/physical-qa-snapshot.js
       - name: Security sanity checks
         run: |
           if grep -R -n -E '(service_role|SUPABASE_SERVICE_ROLE|ADPICK_BIZ_API_KEY)[[:space:]]*[:=][[:space:]]*["'\''"][^"'\'']+' admin src flutter supabase --exclude='*.md'; then
