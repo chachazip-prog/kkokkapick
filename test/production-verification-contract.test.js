@@ -7,11 +7,12 @@ for(const rpc of [
   'get_published_catalog','get_my_app_data','sync_my_app_data','set_my_favorite',
   'set_my_price_alert','set_my_child_profile','delete_my_app_data','delete_my_account',
   'set_my_push_device','remove_my_push_device','record_commercial_event',
-  'evaluate_price_alerts','claim_price_alert_deliveries','complete_price_alert_delivery'
+  'evaluate_price_alerts','claim_price_alert_deliveries','complete_price_alert_delivery',
+  'claim_price_alert_delivery_targets','complete_price_alert_delivery_target'
 ]) if(!sql.includes(rpc)) throw new Error('verification missing RPC: '+rpc);
 
 for(const table of [
-  'profiles','child_profiles','favorites','price_alerts','push_devices','price_alert_deliveries',
+  'profiles','child_profiles','favorites','price_alerts','push_devices','price_alert_deliveries','price_alert_delivery_targets',
   'providers','provider_themes','products','product_sizes','offers','price_history','brand_size_guides',
   'commercial_partners','commercial_campaigns','commercial_campaign_products','commercial_events',
   'admin_users','managed_popups','catalog_overrides','brand_size_evidence','admin_audit_log'
