@@ -1,0 +1,49 @@
+name: External beta readiness snapshot
+
+on:
+  pull_request:
+    paths:
+      - "scripts/external-beta-readiness.js"
+      - "test/external-beta-readiness.test.js"
+      - "docs/**"
+      - "flutter/lib/services/authentication.dart"
+      - "flutter/lib/services/app_error_reporter.dart"
+      - "supabase/**"
+      - ".github/workflows/store-candidate.yml"
+      - ".github/workflows/ios-release-foundation.yml"
+      - "flutter/android/app/build.gradle.kts"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/external-beta-readiness.js"
+      - "test/external-beta-readiness.test.js"
+      - "docs/**"
+      - "flutter/lib/services/authentication.dart"
+      - "flutter/lib/services/app_error_reporter.dart"
+      - "supabase/**"
+      - ".github/workflows/store-candidate.yml"
+      - ".github/workflows/ios-release-foundation.yml"
+      - "flutter/android/app/build.gradle.kts"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Generate external beta readiness snapshot
+        run: node scripts/external-beta-readiness.js
+      - name: Upload readiness evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-beta-readiness
+          path: artifacts/external-beta-readiness.json
+          if-no-files-found: error
+          retention-days: 30
