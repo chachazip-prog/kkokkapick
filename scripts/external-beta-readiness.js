@@ -1,0 +1,142 @@
+const fs = require('fs');
+const path = require('path');
+
+const exists = p => fs.existsSync(p);
+const read = p => fs.readFileSync(p, 'utf8');
+const migrations = fs.readdirSync('supabase/migrations')
+  .filter(name => /^\d{3}_.+\.sql$/.test(name))
+  .sort();
+const latestMigration = migrations.at(-1) || null;
+
+const verificationSql = read('supabase/production-verification.sql');
+const auth = read('flutter/lib/services/authentication.dart');
+const storeWorkflow = read('.github/workflows/store-candidate.yml');
+const androidGradle = read('flutter/android/app/build.gradle.kts');
+const iosWorkflow = read('.github/workflows/ios-release-foundation.yml');
+const pushContract = read('docs/push-worker-contract.md');
+const storePack = read('docs/store-submission-pack.md');
+const ops = read('docs/release-operations-runbook.md');
+const reporter = read('flutter/lib/services/app_error_reporter.dart');
+const physicalQa = read('docs/physical-device-release-qa.md');
+
+const repoChecks = {
+  productionVerificationPack:
+    /begin read only/i.test(verificationSql) &&
+    /rollback;/i.test(verificationSql) &&
+    exists('docs/production-verification-evidence.md') &&
+    latestMigration?.startsWith('029_'),
+  productionConfigBoundary:
+    storeWorkflow.includes('APP_ENV: production') &&
+    storeWorkflow.includes('PRODUCTION_SUPABASE_URL') &&
+    storeWorkflow.includes('PRODUCTION_SUPABASE_ANON_KEY') &&
+    exists('scripts/guard-production-config.sh'),
+  authTruthfulness:
+    auth.includes('static const targetMethods') &&
+    auth.includes('static const supportedMethods=<AuthMethod>{AuthMethod.emailPassword}') &&
+    auth.includes('Social authentication is not enabled in this release.'),
+  pushWorkerBoundary:
+    pushContract.includes('never log raw tokens') &&
+    pushContract.includes('Invalid-token cleanup') &&
+    pushContract.includes('FCM/APNs'),
+  appIdentifiers:
+    androidGradle.includes('applicationId = "com.kkokkapick.app"') &&
+    iosWorkflow.includes('PRODUCT_BUNDLE_IDENTIFIER = com.kkokkapick.app;'),
+  signingBoundary:
+    androidGradle.includes('Release signing is injected only by protected CI/store credentials') &&
+    storeWorkflow.includes('flutter build ios --release --no-codesign'),
+  legalPlaceholders:
+    storePack.includes('TBD Product Owner') &&
+    storePack.includes('TBD final public support URL') &&
+    storePack.includes('TBD final public privacy URL'),
+  operationsRunbook:
+    ops.includes('backup/restore') &&
+    ops.includes('Rollback') &&
+    ops.includes('Incident minimum record'),
+  telemetryBoundary:
+    reporter.includes('abstract interface class AppErrorReporter') &&
+    reporter.includes('NoopAppErrorReporter') &&
+    reporter.includes('sanitizeDiagnosticText'),
+  physicalQaBoundary:
+    physicalQa.includes('PREPARED_NOT_EXECUTED') &&
+    physicalQa.includes('320 px logical width') &&
+    physicalQa.includes('iOS Safari') &&
+    physicalQa.includes('Android installed build'),
+};
+
+const gates = [
+  {
+    id: 'production_supabase',
+    repository: repoChecks.productionVerificationPack && repoChecks.productionConfigBoundary ? 'REPOSITORY_READY' : 'REPOSITORY_GAP',
+    external: 'BLOCKED_EXTERNAL',
+    requires: 'Production Supabase project, public URL/anon key, applied migrations, read-only RLS/RPC verification evidence and deletion E2E.',
+  },
+  {
+    id: 'social_auth',
+    repository: repoChecks.authTruthfulness ? 'REPOSITORY_READY' : 'REPOSITORY_GAP',
+    external: 'BLOCKED_EXTERNAL',
+    requires: 'Provider apps/credentials, callbacks/deep links, client OAuth return handling and provider E2E. Email/password is the only enabled method today.',
+  },
+  {
+    id: 'push_delivery',
+    repository: repoChecks.pushWorkerBoundary ? 'REPOSITORY_READY' : 'REPOSITORY_GAP',
+    external: 'BLOCKED_EXTERNAL',
+    requires: 'FCM/APNs credentials, real-device delivery, invalid-token cleanup and retry/dead-letter evidence.',
+  },
+  {
+    id: 'provider_rights',
+    repository: 'REPOSITORY_READY',
+    external: 'BLOCKED_EXTERNAL',
+    requires: 'Written production retention/redisplay/image/attribution authorization.',
+  },
+  {
+    id: 'app_registration_and_signing',
+    repository: repoChecks.appIdentifiers && repoChecks.signingBoundary ? 'REPOSITORY_READY' : 'REPOSITORY_GAP',
+    external: 'BLOCKED_EXTERNAL',
+    requires: 'Apple/Google identifier registrations, protected signing credentials and signed artifact checksums.',
+  },
+  {
+    id: 'legal_support_privacy',
+    repository: repoChecks.legalPlaceholders ? 'REPOSITORY_READY' : 'REPOSITORY_GAP',
+    external: 'BLOCKED_EXTERNAL',
+    requires: 'Final business/controller identity, contact/support channel, approved privacy/deletion URLs, retention/processors.',
+  },
+  {
+    id: 'backup_restore_rollback',
+    repository: repoChecks.operationsRunbook ? 'REPOSITORY_READY' : 'REPOSITORY_GAP',
+    external: 'BLOCKED_EXTERNAL',
+    requires: 'Production-like backup identifier, restore validation and rollback/forward-fix rehearsal record.',
+  },
+  {
+    id: 'crash_monitoring',
+    repository: repoChecks.telemetryBoundary ? 'REPOSITORY_READY' : 'REPOSITORY_GAP',
+    external: 'BLOCKED_EXTERNAL',
+    requires: 'Selected production crash backend, sanitized delivery verification, alert route and incident owner.',
+  },
+  {
+    id: 'physical_device_qa',
+    repository: repoChecks.physicalQaBoundary ? 'REPOSITORY_READY' : 'REPOSITORY_GAP',
+    external: 'BLOCKED_EXTERNAL',
+    requires: 'Actual iOS/Android device evidence, iOS Safari, 100/200% text, VoiceOver/TalkBack and approved-reference comparison.',
+  },
+  {
+    id: 'final_submission',
+    repository: Object.values(repoChecks).every(Boolean) ? 'REPOSITORY_READY' : 'REPOSITORY_GAP',
+    external: 'HOLD_PRODUCT_OWNER',
+    requires: 'Frozen signed release SHA plus explicit Product Owner authorization after all applicable external gates are complete.',
+  },
+];
+
+const output = {
+  generatedAt: new Date().toISOString(),
+  status: Object.values(repoChecks).every(Boolean) ? 'REPOSITORY_READY_EXTERNAL_BLOCKED' : 'REPOSITORY_GAPS_PRESENT',
+  latestMigration,
+  migrationCount: migrations.length,
+  repoChecks,
+  gates,
+};
+
+const reportPath = process.env.EXTERNAL_BETA_READINESS_REPORT || 'artifacts/external-beta-readiness.json';
+fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+fs.writeFileSync(reportPath, JSON.stringify(output, null, 2) + '\n');
+console.log(JSON.stringify(output, null, 2));
+if (!Object.values(repoChecks).every(Boolean)) process.exitCode = 1;
