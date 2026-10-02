@@ -728,6 +728,7 @@ class _V11ReleaseShellState extends State<V11ReleaseShell> {
         onSignOut: _signOut,
         onDeleteAppData: _deleteAppData,
         onDeleteAccount: _deleteAccount,
+        overlayCoordinator: _overlayCoordinator,
       ),
     ];
 
