@@ -57,3 +57,21 @@ jobs:
             exit 1
           fi
           git push origin HEAD:main
+
+      - name: Verify catalog image health after publish
+        env:
+          IMAGE_HEALTH_SAMPLE_SIZE: "40"
+          IMAGE_HEALTH_TIMEOUT_MS: "5000"
+          IMAGE_HEALTH_CONCURRENCY: "5"
+          IMAGE_HEALTH_MIN_SUCCESS_RATE: "0.8"
+          IMAGE_HEALTH_REPORT: artifacts/post-publish-catalog-image-health.json
+        run: node scripts/catalog-image-health.js
+
+      - name: Upload post-publish image health evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: post-publish-catalog-image-health
+          path: artifacts/post-publish-catalog-image-health.json
+          if-no-files-found: warn
+          retention-days: 14
