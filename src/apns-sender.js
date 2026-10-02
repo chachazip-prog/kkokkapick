@@ -27,7 +27,7 @@ export function createApnsProviderToken(
   });
   const input = `${header}.${payload}`;
   const signature = crypto.sign(
-    null,
+    'SHA256',
     Buffer.from(input),
     {
       key: privateKey,
