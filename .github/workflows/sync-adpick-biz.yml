@@ -7,7 +7,7 @@ on:
     paths:
       - ".github/workflows/sync-adpick-biz.yml"
   schedule:
-    - cron: "43 */2 * * *"
+    - cron: "43 * * * *"
 
 permissions:
   contents: write

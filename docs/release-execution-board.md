@@ -22,7 +22,7 @@ Every release item moves through the same sequence unless marked external-only:
 | Visual RC / #110 | locked to approved D03 reference and ten-item checklist | repository corrections substantially complete; #124/#126 and release hardening #152 merged | merge source `1ea27692873d` has 7/7 post-merge workflows green; Flutter preview deployment #36 succeeded | 320/360/390/430 physical devices + iOS Safari + approved-reference independent visual QA | freeze `1ea27692873d` as the current visual evidence source and execute deployed/physical-device comparison; any defect returns to FE |
 | Account/data / #104 | guest-first, explicit first-sync consent, truthful offline state | repository path substantially complete | account switch, restore, deletion and local snapshot contracts exist | production Supabase/auth/RLS/deletion E2E | keep issue open until production environment evidence exists |
 | Production backend | Supabase / narrow public catalog boundary selected | migrations/RLS/RPC repository foundation exists | repository preflight exists | create production project, apply migrations, run verification pack | Product Owner/DevOps activation input required |
-| Catalog/provider | ADPICK server-side only, TTL fail-closed pending final rights | ingestion/grouping/title/gallery logic exists; #154 adds per-sync HTTP/MIME validation and fail-closed image handling | 2026-10-02 recovery evidence: fresh ADPICK diagnostic 15/15 HTTP 200 `image/jpeg`; full sync #39 validated 564/564 source images, published 517 canonical products with 517/517 images, 38 multi-image and 0 channel-prefixed display titles; refresh + health surveillance now every 2h | written retention/redisplay/image/attribution rights remain external | image renderability blocker cleared for current catalog; keep 2h health monitoring green and retain provider-rights gate |
+| Catalog/provider | ADPICK server-side only, TTL fail-closed pending final rights | ingestion/grouping/title/gallery logic exists; #154 adds per-sync HTTP/MIME validation and fail-closed image handling | current main catalog (2026-10-02T21:06Z): 555/555 source images healthy, 508/508 canonical products with images, 38 multi-image, 0 channel-prefixed titles; overnight monitoring showed image expiry can occur around 86–90 minutes, so refresh is tightened to hourly with post-publish + mid-window health checks | written retention/redisplay/image/attribution rights remain external | keep hourly image freshness green; retain provider-rights gate |
 | Auth providers | Apple/Google/Kakao/Naver/Email target set | email/session foundation exists; social paths remain gated | auth boundary tests exist | provider apps/callbacks/credentials; Naver compatibility | Product Owner/DevOps external setup |
 | Push price alerts | threshold, ownership, claim/finalize/retry contracts exist | repository worker/DB foundation exists | push worker contract exists | credentialed FCM/APNs device delivery + invalid-token cleanup | DevOps external setup |
 | Native signing | app id `com.kkokkapick.app` fixed; unsigned CI is the repository gate | Android/iOS unsigned foundations exist | Android/iOS unsigned workflows | protected Apple/Google signing + signed checksums | store-account/signing setup |
@@ -61,10 +61,11 @@ Every release item moves through the same sequence unless marked external-only:
 | 10 | approved D03 rhythm, not generic dashboard styling | structurally evidenced by implementation/contracts, not independently signed off | final approved-reference and physical-device visual sign-off |
 
 ## Frozen visual evidence source
-- Flutter source revision: `1ea27692873d6e678daa4c6355317f02ce48f8ca`
-- Preview deployment commit: `8c4cf7e864a45ad4e953ae02c53f7daeb738283e`
-- Preview workflow run: `37002091263` (`Deploy Flutter UI preview` #36, SUCCESS).
-- `flutter-preview/SOURCE_REVISION` and `release-evidence.json` both point to the source revision above.
+- Flutter source revision: `31b92cabaa8618f649310ac527ca33beb23498f5`
+- Preview deployment commit: `cbcca68138f7b1494a827ae65c520cb76d6c0c33`
+- Preview workflow run: `37004324037` (`Deploy Flutter UI preview`, SUCCESS).
+- `flutter-preview/SOURCE_REVISION` and `release-evidence.json` both point to `31b92cab…`.
+- The Preview loads `/data/catalog.json` at runtime, so scheduled catalog data may advance independently of the frozen Flutter UI source.
 - Scheduled catalog refreshes may advance `main`; physical visual QA must record the source revision it actually verifies rather than assuming current main equals the frozen UI source.
 
 ## Evidence rules

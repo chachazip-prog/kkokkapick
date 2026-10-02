@@ -24,9 +24,12 @@ ADPICK BIZ `/search` documents `photo` as the product-image field. Kkokkapick co
 
 Operational evidence on 2026-10-02 showed that a catalog synced at 07:07 KST had sampled image URLs returning HTTP 404 by 11:53, while a fresh API diagnostic at 12:24 returned 15/15 image responses as HTTP 200 `image/jpeg` from the same CloudFront host. This is an observed expiry/freshness characteristic, not a claim about an ADPICK contractual TTL.
 
+Additional overnight evidence on 2026-10-02 showed that at roughly 86–90 minutes after publication, deterministic health samples ranged from 39/40 healthy (97.5%) to 0/40 healthy (all HTTP 404). The expiry boundary is therefore variable enough that a two-hour cadence does not maintain continuous image availability.
+
 Repository policy:
-- refresh the ADPICK BIZ discovery catalog every two hours;
+- refresh the ADPICK BIZ discovery catalog every hour;
 - validate returned HTTPS image URLs with a browser-like HTTP/MIME probe before publication;
+- run catalog image health immediately after each catalog publish and again around the middle of the hourly freshness window;
 - require at least 80% live-image health before publishing a newly generated catalog;
 - fail closed per product by omitting an image URL that does not return a successful `image/*` response;
 - retain UI image fallback for transient delivery failures;
