@@ -9,6 +9,8 @@ check test -f docs/production-activation-checklist.md
 check test -f docs/technical-privacy-inventory.md
 check test -f docs/store-submission-pack.md
 check test -f docs/release-operations-runbook.md
+check test -f docs/production-supabase-operator-runbook.md
+check test -f docs/production-verification-pack.md
 check test -f scripts/guard-production-config.sh
 check test -f privacy.html
 check test -f support.html
