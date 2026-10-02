@@ -72,6 +72,13 @@ jobs:
           node test/production-email-auth-smoke.test.js
           node test/production-supabase-activation-workflow.test.js
           node test/social-auth-platform-contract.test.js
+          node test/push-provider-result.test.js
+          node test/fcm-sender.test.js
+          node test/apns-sender.test.js
+          node test/price-alert-push-worker.test.js
+          node test/push-delivery-fanout-contract.test.js
+          node test/push-worker-entrypoint.test.js
+          node test/production-push-workflow.test.js
       - name: Check catalog image URL coverage
         run: node scripts/catalog-image-quality.js
 
@@ -98,6 +105,13 @@ jobs:
           node --check scripts/production-migration-manifest.js
           node --check scripts/validate-production-verification.js
           node --check scripts/production-email-auth-smoke.js
+          node --check src/push-provider-result.js
+          node --check src/fcm-sender.js
+          node --check src/apns-sender.js
+          node --check src/supabase-push-worker-backend.js
+          node --check src/price-alert-push-worker.js
+          node --check scripts/run-price-alert-push-worker.js
+          node --check scripts/production-push-smoke.js
       - name: Security sanity checks
         run: |
           if grep -R -n -E '(service_role|SUPABASE_SERVICE_ROLE|ADPICK_BIZ_API_KEY)[[:space:]]*[:=][[:space:]]*["'\''"][^"'\'']+' admin src flutter supabase --exclude='*.md'; then
@@ -121,3 +135,6 @@ jobs:
           grep -q 'alter table public.profiles enable row level security' supabase/migrations/030_production_boundary_reconciliation.sql
           grep -q 'alter table public.provider_themes enable row level security' supabase/migrations/030_production_boundary_reconciliation.sql
           grep -q 'revoke all on public.product_price_summary from public,anon,authenticated' supabase/migrations/030_production_boundary_reconciliation.sql
+          test -f supabase/migrations/031_push_delivery_target_fanout.sql
+          grep -q 'create table if not exists public.price_alert_delivery_targets' supabase/migrations/031_push_delivery_target_fanout.sql
+          grep -q 'to service_role' supabase/migrations/031_push_delivery_target_fanout.sql
