@@ -11,11 +11,14 @@ final class _Gateway implements AuthenticationGateway {
 }
 
 void main(){
-  test('supports requested social providers including Apple',(){
-    expect(AuthenticationCoordinator.supportedMethods,containsAll({AuthMethod.google,AuthMethod.kakao,AuthMethod.naver,AuthMethod.apple,AuthMethod.emailPassword}));
+  test('distinguishes target auth scope from currently enabled methods',(){
+    expect(AuthenticationCoordinator.targetMethods,containsAll({AuthMethod.google,AuthMethod.kakao,AuthMethod.naver,AuthMethod.apple,AuthMethod.emailPassword}));
+    expect(AuthenticationCoordinator.supportedMethods,{AuthMethod.emailPassword});
   });
-  test('routes Apple through social authentication',()async{
-    final g=_Gateway();await AuthenticationCoordinator(g).social(AuthMethod.apple);expect(g.socialMethod,AuthMethod.apple);
+  test('social authentication remains disabled until provider callback wiring exists',()async{
+    final g=_Gateway();
+    expect(()=>AuthenticationCoordinator(g).social(AuthMethod.apple),throwsA(isA<UnsupportedError>()));
+    expect(g.socialMethod,isNull);
   });
   test('normalizes email account creation',()async{
     final g=_Gateway();await AuthenticationCoordinator(g).email(email:' USER@Example.COM ',password:'secret',create:true);
