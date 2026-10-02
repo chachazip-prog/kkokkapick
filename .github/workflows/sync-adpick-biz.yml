@@ -3,7 +3,7 @@ name: Sync ADPICK BIZ baby clothes
 on:
   workflow_dispatch:
   schedule:
-    - cron: "43 */6 * * *"
+    - cron: "43 */2 * * *"
 
 permissions:
   contents: write
@@ -27,6 +27,8 @@ jobs:
       - name: Search baby and kids apparel
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
+          ADPICK_MIN_IMAGE_HEALTH_RATE: "0.8"
+          ADPICK_IMAGE_CONCURRENCY: "12"
         run: |
           node -e "import('./src/adpick-discovery-plan.js').then(m=>{if(m.ADPICK_DISCOVERY_QUERIES.length<45)throw new Error('Refusing legacy discovery plan');console.log('Discovery queries:',m.ADPICK_DISCOVERY_QUERIES.length)})"
           node scripts/discover-adpick.js
