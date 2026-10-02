@@ -22,7 +22,8 @@ This checklist is for the final external-beta/store candidate. Repository-only r
 - [ ] Migrations applied and grants/RLS/RPC exposure audited
 - [ ] Account deletion contract is green and deployed environment E2E verifies deletion/cascades/session invalidation
 - [ ] Production config preflight is green; approved catalog read boundary configured and GitHub Pages fallback absent from store candidate
-- [ ] Authentication providers approved/configured, including production callbacks where applicable
+- [ ] Email/password production auth verified
+- [ ] Social authentication providers approved/configured and client callback/deep-link return handling implemented before any social method is enabled
 - [ ] Guest -> authenticated -> sign-out -> different-account switch E2E confirms server/account isolation
 - [ ] First-sign-in device-data sync consent is verified against the deployed account boundary
 
@@ -45,6 +46,7 @@ This checklist is for the final external-beta/store candidate. Repository-only r
 - [ ] Product Owner final release/submission authorization
 
 ## Repository gates already implemented
+- [x] Current release truthfully enables Email/password only; Google/Kakao/Naver/Apple remain target scope until callback wiring and provider E2E exist
 
 - [x] Product Owner-selected D03/v10 visual rebuild foundation merged
 - [x] Account/session release wiring for guest, authenticated and offline-authenticated states

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
+if [[ "${APP_ENV:-}" != "production" ]]; then
+  echo "APP_ENV must be production for a production release"
+  exit 1
+fi
 : "${SUPABASE_URL:?SUPABASE_URL is required for production release}"
 : "${SUPABASE_ANON_KEY:?SUPABASE_ANON_KEY is required for production release}"
 case "$SUPABASE_URL" in

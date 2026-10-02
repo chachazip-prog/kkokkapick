@@ -21,12 +21,18 @@ final class AuthenticationCoordinator {
   const AuthenticationCoordinator(this.gateway);
   final AuthenticationGateway gateway;
 
-  static const supportedMethods=<AuthMethod>{
+  // Target scope is broader than the methods that are actually wired into
+  // the current release client. Do not expose a target method as enabled.
+  static const targetMethods=<AuthMethod>{
     AuthMethod.google,AuthMethod.kakao,AuthMethod.naver,AuthMethod.apple,AuthMethod.emailPassword,
   };
+  static const supportedMethods=<AuthMethod>{AuthMethod.emailPassword};
 
   Future<void> social(AuthMethod method) {
-    if(!method.isSocial||!supportedMethods.contains(method))throw ArgumentError.value(method,'method');
+    if(!method.isSocial)throw ArgumentError.value(method,'method');
+    if(!supportedMethods.contains(method)){
+      throw UnsupportedError('Social authentication is not enabled in this release.');
+    }
     return gateway.signInWithSocial(method);
   }
 
