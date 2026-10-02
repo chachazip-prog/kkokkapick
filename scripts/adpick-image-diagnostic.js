@@ -40,10 +40,7 @@ async function probeImage(url) {
 const results = [];
 for (const query of queries) {
   const products = await provider.search(query, { limit: 5, trackingId: "kkokkapick_image_diagnostic" });
-  const probes = [];
-  for (const product of products) {
-    probes.push(await probeImage(product.imageUrl));
-  }
+  const probes = await Promise.all(products.map(product => probeImage(product.imageUrl)));
   results.push({
     query,
     products: products.length,
