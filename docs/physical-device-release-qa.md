@@ -30,6 +30,8 @@ Run the frozen candidate on these viewport/device classes where feasible:
 
 Record device/OS/browser or build identifier, release SHA, date, tester and evidence link for every execution.
 
+Before starting a device run, execute the manual GitHub Actions workflow `Prepare physical QA snapshot` and attach its `physical-qa-snapshot.json` artifact to the evidence set. The artifact is version/context evidence only and explicitly reports `PREPARED_NOT_EXECUTED`; it never counts as physical-device PASS.
+
 ## A. Launch and navigation
 
 - [ ] App launches without blank/white screen or uncaught error.
