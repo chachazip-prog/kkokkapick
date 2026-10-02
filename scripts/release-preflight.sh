@@ -20,6 +20,11 @@ node test/release-artifact-contract.test.js || fail=1
 node test/release-candidate-gate-contract.test.js || fail=1
 node test/production-config-contract.test.js || fail=1
 node test/external-beta-readiness.test.js || fail=1
+node test/production-boundary-reconciliation.test.js || fail=1
+node test/production-migration-manifest.test.js || fail=1
+node test/production-verification-validator.test.js || fail=1
+node test/production-email-auth-smoke.test.js || fail=1
+node test/production-supabase-activation-workflow.test.js || fail=1
 node scripts/external-beta-readiness.js || fail=1
 
 if git ls-files | grep -E '\.(jks|keystore|p12|p8|mobileprovision)$'; then
