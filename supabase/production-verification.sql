@@ -14,6 +14,7 @@ select jsonb_build_object(
       ('price_alerts'),
       ('push_devices'),
       ('price_alert_deliveries'),
+      ('price_alert_delivery_targets'),
       ('providers'),
       ('provider_themes'),
       ('products'),
@@ -48,7 +49,9 @@ select jsonb_build_object(
     'record_commercial_event', to_regprocedure('public.record_commercial_event(uuid,text,uuid,text)') is not null,
     'evaluate_price_alerts', to_regprocedure('public.evaluate_price_alerts(integer)') is not null,
     'claim_price_alert_deliveries', to_regprocedure('public.claim_price_alert_deliveries(integer,interval,integer)') is not null,
-    'complete_price_alert_delivery', to_regprocedure('public.complete_price_alert_delivery(uuid,boolean,boolean,text,integer)') is not null
+    'complete_price_alert_delivery', to_regprocedure('public.complete_price_alert_delivery(uuid,boolean,boolean,text,integer)') is not null,
+    'claim_price_alert_delivery_targets', to_regprocedure('public.claim_price_alert_delivery_targets(integer,interval,integer,text)') is not null,
+    'complete_price_alert_delivery_target', to_regprocedure('public.complete_price_alert_delivery_target(uuid,boolean,boolean,boolean,text,integer)') is not null
   ),
   'grants', jsonb_build_object(
     'catalogAnonExecute', has_function_privilege('anon','public.get_published_catalog(integer,integer)','EXECUTE'),
@@ -75,10 +78,19 @@ select jsonb_build_object(
     'commercialAuthenticatedExecute', has_function_privilege('authenticated','public.record_commercial_event(uuid,text,uuid,text)','EXECUTE'),
     'evaluateAnonExecute', has_function_privilege('anon','public.evaluate_price_alerts(integer)','EXECUTE'),
     'evaluateAuthenticatedExecute', has_function_privilege('authenticated','public.evaluate_price_alerts(integer)','EXECUTE'),
+    'evaluateServiceRoleExecute', has_function_privilege('service_role','public.evaluate_price_alerts(integer)','EXECUTE'),
     'claimAnonExecute', has_function_privilege('anon','public.claim_price_alert_deliveries(integer,interval,integer)','EXECUTE'),
     'claimAuthenticatedExecute', has_function_privilege('authenticated','public.claim_price_alert_deliveries(integer,interval,integer)','EXECUTE'),
+    'claimServiceRoleExecute', has_function_privilege('service_role','public.claim_price_alert_deliveries(integer,interval,integer)','EXECUTE'),
     'completeAnonExecute', has_function_privilege('anon','public.complete_price_alert_delivery(uuid,boolean,boolean,text,integer)','EXECUTE'),
-    'completeAuthenticatedExecute', has_function_privilege('authenticated','public.complete_price_alert_delivery(uuid,boolean,boolean,text,integer)','EXECUTE')
+    'completeAuthenticatedExecute', has_function_privilege('authenticated','public.complete_price_alert_delivery(uuid,boolean,boolean,text,integer)','EXECUTE'),
+    'completeServiceRoleExecute', has_function_privilege('service_role','public.complete_price_alert_delivery(uuid,boolean,boolean,text,integer)','EXECUTE'),
+    'targetClaimAnonExecute', has_function_privilege('anon','public.claim_price_alert_delivery_targets(integer,interval,integer,text)','EXECUTE'),
+    'targetClaimAuthenticatedExecute', has_function_privilege('authenticated','public.claim_price_alert_delivery_targets(integer,interval,integer,text)','EXECUTE'),
+    'targetClaimServiceRoleExecute', has_function_privilege('service_role','public.claim_price_alert_delivery_targets(integer,interval,integer,text)','EXECUTE'),
+    'targetCompleteAnonExecute', has_function_privilege('anon','public.complete_price_alert_delivery_target(uuid,boolean,boolean,boolean,text,integer)','EXECUTE'),
+    'targetCompleteAuthenticatedExecute', has_function_privilege('authenticated','public.complete_price_alert_delivery_target(uuid,boolean,boolean,boolean,text,integer)','EXECUTE'),
+    'targetCompleteServiceRoleExecute', has_function_privilege('service_role','public.complete_price_alert_delivery_target(uuid,boolean,boolean,boolean,text,integer)','EXECUTE')
   ),
   'views', jsonb_build_object(
     'publishedCatalogProductsAnonSelect', has_table_privilege('anon','public.published_catalog_products','SELECT'),
