@@ -27,6 +27,7 @@ node test/production-migration-manifest.test.js || fail=1
 node test/production-verification-validator.test.js || fail=1
 node test/production-email-auth-smoke.test.js || fail=1
 node test/production-supabase-activation-workflow.test.js || fail=1
+node test/social-auth-platform-contract.test.js || fail=1
 node scripts/external-beta-readiness.js || fail=1
 
 if git ls-files | grep -E '\.(jks|keystore|p12|p8|mobileprovision)$'; then
