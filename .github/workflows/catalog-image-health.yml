@@ -1,13 +1,18 @@
 name: Catalog image health
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "data/catalog.json"
+      - ".github/workflows/catalog-image-health.yml"
   pull_request:
     paths:
       - "data/catalog.json"
       - "scripts/catalog-image-health.js"
       - ".github/workflows/catalog-image-health.yml"
   schedule:
-    - cron: "17 */2 * * *"
+    - cron: "35 * * * *"
   workflow_dispatch:
 
 permissions:
