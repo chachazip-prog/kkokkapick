@@ -34,7 +34,13 @@ final class SecurePendingSocialAuthStore implements PendingSocialAuthStore {
           createdAt is! String) {
         return null;
       }
-      final method = AuthMethod.values.where((m) => m.name == methodName).firstOrNull;
+      AuthMethod? method;
+      for (final candidate in AuthMethod.values) {
+        if (candidate.name == methodName) {
+          method = candidate;
+          break;
+        }
+      }
       final timestamp = DateTime.tryParse(createdAt);
       if (method == null || !method.isSocial || timestamp == null) return null;
       return PendingSocialAuth(
