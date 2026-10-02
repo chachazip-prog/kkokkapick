@@ -57,8 +57,6 @@ for (const term of [
 
 const imageWorkflow = read('.github/workflows/catalog-image-health.yml');
 for (const term of [
-  'push:',
-  '"data/catalog.json"',
   'pull_request:',
   'continue-on-error:',
   'cron: "35 * * * *"',
@@ -67,6 +65,17 @@ for (const term of [
   'actions/upload-artifact@v4',
 ]) {
   if (!imageWorkflow.includes(term)) throw new Error(`image health workflow missing: ${term}`);
+}
+
+const providerSyncWorkflow = read('.github/workflows/sync-adpick-biz.yml');
+for (const term of [
+  'cron: "43 * * * *"',
+  'Verify catalog image health after publish',
+  'node scripts/catalog-image-health.js',
+  'post-publish-catalog-image-health',
+  'actions/upload-artifact@v4',
+]) {
+  if (!providerSyncWorkflow.includes(term)) throw new Error(`provider sync image health contract missing: ${term}`);
 }
 
 const main = read('flutter/lib/main.dart');
