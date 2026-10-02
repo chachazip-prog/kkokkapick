@@ -57,3 +57,8 @@ final class StoredSessionTokens {
   final String accessToken,refreshToken;
   final String? userId;
 }
+
+
+final class AuthConfigurationRequired implements Exception {
+  const AuthConfigurationRequired();
+}
