@@ -10,7 +10,7 @@ Target account methods:
 Current repository-enabled release method:
 - Email/password only.
 
-Google/Kakao/Naver/Apple remain target scope, not enabled capability, until production provider apps, callbacks/deep links and client OAuth return handling are implemented and verified. Guest browsing remains the default. Authentication is requested only for cross-device persistence or notification delivery.
+Google/Kakao/Naver/Apple remain target scope, not enabled capability. The repository now contains the PKCE launch/callback transport and mobile deep-link registration, but no social provider is promoted until the production provider app, Supabase provider configuration, redirect allow-list and real-device E2E are verified. Guest browsing remains the default. Authentication is requested only for cross-device persistence or notification delivery.
 
 ## Architecture
 Supabase Auth is the account/session authority.
@@ -30,13 +30,23 @@ Apple sign-in is part of the initial authentication scope. Before App Store subm
 ## Data minimization
 Request only identity fields needed for account creation/sign-in. Do not request contacts, social graphs, profile images, or unrelated provider scopes. Child profile data remains app-owned data and is not sent to social identity providers.
 
+## OAuth callback foundation
+- App callback URI: `kkokkapick://auth/callback`.
+- Android registers only scheme `kkokkapick`, host `auth`, path `/callback`.
+- iOS release foundation registers the same URL scheme.
+- Social OAuth uses PKCE S256. The verifier is stored only in secure local storage while one flow is pending.
+- Successful callbacks must contain an authorization code and are exchanged at Supabase `/auth/v1/token?grant_type=pkce`.
+- A callback without a locally pending PKCE flow never creates a session.
+- The current release UI exposes Email/password only; the callback infrastructure alone does not enable a provider.
+
 ## Production configuration gates
-Provider credentials and callback URLs belong in provider/Supabase consoles, not the repository. Production setup requires:
-1. final app identifiers and callback/deep-link scheme,
+Provider credentials and provider callback URLs belong in provider/Supabase consoles, not the repository. Production setup requires:
+1. final app identifiers and Supabase redirect allow-list containing `kkokkapick://auth/callback`,
 2. production Supabase project,
-3. provider applications/credentials,
-4. privacy/support/account-deletion URLs,
-5. App Store login-policy review before submission.
+3. provider applications/credentials and provider enablement,
+4. `SOCIAL_AUTH_PROVIDERS` promotion only after provider E2E; Naver also requires the approved custom provider identifier,
+5. privacy/support/account-deletion URLs,
+6. App Store login-policy review before submission.
 
 
 ## Session-to-account boundary
