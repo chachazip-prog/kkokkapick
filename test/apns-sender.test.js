@@ -4,14 +4,24 @@ import crypto from 'node:crypto';
 import { ApnsSender, createApnsProviderToken } from '../src/apns-sender.js';
 import { PushOutcome } from '../src/push-provider-result.js';
 
-const {privateKey}=crypto.generateKeyPairSync('ec',{namedCurve:'P-256'});
+const {privateKey,publicKey}=crypto.generateKeyPairSync('ec',{namedCurve:'P-256'});
 const pem=privateKey.export({type:'pkcs8',format:'pem'});
 const token=createApnsProviderToken({
   keyId:'ABCDEFGHIJ',
   teamId:'KLMNOPQRST',
   privateKey:pem,
 },new Date('2026-10-03T00:00:00Z'));
-assert.equal(token.split('.').length,3);
+const tokenParts=token.split('.');
+assert.equal(tokenParts.length,3);
+assert.equal(
+  crypto.verify(
+    'SHA256',
+    Buffer.from(tokenParts.slice(0,2).join('.')),
+    {key:publicKey,dsaEncoding:'ieee-p1363'},
+    Buffer.from(tokenParts[2],'base64url'),
+  ),
+  true,
+);
 
 const calls=[];
 const transport=async(args)=>{
