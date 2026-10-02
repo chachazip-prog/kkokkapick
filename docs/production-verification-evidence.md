@@ -39,11 +39,16 @@ Operator/reviewer:
 - Provider attribution/redisplay rights checked:
 
 ## Notifications
-- Test device/platform:
+- Native token acquisition/registration evidence:
+- Android protected smoke workflow/artifact:
+- iOS protected smoke workflow/artifact:
 - FCM/APNs send received:
 - Invalid token cleanup:
-- Duplicate-delivery test:
+- Two-device partial-success/no-duplicate test:
+- Concurrent target-claim test:
 - Retry/dead-letter test:
+- Bounded worker run/artifact:
+- Worker logs/artifacts reviewed for absence of raw tokens/customer identifiers:
 
 ## Operations
 - Restore target/time:
