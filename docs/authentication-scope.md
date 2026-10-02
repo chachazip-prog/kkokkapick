@@ -1,13 +1,16 @@
 # Authentication scope
 
-MVP account methods:
+Target account methods:
 - Google
 - Kakao
 - Naver
 - Apple
 - Email/password account creation and sign-in
 
-Guest browsing remains the default. Authentication is requested only for cross-device persistence or notification delivery.
+Current repository-enabled release method:
+- Email/password only.
+
+Google/Kakao/Naver/Apple remain target scope, not enabled capability, until production provider apps, callbacks/deep links and client OAuth return handling are implemented and verified. Guest browsing remains the default. Authentication is requested only for cross-device persistence or notification delivery.
 
 ## Architecture
 Supabase Auth is the account/session authority.
