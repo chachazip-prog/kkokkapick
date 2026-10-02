@@ -1,12 +1,12 @@
 {
-  "syncedAt": "2026-10-01T19:05:24.315Z",
-  "sourceProducts": 563,
+  "syncedAt": "2026-10-02T01:06:37.202Z",
+  "sourceProducts": 564,
   "canonicalProducts": 516,
   "queries": 48,
-  "recognizedBrandProducts": 333,
-  "recognizedBrandRatePct": 64.5,
-  "officialBrandGuideProducts": 27,
-  "officialBrandGuideRatePct": 5.2,
+  "recognizedBrandProducts": 335,
+  "recognizedBrandRatePct": 64.9,
+  "officialBrandGuideProducts": 26,
+  "officialBrandGuideRatePct": 5,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "multiImageProducts": 39,
@@ -16,19 +16,19 @@
   "topBrands": [
     {
       "name": "미분류",
-      "count": 183
+      "count": 181
+    },
+    {
+      "name": "베네통키즈",
+      "count": 30
     },
     {
       "name": "밀크베이비",
       "count": 28
     },
     {
-      "name": "베네통키즈",
-      "count": 28
-    },
-    {
       "name": "해피프린스",
-      "count": 21
+      "count": 22
     },
     {
       "name": "헤지스키즈",
@@ -48,7 +48,7 @@
     },
     {
       "name": "모이몰른",
-      "count": 14
+      "count": 13
     },
     {
       "name": "베이비맥스",
@@ -59,10 +59,6 @@
       "count": 12
     },
     {
-      "name": "아가방",
-      "count": 11
-    },
-    {
       "name": "페리미츠",
       "count": 11
     },
@@ -71,12 +67,16 @@
       "count": 11
     },
     {
-      "name": "휠라키즈",
+      "name": "MLB키즈",
       "count": 11
     },
     {
-      "name": "MLB키즈",
-      "count": 11
+      "name": "아가방",
+      "count": 10
+    },
+    {
+      "name": "휠라키즈",
+      "count": 10
     },
     {
       "name": "밍크뮤",
@@ -110,33 +110,33 @@
     },
     {
       "name": "하의",
-      "count": 72
-    },
-    {
-      "name": "상하복",
-      "count": 42
+      "count": 73
     },
     {
       "name": "원피스",
-      "count": 41
+      "count": 42
+    },
+    {
+      "name": "상하복",
+      "count": 40
     },
     {
       "name": "실내복",
-      "count": 28
+      "count": 27
     },
     {
       "name": "기타",
-      "count": 26
+      "count": 27
     }
   ],
   "stages": [
     {
       "name": "키즈",
-      "count": 228
+      "count": 229
     },
     {
       "name": "베이비",
-      "count": 210
+      "count": 209
     },
     {
       "name": "신생아",
