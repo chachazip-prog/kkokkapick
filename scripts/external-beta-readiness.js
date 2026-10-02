@@ -24,7 +24,12 @@ const repoChecks = {
     /begin read only/i.test(verificationSql) &&
     /rollback;/i.test(verificationSql) &&
     exists('docs/production-verification-evidence.md') &&
-    latestMigration?.startsWith('029_'),
+    exists('scripts/production-migration-manifest.js') &&
+    exists('scripts/validate-production-verification.js') &&
+    exists('scripts/production-email-auth-smoke.js') &&
+    exists('.github/workflows/production-supabase-activation.yml') &&
+    exists('docs/production-supabase-operator-runbook.md') &&
+    latestMigration?.startsWith('030_'),
   productionConfigBoundary:
     storeWorkflow.includes('APP_ENV: production') &&
     storeWorkflow.includes('PRODUCTION_SUPABASE_URL') &&
