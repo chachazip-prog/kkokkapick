@@ -6,6 +6,7 @@ const products=Array.isArray(catalog.products)?catalog.products:[];
 const recognized=products.filter(p=>p.brand);
 const guides=products.filter(p=>p.sizeGuide?.kind==="brand_official");
 const explicitSizes=products.filter(p=>Array.isArray(p.availableSizes)&&p.availableSizes.length);
+const withImage=products.filter(p=>Boolean(p.imageUrl));
 const multiImage=products.filter(p=>Array.isArray(p.imageUrls)&&new Set(p.imageUrls.filter(Boolean)).size>1);
 const channelPrefix=/^\s*\[\s*(?:롯데백화점|현대백화점|신세계백화점|보리보리|롯데ON|롯데온|SSG|G마켓|옥션|11번가|GS\s*SHOP|GSSHOP|CJ온스타일|현대Hmall|현대홈쇼핑)\b/i;
 const channelPrefixed=products.filter(p=>channelPrefix.test(String(p.name||"")));
@@ -22,6 +23,9 @@ const report={
   officialBrandGuideRatePct:pct(guides.length,products.length),
   explicitProductSizeProducts:explicitSizes.length,
   explicitProductSizeRatePct:pct(explicitSizes.length,products.length),
+  sourceImageHealth:source.imageHealth??null,
+  canonicalImageProducts:withImage.length,
+  canonicalImageRatePct:pct(withImage.length,products.length),
   multiImageProducts:multiImage.length,
   multiImageRatePct:pct(multiImage.length,products.length),
   channelPrefixedDisplayTitles:channelPrefixed.length,
