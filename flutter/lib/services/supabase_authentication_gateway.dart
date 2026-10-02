@@ -201,10 +201,6 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
   }
 }
 
-final class AuthConfigurationRequired implements Exception {
-  const AuthConfigurationRequired();
-}
-
 final class AuthenticationException implements Exception {
   const AuthenticationException(this.statusCode);
   final int statusCode;
