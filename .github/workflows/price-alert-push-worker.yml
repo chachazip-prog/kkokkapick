@@ -1,0 +1,64 @@
+name: Price alert push worker
+
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: "Provider queue to process"
+        required: true
+        type: choice
+        options: [android, ios]
+      confirm_delivery:
+        description: "Process live production price-alert deliveries"
+        required: true
+        type: boolean
+        default: false
+      claim_limit:
+        description: "Maximum device targets in this manual batch"
+        required: true
+        type: choice
+        default: "10"
+        options: ["1","5","10","25"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-price-alert-push-${{ inputs.platform }}
+  cancel-in-progress: false
+
+jobs:
+  deliver:
+    if: ${{ inputs.confirm_delivery }}
+    environment: production
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PUSH_WORKER_EXECUTE: "1"
+      PUSH_WORKER_PLATFORM: ${{ inputs.platform }}
+      PUSH_CLAIM_LIMIT: ${{ inputs.claim_limit }}
+      PRODUCTION_SUPABASE_URL: ${{ secrets.PRODUCTION_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+      APNS_KEY_ID: ${{ secrets.APNS_KEY_ID }}
+      APNS_TEAM_ID: ${{ secrets.APNS_TEAM_ID }}
+      APNS_BUNDLE_ID: ${{ secrets.APNS_BUNDLE_ID }}
+      APNS_PRIVATE_KEY_P8: ${{ secrets.APNS_PRIVATE_KEY_P8 }}
+      APNS_ENVIRONMENT: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Process bounded production push batch
+        run: |
+          mkdir -p artifacts
+          node scripts/run-price-alert-push-worker.js | tee artifacts/production-push-worker-summary.json
+      - name: Upload aggregate worker evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-push-worker-${{ inputs.platform }}
+          path: artifacts/production-push-worker-summary.json
+          if-no-files-found: error
+          retention-days: 30
