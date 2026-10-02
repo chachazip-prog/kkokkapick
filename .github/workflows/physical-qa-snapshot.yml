@@ -2,6 +2,18 @@ name: Prepare physical QA snapshot
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - "scripts/physical-qa-snapshot.js"
+      - "test/physical-qa-snapshot.test.js"
+      - ".github/workflows/physical-qa-snapshot.yml"
+      - "docs/physical-device-release-qa.md"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/physical-qa-snapshot.js"
+      - ".github/workflows/physical-qa-snapshot.yml"
+      - "docs/physical-device-release-qa.md"
 
 permissions:
   contents: read
