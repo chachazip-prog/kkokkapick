@@ -126,9 +126,10 @@ export class FcmSender {
               body: notification.body,
             },
             data: {
+              // Keep notification transport account-agnostic. Product identity
+              // and observed price are resolved only after the current app
+              // session opens and fetches its own authorized account state.
               deliveryId: String(target.deliveryId),
-              productId: String(target.productId),
-              observedPrice: String(target.observedPrice),
             },
           },
         }),
