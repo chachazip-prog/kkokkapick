@@ -5,21 +5,38 @@ Environment:
 Verified at (UTC):  
 Operator/reviewer:  
 
-## Database
-- Migration version / latest applied migration:
-- Read-only verification query result attached:
-- RLS enabled on customer-owned tables:
-- Public RPC grants reviewed:
-- Admin RPC authorization reviewed:
-- Account deletion E2E test account:
-- Deleted rows/cascades verified:
-- Prior access/refresh session invalid after deletion:
+## Migration / schema
+- Repository latest migration:
+- Migration manifest artifact/run:
+- Migration manifest SHA-256 digest/reference:
+- Backup/recovery point before migration:
+- Production schema verification workflow run:
+- `production-supabase-schema-evidence` artifact:
+- Read-only verification validator: PASS / FAIL
+- Required RLS tables: PASS / FAIL
+- Client RPC grants: PASS / FAIL
+- Trusted-worker RPC isolation: PASS / FAIL
+- Legacy/direct view exposure: PASS / FAIL
+
+## Authentication / account
+- Non-destructive Email auth smoke workflow run:
+- `production-email-auth-smoke` artifact:
+- Password sign-in: PASS / FAIL
+- Session refresh rotation: PASS / FAIL
+- Authenticated `get_my_app_data`: PASS / FAIL
+- Anonymous production `get_published_catalog`: PASS / FAIL
+- Dedicated account-deletion E2E reference:
+- Deleted account-owned row counts all zero: PASS / FAIL
+- Prior access session rejected: PASS / FAIL
+- Prior refresh session rejected: PASS / FAIL
+- Cross-account isolation / account switch E2E: PASS / FAIL
+- First-sign-in sync consent E2E: PASS / FAIL
 
 ## Catalog
 - Production read boundary:
 - GitHub Pages fallback absent from store build:
 - Provider freshness/retention behavior checked:
-- Provider attribution checked:
+- Provider attribution/redisplay rights checked:
 
 ## Notifications
 - Test device/platform:
@@ -29,10 +46,10 @@ Operator/reviewer:
 - Retry/dead-letter test:
 
 ## Operations
-- Backup identifier/time:
 - Restore target/time:
 - Restore validation:
-- Rollback rehearsal release SHA:
+- Verification pack passes on restored target:
+- Rollback/forward-fix rehearsal release SHA:
 - Monitoring/alert route:
 - Incident owner/contact:
 
@@ -41,8 +58,9 @@ Operator/reviewer:
 - Android signed artifact checksum:
 - iOS bundle ID:
 - iOS signed artifact/build:
-- Release preflight run:
+- Store-candidate production preflight run:
+- Physical-device QA reference:
 - QA_PASS reference:
 - Security/Privacy review reference:
 
-Do not place credentials, access tokens, push tokens, private keys, or customer data in this evidence file.
+Do not place test email addresses, user UUIDs, database credentials, service-role keys, access/refresh tokens, push tokens, private keys or customer data in this evidence file.
