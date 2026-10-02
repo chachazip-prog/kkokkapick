@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+
+const sql=fs.readFileSync('supabase/migrations/031_push_delivery_target_fanout.sql','utf8').toLowerCase();
+for(const term of [
+  'create table if not exists public.price_alert_delivery_targets',
+  'unique(delivery_id,device_id)',
+  'for update skip locked',
+  "p_platform text default null",
+  "t.platform=p_platform",
+  "set enabled=false",
+  "last_error='all_push_targets_failed'",
+  'grant execute on function public.claim_price_alert_delivery_targets(integer,interval,integer,text)',
+  'to service_role',
+  'grant execute on function public.complete_price_alert_delivery_target(uuid,boolean,boolean,boolean,text,integer)',
+]){
+  if(!sql.includes(term.toLowerCase()))throw new Error('push target fanout contract missing: '+term);
+}
+if(!sql.includes("status in ('pending','processing','sent','failed')"))throw new Error('target lifecycle constraint missing');
+if(!sql.includes("when p_retryable and not p_invalid_token and attempts<p_max_attempts then 'pending'"))throw new Error('invalid tokens must never retry');
+console.log('push target fanout DB contract PASS');
