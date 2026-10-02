@@ -1,16 +1,16 @@
 # Physical-device release QA
 
-Updated: 2026-10-02
+Updated: 2026-10-03
 
 This is the independent QA execution sheet for the Product Owner-selected D03/v10 experience. It is evidence collection, not a substitute for production configuration or store authorization.
 
 ## Current frozen candidate
 
-- Release/source SHA: `9122831786ff3fa335e4f8806954bc4f375f229e`
-- Preview deployment commit: `edd22cbce11fa7e7c77f07eb1b1cb1507dea6b18`
-- Preview workflow run: `37071754360` (`Deploy Flutter UI preview` #38)
+- Release/source SHA: `d8665b5f803cf68b394ca1f73d389714de8d2568`
+- Preview deployment commit: `21b05827713cff0caa36f6fd814f8efa7097b11e`
+- Preview workflow run: `37076835751` (`Deploy Flutter UI preview` #39)
 - Freeze date: 2026-10-03
-- This candidate includes #159 external-beta/auth truthfulness hardening. Physical-device evidence must record this exact Flutter source SHA.
+- This candidate includes #162 social OAuth PKCE/deep-link transport hardening while keeping social providers disabled. Physical-device evidence must record this exact Flutter source SHA.
 - Catalog evidence is runtime data and may advance independently through the scheduled ADPICK refresh; record the catalog `syncedAt` visible/verified during the device run.
 
 ## Test matrix
