@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kkokkapick/repositories/child_profile_repository.dart';
 import 'package:kkokkapick/services/app_session_orchestrator.dart';
+import 'package:kkokkapick/services/overlay_coordinator.dart';
 import 'package:kkokkapick/widgets/v10_account_page.dart';
 
 void main() {
   Widget app({
     AppSessionState state = AppSessionState.guest,
     bool configured = true,
+    OverlayCoordinator? overlayCoordinator,
   }) {
     return MaterialApp(
       home: V10AccountPage(
@@ -24,6 +26,7 @@ void main() {
         onSignOut: () async {},
         onDeleteAppData: () async {},
         onDeleteAccount: () async {},
+        overlayCoordinator: overlayCoordinator,
       ),
     );
   }
@@ -103,6 +106,31 @@ void main() {
     expect(find.text('기기 데이터'), findsOneWidget);
     expect(find.text('동기화 상태'), findsOneWidget);
     expect(find.textContaining('오래된 토큰'), findsOneWidget);
+  });
+
+  testWidgets('My sheets honor the shared overlay coordinator', (tester) async {
+    final coordinator = OverlayCoordinator();
+    expect(coordinator.begin(OverlayKind.managedPopup), isTrue);
+    await tester.pumpWidget(app(overlayCoordinator: coordinator));
+
+    await tester.scrollUntilVisible(
+      find.text('앱 설정'),
+      320,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('앱 설정'));
+    await tester.pumpAndSettle();
+    expect(find.text('계정 기능'), findsNothing);
+
+    coordinator.end(OverlayKind.managedPopup);
+    await tester.tap(find.text('앱 설정'));
+    await tester.pumpAndSettle();
+    expect(find.text('계정 기능'), findsOneWidget);
+
+    Navigator.of(tester.element(find.text('계정 기능'))).pop();
+    await tester.pumpAndSettle();
+    expect(coordinator.active, OverlayKind.none);
   });
 
   testWidgets('customer support remains visibly unavailable until official channel exists',
