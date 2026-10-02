@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'authentication.dart';
+import 'social_auth.dart';
 
 final class AuthTokens {
   const AuthTokens({required this.accessToken,required this.refreshToken,this.userId});
@@ -9,12 +10,25 @@ final class AuthTokens {
 }
 
 final class SupabaseAuthenticationGateway implements AuthenticationGateway {
-  SupabaseAuthenticationGateway({required this.baseUrl,required this.anonKey,this.tokenStore,http.Client? client})
-    :_client=client??http.Client();
+  SupabaseAuthenticationGateway({
+    required this.baseUrl,
+    required this.anonKey,
+    this.tokenStore,
+    this.socialFlowStore,
+    SocialAuthProviderConfiguration? socialConfiguration,
+    SocialAuthPkce? socialPkce,
+    http.Client? client,
+  })  : socialConfiguration =
+            socialConfiguration ?? SocialAuthProviderConfiguration.fromEnvironment(),
+        _socialPkce = socialPkce ?? SocialAuthPkce(),
+        _client = client ?? http.Client();
 
   final String baseUrl,anonKey;
   final http.Client _client;
   final SessionTokenStore? tokenStore;
+  final PendingSocialAuthStore? socialFlowStore;
+  final SocialAuthProviderConfiguration socialConfiguration;
+  final SocialAuthPkce _socialPkce;
   AuthTokens? _tokens;
   AuthTokens? get tokens=>_tokens;
 
@@ -38,7 +52,92 @@ final class SupabaseAuthenticationGateway implements AuthenticationGateway {
 
   @override Future<void> signInWithSocial(AuthMethod method) async {
     if(!method.isSocial)throw ArgumentError.value(method,'method');
+    // The current release UI intentionally keeps all social methods disabled.
+    // A future UI may use prepareSocialSignIn() only after external provider
+    // configuration and E2E evidence promote the method.
     throw const AuthConfigurationRequired();
+  }
+
+  Future<Uri> prepareSocialSignIn(
+    AuthMethod method, {
+    DateTime? now,
+  }) async {
+    if (!method.isSocial) throw ArgumentError.value(method, 'method');
+    final store = socialFlowStore;
+    if (store == null || !socialConfiguration.isEnabled(method)) {
+      throw const AuthConfigurationRequired();
+    }
+    // Force validation of the public Supabase configuration before persisting
+    // any pending flow.
+    _headers;
+    final verifier = _socialPkce.createVerifier();
+    final challenge = _socialPkce.challenge(verifier);
+    await store.write(PendingSocialAuth(
+      method: method,
+      codeVerifier: verifier,
+      createdAt: (now ?? DateTime.now()).toUtc(),
+    ));
+    return _auth('authorize').replace(queryParameters: {
+      'provider': socialConfiguration.providerId(method),
+      'redirect_to': socialConfiguration.callback.toString(),
+      'code_challenge': challenge,
+      'code_challenge_method': 's256',
+    });
+  }
+
+  Future<void> completeSocialSignIn(
+    Uri callback, {
+    DateTime? now,
+  }) async {
+    final store = socialFlowStore;
+    if (store == null) throw const SocialAuthFlowUnavailable();
+    final pending = await store.read();
+    if (pending == null) throw const SocialAuthFlowUnavailable();
+    final current = (now ?? DateTime.now()).toUtc();
+    if (current.difference(pending.createdAt.toUtc()) > const Duration(minutes: 15)) {
+      await store.clear();
+      throw const SocialAuthFlowExpired();
+    }
+    if (!socialConfiguration.isEnabled(pending.method)) {
+      await store.clear();
+      throw const AuthConfigurationRequired();
+    }
+
+    final parsed = SocialAuthCallback.parse(
+      callback,
+      socialConfiguration.callback,
+    );
+    if (parsed.errorCode != null) {
+      await store.clear();
+      throw SocialAuthProviderError(parsed.errorCode!);
+    }
+
+    final response = await _client.post(
+      _auth('token?grant_type=pkce'),
+      headers: _headers,
+      body: jsonEncode({
+        'auth_code': parsed.code,
+        'code_verifier': pending.codeVerifier,
+      }),
+    );
+    try {
+      _requireSuccess(response);
+      if (!await _captureTokens(response)) {
+        throw const AuthenticationPayloadException();
+      }
+      await store.clear();
+    } on AuthenticationException catch (error) {
+      if (error.statusCode == 400 ||
+          error.statusCode == 401 ||
+          error.statusCode == 403) {
+        await store.clear();
+      }
+      rethrow;
+    }
+  }
+
+  Future<void> cancelPendingSocialSignIn() async {
+    await socialFlowStore?.clear();
   }
 
   Future<bool> _captureTokens(http.Response r) async {
