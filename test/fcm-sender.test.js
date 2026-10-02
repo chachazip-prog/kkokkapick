@@ -34,6 +34,8 @@ const fetchImpl=async(url,options)=>{
   const body=JSON.parse(options.body);
   assert.equal(body.message.token,'device-token-secret-value');
   assert.equal(body.message.data.deliveryId,'delivery-1');
+  assert.equal('productId' in body.message.data,false);
+  assert.equal('observedPrice' in body.message.data,false);
   return new Response(JSON.stringify({name:'projects/project-1/messages/1'}),{
     status:200,headers:{'content-type':'application/json'},
   });
