@@ -22,14 +22,16 @@ This file is a fill-before-submission checklist. Blank values are intentional ow
 7. Confirm the deleted account cannot regain authenticated access with the prior session.
 
 ## Apple submission inputs
-- Final bundle ID: **TBD Product Owner/store registration**
+- Repository bundle ID: `com.kkokkapick.app`
+- Store registration / Team association: **TBD Product Owner/store registration**
 - Signing/team/capabilities: **TBD protected Apple account**
 - App Privacy answers: derive from `docs/technical-privacy-inventory.md` and actual production providers.
 - Account deletion: reviewer path and final public URL required.
 - Screenshots/icons/launch assets: final UI review/export required.
 
 ## Google Play submission inputs
-- Final application ID: **TBD Product Owner/store registration**
+- Repository application ID: `com.kkokkapick.app`
+- Play Console registration: **TBD Product Owner/store registration**
 - App signing: **TBD protected Play/CI credentials**
 - Data Safety: derive from `docs/technical-privacy-inventory.md` and actual production providers.
 - Account deletion: in-app path plus final public URL required.
