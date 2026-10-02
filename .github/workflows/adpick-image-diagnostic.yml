@@ -1,0 +1,36 @@
+name: ADPICK image source diagnostic
+
+on:
+  pull_request:
+    paths:
+      - "scripts/adpick-image-diagnostic.js"
+      - ".github/workflows/adpick-image-diagnostic.yml"
+      - "src/adpick-biz-provider.js"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostic:
+    if: github.repository == 'chachazip-prog/kkokkapick'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Probe fresh ADPICK search image URLs
+        env:
+          ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
+        run: node scripts/adpick-image-diagnostic.js
+      - name: Upload diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: adpick-image-diagnostic
+          path: artifacts/adpick-image-diagnostic.json
+          if-no-files-found: warn
+          retention-days: 14
