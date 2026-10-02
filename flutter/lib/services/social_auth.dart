@@ -20,10 +20,18 @@ final class SocialAuthProviderConfiguration {
     final enabled = <AuthMethod>{};
     for (final value in raw.split(',').map((v) => v.trim().toLowerCase())) {
       switch (value) {
-        case 'google': enabled.add(AuthMethod.google);
-        case 'kakao': enabled.add(AuthMethod.kakao);
-        case 'naver': enabled.add(AuthMethod.naver);
-        case 'apple': enabled.add(AuthMethod.apple);
+        case 'google':
+          enabled.add(AuthMethod.google);
+          break;
+        case 'kakao':
+          enabled.add(AuthMethod.kakao);
+          break;
+        case 'naver':
+          enabled.add(AuthMethod.naver);
+          break;
+        case 'apple':
+          enabled.add(AuthMethod.apple);
+          break;
       }
     }
     return SocialAuthProviderConfiguration(
