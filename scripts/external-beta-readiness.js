@@ -32,7 +32,7 @@ const repoChecks = {
     exists('scripts/production-email-auth-smoke.js') &&
     exists('.github/workflows/production-supabase-activation.yml') &&
     exists('docs/production-supabase-operator-runbook.md') &&
-    latestMigration?.startsWith('030_'),
+    latestMigration?.startsWith('031_'),
   productionConfigBoundary:
     storeWorkflow.includes('APP_ENV: production') &&
     storeWorkflow.includes('PRODUCTION_SUPABASE_URL') &&
@@ -52,7 +52,14 @@ const repoChecks = {
   pushWorkerBoundary:
     pushContract.includes('never log raw tokens') &&
     pushContract.includes('Invalid-token cleanup') &&
-    pushContract.includes('FCM/APNs'),
+    pushContract.includes('FCM HTTP v1') &&
+    pushContract.includes('APNs HTTP/2') &&
+    exists('supabase/migrations/031_push_delivery_target_fanout.sql') &&
+    exists('src/fcm-sender.js') &&
+    exists('src/apns-sender.js') &&
+    exists('src/price-alert-push-worker.js') &&
+    exists('.github/workflows/production-push-verification.yml') &&
+    exists('.github/workflows/price-alert-push-worker.yml'),
   appIdentifiers:
     androidGradle.includes('applicationId = "com.kkokkapick.app"') &&
     iosWorkflow.includes('PRODUCT_BUNDLE_IDENTIFIER = com.kkokkapick.app;'),
@@ -95,7 +102,7 @@ const gates = [
     id: 'push_delivery',
     repository: repoChecks.pushWorkerBoundary ? 'REPOSITORY_READY' : 'REPOSITORY_GAP',
     external: 'BLOCKED_EXTERNAL',
-    requires: 'FCM/APNs credentials, real-device delivery, invalid-token cleanup and retry/dead-letter evidence.',
+    requires: 'FCM/APNs credentials, native token acquisition, real-device delivery, invalid-token cleanup and retry/dead-letter evidence. Provider senders and per-device worker ledger are repository-ready.',
   },
   {
     id: 'provider_rights',
