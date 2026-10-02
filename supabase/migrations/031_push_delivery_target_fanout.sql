@@ -82,14 +82,19 @@ begin
   update public.price_alert_delivery_targets t
   set status='failed',
       claimed_at=null,
-      last_error='push_device_disabled',
+      last_error='push_device_disabled_or_reassigned',
       updated_at=now()
   where t.status='pending'
     and (
       t.device_id is null or
       not exists (
-        select 1 from public.push_devices pd
-        where pd.id=t.device_id and pd.enabled
+        select 1
+        from public.push_devices pd
+        join public.price_alert_deliveries d on d.id=t.delivery_id
+        join public.price_alerts a on a.id=d.alert_id
+        where pd.id=t.device_id
+          and pd.enabled
+          and pd.user_id=a.user_id
       )
     );
 
@@ -105,6 +110,41 @@ begin
       end,
       updated_at=now()
   where status='processing' and claimed_at<now()-p_stale_after;
+
+  -- Disabled/reassigned targets or exhausted stale leases may have made a
+  -- parent terminal without a provider callback. Reconcile before claiming.
+  update public.price_alert_deliveries d
+  set status=case
+        when exists (
+          select 1 from public.price_alert_delivery_targets t
+          where t.delivery_id=d.id and t.status='sent'
+        ) then 'sent'
+        else 'failed'
+      end,
+      sent_at=case
+        when exists (
+          select 1 from public.price_alert_delivery_targets t
+          where t.delivery_id=d.id and t.status='sent'
+        ) then coalesce(d.sent_at,now())
+        else null
+      end,
+      claimed_at=null,
+      last_error=case
+        when exists (
+          select 1 from public.price_alert_delivery_targets t
+          where t.delivery_id=d.id and t.status='sent'
+        ) then null
+        else 'all_push_targets_failed'
+      end
+  where d.status in ('pending','processing')
+    and exists (
+      select 1 from public.price_alert_delivery_targets t
+      where t.delivery_id=d.id
+    )
+    and not exists (
+      select 1 from public.price_alert_delivery_targets t
+      where t.delivery_id=d.id and t.status in ('pending','processing')
+    );
 
   return query
   with candidates as (
@@ -140,7 +180,8 @@ begin
   from claimed c
   join public.price_alert_deliveries d on d.id=c.delivery_id
   join public.price_alerts a on a.id=d.alert_id
-  join public.push_devices pd on pd.id=c.device_id and pd.enabled;
+  join public.push_devices pd
+    on pd.id=c.device_id and pd.enabled and pd.user_id=a.user_id;
 end $$;
 
 create or replace function public.complete_price_alert_delivery_target(
