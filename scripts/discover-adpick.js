@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import { AdpickBizProvider } from "../src/adpick-biz-provider.js";
+import { validateProductImages } from "../src/image-health.js";
 import { ADPICK_DISCOVERY_QUERIES as queries, ADPICK_SEARCH_LIMIT, ADPICK_DISCOVERY_PACING_MS } from "../src/adpick-discovery-plan.js";
 
 const apiKey = process.env.ADPICK_BIZ_API_KEY;
@@ -23,12 +24,34 @@ const adultMaleOnly = name => /남자/.test(name) && !/(남자\s*아기|남아|�
 const products = [...map.values()].filter(p =>
   apparelHints.test(p.name) && !rejectHints.test(p.name) && !adultMaleOnly(p.name)
 );
+const validated = await validateProductImages(products, {
+  timeoutMs: Number(process.env.ADPICK_IMAGE_TIMEOUT_MS || 5000),
+  concurrency: Number(process.env.ADPICK_IMAGE_CONCURRENCY || 12),
+});
+const imageHealth = {
+  checked: validated.length,
+  ok: validated.filter(p => p.imageHealth?.ok).length,
+  failed: validated.filter(p => !p.imageHealth?.ok).length,
+  statuses: validated.reduce((acc, p) => {
+    const key = String(p.imageHealth?.status ?? p.imageHealth?.reason ?? "unknown");
+    acc[key] = (acc[key] || 0) + 1;
+    return acc;
+  }, {}),
+};
+imageHealth.rate = imageHealth.checked ? imageHealth.ok / imageHealth.checked : 0;
+const minImageHealthRate = Number(process.env.ADPICK_MIN_IMAGE_HEALTH_RATE || 0.8);
+if (imageHealth.rate < minImageHealthRate) {
+  console.error(JSON.stringify({ imageHealth, minImageHealthRate }, null, 2));
+  throw new Error(`Refusing catalog publication: live image health ${(imageHealth.rate * 100).toFixed(1)}% < ${(minImageHealthRate * 100).toFixed(1)}%`);
+}
+const safeProducts = validated.map(({ imageHealth: _imageHealth, ...product }) => product);
 await fs.mkdir("data", { recursive: true });
 await fs.writeFile("data/adpick-biz-products.json", JSON.stringify({
   source: "adpick_biz",
   syncedAt: new Date().toISOString(),
   queries,
-  count: products.length,
-  products
+  count: safeProducts.length,
+  imageHealth,
+  products: safeProducts
 }, null, 2) + "\n");
-console.log(`Saved ${products.length} unique ADPICK BIZ products`);
+console.log(`Saved ${safeProducts.length} unique ADPICK BIZ products; images ${imageHealth.ok}/${imageHealth.checked} healthy`);

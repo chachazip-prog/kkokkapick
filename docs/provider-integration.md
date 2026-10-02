@@ -16,3 +16,18 @@ The adapter currently marks ADPICK as `ttl_cache` conservatively. Before product
 
 ### Required secret
 Create an ADPICK BIZ API key and set `ADPICK_API_KEY` in the server environment. Do not commit the key.
+
+
+### Product image freshness
+
+ADPICK BIZ `/search` documents `photo` as the product-image field. Kkokkapick consumes that field directly and does not synthesize the CloudFront image URL.
+
+Operational evidence on 2026-10-02 showed that a catalog synced at 07:07 KST had sampled image URLs returning HTTP 404 by 11:53, while a fresh API diagnostic at 12:24 returned 15/15 image responses as HTTP 200 `image/jpeg` from the same CloudFront host. This is an observed expiry/freshness characteristic, not a claim about an ADPICK contractual TTL.
+
+Repository policy:
+- refresh the ADPICK BIZ discovery catalog every two hours;
+- validate returned HTTPS image URLs with a browser-like HTTP/MIME probe before publication;
+- require at least 80% live-image health before publishing a newly generated catalog;
+- fail closed per product by omitting an image URL that does not return a successful `image/*` response;
+- retain UI image fallback for transient delivery failures;
+- do not scrape merchant pages, copy provider images, or introduce a proxy/cache beyond verified provider rights.

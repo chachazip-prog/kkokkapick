@@ -7,7 +7,7 @@ on:
       - "scripts/catalog-image-health.js"
       - ".github/workflows/catalog-image-health.yml"
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 */2 * * *"
   workflow_dispatch:
 
 permissions:
