@@ -76,6 +76,8 @@ void main(){
     final source=_Source('web',_token('a'));
     final coordinator=PushRegistrationCoordinator(source:source,gateway:_Gateway());
     await expectLater(coordinator.start(),throwsStateError);
-    await source.controller.close();
+    // start() rejects before subscribing. Awaiting close() on a never-listened
+    // single-subscription controller would make the test itself hang.
+    unawaited(source.controller.close());
   });
 }
