@@ -30,6 +30,8 @@ final class _LinkSource implements SocialAuthLinkSource {
   @override Stream<Uri> get uriLinks => controller.stream;
 }
 
+String _verifier() => List.filled(64, 'v').join();
+
 SocialAuthProviderConfiguration _config([Set<AuthMethod>? enabled]) =>
     SocialAuthProviderConfiguration(
       enabledMethods: enabled ?? {AuthMethod.google},
@@ -100,7 +102,7 @@ void main() {
     final pending = _PendingStore()
       ..value = PendingSocialAuth(
         method: AuthMethod.google,
-        codeVerifier: 'v' * 64,
+        codeVerifier: _verifier(),
         createdAt: DateTime.utc(2026, 10, 3, 1),
       );
     final tokens = _TokenStore();
@@ -138,7 +140,7 @@ void main() {
     final pending = _PendingStore()
       ..value = PendingSocialAuth(
         method: AuthMethod.google,
-        codeVerifier: 'v' * 64,
+        codeVerifier: _verifier(),
         createdAt: DateTime.utc(2026, 10, 3, 1),
       );
     final gateway = SupabaseAuthenticationGateway(
@@ -166,7 +168,7 @@ void main() {
     final pending = _PendingStore()
       ..value = PendingSocialAuth(
         method: AuthMethod.google,
-        codeVerifier: 'v' * 64,
+        codeVerifier: _verifier(),
         createdAt: DateTime.utc(2026, 10, 3, 1),
       );
     final gateway = SupabaseAuthenticationGateway(
@@ -189,7 +191,7 @@ void main() {
     final pending = _PendingStore()
       ..value = PendingSocialAuth(
         method: AuthMethod.google,
-        codeVerifier: 'v' * 64,
+        codeVerifier: _verifier(),
         createdAt: DateTime.utc(2026, 10, 3, 1),
       );
     final gateway = SupabaseAuthenticationGateway(
@@ -212,7 +214,7 @@ void main() {
     final pending = _PendingStore()
       ..value = PendingSocialAuth(
         method: AuthMethod.google,
-        codeVerifier: 'v' * 64,
+        codeVerifier: _verifier(),
         createdAt: DateTime.utc(2026, 10, 3, 1),
       );
     final gateway = SupabaseAuthenticationGateway(
@@ -256,7 +258,7 @@ void main() {
     final pending = _PendingStore()
       ..value = PendingSocialAuth(
         method: AuthMethod.google,
-        codeVerifier: 'v' * 64,
+        codeVerifier: _verifier(),
         createdAt: DateTime.now().toUtc(),
       );
     final tokens = _TokenStore();
