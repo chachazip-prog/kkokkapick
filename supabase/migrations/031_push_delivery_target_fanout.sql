@@ -233,6 +233,8 @@ revoke all on function public.claim_price_alert_delivery_targets(integer,interva
 revoke all on function public.complete_price_alert_delivery_target(uuid,boolean,boolean,boolean,text,integer)
   from public,anon,authenticated;
 
+grant execute on function public.evaluate_price_alerts(integer)
+  to service_role;
 grant execute on function public.claim_price_alert_delivery_targets(integer,interval,integer,text)
   to service_role;
 grant execute on function public.complete_price_alert_delivery_target(uuid,boolean,boolean,boolean,text,integer)
