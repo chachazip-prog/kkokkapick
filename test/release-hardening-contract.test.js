@@ -57,6 +57,8 @@ for (const term of [
 
 const imageWorkflow = read('.github/workflows/catalog-image-health.yml');
 for (const term of [
+  'pull_request:',
+  'continue-on-error:',
   'schedule:',
   'node scripts/catalog-image-health.js',
   'actions/upload-artifact@v4',
