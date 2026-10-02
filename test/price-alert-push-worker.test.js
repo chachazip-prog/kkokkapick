@@ -19,7 +19,7 @@ const backend={
 const senders={
   android:{async send(target,notification){
     assert.equal(target.deliveryId,'d1');
-    assert.match(notification.body,/12,000원/);
+    assert.equal(notification.body,'찜한 상품의 새 가격을 꼬까픽에서 확인해보세요.');
     return {outcome:PushOutcome.success,code:'fcm_ok'};
   }},
   ios:{async send(){return {outcome:PushOutcome.invalidToken,code:'apns_unregistered'};}},
