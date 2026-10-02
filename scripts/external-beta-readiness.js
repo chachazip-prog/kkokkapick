@@ -28,6 +28,7 @@ const repoChecks = {
     exists('scripts/validate-production-verification.js') &&
     exists('scripts/production-email-auth-smoke.js') &&
     exists('.github/workflows/production-supabase-activation.yml') &&
+    exists('docs/production-supabase-operator-runbook.md') &&
     latestMigration?.startsWith('030_'),
   productionConfigBoundary:
     storeWorkflow.includes('APP_ENV: production') &&
