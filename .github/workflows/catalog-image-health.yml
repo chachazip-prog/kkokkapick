@@ -1,11 +1,6 @@
 name: Catalog image health
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "data/catalog.json"
-      - ".github/workflows/catalog-image-health.yml"
   pull_request:
     paths:
       - "data/catalog.json"
