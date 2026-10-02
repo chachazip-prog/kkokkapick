@@ -38,6 +38,12 @@ const imageHealth = {
     return acc;
   }, {}),
 };
+imageHealth.rate = imageHealth.checked ? imageHealth.ok / imageHealth.checked : 0;
+const minImageHealthRate = Number(process.env.ADPICK_MIN_IMAGE_HEALTH_RATE || 0.8);
+if (imageHealth.rate < minImageHealthRate) {
+  console.error(JSON.stringify({ imageHealth, minImageHealthRate }, null, 2));
+  throw new Error(`Refusing catalog publication: live image health ${(imageHealth.rate * 100).toFixed(1)}% < ${(minImageHealthRate * 100).toFixed(1)}%`);
+}
 const safeProducts = validated.map(({ imageHealth: _imageHealth, ...product }) => product);
 await fs.mkdir("data", { recursive: true });
 await fs.writeFile("data/adpick-biz-products.json", JSON.stringify({
