@@ -1,6 +1,6 @@
 # KKOKKAPICK release execution board
 
-Updated: 2026-10-01
+Updated: 2026-10-02
 Owner: Team Lead / Product Owner gate
 Purpose: one execution board from remaining planning through release QA. This board distinguishes repository evidence from external/physical-device evidence and must not treat role-based review in a single execution context as independent-agent approval.
 
@@ -19,10 +19,10 @@ Every release item moves through the same sequence unless marked external-only:
 
 | Track | Plan | Implementation | Automated QA | External / independent gate | Current next action |
 | --- | --- | --- | --- | --- | --- |
-| Visual RC / #110 | locked to approved D03 reference and ten-item checklist | repository corrections substantially complete; #124 and #126 merged | #126 PR had all six repository workflows green; Flutter preview deployed from source `fc098c81235f` | 320/360/390/430 physical devices + iOS Safari + approved-reference independent visual QA | freeze `fc098c81235f` as the visual evidence source and execute deployed/physical-device comparison; any defect returns to FE |
+| Visual RC / #110 | locked to approved D03 reference and ten-item checklist | repository corrections substantially complete; #124/#126 and release hardening #152 merged | merge source `1ea27692873d` has 7/7 post-merge workflows green; Flutter preview deployment #36 succeeded | 320/360/390/430 physical devices + iOS Safari + approved-reference independent visual QA | freeze `1ea27692873d` as the current visual evidence source and execute deployed/physical-device comparison; any defect returns to FE |
 | Account/data / #104 | guest-first, explicit first-sync consent, truthful offline state | repository path substantially complete | account switch, restore, deletion and local snapshot contracts exist | production Supabase/auth/RLS/deletion E2E | keep issue open until production environment evidence exists |
 | Production backend | Supabase / narrow public catalog boundary selected | migrations/RLS/RPC repository foundation exists | repository preflight exists | create production project, apply migrations, run verification pack | Product Owner/DevOps activation input required |
-| Catalog/provider | ADPICK server-side only, TTL fail-closed pending final rights | ingestion/grouping/title/gallery logic exists | canonical grouping release regression wired to CI; 2026-10-01 catalog report: 515 canonical, 35 multi-image, 0 channel-prefixed display titles | written retention/redisplay/image/attribution rights + real image renderability/hotlink evidence | keep scheduled refresh healthy; provider-rights and renderability evidence remain external |
+| Catalog/provider | ADPICK server-side only, TTL fail-closed pending final rights | ingestion/grouping/title/gallery logic exists | canonical grouping release regression wired to CI; 2026-10-02 catalog report: 516 canonical, 38 multi-image, 0 channel-prefixed display titles | written retention/redisplay/image/attribution rights + real image renderability/hotlink evidence | keep scheduled refresh healthy; provider-rights and renderability evidence remain external |
 | Auth providers | Apple/Google/Kakao/Naver/Email target set | email/session foundation exists; social paths remain gated | auth boundary tests exist | provider apps/callbacks/credentials; Naver compatibility | Product Owner/DevOps external setup |
 | Push price alerts | threshold, ownership, claim/finalize/retry contracts exist | repository worker/DB foundation exists | push worker contract exists | credentialed FCM/APNs device delivery + invalid-token cleanup | DevOps external setup |
 | Native signing | app id `com.kkokkapick.app` fixed; unsigned CI is the repository gate | Android/iOS unsigned foundations exist | Android/iOS unsigned workflows | protected Apple/Google signing + signed checksums | store-account/signing setup |
@@ -34,7 +34,7 @@ Every release item moves through the same sequence unless marked external-only:
 | --- | --- | --- |
 | Accessibility | automated 200% text/core navigation/destructive confirmation plus targeted visual regressions | VoiceOver/TalkBack, tap-target, contrast and device matrix after UI freeze |
 | Store compliance | technical privacy inventory and reviewer/submission pack | Apple App Privacy + Google Data Safety generated from production configuration, final screenshots/URLs/reviewer account |
-| Telemetry | Crashlytics selected; no ad identifier added solely for crash reporting | production Firebase config and privacy-safe crash verification |
+| Telemetry | vendor-neutral `AppErrorReporter` + No-op runtime hooks + sensitive diagnostic redaction merged in #152; no exporter enabled | select/configure production crash backend and verify privacy-safe delivery |
 | Operations | release/incident/rollback runbooks | backup/restore test, rollback rehearsal, production monitoring |
 | Commercial | sponsored placement is disclosed and cannot alter organic fit evidence | provider-confirmed conversion ingestion, disclosure QA, production abuse/load verification |
 
@@ -53,7 +53,7 @@ Every release item moves through the same sequence unless marked external-only:
 | 2 | category labels complete at release widths | merged via #124 with 320/360/390/430 + 100%/200% automated coverage | physical-device check |
 | 3 | approved black wordmark + warm accent | implementation + #126 widget contract merged | deployed/device comparison |
 | 4 | product-card visible boundary and robust small layout | boundary + narrow-layout hardening merged via #124; #126 locks boundary | deployed/device comparison |
-| 5 | real multi-image aggregation/swipe | canonical aggregation + CI regression merged; latest catalog has 35 multi-image products | real-source card/detail render/device test + provider rights |
+| 5 | real multi-image aggregation/swipe | canonical aggregation + CI regression merged; latest catalog has 38 multi-image products | real-source card/detail render/device test + provider rights |
 | 6 | clean merchant/channel prefixes | canonical cleanup + CI regression merged; latest catalog reports 0 known channel-prefixed display titles | keep catalog QA at zero |
 | 7 | recommendation editorial hierarchy | implementation + #126 home contract merged | approved-reference comparison and no awkward device wrap |
 | 8 | rich product detail | implementation + #126 detail hierarchy contract merged | device visual QA with real catalog evidence |
@@ -61,9 +61,10 @@ Every release item moves through the same sequence unless marked external-only:
 | 10 | approved D03 rhythm, not generic dashboard styling | structurally evidenced by implementation/contracts, not independently signed off | final approved-reference and physical-device visual sign-off |
 
 ## Frozen visual evidence source
-- Flutter source revision: `fc098c81235fb170f5621585f5ff1ab20fd97f3f`
-- Preview deployment commit: `7b40c0117a4d686ce7efe123531088720b76cf06`
-- The preview deployment updates `flutter-preview/SOURCE_REVISION` and `release-evidence.json` to the source revision above.
+- Flutter source revision: `1ea27692873d6e678daa4c6355317f02ce48f8ca`
+- Preview deployment commit: `8c4cf7e864a45ad4e953ae02c53f7daeb738283e`
+- Preview workflow run: `37002091263` (`Deploy Flutter UI preview` #36, SUCCESS).
+- `flutter-preview/SOURCE_REVISION` and `release-evidence.json` both point to the source revision above.
 - Scheduled catalog refreshes may advance `main`; physical visual QA must record the source revision it actually verifies rather than assuming current main equals the frozen UI source.
 
 ## Evidence rules
