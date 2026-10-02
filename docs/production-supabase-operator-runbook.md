@@ -18,7 +18,7 @@ Never place a database password, service-role key, test password, access/refresh
 1. Freeze the release SHA that will be verified.
 2. Create a production backup or provider-supported recovery point **before** applying repository migrations. Record only the backup identifier/time in the evidence file.
 3. Generate `production-migration-manifest.json` from the frozen SHA and retain it with the release evidence.
-4. Apply migrations in numeric order through `030_production_boundary_reconciliation.sql` using the approved deployment mechanism. Do not skip or reorder migrations.
+4. Apply migrations in numeric order through `031_push_delivery_target_fanout.sql` using the approved deployment mechanism. Do not skip or reorder migrations.
 5. Run the GitHub Actions workflow **Production Supabase activation verification** with the protected `production` Environment.
 6. Require both workflow jobs to pass:
    - schema verification: read-only JSON verification + strict validator;
@@ -69,6 +69,7 @@ Stop production promotion if any of these occurs:
 - read-only schema verification or validator fails;
 - any required RLS table is absent/disabled;
 - anonymous access appears on account or trusted-worker RPCs;
+- service-role access is missing from the 031 evaluator/target-claim/target-complete RPCs, or legacy parent-level push worker RPCs regain service-role access;
 - legacy catalog/commercial metric views are anonymously selectable;
 - email authentication, refresh, account RPC or production catalog smoke fails;
 - backup/restore evidence is unavailable;
