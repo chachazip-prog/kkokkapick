@@ -14,6 +14,7 @@ import 'services/local_account_data_store.dart';
 import 'services/overlay_coordinator.dart';
 import 'services/secure_session_token_store.dart';
 import 'services/secure_social_auth_store.dart';
+import 'services/social_auth.dart';
 import 'services/social_auth_callback_router.dart';
 import 'services/supabase_authentication_gateway.dart';
 import 'theme/kkokkapick_theme.dart';
