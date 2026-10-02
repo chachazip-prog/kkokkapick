@@ -5,16 +5,10 @@ import {
   terminalResult,
 } from './push-provider-result.js';
 
-export function buildPriceAlertNotification(target) {
-  const price = Number(target.observed_price ?? target.observedPrice);
-  const formatted = Number.isFinite(price) && price > 0
-    ? `${Math.round(price).toLocaleString('ko-KR')}원`
-    : null;
+export function buildPriceAlertNotification() {
   return {
     title: '가격이 내려갔어요',
-    body: formatted
-      ? `찜한 상품이 ${formatted}까지 내려왔어요.`
-      : '찜한 상품의 가격이 내려왔어요.',
+    body: '찜한 상품의 새 가격을 꼬까픽에서 확인해보세요.',
   };
 }
 
