@@ -1,26 +1,25 @@
 {
-  "syncedAt": "2026-10-03T03:09:07.452Z",
-  "sourceProducts": 560,
-  "canonicalProducts": 512,
+  "syncedAt": "2026-10-03T04:13:17.460Z",
+  "sourceProducts": 564,
+  "canonicalProducts": 516,
   "queries": 48,
-  "recognizedBrandProducts": 332,
-  "recognizedBrandRatePct": 64.8,
+  "recognizedBrandProducts": 336,
+  "recognizedBrandRatePct": 65.1,
   "officialBrandGuideProducts": 25,
-  "officialBrandGuideRatePct": 4.9,
+  "officialBrandGuideRatePct": 4.8,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 560,
-    "ok": 559,
-    "failed": 1,
+    "checked": 564,
+    "ok": 564,
+    "failed": 0,
     "statuses": {
-      "200": 559,
-      "400": 1
+      "200": 564
     },
-    "rate": 0.9982142857142857
+    "rate": 1
   },
-  "canonicalImageProducts": 511,
-  "canonicalImageRatePct": 99.8,
+  "canonicalImageProducts": 516,
+  "canonicalImageRatePct": 100,
   "multiImageProducts": 39,
   "multiImageRatePct": 7.6,
   "channelPrefixedDisplayTitles": 0,
@@ -35,16 +34,12 @@
       "count": 29
     },
     {
+      "name": "베네통키즈",
+      "count": 28
+    },
+    {
       "name": "해피프린스",
       "count": 22
-    },
-    {
-      "name": "베네통키즈",
-      "count": 22
-    },
-    {
-      "name": "삠뽀요",
-      "count": 19
     },
     {
       "name": "빈폴키즈",
@@ -53,6 +48,10 @@
     {
       "name": "헤지스키즈",
       "count": 18
+    },
+    {
+      "name": "삠뽀요",
+      "count": 17
     },
     {
       "name": "에뜨와",
@@ -109,12 +108,12 @@
   ],
   "categories": [
     {
-      "name": "아우터",
+      "name": "상의",
       "count": 115
     },
     {
-      "name": "상의",
-      "count": 111
+      "name": "아우터",
+      "count": 115
     },
     {
       "name": "하의",
@@ -130,7 +129,7 @@
     },
     {
       "name": "상하복",
-      "count": 40
+      "count": 39
     },
     {
       "name": "실내복",
@@ -138,17 +137,17 @@
     },
     {
       "name": "기타",
-      "count": 25
+      "count": 26
     }
   ],
   "stages": [
     {
       "name": "키즈",
-      "count": 228
+      "count": 232
     },
     {
       "name": "베이비",
-      "count": 205
+      "count": 204
     },
     {
       "name": "유아",
@@ -156,7 +155,7 @@
     },
     {
       "name": "신생아",
-      "count": 36
+      "count": 37
     },
     {
       "name": "토들러",
