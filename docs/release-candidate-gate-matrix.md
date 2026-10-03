@@ -17,9 +17,9 @@ This document separates repository-complete release evidence from Product Owner 
 | --- | --- | --- | --- |
 | Team Lead / PM | Scope freeze, release evidence roll-up, no unresolved internal P0 | Account/session, My release surfaces and account-switch isolation merged; release gate remains open for external activation | Final release SHA and submission authorization |
 | Product / Design | D03 structure retained; Home/Search separation; no fake/no-op release actions | v10 visual rebuild merged in #111; My additions stay inside existing visual language | Final physical-device visual sign-off after production configuration |
-| Mobile FE | Flutter analyze/tests; small-width/accessibility contracts; account state behavior | Guest/authenticated/offlineAuthenticated, sync consent, delete/sign-out and My release surfaces covered by tests; Email/password is the only enabled auth method | Social OAuth callback/deep-link wiring, signed production builds and device E2E with real auth/push |
+| Mobile FE | Flutter analyze/tests; small-width/accessibility contracts; account state behavior | Guest/authenticated/offlineAuthenticated, sync consent, delete/sign-out and My release surfaces covered; Email/password remains the only enabled auth method; social PKCE/deep-link and push registration/rotation foundations exist | Native push token source, signed production builds and device E2E with real auth/push |
 | Source / Data | Canonical product grouping, valid positive price semantics, HTTPS image aggregation, provenance/rights boundaries | Canonical aggregation hardening merged; catalog/provider policy remains fail-closed | Provider production rights, attribution and production catalog read boundary |
-| Backend | RLS/RPC/account lifecycle/price-alert migrations and repository contracts | Account lifecycle, mutation boundary, deletion, price-alert evaluation/worker/retry and ownership hardening migrations are present | Apply/audit migrations in production Supabase; backup/restore rehearsal |
+| Backend | RLS/RPC/account lifecycle/price-alert migrations and repository contracts | Account lifecycle plus per-device price-alert target fan-out, service-role worker RPC isolation, retry and invalid-token disablement are present through migration 031 | Apply/audit migrations in production Supabase; backup/restore and live push rehearsal |
 | QA / Reviewer | Independent regression gate; no internal P0 accepted on implementation claim alone | #112-#114 had CI + role-separated QA gates; account-switch isolation now orchestration-tested | Production physical-device E2E, signed-artifact smoke and store-reviewer path |
 | Security / Privacy | No tracked secrets/signing material; stale-token boundary; owner-scoped mutation isolation; draft policies clearly non-final | Repository contracts and Flutter tests cover these boundaries | Production grants/RLS audit, real privacy particulars, ecosystem advisory pass |
 | DevOps / FinOps | Reproducible CI, unsigned artifacts, rollback/runbook, no unexpected recurring cost | Six-workflow release foundation exists; latest internal changes have no infra/paid-service cost | Protected signing/store credentials, production monitoring, cost confirmation |
@@ -46,7 +46,7 @@ Do not represent any of these as complete until evidence from the real productio
 - Production Supabase URL/anon key and approved catalog read boundary.
 - Applied migrations plus grants/RLS/RPC exposure audit in the target project.
 - Enabled production authentication providers and callback configuration.
-- FCM/APNs credentials, sender execution and real-device invalid-token handling.
+- Native push token acquisition, FCM/APNs credentials, protected smoke, live sender execution and real-device invalid-token/multi-device handling.
 - Provider production rights/retention/attribution confirmation.
 - Official operator/legal identity, contact email, customer-support channel and final privacy policy particulars.
 - Android/iOS protected signing credentials, final store registrations and signed artifacts.

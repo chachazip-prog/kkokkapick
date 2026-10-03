@@ -1,0 +1,56 @@
+name: Production push verification
+
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: "Test device platform"
+        required: true
+        type: choice
+        options: [android, ios]
+      confirm_send:
+        description: "Send exactly one push to the protected test-device token"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-push-smoke
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    if: ${{ inputs.confirm_send }}
+    environment: production
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PUSH_SMOKE_EXECUTE: "1"
+      PUSH_SMOKE_PLATFORM: ${{ inputs.platform }}
+      PUSH_SMOKE_ANDROID_TOKEN: ${{ secrets.PUSH_SMOKE_ANDROID_TOKEN }}
+      PUSH_SMOKE_IOS_TOKEN: ${{ secrets.PUSH_SMOKE_IOS_TOKEN }}
+      FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+      APNS_KEY_ID: ${{ secrets.APNS_KEY_ID }}
+      APNS_TEAM_ID: ${{ secrets.APNS_TEAM_ID }}
+      APNS_BUNDLE_ID: ${{ secrets.APNS_BUNDLE_ID }}
+      APNS_PRIVATE_KEY_P8: ${{ secrets.APNS_PRIVATE_KEY_P8 }}
+      APNS_ENVIRONMENT: production
+      PUSH_SMOKE_REPORT: artifacts/production-push-smoke.json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Send one protected test-device push
+        run: node scripts/production-push-smoke.js
+      - name: Upload sanitized push evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-push-smoke-${{ inputs.platform }}
+          path: artifacts/production-push-smoke.json
+          if-no-files-found: error
+          retention-days: 30

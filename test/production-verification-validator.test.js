@@ -7,7 +7,7 @@ const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kkokkapick-prod-verify-'));
 const good = {
   generatedAt: '2026-10-03T00:00:00Z',
   rls: Object.fromEntries([
-    'profiles','child_profiles','favorites','price_alerts','push_devices','price_alert_deliveries',
+    'profiles','child_profiles','favorites','price_alerts','push_devices','price_alert_deliveries','price_alert_delivery_targets',
     'providers','provider_themes','products','product_sizes','offers','price_history','brand_size_guides',
     'commercial_partners','commercial_campaigns','commercial_campaign_products','commercial_events',
     'admin_users','managed_popups','catalog_overrides','brand_size_evidence','admin_audit_log'
@@ -15,7 +15,8 @@ const good = {
   routines: Object.fromEntries([
     'get_published_catalog','get_my_app_data','sync_my_app_data','set_my_favorite','set_my_price_alert',
     'set_my_child_profile','delete_my_app_data','delete_my_account','set_my_push_device','remove_my_push_device',
-    'record_commercial_event','evaluate_price_alerts','claim_price_alert_deliveries','complete_price_alert_delivery'
+    'record_commercial_event','evaluate_price_alerts','claim_price_alert_deliveries','complete_price_alert_delivery',
+    'claim_price_alert_delivery_targets','complete_price_alert_delivery_target'
   ].map(k => [k,true])),
   grants: {
     catalogAnonExecute:true,catalogAuthenticatedExecute:true,
@@ -29,9 +30,11 @@ const good = {
     pushDeviceAnonExecute:false,pushDeviceAuthenticatedExecute:true,
     removePushAnonExecute:false,removePushAuthenticatedExecute:true,
     commercialAnonExecute:true,commercialAuthenticatedExecute:true,
-    evaluateAnonExecute:false,evaluateAuthenticatedExecute:false,
-    claimAnonExecute:false,claimAuthenticatedExecute:false,
-    completeAnonExecute:false,completeAuthenticatedExecute:false
+    evaluateAnonExecute:false,evaluateAuthenticatedExecute:false,evaluateServiceRoleExecute:true,
+    claimAnonExecute:false,claimAuthenticatedExecute:false,claimServiceRoleExecute:false,
+    completeAnonExecute:false,completeAuthenticatedExecute:false,completeServiceRoleExecute:false,
+    targetClaimAnonExecute:false,targetClaimAuthenticatedExecute:false,targetClaimServiceRoleExecute:true,
+    targetCompleteAnonExecute:false,targetCompleteAuthenticatedExecute:false,targetCompleteServiceRoleExecute:true
   },
   views: {
     publishedCatalogProductsAnonSelect:false,

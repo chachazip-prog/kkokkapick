@@ -28,6 +28,13 @@ node test/production-verification-validator.test.js || fail=1
 node test/production-email-auth-smoke.test.js || fail=1
 node test/production-supabase-activation-workflow.test.js || fail=1
 node test/social-auth-platform-contract.test.js || fail=1
+node test/push-provider-result.test.js || fail=1
+node test/fcm-sender.test.js || fail=1
+node test/apns-sender.test.js || fail=1
+node test/price-alert-push-worker.test.js || fail=1
+node test/push-delivery-fanout-contract.test.js || fail=1
+node test/push-worker-entrypoint.test.js || fail=1
+node test/production-push-workflow.test.js || fail=1
 node scripts/external-beta-readiness.js || fail=1
 
 if git ls-files | grep -E '\.(jks|keystore|p12|p8|mobileprovision)$'; then
