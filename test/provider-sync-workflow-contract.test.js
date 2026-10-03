@@ -13,6 +13,7 @@ for(const p of ['.github/workflows/sync-adpick.yml','.github/workflows/sync-adpi
    if(!s.includes('main moved during provider sync; refusing stale catalog publication'))throw new Error(p+' must reject stale generated catalog');
    if(!s.includes('cron: "43 * * * *"'))throw new Error(p+' must refresh expiring product images every hour');
    if(!s.includes('ADPICK_MIN_IMAGE_HEALTH_RATE: "0.8"'))throw new Error(p+' must enforce live image health before publication');
+   if(!s.includes('Guard catalog coverage before publication')||!s.includes('ADPICK_MIN_SOURCE_PRODUCTS: "300"')||!s.includes('ADPICK_MIN_CANONICAL_PRODUCTS: "250"')||!s.includes('ADPICK_MIN_PREVIOUS_RATIO: "0.65"'))throw new Error(p+' must reject severe catalog coverage collapse');
    if(!s.includes('Verify catalog image health after publish')||!s.includes('post-publish-catalog-image-health'))throw new Error(p+' must verify and retain image health after publication');
    if(!s.includes('paths:')||!s.includes('.github/workflows/sync-adpick-biz.yml'))throw new Error(p+' must run once when sync policy lands on main');
    if(s.includes('git rebase origin/main'))throw new Error(p+' must not rebase stale provider data onto a newer main');
