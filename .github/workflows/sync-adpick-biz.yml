@@ -33,6 +33,18 @@ jobs:
         run: |
           cp data/adpick-biz-products.json /tmp/adpick-baseline-source.json
           cp data/catalog.json /tmp/adpick-baseline-catalog.json
+          node - <<'NODE'
+          const fs = require('fs');
+          const catalog = JSON.parse(fs.readFileSync('data/catalog.json', 'utf8'));
+          const syncedAt = catalog.syncedAt || catalog.generatedAt || catalog.updatedAt;
+          if (!syncedAt) throw new Error('Catalog freshness timestamp missing');
+          const ageHours = (Date.now() - Date.parse(syncedAt)) / 3600000;
+          const evidence = { checkedAt: new Date().toISOString(), syncedAt, ageHours: Math.round(ageHours * 100) / 100, staleAfterHours: 24, stale: ageHours > 24 };
+          fs.mkdirSync('artifacts', { recursive: true });
+          fs.writeFileSync('artifacts/catalog-freshness.json', JSON.stringify(evidence, null, 2) + '\n');
+          console.log(JSON.stringify(evidence));
+          if (evidence.stale) console.warn('Catalog is stale because provider recovery has not produced a safe refresh.');
+          NODE
 
       - name: Search baby and kids apparel
         env:
@@ -89,4 +101,13 @@ jobs:
           name: post-publish-catalog-image-health
           path: artifacts/post-publish-catalog-image-health.json
           if-no-files-found: warn
+          retention-days: 14
+
+      - name: Upload catalog freshness evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalog-freshness
+          path: artifacts/catalog-freshness.json
+          if-no-files-found: error
           retention-days: 14
