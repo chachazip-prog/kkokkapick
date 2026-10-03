@@ -41,6 +41,25 @@ const adultMaleOnly = name => /남자/.test(name) && !/(남자\s*아기|남아|�
 const products = [...map.values()].filter(p =>
   apparelHints.test(p.name) && !rejectHints.test(p.name) && !adultMaleOnly(p.name)
 );
+
+// Fail before image validation and file writes when the provider search corpus is
+// obviously degraded. The workflow-level coverage guard remains the final
+// publication gate, but this keeps the checked-out healthy baseline untouched
+// and makes provider collapse the explicit failure reason.
+const minDiscoveryUnique = Number(process.env.ADPICK_MIN_DISCOVERY_UNIQUE || 250);
+if (map.size < minDiscoveryUnique) {
+  console.error(JSON.stringify({
+    providerCoverage: {
+      returnedTotal: queryDiagnostics.reduce((sum, item) => sum + item.returned, 0),
+      uniqueBeforeApparelFilter: map.size,
+      apparelProducts: products.length,
+      zeroResultQueries: queryDiagnostics.filter(item => item.returned === 0).map(item => item.query),
+    },
+    minDiscoveryUnique,
+  }, null, 2));
+  throw new Error(`ADPICK provider search corpus degraded: ${map.size} unique < ${minDiscoveryUnique}`);
+}
+
 const validated = await validateProductImages(products, {
   timeoutMs: Number(process.env.ADPICK_IMAGE_TIMEOUT_MS || 5000),
   concurrency: Number(process.env.ADPICK_IMAGE_CONCURRENCY || 12),
