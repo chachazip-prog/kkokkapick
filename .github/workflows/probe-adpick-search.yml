@@ -1,0 +1,42 @@
+name: Probe ADPICK search canaries
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/probe-adpick-search.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Probe broad search semantics
+        env:
+          ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
+        run: |
+          node --input-type=module <<'NODE'
+          import { AdpickBizProvider } from "./src/adpick-biz-provider.js";
+          import { ADPICK_BROAD_QUERY_CANARIES, ADPICK_SEARCH_LIMIT, ADPICK_DISCOVERY_PACING_MS } from "./src/adpick-discovery-plan.js";
+          const provider = new AdpickBizProvider({ apiKey: process.env.ADPICK_BIZ_API_KEY });
+          const rows = [];
+          const ids = new Set();
+          for (const query of ADPICK_BROAD_QUERY_CANARIES) {
+            const products = await provider.search(query, { limit: ADPICK_SEARCH_LIMIT });
+            const before = ids.size;
+            for (const product of products) ids.add(product.externalProductId || product.affiliateUrl);
+            const row = { query, returned: products.length, newUnique: ids.size - before, cumulativeUnique: ids.size };
+            rows.push(row);
+            console.log("[adpick-broad-canary]", JSON.stringify(row));
+            await new Promise(resolve => setTimeout(resolve, ADPICK_DISCOVERY_PACING_MS));
+          }
+          console.log("[adpick-broad-canary-summary]", JSON.stringify({ returnedTotal: rows.reduce((n,x)=>n+x.returned,0), unique: ids.size, queries: rows }));
+          NODE
