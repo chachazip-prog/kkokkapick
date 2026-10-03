@@ -6,5 +6,7 @@ assert.equal(providerPolicy("linkprice").storagePolicy,"realtime_only");
 assert.throws(()=>assertStorageAllowed("adpick_biz","persistent"));
 assert.doesNotThrow(()=>assertStorageAllowed("adpick_biz","ttl_cache"));
 assert.throws(()=>assertStorageAllowed("linkprice","ttl_cache"));
+assert.equal(providerPolicy("coupang_partners").storagePolicy,"realtime_only");
+assert.throws(()=>assertStorageAllowed("coupang_partners","ttl_cache"));
 assert.equal(providerPolicy("unknown").storagePolicy,"realtime_only");
 console.log("provider policy tests passed");

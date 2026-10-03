@@ -17,6 +17,13 @@ export const PROVIDERS = Object.freeze({
     ttlHours: 0,
     policyVerified: false,
     status: "awaiting_written_policy_clarification"
+  },
+  coupang_partners: {
+    code: "coupang_partners",
+    storagePolicy: STORAGE_POLICIES.REALTIME_ONLY,
+    ttlHours: 0,
+    policyVerified: false,
+    status: "awaiting_current_api_and_retention_terms"
   }
 });
 
