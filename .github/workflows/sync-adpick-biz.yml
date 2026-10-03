@@ -46,6 +46,24 @@ jobs:
           if (evidence.stale) console.warn('Catalog is stale because provider recovery has not produced a safe refresh.');
           NODE
 
+      - name: Probe broad ADPICK search canaries
+        env:
+          ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
+        run: |
+          node --input-type=module <<'NODE'
+          import { AdpickBizProvider } from "./src/adpick-biz-provider.js";
+          import { ADPICK_BROAD_QUERY_CANARIES, ADPICK_SEARCH_LIMIT, ADPICK_DISCOVERY_PACING_MS } from "./src/adpick-discovery-plan.js";
+          const provider = new AdpickBizProvider({ apiKey: process.env.ADPICK_BIZ_API_KEY });
+          const rows = [];
+          for (const query of ADPICK_BROAD_QUERY_CANARIES) {
+            const products = await provider.search(query, { limit: ADPICK_SEARCH_LIMIT });
+            rows.push({ query, returned: products.length });
+            console.log("[adpick-broad-canary]", JSON.stringify(rows.at(-1)));
+            await new Promise(resolve => setTimeout(resolve, ADPICK_DISCOVERY_PACING_MS));
+          }
+          console.log("[adpick-broad-canary-summary]", JSON.stringify({ returnedTotal: rows.reduce((n, x) => n + x.returned, 0), queries: rows }));
+          NODE
+
       - name: Search baby and kids apparel
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
