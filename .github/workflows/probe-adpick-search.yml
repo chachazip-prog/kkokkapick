@@ -25,7 +25,8 @@ jobs:
         run: |
           node --input-type=module <<'NODE'
           import { AdpickBizProvider } from "./src/adpick-biz-provider.js";
-          import { ADPICK_BROAD_QUERY_CANARIES, ADPICK_SEARCH_LIMIT, ADPICK_DISCOVERY_PACING_MS } from "./src/adpick-discovery-plan.js";
+          import { ADPICK_SEARCH_LIMIT, ADPICK_DISCOVERY_PACING_MS } from "./src/adpick-discovery-plan.js";
+          const ADPICK_BROAD_QUERY_CANARIES = ["여아옷","남아옷","아기 여름옷","아기 겨울옷","유아 여름옷","유아 겨울옷","아동 티셔츠","아동 바지","아동 원피스","아동 상하복"];
           const provider = new AdpickBizProvider({ apiKey: process.env.ADPICK_BIZ_API_KEY });
           const rows = [];
           const ids = new Set();
