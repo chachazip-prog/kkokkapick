@@ -28,6 +28,11 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Preserve previous catalog coverage baseline
+        run: |
+          cp data/adpick-biz-products.json /tmp/adpick-baseline-source.json
+          cp data/catalog.json /tmp/adpick-baseline-catalog.json
+
       - name: Search baby and kids apparel
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
@@ -38,6 +43,15 @@ jobs:
           node scripts/discover-adpick.js
           node scripts/build-catalog.js
           node scripts/catalog-quality-report.js | tee catalog-quality-report.json
+
+      - name: Guard catalog coverage before publication
+        env:
+          CATALOG_BASELINE_SOURCE: /tmp/adpick-baseline-source.json
+          CATALOG_BASELINE_CANONICAL: /tmp/adpick-baseline-catalog.json
+          ADPICK_MIN_SOURCE_PRODUCTS: "300"
+          ADPICK_MIN_CANONICAL_PRODUCTS: "250"
+          ADPICK_MIN_PREVIOUS_RATIO: "0.65"
+        run: node scripts/catalog-coverage-guard.js
 
       - name: Commit catalog
         run: |
