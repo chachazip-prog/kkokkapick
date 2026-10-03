@@ -4,8 +4,10 @@ for(const p of ['.github/workflows/sync-adpick.yml','.github/workflows/sync-adpi
  if(!s.includes("if: github.repository == 'chachazip-prog/kkokkapick'"))throw new Error(p+' missing canonical-repository guard');
  if(!s.includes('git fetch origin main')||!s.includes('git push origin HEAD:main'))throw new Error(p+' missing explicit main update');
  if(!s.includes('concurrency:'))throw new Error(p+' must define provider sync concurrency');
- if(!s.includes('group: adpick-biz-sync'))throw new Error(p+' must use the provider sync concurrency group');
- if(!s.includes('cancel-in-progress: true'))throw new Error(p+' must prefer the newest provider sync revision');
+ if(p.endsWith('sync-adpick-biz.yml')){
+   if(!s.includes('group: adpick-biz-sync'))throw new Error(p+' must use the BIZ sync concurrency group');
+   if(!s.includes('cancel-in-progress: true'))throw new Error(p+' must prefer the newest BIZ sync revision');
+ } else if(!s.includes('cancel-in-progress: false'))throw new Error(p+' must serialize legacy provider sync');
  if(p.endsWith('sync-adpick.yml')){
    if(!s.includes('main moved during provider sync; refusing stale catalog publication'))throw new Error(p+' must reject stale generated catalog');
    if(s.includes('git rebase origin/main'))throw new Error(p+' must not rebase stale provider data onto a newer main');
