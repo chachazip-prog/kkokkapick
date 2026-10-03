@@ -37,13 +37,19 @@ jobs:
             const page=await browser.newPage({viewport:{width,height:844},deviceScaleFactor:1});
             await page.goto('http://127.0.0.1:4173/',{waitUntil:'networkidle'});
             await page.screenshot({path:`artifacts/visual-qa/home-${width}.png`,fullPage:true});
+            await page.screenshot({path:`artifacts/visual-qa/home-viewport-${width}.png`});
             await page.locator('#searchNav').click();
             await page.screenshot({path:`artifacts/visual-qa/search-${width}.png`,fullPage:true});
+            await page.screenshot({path:`artifacts/visual-qa/search-viewport-${width}.png`});
+            await page.locator('#favNav').click();
+            await page.screenshot({path:`artifacts/visual-qa/favorites-${width}.png`,fullPage:true});
+            await page.screenshot({path:`artifacts/visual-qa/favorites-viewport-${width}.png`});
             await page.locator('#myNav').click();
             await page.screenshot({path:`artifacts/visual-qa/my-${width}.png`,fullPage:true});
+            await page.screenshot({path:`artifacts/visual-qa/my-viewport-${width}.png`});
             await page.locator('#homeNav').click();
             const card=page.locator('.card').first();
-            if(await card.count()){await card.click();await page.waitForTimeout(200);await page.screenshot({path:`artifacts/visual-qa/detail-${width}.png`,fullPage:true});}
+            if(await card.count()){await card.click();await page.waitForTimeout(200);await page.screenshot({path:`artifacts/visual-qa/detail-${width}.png`,fullPage:true});await page.screenshot({path:`artifacts/visual-qa/detail-viewport-${width}.png`});}
             await page.close();
           }
           await browser.close();
