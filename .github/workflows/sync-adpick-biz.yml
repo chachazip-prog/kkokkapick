@@ -1,4 +1,5 @@
 name: Sync ADPICK BIZ baby clothes
+# Provider-collapse diagnostic trigger: query-level coverage logging is now enabled.
 
 on:
   workflow_dispatch:
