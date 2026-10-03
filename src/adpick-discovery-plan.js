@@ -13,3 +13,9 @@ export const ADPICK_DISCOVERY_QUERIES = Object.freeze([
 
 export const ADPICK_SEARCH_LIMIT = 20;
 export const ADPICK_DISCOVERY_PACING_MS = 6500;
+
+// Broad canaries are intentionally separate from the publication discovery plan.
+// They let us detect provider search-semantic changes without silently changing catalog composition.
+export const ADPICK_BROAD_QUERY_CANARIES = Object.freeze([
+  "아기옷", "유아복", "아동복", "키즈옷", "베이비옷"
+]);
