@@ -78,7 +78,8 @@ begin
       select 1 from public.price_alert_delivery_targets t where t.delivery_id=d.id
     );
 
-  -- A target can become disabled after fan-out but before provider I/O.
+  -- A target can become disabled or reassigned after fan-out but before
+  -- provider I/O. Never send an old account's frozen target.
   update public.price_alert_delivery_targets t
   set status='failed',
       claimed_at=null,
@@ -98,42 +99,6 @@ begin
       )
     );
 
-  -- A frozen parent can become terminal before a provider claim (for example,
-  -- every target was disabled after fan-out). Aggregate those parents here so
-  -- they never remain stranded in pending/processing with no claimable target.
-  update public.price_alert_deliveries d
-  set status=case
-        when exists (
-          select 1 from public.price_alert_delivery_targets t
-          where t.delivery_id=d.id and t.status='sent'
-        ) then 'sent'
-        else 'failed'
-      end,
-      sent_at=case
-        when exists (
-          select 1 from public.price_alert_delivery_targets t
-          where t.delivery_id=d.id and t.status='sent'
-        ) then coalesce(d.sent_at,now())
-        else null
-      end,
-      claimed_at=null,
-      last_error=case
-        when exists (
-          select 1 from public.price_alert_delivery_targets t
-          where t.delivery_id=d.id and t.status='sent'
-        ) then null
-        else 'all_push_targets_failed'
-      end
-  where d.status in ('pending','processing')
-    and exists (
-      select 1 from public.price_alert_delivery_targets t
-      where t.delivery_id=d.id
-    )
-    and not exists (
-      select 1 from public.price_alert_delivery_targets t
-      where t.delivery_id=d.id and t.status in ('pending','processing')
-    );
-
   -- Recover abandoned target leases independently so successful sibling devices
   -- are never resent.
   update public.price_alert_delivery_targets
@@ -147,8 +112,8 @@ begin
       updated_at=now()
   where status='processing' and claimed_at<now()-p_stale_after;
 
-  -- Disabled/reassigned targets or exhausted stale leases may have made a
-  -- parent terminal without a provider callback. Reconcile before claiming.
+  -- Disabled/reassigned targets or exhausted stale leases may make a parent
+  -- terminal without a provider callback. Reconcile before selecting work.
   update public.price_alert_deliveries d
   set status=case
         when exists (
