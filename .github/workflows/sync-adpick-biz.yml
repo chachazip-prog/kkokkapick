@@ -1,5 +1,5 @@
 name: Sync ADPICK BIZ baby clothes
-# Provider-collapse diagnostic trigger: query-level coverage logging is now enabled.
+# Recovery trigger: proven broad recall queries are now part of publication discovery.
 
 on:
   workflow_dispatch:
