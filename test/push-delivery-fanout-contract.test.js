@@ -11,6 +11,8 @@ for(const term of [
   "pd.user_id=a.user_id",
   "push_device_disabled_or_reassigned",
   "last_error='all_push_targets_failed'",
+  "and not exists (",
+  "where t.delivery_id=d.id and t.status in ('pending','processing')",
   'grant execute on function public.claim_price_alert_delivery_targets(integer,interval,integer,text)',
   'to service_role',
   'grant execute on function public.complete_price_alert_delivery_target(uuid,boolean,boolean,boolean,text,integer)',
