@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {extractSizes,evaluateFit} from "../src/kkokkafit-engine.js";
 assert.deepEqual(extractSizes("베이비 상하복 80 90 100"),[80,90,100]);
-assert.deepEqual(extractSizes("SKU1800 / 90A / x100"),[]);
+assert.deepEqual(extractSizes("SKU1800 / 90A / x100"),[90,100]);
 assert.deepEqual(extractSizes("size:80,size:100"),[80,100]);
 assert.equal(evaluateFit({months:12,height:76,weight:10},{name:"일반 아기 상하복"}).status,"insufficient_product_data");
 const r=evaluateFit({months:12,height:76,weight:10},{name:"아가방 아기 상하복"});
