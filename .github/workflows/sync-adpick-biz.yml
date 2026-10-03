@@ -1,5 +1,5 @@
 name: Sync ADPICK BIZ baby clothes
-# Recovery trigger: proven broad recall queries are now part of publication discovery.
+# Recovery trigger: second-wave proven recall queries are now part of publication discovery.
 
 on:
   workflow_dispatch:
