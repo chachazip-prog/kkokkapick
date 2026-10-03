@@ -110,7 +110,7 @@ body,button,input,select{font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-s
 
 /* DEVICE SCREENSHOT QA PASS 3 */
 [hidden]{display:none!important}
-#catalogSection[aria-hidden="true"]{visibility:hidden!important}
+#catalogSection[aria-hidden="true"]{display:none!important}
 .cat-drawing svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .support-menu button{grid-template-columns:minmax(0,1fr) auto!important}
 .search-tools{padding:14px 16px 4px}.search-options{margin:10px 0}.quick-chips{margin:8px 0 16px}.search-category-grid{gap:8px}.search-category-grid button{min-height:70px;padding:8px 4px}.search-category-grid button b{font-size:20px}.search-heading{margin:18px 0 9px}
@@ -211,7 +211,7 @@ document.querySelectorAll('[data-search-cat]').forEach(b=>b.onclick=()=>{cat=b.d
 document.querySelectorAll('[data-quick-cat]').forEach(b=>b.onclick=()=>{cat=b.dataset.quickCat;render()});
 function fav(id){id=String(id);favs.has(id)?favs.delete(id):favs.add(id);localStorage.setItem('favs',JSON.stringify([...favs]));render()}
 function renderMy(){const m=localStorage.getItem('months'),h=localStorage.getItem('height'),w=localStorage.getItem('weight');const parts=[m?m+'개월':'',h?h+'cm':'',w?w+'kg':''].filter(Boolean);document.getElementById('myProfileSummary').textContent=parts.length?parts.join(' · '):'월령 · 키 · 몸무게를 등록해 주세요.';document.getElementById('myFavSummary').textContent=favs.size+'개';let alerts={};try{alerts=JSON.parse(localStorage.getItem('priceAlerts')||'{}')}catch{}document.getElementById('myAlertSummary').textContent=Object.keys(alerts).length+'개 저장됨'}
-function setView(next){view=next;favOnly=next==='favorites';const isMy=next==='my';document.getElementById('searchTools').hidden=next!=='search';document.getElementById('homeHero').hidden=next!=='home';document.getElementById('homeCategories').hidden=next!=='home';document.getElementById('myPage').hidden=!isMy;document.getElementById('catalogSection').hidden=isMy;if(!isMy)document.getElementById('sectionTitle').textContent=next==='search'?'검색 결과':next==='favorites'?'찜한 상품':'지금 많이 보는 상품';for(const id of ['homeNav','searchNav','favNav','myNav'])document.getElementById(id)?.classList.remove('on');document.getElementById(next==='search'?'searchNav':next==='favorites'?'favNav':next==='my'?'myNav':'homeNav')?.classList.add('on');if(isMy){renderMy();return}render()}function toggleFavOnly(){setView(favOnly?'home':'favorites')}function clearFilters(){cat='전체';stage='전체';brand='전체';document.getElementById('q').value='';document.getElementById('fitOnly').checked=false;document.getElementById('sort').value='popular';render()}
+function setView(next){view=next;favOnly=next==='favorites';const isMy=next==='my';document.getElementById('searchTools').hidden=next!=='search';document.getElementById('homeHero').hidden=next!=='home';document.getElementById('homeCategories').hidden=next!=='home';document.getElementById('myPage').hidden=!isMy;document.getElementById('catalogSection').hidden=isMy||next==='search';if(!isMy)document.getElementById('sectionTitle').textContent=next==='search'?'검색 결과':next==='favorites'?'찜한 상품':'지금 많이 보는 상품';for(const id of ['homeNav','searchNav','favNav','myNav'])document.getElementById(id)?.classList.remove('on');document.getElementById(next==='search'?'searchNav':next==='favorites'?'favNav':next==='my'?'myNav':'homeNav')?.classList.add('on');if(isMy){renderMy();return}render()}function toggleFavOnly(){setView(favOnly?'home':'favorites')}function clearFilters(){cat='전체';stage='전체';brand='전체';document.getElementById('q').value='';document.getElementById('fitOnly').checked=false;document.getElementById('sort').value='popular';render()}
 function fitForProduct(p){
  const profile={
    months:localStorage.getItem('months'),
@@ -254,7 +254,7 @@ async function loadProducts(){try{let [r,hr]=await Promise.all([fetch('./data/ca
 document.querySelectorAll('.sheet').forEach(sheet=>{sheet.addEventListener('touchmove',e=>{if(e.target===sheet)e.preventDefault()},{passive:false})});
 Object.assign(window,{openDetail,closeDetail,openFit,closeFit,saveFit,savePriceAlert,setView,toggleFavOnly,clearFilters});window.__kkokkapickBooted=true;
 document.addEventListener('click',function(event){const button=event.target.closest('[data-save-price-alert]');if(button)savePriceAlert(button.getAttribute('data-save-price-alert'));});
-document.getElementById('q').addEventListener('input',render);if(localStorage.getItem('months')){document.getElementById('fitHero').textContent=`${localStorage.getItem('months')}개월 우리 아이 맞춤 추천 👶`;stage=stageForMonths(+localStorage.getItem('months'))}loadProducts();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
+document.getElementById('q').addEventListener('input',()=>{document.getElementById('catalogSection').hidden=false;render()});if(localStorage.getItem('months')){document.getElementById('fitHero').textContent=`${localStorage.getItem('months')}개월 우리 아이 맞춤 추천 👶`;stage=stageForMonths(+localStorage.getItem('months'))}loadProducts();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
 
 renderCommercialHome();
 </script><span hidden aria-hidden="true">우리 아이를 위한 추천</span></body></html>
