@@ -1,10 +1,10 @@
 {
-  "syncedAt": "2026-10-03T07:35:07.401Z",
+  "syncedAt": "2026-10-03T09:08:59.628Z",
   "sourceProducts": 823,
-  "canonicalProducts": 744,
+  "canonicalProducts": 745,
   "queries": 73,
   "recognizedBrandProducts": 424,
-  "recognizedBrandRatePct": 57,
+  "recognizedBrandRatePct": 56.9,
   "officialBrandGuideProducts": 29,
   "officialBrandGuideRatePct": 3.9,
   "explicitProductSizeProducts": 0,
@@ -18,16 +18,16 @@
     },
     "rate": 1
   },
-  "canonicalImageProducts": 744,
+  "canonicalImageProducts": 745,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 64,
-  "multiImageRatePct": 8.6,
+  "multiImageProducts": 63,
+  "multiImageRatePct": 8.5,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 320
+      "count": 321
     },
     {
       "name": "밀크베이비",
@@ -113,7 +113,7 @@
     },
     {
       "name": "아우터",
-      "count": 137
+      "count": 138
     },
     {
       "name": "하의",
@@ -147,7 +147,7 @@
     },
     {
       "name": "베이비",
-      "count": 254
+      "count": 255
     },
     {
       "name": "전체",
