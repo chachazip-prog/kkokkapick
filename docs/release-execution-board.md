@@ -19,7 +19,7 @@ Every release item moves through the same sequence unless marked external-only:
 
 | Track | Plan | Implementation | Automated QA | External / independent gate | Current next action |
 | --- | --- | --- | --- | --- | --- |
-| Visual RC / #110 | locked to approved D03 reference and ten-item checklist | repository corrections substantially complete through #153/#156/#159/#162 | deployed Flutter source `d8665b5f803c` is frozen in Preview evidence; current catalog is loaded at runtime | 320/360/390/430 physical devices + iOS Safari + approved-reference independent visual QA | execute deployed/physical-device comparison against Flutter source `d8665b5f803c…` and record the runtime catalog `syncedAt`; any defect returns to FE |
+| Visual RC / #110 | locked to approved D03 reference and ten-item checklist | repository corrections substantially complete through #153/#156/#159/#162/#164 | deployed Flutter source `2b8f3dea48d7` is frozen in Preview evidence; current catalog is loaded at runtime | 320/360/390/430 physical devices + iOS Safari + approved-reference independent visual QA | execute deployed/physical-device comparison against Flutter source `2b8f3dea48d7…` and record the runtime catalog `syncedAt`; any defect returns to FE |
 | Account/data / #104 | guest-first, explicit first-sync consent, truthful offline state | repository path substantially complete | account switch, restore, deletion and local snapshot contracts exist | production Supabase/auth/RLS/deletion E2E | keep issue open until production environment evidence exists |
 | Production backend | Supabase / narrow public catalog boundary selected | migrations/RLS/RPC repository foundation exists | repository preflight exists | create production project, apply migrations, run verification pack | Product Owner/DevOps activation input required |
 | Catalog/provider | ADPICK server-side only, TTL fail-closed pending final rights | ingestion/grouping/title/gallery logic exists; #154 adds per-sync HTTP/MIME validation and fail-closed image handling | first hourly full sync #45 succeeded; 2026-10-02T21:43Z catalog: 566/566 source images healthy, 519/519 canonical products with images, 38 multi-image, 0 channel-prefixed titles; publish-time health is verified inline and mid-window health remains scheduled | written retention/redisplay/image/attribution rights remain external | keep hourly sync + inline post-publish + mid-window health green; retain provider-rights gate |
@@ -61,10 +61,10 @@ Every release item moves through the same sequence unless marked external-only:
 | 10 | approved D03 rhythm, not generic dashboard styling | structurally evidenced by implementation/contracts, not independently signed off | final approved-reference and physical-device visual sign-off |
 
 ## Frozen visual evidence source
-- Flutter source revision: `d8665b5f803cf68b394ca1f73d389714de8d2568`
-- Preview deployment commit: `21b05827713cff0caa36f6fd814f8efa7097b11e`
-- Preview workflow run: `37076835751` (`Deploy Flutter UI preview` #39, SUCCESS).
-- `flutter-preview/SOURCE_REVISION` and `release-evidence.json` both point to `d8665b5f803c…`.
+- Flutter source revision: `2b8f3dea48d71c0a76cf268213740dca9528ecc5`
+- Preview deployment commit: `10846016101ee410f815a0669133ecd78e5c14e1`
+- Preview workflow run: `37086840036` (`Deploy Flutter UI preview` #40, SUCCESS).
+- `flutter-preview/SOURCE_REVISION` and `release-evidence.json` both point to `2b8f3dea48d7…`.
 - The Preview loads `/data/catalog.json` at runtime, so scheduled catalog data may advance independently of the frozen Flutter UI source.
 - Scheduled catalog refreshes may advance `main`; physical visual QA must record the source revision it actually verifies rather than assuming current main equals the frozen UI source.
 
