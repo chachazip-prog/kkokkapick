@@ -6,11 +6,11 @@ This is the independent QA execution sheet for the Product Owner-selected D03/v1
 
 ## Current frozen candidate
 
-- Release/source SHA: `d8665b5f803cf68b394ca1f73d389714de8d2568`
-- Preview deployment commit: `21b05827713cff0caa36f6fd814f8efa7097b11e`
-- Preview workflow run: `37076835751` (`Deploy Flutter UI preview` #39)
+- Release/source SHA: `2b8f3dea48d71c0a76cf268213740dca9528ecc5`
+- Preview deployment commit: `10846016101ee410f815a0669133ecd78e5c14e1`
+- Preview workflow run: `37086840036` (`Deploy Flutter UI preview` #40)
 - Freeze date: 2026-10-03
-- This candidate includes #162 social OAuth PKCE/deep-link transport hardening while keeping social providers disabled. Physical-device evidence must record this exact Flutter source SHA.
+- This candidate includes #164 push delivery/client-registration foundation while keeping native provider activation external. Physical-device evidence must record this exact Flutter source SHA.
 - Catalog evidence is runtime data and may advance independently through the scheduled ADPICK refresh; record the catalog `syncedAt` visible/verified during the device run.
 
 ## Test matrix
