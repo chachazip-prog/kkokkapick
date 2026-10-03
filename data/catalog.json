@@ -1,6 +1,6 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-03T01:59:21.228Z",
+  "syncedAt": "2026-10-03T03:09:07.452Z",
   "sourceCount": 560,
   "productCount": 512,
   "priceChangeCount": 0,
@@ -16847,10 +16847,8 @@
       "normalizedName": "빈폴키즈 클래식 멀티 스트라이프 티셔츠 네이비 bi6941u21r",
       "variant": "",
       "modelCode": "BI6941U21R",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507438071",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=507438071"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "빈폴키즈 아동복",
       "offers": [
