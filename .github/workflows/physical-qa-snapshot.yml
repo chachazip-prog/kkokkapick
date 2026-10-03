@@ -1,4 +1,5 @@
 name: Prepare physical QA snapshot
+# Refresh marker: runtime catalog recovered for physical QA.
 
 on:
   workflow_dispatch:
