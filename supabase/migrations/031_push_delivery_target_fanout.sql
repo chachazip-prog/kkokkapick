@@ -98,6 +98,42 @@ begin
       )
     );
 
+  -- A frozen parent can become terminal before a provider claim (for example,
+  -- every target was disabled after fan-out). Aggregate those parents here so
+  -- they never remain stranded in pending/processing with no claimable target.
+  update public.price_alert_deliveries d
+  set status=case
+        when exists (
+          select 1 from public.price_alert_delivery_targets t
+          where t.delivery_id=d.id and t.status='sent'
+        ) then 'sent'
+        else 'failed'
+      end,
+      sent_at=case
+        when exists (
+          select 1 from public.price_alert_delivery_targets t
+          where t.delivery_id=d.id and t.status='sent'
+        ) then coalesce(d.sent_at,now())
+        else null
+      end,
+      claimed_at=null,
+      last_error=case
+        when exists (
+          select 1 from public.price_alert_delivery_targets t
+          where t.delivery_id=d.id and t.status='sent'
+        ) then null
+        else 'all_push_targets_failed'
+      end
+  where d.status in ('pending','processing')
+    and exists (
+      select 1 from public.price_alert_delivery_targets t
+      where t.delivery_id=d.id
+    )
+    and not exists (
+      select 1 from public.price_alert_delivery_targets t
+      where t.delivery_id=d.id and t.status in ('pending','processing')
+    );
+
   -- Recover abandoned target leases independently so successful sibling devices
   -- are never resent.
   update public.price_alert_delivery_targets
