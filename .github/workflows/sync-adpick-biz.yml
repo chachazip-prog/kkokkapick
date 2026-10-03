@@ -15,7 +15,8 @@ permissions:
 
 concurrency:
   group: adpick-biz-sync
-  cancel-in-progress: false
+  # Prefer the newest main revision; an older long-running provider probe must not block fresh diagnostics/publication.
+  cancel-in-progress: true
 
 jobs:
   sync:
