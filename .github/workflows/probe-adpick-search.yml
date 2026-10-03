@@ -1,4 +1,5 @@
 name: Probe ADPICK search canaries
+# Wave 3 execution marker: targeted gap terms
 
 on:
   workflow_dispatch:
