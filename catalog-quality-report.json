@@ -1,33 +1,33 @@
 {
-  "syncedAt": "2026-10-02T23:58:33.413Z",
-  "sourceProducts": 566,
-  "canonicalProducts": 519,
+  "syncedAt": "2026-10-03T01:08:09.265Z",
+  "sourceProducts": 564,
+  "canonicalProducts": 517,
   "queries": 48,
   "recognizedBrandProducts": 336,
-  "recognizedBrandRatePct": 64.7,
+  "recognizedBrandRatePct": 65,
   "officialBrandGuideProducts": 25,
   "officialBrandGuideRatePct": 4.8,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 566,
-    "ok": 566,
+    "checked": 564,
+    "ok": 564,
     "failed": 0,
     "statuses": {
-      "200": 566
+      "200": 564
     },
     "rate": 1
   },
-  "canonicalImageProducts": 519,
+  "canonicalImageProducts": 517,
   "canonicalImageRatePct": 100,
   "multiImageProducts": 38,
-  "multiImageRatePct": 7.3,
+  "multiImageRatePct": 7.4,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 183
+      "count": 181
     },
     {
       "name": "밀크베이비",
@@ -108,11 +108,11 @@
   ],
   "categories": [
     {
-      "name": "상의",
+      "name": "아우터",
       "count": 116
     },
     {
-      "name": "아우터",
+      "name": "상의",
       "count": 115
     },
     {
@@ -121,7 +121,7 @@
     },
     {
       "name": "바디수트",
-      "count": 74
+      "count": 73
     },
     {
       "name": "원피스",
@@ -129,7 +129,7 @@
     },
     {
       "name": "상하복",
-      "count": 40
+      "count": 39
     },
     {
       "name": "실내복",
@@ -147,7 +147,7 @@
     },
     {
       "name": "베이비",
-      "count": 207
+      "count": 205
     },
     {
       "name": "유아",
