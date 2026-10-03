@@ -21,6 +21,34 @@ body{background:#f7f6fa;color:#25232b}
 .panel{border-radius:22px 22px 0 0}.buy{background:#5146a6}.cta{background:#5146a6}.profile{background:#f7f6fa}
 @media(max-width:360px){.top{padding-left:14px;padding-right:14px}.hero{margin-left:14px;margin-right:14px;padding:18px}.section{padding-left:14px;padding-right:14px}.chips{padding-left:14px;padding-right:14px}.grid{gap:18px 9px}.name{font-size:13px}.price{font-size:14px}}
 </style></head><body><div class="app"><header class="top"><div class="brand">꼬까픽</div><div class="sub">우리 아이 옷, 더 쉽게 고르는 방법</div></header><div class="hero" id="homeHero" onclick="openFit()"><small>FOR YOUR KID · KKOKKAFIT</small><h2 id="fitHero">우리 아이를 위한 추천</h2><p>월령 · 키 · 몸무게를 등록하면 검증된 브랜드 사이즈표와 상품 정보를 바탕으로 더 잘 맞는 옷을 둘러볼 수 있어요. ›</p></div><div id="searchTools" class="search-tools" hidden><div class="search">⌕ <input id="q" placeholder="상품명이나 브랜드를 검색해보세요"></div><div class="search-options"><label><input id="fitOnly" type="checkbox" onchange="render()"> 꼬까핏 가능만</label><select id="sort" onchange="render()"><option value="popular">추천순</option><option value="low">낮은 가격순</option><option value="high">높은 가격순</option><option value="drop">가격 하락순</option></select></div><div class="chips" id="stages"></div><div class="chips" id="chips"></div><div class="chips" id="brands"></div></div><section class="section"><div class="toolbar"><h3><span id="sectionTitle">계속 둘러보세요</span> <small id="resultCount" style="font-weight:500;color:#999"></small></h3><button id="clearFilters" class="clear" onclick="clearFilters()" hidden>필터 초기화</button></div><div id="activeSummary" class="meta"></div><div class="grid" id="grid"></div></section></div><nav class="bottom"><div class="nav on" id="homeNav" onclick="setView('home')"><span>⌂</span>홈</div><div class="nav" id="searchNav" onclick="setView('search')"><span>⌕</span>검색</div><div class="nav" id="favNav" onclick="setView('favorites')"><span>♡</span><i id="favCount">찜</i></div><div class="nav" onclick="openFit()"><span>☺</span>마이</div></nav><div class="sheet" id="detail"><div class="panel" id="detailPanel"></div></div><div class="sheet" id="fit"><div class="panel"><button class="close" onclick="closeFit()">×</button><h2>꼬까핏</h2><p>아이 정보를 입력하면 데모 추천 사이즈를 계산합니다.</p><div class="profile"><input id="months" type="number" placeholder="개월"><input id="height" type="number" placeholder="키 cm"><input id="weight" type="number" placeholder="kg"></div><button class="cta" onclick="saveFit()">아이 정보 저장</button><p class="note">꼬까핏은 검증된 브랜드 공식 사이즈표가 있는 경우에만 사이즈를 안내합니다. 상품별 실측과 옵션은 판매처에서 최종 확인하세요.</p></div></div><script src="./config.public.js"></script>
+<script>
+(function(){
+  var box;
+  function show(kind,msg){
+    if(!box){
+      box=document.createElement('pre');
+      box.id='runtimeDiagnostic';
+      box.style.cssText='position:fixed;left:12px;right:12px;bottom:92px;z-index:99999;max-height:42vh;overflow:auto;margin:0;padding:12px;background:#fff3f3;color:#8b0000;border:2px solid #d33;border-radius:12px;font:12px/1.45 monospace;white-space:pre-wrap';
+      document.addEventListener('DOMContentLoaded',function(){if(!box.isConnected)document.body.appendChild(box)});
+      if(document.body)document.body.appendChild(box);
+    }
+    box.textContent='KKOKKAPICK RUNTIME '+kind+'\n'+String(msg);
+  }
+  window.__kkokkapickRuntimeError=show;
+  window.addEventListener('error',function(e){show('ERROR',(e.message||'unknown error')+'\n'+(e.filename||'')+':'+(e.lineno||0)+':'+(e.colno||0));});
+  window.addEventListener('unhandledrejection',function(e){var r=e.reason;show('REJECTION',r&&r.stack?r.stack:(r&&r.message?r.message:String(r)));});
+  window.setTimeout(function(){
+    if(!window.__kkokkapickBooted)show('BOOT_TIMEOUT','Application module did not finish bootstrap within 5 seconds. Check module import/parse/network failure.');
+  },5000);
+})();
+</script>
+<script nomodule>
+document.addEventListener('DOMContentLoaded',function(){
+  var p=document.createElement('pre');p.style.cssText='margin:16px;padding:12px;border:2px solid #d33;color:#8b0000;white-space:pre-wrap';
+  p.textContent='KKOKKAPICK RUNTIME NO_MODULE\nThis browser did not execute ES modules.';
+  document.body.appendChild(p);
+});
+</script>
 <script type="module">
 import {loadCommercialHome,dismissPopup,safeDestination} from './src/public-commercial-client.js';
 import { evaluateFit } from './src/kkokkafit-engine.js';
@@ -84,7 +112,7 @@ function savePriceAlert(id){
 }
 function closeDetail(){document.getElementById('detail').classList.remove('on')}function openFit(){document.getElementById('fit').classList.add('on');['months','height','weight'].forEach(x=>document.getElementById(x).value=localStorage.getItem(x)||'')}function closeFit(){document.getElementById('fit').classList.remove('on')}function saveFit(){['months','height','weight'].forEach(x=>localStorage.setItem(x,document.getElementById(x).value));let m=localStorage.getItem('months');document.getElementById('fitHero').textContent=m?`${m}개월 우리 아이 맞춤 추천 👶`:'우리 아이에게 맞는 옷만 👶';if(m!=='')stage=stageForMonths(+m);closeFit();render()}
 async function loadProducts(){try{let [r,hr]=await Promise.all([fetch('./data/catalog.json?ts='+Date.now()),fetch('./data/price-history.json?ts='+Date.now()).catch(()=>null)]);if(!r.ok)throw new Error('catalog fetch failed');let d=await r.json();if(hr?.ok){let hd=await hr.json();priceHistory=hd.events||[];}if(d.expiresAt&&Date.now()>=Date.parse(d.expiresAt)){products=[];document.getElementById('grid').innerHTML='<div class="empty">상품 정보를 갱신하고 있어요.<br><small>최신 가격 확인 후 다시 보여드릴게요.</small></div>';return}products=(d.products||[]).map((p,i)=>({...p,id:p.id||String(i),price:p.minPrice,merchant:p.offers?.[0]?.merchant||'',affiliateUrl:p.offers?.[0]?.affiliateUrl||'',cat:p.category||categoryOf(p),stage:p.stage||'전체'}));cats=['전체',...new Set(products.map(p=>p.cat).filter(x=>x!=='기타'))];render()}catch(e){products=[];document.getElementById('grid').innerHTML='<div class="empty">상품 정보를 불러오지 못했어요.<br><small>잠시 후 다시 시도해주세요.</small></div>'}}
-Object.assign(window,{openDetail,closeDetail,openFit,closeFit,saveFit,savePriceAlert,setView,toggleFavOnly,clearFilters});
+Object.assign(window,{openDetail,closeDetail,openFit,closeFit,saveFit,savePriceAlert,setView,toggleFavOnly,clearFilters});window.__kkokkapickBooted=true;
 document.getElementById('q').addEventListener('input',render);if(localStorage.getItem('months')){document.getElementById('fitHero').textContent=`${localStorage.getItem('months')}개월 우리 아이 맞춤 추천 👶`;stage=stageForMonths(+localStorage.getItem('months'))}loadProducts();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
 
 renderCommercialHome();
