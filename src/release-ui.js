@@ -157,7 +157,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-save-price
 document.querySelectorAll('.sheet').forEach(sheet=>{sheet.addEventListener('touchmove',e=>{if(e.target===sheet)e.preventDefault()},{passive:false});sheet.addEventListener('click',e=>{if(e.target===sheet){({detail:closeDetail,fit:closeFit,filters:closeFilters,accountSheet:closeAccount,photoCard:closePhotoCard})[sheet.id]()}})});
 document.addEventListener('keydown',e=>{const sheets=[...document.querySelectorAll('.sheet.on')];const sheet=sheets.at(-1);if(!sheet)return;if(e.key==='Escape'){({detail:closeDetail,fit:closeFit,filters:closeFilters,accountSheet:closeAccount,photoCard:closePhotoCard})[sheet.id]();return}if(e.key==='Tab'){const nodes=[...sheet.querySelectorAll('button,input,select,a,summary,[tabindex="0"]')].filter(el=>el.offsetWidth&&!el.disabled);const first=nodes[0],last=nodes.at(-1);if(e.shiftKey&&(document.activeElement===first||document.activeElement===sheet.querySelector('.panel'))){e.preventDefault();last?.focus()}else if(!e.shiftKey&&(document.activeElement===last)){e.preventDefault();first?.focus()}}});
 window.__kkokkapickBooted=true;
-setView('home');loadProducts();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
+setView('home');loadProducts();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>console.warn('오프라인 캐시를 준비하지 못했어요. 온라인 탐색은 계속 사용할 수 있어요.'));
 
 function setSearchLayout(mode){searchLayout=mode;limit=30;render()}
 function openPhotoCard(id){
