@@ -5,7 +5,16 @@ const apiKey = process.env.ADPICK_BIZ_API_KEY;
 if (!apiKey) throw new Error("Missing ADPICK_BIZ_API_KEY");
 
 const queries = ["신생아 바디수트", "아기 상하복", "키즈 티셔츠"];
-const provider = new AdpickBizProvider({ apiKey });
+const sourceFields = new Set();
+const provider = new AdpickBizProvider({ apiKey, fetchImpl: async (url, options) => {
+  const response = await fetch(url, options);
+  if (response.ok) {
+    const payload = await response.clone().json();
+    const rows = Array.isArray(payload) ? payload : (payload?.list ?? payload?.data ?? payload?.items ?? []);
+    if (Array.isArray(rows)) rows.forEach(row => Object.keys(row || {}).forEach(key => sourceFields.add(key)));
+  }
+  return response;
+} });
 const timeoutMs = Number(process.env.IMAGE_DIAGNOSTIC_TIMEOUT_MS || 5000);
 
 async function probeImage(url) {
@@ -24,6 +33,7 @@ async function probeImage(url) {
       }
     });
     const contentType = (response.headers.get("content-type") || "").toLowerCase();
+    await response.body?.cancel().catch(() => {});
     return {
       ok: response.ok && contentType.startsWith("image/"),
       status: response.status,
@@ -45,6 +55,9 @@ for (const query of queries) {
     query,
     products: products.length,
     imagesPresent: products.filter(p => Boolean(p.imageUrl)).length,
+    materialPresent: products.filter(p => Boolean(p.material)).length,
+    availableSizesPresent: products.filter(p => p.availableSizes?.length).length,
+    factFields: [...new Set(products.flatMap(p => Object.values(p.productFactFields || {}).filter(Boolean)))],
     probes
   });
 }
@@ -52,7 +65,8 @@ for (const query of queries) {
 const flat = results.flatMap(r => r.probes);
 const summary = {
   generatedAt: new Date().toISOString(),
-  queries: results.map(r => ({ query: r.query, products: r.products, imagesPresent: r.imagesPresent })),
+  sourceFields: [...sourceFields].sort(),
+  queries: results.map(r => ({ query: r.query, products: r.products, imagesPresent: r.imagesPresent, materialPresent: r.materialPresent, availableSizesPresent: r.availableSizesPresent, factFields: r.factFields })),
   probed: flat.length,
   ok: flat.filter(p => p.ok).length,
   failed: flat.filter(p => !p.ok).length,

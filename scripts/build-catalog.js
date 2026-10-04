@@ -1,3 +1,4 @@
+import { catalogCacheWindow } from "../src/provider-product-facts.js";
 import fs from "node:fs/promises";
 import { groupProducts } from "../src/product-grouper.js";
 import { classifyProduct } from "../src/product-classifier.js";
@@ -28,7 +29,7 @@ await fs.writeFile(
   JSON.stringify({
     storagePolicy:raw.storagePolicy||"ttl_cache",
     syncedAt:raw.syncedAt,
-    expiresAt:raw.expiresAt,
+    expiresAt:raw.expiresAt || catalogCacheWindow(now).expiresAt,
     sourceCount:(raw.products||[]).length,
     productCount:groups.length,
     priceChangeCount:changes.length,

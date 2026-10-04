@@ -7,15 +7,25 @@ on:
       - ".github/workflows/adpick-image-diagnostic.yml"
       - "src/adpick-biz-provider.js"
   workflow_dispatch:
+    inputs:
+      review_artifact_run_id:
+        description: Existing successful review-catalog artifact run to copy to the review branch (no API refresh)
+        type: string
+        required: false
+        default: ''
 
 permissions:
   contents: read
 
+concurrency:
+  group: adpick-source-diagnostic
+  cancel-in-progress: false
+
 jobs:
   diagnostic:
-    if: github.repository == 'chachazip-prog/kkokkapick'
+    if: github.repository == 'chachazip-prog/kkokkapick' && !inputs.review_artifact_run_id
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 20
     continue-on-error: true
     steps:
       - uses: actions/checkout@v4
@@ -23,9 +33,28 @@ jobs:
         with:
           node-version: "22"
       - name: Probe fresh ADPICK search image URLs
+        if: github.event_name != 'workflow_dispatch' || github.ref != 'refs/heads/codex/release-ui-rebuild'
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
         run: node scripts/adpick-image-diagnostic.js
+      - name: Generate fresh review catalog without publishing main
+        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild'
+        env:
+          ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
+        run: |
+          node scripts/discover-adpick.js
+          node scripts/build-catalog.js
+      - name: Upload temporary review catalog
+        if: success() && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild'
+        uses: actions/upload-artifact@v4
+        with:
+          name: adpick-review-catalog
+          path: |
+            data/adpick-biz-products.json
+            data/catalog.json
+            data/price-history.json
+          if-no-files-found: error
+          retention-days: 1
       - name: Upload diagnostic evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -34,3 +63,37 @@ jobs:
           path: artifacts/adpick-image-diagnostic.json
           if-no-files-found: warn
           retention-days: 14
+
+  handoff-review-catalog:
+    if: github.repository == 'chachazip-prog/kkokkapick' && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild' && inputs.review_artifact_run_id != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate artifact run provenance
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.review_artifact_run_id }}
+        run: node scripts/validate-review-artifact-run.cjs
+      - name: Download existing temporary review catalog
+        uses: actions/download-artifact@v4
+        with:
+          name: adpick-review-catalog
+          run-id: ${{ inputs.review_artifact_run_id }}
+          github-token: ${{ github.token }}
+          path: .review-catalog
+      - name: Validate and commit review data only
+        run: |
+          node scripts/handoff-review-catalog.cjs
+          git config user.name "kkokkapick-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/adpick-biz-products.json data/catalog.json data/price-history.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: refresh temporary review catalog with verified ADPICK images"
+          git push origin HEAD:codex/release-ui-rebuild

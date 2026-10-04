@@ -8,6 +8,8 @@ on:
       - "test/**"
       - "scripts/**"
       - "index.html"
+      - "styles/**"
+      - "assets/**"
       - "admin/**"
       - "supabase/**"
       - "flutter/**"
@@ -18,6 +20,8 @@ on:
       - "test/**"
       - "scripts/**"
       - "index.html"
+      - "styles/**"
+      - "assets/**"
       - "admin/**"
       - "supabase/**"
       - "flutter/**"
@@ -61,7 +65,24 @@ jobs:
           node test/push-worker-contract.test.js
           node test/commercial-event-concurrency-contract.test.js
           node test/child-profile-sync-contract.test.js
+          node test/release-ui-presentation.test.js
+          node test/child-profiles-local.test.js
+          node test/catalog-source.test.js
+          node test/provider-product-facts.test.js
+          node test/adpick-rate-limit.test.js
+          node test/review-catalog-handoff.test.js
           node test/preview-parity.test.js
+          node test/pages-classic-bootstrap.test.js
+          node test/pages-inline-syntax.test.js
+          node test/pages-ios-autozoom.test.js
+          node test/pages-ios-overlay-runtime.test.js
+          node test/pages-mobile-width-contract.test.js
+          node test/pages-my-search-navigation.test.js
+          node test/pages-release-home-visual.test.js
+          node test/pages-runtime-diagnostic.test.js
+          node test/pages-service-worker.test.js
+          node test/pages-soft-editorial-ui.test.js
+          node test/pages-soft-typography.test.js
           node test/release-hardening-contract.test.js
           node test/image-health.test.js
           node test/physical-qa-snapshot.test.js
@@ -85,6 +106,10 @@ jobs:
 
       - name: Validate web module syntax
         run: |
+          node --check src/release-ui.js
+          node --check src/child-profiles.js
+          node --check src/runtime-diagnostic.js
+          node --check scripts/release-ui-browser-qa.cjs
           node --check src/adpick-discovery-plan.js
           node --check scripts/discover-adpick.js
           node --check src/kkokkafit-engine.js

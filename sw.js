@@ -1,5 +1,5 @@
-const CACHE='kkokkapick-pages-v3';
-const ASSETS=['./','./index.html','./manifest.json','./config.public.js','./src/public-commercial-client.js','./src/popup-policy.js','./src/commercial-client.js','./src/kkokkafit-engine.js','./src/brand-size-charts.js','./src/price-tracker.js','./src/recommendation-ranker.js','./data/catalog.json','./data/price-history.json'];
+const CACHE='kkokkapick-release-ui-reference-v4';
+const ASSETS=['./','./index.html','./assets/fonts/GowunDodum-Regular.woff','./assets/fonts/NanumSquareRoundR.woff','./assets/fonts/NanumSquareRoundB.woff','./styles/tokens.css','./styles/release.css','./src/catalog-source.js','./src/child-profiles.js','./assets/hero-proposals/hero-3.webp','./src/release-ui.js','./src/runtime-diagnostic.js','./assets/hero-smiling-child.webp','./manifest.json','./config.public.js','./src/public-commercial-client.js','./src/popup-policy.js','./src/commercial-client.js','./src/kkokkafit-engine.js','./src/brand-size-charts.js','./src/price-tracker.js','./src/recommendation-ranker.js','./data/catalog.json','./data/price-history.json'];
 
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
@@ -27,7 +27,7 @@ self.addEventListener('fetch',event=>{
   if(url.origin!==self.location.origin)return;
 
   const isNavigation=event.request.mode==='navigate';
-  const isAppCode=/\.(?:html|js|json)$/.test(url.pathname);
+  const isAppCode=/\.(?:html|js|json|css)$/.test(url.pathname);
   const isLiveData=url.pathname.endsWith('/data/catalog.json')||url.pathname.endsWith('/data/price-history.json');
 
   if(isNavigation||isAppCode||isLiveData){

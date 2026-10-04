@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {AdpickBizProvider} from '../src/adpick-biz-provider.js';
+test('rate limit honours Retry-After and then preserves product results',async()=>{const waits=[];let calls=0;const p=new AdpickBizProvider({apiKey:'test',waitImpl:async ms=>waits.push(ms),fetchImpl:async()=>++calls===1?new Response('',{status:429,headers:{'retry-after':'10'}}):new Response(JSON.stringify([{title:'아기옷',commissionlink:'https://example.test/product',price:1000}]))});const rows=await p.search('아기');assert.equal(rows.length,1);assert.deepEqual(waits,[10000]);assert.equal(calls,2)});
+test('repeated quota errors have a fixed retry budget',async()=>{let calls=0;const waits=[];const p=new AdpickBizProvider({apiKey:'test',waitImpl:async ms=>waits.push(ms),fetchImpl:async()=>{calls++;return new Response('',{status:429})}});await assert.rejects(p.search('아기'),/429/);assert.equal(calls,3);assert.deepEqual(waits,[30000,60000])});
+test('a long server cooldown is respected by failing instead of retrying early',async()=>{let calls=0;const p=new AdpickBizProvider({apiKey:'test',waitImpl:async()=>assert.fail('must not retry before server cooldown'),fetchImpl:async()=>{calls++;return new Response('',{status:429,headers:{'retry-after':'120'}})}});await assert.rejects(p.search('아기'),/later retry/);assert.equal(calls,1)});
