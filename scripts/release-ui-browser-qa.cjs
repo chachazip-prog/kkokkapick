@@ -23,7 +23,7 @@ async function main(){
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base,{waitUntil:'domcontentloaded'});if(await page.getByText('Open the page',{exact:true}).count())await page.getByText('Open the page',{exact:true}).click();await page.locator('.card').first().waitFor();
   async function capture(name){
-   await page.waitForFunction(()=>[...document.images].filter(i=>i.offsetWidth&&i.getBoundingClientRect().top<innerHeight&&i.getBoundingClientRect().bottom>0).every(i=>i.complete),{},{timeout:15000}).catch(()=>{});
+   await page.waitForFunction(()=>[...document.images].filter(i=>i.offsetWidth&&i.getBoundingClientRect().top<innerHeight&&i.getBoundingClientRect().bottom>0).every(i=>i.complete&&i.dataset.imageRetry!=='true'),{},{timeout:15000}).catch(()=>{});
    await page.locator('.toast').waitFor({state:'detached',timeout:4000}).catch(()=>{});
    await page.screenshot({path:`${output}/${name}-${width}.png`});
    const metrics=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,brokenImages:[...document.images].filter(i=>i.offsetWidth&&i.complete&&!i.naturalWidth).length,pendingImages:[...document.images].filter(i=>i.offsetWidth&&!i.complete).length,imageFailures:document.querySelectorAll('.image-unavailable').length,clipped:[...document.querySelectorAll('h1,h2,.detail-price,.nav')].filter(e=>!e.classList.contains('sr-only')&&e.offsetWidth&&e.scrollWidth>e.clientWidth+1).map(e=>e.className)}));
