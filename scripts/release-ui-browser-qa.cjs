@@ -65,11 +65,11 @@ async function main(){
   }
   await page.locator('nav a').filter({hasText:'복수 사진 테스트'}).click();
   await demoFrame.locator('.gallery-count').waitFor();
-  assert.equal(await demoFrame.locator('.gallery-slide').count(),2);
+  assert.ok(await demoFrame.locator('.gallery-slide').count()>=2);
   await demoFrame.locator('[data-gallery-next]').click();
-  await demoFrame.locator('.gallery-count').filter({hasText:'2 / 2'}).waitFor();
+  await demoFrame.locator('.gallery-count').filter({hasText:/^2 \/ /}).waitFor();
   await demoFrame.locator('[data-gallery-prev]').click();
-  await demoFrame.locator('.gallery-count').filter({hasText:'1 / 2'}).waitFor();
+  await demoFrame.locator('.gallery-count').filter({hasText:/^1 \/ /}).waitFor();
   await page.screenshot({path:`${output}/multiple-photos-${width}.png`});
   await page.screenshot({path:`${output}/demo-${width}.png`});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'demo overflow');

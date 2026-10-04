@@ -18,7 +18,7 @@ Selected direction: owner-supplied R01 reference, refined by explicit requests f
 
 ## Release blocks
 
-Provider image reliability remains blocked (up to four image failures in the reviewed capture set). Owner authorized continuing UI work and will find a current catalog source later. Some material/size fields are absent; show seller-verification guidance, never invented product facts. Existing hero source is low resolution. Actual iPhone Safari/safe-area review and Product Owner approval remain pending. CI alone does not establish design approval.
+Provider image reliability remains blocked (up to six image failures in the reviewed capture set). Owner authorized continuing UI work and will find a current catalog source later. Some material/size fields are absent; show seller-verification guidance, never invented product facts. Existing hero source is low resolution. Actual iPhone Safari/safe-area review and Product Owner approval remain pending. CI alone does not establish design approval.
 
 No provider/backend/auth changes, new personal-data upload, paid infrastructure or main merge.
 
@@ -31,3 +31,5 @@ No provider/backend/auth changes, new personal-data upload, paid infrastructure 
 Shared self-hosted NanumSquareRound applies to logo, all commerce surfaces and demo. Gallery checks: unique source URLs, two-slide real product, next/previous counter transitions. Initial photo feed: three columns, zero gap, up to12 live tiles, four rows fit above bottom navigation. Catalog contains50 products with multiple image URLs. Demo sample: `adpickbiz_2a757e84` (아가방 아양 우주복 + 모자 세트), two original provider images. Provider expiry can prevent photo rendering; carousel structure does not imply healthy source images. Hero proposals generated separately and await owner choice.
 
 Independent corrective review: preserved12tile reset paths after tab/search/filter changes; gallery controls have a dedicated44px strip beneath images so garments remain unobstructed. Browser regression checks3columns/gap0/feed bottom above nav and the two-image next/previous path.
+
+The multiple-photo demo entry resolves a real current multi-image product at runtime (`sample=multiple`) so catalog refreshes do not invalidate a fixed sample id. The reviewed immutable catalog includes the Agabang sample above.
