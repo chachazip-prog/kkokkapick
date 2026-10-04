@@ -2,7 +2,16 @@
  const liveBase='https://raw.githubusercontent.com/chachazip-prog/kkokkapick/main/data/';
  function isSnapshotPreview(location){return location?.hostname==='raw.githack.com'&&/^\/chachazip-prog\/kkokkapick\/[0-9a-f]{40}\//i.test(location.pathname||'')}
  function urls(location,now=Date.now()){const preview=isSnapshotPreview(location);const base=preview?liveBase:'./data/';const result={catalog:base+'catalog.json?ts='+now,history:base+'price-history.json?ts='+now};if(preview){const review=liveBase.replace('/main/','/codex/release-ui-rebuild/');result.alternateCatalog=review+'catalog.json?ts='+now;result.alternateHistory=review+'price-history.json?ts='+now}return result}
+ // Internal display ceiling, not a claim about the provider's URL lifetime.
+ // Hourly refresh + a bounded20min collection job leave10min operational margin.
+ function imageWindowExpired(catalog,now=Date.now()){
+  const hasTemporaryImages=(catalog?.products||[]).some(p=>[p.imageUrl,...(p.imageUrls||[])].some(value=>{try{const url=new URL(value);return url.hostname==='d2iaagr1j041pi.cloudfront.net'&&url.pathname==='/apis/search_img.php'}catch{return false}}));
+  if(!hasTemporaryImages)return false;
+  const observed=Date.parse(catalog.syncedAt||'');
+  return !Number.isFinite(observed)||observed>now+300000||now>=observed+90*60000;
+ }
  function isExpired(catalog,now=Date.now()){
+  if(imageWindowExpired(catalog,now))return true;
   if(catalog?.expiresAt){const stamp=Date.parse(catalog.expiresAt);return !Number.isFinite(stamp)||now>=stamp}
   if(catalog?.storagePolicy==='ttl_cache'){const stamp=Date.parse(catalog.syncedAt||'');return !Number.isFinite(stamp)||now>=stamp+24*3600000}
   return false;
@@ -18,5 +27,5 @@
   let history=null;try{history=await read(chosen.source.history)}catch{}
   return{catalog:chosen.catalog,history};
  }
- return{isSnapshotPreview,urls,isExpired,load};
+ return{isSnapshotPreview,urls,isExpired,imageWindowExpired,load};
 });
