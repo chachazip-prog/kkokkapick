@@ -18,7 +18,7 @@ test('unexpired metadata cannot publish review images beyond the display window'
   fs.mkdirSync(path.join(cwd,'.review-catalog'));fs.mkdirSync(path.join(cwd,'data'));
   const baseline={syncedAt:'2000-01-01T00:00:00Z',products:Array.from({length:250},()=>({}))};
   fs.writeFileSync(path.join(cwd,'data/catalog.json'),JSON.stringify(baseline));
-  const syncedAt=new Date(Date.now()-2*3600000).toISOString(),expiresAt=new Date(Date.now()+22*3600000).toISOString(),products=Array.from({length:250},()=>({}));
+  const fixtureNow=Date.now();const syncedAt=new Date(fixtureNow-2*3600000).toISOString(),expiresAt=new Date(fixtureNow+22*3600000).toISOString(),products=Array.from({length:250},()=>({}));
   for(const [name,data] of Object.entries({'catalog.json':{products,productCount:250,sourceCount:250,storagePolicy:'ttl_cache',syncedAt,expiresAt},'adpick-biz-products.json':{products,count:250,storagePolicy:'ttl_cache',syncedAt,expiresAt,imageHealth:{rate:1}},'price-history.json':{events:[]}}))fs.writeFileSync(path.join(cwd,'.review-catalog',name),JSON.stringify(data));
   const result=spawnSync(process.execPath,[script],{cwd,env:{...process.env,GITHUB_REPOSITORY:'chachazip-prog/kkokkapick',GITHUB_REF:'refs/heads/codex/release-ui-rebuild',GITHUB_EVENT_NAME:'workflow_dispatch'},encoding:'utf8'});
   assert.notEqual(result.status,0);assert.match(result.stderr,/display window/);assert.deepEqual(JSON.parse(fs.readFileSync(path.join(cwd,'data/catalog.json'))),baseline);
