@@ -11,5 +11,5 @@ assert.ok(ADPICK_DISCOVERY_PACING_MS >= 6000);
 for (const q of ADPICK_DISCOVERY_QUERIES) assert.match(q, /(신생아|아기|유아|키즈|아동|아동복|베이비|여아|남아|토들러)/);
 console.log("ADPICK discovery plan tests passed");
 
-assert.equal(ADPICK_DISCOVERY_QUERIES.length, 73);
+assert.equal(ADPICK_DISCOVERY_QUERIES.length, 79);
 for (const q of ["아기 수면조끼","유아 수영복","키즈 래쉬가드","유아 한복","토들러 옷","아기 롬퍼"]) assert.ok(ADPICK_DISCOVERY_QUERIES.includes(q));

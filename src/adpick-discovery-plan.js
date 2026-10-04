@@ -14,7 +14,11 @@ export const ADPICK_DISCOVERY_QUERIES = Object.freeze([
   "아가방 아기옷","에뜨와 아기옷","밍크뮤 아기옷","모이몰른 아기옷","키즈 래쉬가드",
   "블루독베이비 아기옷","유아 한복","쇼콜라 아기옷","빈폴키즈 아동복",
   "헤지스키즈 아동복","토들러 옷","아기 롬퍼","MLB키즈 아동복",
-  "휠라키즈 아동복","나이키키즈 아동복","아디다스키즈 아동복"
+  "휠라키즈 아동복","나이키키즈 아동복","아디다스키즈 아동복",
+  // Retain the six earlier queries: their latest baseline contributed21 offers.
+  // Diversity additions supplement coverage instead of silently replacing it.
+  "유아 상하복","키즈 티셔츠","압소바 아기옷","해피프린스 아기옷",
+  "베네통키즈 아동복","캉골키즈 아동복"
 ]);
 
 export const ADPICK_SEARCH_LIMIT = 20;
