@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const raw = JSON.parse(fs.readFileSync('data/catalog.json', 'utf8'));
+const raw = JSON.parse(fs.readFileSync(process.env.CATALOG_IMAGE_HEALTH_INPUT || 'data/catalog.json', 'utf8'));
 const items = Array.isArray(raw) ? raw : (raw.products || raw.items || []);
 const sampleSize = Math.max(1, Number.parseInt(process.env.IMAGE_HEALTH_SAMPLE_SIZE || '40', 10));
 const timeoutMs = Math.max(1000, Number.parseInt(process.env.IMAGE_HEALTH_TIMEOUT_MS || '5000', 10));

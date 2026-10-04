@@ -93,12 +93,19 @@ jobs:
           run-id: ${{ inputs.review_artifact_run_id }}
           github-token: ${{ github.token }}
           path: .review-catalog
+      - name: Recheck original images immediately before review publication
+        env:
+          CATALOG_IMAGE_HEALTH_INPUT: .review-catalog/catalog.json
+          IMAGE_HEALTH_SAMPLE_SIZE: "2000"
+          IMAGE_HEALTH_MIN_SUCCESS_RATE: "1"
+        run: node scripts/catalog-image-health.js
       - name: Validate and commit review data only
         run: |
           node scripts/handoff-review-catalog.cjs
+          node scripts/catalog-quality-report.js > catalog-quality-report.json
           git config user.name "kkokkapick-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/adpick-biz-products.json data/catalog.json data/price-history.json
+          git add data/adpick-biz-products.json data/catalog.json data/price-history.json catalog-quality-report.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "chore: refresh temporary review catalog with verified ADPICK images"
           git push origin HEAD:codex/release-ui-rebuild

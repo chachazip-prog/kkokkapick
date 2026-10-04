@@ -48,6 +48,7 @@ jobs:
           node test/adpick-discovery-plan.test.js
           node test/catalog-quality-report.test.js
           node test/product-classifier.test.js
+          node test/apparel-relevance.test.js
           node test/brand-normalizer.test.js
           node test/kkokkafit-engine.test.js
           node test/price-tracker.test.js

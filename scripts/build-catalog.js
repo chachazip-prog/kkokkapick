@@ -1,3 +1,4 @@
+import { isKidsApparel } from "../src/apparel-relevance.js";
 import { catalogCacheWindow } from "../src/provider-product-facts.js";
 import fs from "node:fs/promises";
 import { groupProducts } from "../src/product-grouper.js";
@@ -10,7 +11,7 @@ try { previous=JSON.parse(await fs.readFile("data/catalog.json","utf8")); } catc
 let history={version:1,events:[]};
 try { history=JSON.parse(await fs.readFile("data/price-history.json","utf8")); } catch {}
 
-const groups=groupProducts(raw.products||[]).map(classifyProduct);
+const groups=groupProducts((raw.products||[]).filter(p => isKidsApparel(p.name))).map(classifyProduct);
 const now=raw.syncedAt||new Date().toISOString();
 const changes=buildPriceChanges(previous.products||[],groups,now);
 

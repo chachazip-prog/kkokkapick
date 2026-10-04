@@ -55,9 +55,9 @@ for (const query of queries) {
   const products = await provider.search(query, { limit: 5, trackingId: "kkokkapick_image_diagnostic" });
   const probes = await Promise.all(products.map(product => probeImage(product.imageUrl)));
   const sample = products.find(product => {
-    try { const url = new URL(product.imageUrl); return url.protocol === 'https:' && url.hostname === 'd2iaagr1j041pi.cloudfront.net' && url.pathname === '/apis/search_img.php' && /^\d+$/.test(url.searchParams.get('code') || '') && [...url.searchParams.keys()].every(key => key === 'code'); } catch { return false; }
+    try { const url = new URL(product.imageUrl); return url.protocol === 'https:' && !url.username && !url.password && !url.hash && !url.port && url.searchParams.getAll('code').length === 1 && url.hostname === 'd2iaagr1j041pi.cloudfront.net' && url.pathname === '/apis/search_img.php' && /^\d+$/.test(url.searchParams.get('code') || '') && [...url.searchParams.keys()].every(key => key === 'code'); } catch { return false; }
   });
-  if (sample) freshImageSamples.push({ imageUrl: sample.imageUrl, observedAt: sample.checkedAt });
+  if (sample) freshImageSamples.push({ imageUrl: 'https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=' + new URL(sample.imageUrl).searchParams.get('code'), observedAt: sample.checkedAt });
   results.push({
     query,
     products: products.length,
