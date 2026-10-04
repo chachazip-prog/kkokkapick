@@ -1,3 +1,4 @@
+import { catalogCacheWindow } from "../src/provider-product-facts.js";
 import fs from "node:fs/promises";
 import { AdpickBizProvider } from "../src/adpick-biz-provider.js";
 import { validateProductImages } from "../src/image-health.js";
@@ -84,7 +85,7 @@ const safeProducts = validated.map(({ imageHealth: _imageHealth, ...product }) =
 await fs.mkdir("data", { recursive: true });
 await fs.writeFile("data/adpick-biz-products.json", JSON.stringify({
   source: "adpick_biz",
-  syncedAt: new Date().toISOString(),
+  ...catalogCacheWindow(safeProducts.map(p => p.checkedAt).filter(Boolean).sort()[0] || new Date().toISOString()),
   queries,
   count: safeProducts.length,
   imageHealth,

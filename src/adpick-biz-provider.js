@@ -1,3 +1,4 @@
+import { providerProductFacts } from "./provider-product-facts.js";
 export class AdpickBizProvider {
   constructor({ apiKey, fetchImpl = fetch, baseUrl = "https://biz.adpick.co.kr/api" }) {
     if (!apiKey) throw new Error("ADPICK_BIZ_API_KEY is required");
@@ -24,6 +25,7 @@ export class AdpickBizProvider {
   normalize(raw, query) {
     return {
       provider: "adpick_biz",
+      ...providerProductFacts(raw),
       query,
       name: String(raw.title ?? raw.product_name ?? raw.name ?? "").trim(),
       imageUrl: raw.photo ?? raw.image ?? raw.image_url ?? null,

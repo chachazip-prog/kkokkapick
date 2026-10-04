@@ -88,9 +88,18 @@ export function groupProducts(rows) {
       seen.add(key);
       return true;
     });
+    // Retain seller provenance; conflicting compositions are never silently
+    // collapsed into one product-wide material fact.
+    const materials=[...new Set(g.offers.map(o=>o.material).filter(Boolean))];
+    const availableSizes=[...new Set(g.offers.flatMap(o=>o.availableSizes||[]))];
+    const productFactSources=g.offers.filter(o=>o.material||o.availableSizes?.length).map(o=>({provider:o.provider,merchant:o.merchant,externalProductId:o.externalProductId,checkedAt:o.checkedAt,material:o.material,availableSizes:o.availableSizes,fields:o.productFactFields}));
     const prices=g.offers.map(o=>o.price).filter(p=>p!=null);
     return {
       ...g,
+      material:materials.length===1?materials[0]:null,
+      materialConflict:materials.length>1,
+      availableSizes,
+      productFactSources,
       imageUrl:g.imageUrls[0]||null,
       offerCount:g.offers.length,
       minPrice:prices.length?Math.min(...prices):null,
@@ -98,4 +107,4 @@ export function groupProducts(rows) {
     };
   });
 }
-function toOffer(p){return {merchant:p.merchant,merchantDomain:p.merchantDomain,price:validPrice(p.price),originalPrice:validPrice(p.originalPrice),affiliateUrl:p.affiliateUrl,externalProductId:p.externalProductId}}
+function toOffer(p){return {provider:p.provider,checkedAt:p.checkedAt,material:p.material||null,availableSizes:p.availableSizes||[],productFactFields:p.productFactFields||{},merchant:p.merchant,merchantDomain:p.merchantDomain,price:validPrice(p.price),originalPrice:validPrice(p.originalPrice),affiliateUrl:p.affiliateUrl,externalProductId:p.externalProductId}}

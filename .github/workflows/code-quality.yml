@@ -67,6 +67,8 @@ jobs:
           node test/child-profile-sync-contract.test.js
           node test/release-ui-presentation.test.js
           node test/child-profiles-local.test.js
+          node test/catalog-source.test.js
+          node test/provider-product-facts.test.js
           node test/preview-parity.test.js
           node test/pages-classic-bootstrap.test.js
           node test/pages-inline-syntax.test.js

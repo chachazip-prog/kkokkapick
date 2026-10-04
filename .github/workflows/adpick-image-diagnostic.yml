@@ -15,7 +15,7 @@ jobs:
   diagnostic:
     if: github.repository == 'chachazip-prog/kkokkapick'
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 20
     continue-on-error: true
     steps:
       - uses: actions/checkout@v4
@@ -26,6 +26,24 @@ jobs:
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
         run: node scripts/adpick-image-diagnostic.js
+      - name: Generate fresh review catalog without publishing main
+        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild'
+        env:
+          ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
+        run: |
+          node scripts/discover-adpick.js
+          node scripts/build-catalog.js
+      - name: Upload temporary review catalog
+        if: success() && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild'
+        uses: actions/upload-artifact@v4
+        with:
+          name: adpick-review-catalog
+          path: |
+            data/adpick-biz-products.json
+            data/catalog.json
+            data/price-history.json
+          if-no-files-found: error
+          retention-days: 1
       - name: Upload diagnostic evidence
         if: always()
         uses: actions/upload-artifact@v4

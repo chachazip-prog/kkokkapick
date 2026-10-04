@@ -1,3 +1,4 @@
+import { providerProductFacts } from "./provider-product-facts.js";
 import { ProviderAdapter } from "./provider-adapter.js";
 
 /**
@@ -33,6 +34,7 @@ export class AdpickProvider extends ProviderAdapter {
     const originalPrice = this.parseWon(raw.price_org);
     return {
       provider: "adpick",
+      ...providerProductFacts(raw),
       externalProductId: this.stableKey(raw),
       themeCode: theme.theme_code ?? null,
       themeTitle: theme.title ?? null,
