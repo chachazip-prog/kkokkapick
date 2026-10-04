@@ -76,6 +76,11 @@ jobs:
           node scripts/build-catalog.js
           node scripts/catalog-quality-report.js | tee catalog-quality-report.json
 
+      - name: Prepare only available original photos
+        run: |
+          node scripts/prepare-photo-catalog.js
+          node scripts/catalog-quality-report.js > catalog-quality-report.json
+
       - name: Guard catalog coverage before publication
         env:
           CATALOG_BASELINE_SOURCE: /tmp/adpick-baseline-source.json

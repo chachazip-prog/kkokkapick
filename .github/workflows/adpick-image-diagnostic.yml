@@ -72,7 +72,7 @@ jobs:
   handoff-review-catalog:
     if: github.repository == 'chachazip-prog/kkokkapick' && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild' && inputs.review_artifact_run_id != ''
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     permissions:
       contents: write
       actions: read
@@ -95,6 +95,8 @@ jobs:
           path: .review-catalog
       - name: Build photo-ready catalog with current relevance rules
         run: CATALOG_DATA_DIR=.review-catalog node scripts/build-catalog.js
+      - name: Exclude unavailable photos without losing seller facts
+        run: CATALOG_DATA_DIR=.review-catalog node scripts/prepare-photo-catalog.js
       - name: Recheck original images immediately before review publication
         env:
           CATALOG_IMAGE_HEALTH_INPUT: .review-catalog/catalog.json

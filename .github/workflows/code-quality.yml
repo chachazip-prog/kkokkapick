@@ -87,6 +87,7 @@ jobs:
           node test/pages-soft-typography.test.js
           node test/release-hardening-contract.test.js
           node test/image-health.test.js
+          node test/image-publication-policy.test.js
           node test/physical-qa-snapshot.test.js
           node test/external-beta-readiness.test.js
           node test/production-boundary-reconciliation.test.js

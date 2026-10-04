@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import { applyPublicationImageAudit } from '../src/image-publication-policy.js';
+import { groupProducts } from '../src/product-grouper.js';
+const urls=Array.from({length:20},(_,i)=>`https://cdn.example.com/${i}.jpg`);
+const source={syncedAt:'2026-10-04T00:00:00Z',expiresAt:'2026-10-05T00:00:00Z',products:[{externalProductId:'a',name:'아가방 우주복 01R71750503',imageUrl:urls[0],price:10000,merchant:'a'},{externalProductId:'b',name:'아가방 우주복 01R71750503',imageUrl:urls[1],price:12000,merchant:'b'}]};
+const report=urls.map((url,i)=>({url,ok:i!==0,status:i===0?400:200,reason:i===0?'http_error':null}));
+const updated=applyPublicationImageAudit(source,report,urls);
+assert.equal(updated.products[0].imageUrl,null);assert.equal(source.products[0].imageUrl,urls[0]);
+assert.equal(updated.syncedAt,source.syncedAt);assert.equal(updated.expiresAt,source.expiresAt);
+const grouped=groupProducts(updated.products);assert.equal(grouped.length,1);assert.equal(grouped[0].minPrice,10000);assert.equal(grouped[0].offerCount,2);assert.deepEqual(grouped[0].imageUrls,[urls[1]]);
+assert.throws(()=>applyPublicationImageAudit(source,report.slice(1),urls),/Incomplete/);
+assert.throws(()=>applyPublicationImageAudit(source,report.map(r=>({...r,ok:false})),urls),/outage/);
+assert.throws(()=>applyPublicationImageAudit(source,report.map((r,i)=>i===0?{...r,url:'https://unrelated.example/photo'}:r),urls),/Incomplete/);
+console.log('Publication image policy preserves seller facts and rejects broad outages PASS');

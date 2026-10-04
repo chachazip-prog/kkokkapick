@@ -1,0 +1,17 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { probeImageUrl } from '../src/image-health.js';
+import { applyPublicationImageAudit } from '../src/image-publication-policy.js';
+const directory=process.env.CATALOG_DATA_DIR || 'data';
+const sourcePath=path.join(directory,'adpick-biz-products.json');
+const source=JSON.parse(await fs.readFile(sourcePath,'utf8'));
+const catalog=JSON.parse(await fs.readFile(path.join(directory,'catalog.json'),'utf8'));
+const urls=[...new Set(catalog.products.flatMap(p=>[p.imageUrl,...(p.imageUrls||[])]).filter(Boolean))];
+const results=new Array(urls.length);let cursor=0;
+await Promise.all(Array.from({length:5},async()=>{while(cursor<urls.length){const index=cursor++;results[index]={url:urls[index],...await probeImageUrl(urls[index])}}}));
+const updated=applyPublicationImageAudit(source,results,urls);
+await fs.writeFile(sourcePath,JSON.stringify(updated,null,2)+'\n');
+const build=spawnSync(process.execPath,['scripts/build-catalog.js'],{env:{...process.env,CATALOG_DATA_DIR:directory},stdio:'inherit'});
+if(build.status!==0)throw new Error('Photo-ready catalog rebuild failed');
+console.log(JSON.stringify({publicationImageAudit:updated.publicationImageAudit}));
