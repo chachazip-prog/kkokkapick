@@ -1,1 +1,6 @@
-import assert from "node:assert/strict";import fs from "node:fs";const html=fs.readFileSync(new URL("../index.html",import.meta.url),"utf8");assert.ok(html.includes('class="brand-mark"'));assert.ok(html.includes('class="concept-pills"'));assert.ok(html.includes('aria-label="홈"'));assert.ok(html.includes('aria-label="검색"'));assert.ok(html.includes('aria-label="찜"'));assert.ok(html.includes('aria-label="마이"'));assert.match(html,/\.name\{[^}]*text-overflow:ellipsis[^}]*white-space:nowrap/);assert.ok(!html.includes('<span>⌂</span>홈'));assert.ok(!html.includes('<span>⌕</span>검색'));console.log("Soft editorial UI contract passed");
+import assert from 'node:assert/strict';import fs from 'node:fs';
+const html=fs.readFileSync('index.html','utf8'),css=fs.readFileSync('styles/release.css','utf8');
+for(const s of ['홈','검색','찜','마이'])assert.ok(html.includes(`aria-label="${s}"`));
+assert.ok(!html.includes('concept-pills'));assert.ok(!css.includes('box-shadow'));assert.ok(html.includes('id="photoMode"'));assert.ok(html.includes('id="photoGrid"'));assert.ok(html.includes('id="photoCard"'));
+assert.match(css,/\.nav\.on span \{[^}]*background: var\(--surface-accent\)/);
+console.log('Clean commerce navigation PASS');

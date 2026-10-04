@@ -1,1 +1,5 @@
-import assert from "node:assert/strict";import fs from "node:fs";const html=fs.readFileSync(new URL("../index.html",import.meta.url),"utf8");assert.ok(html.includes("--font-ui:"));assert.ok(html.includes("--font-soft:"));assert.match(html,/\.brand-word\{[^}]*font-family:var\(--font-soft\)[^}]*font-weight:800/);assert.match(html,/\.hero h2\{[^}]*font-family:var\(--font-soft\)[^}]*font-weight:700/);assert.match(html,/\.name\{[^}]*font-weight:500/);assert.ok(!html.includes("@import url("));console.log("Soft typography contract passed");
+import assert from 'node:assert/strict';import fs from 'node:fs';
+const tokens=fs.readFileSync('styles/tokens.css','utf8'),css=fs.readFileSync('styles/release.css','utf8');
+assert.ok(tokens.includes('--weight-body: 400'));assert.ok(tokens.includes('--weight-heading: 500'));
+assert.ok(!/font-weight:\s*[89]\d\d/.test(css));assert.ok(!css.includes('@import'));
+console.log('Release typography tokens PASS');

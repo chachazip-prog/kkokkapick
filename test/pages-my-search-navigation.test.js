@@ -1,1 +1,6 @@
-import assert from "node:assert/strict";import fs from "node:fs";const html=fs.readFileSync(new URL("../index.html",import.meta.url),"utf8");assert.ok(html.includes('id="myNav" onclick="setView(\'my\')"'));assert.ok(html.includes('id="myPage" hidden'));assert.ok(html.includes("function renderMy()"));assert.ok(!html.includes("if(next==='search')document.getElementById('q')?.focus()"),"search tab must not autofocus input");assert.ok(html.includes("document.getElementById('catalogSection').hidden=isMy"));console.log("My/search navigation contract passed");
+import assert from 'node:assert/strict';import fs from 'node:fs';
+const html=fs.readFileSync('index.html','utf8'),ui=fs.readFileSync('src/release-ui.js','utf8');
+for(const id of ['myPage','myNav','searchNav'])assert.ok(html.includes(`id="${id}"`));
+assert.ok(ui.includes('function renderMy()'));assert.ok(ui.includes("$('catalogSection').hidden=next==='my'"));
+assert.ok(!ui.includes("$('q').focus()"));
+console.log('Dedicated search and account views PASS');

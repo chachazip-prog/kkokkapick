@@ -4,6 +4,11 @@ on:
   pull_request:
     paths:
       - "index.html"
+      - "styles/**"
+      - "src/release-ui.js"
+      - "src/runtime-diagnostic.js"
+      - "scripts/release-ui-browser-qa.cjs"
+      - "assets/**"
       - "data/**"
       - ".github/workflows/visual-qa-screenshots.yml"
   workflow_dispatch:
@@ -28,37 +33,11 @@ jobs:
       - name: Capture reference viewports
         run: |
           python3 -m http.server 4173 >/tmp/kkokkapick-http.log 2>&1 &
-          cat > capture.mjs <<'EOF'
-          import { chromium } from 'playwright';
-          import fs from 'node:fs';
-          fs.mkdirSync('artifacts/visual-qa',{recursive:true});
-          const browser=await chromium.launch({headless:true});
-          for (const width of [320,375,390,430]) {
-            const page=await browser.newPage({viewport:{width,height:844},deviceScaleFactor:1});
-            await page.goto('http://127.0.0.1:4173/',{waitUntil:'networkidle'});
-            await page.screenshot({path:`artifacts/visual-qa/home-${width}.png`,fullPage:true});
-            await page.screenshot({path:`artifacts/visual-qa/home-viewport-${width}.png`});
-            await page.locator('#searchNav').click();
-            await page.screenshot({path:`artifacts/visual-qa/search-${width}.png`,fullPage:true});
-            await page.screenshot({path:`artifacts/visual-qa/search-viewport-${width}.png`});
-            await page.locator('#favNav').click();
-            await page.screenshot({path:`artifacts/visual-qa/favorites-${width}.png`,fullPage:true});
-            await page.screenshot({path:`artifacts/visual-qa/favorites-viewport-${width}.png`});
-            await page.locator('#myNav').click();
-            await page.screenshot({path:`artifacts/visual-qa/my-${width}.png`,fullPage:true});
-            await page.screenshot({path:`artifacts/visual-qa/my-viewport-${width}.png`});
-            await page.locator('#homeNav').click();
-            const card=page.locator('.card').first();
-            if(await card.count()){await card.click();await page.waitForTimeout(200);await page.screenshot({path:`artifacts/visual-qa/detail-${width}.png`,fullPage:true});await page.screenshot({path:`artifacts/visual-qa/detail-viewport-${width}.png`});}
-            await page.close();
-          }
-          await browser.close();
-          EOF
-          node capture.mjs
+          QA_OUTPUT=artifacts/visual-qa node scripts/release-ui-browser-qa.cjs
       - name: Upload visual QA screenshots
         uses: actions/upload-artifact@v4
         with:
           name: visual-qa-screenshots
-          path: artifacts/visual-qa/*.png
+          path: artifacts/visual-qa/
           if-no-files-found: error
           retention-days: 30
