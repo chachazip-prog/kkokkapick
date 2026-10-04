@@ -189,7 +189,7 @@ async function loadProducts(){
    const params=new URL(location.href).searchParams;const entryView=params.get('view');
    if(['home','search','favorites','my'].includes(entryView))setView(entryView);
    if(entryView==='search'&&['browse','photos','products'].includes(params.get('mode')))setSearchLayout(params.get('mode'));
-   const deepLink=params.get('product')||(params.get('sample')==='multiple'?products.find(p=>productImages(p).length>1)?.id:null);
+   const deepLink=params.get('product')||(params.get('sample')==='detail'?products[0]?.id:params.get('sample')==='multiple'?products.find(p=>productImages(p).length>1)?.id:null);
    if(deepLink)openDetail(deepLink);
   }
  }catch(e){if(!products.length)$('grid').innerHTML='<div class="empty"><h3>상품 정보를 불러오지 못했어요</h3><button class="text-link" onclick="loadProducts()">다시 시도</button></div>'}

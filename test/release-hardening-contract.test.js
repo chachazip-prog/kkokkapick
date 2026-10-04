@@ -44,7 +44,7 @@ for (const term of [
   if (!accountPage.includes(term)) throw new Error(`account overlay hardening missing: ${term}`);
 }
 
-const imageScript = read('scripts/catalog-image-health.js');
+const imageScript = read('scripts/catalog-image-health.js') + read('src/image-health.js');
 for (const term of [
   'AbortController',
   "content-type",
