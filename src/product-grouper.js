@@ -4,7 +4,7 @@ const CHANNELS = [
 ];
 const NOISE = ["해외","할인쿠폰","무료배송","공식","국내공식","정품","신상품","택1","종택"];
 const VARIANT = /(\d+\s*(?:종|개|장|팩|세트|SET)|[0-9]+\+[0-9]+|컬러|색상)/i;
-const MODEL_CODE = /\b[A-Z0-9]{5,}(?:[-_][A-Z0-9]{2,})*\b/i;
+const MODEL_CODE = /(?<![A-Z0-9])([A-Z0-9]{7,}(?:[-_][A-Z0-9]{2,})*)(?![A-Z0-9])/g;
 
 function stripLeadingChannelTags(value="") {
   let s=String(value);
@@ -39,7 +39,7 @@ export function normalizeProductName(name="") {
 function tokens(s){return new Set(normalizeProductName(s).split(" ").filter(x=>x.length>=2))}
 function jaccard(a,b){const A=tokens(a),B=tokens(b);if(!A.size||!B.size)return 0;let i=0;for(const x of A)if(B.has(x))i++;return i/(A.size+B.size-i)}
 function variantSignature(s){return (String(s).match(VARIANT)||[])[0]?.toLowerCase()||""}
-function modelCode(s){return (String(s).toUpperCase().match(MODEL_CODE)||[])[0]||""}
+function modelCode(s){return [...String(s).toUpperCase().matchAll(MODEL_CODE)].map(match=>match[1]).find(code=>/[A-Z]/.test(code)&&(code.match(/\d/g)||[]).length>=3)||""}
 function validPrice(value){return Number.isFinite(value)&&value>0?value:null}
 function validHttps(value){try{const u=new URL(value);return u.protocol==="https:"?u.toString():null}catch{return null}}
 

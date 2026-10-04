@@ -15,21 +15,25 @@ try { history=JSON.parse(await fs.readFile(dataFile("price-history.json"),"utf8"
 
 const groups=groupProducts((raw.products||[]).filter(p => isKidsApparel(p.name))).map(classifyProduct).filter(p => Boolean(p.imageUrl) || p.imageUrls?.length);
 const now=raw.syncedAt||new Date().toISOString();
-const changes=buildPriceChanges(previous.products||[],groups,now);
+const identityCorrected=previous.groupingVersion!==2;
+const changes=identityCorrected?[]:buildPriceChanges(previous.products||[],groups,now);
 
 // Demo-only bounded history. Do not treat this as permission for indefinite
 // provider-derived retention; production retention follows verified provider terms.
 history={
   version:1,
+  groupingVersion:2,
+  identityCorrection:identityCorrected?"discarded_legacy_ambiguous_product_groups":history.identityCorrection,
   updatedAt:now,
   retention:"bounded_demo_events",
-  events:[...(history.events||[]),...changes].slice(-1000)
+  events:[...(identityCorrected?[]:history.events||[]),...changes].slice(-1000)
 };
 await fs.writeFile(dataFile("price-history.json"),JSON.stringify(history,null,2)+"\n");
 
 await fs.writeFile(
   dataFile("catalog.json"),
   JSON.stringify({
+    groupingVersion:2,
     storagePolicy:raw.storagePolicy||"ttl_cache",
     syncedAt:raw.syncedAt,
     expiresAt:raw.expiresAt || catalogCacheWindow(now).expiresAt,
