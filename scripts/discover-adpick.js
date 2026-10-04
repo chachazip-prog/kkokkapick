@@ -68,7 +68,7 @@ if (map.size < minDiscoveryUnique) {
 
 const validated = await validateProductImages(products, {
   timeoutMs: Number(process.env.ADPICK_IMAGE_TIMEOUT_MS || 5000),
-  concurrency: Number(process.env.ADPICK_IMAGE_CONCURRENCY || 12),
+  concurrency: Number(process.env.ADPICK_IMAGE_CONCURRENCY || 5),
 });
 const imageHealth = {
   checked: validated.length,

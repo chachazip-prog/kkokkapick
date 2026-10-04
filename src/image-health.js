@@ -1,40 +1,35 @@
 export async function probeImageUrl(url, {
-  fetchImpl = fetch,
-  timeoutMs = 5000,
+  fetchImpl = fetch, timeoutMs = 5000, retryLimit = 2,
+  waitImpl = ms => new Promise(resolve => setTimeout(resolve, ms)),
 } = {}) {
-  if (!url) return { ok: false, status: null, contentType: "", reason: "missing" };
+  if (!url) return { ok: false, status: null, contentType: '', reason: 'missing' };
   let parsed;
-  try { parsed = new URL(url); } catch { return { ok: false, status: null, contentType: "", reason: "invalid_url" }; }
-  if (parsed.protocol !== "https:") return { ok: false, status: null, contentType: "", reason: "non_https" };
-
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    const response = await fetchImpl(parsed, {
-      redirect: "follow",
-      signal: controller.signal,
-      headers: {
-        "user-agent": "Mozilla/5.0 (compatible; KKOKKAPICKImageValidation/1.0)",
-        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-      },
-    });
-    const contentType = (response.headers.get("content-type") || "").toLowerCase();
-    try { await response.body?.cancel(); } catch {}
-    return {
-      ok: response.ok && contentType.startsWith("image/"),
-      status: response.status,
-      contentType,
-      reason: response.ok ? (contentType.startsWith("image/") ? null : "non_image") : "http_error",
-    };
-  } catch (error) {
-    return {
-      ok: false,
-      status: null,
-      contentType: "",
-      reason: error?.name === "AbortError" ? "timeout" : "fetch_error",
-    };
-  } finally {
-    clearTimeout(timer);
+  try { parsed = new URL(url); } catch { return { ok: false, status: null, contentType: '', reason: 'invalid_url' }; }
+  if (parsed.protocol !== 'https:') return { ok: false, status: null, contentType: '', reason: 'non_https' };
+  const retries = Math.max(0, Math.min(2, retryLimit));
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    const controller = new AbortController(), timer = setTimeout(() => controller.abort(), timeoutMs);
+    let health, retryAfter = null;
+    try {
+      const response = await fetchImpl(parsed, { redirect: 'follow', signal: controller.signal,
+        headers: { 'user-agent': 'Mozilla/5.0 (compatible; KKOKKAPICKImageValidation/1.0)', 'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8' } });
+      const contentType = (response.headers.get('content-type') || '').toLowerCase();
+      retryAfter = response.headers.get('retry-after');
+      try { await response.body?.cancel(); } catch {}
+      health = { ok: response.ok && contentType.startsWith('image/'), status: response.status, contentType,
+        reason: response.ok ? (contentType.startsWith('image/') ? null : 'non_image') : 'http_error', attempts: attempt + 1 };
+    } catch (error) {
+      health = { ok: false, status: null, contentType: '', reason: error?.name === 'AbortError' ? 'timeout' : 'fetch_error', attempts: attempt + 1 };
+    } finally { clearTimeout(timer); }
+    // The gateway returned400 and then200 for the same valid URL in live checks.
+    // Never retry404: it is the observed expired-image failure.
+    const retryable = health.status === null || [400,408,429,500,502,503,504].includes(health.status);
+    if (health.ok || !retryable || attempt === retries) return health;
+    const seconds = retryAfter && /^\d+(?:\.\d+)?$/.test(retryAfter) ? Number(retryAfter) : null;
+    const date = retryAfter && seconds === null ? Date.parse(retryAfter) : NaN;
+    const requested = seconds !== null ? seconds * 1000 : Number.isFinite(date) ? date - Date.now() : [250,750][attempt];
+    if (requested > 5000) return { ...health, reason: 'retry_later' };
+    await waitImpl(Math.max(250, requested));
   }
 }
 

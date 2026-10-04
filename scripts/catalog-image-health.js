@@ -29,37 +29,8 @@ function deterministicSample(values, wanted) {
   return sampled;
 }
 
-async function probe(url) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    const response = await fetch(url, {
-      method: 'GET',
-      redirect: 'follow',
-      signal: controller.signal,
-      headers: {
-        'user-agent': 'Mozilla/5.0 (compatible; KKOKKAPICKImageHealth/1.0)',
-        'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
-      },
-    });
-    const contentType = (response.headers.get('content-type') || '').toLowerCase();
-    const ok = response.status >= 200 && response.status < 300 && contentType.startsWith('image/');
-    if (response.body) await response.body.cancel().catch(() => {});
-    return { url, ok, status: response.status, contentType };
-  } catch (error) {
-    return {
-      url,
-      ok: false,
-      status: null,
-      contentType: '',
-      error: error && error.name === 'AbortError' ? 'timeout' : String(error && error.message ? error.message : error),
-    };
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
 async function main() {
+  const { probeImageUrl } = await import('../src/image-health.js');
   const selected = process.env.IMAGE_HEALTH_ALL === '1' ? urls : deterministicSample(urls, sampleSize);
   let cursor = 0;
   const results = new Array(selected.length);
@@ -68,7 +39,7 @@ async function main() {
       const index = cursor;
       cursor += 1;
       if (index >= selected.length) return;
-      results[index] = await probe(selected[index]);
+      results[index] = { url: selected[index], ...await probeImageUrl(selected[index], { timeoutMs }) };
     }
   }
   await Promise.all(Array.from({ length: Math.min(concurrency, selected.length) }, worker));
