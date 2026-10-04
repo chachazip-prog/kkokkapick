@@ -8,6 +8,11 @@ on:
       - "src/adpick-biz-provider.js"
   workflow_dispatch:
     inputs:
+      diagnostic_only:
+        description: Compare fresh and existing image URLs without full discovery or catalog publication
+        type: boolean
+        required: false
+        default: false
       review_artifact_run_id:
         description: Existing successful review-catalog artifact run to copy to the review branch (no API refresh)
         type: string
@@ -33,19 +38,19 @@ jobs:
         with:
           node-version: "22"
       - name: Probe fresh ADPICK search image URLs
-        if: github.event_name != 'workflow_dispatch' || github.ref != 'refs/heads/codex/release-ui-rebuild'
+        if: inputs.diagnostic_only || github.event_name != 'workflow_dispatch' || github.ref != 'refs/heads/codex/release-ui-rebuild'
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
         run: node scripts/adpick-image-diagnostic.js
       - name: Generate fresh review catalog without publishing main
-        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild'
+        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild' && !inputs.diagnostic_only
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
         run: |
           node scripts/discover-adpick.js
           node scripts/build-catalog.js
       - name: Upload temporary review catalog
-        if: success() && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild'
+        if: success() && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild' && !inputs.diagnostic_only
         uses: actions/upload-artifact@v4
         with:
           name: adpick-review-catalog

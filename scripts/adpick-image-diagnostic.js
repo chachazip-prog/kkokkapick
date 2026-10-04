@@ -48,9 +48,16 @@ async function probeImage(url) {
 }
 
 const results = [];
+// Public provider image URLs only: enough to compare runner and browser access.
+// Never include API request URLs, credentials or affiliate links in evidence.
+const freshImageSamples = [];
 for (const query of queries) {
   const products = await provider.search(query, { limit: 5, trackingId: "kkokkapick_image_diagnostic" });
   const probes = await Promise.all(products.map(product => probeImage(product.imageUrl)));
+  const sample = products.find(product => {
+    try { const url = new URL(product.imageUrl); return url.protocol === 'https:' && url.hostname === 'd2iaagr1j041pi.cloudfront.net' && url.pathname === '/apis/search_img.php' && /^\d+$/.test(url.searchParams.get('code') || '') && [...url.searchParams.keys()].every(key => key === 'code'); } catch { return false; }
+  });
+  if (sample) freshImageSamples.push({ imageUrl: sample.imageUrl, observedAt: sample.checkedAt });
   results.push({
     query,
     products: products.length,
@@ -63,9 +70,14 @@ for (const query of queries) {
 }
 
 const flat = results.flatMap(r => r.probes);
+const catalog = JSON.parse(await fs.readFile('data/catalog.json', 'utf8'));
+const existingImageSamples = [...new Set((catalog.products || []).map(p => p.imageUrl).filter(Boolean))].slice(0, 3);
+const existingProbes = await Promise.all(existingImageSamples.map(probeImage));
 const summary = {
   generatedAt: new Date().toISOString(),
   sourceFields: [...sourceFields].sort(),
+  freshImageSamples,
+  existingCatalog: { syncedAt: catalog.syncedAt, probed: existingProbes.length, ok: existingProbes.filter(p => p.ok).length, probes: existingProbes },
   queries: results.map(r => ({ query: r.query, products: r.products, imagesPresent: r.imagesPresent, materialPresent: r.materialPresent, availableSizesPresent: r.availableSizesPresent, factFields: r.factFields })),
   probed: flat.length,
   ok: flat.filter(p => p.ok).length,
