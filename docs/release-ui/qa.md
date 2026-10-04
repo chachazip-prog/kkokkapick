@@ -25,3 +25,9 @@ No provider/backend/auth changes, new personal-data upload, paid infrastructure 
 ## Web demo
 
 `demo.html` provides six actual screen links, an embedded mobile preview, viewport selector and a new-tab link. Query parameters select existing views without injecting sample favorites or changing stored data. Product detail uses a real catalog id. Browser QA verifies all six destinations and new-tab link synchronization at four widths, plus four demo captures (44 total). Iframe preserves the selected 320/375/390/430px width, with internal horizontal scrolling on smaller devices. If all provider images fail, browser QA reports SOURCE BLOCK and checks selected-product behavior separately; that does not grant catalog image QA approval.
+
+## 3 × 4 feed and rounded type refinement
+
+Shared self-hosted NanumSquareRound applies to logo, all commerce surfaces and demo. Gallery checks: unique source URLs, two-slide real product, next/previous counter transitions. Initial photo feed: three columns, zero gap, up to12 live tiles, four rows fit above bottom navigation. Catalog contains50 products with multiple image URLs. Demo sample: `adpickbiz_2a757e84` (아가방 아양 우주복 + 모자 세트), two original provider images. Provider expiry can prevent photo rendering; carousel structure does not imply healthy source images. Hero proposals generated separately and await owner choice.
+
+Independent corrective review: preserved12tile reset paths after tab/search/filter changes; gallery controls have a dedicated44px strip beneath images so garments remain unobstructed. Browser regression checks3columns/gap0/feed bottom above nav and the two-image next/previous path.

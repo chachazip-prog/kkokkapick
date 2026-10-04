@@ -38,7 +38,7 @@ async function main(){
    }
   }
   for(const [name,id] of [['home','homeNav'],['search','searchNav'],['wishlist','favNav'],['my','myNav']]){await page.locator('#'+id).click();await capture(name)}
-  await page.locator('#searchNav').click();await page.locator('#photoMode').click();await capture('photo-feed');assert.equal(await page.locator('#grid').isVisible(),false);assert.equal(await page.locator('.photo-tile .name,.photo-tile .price,.photo-tile .brandline').count(),0);await openAvailablePhoto();await capture('photo-card');assert.equal(await page.locator('#photoCard').isVisible(),true);assert.ok((await page.locator('#photoCardContent').textContent()).includes('소재'));assert.ok((await page.locator('#photoCardContent').textContent()).includes('사이즈'));await page.locator('[data-photo-fav]').click();await page.locator('[data-photo-fav]').click();await page.locator('#photoCard .close').click();assert.ok(await page.evaluate(()=>document.activeElement?.hasAttribute('data-photo')||document.activeElement?.classList.contains('nav')||document.activeElement?.id==='photoMode'),'photo trigger or active navigation focus restored');await openAvailablePhoto();await page.locator('[data-photo-detail]').click();assert.equal(await page.locator('.sheet.on').count(),1);await page.locator('#detail .close').click();await page.locator('#homeNav').click();await page.locator('#grid .product-link').first().click();await capture('detail');
+  await page.locator('#searchNav').click();await page.locator('#photoMode').click();await capture('photo-feed');const feed=await page.locator('#photoGrid').evaluate(e=>({columns:getComputedStyle(e).gridTemplateColumns.split(' ').length,gap:getComputedStyle(e).gap,bottom:e.getBoundingClientRect().bottom,nav:document.querySelector('.bottom').getBoundingClientRect().top,count:e.children.length}));assert.equal(feed.columns,3);assert.equal(feed.gap,'0px');assert.ok(feed.count<=12);assert.ok(feed.bottom<=feed.nav);await page.locator('#myNav').click();await page.locator('#searchNav').click();assert.equal(await page.evaluate(()=>limit),12,'returning photo feed keeps12');assert.equal(await page.locator('#grid').isVisible(),false);assert.equal(await page.locator('.photo-tile .name,.photo-tile .price,.photo-tile .brandline').count(),0);await openAvailablePhoto();await capture('photo-card');assert.equal(await page.locator('#photoCard').isVisible(),true);assert.ok((await page.locator('#photoCardContent').textContent()).includes('소재'));assert.ok((await page.locator('#photoCardContent').textContent()).includes('사이즈'));await page.locator('[data-photo-fav]').click();await page.locator('[data-photo-fav]').click();await page.locator('#photoCard .close').click();assert.ok(await page.evaluate(()=>document.activeElement?.hasAttribute('data-photo')||document.activeElement?.classList.contains('nav')||document.activeElement?.id==='photoMode'),'photo trigger or active navigation focus restored');await openAvailablePhoto();await page.locator('[data-photo-detail]').click();assert.equal(await page.locator('.sheet.on').count(),1);await page.locator('#detail .close').click();await page.locator('#homeNav').click();await page.locator('#grid .product-link').first().click();await capture('detail');
   const pid=await page.evaluate(()=>currentProduct.id);
   assert.equal(await page.locator('#detail .detail-actions').count(),1);
   assert.ok((await page.locator('#detailPanel .product-info').textContent()).includes('소재'));assert.ok((await page.locator('#detailPanel .product-info').textContent()).includes('사이즈'));
@@ -55,12 +55,22 @@ async function main(){
   await page.reload({waitUntil:'domcontentloaded'});await page.locator('#grid .card').first().waitFor();assert.equal(await page.evaluate(id=>JSON.parse(localStorage.getItem('priceAlerts'))[id],pid),20000);assert.ok(await page.evaluate(id=>JSON.parse(localStorage.getItem('favs')).includes(String(id)),pid));
   await page.goto(new URL('demo.html',base).href,{waitUntil:'domcontentloaded'});
   const demoFrame=page.frameLocator('#screen');
+  await page.evaluate(()=>document.fonts.ready);
+  assert.ok(await page.evaluate(()=>document.fonts.check('14px NanumSquareRound')),'rounded font loaded');
   await demoFrame.locator('#homeNav[aria-current="page"]').waitFor();
   for(const [label,selector] of [['검색','#searchNav[aria-current="page"]'],['사진 피드','#photoMode[aria-pressed="true"]'],['상품 상세','#detail.on'],['찜한 상품','#favNav[aria-current="page"]'],['마이','#myNav[aria-current="page"]'],['홈','#homeNav[aria-current="page"]']]){
    await page.locator('nav a').filter({has:page.locator('strong',{hasText:new RegExp('^'+label+'$')})}).click();
    await demoFrame.locator(selector).waitFor();
    assert.equal(await page.locator('#openScreen').evaluate(e=>e.href),await page.locator('nav a[aria-current="page"]').evaluate(e=>e.href));
   }
+  await page.locator('nav a').filter({hasText:'복수 사진 테스트'}).click();
+  await demoFrame.locator('.gallery-count').waitFor();
+  assert.equal(await demoFrame.locator('.gallery-slide').count(),2);
+  await demoFrame.locator('[data-gallery-next]').click();
+  await demoFrame.locator('.gallery-count').filter({hasText:'2 / 2'}).waitFor();
+  await demoFrame.locator('[data-gallery-prev]').click();
+  await demoFrame.locator('.gallery-count').filter({hasText:'1 / 2'}).waitFor();
+  await page.screenshot({path:`${output}/multiple-photos-${width}.png`});
   await page.screenshot({path:`${output}/demo-${width}.png`});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'demo overflow');
   await page.close();

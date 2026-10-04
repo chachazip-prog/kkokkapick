@@ -1,3 +1,5 @@
+@font-face { font-family: "NanumSquareRound"; src: url("../assets/fonts/NanumSquareRoundR.woff") format("woff"); font-weight: 300 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "NanumSquareRound"; src: url("../assets/fonts/NanumSquareRoundB.woff") format("woff"); font-weight: 600 700; font-style: normal; font-display: swap; }
 :root {
   --color-text-primary: #332d38;
   --color-text-secondary: #817989;
@@ -13,7 +15,7 @@
   --surface-peach: #fff7ee;
   --surface-blue: #f1f5ff;
   --color-brand-ink: #503988;
-  --font-ui: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+  --font-ui: "NanumSquareRound", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
   --text-caption: 11px;
   --text-small: 12px;
   --text-body: 14px;

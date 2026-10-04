@@ -15,3 +15,6 @@ const absent=context.productInfoHtml({cat:'바디수트',availableSizes:[]});ass
 assert.ok(context.productInfoHtml({material:'<img onerror=alert(1)>',availableSizes:[]}).includes('&lt;img'));
 assert.equal(context.evaluateFit({months:0,height:50,weight:4},{brand:'아가방'}).status,'recommended','newborn age 0 is valid');
 console.log('Release presentation: source-preserving names, truthful material/size and zero-month fit PASS');
+const photos={imageUrl:'https://example.com/front.jpg',imageUrls:['https://example.com/front.jpg','https://example.com/back.jpg','javascript:bad']};
+assert.deepEqual(Array.from(context.productImages(photos)),['https://example.com/front.jpg','https://example.com/back.jpg']);
+const gallery=context.imageGallery({...photos,name:'아기 옷'},'detailpic');assert.equal((gallery.match(/class="gallery-slide"/g)||[]).length,2);assert.ok(gallery.includes('1 / 2'));assert.ok(gallery.includes('data-gallery-next'));
