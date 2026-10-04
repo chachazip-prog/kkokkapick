@@ -96,7 +96,7 @@ jobs:
       - name: Recheck original images immediately before review publication
         env:
           CATALOG_IMAGE_HEALTH_INPUT: .review-catalog/catalog.json
-          IMAGE_HEALTH_SAMPLE_SIZE: "2000"
+          IMAGE_HEALTH_ALL: "1"
           IMAGE_HEALTH_MIN_SUCCESS_RATE: "1"
         run: node scripts/catalog-image-health.js
       - name: Validate and commit review data only

@@ -60,7 +60,7 @@ async function probe(url) {
 }
 
 async function main() {
-  const selected = deterministicSample(urls, sampleSize);
+  const selected = process.env.IMAGE_HEALTH_ALL === '1' ? urls : deterministicSample(urls, sampleSize);
   let cursor = 0;
   const results = new Array(selected.length);
   async function worker() {

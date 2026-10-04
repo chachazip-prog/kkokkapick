@@ -85,6 +85,13 @@ jobs:
           ADPICK_MIN_PREVIOUS_RATIO: "0.65"
         run: node scripts/catalog-coverage-guard.js
 
+      - name: Verify all original catalog images before publication
+        env:
+          IMAGE_HEALTH_ALL: "1"
+          IMAGE_HEALTH_MIN_SUCCESS_RATE: "1"
+          IMAGE_HEALTH_REPORT: artifacts/pre-publish-catalog-image-health.json
+        run: node scripts/catalog-image-health.js
+
       - name: Commit catalog
         run: |
           if git diff --quiet -- data/adpick-biz-products.json data/catalog.json data/price-history.json catalog-quality-report.json; then exit 0; fi
