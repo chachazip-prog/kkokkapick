@@ -1,3 +1,4 @@
+import path from "node:path";
 import { isKidsApparel } from "../src/apparel-relevance.js";
 import { catalogCacheWindow } from "../src/provider-product-facts.js";
 import fs from "node:fs/promises";
@@ -5,13 +6,14 @@ import { groupProducts } from "../src/product-grouper.js";
 import { classifyProduct } from "../src/product-classifier.js";
 import { buildPriceChanges } from "../src/price-tracker.js";
 
-const raw=JSON.parse(await fs.readFile("data/adpick-biz-products.json","utf8"));
+const dataFile=name=>path.join(process.env.CATALOG_DATA_DIR || "data",name);
+const raw=JSON.parse(await fs.readFile(dataFile("adpick-biz-products.json"),"utf8"));
 let previous={products:[]};
-try { previous=JSON.parse(await fs.readFile("data/catalog.json","utf8")); } catch {}
+try { previous=JSON.parse(await fs.readFile(dataFile("catalog.json"),"utf8")); } catch {}
 let history={version:1,events:[]};
-try { history=JSON.parse(await fs.readFile("data/price-history.json","utf8")); } catch {}
+try { history=JSON.parse(await fs.readFile(dataFile("price-history.json"),"utf8")); } catch {}
 
-const groups=groupProducts((raw.products||[]).filter(p => isKidsApparel(p.name))).map(classifyProduct);
+const groups=groupProducts((raw.products||[]).filter(p => isKidsApparel(p.name))).map(classifyProduct).filter(p => Boolean(p.imageUrl) || p.imageUrls?.length);
 const now=raw.syncedAt||new Date().toISOString();
 const changes=buildPriceChanges(previous.products||[],groups,now);
 
@@ -23,10 +25,10 @@ history={
   retention:"bounded_demo_events",
   events:[...(history.events||[]),...changes].slice(-1000)
 };
-await fs.writeFile("data/price-history.json",JSON.stringify(history,null,2)+"\n");
+await fs.writeFile(dataFile("price-history.json"),JSON.stringify(history,null,2)+"\n");
 
 await fs.writeFile(
-  "data/catalog.json",
+  dataFile("catalog.json"),
   JSON.stringify({
     storagePolicy:raw.storagePolicy||"ttl_cache",
     syncedAt:raw.syncedAt,

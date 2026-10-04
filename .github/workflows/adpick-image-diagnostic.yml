@@ -93,6 +93,8 @@ jobs:
           run-id: ${{ inputs.review_artifact_run_id }}
           github-token: ${{ github.token }}
           path: .review-catalog
+      - name: Build photo-ready catalog with current relevance rules
+        run: CATALOG_DATA_DIR=.review-catalog node scripts/build-catalog.js
       - name: Recheck original images immediately before review publication
         env:
           CATALOG_IMAGE_HEALTH_INPUT: .review-catalog/catalog.json
