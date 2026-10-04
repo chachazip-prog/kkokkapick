@@ -76,6 +76,9 @@ async function main(){
   assert.ok(await demoFrame.locator('.gallery-slide').count()>=2);
   await demoFrame.locator('[data-gallery-dot="1"]').click();
   await demoFrame.locator('[data-gallery-dot="1"][aria-pressed="true"]').waitFor();
+  const secondPhoto=demoFrame.locator('.gallery-slide').nth(1).locator('img');
+  assert.ok(await secondPhoto.evaluate(img=>new Promise(resolve=>{const finish=()=>resolve(img.complete&&img.naturalWidth>0);if(img.complete&&img.naturalWidth)finish();else{img.addEventListener('load',finish,{once:true});setTimeout(finish,15000)}})),'second actual product image decoded');
+  await page.screenshot({path:`${output}/multiple-photos-second-${width}.png`});
   await demoFrame.locator('[data-gallery-dot="0"]').click();
   await demoFrame.locator('[data-gallery-dot="0"][aria-pressed="true"]').waitFor();
   await page.screenshot({path:`${output}/multiple-photos-${width}.png`});
