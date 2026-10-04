@@ -4,3 +4,5 @@ test('production and local browsers keep their own generated catalog',()=>{for(c
 test('an explicit expiry is enforced at its boundary',()=>{assert.equal(source.isExpired({expiresAt:'2026-10-04T00:00:00Z'},Date.parse('2026-10-04T00:00:00Z')),true);assert.equal(source.isExpired({expiresAt:'2026-10-04T00:00:00Z'},Date.parse('2026-10-03T23:59:59Z')),false)});
 
 test("malformed explicit expiry cannot silently admit stale source data",()=>{assert.equal(source.isExpired({expiresAt:"invalid"}),true)});
+
+test("legacy TTL catalogs cannot bypass expiry by omitting expiresAt",()=>{assert.equal(source.isExpired({storagePolicy:"ttl_cache",syncedAt:"2026-10-03T00:00:00Z"},Date.parse("2026-10-04T00:00:00Z")),true);assert.equal(source.isExpired({storagePolicy:"ttl_cache"}),true)});

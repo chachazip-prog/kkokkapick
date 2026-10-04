@@ -7,7 +7,16 @@ import { ADPICK_DISCOVERY_QUERIES as queries, ADPICK_SEARCH_LIMIT, ADPICK_DISCOV
 const apiKey = process.env.ADPICK_BIZ_API_KEY;
 if (!apiKey) throw new Error("Missing ADPICK_BIZ_API_KEY");
 
-const provider = new AdpickBizProvider({ apiKey });
+const sourceFields = new Set();
+const provider = new AdpickBizProvider({ apiKey, fetchImpl: async (url, options) => {
+  const response = await fetch(url, options);
+  if (response.ok) {
+    const payload = await response.clone().json();
+    const rows = Array.isArray(payload) ? payload : (payload?.list ?? payload?.data ?? payload?.items ?? []);
+    if (Array.isArray(rows)) rows.forEach(row => Object.keys(row || {}).forEach(key => sourceFields.add(key)));
+  }
+  return response;
+} });
 const map = new Map();
 const queryDiagnostics = [];
 for (const q of queries) {
@@ -81,6 +90,11 @@ if (imageHealth.rate < minImageHealthRate) {
   console.error(JSON.stringify({ imageHealth, minImageHealthRate }, null, 2));
   throw new Error(`Refusing catalog publication: live image health ${(imageHealth.rate * 100).toFixed(1)}% < ${(minImageHealthRate * 100).toFixed(1)}%`);
 }
+const productFacts = {
+  materialPresent: validated.filter(p => Boolean(p.material)).length,
+  availableSizesPresent: validated.filter(p => p.availableSizes?.length).length,
+  sourceFields: [...sourceFields].sort(),
+};
 const safeProducts = validated.map(({ imageHealth: _imageHealth, ...product }) => product);
 await fs.mkdir("data", { recursive: true });
 await fs.writeFile("data/adpick-biz-products.json", JSON.stringify({
@@ -89,6 +103,11 @@ await fs.writeFile("data/adpick-biz-products.json", JSON.stringify({
   queries,
   count: safeProducts.length,
   imageHealth,
+  productFacts,
   products: safeProducts
 }, null, 2) + "\n");
 console.log(`Saved ${safeProducts.length} unique ADPICK BIZ products; images ${imageHealth.ok}/${imageHealth.checked} healthy`);
+
+await fs.mkdir("artifacts", { recursive: true });
+await fs.writeFile("artifacts/adpick-image-diagnostic.json", JSON.stringify({generatedAt:new Date().toISOString(),...productFacts,probed:imageHealth.checked,ok:imageHealth.ok,failed:imageHealth.failed,statuses:imageHealth.statuses},null,2)+"\n");
+console.log("[adpick-source-facts]", JSON.stringify(productFacts));

@@ -13,7 +13,7 @@ export function providerProductFacts(raw = {}) {
   const availableSizes = [...new Set(sizeOptions.flatMap(option => {
     if (typeof option === 'string' || typeof option === 'number') return String(option).trim() ? [String(option).trim()] : [];
     if (!option || typeof option !== 'object') return [];
-    if (option.available === false || option.in_stock === false || option.sold_out === true || option.stock === 0) return [];
+    if (option.available === false || option.in_stock === false || option.sold_out === true || option.stock === 0 || option.stock === '0' || option.is_available === false || option.stock_quantity === 0) return [];
     const label = option.size ?? option.label ?? option.name;
     return typeof label === 'string' || typeof label === 'number' ? [String(label).trim()].filter(Boolean) : [];
   }))];

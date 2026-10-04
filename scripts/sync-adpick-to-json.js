@@ -1,3 +1,4 @@
+import { catalogCacheWindow } from "../src/provider-product-facts.js";
 import fs from "node:fs/promises";
 import { AdpickProvider } from "../src/adpick-provider.js";
 
@@ -15,7 +16,7 @@ const usable = products.filter(p =>
 
 const catalog = {
   source: "adpick",
-  syncedAt: new Date().toISOString(),
+  ...catalogCacheWindow(usable.map(p => p.checkedAt).filter(Boolean).sort()[0] || new Date().toISOString(), provider.getCacheTtlMinutes() / 60),
   count: usable.length,
   products: usable
 };

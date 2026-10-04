@@ -69,6 +69,7 @@ jobs:
           node test/child-profiles-local.test.js
           node test/catalog-source.test.js
           node test/provider-product-facts.test.js
+          node test/adpick-rate-limit.test.js
           node test/preview-parity.test.js
           node test/pages-classic-bootstrap.test.js
           node test/pages-inline-syntax.test.js

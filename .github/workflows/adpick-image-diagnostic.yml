@@ -11,6 +11,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: adpick-source-diagnostic
+  cancel-in-progress: false
+
 jobs:
   diagnostic:
     if: github.repository == 'chachazip-prog/kkokkapick'
@@ -23,6 +27,7 @@ jobs:
         with:
           node-version: "22"
       - name: Probe fresh ADPICK search image URLs
+        if: github.event_name != 'workflow_dispatch' || github.ref != 'refs/heads/codex/release-ui-rebuild'
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
         run: node scripts/adpick-image-diagnostic.js
