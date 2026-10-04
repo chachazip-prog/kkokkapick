@@ -21,3 +21,7 @@ Selected direction: owner-supplied R01 reference, refined by explicit requests f
 Provider image reliability remains blocked (up to four image failures in the reviewed capture set). Owner authorized continuing UI work and will find a current catalog source later. Some material/size fields are absent; show seller-verification guidance, never invented product facts. Existing hero source is low resolution. Actual iPhone Safari/safe-area review and Product Owner approval remain pending. CI alone does not establish design approval.
 
 No provider/backend/auth changes, new personal-data upload, paid infrastructure or main merge.
+
+## Web demo
+
+`demo.html` provides six actual screen links, an embedded mobile preview, viewport selector and a new-tab link. Query parameters select existing views without injecting sample favorites or changing stored data. Product detail uses a real catalog id. Browser QA verifies all six destinations and new-tab link synchronization at four widths, plus four demo captures (44 total). Mobile iframe width is constrained to the available viewport; use desktop for exact 320/375/390/430 selection.

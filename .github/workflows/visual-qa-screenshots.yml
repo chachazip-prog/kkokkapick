@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - "index.html"
+      - "demo.html"
+      - "src/demo.js"
       - "styles/**"
       - "src/release-ui.js"
       - "src/runtime-diagnostic.js"

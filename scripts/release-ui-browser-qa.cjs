@@ -45,6 +45,16 @@ async function main(){
   await page.locator('#clearFilters').click();await page.locator('#chips button').filter({hasText:'원피스'}).click();assert.ok(await page.locator('#grid .card').count()>0);assert.ok(await page.evaluate(()=>[...document.querySelectorAll('#grid .card')].every(e=>products.find(p=>String(p.id)===e.dataset.id).cat==='원피스')));
   await page.locator('#q').fill('검색결과없는문자열xyz');assert.equal(await page.locator('#grid .card').count(),0);
   await page.reload({waitUntil:'domcontentloaded'});await page.locator('#grid .card').first().waitFor();assert.equal(await page.evaluate(id=>JSON.parse(localStorage.getItem('priceAlerts'))[id],pid),20000);assert.ok(await page.evaluate(id=>JSON.parse(localStorage.getItem('favs')).includes(String(id)),pid));
+  await page.goto(base+'demo.html',{waitUntil:'domcontentloaded'});
+  const demoFrame=page.frameLocator('#screen');
+  await demoFrame.locator('#homeNav[aria-current="page"]').waitFor();
+  for(const [label,selector] of [['검색','#searchNav[aria-current="page"]'],['사진 피드','#photoMode[aria-pressed="true"]'],['상품 상세','#detail.on'],['찜한 상품','#favNav[aria-current="page"]'],['마이','#myNav[aria-current="page"]'],['홈','#homeNav[aria-current="page"]']]){
+   await page.locator('nav a').filter({has:page.locator('strong',{hasText:new RegExp('^'+label+'$')})}).click();
+   await demoFrame.locator(selector).waitFor();
+   assert.equal(await page.locator('#openScreen').evaluate(e=>e.href),await page.locator('nav a[aria-current="page"]').evaluate(e=>e.href));
+  }
+  await page.screenshot({path:`${output}/demo-${width}.png`});
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'demo overflow');
   await page.close();
  }
  await browser.close();if(qaServer)await new Promise(resolve=>qaServer.close(resolve));fs.writeFileSync(`${output}/metrics.json`,JSON.stringify(report,null,2));console.log(`PASS: 4 viewports, ${report.length} browser captures, interaction regression. Image reliability is reported separately.`);
