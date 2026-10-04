@@ -17,6 +17,7 @@ assert.ok(Number.isFinite(observed)&&observed<=Date.now()+300000,'Invalid observ
 assert.equal(observed,Date.parse(source.syncedAt),'Source/catalog observation mismatch');
 assert.equal(expiry,Date.parse(source.expiresAt),'Source/catalog expiry mismatch');
 assert.ok(expiry>observed&&expiry-observed<=24*3600000,'TTL must not exceed 24 hours');
+assert.ok(Date.now()-observed<90*60000,'Review images exceed internal90min display window');
 assert.equal(catalog.storagePolicy,'ttl_cache');assert.equal(source.storagePolicy,'ttl_cache');
 assert.ok(source.imageHealth?.rate>=0.8,'Insufficient verified original image health');
 assert.ok(Array.isArray(documents['price-history.json'].events),'Invalid price history');
