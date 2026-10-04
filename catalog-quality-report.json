@@ -1,7 +1,7 @@
 {
   "syncedAt": "2026-10-04T23:17:35.641Z",
   "sourceProducts": 787,
-  "canonicalProducts": 723,
+  "canonicalProducts": 722,
   "queries": 79,
   "recognizedBrandProducts": 406,
   "recognizedBrandRatePct": 56.2,
@@ -19,7 +19,7 @@
     },
     "rate": 0.9974587039390089
   },
-  "canonicalImageProducts": 723,
+  "canonicalImageProducts": 722,
   "canonicalImageRatePct": 100,
   "multiImageProducts": 54,
   "multiImageRatePct": 7.5,
@@ -28,7 +28,7 @@
   "topBrands": [
     {
       "name": "미분류",
-      "count": 317
+      "count": 316
     },
     {
       "name": "밀크베이비",
@@ -114,11 +114,11 @@
     },
     {
       "name": "상의",
-      "count": 144
+      "count": 146
     },
     {
       "name": "바디수트",
-      "count": 115
+      "count": 116
     },
     {
       "name": "하의",
@@ -130,7 +130,7 @@
     },
     {
       "name": "원피스",
-      "count": 53
+      "count": 54
     },
     {
       "name": "실내복",
@@ -143,10 +143,6 @@
     {
       "name": "한복",
       "count": 15
-    },
-    {
-      "name": "기타",
-      "count": 5
     }
   ],
   "stages": [
@@ -156,7 +152,7 @@
     },
     {
       "name": "베이비",
-      "count": 280
+      "count": 279
     },
     {
       "name": "유아",

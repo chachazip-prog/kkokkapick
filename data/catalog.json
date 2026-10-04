@@ -4,7 +4,7 @@
   "syncedAt": "2026-10-04T23:17:35.641Z",
   "expiresAt": "2026-10-05T23:17:35.641Z",
   "sourceCount": 787,
-  "productCount": 723,
+  "productCount": 722,
   "priceChangeCount": 0,
   "products": [
     {
@@ -27152,49 +27152,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_5488061",
-      "name": "시온가구 엘리 와이드 3단 아기옷 아이방 옷방 속옷 다용도 서랍장",
-      "normalizedName": "시온가구 엘리 와이드 3단 아기옷 아이방 옷방 속옷 다용도 서랍장",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511698955",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511698955"
-      ],
-      "category": "기타",
-      "query": "아가방 아기옷",
-      "offers": [
-        {
-          "provider": "adpick_biz",
-          "checkedAt": "2026-10-04T23:27:14.023Z",
-          "material": null,
-          "availableSizes": [],
-          "productFactFields": {
-            "material": null,
-            "availableSizes": null
-          },
-          "merchant": "오늘의집",
-          "merchantDomain": null,
-          "price": 239850,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4763370?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_5488061"
-        }
-      ],
-      "material": null,
-      "materialConflict": false,
-      "availableSizes": [],
-      "productFactSources": [],
-      "offerCount": 1,
-      "minPrice": 239850,
-      "maxPrice": 239850,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_8514bf32",
       "name": "에뜨와 스튜오가닉우주복(IVORY)_07Q11750702",
       "normalizedName": "에뜨와 스튜오가닉우주복 ivory 07q11750702",
@@ -27764,7 +27721,7 @@
       "imageUrls": [
         "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511699315"
       ],
-      "category": "기타",
+      "category": "원피스",
       "query": "에뜨와 아기옷",
       "offers": [
         {
@@ -28848,7 +28805,7 @@
       "imageUrls": [
         "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511699718"
       ],
-      "category": "기타",
+      "category": "상의",
       "query": "모이몰른 아기옷",
       "offers": [
         {
@@ -30138,7 +30095,7 @@
       "imageUrls": [
         "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511700357"
       ],
-      "category": "기타",
+      "category": "바디수트",
       "query": "블루독베이비 아기옷",
       "offers": [
         {
@@ -31780,7 +31737,7 @@
         "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511895426",
         "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511895272"
       ],
-      "category": "기타",
+      "category": "상의",
       "query": "토들러 옷",
       "offers": [
         {
