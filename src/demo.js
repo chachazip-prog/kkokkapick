@@ -8,4 +8,9 @@ document.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',(
  document.getElementById('openScreen').href=link.href;
  if(window.matchMedia('(max-width:740px)').matches)document.querySelector('.preview').scrollIntoView({block:'start'});
 }));
-document.getElementById('previewWidth').addEventListener('change',event=>{frame.style.width=event.target.value+'px';});
+const widthSelect=document.getElementById('previewWidth');
+const screenWrap=document.querySelector('.screen-wrap');
+function fitPreview(){const width=Number(widthSelect.value);const height=window.matchMedia('(max-width:740px)').matches?740:844;const available=Math.max(1,screenWrap.clientWidth-16);const scale=Math.min(1,available/width);frame.style.width=width+'px';frame.style.height=height+'px';frame.style.transform='scale('+scale+')';frame.style.left=Math.max(0,(available-width*scale)/2)+'px';screenWrap.style.height=height*scale+18+'px';}
+widthSelect.addEventListener('change',fitPreview);
+new ResizeObserver(fitPreview).observe(screenWrap);
+fitPreview();

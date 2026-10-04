@@ -1,5 +1,18 @@
 # Product Owner review candidate — 2026-10-04
 
+## Current review candidate — 2026-10-04
+
+Owner selected hero proposal3 (Korean boy and girl); homepage now uses that approved campaign. Photo-first discovery retains12initialtiles in a gapless3column×4row grid. Design specialist reviewed the previous feed and prescribed compact controls/fullbleed images/thin boundaries. Product and photo lists append on scroll without more buttons; wheel/touch continuation also works when the first feed exactly fits the screen. Existing nodes and scroll position are preserved. Multi-image galleries use selectable bullet dots beneath the image, plus swipe/arrow-key support.
+
+Multi-child information remains browser-local with optional nickname and existing measurements only. Selected child drives recommendations and fit. Primary storage writes commit atomically; denied reads and failed compatibility mirrors are handled. Tests cover newborn migration, multiple profiles, selection persistence, write failures, invalid/duplicate data, and deletion. Privacy review findings were resolved; local deletion instructions/inventory now match behavior.
+
+Validation:57Node tests PASS; browser regression at320/375/390/430 PASS,56checked states and64PNG captures. Independent reviewer actually inspected all64captures, including20core screens. Corrective pass fixed continuation at the exact viewport boundary, narrow fit-copy wrapping, and mobile demo iframe clipping. Independent rereview checked9final images and confirmed those visual fixes. Demo preserves chosen logical viewport while scaling to fit the outer device.
+
+Source-image release QA remains BLOCKED: initial real feed images render, but expired provider URLs affect later products/demo samples. Placeholder/error messaging is not healthy catalog imagery. No original material/size facts are fabricated. Physical iPhone testing and Product Owner approval remain pending. No main merge.
+
+Earlier sections below retain the prior review history; this section supersedes earlier hero/counter/demo-width status.
+
+
 Selected direction: owner-supplied R01 reference, refined by explicit requests for image borders, softer type, warmer backgrounds, improved photo feed, and removal of unsupported capabilities. Main is not merged.
 
 ## Evidence

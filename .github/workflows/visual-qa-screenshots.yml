@@ -8,6 +8,7 @@ on:
       - "src/demo.js"
       - "styles/**"
       - "src/release-ui.js"
+      - "src/child-profiles.js"
       - "src/runtime-diagnostic.js"
       - "scripts/release-ui-browser-qa.cjs"
       - "assets/**"

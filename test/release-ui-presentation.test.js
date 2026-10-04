@@ -17,4 +17,4 @@ assert.equal(context.evaluateFit({months:0,height:50,weight:4},{brand:'아가방
 console.log('Release presentation: source-preserving names, truthful material/size and zero-month fit PASS');
 const photos={imageUrl:'https://example.com/front.jpg',imageUrls:['https://example.com/front.jpg','https://example.com/back.jpg','javascript:bad']};
 assert.deepEqual(Array.from(context.productImages(photos)),['https://example.com/front.jpg','https://example.com/back.jpg']);
-const gallery=context.imageGallery({...photos,name:'아기 옷'},'detailpic');assert.equal((gallery.match(/class="gallery-slide"/g)||[]).length,2);assert.ok(gallery.includes('1 / 2'));assert.ok(gallery.includes('data-gallery-next'));
+const gallery=context.imageGallery({...photos,name:'아기 옷'},'detailpic');assert.equal((gallery.match(/class="gallery-slide"/g)||[]).length,2);assert.equal((gallery.match(/data-gallery-dot=/g)||[]).length,2);assert.ok(gallery.includes('aria-pressed="true"'));assert.ok(!gallery.includes('gallery-count'));

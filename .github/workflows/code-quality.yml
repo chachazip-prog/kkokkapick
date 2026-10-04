@@ -66,6 +66,7 @@ jobs:
           node test/commercial-event-concurrency-contract.test.js
           node test/child-profile-sync-contract.test.js
           node test/release-ui-presentation.test.js
+          node test/child-profiles-local.test.js
           node test/preview-parity.test.js
           node test/pages-classic-bootstrap.test.js
           node test/pages-inline-syntax.test.js
@@ -102,6 +103,7 @@ jobs:
       - name: Validate web module syntax
         run: |
           node --check src/release-ui.js
+          node --check src/child-profiles.js
           node --check src/runtime-diagnostic.js
           node --check scripts/release-ui-browser-qa.cjs
           node --check src/adpick-discovery-plan.js
