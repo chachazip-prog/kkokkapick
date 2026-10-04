@@ -34,7 +34,7 @@ input[type=checkbox] { accent-color: var(--color-accent); }
 .hero-kicker { font-size: 14px; line-height: 1.55; font-weight: 400; letter-spacing: -.2px; margin-bottom: 9px; }
 .campaign-copy h1 { font-size: 20px; line-height: 1.42; letter-spacing: -.5px; font-weight: 400; }
 .hero-description { font-family: var(--font-ui); font-size: 10px; line-height: 1.65; color: #6f6179; margin-top: 9px; }
-.hero-cta { border-radius: 20px; color: #fff; background: var(--color-accent-secondary); font-size: 11px; padding: 8px 14px; min-height: 36px; margin-top: 12px; }
+.hero-cta { font-family: var(--font-ui); border-radius: 20px; color: #fff; background: var(--color-accent-secondary); font-size: 11px; padding: 8px 14px; min-height: 36px; margin-top: 12px; }
 .home-categories { margin: 0 var(--page-gutter) 8px; display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 9px; }
 .home-categories button { min-width: 0; font-size: 11px; color: var(--color-text-secondary); }
 .category-icon { display: grid; place-items: center; height: 56px; border-radius: var(--radius-medium); background: var(--surface-accent); color: var(--color-accent); margin-bottom: 6px; }

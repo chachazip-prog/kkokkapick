@@ -6,5 +6,5 @@ assert.ok(!html.includes('<style>'),'legacy override layers must not return');
 assert.ok(ui.includes("$('searchTools').hidden=next!=='search'"));
 assert.ok(ui.includes("$('catalogSection').hidden=next==='my'"),'search must expose product results');
 assert.ok(html.indexOf('src/catalog-source.js')<html.indexOf('src/release-ui.js')&&html.includes('src/catalog-source.js'),'catalog source loaded before UI');
-assert.ok(ui.includes('KkokkapickCatalogSource.urls(location)'),'live catalog boundary');
+assert.ok(ui.includes('KkokkapickCatalogSource.load(fetch,location)'),'live catalog boundary');
 console.log('Release UI shell and catalog boundary PASS');
