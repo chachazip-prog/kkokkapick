@@ -2,20 +2,25 @@
 @font-face { font-family: "NanumSquareRound"; src: url("../assets/fonts/NanumSquareRoundR.woff") format("woff"); font-weight: 300 500; font-style: normal; font-display: swap; }
 @font-face { font-family: "NanumSquareRound"; src: url("../assets/fonts/NanumSquareRoundB.woff") format("woff"); font-weight: 600 700; font-style: normal; font-display: swap; }
 :root {
-  --color-text-primary: #332d38;
-  --color-text-secondary: #817989;
-  --color-border: #e9e0d8;
-  --color-image-border: #ded3ca;
-  --color-background: #fbf7f2;
-  --surface-card: #fffdfb;
+  --color-text-primary: #303545;
+  --color-text-secondary: #667085;
+  --color-border: #DDE1E8;
+  --color-image-border: #CCD2DB;
+  --color-background: #F5F6F8;
+  --surface-card: #FFFFFF;
   --color-accent: #7452c4;
-  --color-accent-secondary: #e85b8b;
-  --surface-warm: #f2ece5;
+  --color-accent-secondary: #CC303B;
+  --surface-warm: #EEF0F4;
   --surface-accent: #f5efff;
   --surface-pink: #fff2f6;
   --surface-peach: #fff7ee;
   --surface-blue: #f1f5ff;
   --color-brand-ink: #503988;
+  --color-play-blue: #2457D6;
+  --color-play-red: #CC303B;
+  --color-play-yellow: #F2C53D;
+  --color-play-yellow-ink: #303545;
+  --color-play-ochre: #8C6500;
   --font-display: "GowunDodum", "NanumSquareRound", sans-serif;
   --font-ui: "NanumSquareRound", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
   --text-caption: 11px;

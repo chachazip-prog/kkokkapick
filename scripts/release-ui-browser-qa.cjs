@@ -84,6 +84,7 @@ async function main(){
   await page.screenshot({path:`${output}/multiple-photos-${width}.png`});
   await page.screenshot({path:`${output}/demo-${width}.png`});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'demo overflow');
+  await page.goto(base);await page.waitForFunction(()=>typeof products!=='undefined'&&products.length>0);
   await page.locator('#searchNav').click();
   await page.locator('[data-domain="play"]').click();
   assert.ok(await page.evaluate(()=>catalogItems.every(p=>p.domain==='toy'||p.domain==='learning')),'play domain isolation');
