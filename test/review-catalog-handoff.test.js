@@ -24,3 +24,12 @@ test('unexpired metadata cannot publish review images beyond the display window'
   assert.notEqual(result.status,0);assert.match(result.stderr,/display window/);assert.deepEqual(JSON.parse(fs.readFileSync(path.join(cwd,'data/catalog.json'))),baseline);
  }finally{fs.rmSync(cwd,{recursive:true,force:true})}
 });
+
+test('a failed publication run is reusable only when its actual collection job succeeded',()=>{
+ const run={repository:{full_name:'chachazip-prog/kkokkapick'},head_repository:{full_name:'chachazip-prog/kkokkapick'},path:'.github/workflows/adpick-image-diagnostic.yml',event:'workflow_dispatch',head_branch:'codex/release-ui-rebuild',status:'completed',conclusion:'failure'};
+ const job={name:'diagnostic',status:'completed',conclusion:'success'};
+ assert.doesNotThrow(()=>validateRun(run,[job]));
+ for(const wrong of [{...job,name:'unrelated'},{...job,status:'in_progress'},{...job,conclusion:'failure'}])assert.throws(()=>validateRun(run,[wrong]));
+ for(const conclusion of ['cancelled','timed_out'])assert.throws(()=>validateRun({...run,conclusion},[job]));
+ assert.throws(()=>validateRun({...run,event:'pull_request'},[job]));
+});

@@ -10,6 +10,15 @@
   const observed=Date.parse(catalog.syncedAt||'');
   return !Number.isFinite(observed)||observed>now+300000||now>=observed+90*60000;
  }
+ function expirationTime(catalog){
+  const deadlines=[];
+  const observed=Date.parse(catalog?.syncedAt||'');
+  // Use the same temporary-image predicate as the display gate.
+  if(imageWindowExpired(catalog,Number.isFinite(observed)?observed+90*60000:Date.now()))deadlines.push(Number.isFinite(observed)?observed+90*60000:0);
+  if(catalog?.expiresAt){const stamp=Date.parse(catalog.expiresAt);deadlines.push(Number.isFinite(stamp)?stamp:0)}
+  else if(catalog?.storagePolicy==='ttl_cache')deadlines.push(Number.isFinite(observed)?observed+24*3600000:0);
+  return deadlines.length?Math.min(...deadlines):null;
+ }
  function isExpired(catalog,now=Date.now()){
   if(imageWindowExpired(catalog,now))return true;
   if(catalog?.expiresAt){const stamp=Date.parse(catalog.expiresAt);return !Number.isFinite(stamp)||now>=stamp}
@@ -27,5 +36,5 @@
   let history=null;try{history=await read(chosen.source.history)}catch{}
   return{catalog:chosen.catalog,history};
  }
- return{isSnapshotPreview,urls,isExpired,imageWindowExpired,load};
+ return{isSnapshotPreview,urls,isExpired,imageWindowExpired,expirationTime,load};
 });

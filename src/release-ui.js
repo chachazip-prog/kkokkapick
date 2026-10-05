@@ -130,7 +130,7 @@ function render() {
   $('grid').innerHTML=html; bindCards($('grid'));
   const photoMode=view==='search'&&searchLayout==='photos';document.querySelector('.app').classList.toggle('photo-mode',photoMode);$('searchStages').hidden=photoMode;$('grid').hidden=photoMode;$('photoGrid').hidden=!photoMode;$('photoFeedNote').hidden=true;$('browsePanel').hidden=searchLayout!=='browse';$('chips').hidden=searchLayout==='browse';
   for(const [mode,id] of [['browse','browseMode'],['photos','photoMode'],['products','productsMode']])$(id).setAttribute('aria-pressed',searchLayout===mode);
-  if(photoMode){$('sectionTitle').textContent='사진으로 만나는 꼬까픽';$('photoFeedNote').textContent='눈길이 가는 옷, 사진을 눌러 만나보세요.';$('photoGrid').innerHTML=a.filter(p=>p.imageUrl).slice(0,limit).map(photoTile).join('');$('photoGrid').querySelectorAll('[data-photo]').forEach(b=>b.onclick=()=>openPhotoCard(b.dataset.photo));bindImages($('photoGrid'));requestAnimationFrame(sizePhotoGrid);if(!a.length){$('photoFeedNote').hidden=false;$('photoFeedNote').textContent=['expired','unavailable'].includes(catalogState)?'최신 상품 사진을 확인하지 못했어요. 잠시 후 다시 확인해 주세요.':searchDomain==='play'&&stage!=='전체'?'이 월령으로 확인할 수 있는 상품이 없어요. 전체 월령에서 더 둘러보세요.':'조건에 맞는 상품이 없어요. 검색어나 필터를 바꿔 보세요.';}}else if(view==='search')$('sectionTitle').textContent='검색 결과'; updateCatalogObserver(); $('favCount').textContent=favs.size?`찜 ${favs.size}`:'찜';
+  if(photoMode){$('sectionTitle').textContent='사진으로 만나는 꼬까픽';$('photoFeedNote').textContent='눈길이 가는 상품, 사진을 눌러 만나보세요.';$('photoGrid').innerHTML=a.filter(p=>p.imageUrl).slice(0,limit).map(photoTile).join('');$('photoGrid').querySelectorAll('[data-photo]').forEach(b=>b.onclick=()=>openPhotoCard(b.dataset.photo));bindImages($('photoGrid'));requestAnimationFrame(sizePhotoGrid);if(!a.length){$('photoFeedNote').hidden=false;$('photoFeedNote').textContent=['expired','unavailable'].includes(catalogState)?'최신 상품 사진을 확인하지 못했어요. 잠시 후 다시 확인해 주세요.':searchDomain==='play'&&stage!=='전체'?'이 월령으로 확인할 수 있는 상품이 없어요. 전체 월령에서 더 둘러보세요.':'조건에 맞는 상품이 없어요. 검색어나 필터를 바꿔 보세요.';}}else if(view==='search')$('sectionTitle').textContent='검색 결과'; updateCatalogObserver(); $('favCount').textContent=favs.size?`찜 ${favs.size}`:'찜';
   const child=activeChild(); $('fitHero').textContent=child?`${child.name} · ${child.months}개월 사이즈 확인`:'우리 아이에게 맞는 사이즈';renderChildContexts();
   if(view==='home'){const compared=products.filter(p=>KkokkapickProductDomain.isApparel(p)&&p.offerCount>1).slice(0,4);$('comparisonGrid').innerHTML=compared.map(productCard).join('');bindCards($('comparisonGrid'));$('homeMore').hidden=!compared.length;}
   if(view==='my')renderMy();
@@ -177,23 +177,24 @@ function saveFit(){try{childStore.save({name:$('childName').value,months:$('mont
 function toast(message){document.querySelector('.toast')?.remove();const el=document.createElement('div');el.className='toast';el.setAttribute('role','status');el.textContent=message;document.body.append(el);setTimeout(()=>el.remove(),2600)}
 function openAccount(kind){
  const titles={recent:'최근 본 상품',alerts:'가격 알림',settings:'설정'};$('accountSheetTitle').textContent=titles[kind];let html='';
- if(kind==='recent'||kind==='alerts'){const ids=kind==='recent'?readStore('recentProducts',[]):Object.keys(readStore('priceAlerts',{}));const list=ids.map(id=>products.find(p=>String(p.id)===String(id))).filter(Boolean);html=list.length?`<div class="grid">${list.map(productCard).join('')}</div>`:`<p class="empty">${kind==='recent'?'최근 본 상품이 없어요.':'저장한 희망 가격이 없어요.'}</p>`;}
+ if(kind==='recent'||kind==='alerts'){const ids=kind==='recent'?readStore('recentProducts',[]):Object.keys(readStore('priceAlerts',{}));const list=ids.map(id=>products.find(p=>String(p.id)===String(id))).filter(Boolean);html=list.length?`<div class="grid">${list.map(productCard).join('')}</div>`:ids.length?`<p class="empty">기록은 이 기기에 저장되어 있어요.<br>현재 확인할 수 있는 상품 정보가 없어요.</p>`:`<p class="empty">${kind==='recent'?'최근 본 상품이 없어요.':'저장한 희망 가격이 없어요.'}</p>`;}
  if(kind==='settings')html='<div class="account-menu"><button onclick="closeAccount();openFit()">아이 정보 수정<span>›</span></button><a href="privacy.html">개인정보 처리방침<span>›</span></a><a href="account-deletion.html">정보 삭제 안내<span>›</span></a><a href="support.html">고객센터<span>›</span></a></div><p class="note">찜과 희망 가격, 아이 정보는 현재 기기에 저장됩니다.</p>';
  $('accountContent').innerHTML=html;bindCards($('accountContent'));showSheet('accountSheet');
 }
 function closeAccount(){hideSheet('accountSheet')}
-let catalogRefreshing=false, catalogInitialized=false, catalogLastAttempt=0, catalogState='loading';
+let catalogRefreshing=false, catalogInitialized=false, catalogLastAttempt=0, catalogState='loading', catalogSnapshot=null, catalogExpiryTimer=null;
 async function loadProducts(){
  if(catalogRefreshing)return;
  catalogRefreshing=true;catalogLastAttempt=Date.now();
  try{
   const {catalog:d,history}=await KkokkapickCatalogSource.load(fetch,location);
+  catalogSnapshot=d;
   priceHistory=Array.isArray(history?.events)?history.events:[];
   if(KkokkapickCatalogSource.isExpired(d)){
-   catalogState='expired';products=[];render();
+   invalidateExpiredCatalog();
    return;
   }
-  catalogState='ready';
+  catalogState='ready';scheduleCatalogExpiry(d);
   products=(d.products||[]).filter(p=>p.imageUrl||p.imageUrls?.length).map((p,i)=>({...p,id:p.id||String(i),price:p.minPrice,merchant:p.offers?.[0]?.merchant||'',cat:p.category||categoryOf(p),stage:p.stage||'전체'}));
   cats=['전체',...new Set(products.map(p=>p.cat))];render();
   // Background refresh preserves the current view, filters and scroll depth.
@@ -208,7 +209,28 @@ async function loadProducts(){
  }catch(e){if(!products.length){catalogState='unavailable';render()}}
  finally{catalogRefreshing=false}
 }
-function refreshVisibleCatalog(){if(!document.hidden&&!document.querySelector('.sheet.on')&&Date.now()-catalogLastAttempt>=5*60*1000)loadProducts()}
+function scheduleCatalogExpiry(snapshot){
+ clearTimeout(catalogExpiryTimer);
+ const deadline=KkokkapickCatalogSource.expirationTime(snapshot);if(deadline===null)return;
+ catalogExpiryTimer=setTimeout(()=>{if(catalogSnapshot!==snapshot||catalogState!=='ready')return;if(KkokkapickCatalogSource.isExpired(snapshot))invalidateExpiredCatalog();else scheduleCatalogExpiry(snapshot)},Math.max(0,deadline-Date.now()));
+}
+function invalidateExpiredCatalog(){
+ clearTimeout(catalogExpiryTimer);
+ const closedProductSheet=$('detail').classList.contains('on')||$('photoCard').classList.contains('on')||($('accountSheet').classList.contains('on')&&!!$('accountContent').querySelector('.product-link'));
+ catalogState='expired';products=[];priceHistory=[];cats=['전체'];
+ if($('detail').classList.contains('on'))closeDetail();
+ if($('photoCard').classList.contains('on'))closePhotoCard();
+ if($('accountSheet').classList.contains('on')&&$('accountContent').querySelector('.product-link'))closeAccount();
+ $('detailPanel').innerHTML='';$('photoCardContent').innerHTML='';
+ render();
+ if(closedProductSheet&&!document.querySelector('.sheet.on'))restoreOverlayFocus();
+}
+function refreshVisibleCatalog(){
+ if(document.hidden)return;
+ // Expiry applies to open product sheets too; child/filter forms remain intact.
+ if(catalogState==='ready'&&catalogSnapshot&&KkokkapickCatalogSource.isExpired(catalogSnapshot))invalidateExpiredCatalog();
+ if(!document.querySelector('.sheet.on')&&Date.now()-catalogLastAttempt>=5*60*1000)loadProducts();
+}
 setInterval(refreshVisibleCatalog,5*60*1000);
 document.addEventListener('visibilitychange',refreshVisibleCatalog);
 window.addEventListener('online',refreshVisibleCatalog);

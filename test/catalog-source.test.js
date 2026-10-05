@@ -21,3 +21,12 @@ test('temporary provider photos use a display window distinct from24h metadata r
 });
 
 test('fresh legacy main cannot override corrected review grouping',async()=>{const now=Date.parse('2026-10-04T12:00:00Z');const result=await source.load(async url=>new Response(JSON.stringify(url.includes('price-history')?{events:[]}:{groupingVersion:url.includes('/codex/')?2:1,products:[],syncedAt:url.includes('/codex/')?'2026-10-04T11:00:00Z':'2026-10-04T11:50:00Z'})),previewLocation,now);assert.equal(result.catalog.groupingVersion,2);assert.equal(result.catalog.syncedAt,'2026-10-04T11:00:00Z');});
+
+test('open-view timer uses the earliest metadata or photo deadline',()=>{
+ const stamp=Date.now(),syncedAt=new Date(stamp).toISOString(),photo={imageUrl:'https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=1'};
+ const catalog={syncedAt,storagePolicy:'ttl_cache',expiresAt:new Date(stamp+24*3600000).toISOString(),products:[photo]};
+ assert.equal(source.expirationTime(catalog),stamp+90*60000);
+ assert.equal(source.expirationTime({...catalog,expiresAt:new Date(stamp+30*60000).toISOString()}),stamp+30*60000);
+ assert.equal(source.expirationTime({syncedAt,storagePolicy:'ttl_cache',products:[]}),stamp+24*3600000);
+ assert.equal(source.expirationTime({...catalog,expiresAt:'invalid'}),0);
+});

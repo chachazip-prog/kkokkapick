@@ -12,3 +12,13 @@ assert.throws(()=>applyPublicationImageAudit(source,report.slice(1),urls),/Incom
 assert.throws(()=>applyPublicationImageAudit(source,report.map(r=>({...r,ok:false})),urls),/outage/);
 assert.throws(()=>applyPublicationImageAudit(source,report.map((r,i)=>i===0?{...r,url:'https://unrelated.example/photo'}:r),urls),/Incomplete/);
 console.log('Publication image policy preserves seller facts and rejects broad outages PASS');
+
+import { transportRecheckCandidates } from '../src/image-publication-policy.js';
+const batch=Array.from({length:100},(_,i)=>({url:`https://cdn.example.com/${i}.jpg`,ok:i!==0,status:i===0?400:200,reason:i===0?'http_error':null}));
+const fullUrls=batch.map(r=>r.url);
+assert.equal(transportRecheckCandidates(batch,fullUrls).length,1);
+assert.equal(transportRecheckCandidates(batch,fullUrls,2).length,0);
+for(const [status,reason] of [[404,'http_error'],[429,'http_error'],[400,'retry_later']])assert.equal(transportRecheckCandidates(batch.map((r,i)=>i===0?{...r,status,reason}:r),fullUrls).length,0);
+assert.equal(transportRecheckCandidates(batch.slice(1),fullUrls).length,0);
+assert.equal(transportRecheckCandidates(batch.map((r,i)=>i===1?{...r,ok:false,status:500}:r),fullUrls).length,0);
+assert.equal(transportRecheckCandidates(batch.map((r,i)=>i===1?{...r,url:batch[0].url}:r),fullUrls).length,0);

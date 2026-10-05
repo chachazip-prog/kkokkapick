@@ -97,6 +97,17 @@ async function main(){
    await page.evaluate(()=>{stage='아이월령';render()});assert.ok(await page.evaluate(()=>catalogItems.every(p=>KkokkapickProductDomain.matchesMonths(p,activeChild()?.months))));await capture('play-age-filter');
   }else if(process.env.QA_REQUIRE_PLAY==='1'){throw new Error('Fresh source has no eligible toy/learning product');}
   await page.locator('[data-domain="apparel"]').click();assert.ok(await page.evaluate(()=>catalogItems.every(p=>!p.domain||p.domain==='apparel')));
+  await page.locator('#homeNav').click();await page.locator('#grid .product-link').first().click();
+  const savedChild=await page.evaluate(()=>activeChild().id);
+  await page.evaluate(()=>{window.__actualExpiryCheck=KkokkapickCatalogSource.isExpired;KkokkapickCatalogSource.isExpired=()=>true;catalogLastAttempt=Date.now();refreshVisibleCatalog()});
+  assert.equal(await page.locator('#detail.on,#photoCard.on').count(),0,'expired source closes product sheets');
+  assert.ok(await page.evaluate(()=>document.activeElement?.classList.contains('nav')),'expiry restores focus after removing old product trigger');
+  assert.equal(await page.evaluate(()=>products.length),0,'expired products are unavailable');await capture('expired-catalog');
+  await page.evaluate(()=>openAccount('alerts'));assert.ok((await page.locator('#accountContent').textContent()).includes('기록은 이 기기에 저장'));assert.equal(await page.evaluate(id=>JSON.parse(localStorage.getItem('priceAlerts'))[id],pid),20000,'expiry keeps saved target price');await page.locator('#accountSheet .close').click();
+  await page.evaluate(()=>openFit());await page.locator('#childName').fill('작성 중인 아이 정보');await page.evaluate(()=>refreshVisibleCatalog());
+  assert.equal(await page.locator('#fit.on').count(),1,'expiry preserves child form');assert.equal(await page.locator('#childName').inputValue(),'작성 중인 아이 정보');
+  await page.locator('#fit .close').click();await page.evaluate(async()=>{KkokkapickCatalogSource.isExpired=window.__actualExpiryCheck;await loadProducts()});
+  assert.ok(await page.evaluate(()=>products.length>0));assert.equal(await page.evaluate(()=>activeChild().id),savedChild,'expiry does not change saved child');
   await page.close();
  }
  await browser.close();if(qaServer)await new Promise(resolve=>qaServer.close(resolve));fs.writeFileSync(`${output}/metrics.json`,JSON.stringify(report,null,2));console.log(`PASS: 4 viewports, ${report.length} browser captures, interaction regression. Image reliability is reported separately.`);

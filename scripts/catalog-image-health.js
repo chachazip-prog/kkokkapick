@@ -32,17 +32,24 @@ function deterministicSample(values, wanted) {
 async function main() {
   const { probeImageUrl } = await import('../src/image-health.js');
   const selected = process.env.IMAGE_HEALTH_ALL === '1' ? urls : deterministicSample(urls, sampleSize);
-  let cursor = 0;
-  const results = new Array(selected.length);
-  async function worker() {
-    while (true) {
-      const index = cursor;
-      cursor += 1;
-      if (index >= selected.length) return;
-      results[index] = { url: selected[index], ...await probeImageUrl(selected[index], { timeoutMs }) };
+  async function auditAllSelected(){
+    let cursor=0;const results=new Array(selected.length);
+    async function worker(){while(true){const index=cursor++;if(index>=selected.length)return;results[index]={url:selected[index],...await probeImageUrl(selected[index],{timeoutMs})}}}
+    await Promise.all(Array.from({length:Math.min(concurrency,selected.length)},worker));return results;
+  }
+  let results=await auditAllSelected();let fullRecheck=null;
+  if(process.env.IMAGE_HEALTH_FULL_RECHECK_ON_TRANSIENT==='1'&&process.env.IMAGE_HEALTH_ALL==='1'&&minSuccessRate===1){
+    const {transportRecheckCandidates}=await import('../src/image-publication-policy.js');
+    const failures=transportRecheckCandidates(results,selected);
+    if(failures.length){
+      await new Promise(resolve=>setTimeout(resolve,15000));
+      const confirmation=[];
+      // A400 must actually recover on the same original URL before another full audit.
+      for(const failure of failures.filter(r=>r.status===400))confirmation.push({url:failure.url,...await probeImageUrl(failure.url,{timeoutMs,retryLimit:0})});
+      fullRecheck={firstChecked:results.length,firstFailed:failures.length,firstFailures:failures,confirmation,performed:confirmation.every(r=>r.ok)};
+      if(fullRecheck.performed)results=await auditAllSelected();
     }
   }
-  await Promise.all(Array.from({ length: Math.min(concurrency, selected.length) }, worker));
 
   const okCount = results.filter((result) => result.ok).length;
   const successRate = results.length ? okCount / results.length : 0;
@@ -55,6 +62,7 @@ async function main() {
     failed: results.length - okCount,
     successRate,
     minSuccessRate,
+    fullRecheck,
     failures: results.filter((result) => !result.ok),
   };
 
