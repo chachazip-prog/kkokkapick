@@ -39,10 +39,10 @@ input[type=checkbox] { accent-color: var(--color-accent); }
 .home-categories button { min-width: 0; font-size: 11px; color: var(--color-text-secondary); }
 .category-icon { display: grid; place-items: center; height: 56px; border-radius: var(--radius-medium); background: var(--surface-card); color: var(--color-play-blue); margin-bottom: 6px;  border: var(--border-default);}
 .category-icon svg { width: 25px; height: 25px; }
-.home-categories button:nth-child(1) .category-icon, .search-category-grid button:nth-child(4n+2) .category-icon { background: var(--surface-card); color: var(--color-play-blue);  border: var(--border-default);}
-.home-categories button:nth-child(2) .category-icon, .search-category-grid button:nth-child(4n+3) .category-icon { background: var(--surface-card); color: var(--color-play-blue);  border: var(--border-default);}
-.home-categories button:nth-child(3) .category-icon, .search-category-grid button:nth-child(4n) .category-icon { background: var(--surface-card); color: var(--color-play-blue);  border: var(--border-default);}
-.home-categories button:nth-child(4) .category-icon { background: var(--surface-card); color: var(--color-play-blue);  border: var(--border-default);}
+.home-categories button[data-home-stage="신생아"] .category-icon, .search-category-grid button[data-search-stage="신생아"] .category-icon { color: var(--color-play-red); }
+.home-categories button[data-home-stage="베이비"] .category-icon, .search-category-grid button[data-search-stage="베이비"] .category-icon { color: var(--color-play-ochre); }
+.home-categories button[data-home-stage="유아"] .category-icon, .search-category-grid button[data-search-stage="유아"] .category-icon { color: var(--color-play-blue); }
+.home-categories button[data-home-stage="토들러"] .category-icon { color: var(--color-play-ochre); }
 .home-fit { margin: 8px var(--page-gutter); width: calc(100% - var(--page-gutter)*2); background: var(--surface-card); border-radius: var(--radius-medium); padding: 16px; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 12px;  border: var(--border-default);}
 .home-fit .eyebrow { color: var(--color-play-blue); }.home-fit h2 { font-size: 16px; margin: 4px 0; }.home-fit p { color: var(--color-text-secondary); font-size: 12px; }.home-fit>span { font-size: 22px; color: var(--color-accent); }
 /* Search: compact navigation, product results visible without additional taps. */
