@@ -1,7 +1,10 @@
+import domains from './product-domain.js';
 import { normalizeBrand } from "./brand-normalizer.js";
 import { getFitEvidence, getBrandSizeGuide } from "./brand-size-charts.js";
 
 const RULES = [
+  ["신발", /(고무신|운동화|구두|샌들|장화)/i],
+  ["패션잡화", /(헤어밴드|머리띠|터번)/i],
   ["수영복", /(수영복|래쉬가드|래시가드|스윔)/i],
   ["한복", /(한복|생활한복)/i],
   ["바디수트", /(바디수트|바디슈트|우주복|배냇|롬퍼|점프수트|점프슈트)/i],
@@ -31,6 +34,7 @@ export function classifyStage(name="", query="") {
 }
 
 export function classifyProduct(p) {
+  if(p.domain && p.domain!=="apparel") return {...p,brand:null,category:domains.category(p.domain,p.name),stage:"전체",ageEvidence:domains.ageEvidence(p.name),fitStatus:"unverified",fitSource:null,sizeGuide:null,availableSizes:[]};
   const brand=normalizeBrand(p.name);
   const fit=getFitEvidence(brand);
   return {...p, brand, fitStatus:fit.status, fitSource:fit.source, sizeGuide:getBrandSizeGuide(brand), availableSizes:Array.isArray(p.availableSizes)?p.availableSizes:[], category:classifyCategory(p.name,p.query), stage:classifyStage(p.name,p.query)};

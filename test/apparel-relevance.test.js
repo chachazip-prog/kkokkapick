@@ -6,3 +6,12 @@ for (const title of ['베베비치 피그패치 상하세트 유아 여름옷', 
 for (const [title, category] of [['아기 롬퍼','바디수트'],['유아 수면조끼','실내복'],['키즈 카디건','아우터'],['키즈 풀오버','상의'],['아동 트랙슈트','상하복'],['키즈 스윔 팬츠','수영복']]) assert.equal(classifyCategory(title, '아기 티셔츠'), category);
 assert.equal(classifyCategory('유아 원피스', '신생아 바디수트'), '원피스');
 console.log('Apparel relevance and title classification tests passed');
+
+assert.equal(isKidsApparel("비비홈 w 데일리 코튼 크림버터 반팔 티셔츠"), false);
+assert.equal(isKidsApparel("와이프로젝트/[Y프로젝트] SS24 Y Baby Tee 반팔 티셔츠 104TO004OPTICWHITE 2535818/의류 반팔티셔츠"), false);
+assert.equal(isKidsApparel("남녀공용 깨어있으리라 반팔티 아기천사 티셔츠 가족티 키밍 라운드티"), false);
+assert.equal(isKidsApparel("[하프클럽/에이치플러스몰]반팔티앞뒤 크리스마스 아기예수 구유 라인아트 AI이미지 남녀공용 전사이즈 가능"), false);
+assert.equal(isKidsApparel("슬리/[한정특가]/[단독]Sheer Tencel Trench_Charcoal/아우터 코트"), false);
+assert.equal(isKidsApparel("유유존 셔링힙업레깅스 요가 필라테스레깅스 엉뽕 하이웨스트 9color"), false);
+assert.equal(isKidsApparel("휴고보스/26FW 휴고보스 스웨터 50565523 118 OPEN WHITE DOM/의류 니트"), false);
+assert.equal(isKidsApparel("폴로랄프로렌/[폴로랄프로렌] FW26티셔츠 710671438539 7591739/의류 반팔티셔츠"), false);

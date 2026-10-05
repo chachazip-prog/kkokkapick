@@ -1,3 +1,16 @@
+import domains from './product-domain.js';
+// Independent catalog review: these exact titles lack positive child-apparel evidence.
+// Preserve raw offers; quarantine display until explicit child sizing is supplied.
+const REVIEW_QUARANTINE = new Set([
+  "비비홈 w 데일리 코튼 크림버터 반팔 티셔츠",
+  "와이프로젝트/[Y프로젝트] SS24 Y Baby Tee 반팔 티셔츠 104TO004OPTICWHITE 2535818/의류 반팔티셔츠",
+  "남녀공용 깨어있으리라 반팔티 아기천사 티셔츠 가족티 키밍 라운드티",
+  "[하프클럽/에이치플러스몰]반팔티앞뒤 크리스마스 아기예수 구유 라인아트 AI이미지 남녀공용 전사이즈 가능",
+  "슬리/[한정특가]/[단독]Sheer Tencel Trench_Charcoal/아우터 코트",
+  "유유존 셔링힙업레깅스 요가 필라테스레깅스 엉뽕 하이웨스트 9color",
+  "휴고보스/26FW 휴고보스 스웨터 50565523 118 OPEN WHITE DOM/의류 니트",
+  "폴로랄프로렌/[폴로랄프로렌] FW26티셔츠 710671438539 7591739/의류 반팔티셔츠"
+]);
 // Product-title relevance, separate from query-derived discovery labels.
 const APPAREL = /(신생아|아기|베이비|유아|키즈|아동|주니어|남아|여아|팬츠|바디수트|바디슈트|우주복|배냇|내복|상하복|티셔츠|맨투맨|블라우스|셔츠|바지|레깅스|원피스|가디건|카디건|아우터|점퍼|자켓|코트|의류|롬퍼|점프수트|점프슈트|수면조끼|우비|레인코트|수영복|래[쉬시]가드|한복)/i;
 const NON_PRODUCT = /(크랭크|센서|자동차 ?부품|차량용|부품|케이블|공구|휴대폰|케이스|골프|호텔|입장권|eSIM|이름표|장식판|벽 ?장식|아기방|사진 ?소품|기념품|완구|장난감|인형|식기|젖병|기저귀|물티슈|유모차|카시트|배너|커튼|자전거|타이어|라이딩|수납|파우치|압축팩|모피 ?칼라|트리밍|패브릭|봉제|욕조|앞치마|에이프런|물병|물통|옷걸이|소파|의자|수유일지|침대|반려동물|애완동물|반려견|반려묘|펫의류|강아지\s*옷|고양이\s*옷|소형견|중형견|대형견|견용|묘용|금형|폴더|보관|이불|토퍼|베이비 ?모니터|모니터|가방고리|키링|성인|액세서리)/i;
@@ -5,9 +18,16 @@ const SUPPLIES = /(모빌|프로젝터|플래시라이트|싸인펜|사인펜|�
 const CHILD = /(신생아|아기|유아|키즈|아동|주니어|남아|여아|남자\s*아기|베이비|baby|kids|junior)/i;
 export function isKidsApparel(name = '') {
   const title = String(name);
+  if (REVIEW_QUARANTINE.has(title)) return false;
   if (!APPAREL.test(title) || NON_PRODUCT.test(title) || SUPPLIES.test(title)) return false;
   // BABY PINK is a color, not evidence that an adult garment is for a child.
   const productTitle = title.replace(/^\[[^\]]*\]\s*/, '').replace(/baby\s*(?:pink|blue)|베이비\s*(?:핑크|블루)/ig, '');
   if (/(여성|여자|남성|남자)/.test(productTitle) && !CHILD.test(productTitle)) return false;
   return true;
+}
+
+export function classifyCatalogRelevance(product={}) {
+ const domain=domains.nonApparelDomain(product.name);
+ if(domain)return {eligible:true,domain,reason:null};
+ return {eligible:isKidsApparel(product.name),domain:"apparel",reason:"child_apparel_evidence_required"};
 }
