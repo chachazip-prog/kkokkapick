@@ -26,3 +26,8 @@ assert.equal(classifyCategory('블로니우주복모자 양말SET'), '바디수�
 assert.equal(classifyCategory('핑크베리 여아 래쉬가드 썬블럭 모자세트'), '수영복');
 
 assert.equal(classifyCategory('아동 양말'), '패션잡화');
+
+// Fresh catalog: retailer/color words do not establish a child target.
+for (const title of ['유아몽드 모직 블랙 트위드 여성 자켓', '유아몽드 실크사틴셔츠블라우스', '여성용 레인부츠 바디슈트 유아 아동 낚시 장비', '10pcs만화기차패치 어린이바지셔츠 수리복장배지 수놓은철', '고밀도 원단 드레스코트아동복천DIY 야드단위판매 재봉재료원단', '자카드원단 어린이의류소재DIY드레스재료', '서커스자수아플리케 아이언패치 어린이의류DIY장식', '원목 아기행거 아기옷행거', '유아아동 넥튜브베스트 부력보조복', 'Muse Bodysuit Short-sleeve SET (Baby Pink) 의류 바디수트', '반팔티남녀공용캐릭터마스코트아기용수채화AI이미지다양한']) assert.equal(isKidsApparel(title), false, title);
+for (const title of ['유아 별패치 장식 데님팬츠', '키즈 패치 장식 가디건']) assert.equal(isKidsApparel(title), true, title);
+for (const [title, category] of [['해피프린스 니트 아기 모자','패션잡화'], ['유아 레깅스 양말세트','하의'], ['키즈 스웨터 모자 세트','상의'], ['키즈 풀오버 모자 세트','상의']]) assert.equal(classifyCategory(title), category, title);

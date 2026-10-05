@@ -18,6 +18,8 @@ const RULES = [
 
 export function classifyCategory(name="", query="") {
   for (const text of [name, query]) {
+    // Knitted hats are accessories; garment sets retain their garment category.
+    if (/헤어밴드|머리띠|터번|모자|양말/i.test(text) && !RULES.filter(([category]) => category !== "패션잡화").some(([, rule]) => rule.test(text.replace(/니트/g, "")))) return "패션잡화";
     for (const [category, re] of RULES) if (re.test(text)) return category;
   }
   return "기타";
