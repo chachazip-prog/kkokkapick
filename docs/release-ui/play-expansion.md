@@ -11,3 +11,9 @@ Nonapparel details and photo cards show age/material and source-confirmation mes
 Component refinement preserves selected hero/layout/fonts/navigation/feed. Neutral gray canvas, white product surfaces, neutral photo borders and limited blue/red/yellow functional accents replace repeated beige/pastel fills. Product Owner iPhone approval remains a release gate.
 
 Verify320/375/390/430 screenshots, both domains, source ages, unknown ages, child switching, favorites, comparison, target prices, seller destinations, infinite lists and multi-photo dots. Existing full-photo publication gates and90min preview display ceiling apply to both domains. Review branch has manual validated updates; point-in-time photo success is not continuous operational availability.
+
+## Source relevance corrective pass — 2026-10-05
+
+Expanded real-catalog review found pet garments, sewing fabric, wall stickers, towels, blankets, standalone bags and adult BABY FOX shirts in apparel. Eligibility now requires positive garment/accessory evidence plus an explicit child target, intrinsic infant garment or reviewed child brand. A search query is never target evidence. Commerce tags are normalized without deleting child-brand tags. Ambiguous bare sets and dress-up sets remain excluded until the actual product type is verified. This deliberately favors legitimate coverage over an inflated count.
+
+Block spelling variants and spaced role/kitchen/pretend/tooth-brushing play terms share candidate/domain rules. Garment terms keep color-block cardigans, block-pattern underwear and sunblock hat sets in apparel. Garment category rules precede hat/sock accessory fallback, preserving bodysuit-plus-hat and swimwear-plus-hat sets. Actual reported source titles and preserved motif/bundle examples are regression cases. Source/Data independently reviewed the correction and returned PASS.

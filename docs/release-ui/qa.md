@@ -1,3 +1,7 @@
+# Release UI verification history
+
+The dated sections below are historical checks, not completion evidence for the 2026-10-05 apparel/play and primary-component task. That task requires refreshed original images, current responsive browser QA and independent visual review before its review-candidate marker is published. Product Owner iPhone approval remains pending.
+
 # Product Owner review candidate — 2026-10-04
 
 ## Current review candidate — 2026-10-04
