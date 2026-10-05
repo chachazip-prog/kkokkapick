@@ -1,5 +1,5 @@
 import path from "node:path";
-import { isKidsApparel } from "../src/apparel-relevance.js";
+import { classifyCatalogRelevance } from "../src/apparel-relevance.js";
 import { catalogCacheWindow } from "../src/provider-product-facts.js";
 import fs from "node:fs/promises";
 import { groupProducts } from "../src/product-grouper.js";
@@ -13,7 +13,7 @@ try { previous=JSON.parse(await fs.readFile(dataFile("catalog.json"),"utf8")); }
 let history={version:1,events:[]};
 try { history=JSON.parse(await fs.readFile(dataFile("price-history.json"),"utf8")); } catch {}
 
-const groups=groupProducts((raw.products||[]).filter(p => isKidsApparel(p.name))).map(classifyProduct).filter(p => Boolean(p.imageUrl) || p.imageUrls?.length);
+const groups=groupProducts((raw.products||[]).filter(p => classifyCatalogRelevance(p).eligible).map(p => ({...p,domain:classifyCatalogRelevance(p).domain}))).map(classifyProduct).filter(p => Boolean(p.imageUrl) || p.imageUrls?.length);
 const now=raw.syncedAt||new Date().toISOString();
 const identityCorrected=previous.groupingVersion!==2;
 const changes=identityCorrected?[]:buildPriceChanges(previous.products||[],groups,now);

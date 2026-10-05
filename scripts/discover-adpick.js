@@ -1,4 +1,4 @@
-import { isKidsApparel } from "../src/apparel-relevance.js";
+import { classifyCatalogRelevance } from "../src/apparel-relevance.js";
 import { catalogCacheWindow } from "../src/provider-product-facts.js";
 import fs from "node:fs/promises";
 import { AdpickBizProvider } from "../src/adpick-biz-provider.js";
@@ -46,7 +46,7 @@ console.log("[adpick-discovery-summary]", JSON.stringify({
   zeroNewUniqueQueries: queryDiagnostics.filter(item => item.newUnique === 0).map(item => item.query),
 }));
 
-const products = [...map.values()].filter(p => isKidsApparel(p.name));
+const products = [...map.values()].filter(p => classifyCatalogRelevance(p).eligible).map(p => ({...p,domain:classifyCatalogRelevance(p).domain}));
 
 // Fail before image validation and file writes when the provider search corpus is
 // obviously degraded. The workflow-level coverage guard remains the final

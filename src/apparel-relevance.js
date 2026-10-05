@@ -29,5 +29,6 @@ export function isKidsApparel(name = '') {
 export function classifyCatalogRelevance(product={}) {
  const domain=domains.nonApparelDomain(product.name);
  if(domain)return {eligible:true,domain,reason:null};
+ if(domains.isNonApparelCandidate(product.name))return {eligible:false,domain:null,reason:"non_apparel_scope_or_safety_unverified"};
  return {eligible:isKidsApparel(product.name),domain:"apparel",reason:"child_apparel_evidence_required"};
 }

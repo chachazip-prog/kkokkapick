@@ -18,7 +18,8 @@ export const ADPICK_DISCOVERY_QUERIES = Object.freeze([
   // Retain the six earlier queries: their latest baseline contributed21 offers.
   // Diversity additions supplement coverage instead of silently replacing it.
   "유아 상하복","키즈 티셔츠","압소바 아기옷","해피프린스 아기옷",
-  "베네통키즈 아동복","캉골키즈 아동복"
+  "베네통키즈 아동복","캉골키즈 아동복",
+  "아기 딸랑이","아기 감각 장난감","유아 블록","유아 역할놀이","아기 보드북","유아 퍼즐"
 ]);
 
 export const ADPICK_SEARCH_LIMIT = 20;

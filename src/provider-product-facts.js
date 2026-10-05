@@ -1,3 +1,4 @@
+import domains from './product-domain.js';
 // Only explicit provider attributes count as facts. Titles and brand charts are
 // never evidence of a product's composition or currently offered sizes.
 export function providerProductFacts(raw = {}) {
@@ -18,6 +19,7 @@ export function providerProductFacts(raw = {}) {
     return typeof label === 'string' || typeof label === 'number' ? [String(label).trim()].filter(Boolean) : [];
   }))];
   return {
+    ageEvidence:domains.ageEvidence(raw.title||raw.name,raw),
     material,
     availableSizes,
     productFactFields: { material: material ? materialKey : null, availableSizes: availableSizes.length ? sizeKey : null }

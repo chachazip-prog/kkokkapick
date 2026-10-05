@@ -50,6 +50,7 @@ jobs:
           node test/catalog-quality-report.test.js
           node test/product-classifier.test.js
           node test/apparel-relevance.test.js
+          node test/product-domain.test.js
           node test/brand-normalizer.test.js
           node test/kkokkafit-engine.test.js
           node test/price-tracker.test.js

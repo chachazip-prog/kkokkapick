@@ -1,5 +1,5 @@
-const CACHE='kkokkapick-release-ui-reference-v5';
-const ASSETS=['./','./index.html','./assets/fonts/GowunDodum-Regular.woff','./assets/fonts/NanumSquareRoundR.woff','./assets/fonts/NanumSquareRoundB.woff','./styles/tokens.css','./styles/release.css','./src/catalog-source.js','./src/child-profiles.js','./assets/hero-proposals/hero-3.webp','./src/release-ui.js','./src/runtime-diagnostic.js','./assets/hero-smiling-child.webp','./manifest.json','./config.public.js','./src/public-commercial-client.js','./src/popup-policy.js','./src/commercial-client.js','./src/kkokkafit-engine.js','./src/brand-size-charts.js','./src/price-tracker.js','./src/recommendation-ranker.js'];
+const CACHE='kkokkapick-release-ui-reference-v6';
+const ASSETS=['./','./index.html','./assets/fonts/GowunDodum-Regular.woff','./assets/fonts/NanumSquareRoundR.woff','./assets/fonts/NanumSquareRoundB.woff','./styles/tokens.css','./styles/release.css','./src/catalog-source.js','./src/child-profiles.js','./assets/hero-proposals/hero-3.webp','./src/product-domain.js', './src/release-ui.js','./src/runtime-diagnostic.js','./assets/hero-smiling-child.webp','./manifest.json','./config.public.js','./src/public-commercial-client.js','./src/popup-policy.js','./src/commercial-client.js','./src/kkokkafit-engine.js','./src/brand-size-charts.js','./src/price-tracker.js','./src/recommendation-ranker.js'];
 
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));

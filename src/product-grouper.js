@@ -53,6 +53,7 @@ export function groupProducts(rows) {
     const code=modelCode(p.name);
     let best=null,bestScore=0;
     for (const g of groups) {
+      if ((g.domain||"apparel") !== (p.domain||"apparel")) continue;
       if (variant && g.variant && variant!==g.variant) continue;
       if (code && g.modelCode && code!==g.modelCode) continue;
       const score=jaccard(norm,g.normalizedName);
@@ -68,6 +69,7 @@ export function groupProducts(rows) {
       const image=validHttps(p.imageUrl);
       groups.push({
         id:p.externalProductId,
+        domain:p.domain||"apparel",
         name:displayName,
         normalizedName:norm,
         variant,
@@ -107,4 +109,4 @@ export function groupProducts(rows) {
     };
   });
 }
-function toOffer(p){return {provider:p.provider,checkedAt:p.checkedAt,material:p.material||null,availableSizes:p.availableSizes||[],productFactFields:p.productFactFields||{},merchant:p.merchant,merchantDomain:p.merchantDomain,price:validPrice(p.price),originalPrice:validPrice(p.originalPrice),affiliateUrl:p.affiliateUrl,externalProductId:p.externalProductId}}
+function toOffer(p){return {provider:p.provider,checkedAt:p.checkedAt,ageEvidence:p.ageEvidence||null,material:p.material||null,availableSizes:p.availableSizes||[],productFactFields:p.productFactFields||{},merchant:p.merchant,merchantDomain:p.merchantDomain,price:validPrice(p.price),originalPrice:validPrice(p.originalPrice),affiliateUrl:p.affiliateUrl,externalProductId:p.externalProductId}}

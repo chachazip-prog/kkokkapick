@@ -34,8 +34,10 @@ export function classifyStage(name="", query="") {
 }
 
 export function classifyProduct(p) {
-  if(p.domain && p.domain!=="apparel") return {...p,brand:null,category:domains.category(p.domain,p.name),stage:"전체",ageEvidence:domains.ageEvidence(p.name),fitStatus:"unverified",fitSource:null,sizeGuide:null,availableSizes:[]};
+  if(p.domain && p.domain!=="apparel") return {...p,brand:null,category:domains.category(p.domain,p.name),stage:"전체",ageEvidence:nonApparelAge(p),fitStatus:"unverified",fitSource:null,sizeGuide:null,availableSizes:[]};
   const brand=normalizeBrand(p.name);
   const fit=getFitEvidence(brand);
   return {...p, brand, fitStatus:fit.status, fitSource:fit.source, sizeGuide:getBrandSizeGuide(brand), availableSizes:Array.isArray(p.availableSizes)?p.availableSizes:[], category:classifyCategory(p.name,p.query), stage:classifyStage(p.name,p.query)};
 }
+
+function nonApparelAge(p){const evidence=(p.offers||[]).map(o=>o.ageEvidence).filter(Boolean);const unique=[...new Map(evidence.map(e=>[JSON.stringify(e),e])).values()];return unique.length===1?unique[0]:unique.length>1?null:domains.ageEvidence(p.name,p);}
