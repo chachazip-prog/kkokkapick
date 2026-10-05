@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-05T12:07:29.198Z",
+  "syncedAt": "2026-10-05T13:13:44.513Z",
   "sourceCount": 821,
   "productCount": 748,
-  "priceChangeCount": 14,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_63ea48b8",
@@ -26566,9 +26566,9 @@
       "normalizedName": "아디다스 키즈 아디다스 x 디즈니 니모 티셔츠 세트 화이트 바히아 오렌지 hr9483",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055436",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536873",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055436"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536873"
       ],
       "category": "상의",
       "query": "아디다스키즈 아동복",
@@ -26598,9 +26598,9 @@
       "normalizedName": "기타 아디다스 키즈 트랙슈트 수트 트레이닝복 츄리닝 세트 i bl ft jog 240 퓨어 루비 화이트 116799",
       "variant": "",
       "modelCode": "116799",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055555",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536976",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055555"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536976"
       ],
       "category": "기타",
       "query": "아디다스키즈 아동복",
@@ -26630,9 +26630,9 @@
       "normalizedName": "아디다스 키즈 아디컬러 데님 파이어버드 트랙탑 ke2849",
       "variant": "컬러",
       "modelCode": "KE2849",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055636",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513537031",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055636"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513537031"
       ],
       "category": "기타",
       "query": "아디다스키즈 아동복",
@@ -26662,9 +26662,9 @@
       "normalizedName": "아디다스키즈 jd6483 아디다스 삼선 베이비 상하복 돌선물 애기옷 85 100 hpkk jz6483",
       "variant": "",
       "modelCode": "JD6483",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055416",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536853",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055416"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536853"
       ],
       "category": "상하복",
       "query": "아디다스키즈 아동복",
@@ -26694,10 +26694,10 @@
       "normalizedName": "아디다스 키즈 디즈니 앨리스 파이어버드 트랙탑 져지 ke2739",
       "variant": "",
       "modelCode": "KE2739",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055496",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536935",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055496",
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055557"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536935",
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536977"
       ],
       "category": "기타",
       "query": "아디다스키즈 아동복",
@@ -26735,9 +26735,9 @@
       "normalizedName": "아디다스 키즈 아디다스 디즈니 미키 앤 프렌즈 쇼츠 &amp; 티셔츠 세트 화이트 hf7538",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055437",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536874",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055437"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536874"
       ],
       "category": "상의",
       "query": "아디다스키즈 아동복",
@@ -26767,9 +26767,9 @@
       "normalizedName": "아디다스키즈 kd1003 85 100 파이어버드 트랙수트 상하복 인펀트 트레이닝 세트",
       "variant": "",
       "modelCode": "KD1003",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055638",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513537033",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055638"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513537033"
       ],
       "category": "상하복",
       "query": "아디다스키즈 아동복",
@@ -26799,9 +26799,9 @@
       "normalizedName": "아디다스키즈 hz6610 sst 트랙수트 아디다스 상하복 져지세트 조카 돌 선물 085 100 hm6610",
       "variant": "",
       "modelCode": "HZ6610",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055417",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536854",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055417"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536854"
       ],
       "category": "상하복",
       "query": "아디다스키즈 아동복",
@@ -26831,9 +26831,9 @@
       "normalizedName": "아디다스 키즈 대구모다kids sst 루즈 트랙 탑 kt4404 dg",
       "variant": "",
       "modelCode": "KT4404",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055497",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536936",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513055497"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=513536936"
       ],
       "category": "기타",
       "query": "아디다스키즈 아동복",
