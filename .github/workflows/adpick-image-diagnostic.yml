@@ -30,7 +30,7 @@ jobs:
   diagnostic:
     if: github.repository == 'chachazip-prog/kkokkapick' && !inputs.review_artifact_run_id
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     continue-on-error: true
     steps:
       - uses: actions/checkout@v4
