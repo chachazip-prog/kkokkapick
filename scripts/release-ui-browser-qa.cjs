@@ -27,7 +27,7 @@ async function main(){
    await page.locator('.toast').waitFor({state:'detached',timeout:4000}).catch(()=>{});
    await page.screenshot({path:`${output}/${name}-${width}.png`});
    const metrics=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,brokenImages:[...document.images].filter(i=>i.offsetWidth&&i.complete&&!i.naturalWidth).length,pendingImages:[...document.images].filter(i=>i.offsetWidth&&!i.complete).length,imageFailures:document.querySelectorAll('.image-unavailable').length,clipped:[...document.querySelectorAll('h1,h2,.detail-price,.nav')].filter(e=>!e.classList.contains('sr-only')&&e.offsetWidth&&e.scrollWidth>e.clientWidth+1).map(e=>e.className)}));
-   assert.equal(metrics.overflow,false,`${name} ${width} overflow`);assert.deepEqual(metrics.clipped,[],`${name} ${width} clipping`);assert.equal(metrics.brokenImages,0,'unhandled broken image');assert.deepEqual(errors,[],'runtime error');report.push({name,width,...metrics});
+   assert.equal(metrics.overflow,false,`${name} ${width} overflow`);assert.deepEqual(metrics.clipped,[],`${name} ${width} clipping`);assert.equal(metrics.brokenImages,0,'unhandled broken image');if(process.env.QA_REQUIRE_HEALTHY_IMAGES==='1')assert.equal(metrics.imageFailures,0,`${name} ${width} unavailable source image`);assert.deepEqual(errors,[],'runtime error');report.push({name,width,...metrics});
   }
   async function openAvailablePhoto(){
    if(await page.locator('.photo-tile').count()){
