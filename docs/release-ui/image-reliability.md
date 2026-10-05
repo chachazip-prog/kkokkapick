@@ -23,7 +23,7 @@ Before publication, a complete initial image audit may exclude at most5% unavail
 
 ## Freshness and operation
 
-24h is the existing internal metadata-retention ceiling, not an image-validity guarantee. Temporary ADPICK gateway photos use an additional90min display ceiling anchored to the source observation, allowing the existing hourly sync plus a bounded20min job and10min margin. This is an internal safety ceiling, not a provider contractual lifetime. Invalid timestamps and clock skew exceeding5min fail closed.
+24h is the existing internal metadata-retention ceiling, not an image-validity guarantee. Temporary ADPICK gateway photos use an additional90min display ceiling anchored to the source observation, The review/production jobs now have30min limits after a real20min timeout at query78. Hourly cadence plus the maximum job duration leaves no delay margin, so this ceiling does not guarantee continuous display availability. This is an internal safety ceiling, not a provider contractual lifetime. Invalid timestamps and clock skew exceeding5min fail closed.
 
 Visible browsers reload catalog metadata every5min and on return online/visible, preserving filters, selected child, browsing depth and current view. Provider keys stay server-side. Product/price JSON bypasses offline service-worker storage; the app shell remains cached. No permanent copy of provider photos, new hosting, paid API, child-data upload or main merge is introduced.
 
