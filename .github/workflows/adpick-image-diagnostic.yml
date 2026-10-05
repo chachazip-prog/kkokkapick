@@ -32,6 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     continue-on-error: true
+    outputs:
+      review_artifact_id: ${{ steps.review_catalog.outputs.artifact-id }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -50,6 +52,7 @@ jobs:
           node scripts/discover-adpick.js
           node scripts/build-catalog.js
       - name: Upload temporary review catalog
+        id: review_catalog
         if: success() && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild' && !inputs.diagnostic_only
         uses: actions/upload-artifact@v4
         with:
@@ -112,4 +115,42 @@ jobs:
           git add data/adpick-biz-products.json data/catalog.json data/price-history.json catalog-quality-report.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "chore: refresh temporary review catalog with verified ADPICK images"
+          git push origin HEAD:codex/release-ui-rebuild
+
+  publish-fresh-review-catalog:
+    needs: diagnostic
+    if: github.repository == 'chachazip-prog/kkokkapick' && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild' && !inputs.diagnostic_only && inputs.review_artifact_run_id == '' && needs.diagnostic.outputs.review_artifact_id != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Download only the freshly generated artifact from this run
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: ${{ needs.diagnostic.outputs.review_artifact_id }}
+          merge-multiple: true
+          path: .review-catalog
+      - name: Exclude unavailable photos without losing seller facts
+        run: CATALOG_DATA_DIR=.review-catalog node scripts/prepare-photo-catalog.js
+      - name: Independently recheck all original images immediately before publication
+        env:
+          CATALOG_IMAGE_HEALTH_INPUT: .review-catalog/catalog.json
+          IMAGE_HEALTH_ALL: "1"
+          IMAGE_HEALTH_MIN_SUCCESS_RATE: "1"
+        run: node scripts/catalog-image-health.js
+      - name: Validate and commit review data only
+        run: |
+          node scripts/handoff-review-catalog.cjs
+          node scripts/catalog-quality-report.js > catalog-quality-report.json
+          git config user.name "kkokkapick-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/adpick-biz-products.json data/catalog.json data/price-history.json catalog-quality-report.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: publish immediately verified temporary review catalog"
           git push origin HEAD:codex/release-ui-rebuild
