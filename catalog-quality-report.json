@@ -1,33 +1,34 @@
 {
-  "syncedAt": "2026-10-05T02:06:35.937Z",
-  "sourceProducts": 499,
-  "canonicalProducts": 463,
+  "syncedAt": "2026-10-05T03:07:50.126Z",
+  "sourceProducts": 489,
+  "canonicalProducts": 454,
   "queries": 73,
-  "recognizedBrandProducts": 265,
-  "recognizedBrandRatePct": 57.2,
+  "recognizedBrandProducts": 262,
+  "recognizedBrandRatePct": 57.7,
   "officialBrandGuideProducts": 23,
-  "officialBrandGuideRatePct": 5,
+  "officialBrandGuideRatePct": 5.1,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 499,
-    "ok": 499,
-    "failed": 0,
+    "checked": 489,
+    "ok": 462,
+    "failed": 27,
     "statuses": {
-      "200": 499
+      "200": 462,
+      "400": 27
     },
-    "rate": 1
+    "rate": 0.9447852760736196
   },
-  "canonicalImageProducts": 463,
-  "canonicalImageRatePct": 100,
-  "multiImageProducts": 29,
-  "multiImageRatePct": 6.3,
+  "canonicalImageProducts": 430,
+  "canonicalImageRatePct": 94.7,
+  "multiImageProducts": 25,
+  "multiImageRatePct": 5.5,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 198
+      "count": 192
     },
     {
       "name": "블루독베이비",
@@ -109,7 +110,7 @@
   "categories": [
     {
       "name": "상의",
-      "count": 83
+      "count": 81
     },
     {
       "name": "바디수트",
@@ -120,10 +121,6 @@
       "count": 72
     },
     {
-      "name": "기타",
-      "count": 55
-    },
-    {
       "name": "원피스",
       "count": 55
     },
@@ -132,8 +129,12 @@
       "count": 53
     },
     {
+      "name": "기타",
+      "count": 51
+    },
+    {
       "name": "상하복",
-      "count": 52
+      "count": 49
     },
     {
       "name": "실내복",
@@ -143,11 +144,11 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 238
+      "count": 230
     },
     {
       "name": "베이비",
-      "count": 161
+      "count": 160
     },
     {
       "name": "전체",

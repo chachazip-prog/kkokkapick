@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-05T02:06:35.937Z",
-  "sourceCount": 499,
-  "productCount": 463,
-  "priceChangeCount": 1,
+  "syncedAt": "2026-10-05T03:07:50.126Z",
+  "sourceCount": 489,
+  "productCount": 454,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_63ea48b8",
@@ -7747,10 +7747,8 @@
       "normalizedName": "베네베네 스타필드 수원 baby 알루엣 티셔츠 bni26ftt046",
       "variant": "",
       "modelCode": "BNI26FTT046",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512079654",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512079654"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "유아 티셔츠",
       "offers": [
@@ -7875,10 +7873,8 @@
       "normalizedName": "레노마키즈 멀티체크베이직셔츠 r2332b302 58",
       "variant": "",
       "modelCode": "R2332B302_58",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512090950",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512090950"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "키즈 셔츠",
       "offers": [
@@ -8005,8 +8001,7 @@
       "modelCode": "K263USH010",
       "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512090958",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512090958",
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512090982"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512090958"
       ],
       "category": "상의",
       "query": "키즈 셔츠",
@@ -8236,9 +8231,8 @@
       "normalizedName": "tag가 89000 빈폴키즈 데님 셔츠 2종",
       "variant": "2종",
       "modelCode": "89000",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512090972",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512090974",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512090972",
         "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512090974"
       ],
       "category": "상의",
@@ -8373,10 +8367,8 @@
       "normalizedName": "엠포리오아르마니주니어 스트라이프 트림 폴로 셔츠 0456113010 상의 긴팔티셔츠",
       "variant": "",
       "modelCode": "0456113010",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512091045",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512091045"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "키즈 셔츠",
       "offers": [
@@ -8551,10 +8543,8 @@
       "normalizedName": "뉴발란스키즈바지 rqj nk9tgc302u 55 에센셜 일자 데님 팬츠",
       "variant": "",
       "modelCode": "NK9TGC302U-55",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512092100",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512092100"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "하의",
       "query": "키즈 바지",
       "offers": [
@@ -8816,10 +8806,8 @@
       "normalizedName": "코닥키즈바지 pqk k5126lwpf1ivr 케이 조거 팬츠 키즈 ivory",
       "variant": "",
       "modelCode": "K5126LWPF1IVR",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512092104",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512092104"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "하의",
       "query": "키즈 바지",
       "offers": [
@@ -9040,10 +9028,8 @@
       "normalizedName": "휠라 아동레깅스추천 키즈레깅스추천 키즈 1200fk2rpf2a02xmit 아쿠아 바지레",
       "variant": "",
       "modelCode": "1200FK2RPF2A02XMIT",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512092966",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512092966"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "하의",
       "query": "키즈 레깅스",
       "offers": [
@@ -9072,10 +9058,8 @@
       "normalizedName": "휠라 키즈 1200fk2lgh2501fwhi 아동레깅스추천 키즈레깅스추천 4부 베이직 레",
       "variant": "",
       "modelCode": "1200FK2LGH2501FWHI",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512092967",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512092967"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "하의",
       "query": "키즈 레깅스",
       "offers": [
@@ -9296,10 +9280,8 @@
       "normalizedName": "아디다스 아디다스 키즈 레깅스 jg 3스트라이프 3선 레그 230 블랙 핑크 퓨전 10313040",
       "variant": "",
       "modelCode": "10313040",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512092974",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512092974"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "하의",
       "query": "키즈 레깅스",
       "offers": [
@@ -9657,10 +9639,8 @@
       "normalizedName": "리바이스 키즈 하트프린트긴팔체크원피스 주니어",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512093615",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512093615"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "원피스",
       "query": "키즈 원피스",
       "offers": [
@@ -10041,10 +10021,8 @@
       "normalizedName": "리바이스 키즈 배트윙 데님 봄버 자켓 v261jk381p",
       "variant": "",
       "modelCode": "V261JK381P",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512095549",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512095549"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "아우터",
       "query": "키즈 자켓",
       "offers": [
@@ -10105,10 +10083,8 @@
       "normalizedName": "tag가 139000 빈폴키즈 헌팅 안감 재킷 그린 bi6839ue1m",
       "variant": "",
       "modelCode": "139000",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512095551",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512095551"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "아우터",
       "query": "키즈 자켓",
       "offers": [
@@ -10137,10 +10113,8 @@
       "normalizedName": "베네통키즈 26fw 폴라폴리스배색자켓 qajk02641",
       "variant": "",
       "modelCode": "QAJK02641",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512095552",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512095552"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "아우터",
       "query": "키즈 자켓",
       "offers": [
@@ -11438,10 +11412,8 @@
       "normalizedName": "ak평택점 에뜨와 이브바디수트set 07t527982",
       "variant": "",
       "modelCode": "07T527982",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512097225",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512097225"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "바디수트",
       "query": "에뜨와 아기옷",
       "offers": [
@@ -11943,10 +11915,8 @@
       "normalizedName": "에뜨와 에뜨와 윈터슬림우주복set 07t717508gr",
       "variant": "",
       "modelCode": "07T717508GR",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512097230",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512097230"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "바디수트",
       "query": "에뜨와 아기옷",
       "offers": [
@@ -12246,10 +12216,8 @@
       "normalizedName": "에뜨와 에뜨와 우든dd카라우주복 07r727503mt",
       "variant": "",
       "modelCode": "07R727503MT",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512097234",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512097234"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "바디수트",
       "query": "에뜨와 아기옷",
       "offers": [
@@ -12869,10 +12837,8 @@
       "normalizedName": "밍크뮤 샤를뮤 자가드 자켓상하세트 be 3411112002 3411141201",
       "variant": "",
       "modelCode": "3411112002_3411141201",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512097571",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512097571"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상하복",
       "query": "밍크뮤 아기옷",
       "offers": [
@@ -13349,10 +13315,8 @@
       "normalizedName": "압소바 에이먼 패딩 우주복 ab2652or14 sw",
       "variant": "",
       "modelCode": "AB2652OR14-SW",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512105188",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512105188"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "바디수트",
       "query": "압소바 아기옷",
       "offers": [
@@ -13413,10 +13377,8 @@
       "normalizedName": "압소바 세인 바디슈트 sg",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512105190",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512105190"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "바디수트",
       "query": "압소바 아기옷",
       "offers": [
@@ -13477,11 +13439,8 @@
       "normalizedName": "ak분당점 압소바 베니코튼모달우주복 턱받이 ab2671nu05 베이지",
       "variant": "",
       "modelCode": "AB2671NU05",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512105192",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512105192",
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512105193"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "바디수트",
       "query": "압소바 아기옷",
       "offers": [
@@ -13710,10 +13669,8 @@
       "normalizedName": "ak분당점 압소바 샤르망 우주복 보넷 장말 ab2652or25 레드",
       "variant": "",
       "modelCode": "AB2652OR25",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512105203",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512105203"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "바디수트",
       "query": "압소바 아기옷",
       "offers": [
@@ -13838,10 +13795,8 @@
       "normalizedName": "블루독베이비 폼폼플라워우주복 45c70 041 09",
       "variant": "",
       "modelCode": "45C70-041-09",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512098030",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512098030"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "바디수트",
       "query": "블루독베이비 아기옷",
       "offers": [
@@ -14510,10 +14465,8 @@
       "normalizedName": "해피프린스 포피 아기 밀짚 페도라 p420534199 이마트몰",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512105495",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512105495"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "기타",
       "query": "해피프린스 아기옷",
       "offers": [
@@ -14734,10 +14687,8 @@
       "normalizedName": "고밀도 프린지 패션 소프트 플러시 원단 드레스 코트 아동복 천 diy 야드 단위 판매 재봉 재료 원단",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512098737",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512098737"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "원피스",
       "query": "빈폴키즈 아동복",
       "offers": [
@@ -15831,10 +15782,8 @@
       "normalizedName": "mlb키즈 26ss 스트릿 베이직 레이어드 티셔츠세트 여아 3color 7fs1b0663",
       "variant": "",
       "modelCode": "3COLOR",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512100763",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=512100763"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "MLB키즈 아동복",
       "offers": [
@@ -16573,303 +16522,6 @@
       "minPrice": 62990,
       "maxPrice": 62990,
       "brand": "나이키키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_a5f0c3bf",
-      "name": "아디다스 키즈 아디다스 x 디즈니 니모 티셔츠 세트 / 화이트 / 바히아 오렌지_HR9483",
-      "normalizedName": "아디다스 키즈 아디다스 x 디즈니 니모 티셔츠 세트 화이트 바히아 오렌지 hr9483",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898310",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898310"
-      ],
-      "category": "상의",
-      "query": "아디다스키즈 아동복",
-      "offers": [
-        {
-          "merchant": "보리보리",
-          "merchantDomain": null,
-          "price": 30400,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739289?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_a5f0c3bf"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 30400,
-      "maxPrice": 30400,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_2e2a35e9",
-      "name": "[기타] 아디다스 키즈 트랙슈트 수트 트레이닝복 츄리닝 세트 I BL FT JOG 240 퓨어 루비 화이트 116799",
-      "normalizedName": "기타 아디다스 키즈 트랙슈트 수트 트레이닝복 츄리닝 세트 i bl ft jog 240 퓨어 루비 화이트 116799",
-      "variant": "",
-      "modelCode": "116799",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898524",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898524"
-      ],
-      "category": "기타",
-      "query": "아디다스키즈 아동복",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 95290,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739290?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_2e2a35e9"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 95290,
-      "maxPrice": 95290,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_77f4b5e",
-      "name": "아디다스 키즈 아디컬러 데님 파이어버드 트랙탑 (KE2849)",
-      "normalizedName": "아디다스 키즈 아디컬러 데님 파이어버드 트랙탑 ke2849",
-      "variant": "컬러",
-      "modelCode": "KE2849",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898621",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898621"
-      ],
-      "category": "기타",
-      "query": "아디다스키즈 아동복",
-      "offers": [
-        {
-          "merchant": "GS SHOP",
-          "merchantDomain": null,
-          "price": 103870,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739291?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_77f4b5e"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 103870,
-      "maxPrice": 103870,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_55fb254a",
-      "name": "[아디다스키즈] JD6483 아디다스 삼선 베이비 상하복 돌선물 애기옷 85-100 HPKK JZ6483",
-      "normalizedName": "아디다스키즈 jd6483 아디다스 삼선 베이비 상하복 돌선물 애기옷 85 100 hpkk jz6483",
-      "variant": "",
-      "modelCode": "JD6483",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898290",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898290"
-      ],
-      "category": "상하복",
-      "query": "아디다스키즈 아동복",
-      "offers": [
-        {
-          "merchant": "Hmall",
-          "merchantDomain": null,
-          "price": 24010,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4804625?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_55fb254a"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 24010,
-      "maxPrice": 24010,
-      "brand": "아디다스키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
-      "id": "adpickbiz_ac399e05",
-      "name": "아디다스 키즈 디즈니 앨리스 파이어버드 트랙탑 져지 (KE2739)",
-      "normalizedName": "아디다스 키즈 디즈니 앨리스 파이어버드 트랙탑 져지 ke2739",
-      "variant": "",
-      "modelCode": "KE2739",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898438",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898438",
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898526"
-      ],
-      "category": "기타",
-      "query": "아디다스키즈 아동복",
-      "offers": [
-        {
-          "merchant": "롯데홈쇼핑",
-          "merchantDomain": null,
-          "price": 80690,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4796824?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_ac399e05"
-        },
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 93280,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4796825?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_a70af69a"
-        }
-      ],
-      "offerCount": 2,
-      "minPrice": 80690,
-      "maxPrice": 93280,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_2504a4b5",
-      "name": "아디다스 키즈 아디다스 디즈니 미키 앤 프렌즈 쇼츠 &amp; 티셔츠 세트 / 화이트_HF7538",
-      "normalizedName": "아디다스 키즈 아디다스 디즈니 미키 앤 프렌즈 쇼츠 &amp; 티셔츠 세트 화이트 hf7538",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898312",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898312"
-      ],
-      "category": "상의",
-      "query": "아디다스키즈 아동복",
-      "offers": [
-        {
-          "merchant": "보리보리",
-          "merchantDomain": null,
-          "price": 30400,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739294?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_2504a4b5"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 30400,
-      "maxPrice": 30400,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_b4efa8c7",
-      "name": "[아디다스키즈] KD1003 (85-100) 파이어버드 트랙수트 상하복 인펀트 트레이닝 세트",
-      "normalizedName": "아디다스키즈 kd1003 85 100 파이어버드 트랙수트 상하복 인펀트 트레이닝 세트",
-      "variant": "",
-      "modelCode": "KD1003",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898624",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898624"
-      ],
-      "category": "상하복",
-      "query": "아디다스키즈 아동복",
-      "offers": [
-        {
-          "merchant": "GS SHOP",
-          "merchantDomain": null,
-          "price": 75650,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739296?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_b4efa8c7"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 75650,
-      "maxPrice": 75650,
-      "brand": "아디다스키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_148829eb",
-      "name": "[아디다스키즈] HZ6610 SST 트랙수트 아디다스 상하복 져지세트 조카 돌 선물 (085-100) HM6610 +할인쿠폰",
-      "normalizedName": "아디다스키즈 hz6610 sst 트랙수트 아디다스 상하복 져지세트 조카 돌 선물 085 100 hm6610",
-      "variant": "",
-      "modelCode": "HZ6610",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898291",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898291"
-      ],
-      "category": "상하복",
-      "query": "아디다스키즈 아동복",
-      "offers": [
-        {
-          "merchant": "Hmall",
-          "merchantDomain": null,
-          "price": 79140,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739292?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_148829eb"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 79140,
-      "maxPrice": 79140,
-      "brand": "아디다스키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_d0113878",
-      "name": "[아디다스 키즈][대구모다KIDS] SST 루즈 트랙 탑 [KT4404]_DG",
-      "normalizedName": "아디다스 키즈 대구모다kids sst 루즈 트랙 탑 kt4404 dg",
-      "variant": "",
-      "modelCode": "KT4404",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898441",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=511898441"
-      ],
-      "category": "기타",
-      "query": "아디다스키즈 아동복",
-      "offers": [
-        {
-          "merchant": "롯데홈쇼핑",
-          "merchantDomain": null,
-          "price": 91200,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739293?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_d0113878"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 91200,
-      "maxPrice": 91200,
-      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
