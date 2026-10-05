@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-10-05T13:13:44.513Z",
+  "syncedAt": "2026-10-05T14:15:23.507Z",
   "sourceProducts": 821,
-  "canonicalProducts": 748,
+  "canonicalProducts": 747,
   "queries": 73,
   "recognizedBrandProducts": 423,
   "recognizedBrandRatePct": 56.6,
@@ -18,16 +18,16 @@
     },
     "rate": 1
   },
-  "canonicalImageProducts": 748,
+  "canonicalImageProducts": 747,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 57,
-  "multiImageRatePct": 7.6,
+  "multiImageProducts": 58,
+  "multiImageRatePct": 7.8,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 325
+      "count": 324
     },
     {
       "name": "밀크베이비",
@@ -109,7 +109,7 @@
   "categories": [
     {
       "name": "상의",
-      "count": 171
+      "count": 170
     },
     {
       "name": "아우터",
@@ -143,7 +143,7 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 351
+      "count": 350
     },
     {
       "name": "베이비",
