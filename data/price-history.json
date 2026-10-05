@@ -2,7 +2,32 @@
   "version": 1,
   "groupingVersion": 2,
   "identityCorrection": "discarded_legacy_ambiguous_product_groups",
-  "updatedAt": "2026-10-04T23:17:35.641Z",
+  "updatedAt": "2026-10-05T00:48:39.306Z",
   "retention": "bounded_demo_events",
-  "events": []
+  "events": [
+    {
+      "productId": "adpickbiz_9e88d0a9",
+      "observedAt": "2026-10-05T00:48:39.306Z",
+      "previousPrice": 58060,
+      "price": 54940,
+      "direction": "down",
+      "changeAmount": -3120
+    },
+    {
+      "productId": "adpickbiz_7635e094",
+      "observedAt": "2026-10-05T00:48:39.306Z",
+      "previousPrice": 13540,
+      "price": 21663,
+      "direction": "up",
+      "changeAmount": 8123
+    },
+    {
+      "productId": "adpickbiz_31f874ce",
+      "observedAt": "2026-10-05T00:48:39.306Z",
+      "previousPrice": 181090,
+      "price": 175817,
+      "direction": "down",
+      "changeAmount": -5273
+    }
+  ]
 }
