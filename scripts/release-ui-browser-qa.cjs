@@ -84,6 +84,18 @@ async function main(){
   await page.screenshot({path:`${output}/multiple-photos-${width}.png`});
   await page.screenshot({path:`${output}/demo-${width}.png`});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'demo overflow');
+  await page.locator('#searchNav').click();
+  await page.locator('[data-domain="play"]').click();
+  assert.ok(await page.evaluate(()=>catalogItems.every(p=>p.domain==='toy'||p.domain==='learning')),'play domain isolation');
+  const playProduct=await page.evaluate(()=>catalogItems[0]?.id);
+  if(playProduct){
+   await capture('play-search');await page.locator('#photoMode').click();await capture('play-feed');
+   await page.locator('.photo-tile').first().click();await capture('play-card');assert.ok(!(await page.locator('#photoCardContent').textContent()).includes('꼬까핏'));await page.locator('[data-photo-detail]').click();await capture('play-detail');
+   assert.equal(await page.locator('#detail .fit-section').count(),0);assert.ok((await page.locator('#detail .product-info').textContent()).includes('대상 연령'));assert.ok(!(await page.locator('#detail .product-info').textContent()).includes('사이즈'));
+   await page.evaluate(()=>{const child=childStore.all()[0];if(child)selectChild(child.id)});assert.equal(await page.locator('#detail .fit-section').count(),0);await page.locator('#detail .close').click();
+   await page.evaluate(()=>{stage='아이월령';render()});assert.ok(await page.evaluate(()=>catalogItems.every(p=>KkokkapickProductDomain.matchesMonths(p,activeChild()?.months))));await capture('play-age-filter');
+  }else if(process.env.QA_REQUIRE_PLAY==='1'){throw new Error('Fresh source has no eligible toy/learning product');}
+  await page.locator('[data-domain="apparel"]').click();assert.ok(await page.evaluate(()=>catalogItems.every(p=>!p.domain||p.domain==='apparel')));
   await page.close();
  }
  await browser.close();if(qaServer)await new Promise(resolve=>qaServer.close(resolve));fs.writeFileSync(`${output}/metrics.json`,JSON.stringify(report,null,2));console.log(`PASS: 4 viewports, ${report.length} browser captures, interaction regression. Image reliability is reported separately.`);

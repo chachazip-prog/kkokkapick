@@ -91,11 +91,13 @@ const productFacts = {
   availableSizesPresent: validated.filter(p => p.availableSizes?.length).length,
   sourceFields: [...sourceFields].sort(),
 };
+const domainCoverage = Object.fromEntries(['apparel','toy','learning'].map(domain=>[domain,{products:validated.filter(p=>p.domain===domain).length,healthyImages:validated.filter(p=>p.domain===domain&&p.imageHealth?.ok).length,ageEvidence:validated.filter(p=>p.domain===domain&&p.ageEvidence).length}]));
 const acceptedQueries = queries.map(query => ({ query, acceptedUnique: products.filter(p => p.query === query).length }));
 const safeProducts = validated.map(({ imageHealth: _imageHealth, ...product }) => product);
 await fs.mkdir("data", { recursive: true });
 await fs.writeFile("data/adpick-biz-products.json", JSON.stringify({
   source: "adpick_biz",
+  domainCoverage,
   ...catalogCacheWindow(safeProducts.map(p => p.checkedAt).filter(Boolean).sort()[0] || new Date().toISOString()),
   queries,
   count: safeProducts.length,

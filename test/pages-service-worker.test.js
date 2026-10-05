@@ -5,7 +5,7 @@ import fs from 'node:fs';
 const sw=fs.readFileSync(new URL('../sw.js',import.meta.url),'utf8');
 
 test('Pages service worker does not pin the app shell to stale cache',()=>{
-  assert.match(sw,/kkokkapick-release-ui-reference-v5/);
+  assert.match(sw,/kkokkapick-release-ui-reference-v6/);
   assert.match(sw,/event\.request\.mode==='navigate'/);
   assert.match(sw,/isAppCode/);
   assert.match(sw,/event\.respondWith\(networkFirst\(event\.request\)\)/);

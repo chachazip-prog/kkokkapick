@@ -23,3 +23,5 @@ const providerToy=classifyProduct({domain:'toy',name:'유아 블록',offers:[{ag
 for(const name of ['유아 고양이용 퍼즐','유아 구독 보드북','유아 장난감 세척제','유아 장난감 보관함'])assert.equal(classifyCatalogRelevance({name}).eligible,false,name);
 assert.equal(domains.ageEvidence('아기 그림책 3세 이상 사용 금지'),null);
 assert.equal(classifyCatalogRelevance({name:'유아 봉제 인형 장난감'}).domain,'toy');
+
+for(const name of ['유아 구독 숫자놀이','유아 고양이용 모양맞추기','키즈 랜덤 놀이 블록'])assert.equal(classifyCatalogRelevance({name}).eligible,false,name);

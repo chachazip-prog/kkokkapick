@@ -4,7 +4,7 @@ const escape=source.slice(source.indexOf('function esc('),source.indexOf('functi
 const names=source.slice(source.indexOf('function displayName('),source.indexOf('function imageHtml('));
 const information=source.slice(source.indexOf('function materialLabel('),source.indexOf('function readStore('));
 const engine=source.slice(source.indexOf('const VERIFIED_SIZE_CHARTS='),source.indexOf('function positivePrice('));
-const context=vm.createContext({});vm.runInContext(escape+names+information+engine,context);
+const context=vm.createContext({KkokkapickProductDomain:require('../src/product-domain.js')});vm.runInContext(escape+names+information+engine,context);
 const original={brand:'아가방',name:'아가방 아양우주복(모자)(O/WHITE)_01R71750503'};
 assert.equal(context.displayName(original),'아양 우주복 + 모자 세트');assert.equal(original.name,'아가방 아양우주복(모자)(O/WHITE)_01R71750503','source preserved');
 assert.equal(context.displayName({brand:'아가방',name:'[이마트몰] 아가방 아가방 봄 원피스 (52935592)'}),'봄 원피스');
@@ -18,3 +18,5 @@ console.log('Release presentation: source-preserving names, truthful material/si
 const photos={imageUrl:'https://example.com/front.jpg',imageUrls:['https://example.com/front.jpg','https://example.com/back.jpg','javascript:bad']};
 assert.deepEqual(Array.from(context.productImages(photos)),['https://example.com/front.jpg','https://example.com/back.jpg']);
 const gallery=context.imageGallery({...photos,name:'아기 옷'},'detailpic');assert.equal((gallery.match(/class="gallery-slide"/g)||[]).length,2);assert.equal((gallery.match(/data-gallery-dot=/g)||[]).length,2);assert.ok(gallery.includes('aria-pressed="true"'));assert.ok(!gallery.includes('gallery-count'));
+
+const playInfo=context.productInfoHtml({domain:'toy',cat:'감각놀이',ageEvidence:null});assert.ok(playInfo.includes('대상 연령'));assert.ok(!playInfo.includes('사이즈'));assert.ok(playInfo.includes('판매처 권장 연령 확인'));assert.equal(context.evaluateFit({months:12,height:76,weight:10},{domain:'toy',brand:'아가방'}).status,'not_applicable');
