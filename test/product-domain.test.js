@@ -25,3 +25,8 @@ assert.equal(domains.ageEvidence('아기 그림책 3세 이상 사용 금지'),n
 assert.equal(classifyCatalogRelevance({name:'유아 봉제 인형 장난감'}).domain,'toy');
 
 for(const name of ['유아 구독 숫자놀이','유아 고양이용 모양맞추기','키즈 랜덤 놀이 블록'])assert.equal(classifyCatalogRelevance({name}).eligible,false,name);
+
+for (const name of ['옥스포드 아기 블럭 유아 창의력블록', '유아 역할 놀이 소꿉 놀이 주방 놀이', '핑크퐁 아기상어 양치놀이']) { assert.equal(classifyCatalogRelevance({name}).domain, 'toy', name); assert.equal(domains.ageEvidence(name), null); }
+for (const name of ['키즈 컬러블럭 가디건', '디즈니베이비 블럭 오픈내의', '유아 썬블럭 모자세트', '언더아머 키즈 컬러블록 Leggings Set']) assert.equal(classifyCatalogRelevance({name}).domain, 'apparel', name);
+assert.equal(classifyCatalogRelevance({name:'뽀로로 유아 가방퍼즐'}).domain, 'learning');
+assert.equal(classifyCatalogRelevance({name:'에뜨와 신생아 딸랑이세트 치아발육기'}).eligible, false);

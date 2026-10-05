@@ -15,3 +15,14 @@ assert.equal(isKidsApparel("슬리/[한정특가]/[단독]Sheer Tencel Trench_Ch
 assert.equal(isKidsApparel("유유존 셔링힙업레깅스 요가 필라테스레깅스 엉뽕 하이웨스트 9color"), false);
 assert.equal(isKidsApparel("휴고보스/26FW 휴고보스 스웨터 50565523 118 OPEN WHITE DOM/의류 니트"), false);
 assert.equal(isKidsApparel("폴로랄프로렌/[폴로랄프로렌] FW26티셔츠 710671438539 7591739/의류 반팔티셔츠"), false);
+
+// Actual expanded-source regressions: reject the item being sold, preserve child motifs and clothing bundles.
+for (const title of ['귀여운 네발옷 강아지 겨울옷 도그베이비', 'Sphynx 고양이 여름 옷 네다리 면 잠옷 수술 재활복', '코코테일 고양이겨울옷 아기고양이 뚱냥이 옷', '아기용 100% 면 플란넬 원단 잠옷 턱받이 옷 T315', '어린이 빌딩 블록 벽 스티커 자체 접착 벽지', '여아용 원피스 딸기 담요', '아기 고양이 인쇄 욕실 얼굴 수건', '나이키키즈 조던 프랜차이즈 힙 백', '메종키츠네 SS26 BABY FOX 반팔 티셔츠', '폴로랄프로렌 FW26 반팔 티셔츠', '반팔티 챗지피티 생성 아기코끼리 티셔츠']) assert.equal(isKidsApparel(title), false, title);
+for (const title of ['페리미츠 강아지 전판 티셔츠', '베베샤 유아 롬퍼 모자세트 강아지 고양이', 'IL GUFO KIDS 테크원단 남아 상하복', '에뜨와 이브가방 OPS SET', '[베네통키즈] 컬러 블럭 가디건', '[디즈니베이비] 블럭 오픈내의', '키즈 썬블럭 모자세트', '[언더아머] 키즈 컬러블록 Leggings Set', '[빈폴키즈] 피나포어 원피스', 'pm6 키즈 귀달이 모자']) assert.equal(isKidsApparel(title), true, title);
+assert.equal(classifyCategory('pm6 키즈 귀달이 모자'), '패션잡화');
+
+assert.equal(classifyCategory('아가방 아양우주복(모자)(O/WHITE)_01R71750503'), '바디수트');
+assert.equal(classifyCategory('블로니우주복모자 양말SET'), '바디수트');
+assert.equal(classifyCategory('핑크베리 여아 래쉬가드 썬블럭 모자세트'), '수영복');
+
+assert.equal(classifyCategory('아동 양말'), '패션잡화');
