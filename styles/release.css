@@ -128,10 +128,12 @@ fieldset { border: 0; padding: 0; margin: 20px 0; min-width: 0; }legend { margin
 /* Photo discovery: compact controls and a continuous, full-width photo surface. */
 .photo-mode .search-tools { display: grid; grid-template-columns: minmax(0,1fr) auto; column-gap: 8px; }
 .photo-mode .search { grid-column: 1 / -1; margin-bottom: 6px;  background: var(--surface-card);}
-.photo-mode .view-switch { grid-column: 1; grid-row: 2; gap: 14px; margin: 0; }.photo-mode .view-switch button { font-size: 12px; }
-.photo-mode .search-options { display: contents; }.photo-mode .search-options label { display: none; }.photo-mode .filter-toggle { grid-row: 2; grid-column: 2; border: 0; padding: 0 2px; }
-.photo-mode .search-options select { grid-row: 3; grid-column: 2; max-width: 80px; font-size: 13px; padding: 6px 0; }
-.photo-mode .category-tabs { grid-row: 3; grid-column: 1; gap: 16px; margin-top: 0; }.photo-mode .category-tab { font-size: 12px; }
+.photo-mode #domainSwitch { grid-column: 1 / -1; grid-row: 2; }
+.photo-mode #playAgeNote { grid-column: 1 / -1; grid-row: 5; margin: 6px 0; }
+.photo-mode .view-switch:not(#domainSwitch) { grid-column: 1; grid-row: 3; gap: 14px; margin: 0; }.photo-mode .view-switch button { font-size: 12px; }
+.photo-mode .search-options { display: contents; }.photo-mode .search-options label { display: none; }.photo-mode .filter-toggle { grid-row: 3; grid-column: 2; border: 0; padding: 0 2px; }
+.photo-mode .search-options select { grid-row: 4; grid-column: 2; max-width: 80px; font-size: 13px; padding: 6px 0; }
+.photo-mode .category-tabs { grid-row: 4; grid-column: 1; gap: 16px; margin-top: 0; }.photo-mode .category-tab { font-size: 12px; }
 .photo-mode #catalogSection { padding: 0; }.photo-mode #catalogSection>.toolbar { display: none; }.photo-mode .active-row { padding: 0 var(--page-gutter); }.photo-mode .active-row p { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 0; }.photo-mode #photoFeedNote { margin: 8px var(--page-gutter); font-size: 11px; }
 .photo-mode .photo-grid { margin-top: 0; }.photo-mode .photo-tile { border: 0; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); background: white; }
 .child-context { margin: 4px var(--page-gutter) 12px; display: flex; align-items: center; gap: 8px; font-size: 12px; min-height: 36px; }.child-context label { display: flex; align-items: center; gap: 7px; min-width: 0; flex: 1; white-space: nowrap; }.child-context select { width: auto; max-width: 180px; padding: 5px 8px; border: 0; font-size: 13px; background: transparent; }.child-context .text-link { font-size: 12px; min-height: 32px; }.context-count { color: var(--color-text-secondary); margin-left: auto; white-space: nowrap; }.photo-mode .child-context { margin-top: 2px; margin-bottom: 4px; }
