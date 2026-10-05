@@ -1,38 +1,37 @@
 {
-  "syncedAt": "2026-10-05T07:45:33.505Z",
-  "sourceProducts": 924,
-  "canonicalProducts": 854,
+  "syncedAt": "2026-10-05T09:06:55.076Z",
+  "sourceProducts": 909,
+  "canonicalProducts": 841,
   "queries": 85,
   "recognizedBrandProducts": 436,
-  "recognizedBrandRatePct": 51.1,
+  "recognizedBrandRatePct": 51.8,
   "officialBrandGuideProducts": 33,
   "officialBrandGuideRatePct": 3.9,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 924,
-    "ok": 922,
-    "failed": 2,
+    "checked": 909,
+    "ok": 909,
+    "failed": 0,
     "statuses": {
-      "200": 922,
-      "400": 2
+      "200": 909
     },
-    "rate": 0.9978354978354979
+    "rate": 1
   },
-  "canonicalImageProducts": 854,
+  "canonicalImageProducts": 841,
   "canonicalImageRatePct": 100,
   "multiImageProducts": 46,
-  "multiImageRatePct": 5.4,
+  "multiImageRatePct": 5.5,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 418
+      "count": 405
     },
     {
       "name": "밀크베이비",
-      "count": 37
+      "count": 38
     },
     {
       "name": "휠라키즈",
@@ -43,11 +42,11 @@
       "count": 27
     },
     {
-      "name": "빈폴키즈",
-      "count": 22
+      "name": "밍크뮤",
+      "count": 23
     },
     {
-      "name": "밍크뮤",
+      "name": "빈폴키즈",
       "count": 22
     },
     {
@@ -110,11 +109,11 @@
   "categories": [
     {
       "name": "아우터",
-      "count": 161
+      "count": 157
     },
     {
       "name": "바디수트",
-      "count": 133
+      "count": 130
     },
     {
       "name": "하의",
@@ -122,7 +121,7 @@
     },
     {
       "name": "상의",
-      "count": 110
+      "count": 108
     },
     {
       "name": "상하복",
@@ -130,7 +129,7 @@
     },
     {
       "name": "원피스",
-      "count": 67
+      "count": 65
     },
     {
       "name": "실내복",
@@ -138,7 +137,7 @@
     },
     {
       "name": "수영복",
-      "count": 39
+      "count": 38
     },
     {
       "name": "감각놀이",
@@ -170,11 +169,7 @@
     },
     {
       "name": "패션잡화",
-      "count": 2
-    },
-    {
-      "name": "기타",
-      "count": 2
+      "count": 3
     },
     {
       "name": "신발",
@@ -184,11 +179,11 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 333
+      "count": 328
     },
     {
       "name": "베이비",
-      "count": 267
+      "count": 263
     },
     {
       "name": "전체",
@@ -200,7 +195,7 @@
     },
     {
       "name": "유아",
-      "count": 55
+      "count": 51
     },
     {
       "name": "토들러",

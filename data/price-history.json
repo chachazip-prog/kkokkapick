@@ -2,7 +2,7 @@
   "version": 1,
   "groupingVersion": 2,
   "identityCorrection": "discarded_legacy_ambiguous_product_groups",
-  "updatedAt": "2026-10-05T07:45:33.505Z",
+  "updatedAt": "2026-10-05T09:06:55.076Z",
   "retention": "bounded_demo_events",
   "events": [
     {
