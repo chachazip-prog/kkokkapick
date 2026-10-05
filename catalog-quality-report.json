@@ -1,84 +1,68 @@
 {
-  "syncedAt": "2026-10-04T05:45:06.084Z",
-  "sourceProducts": 815,
-  "canonicalProducts": 738,
+  "syncedAt": "2026-10-05T00:05:01.580Z",
+  "sourceProducts": 606,
+  "canonicalProducts": 553,
   "queries": 73,
-  "recognizedBrandProducts": 416,
-  "recognizedBrandRatePct": 56.4,
-  "officialBrandGuideProducts": 28,
-  "officialBrandGuideRatePct": 3.8,
+  "recognizedBrandProducts": 321,
+  "recognizedBrandRatePct": 58,
+  "officialBrandGuideProducts": 23,
+  "officialBrandGuideRatePct": 4.2,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 815,
-    "ok": 815,
+    "checked": 606,
+    "ok": 606,
     "failed": 0,
     "statuses": {
-      "200": 815
+      "200": 606
     },
     "rate": 1
   },
-  "canonicalImageProducts": 738,
+  "canonicalImageProducts": 553,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 61,
-  "multiImageRatePct": 8.3,
+  "multiImageProducts": 41,
+  "multiImageRatePct": 7.4,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 322
+      "count": 232
     },
     {
       "name": "밀크베이비",
-      "count": 31
-    },
-    {
-      "name": "베네통키즈",
-      "count": 28
-    },
-    {
-      "name": "삠뽀요",
-      "count": 22
-    },
-    {
-      "name": "헤지스키즈",
-      "count": 22
-    },
-    {
-      "name": "해피프린스",
-      "count": 21
-    },
-    {
-      "name": "블루독베이비",
-      "count": 20
+      "count": 27
     },
     {
       "name": "빈폴키즈",
-      "count": 20
+      "count": 22
     },
     {
-      "name": "휠라키즈",
-      "count": 18
+      "name": "베네통키즈",
+      "count": 22
     },
     {
       "name": "베이비맥스",
+      "count": 20
+    },
+    {
+      "name": "해피프린스",
+      "count": 20
+    },
+    {
+      "name": "삠뽀요",
       "count": 17
     },
     {
       "name": "에뜨와",
-      "count": 16
-    },
-    {
-      "name": "페리미츠",
-      "count": 15
-    },
-    {
-      "name": "플레이키즈프로",
       "count": 14
     },
     {
-      "name": "아가방",
+      "name": "헤지스키즈",
+      "count": 13
+    },
+    {
+      "name": "블루독베이비",
       "count": 12
     },
     {
@@ -86,84 +70,100 @@
       "count": 12
     },
     {
+      "name": "페리미츠",
+      "count": 12
+    },
+    {
       "name": "쇼콜라",
       "count": 12
     },
     {
-      "name": "알콩단잠",
-      "count": 11
+      "name": "밍크뮤",
+      "count": 10
     },
     {
-      "name": "MLB키즈",
-      "count": 11
+      "name": "아가방",
+      "count": 9
+    },
+    {
+      "name": "보보쇼즈",
+      "count": 9
+    },
+    {
+      "name": "달퐁",
+      "count": 8
+    },
+    {
+      "name": "휠라키즈",
+      "count": 7
     },
     {
       "name": "압소바",
-      "count": 10
+      "count": 6
     },
     {
-      "name": "나이키키즈",
-      "count": 10
+      "name": "아림클로젯",
+      "count": 6
     }
   ],
   "categories": [
     {
       "name": "상의",
-      "count": 164
+      "count": 131
     },
     {
       "name": "아우터",
-      "count": 141
+      "count": 121
     },
     {
       "name": "하의",
-      "count": 110
+      "count": 84
     },
     {
       "name": "바디수트",
-      "count": 95
-    },
-    {
-      "name": "상하복",
-      "count": 75
-    },
-    {
-      "name": "원피스",
       "count": 73
     },
     {
-      "name": "기타",
-      "count": 41
+      "name": "상하복",
+      "count": 52
+    },
+    {
+      "name": "원피스",
+      "count": 44
     },
     {
       "name": "실내복",
-      "count": 39
+      "count": 28
+    },
+    {
+      "name": "기타",
+      "count": 20
     }
   ],
   "stages": [
     {
       "name": "키즈",
-      "count": 345
+      "count": 248
     },
     {
       "name": "베이비",
-      "count": 246
-    },
-    {
-      "name": "전체",
-      "count": 57
-    },
-    {
-      "name": "유아",
-      "count": 47
+      "count": 210
     },
     {
       "name": "신생아",
       "count": 38
     },
     {
+      "name": "유아",
+      "count": 38
+    },
+    {
+      "name": "전체",
+      "count": 17
+    },
+    {
       "name": "토들러",
-      "count": 5
+      "count": 2
     }
   ]
 }
