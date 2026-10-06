@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-05T23:07:08.711Z",
+  "syncedAt": "2026-10-06T00:02:36.474Z",
   "sourceCount": 817,
   "productCount": 743,
-  "priceChangeCount": 21,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_63ea48b8",
