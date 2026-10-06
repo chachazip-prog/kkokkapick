@@ -4,7 +4,7 @@
 
 Use the authorized ADPICK BIZ search response for infant/kids apparel. Keep raw facts and seller provenance. Do not derive material composition, sold sizes or stock from product titles or age/category labels. The observed search response exposes seven fields: title, photo, price, cp_name, cp_code, cp_icon, commissionlink. Material and available-size values remain unavailable.
 
-Discovery now includes79 distinct queries (limit20,6.5s pacing). Six diversity searches cover sleep vests, swimwear, rashguards, hanbok, toddler clothes and rompers. Six earlier searches were restored after their baseline contributed21 unique offers. Hourly polling frequency is unchanged. These are observed search results, not the provider's total inventory; the complete accessible inventory and pagination contract remain unestablished.
+Discovery includes 79 distinct apparel queries plus 6 toy/learning queries (limit 20, 6.5s pacing). Six diversity searches cover sleep vests, swimwear, rashguards, hanbok, toddler clothes and rompers. Six earlier searches were restored after their baseline contributed21 unique offers. Hourly polling frequency is unchanged. These are observed search results, not the provider's total inventory; the complete accessible inventory and pagination contract remain unestablished.
 
 ## Integrity rules
 
@@ -43,8 +43,29 @@ The opt-in final gate now permits one additional full audit of the unchanged URL
 
 Open product sheets now obey the earliest metadata/image expiry deadline through a local timer, without increasing network refresh frequency. Expiry clears product/price displays and closes product sheets, restores navigation focus after removed triggers, and preserves child/filter forms and local favorite/target records. Missing current product information is distinguished from missing saved records.
 
-## Bottleneck mitigation — 2026-10-06
 
-Planner and Source/Data agree that search-only data cannot supply missing composition/live seller sizes or guarantee future photo availability. Preserve each healthy original photo's source observation and verification timestamp through collection/grouping. Verification does not renew observation, TTL or the 90-minute internal display ceiling. Diagnostics measure collection duration, source age at verification, time remaining to the internal ceiling and missing attribute coverage. Missing legacy verification metadata stays unknown.
+## Implemented browser recovery and product-fact handling — 2026-10-06
 
-The client preserves conflicting composition and seller-specific sizes with field provenance and actual checkedAt. Product information links directly to each original seller affiliate destination and labels absent facts as not supplied. Official size charts remain separate from sale inventory. No new provider, crawling, paid infrastructure, persistent photo copies, polling cadence or main write is introduced. Runtime photo recovery and fresh-source browser QA remain pending; this is not continuous-availability approval.
+Recovery now belongs to a shared original-URL state for the current catalog snapshot. Multiple cards and sheets share the same bounded two retry probes. If the original still fails, it is excluded from every browsing surface for that snapshot; another original photo of the same product is used when available. Re-rendering, changing filters and a refresh of the same snapshot do not start repeated recovery probes. Only a valid newer source timestamp clears exclusions. An older snapshot is ignored, and asynchronous results from an earlier snapshot cannot exclude newer photos.
+
+Gallery updates preserve the active remaining photo, rebuild the position dots and synchronize photo-count badges on all cards. A single remaining photo has no dots/count badge. When all original photos fail, the product leaves discovery and its open detail/photo sheet closes safely. Local favorites, recent records and saved target prices remain; an unsaved target-price draft and child information being edited remain in memory. Empty saved views distinguish retained records from an empty collection. Offline errors show a connection message and do not exclude the photo as a source failure.
+
+The source observation and successful image-check timestamps are retained separately with each original URL. A later photo check does not renew source observation or the display ceiling. The availability report counts only successful, retained-URL evidence with valid timestamps in order; invalid/future source times produce an unknown remaining duration. This diagnostic is point-in-time evidence, never a claim of current or continuous availability.
+
+Missing material and actual sold-size options are labelled as information not supplied. If documented facts arrive, each seller's original material/options and observation metadata are retained and presented, with conflicts disclosed and an original seller link. A brand size chart is separate from current sale options. Combined seller, size and price filters must match the same seller offer, and the browsing price uses that matching offer rather than a cheaper nonmatching seller. Raw titles and offer facts are preserved.
+
+## Verification and remaining gates
+
+On 2026-10-06, all 61 configured automated checks passed locally. Independent Source/Data and QA reviews passed the production contracts. Chromium fault-injection checks passed at 320, 375, 390 and 430px for URL recovery, same-snapshot exclusion, gallery dots and badges, retained local records/input drafts, newer snapshots and offline return.
+
+Run the fault checks from the repository root with Playwright installed:
+
+```sh
+node scripts/release-ui-image-recovery-qa.cjs
+```
+
+The script uses synthetic image responses and observation times only in its isolated browser fixture. It does not publish them. These checks establish error-handling behavior, not live supplier availability or the required real-product visual QA.
+
+The last successful validated source publication was run 37287666875 on 2026-10-05; that review snapshot is now beyond its temporary display ceiling. Earlier real-product screenshots and successful CI are not current image/launch evidence. A new same-run source publication, full actual-photo decoding audit and real-product screenshots with independent visual review are required for a new review-candidate readiness claim.
+
+Stable original URLs or a documented renewal contract and authorized product-detail/option feeds remain supplier-dependent launch gates. No permanent photo copies, new crawling, paid supplier, increased API cadence, child-data upload, main merge or production deployment were introduced. Prepared supplier questions are in [provider-clarification.md](provider-clarification.md); no message was sent to a supplier.

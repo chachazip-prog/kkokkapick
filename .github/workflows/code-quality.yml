@@ -72,6 +72,7 @@ jobs:
           node test/child-profiles-local.test.js
           node test/catalog-source.test.js
           node test/provider-product-facts.test.js
+          node test/product-image-availability.test.js
           node test/adpick-rate-limit.test.js
           node test/review-catalog-handoff.test.js
           node test/preview-parity.test.js

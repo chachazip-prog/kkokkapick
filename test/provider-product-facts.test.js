@@ -32,3 +32,15 @@ test('original photo verification preserves observation and seller evidence',asy
  assert.equal(catalogAvailabilityReport(catalog,{},Date.parse('2026-10-05T02:00:00Z')).imageStatus,'display_window_expired');
  assert.equal(catalogAvailabilityReport({...catalog,products:[{imageUrl:url}]},{},Date.parse('2026-10-05T00:30:00Z')).lastVerificationAt,null);
 });
+
+test('verification evidence rejects failed, reversed and future timestamps',async()=>{
+ const {catalogAvailabilityReport}=await import('../src/catalog-availability-report.js');
+ const url='https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=1',now=Date.parse('2026-10-05T00:30:00Z'),stamp='2026-10-05T00:00:00Z';
+ for(const evidence of [
+  {url,status:404,observedAt:stamp,verifiedAt:'2026-10-05T00:10:00Z'},
+  {url,status:200,observedAt:'2026-10-05T00:20:00Z',verifiedAt:'2026-10-05T00:10:00Z'},
+  {url,status:200,observedAt:stamp,verifiedAt:'2026-10-05T01:00:00Z'},
+  {url,status:200,observedAt:'invalid',verifiedAt:'2026-10-05T00:10:00Z'}
+ ]){const r=catalogAvailabilityReport({syncedAt:stamp,products:[{imageUrl:url,imageEvidence:[evidence]}]},{},now);assert.equal(r.imageUrlsWithVerification,0);assert.equal(r.lastVerificationAt,null)}
+ const invalid=catalogAvailabilityReport({syncedAt:'2026-10-05T01:00:00Z',products:[{imageUrl:url}]},{},now);assert.equal(invalid.remainingImageDisplaySeconds,null);assert.equal(invalid.imageStatus,'invalid_source_time');
+});

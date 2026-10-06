@@ -4,7 +4,7 @@ const escape=source.slice(source.indexOf('function esc('),source.indexOf('functi
 const names=source.slice(source.indexOf('function displayName('),source.indexOf('function imageHtml('));
 const information=source.slice(source.indexOf('function materialLabel('),source.indexOf('function readStore('));
 const engine=source.slice(source.indexOf('const VERIFIED_SIZE_CHARTS='),source.indexOf('function positivePrice('));
-const context=vm.createContext({KkokkapickProductDomain:require('../src/product-domain.js')});vm.runInContext(escape+names+information+engine,context);
+const context=vm.createContext({URL,KkokkapickProductImages:require('../src/product-image-availability.js'),KkokkapickProductDomain:require('../src/product-domain.js')});vm.runInContext(source.slice(source.indexOf('function positivePrice('),source.indexOf('function getLatestPriceChange('))+source.slice(source.indexOf('function safeDestination('),source.indexOf('function esc('))+escape+names+information+engine,context);
 const original={brand:'아가방',name:'아가방 아양우주복(모자)(O/WHITE)_01R71750503'};
 assert.equal(context.displayName(original),'아양 우주복 + 모자 세트');assert.equal(original.name,'아가방 아양우주복(모자)(O/WHITE)_01R71750503','source preserved');
 assert.equal(context.displayName({brand:'아가방',name:'[이마트몰] 아가방 아가방 봄 원피스 (52935592)'}),'봄 원피스');
@@ -20,3 +20,16 @@ assert.deepEqual(Array.from(context.productImages(photos)),['https://example.com
 const gallery=context.imageGallery({...photos,name:'아기 옷'},'detailpic');assert.equal((gallery.match(/class="gallery-slide"/g)||[]).length,2);assert.equal((gallery.match(/data-gallery-dot=/g)||[]).length,2);assert.ok(gallery.includes('aria-pressed="true"'));assert.ok(!gallery.includes('gallery-count'));
 
 const playInfo=context.productInfoHtml({domain:'toy',cat:'감각놀이',ageEvidence:null});assert.ok(playInfo.includes('대상 연령'));assert.ok(!playInfo.includes('사이즈'));assert.ok(playInfo.includes('판매처 권장 연령 확인'));assert.equal(context.evaluateFit({months:12,height:76,weight:10},{domain:'toy',brand:'아가방'}).status,'not_applicable');
+
+const sellerOptions={availableSizes:['80','90'],offers:[{merchant:'A',price:30000,availableSizes:['80']},{merchant:'B',price:10000,availableSizes:['90']}]};
+assert.equal(context.matchesSellerOptions(sellerOptions,{seller:'A',size:'90'}),false);
+assert.equal(context.matchesSellerOptions(sellerOptions,{seller:'A',size:'80'}),true);
+assert.equal(context.matchesSellerOptions(sellerOptions,{seller:'B',size:''}),true);
+assert.equal(context.matchesSellerOptions(sellerOptions,{seller:'',size:'90'}),true);
+const sellerHtml=context.sellerFactsHtml({offers:[{merchant:'<bad>',affiliateUrl:'javascript:alert(1)'},{merchant:'판매처 A',affiliateUrl:'https://example.test/buy',material:'<img>',availableSizes:['80']}]});
+assert.ok(!sellerHtml.includes('javascript:'));assert.ok(sellerHtml.includes('&lt;img&gt;'));assert.ok(sellerHtml.includes('noopener noreferrer'));
+assert.equal(context.materialLabel({material:'면',materialConflict:true}),'판매처별 소재 정보가 달라요');
+
+assert.equal(context.matchesSellerOptions(sellerOptions,{seller:'A',size:'80',max:15000}),false);
+assert.equal(context.matchesSellerOptions(sellerOptions,{seller:'B',size:'90',max:15000}),true);
+assert.equal(context.matchesSellerOptions(sellerOptions,{seller:'A',size:'80',min:20000}),true);

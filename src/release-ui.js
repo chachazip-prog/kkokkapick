@@ -32,6 +32,14 @@ function fitForProduct(p){
 }
 function materialLabel(p){if(p.materialConflict)return '판매처별 소재 정보가 달라요';const value=p.material||p.materials||p.composition;return Array.isArray(value)?value.join(', '):value||'정보 미제공 · 판매처 상세페이지 확인'}
 function sizeLabel(p){return (p.availableSizes||[]).length?p.availableSizes.join(', '):'정보 미제공 · 판매처 옵션 및 실측 확인'}
+function offerMatchesFilters(o,filters){
+ const {size,seller,min,max}=filters;const price=positivePrice(o.price);
+ return (!seller||o.merchant===seller)&&(!size||(o.availableSizes||[]).includes(size))&&(!min||price!==null&&price>=min)&&(!max||price!==null&&price<=max);
+}
+function matchesSellerOptions(p,filters){
+ if(!filters.size&&!filters.seller&&!filters.min&&!filters.max)return true;
+ return (p.offers||[]).some(o=>offerMatchesFilters(o,filters));
+}
 function sellerFactsHtml(p){
  return (p.offers||[]).filter(o=>safeDestination(o.affiliateUrl)).map(o=>'<p class="note"><a href="'+esc(safeDestination(o.affiliateUrl))+'" target="_blank" rel="noopener noreferrer">'+esc(o.merchant||'판매처')+' · 소재와 판매 옵션 확인 ↗</a>'+(o.material?'<br>소재 · '+esc(o.material):'')+((o.availableSizes||[]).length?'<br>판매 사이즈 · '+esc(o.availableSizes.join(', ')):'')+'</p>').join('');
 }
@@ -64,22 +72,80 @@ function displayName(p) {
   if(p.brand) { const escaped=p.brand.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); name=name.replace(new RegExp('^(?:'+escaped+'\\s*)+','i'),''); }
   return name.replace(/\(모자\)/g,' + 모자 세트').replace(/아양우주복/g,'아양 우주복').replace(/\s+/g,' ').trim() || p.name;
 }
-function productImages(p){return [...new Set([p.imageUrl,...(Array.isArray(p.imageUrls)?p.imageUrls:[])].filter(u=>typeof u==='string'&&/^https:\/\//.test(u)))];}
+const photoAvailability=KkokkapickProductImages.createState();
+const priceAlertDrafts=new Map();
+function productImages(p){return photoAvailability.urls(p)}
 function imageGallery(p,className){
  const urls=productImages(p);if(!urls.length)return `<div class="${className}"><span class="image-unavailable">상품 사진 준비 중</span></div>`;
- return `<div class="${className} image-gallery${urls.length>1?' with-multiple':''}"><div class="gallery-track" tabindex="0" aria-label="${esc(displayName(p))} 상품 사진, 좌우로 넘기기">${urls.map((url,i)=>`<div class="gallery-slide"><img src="${esc(url)}" alt="${esc(displayName(p))} 사진 ${i+1}" ${i?'loading="lazy"':''}></div>`).join('')}</div>${urls.length>1?`<div class="gallery-dots" role="group" aria-label="상품 사진 선택">${urls.map((_,i)=>`<button type="button" class="gallery-dot" data-gallery-dot="${i}" aria-label="${i+1}번째 상품 사진, 총 ${urls.length}장" aria-pressed="${i===0}"><span aria-hidden="true"></span></button>`).join('')}</div>`:''}</div>`;
+ return `<div data-image-product="${esc(p.id)}" class="${className} image-gallery${urls.length>1?' with-multiple':''}"><div class="gallery-track" tabindex="0" aria-label="${esc(displayName(p))} 상품 사진, 좌우로 넘기기">${urls.map((url,i)=>`<div class="gallery-slide"><img src="${esc(url)}" alt="${esc(displayName(p))} 사진 ${i+1}" ${i?'loading="lazy"':''}></div>`).join('')}</div>${urls.length>1?`<div class="gallery-dots" role="group" aria-label="상품 사진 선택">${urls.map((_,i)=>`<button type="button" class="gallery-dot" data-gallery-dot="${i}" aria-label="${i+1}번째 상품 사진, 총 ${urls.length}장" aria-pressed="${i===0}"><span aria-hidden="true"></span></button>`).join('')}</div>`:''}</div>`;
 }
 function bindImageGalleries(root){root.querySelectorAll('.image-gallery').forEach(gallery=>{
- const track=gallery.querySelector('.gallery-track'),slides=[...track.children];
+ const track=gallery.querySelector('.gallery-track');if(track.dataset.galleryBound)return;track.dataset.galleryBound='true';
  const update=()=>{const i=Math.round(track.scrollLeft/track.clientWidth);gallery.querySelectorAll('[data-gallery-dot]').forEach(dot=>dot.setAttribute('aria-pressed',Number(dot.dataset.galleryDot)===i));};
  const behavior=()=>window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth';
  gallery.querySelectorAll('[data-gallery-dot]').forEach(dot=>dot.addEventListener('click',()=>track.scrollTo({left:Number(dot.dataset.galleryDot)*track.clientWidth,behavior:behavior()})));track.addEventListener('scroll',update,{passive:true});track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();track.scrollBy({left:(e.key==='ArrowRight'?1:-1)*track.clientWidth,behavior:behavior()})}});update();
  });}
-function imageHtml(p,detail=false) { if(detail)return imageGallery(p,'detailpic');return `<div class="${detail?'detailpic':'pic'}">${p.imageUrl?`<img src="${esc(p.imageUrl)}" alt="${esc(displayName(p))}" ${detail?'':'loading="lazy"'}>`:'<span class="image-unavailable">상품 사진 준비 중</span>'}</div>`; }
-function bindImages(root=document) { root.querySelectorAll('img').forEach(img=>{if(img.dataset.imageBound)return;img.dataset.imageBound='true';const owner=img.closest('[data-photo],.card[data-id]');const product=owner?products.find(p=>String(p.id)===String(owner.dataset.photo||owner.dataset.id)):null;const candidates=img.closest('.image-gallery')?[]:productImages(product||{});const attempted=new Set([img.getAttribute('src')]);let retryCount=0,retryPending=false;const recover=()=>{if(retryPending||!img.isConnected||!img.complete||img.naturalWidth>0)return;if(retryCount<2){const url=img.getAttribute('src');const delay=[350,900][retryCount++];retryPending=true;img.dataset.imageRetry='true';img.removeAttribute('src');setTimeout(()=>{retryPending=false;if(img.isConnected)img.src=url;delete img.dataset.imageRetry},delay);return}const next=candidates.find(url=>!attempted.has(url));if(next){attempted.add(next);retryCount=0;img.src=next;return}if(img.closest('.photo-tile')){img.closest('.photo-tile').remove();$('photoFeedNote').hidden=false;$('photoFeedNote').textContent='일부 사진을 확인 중이에요. 나머지 상품은 상품 목록에서 볼 수 있어요.';if(!$('photoGrid').querySelector('.photo-tile'))$('photoFeedNote').textContent='상품 사진을 확인 중이에요. 상품 목록에서 가격과 정보를 확인해 주세요.';return;}const text=document.createElement('span');text.className='image-unavailable';text.textContent='상품 사진을 불러올 수 없어요';img.replaceWith(text);};img.addEventListener('error',recover);if(img.complete&&!img.naturalWidth)queueMicrotask(recover); }); }
+function imageHtml(p,detail=false) { if(detail)return imageGallery(p,'detailpic');const photo=productImages(p)[0];return `<div class="${detail?'detailpic':'pic'}">${photo?`<img src="${esc(photo)}" alt="${esc(displayName(p))}" ${detail?'':'loading="lazy"'}>`:'<span class="image-unavailable">상품 사진 준비 중</span>'}</div>`; }
+function bindImages(root=document){
+ root.querySelectorAll('img').forEach(img=>{
+  if(img.dataset.imageBound)return;img.dataset.imageBound='true';
+  const owner=img.closest('[data-photo],.card[data-id]'),gallery=img.closest('.image-gallery');
+  const product=products.find(p=>String(p.id)===String(owner?.dataset.photo||owner?.dataset.id||gallery?.dataset.imageProduct));
+  const token=photoAvailability.generation();let pending=false,reloaded=false;
+  const current=()=>img.isConnected&&token===photoAvailability.generation();
+  const recover=async()=>{
+   if(pending||!current()||!img.complete||img.naturalWidth>0)return;
+   if(!product){const text=document.createElement('span');text.className='image-unavailable';text.textContent='사진을 불러올 수 없어요';img.replaceWith(text);return}
+   pending=true;img.dataset.imageRetry='true';
+   const url=img.getAttribute('src');
+   const result=reloaded?(navigator.onLine===false?'offline':(photoAvailability.markFailed(url,token),'unavailable')):await photoAvailability.recover(url,token);
+   pending=false;delete img.dataset.imageRetry;
+   if(!current()||result==='stale')return;
+   if(result==='offline'){
+    img.hidden=true;const note=document.createElement('span');note.className='image-unavailable';note.textContent='인터넷 연결 후 사진을 다시 확인해요';img.after(note);
+    window.addEventListener('online',()=>{if(!current())return;note.remove();img.hidden=false;reloaded=false;img.src=url},{once:true});return;
+   }
+   if(result==='available'){reloaded=true;img.removeAttribute('src');img.src=url;return}
+   syncProductPhotoBadges();
+   if(gallery){refreshProductGallery(product,gallery);return}
+   const next=productImages(product)[0];
+   if(next){const count=productImages(product).length,badge=owner?.querySelector('.image-count-badge');if(badge){if(count>1){badge.textContent='▧ '+count;badge.setAttribute('aria-label','상품 사진 '+count+'장')}else badge.remove()}reloaded=false;img.src=next;return}
+   hideProductWithoutPhotos(product);
+  };
+  img.addEventListener('error',recover);if(img.complete&&!img.naturalWidth)queueMicrotask(recover);
+ });
+}
+function syncProductPhotoBadges(){
+ document.querySelectorAll('.card[data-id]').forEach(card=>{
+  const product=products.find(p=>String(p.id)===card.dataset.id),badge=card.querySelector('.image-count-badge');if(!product||!badge)return;
+  const count=productImages(product).length;if(count>1){badge.textContent='▧ '+count;badge.setAttribute('aria-label','상품 사진 '+count+'장')}else badge.remove();
+ });
+}
+function refreshProductGallery(product,gallery){
+ syncProductPhotoBadges();
+ const track=gallery.querySelector('.gallery-track');const index=Math.round(track.scrollLeft/(track.clientWidth||1));
+ const activeUrl=track.children[index]?.querySelector('img')?.getAttribute('src');
+ const remaining=productImages(product);if(!remaining.length){hideProductWithoutPhotos(product);return}
+ const holder=document.createElement('div');holder.innerHTML=imageGallery(product,gallery.classList.contains('detailpic')?'detailpic':'photo-card-image');
+ const replacement=holder.firstElementChild;gallery.replaceWith(replacement);bindImages(replacement);bindImageGalleries(replacement.parentElement);
+ const nextIndex=remaining.includes(activeUrl)?remaining.indexOf(activeUrl):Math.min(index,remaining.length-1);
+ requestAnimationFrame(()=>{if(replacement.isConnected){const nextTrack=replacement.querySelector('.gallery-track');nextTrack.scrollTo({left:nextIndex*nextTrack.clientWidth,behavior:'instant'});nextTrack.dispatchEvent(new Event('scroll'))}});
+}
+function hideProductWithoutPhotos(product){
+ if(productImages(product).length)return;
+ const detailClosed=currentProduct&&String(currentProduct.id)===String(product.id);
+ const photoClosed=selectedPhotoId===String(product.id);
+ if(detailClosed){const draft=$('alertPrice');if(draft)priceAlertDrafts.set(String(product.id),draft.value);closeDetail()}
+ if(photoClosed)closePhotoCard();
+ products=products.filter(p=>String(p.id)!==String(product.id));
+ document.querySelectorAll('.card[data-id]').forEach(card=>{if(card.dataset.id===String(product.id))card.remove()});
+ if($('accountSheet').classList.contains('on')&&!$('accountContent').querySelector('.card')&&$('accountContent').querySelector('.grid'))$('accountContent').innerHTML='<p class="empty">기록은 이 기기에 저장되어 있어요.<br>현재 확인할 수 있는 상품 사진이 없어요.</p>';
+ render();toast('사진을 확인할 수 없는 상품은 잠시 제외했어요. 저장한 기록은 유지됩니다.');
+ if((detailClosed||photoClosed)&&!document.querySelector('.sheet.on'))restoreOverlayFocus();
+}
 function productCard(p) {
-  const best=(p.offers||[]).slice().sort((a,b)=>(a.price||Infinity)-(b.price||Infinity))[0], discount=discountOf(best);
-  return `<article class="card" data-id="${esc(p.id)}"><button class="product-link" data-product="${esc(p.id)}" aria-label="${esc(displayName(p))} 상세 보기">${imageHtml(p)}${productImages(p).length>1?`<span class="image-count-badge" aria-label="상품 사진 ${productImages(p).length}장">▧ ${productImages(p).length}</span>`:''}<span class="brandline">${esc(p.brand||p.merchant||'키즈 셀렉션')}</span><span class="name">${esc(displayName(p))}</span><span class="price">${discount?`<span class="discount">${discount}%</span>`:''}${won(p.price)}${p.offerCount>1?'부터':''}</span><span class="merchant">${p.offerCount>1?`${p.offerCount}개 판매처 · 가격 비교`:esc(p.merchant||'판매처에서 확인')}</span>${p.fitStatus==='verified'?'<span class="fit">꼬까핏 가능</span>':''}</button><button class="heart" data-fav="${esc(p.id)}" aria-label="${esc(displayName(p))} 찜" aria-pressed="${favs.has(String(p.id))}">${heartIcon}</button></article>`;
+  const best=p.browseOffer||(p.offers||[]).slice().sort((a,b)=>(a.price||Infinity)-(b.price||Infinity))[0], discount=discountOf(best);
+  return `<article class="card" data-id="${esc(p.id)}"><button class="product-link" data-product="${esc(p.id)}" aria-label="${esc(displayName(p))} 상세 보기">${imageHtml(p)}${productImages(p).length>1?`<span class="image-count-badge" aria-label="상품 사진 ${productImages(p).length}장">▧ ${productImages(p).length}</span>`:''}<span class="brandline">${esc(p.brand||p.merchant||'키즈 셀렉션')}</span><span class="name">${esc(displayName(p))}</span><span class="price">${discount?`<span class="discount">${discount}%</span>`:''}${won(p.price)}${!p.browseOffer&&p.offerCount>1?'부터':''}</span><span class="merchant">${p.browseOffer?esc(p.browseOffer.merchant)+' · 선택 조건 가격':p.offerCount>1?`${p.offerCount}개 판매처 · 가격 비교`:esc(p.merchant||'판매처에서 확인')}</span>${p.fitStatus==='verified'?'<span class="fit">꼬까핏 가능</span>':''}</button><button class="heart" data-fav="${esc(p.id)}" aria-label="${esc(displayName(p))} 찜" aria-pressed="${favs.has(String(p.id))}">${heartIcon}</button></article>`;
 }
 function bindCards(root) {
   root.querySelectorAll('[data-product]').forEach(b=>b.onclick=()=>openDetail(b.dataset.product));
@@ -92,7 +158,7 @@ window.addEventListener('scroll',checkCatalogScroll,{passive:true});
 window.addEventListener('wheel',e=>{if(e.deltaY>0)checkCatalogScroll(e)},{passive:true});
 let catalogTouchY=0;window.addEventListener('touchstart',e=>{catalogTouchY=e.touches[0]?.clientY||0},{passive:true});window.addEventListener('touchmove',e=>{if((e.touches[0]?.clientY||0)<catalogTouchY)checkCatalogScroll(e)},{passive:true});
 function updateCatalogObserver(){catalogObserver.disconnect();const photo=view==='search'&&searchLayout==='photos';const total=photo?catalogItems.filter(p=>p.imageUrl).length:catalogItems.length;const canLoad=view!=='my'&&!(view==='search'&&searchLayout==='browse')&&total>limit;$('catalogSentinel').hidden=!canLoad;$('catalogStatus').hidden=!total||view==='my';$('catalogStatus').textContent=canLoad?'스크롤하면 상품을 더 불러와요.':'상품을 모두 확인했어요.';if(canLoad)catalogObserver.observe($('catalogSentinel'))}
-function photoTile(p){return `<button class="photo-tile" data-photo="${esc(p.id)}" aria-label="${esc(displayName(p))} 상품 카드 보기"><img src="${esc(p.imageUrl)}" alt="${esc(displayName(p))}" loading="lazy"></button>`}
+function photoTile(p){return `<button class="photo-tile" data-photo="${esc(p.id)}" aria-label="${esc(displayName(p))} 상품 카드 보기"><img src="${esc(productImages(p)[0])}" alt="${esc(displayName(p))}" loading="lazy"></button>`}
 function growCatalog(){if(catalogMorePending||document.querySelector('.sheet.on'))return;const photo=view==='search'&&searchLayout==='photos';const items=photo?catalogItems.filter(p=>p.imageUrl):catalogItems;if(limit>=items.length)return;if(photo&&!$('photoGrid').querySelector('.photo-tile')){catalogObserver.disconnect();$('catalogStatus').textContent='상품 사진을 확인 중이에요. 상품 목록에서 정보를 확인해 주세요.';return}catalogMorePending=true;
  requestAnimationFrame(()=>{try{const start=limit;limit=Math.min(items.length,limit+(photo?12:20));const root=photo?$('photoGrid'):$('grid');root.insertAdjacentHTML('beforeend',items.slice(start,limit).map(photo?photoTile:productCard).join(''));if(photo){root.querySelectorAll('[data-photo]').forEach(b=>b.onclick=()=>openPhotoCard(b.dataset.photo));bindImages(root)}else bindCards(root);updateCatalogObserver()}finally{catalogMorePending=false}});
 }
@@ -112,8 +178,9 @@ function render() {
   const q=view==='search'?$('q').value.trim().toLowerCase():'', fitOnly=view==='search'&&$('fitOnly').checked;
   let a=products.filter(p=>{
     const hay=`${p.name} ${p.brand||''} ${p.cat} ${p.stage} ${(p.offers||[]).map(o=>o.merchant).join(' ')}`.toLowerCase();
-    return (view!=='home'||KkokkapickProductDomain.isApparel(p))&&(view!=='search'||(searchDomain==='apparel'?KkokkapickProductDomain.isApparel(p):!KkokkapickProductDomain.isApparel(p)))&&(!favOnly||favs.has(String(p.id))) && (view!=='search'||((brand==='전체'||p.brand===brand)&&(searchDomain==='play'?matchesPlayStage(p,stage):(stage==='전체'||p.stage===stage||(stage==='토들러'&&['유아','키즈'].includes(p.stage))))&&(cat==='전체'||cat===p.cat)&&(!fitOnly||p.fitStatus==='verified')&&(!filters.size||(p.availableSizes||[]).includes(filters.size))&&(!filters.seller||(p.offers||[]).some(o=>o.merchant===filters.seller))&&(!filters.min||p.price>=filters.min)&&(!filters.max||p.price<=filters.max)&&q.split(/\s+/).every(t=>hay.includes(t))));
+    return (view!=='home'||KkokkapickProductDomain.isApparel(p))&&(view!=='search'||(searchDomain==='apparel'?KkokkapickProductDomain.isApparel(p):!KkokkapickProductDomain.isApparel(p)))&&(!favOnly||favs.has(String(p.id))) && (view!=='search'||((brand==='전체'||p.brand===brand)&&(searchDomain==='play'?matchesPlayStage(p,stage):(stage==='전체'||p.stage===stage||(stage==='토들러'&&['유아','키즈'].includes(p.stage))))&&(cat==='전체'||cat===p.cat)&&(!fitOnly||p.fitStatus==='verified')&&matchesSellerOptions(p,filters)&&q.split(/\s+/).every(t=>hay.includes(t))));
   });
+  if(view==='search'&&(filters.size||filters.seller||filters.min||filters.max))a=a.map(p=>{const offer=(p.offers||[]).filter(o=>offerMatchesFilters(o,filters)).sort((a,b)=>(a.price||Infinity)-(b.price||Infinity))[0];return offer?{...p,price:offer.price,browseOffer:offer}:p});
   const sort=view==='search'?$('sort').value:'popular';
   if(sort==='low') a.sort((x,y)=>(x.price||Infinity)-(y.price||Infinity));
   if(sort==='high') a.sort((x,y)=>(y.price||0)-(x.price||0));
@@ -129,11 +196,13 @@ function render() {
     html=favOnly?`<div class="empty wishlist-empty"><div class="empty-heart" aria-hidden="true">♥</div><h3>마음에 드는 상품을 모아두세요</h3><p>상품의 하트를 누르면 여기에서 다시 볼 수 있어요.</p><button class="text-link" onclick="setView('search')">상품 둘러보기 ↗</button></div><h3 class="empty-recommendations">이런 상품은 어때요?</h3>${products.slice().sort((x,y)=>compareRecommended(x,y,{})).slice(0,4).map(productCard).join('')}`:`<div class="empty"><h3>조건에 맞는 상품이 없어요</h3><p>검색어나 필터를 바꿔서 다시 찾아보세요.</p><button class="text-link" onclick="clearFilters()">전체 상품 보기</button></div>`;
   }
   if(!a.length&&view==='search'&&searchDomain==='play'&&stage!=='전체'&&catalogState==='ready')html='<div class="empty"><h3>이 월령으로 확인할 수 있는 상품이 없어요</h3><p>사용 연령 근거가 없는 상품은 월령 검색에 포함하지 않아요.</p><button class="text-link" onclick="clearFilters()">전체 놀이 · 교구 보기</button></div>';
-  if(['expired','unavailable'].includes(catalogState))html='<div class="empty"><h3>최신 상품 정보를 확인하지 못했어요</h3><p>잠시 후 다시 확인해 주세요.</p><button class="text-link" onclick="loadProducts()">다시 확인</button></div>';
+  if(favOnly&&favs.size&&!products.some(p=>favs.has(String(p.id))))html='<div class="empty"><h3>찜한 기록은 저장되어 있어요</h3><p>현재 확인할 수 있는 상품 사진이 없어요. 최신 사진이 연결되면 다시 보여드릴게요.</p></div>';
+    if(!products.length&&photoAvailability.failedCount())html='<div class="empty"><h3>상품 사진을 확인하지 못했어요</h3><p>저장한 기록은 유지됩니다. 최신 사진 연결을 기다려 주세요.</p><button class="text-link" onclick="loadProducts()">최신 정보 확인</button></div>';
+    if(['expired','unavailable'].includes(catalogState))html='<div class="empty"><h3>최신 상품 정보를 확인하지 못했어요</h3><p>잠시 후 다시 확인해 주세요.</p><button class="text-link" onclick="loadProducts()">다시 확인</button></div>';
   $('grid').innerHTML=html; bindCards($('grid'));
   const photoMode=view==='search'&&searchLayout==='photos';document.querySelector('.app').classList.toggle('photo-mode',photoMode);$('searchStages').hidden=photoMode;$('grid').hidden=photoMode;$('photoGrid').hidden=!photoMode;$('photoFeedNote').hidden=true;$('browsePanel').hidden=searchLayout!=='browse';$('chips').hidden=searchLayout==='browse';
   for(const [mode,id] of [['browse','browseMode'],['photos','photoMode'],['products','productsMode']])$(id).setAttribute('aria-pressed',searchLayout===mode);
-  if(photoMode){$('sectionTitle').textContent='사진으로 만나는 꼬까픽';$('photoFeedNote').textContent='눈길이 가는 상품, 사진을 눌러 만나보세요.';$('photoGrid').innerHTML=a.filter(p=>p.imageUrl).slice(0,limit).map(photoTile).join('');$('photoGrid').querySelectorAll('[data-photo]').forEach(b=>b.onclick=()=>openPhotoCard(b.dataset.photo));bindImages($('photoGrid'));requestAnimationFrame(sizePhotoGrid);if(!a.length){$('photoFeedNote').hidden=false;$('photoFeedNote').textContent=['expired','unavailable'].includes(catalogState)?'최신 상품 사진을 확인하지 못했어요. 잠시 후 다시 확인해 주세요.':searchDomain==='play'&&stage!=='전체'?'이 월령으로 확인할 수 있는 상품이 없어요. 전체 월령에서 더 둘러보세요.':'조건에 맞는 상품이 없어요. 검색어나 필터를 바꿔 보세요.';}}else if(view==='search')$('sectionTitle').textContent='검색 결과'; updateCatalogObserver(); $('favCount').textContent=favs.size?`찜 ${favs.size}`:'찜';
+  if(photoMode){$('sectionTitle').textContent='사진으로 만나는 꼬까픽';$('photoFeedNote').textContent='눈길이 가는 상품, 사진을 눌러 만나보세요.';$('photoGrid').innerHTML=a.filter(p=>p.imageUrl).slice(0,limit).map(photoTile).join('');$('photoGrid').querySelectorAll('[data-photo]').forEach(b=>b.onclick=()=>openPhotoCard(b.dataset.photo));bindImages($('photoGrid'));requestAnimationFrame(sizePhotoGrid);if(!a.length){$('photoFeedNote').hidden=false;$('photoFeedNote').textContent=!products.length&&photoAvailability.failedCount()?'상품 사진 연결을 확인하지 못했어요. 저장한 기록은 유지됩니다.':['expired','unavailable'].includes(catalogState)?'최신 상품 사진을 확인하지 못했어요. 잠시 후 다시 확인해 주세요.':searchDomain==='play'&&stage!=='전체'?'이 월령으로 확인할 수 있는 상품이 없어요. 전체 월령에서 더 둘러보세요.':'조건에 맞는 상품이 없어요. 검색어나 필터를 바꿔 보세요.';}}else if(view==='search')$('sectionTitle').textContent='검색 결과'; updateCatalogObserver(); $('favCount').textContent=favs.size?`찜 ${favs.size}`:'찜';
   const child=activeChild(); $('fitHero').textContent=child?`${child.name} · ${child.months}개월 사이즈 확인`:'우리 아이에게 맞는 사이즈';renderChildContexts();
   if(view==='home'){const compared=products.filter(p=>KkokkapickProductDomain.isApparel(p)&&p.offerCount>1).slice(0,4);$('comparisonGrid').innerHTML=compared.map(productCard).join('');bindCards($('comparisonGrid'));$('homeMore').hidden=!compared.length;}
   if(view==='my')renderMy();
@@ -166,8 +235,8 @@ function openDetail(id){
 }
 function bindBuy(root){root.querySelectorAll('[data-buy]').forEach(b=>b.onclick=()=>{const url=safeDestination(b.dataset.buy);if(url)window.open(url,'_blank','noopener')})}
 function priceChangeHtml(p){const e=getLatestPriceChange(priceHistory,p.id);if(!e)return'';return `<p class="meta">지난 확인보다 ${won(Math.abs(Number(e.changeAmount)||0))} ${e.direction==='down'?'내려갔어요':'올랐어요'}</p>`}
-function priceAlertHtml(p){const v=readStore('priceAlerts',{})[p.id]||'';return `${priceChangeHtml(p)}<label class="field" for="alertPrice">희망 가격${isTargetPriceReached(p.price,v)?' · 희망가 도달':''}</label><div class="alert-controls"><input id="alertPrice" type="number" min="1" inputmode="numeric" value="${esc(v)}" placeholder="예: 30000" aria-label="희망 가격"><button class="buy" data-save-price-alert="${esc(p.id)}">저장</button></div><p class="note">희망 가격은 이 기기에 저장돼요. 알림 발송은 로그인·백엔드 연동 후 제공됩니다.</p>`}
-function savePriceAlert(id){const v=Number($('alertPrice').value),alerts=readStore('priceAlerts',{});if(v>0&&Number.isFinite(v))alerts[id]=Math.round(v);else delete alerts[id];localStorage.setItem('priceAlerts',JSON.stringify(alerts));toast(v>0?'희망 가격을 저장했어요':'희망 가격을 해제했어요');renderMy()}
+function priceAlertHtml(p){const v=priceAlertDrafts.has(String(p.id))?priceAlertDrafts.get(String(p.id)):readStore('priceAlerts',{})[p.id]||'';return `${priceChangeHtml(p)}<label class="field" for="alertPrice">희망 가격${isTargetPriceReached(p.price,v)?' · 희망가 도달':''}</label><div class="alert-controls"><input id="alertPrice" type="number" min="1" inputmode="numeric" value="${esc(v)}" placeholder="예: 30000" aria-label="희망 가격"><button class="buy" data-save-price-alert="${esc(p.id)}">저장</button></div><p class="note">희망 가격은 이 기기에 저장돼요. 알림 발송은 로그인·백엔드 연동 후 제공됩니다.</p>`}
+function savePriceAlert(id){const v=Number($('alertPrice').value),alerts=readStore('priceAlerts',{});if(v>0&&Number.isFinite(v))alerts[id]=Math.round(v);else delete alerts[id];localStorage.setItem('priceAlerts',JSON.stringify(alerts));priceAlertDrafts.delete(String(id));toast(v>0?'희망 가격을 저장했어요':'희망 가격을 해제했어요');renderMy()}
 function lockPageScroll(){if(document.body.dataset.overlayLocked==='1')return;overlayScrollY=window.scrollY||0;document.body.dataset.overlayLocked='1';document.body.style.position='fixed';document.body.style.top=`-${overlayScrollY}px`;document.body.style.left='0';document.body.style.right='0';document.body.style.width='100%';document.querySelector('.app').inert=true;document.querySelector('.bottom').inert=true}
 function unlockPageScroll(){if(document.body.dataset.overlayLocked!=='1')return;document.body.dataset.overlayLocked='0';document.body.style.position='';document.body.style.top='';document.body.style.left='';document.body.style.right='';document.body.style.width='';document.querySelector('.app').inert=false;document.querySelector('.bottom').inert=false;window.scrollTo(0,overlayScrollY)}
 function showSheet(id){document.querySelector('.toast')?.remove();if(!document.querySelector('.sheet.on')){lastFocus=document.activeElement;focusOrigin=null;for(const key of ['photo','product','fav'])if(lastFocus?.dataset?.[key]){focusOrigin={key,value:lastFocus.dataset[key],scope:lastFocus.closest('[id]')?.id};break}}lockPageScroll();$(id).classList.add('on');$(id).querySelector('.panel').focus()}
@@ -191,14 +260,15 @@ async function loadProducts(){
  catalogRefreshing=true;catalogLastAttempt=Date.now();
  try{
   const {catalog:d,history}=await KkokkapickCatalogSource.load(fetch,location);
+  if(catalogSnapshot&&Date.parse(d.syncedAt)<Date.parse(catalogSnapshot.syncedAt))return;
   catalogSnapshot=d;
   priceHistory=Array.isArray(history?.events)?history.events:[];
   if(KkokkapickCatalogSource.isExpired(d)){
    invalidateExpiredCatalog();
    return;
   }
-  catalogState='ready';scheduleCatalogExpiry(d);
-  products=(d.products||[]).filter(p=>p.imageUrl||p.imageUrls?.length).map((p,i)=>({...p,id:p.id||String(i),price:p.minPrice,merchant:p.offers?.[0]?.merchant||'',cat:p.category||categoryOf(p),stage:p.stage||'전체'}));
+  catalogState='ready';scheduleCatalogExpiry(d);photoAvailability.setSnapshot(d.syncedAt);
+  products=(d.products||[]).filter(p=>productImages(p).length).map((p,i)=>({...p,id:p.id||String(i),price:p.minPrice,merchant:p.offers?.[0]?.merchant||'',cat:p.category||categoryOf(p),stage:p.stage||'전체'}));
   cats=['전체',...new Set(products.map(p=>p.cat))];render();
   // Background refresh preserves the current view, filters and scroll depth.
   if(!catalogInitialized){

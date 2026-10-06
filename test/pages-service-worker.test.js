@@ -5,7 +5,7 @@ import fs from 'node:fs';
 const sw=fs.readFileSync(new URL('../sw.js',import.meta.url),'utf8');
 
 test('Pages service worker does not pin the app shell to stale cache',()=>{
-  assert.match(sw,/kkokkapick-release-ui-reference-v6/);
+  assert.match(sw,/kkokkapick-release-ui-reference-v7/);
   assert.match(sw,/event\.request\.mode==='navigate'/);
   assert.match(sw,/isAppCode/);
   assert.match(sw,/event\.respondWith\(networkFirst\(event\.request\)\)/);
@@ -14,7 +14,7 @@ test('Pages service worker does not pin the app shell to stale cache',()=>{
 
 test('critical module graph is precached for offline fallback',()=>{
   for(const path of [
-    './config.public.js','./src/release-ui.js','./styles/tokens.css','./styles/release.css',
+    './config.public.js','./src/product-image-availability.js','./src/release-ui.js','./styles/tokens.css','./styles/release.css',
     './src/public-commercial-client.js',
     './src/popup-policy.js',
     './src/commercial-client.js',
