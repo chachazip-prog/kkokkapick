@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-06T09:13:49.519Z",
+  "syncedAt": "2026-10-06T10:08:47.201Z",
   "sourceCount": 563,
   "productCount": 515,
-  "priceChangeCount": 66,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_e2135ed3",
@@ -1235,10 +1235,8 @@
       "normalizedName": "미니도우 미니도우 토끼 세일러 유아 아동 여아 원피스 롱슬리브 원피스 원피스",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516102159",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516102159"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "원피스",
       "query": "여아 원피스",
       "offers": [
@@ -1534,8 +1532,7 @@
       "modelCode": "NK9EG2775U",
       "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516107425",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516107425",
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516107772"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516107425"
       ],
       "category": "상의",
       "query": "아동 셔츠",
@@ -1637,10 +1634,8 @@
       "normalizedName": "레노마키즈 에밀 카라스웻셔츠 이마트몰",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516107680",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516107680"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "아동 셔츠",
       "offers": [
@@ -1847,10 +1842,8 @@
       "normalizedName": "몰리멜리 썬샤인마이크로젤후드롱점퍼 아우터 패딩 점퍼",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516110879",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516110879"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "아우터",
       "query": "아동 점퍼",
       "offers": [
@@ -1911,10 +1904,8 @@
       "normalizedName": "달퐁 큐비앤맘 로이즈매쉬긴팔 내의 실내복 아기실내복 아기내",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516117826",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516117826"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "실내복",
       "query": "아기 내복",
       "offers": [
@@ -4353,8 +4344,7 @@
       "modelCode": "",
       "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516221630",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516221630",
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516221721"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516221630"
       ],
       "category": "아우터",
       "query": "아기 가디건",
@@ -16900,10 +16890,8 @@
       "normalizedName": "캉골키즈 로고 포인트 플리스 팬츠 sd 0215 멜란지 그레이 asdcjt02150my",
       "variant": "",
       "modelCode": "ASDCJT02150MY",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516241101",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516241101"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "하의",
       "query": "캉골키즈 아동복",
       "offers": [
@@ -17060,10 +17048,8 @@
       "normalizedName": "mlb 키즈 스트릿 베이직 집업조끼 3 세트 la다저스 l.skyblue cop 7as1b0163 07sbl",
       "variant": "3 세트",
       "modelCode": "SKYBLUE",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516241451",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=516241451"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "기타",
       "query": "MLB키즈 아동복",
       "offers": [
