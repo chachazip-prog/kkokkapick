@@ -36,8 +36,8 @@ async function main(){
    await settleImages();
    await page.screenshot({path:`${output}/${name}-${width}.png`});
    await settleImages();
-   const metrics=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,brokenImages:[...document.images].filter(i=>i.offsetWidth&&i.complete&&!i.naturalWidth).length,pendingImages:[...document.images].filter(i=>i.offsetWidth&&!i.complete).length,pendingVisibleImages:[...document.images].filter(i=>{const r=i.getBoundingClientRect();return i.offsetWidth&&!i.complete&&r.top<innerHeight&&r.bottom>0&&r.left<innerWidth&&r.right>0}).length,imageFailures:document.querySelectorAll('.image-unavailable').length,clipped:[...document.querySelectorAll('h1,h2,.detail-price,.nav')].filter(e=>!e.classList.contains('sr-only')&&e.offsetWidth&&e.scrollWidth>e.clientWidth+1).map(e=>e.className)}));
-   assert.equal(metrics.overflow,false,`${name} ${width} overflow`);assert.deepEqual(metrics.clipped,[],`${name} ${width} clipping`);assert.equal(metrics.brokenImages,0,'unhandled broken image');if(process.env.QA_REQUIRE_HEALTHY_IMAGES==='1'){assert.equal(metrics.imageFailures,0,`${name} ${width} unavailable source image`);assert.equal(metrics.pendingVisibleImages,0,`${name} ${width} visible image did not finish loading`);}assert.deepEqual(errors,[],'runtime error');report.push({name,width,...metrics});
+   const metrics=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,quarantinedImages:photoAvailability.failedCount(),brokenImages:[...document.images].filter(i=>i.offsetWidth&&i.complete&&!i.naturalWidth).length,pendingImages:[...document.images].filter(i=>i.offsetWidth&&!i.complete).length,pendingVisibleImages:[...document.images].filter(i=>{const r=i.getBoundingClientRect();return i.offsetWidth&&!i.complete&&r.top<innerHeight&&r.bottom>0&&r.left<innerWidth&&r.right>0}).length,imageFailures:document.querySelectorAll('.image-unavailable').length,clipped:[...document.querySelectorAll('h1,h2,.detail-price,.nav')].filter(e=>!e.classList.contains('sr-only')&&e.offsetWidth&&e.scrollWidth>e.clientWidth+1).map(e=>e.className)}));
+   assert.equal(metrics.overflow,false,`${name} ${width} overflow`);assert.deepEqual(metrics.clipped,[],`${name} ${width} clipping`);assert.equal(metrics.brokenImages,0,'unhandled broken image');if(process.env.QA_REQUIRE_HEALTHY_IMAGES==='1'){assert.equal(metrics.quarantinedImages,0,`${name} ${width} original images quarantined`);assert.equal(metrics.imageFailures,0,`${name} ${width} unavailable source image`);assert.equal(metrics.pendingVisibleImages,0,`${name} ${width} visible image did not finish loading`);}assert.deepEqual(errors,[],'runtime error');report.push({name,width,...metrics});
   }
   async function openAvailablePhoto(){
    if(await page.locator('.photo-tile').count()){
@@ -108,7 +108,16 @@ async function main(){
    await page.locator('.photo-tile').first().click();await capture('play-card');assert.ok(!(await page.locator('#photoCardContent').textContent()).includes('꼬까핏'));await page.locator('[data-photo-detail]').click();await capture('play-detail');
    assert.equal(await page.locator('#detail .fit-section').count(),0);assert.ok((await page.locator('#detail .product-info').textContent()).includes('대상 연령'));assert.ok(!(await page.locator('#detail .product-info').textContent()).includes('사이즈'));
    await page.evaluate(()=>{const child=childStore.all()[0];if(child)selectChild(child.id)});assert.equal(await page.locator('#detail .fit-section').count(),0);await page.locator('#detail .close').click();
-   await page.evaluate(()=>{stage='아이월령';render()});assert.ok(await page.evaluate(()=>catalogItems.every(p=>KkokkapickProductDomain.matchesMonths(p,activeChild()?.months))));await capture('play-age-filter');
+   const ageCoverage=await page.evaluate(()=>{
+    const all=products.filter(p=>p.domain==='toy'||p.domain==='learning');
+    return{all:all.length,unknown:all.filter(p=>!p.ageEvidence).length,expectedIds:all.filter(p=>KkokkapickProductDomain.matchesMonths(p,activeChild()?.months)).map(p=>String(p.id)).sort()};
+   });assert.ok(ageCoverage.all>0,'actual play products exist before age filtering');
+   await page.locator('#productsMode').click();await page.evaluate(()=>{stage='아이월령';render()});
+   assert.deepEqual(await page.evaluate(()=>catalogItems.map(p=>String(p.id)).sort()),ageCoverage.expectedIds,'age result matches original evidence without admitting unknown ages');
+   if(!ageCoverage.expectedIds.length){assert.equal(await page.locator('#grid .card').count(),0);assert.ok((await page.locator('#grid').textContent()).includes('사용 연령 근거가 없는 상품'));if(ageCoverage.unknown===ageCoverage.all)assert.equal(await page.evaluate(()=>catalogItems.length),0,'all-unknown source produces an honest empty age result');}
+   await capture('play-age-filter');
+   if(!ageCoverage.expectedIds.length)await page.locator('#grid .text-link').filter({hasText:'전체 놀이 · 교구 보기'}).click();else await page.locator('#clearFilters').click();
+   assert.equal(await page.evaluate(()=>catalogItems.length),ageCoverage.all,'clearing age filter restores all eligible play products');assert.ok(await page.locator('#grid .card').count()>0);
   }else if(process.env.QA_REQUIRE_PLAY==='1'){throw new Error('Fresh source has no eligible toy/learning product');}
   await page.locator('[data-domain="apparel"]').click();assert.ok(await page.evaluate(()=>catalogItems.every(p=>!p.domain||p.domain==='apparel')));
   await page.locator('#homeNav').click();await page.locator('#grid .product-link').first().click();

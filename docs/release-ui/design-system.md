@@ -1,36 +1,32 @@
-# R01 — Product Owner selected reference
+# R01 — selected Release UI contract
 
-Selection: the five-screen pink/lavender mockup explicitly supplied by Product Owner in the 2026-10-04 follow-up. This is the selected visual contract, superseding the earlier editorial interpretation. Owner also authorized independent UX improvements and requested an Instagram-style photo-only discovery mode and material/size information.
+The Product Owner selected the supplied five-screen reference (R01), then selected hero proposal3 with a Korean boy and girl. Subsequent explicit requests authorized gapless photo discovery, round typography, multiple child profiles, separate toy/learning discovery and primary-color component refinement. These refinements preserve the selected layout and navigation. iPhone approval remains pending; do not merge main.
 
-## Architecture
+## Ownership and tokens
 
-`styles/tokens.css`: color, typography, spacing, border, surfaces, radius. `styles/release.css`: component/screen styles in one coherent sheet; responsive deltas are contained in one final narrow-width media block. No old override layers. Only `[hidden]` uses `!important`.
+`styles/tokens.css` owns shared color, type, spacing, surface, radius and border tokens. `styles/release.css` owns component and screen styles with bounded responsive rules. Legacy inline override layers were removed; only the hidden utility uses important.
 
-`src/release-ui.js`: presentation/state/interactions. Provider data and canonical backend/provider engines are unchanged. `src/runtime-diagnostic.js`: existing diagnostics, separate from UI. SW cache/version includes new assets and uses network-first code/CSS to avoid stale styles.
+Use the cool neutral #F5F6F8 canvas, white product surfaces and #CCD2DB image boundaries. Purple remains the identity/selection accent; limited blue #2457D6, red #CC303B and yellow #F2C53D distinguish functional components. Keep photography ahead of decoration and avoid repeated pastel containers.
 
-## Selected visual direction
+Self-hosted NanumSquareRound is the UI font. GowunDodum refines the wordmark and hero text. Body is400, section text500, prices600; inputs remain16px to avoid iOS focus zoom.
 
-- Purple hanger logo and wordmark, warm smiling-child hero with pink CTA, five compact pastel category icons. Hero copy/crop remains stable at all four widths. Existing `assets/hero-smiling-child.webp` is reused and positioned/cropped in CSS; embedded navigation markers are outside the crop. A small image-edge mask blends the photo seam. A high-resolution source for the final campaign would improve quality.
-- Purple search controls, horizontal age filters, 12 compact category entries, fit promotion, real brand choices. Three visible ways to explore: categories, photo feed, product list. Search typing/category actions reveal products immediately; photo mode keeps imagery ahead of optional age controls (age available in filter sheet).
-- Detail: original product photo, cleaned display title and preserved raw title, pink price and purchase action, lavender fit section, real offer comparison, product-information rows and locally saved target price. Fixed CTA reserves bottom scroll space. Share links resolve to the actual product id.
-- Wishlist: selected reference's heart/guidance style at a restrained size, plus actual recommendations below. Saved items browse as standard product cards.
-- My: soft child-information panel, truthful saved/recent/alert counts, rounded shopping/support rows. Unsupported order/delivery and announcement menus are removed, following client-data-contract.md and mobile-ux-direction.md.
-- Typography: Self-hosted NAVER NanumSquareRound, with Korean/iOS system fallback, body 400, headings 500, prices 600, logo 700. Form controls remain 16px for iOS zoom prevention. Visible keyboard focus, semantic buttons, labels and focus restoration across list re-rendering.
+## Screens and interactions
 
-## Photo discovery and information integrity
+- Home retains the approved two-child campaign, compact five-stage navigation and early actual clothing discovery.
+- Search defaults to clothing. Separate 놀이 · 교구 has product/photo modes and source-based age filters. It never applies clothing sizes or KKOKKAFIT.
+- Photo discovery starts with twelve products in three columns/four rows, zero gap and fine image boundaries. Tiles contain photos only. Scroll appends genuine products without more buttons or replacing existing nodes.
+- Photo cards and detail share original multi-photo galleries, swipe/keyboard support and selectable dots. They preserve the active remaining photo when an original fails.
+- Detail reads photo, brand/title/price, seller comparison, applicable fit and product facts. Fixed actions reserve scroll space. Raw titles and seller facts remain available.
+- Wishlist focuses on saved products with a compact empty guide. My exposes local child information, favorites, recent products, target prices and settings. Unsupported order/delivery and announcement capabilities are absent.
 
-Photo tiles contain only actual provider photos; accessible names are present but visual product titles/prices/brands/hearts are absent. Photo feed uses three columns and four initial rows (12 actual products), zero gap and square corners. Row height fits the available viewport above bottom navigation, without cropping garment photos. Failed tile images are removed from the photo feed, while the corresponding product remains accessible in the product list. Products with multiple unique source image URLs show an image-count badge. Selected card and detail use a shared swipe/keyboard/button gallery with counters and preserved aspect ratio. A selected photo opens a product card with brand, title, price, seller, material/size summary, favorite and detail actions.
+## Data and privacy
 
-Materials, composition, sizes, colors and care use only supplied fields. Material and size rows always appear; absent values say to verify the seller detail/options. No invented “cotton 100%”, size availability or discounts. Original data is preserved.
+Multiple child profiles and the selected child stay in browser-local storage. The selected child drives fit and source-backed age filtering. No real child information is sent by QA. Price alerts here save a local target and do not claim production push delivery.
 
-## Latest owner refinement
+Composition and actual sale sizes use supplied seller fields only. Missing information is explicitly unavailable and links to the original seller. Official brand charts do not become product stock. Unknown play ages remain visible in unrestricted browsing and absent from age-limited results.
 
-Warm ivory canvas (#fbf7f2), brighter product surfaces (#fffdfb), warm gray image borders; no accumulated overrides. The photo feed is photo-only with a selected-product sheet. Main surfaces share restrained typography and natural Korean copy. Detail images constrain grid min-height to prevent intrinsic-image clipping at 430px.
+The shared image state provides bounded original-URL recovery, snapshot quarantine and genuine alternate photos. Fully failed products leave browsing; saved records and in-progress forms remain. Metadata refresh does not renew source observations or the temporary image display ceiling. Live product JSON is not cached offline. Stable supplier image availability and richer original facts remain launch gates.
 
-## Boundaries
+## Review evidence
 
-No paid service, new authentication, server collection, backend migration or provider-policy change. Recently viewed ids are capped at 20 on this device; profiles, favorites and target prices retain their local storage boundary. Native sharing runs only on user action. Main and current Pages deployment remain untouched; review branch/PR only. Final iPhone review and release approval belong to Product Owner.
-
-## Hero proposals
-
-Three independent AI-generated Korean-child hero concepts in `hero-options.html` are proposals only, in the same order displayed in chat. They are not live campaign/catalog evidence and do not replace the existing homepage hero before owner selection.
+Actual product photography, four required widths320/375/390/430 and independent visual review are separate from CI and synthetic fault regression. Dated history belongs in qa.md. Hero option3 is adopted; other generated hero proposals remain comparison assets rather than product evidence. Final release approval belongs to Product Owner.

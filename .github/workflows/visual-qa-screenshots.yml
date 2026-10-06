@@ -22,9 +22,12 @@ permissions:
 jobs:
   screenshots:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -33,17 +36,35 @@ jobs:
           npm init -y
           npm install --no-save playwright
           npx playwright install --with-deps chromium
+      - name: Verify bounded image-recovery interactions
+        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild'
+        run: node scripts/release-ui-image-recovery-qa.cjs
+      - name: Decode every actual original photo for manual review
+        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild'
+        run: node scripts/catalog-image-decode-qa.cjs
       - name: Capture reference viewports
         env:
+          QA_START_SERVER: "1"
           QA_REQUIRE_HEALTHY_IMAGES: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild' && '1' || '0' }}
           QA_REQUIRE_PLAY: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild' && '1' || '0' }}
         run: |
-          python3 -m http.server 4173 >/tmp/kkokkapick-http.log 2>&1 &
           QA_OUTPUT=artifacts/visual-qa node scripts/release-ui-browser-qa.cjs
+      - name: Preserve exact review QA provenance
+        if: always()
+        env:
+          REVIEW_SHA: ${{ github.sha }}
+          QA_RUN_ID: ${{ github.run_id }}
+        run: |
+          mkdir -p artifacts
+          node -e 'const fs=require("node:fs"),catalog=require("./data/catalog.json");fs.writeFileSync("artifacts/review-qa-provenance.json",JSON.stringify({reviewSha:process.env.REVIEW_SHA,qaRunId:process.env.QA_RUN_ID,catalogSyncedAt:catalog.syncedAt,catalogExpiresAt:catalog.expiresAt},null,2)+"\n")'
       - name: Upload visual QA screenshots
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: visual-qa-screenshots
-          path: artifacts/visual-qa/
-          if-no-files-found: error
-          retention-days: 30
+          path: |
+            artifacts/visual-qa/
+            artifacts/actual-image-decoding.json
+            artifacts/review-qa-provenance.json
+          if-no-files-found: warn
+          retention-days: 1

@@ -2,7 +2,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const source=fs.readFileSync('src/release-ui.js','utf8');
 const escape=source.slice(source.indexOf('function esc('),source.indexOf('function won('));
 const names=source.slice(source.indexOf('function displayName('),source.indexOf('function imageHtml('));
-const information=source.slice(source.indexOf('function materialLabel('),source.indexOf('function readStore('));
+const information=source.slice(source.indexOf('function isDiscoveryProduct('),source.indexOf('function readStore('));
 const engine=source.slice(source.indexOf('const VERIFIED_SIZE_CHARTS='),source.indexOf('function positivePrice('));
 const context=vm.createContext({URL,KkokkapickProductImages:require('../src/product-image-availability.js'),KkokkapickProductDomain:require('../src/product-domain.js')});vm.runInContext(source.slice(source.indexOf('function positivePrice('),source.indexOf('function getLatestPriceChange('))+source.slice(source.indexOf('function safeDestination('),source.indexOf('function esc('))+escape+names+information+engine,context);
 const original={brand:'아가방',name:'아가방 아양우주복(모자)(O/WHITE)_01R71750503'};
@@ -33,3 +33,9 @@ assert.equal(context.materialLabel({material:'면',materialConflict:true}),'판�
 assert.equal(context.matchesSellerOptions(sellerOptions,{seller:'A',size:'80',max:15000}),false);
 assert.equal(context.matchesSellerOptions(sellerOptions,{seller:'B',size:'90',max:15000}),true);
 assert.equal(context.matchesSellerOptions(sellerOptions,{seller:'A',size:'80',min:20000}),true);
+
+const oldFlooring={domain:'learning',name:'EVA 폼 퍼즐 어린이 놀이 매트, 크롤링 카펫, 바닥 패드, 퍼즐 타일'};
+assert.equal(context.isDiscoveryProduct(oldFlooring),false,'previous catalog floor coverings are not shown while preserving the snapshot');
+assert.equal(oldFlooring.domain,'learning','original source classification is preserved');
+assert.equal(context.isDiscoveryProduct({domain:'learning',name:'클래식월드 유아 원목 야채 퍼즐'}),true);
+assert.equal(context.isDiscoveryProduct({domain:'apparel',name:'유아 카펫 무늬 가디건'}),true,'apparel motifs are not excluded as floor coverings');

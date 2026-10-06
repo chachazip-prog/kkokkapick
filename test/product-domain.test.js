@@ -30,3 +30,9 @@ for (const name of ['옥스포드 아기 블럭 유아 창의력블록', '유아
 for (const name of ['키즈 컬러블럭 가디건', '디즈니베이비 블럭 오픈내의', '유아 썬블럭 모자세트', '언더아머 키즈 컬러블록 Leggings Set']) assert.equal(classifyCatalogRelevance({name}).domain, 'apparel', name);
 assert.equal(classifyCatalogRelevance({name:'뽀로로 유아 가방퍼즐'}).domain, 'learning');
 assert.equal(classifyCatalogRelevance({name:'에뜨와 신생아 딸랑이세트 치아발육기'}).eligible, false);
+
+const flooring='[해외] EVA 폼 퍼즐 부드러운 어린이 매트, 놀이 매트, 크롤링 카펫 어린이 방, 나뭇결 바닥 패드, 연동 퍼즐 타일';
+assert.equal(domains.isFloorCovering(flooring),true);
+assert.equal(classifyCatalogRelevance({name:flooring}).eligible,false,'interlocking floor tiles are not learning materials');
+for(const name of ['유아 놀이 매트 퍼즐','어린이 floor tile 퍼즐','아기 카페트 퍼즐'])assert.equal(classifyCatalogRelevance({name}).eligible,false,name);
+for(const name of ['클래식월드 가든 야채 퍼즐 18개월 유아','유아 도로놀이 퍼즐형 트랙','뽀로로 유아 가방퍼즐','아기 헝겊책 그림책','옥스포드 아기 유아 놀이 블록'])assert.equal(classifyCatalogRelevance({name}).eligible,true,name);
