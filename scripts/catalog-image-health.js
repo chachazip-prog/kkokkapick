@@ -1,6 +1,7 @@
 const fs = require('fs');
 
-const raw = JSON.parse(fs.readFileSync(process.env.CATALOG_IMAGE_HEALTH_INPUT || 'data/catalog.json', 'utf8'));
+const catalogBytes = fs.readFileSync(process.env.CATALOG_IMAGE_HEALTH_INPUT || 'data/catalog.json');
+const raw = JSON.parse(catalogBytes.toString('utf8'));
 const items = Array.isArray(raw) ? raw : (raw.products || raw.items || []);
 const sampleSize = Math.max(1, Number.parseInt(process.env.IMAGE_HEALTH_SAMPLE_SIZE || '40', 10));
 const timeoutMs = Math.max(1000, Number.parseInt(process.env.IMAGE_HEALTH_TIMEOUT_MS || '5000', 10));
@@ -56,6 +57,9 @@ async function main() {
   const report = {
     generatedAt: new Date().toISOString(),
     catalogProductCount: items.length,
+    catalogSyncedAt: raw.syncedAt ?? null,
+    catalogExpiresAt: raw.expiresAt ?? null,
+    catalogSha256: require('node:crypto').createHash('sha256').update(catalogBytes).digest('hex'),
     uniqueHttpsImageUrls: urls.length,
     sampleSize: results.length,
     ok: okCount,

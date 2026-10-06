@@ -91,6 +91,7 @@ jobs:
           node test/release-hardening-contract.test.js
           node test/image-health.test.js
           node test/image-publication-policy.test.js
+          node test/review-image-collection-policy.test.js
           node test/physical-qa-snapshot.test.js
           node test/external-beta-readiness.test.js
           node test/production-boundary-reconciliation.test.js
@@ -132,6 +133,7 @@ jobs:
           node --check scripts/catalog-image-health.js
           node --check scripts/adpick-image-diagnostic.js
           node --check src/image-health.js
+          node --check src/review-image-collection-policy.js
           node --check scripts/physical-qa-snapshot.js
           node --check scripts/external-beta-readiness.js
           node --check scripts/production-migration-manifest.js

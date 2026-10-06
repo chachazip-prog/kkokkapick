@@ -48,6 +48,7 @@ jobs:
         if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild' && !inputs.diagnostic_only
         env:
           ADPICK_BIZ_API_KEY: ${{ secrets.ADPICK_BIZ_API_KEY }}
+          ADPICK_COLLECTION_MODE: review-quarantine
         run: |
           node scripts/discover-adpick.js
           node scripts/build-catalog.js
@@ -99,6 +100,8 @@ jobs:
       - name: Build photo-ready catalog with current relevance rules
         run: CATALOG_DATA_DIR=.review-catalog node scripts/build-catalog.js
       - name: Exclude unavailable photos without losing seller facts
+        env:
+          ADPICK_COLLECTION_MODE: review-quarantine
         run: CATALOG_DATA_DIR=.review-catalog node scripts/prepare-photo-catalog.js
       - name: Recheck original images immediately before review publication
         env:
@@ -149,6 +152,8 @@ jobs:
           merge-multiple: true
           path: .review-catalog
       - name: Exclude unavailable photos without losing seller facts
+        env:
+          ADPICK_COLLECTION_MODE: review-quarantine
         run: CATALOG_DATA_DIR=.review-catalog node scripts/prepare-photo-catalog.js
       - name: Independently recheck all original images immediately before publication
         env:

@@ -3,8 +3,11 @@ import { catalogCacheWindow } from "../src/provider-product-facts.js";
 import fs from "node:fs/promises";
 import { AdpickBizProvider } from "../src/adpick-biz-provider.js";
 import { validateProductImages } from "../src/image-health.js";
+import { isReviewQuarantineCollection, assertCollectionImageHealth, collectionProducts } from "../src/review-image-collection-policy.js";
+
 import { ADPICK_DISCOVERY_QUERIES as queries, ADPICK_SEARCH_LIMIT, ADPICK_DISCOVERY_PACING_MS } from "../src/adpick-discovery-plan.js";
 
+const reviewQuarantine = isReviewQuarantineCollection();
 const apiKey = process.env.ADPICK_BIZ_API_KEY;
 if (!apiKey) throw new Error("Missing ADPICK_BIZ_API_KEY");
 
@@ -83,9 +86,10 @@ const imageHealth = {
 imageHealth.rate = imageHealth.checked ? imageHealth.ok / imageHealth.checked : 0;
 const minImageHealthRate = Number(process.env.ADPICK_MIN_IMAGE_HEALTH_RATE || 0.8);
 if (imageHealth.rate < minImageHealthRate) {
-  console.error(JSON.stringify({ imageHealth, minImageHealthRate }, null, 2));
-  throw new Error(`Refusing catalog publication: live image health ${(imageHealth.rate * 100).toFixed(1)}% < ${(minImageHealthRate * 100).toFixed(1)}%`);
+  console.error(JSON.stringify({ imageHealth, minImageHealthRate,
+    reviewQuarantine, publicationReady: false }, null, 2));
 }
+assertCollectionImageHealth(imageHealth, minImageHealthRate, reviewQuarantine);
 const productFacts = {
   materialPresent: validated.filter(p => Boolean(p.material)).length,
   availableSizesPresent: validated.filter(p => p.availableSizes?.length).length,
@@ -93,7 +97,7 @@ const productFacts = {
 };
 const domainCoverage = Object.fromEntries(['apparel','toy','learning'].map(domain=>[domain,{products:validated.filter(p=>p.domain===domain).length,healthyImages:validated.filter(p=>p.domain===domain&&p.imageHealth?.ok).length,ageEvidence:validated.filter(p=>p.domain===domain&&p.ageEvidence).length}]));
 const acceptedQueries = queries.map(query => ({ query, acceptedUnique: products.filter(p => p.query === query).length }));
-const safeProducts = validated.map(({ imageHealth, ...product }) => ({...product,imageEvidence:imageHealth.ok && product.imageUrl ? {url:product.imageUrl,observedAt:product.checkedAt,verifiedAt:imageHealth.checkedAt,status:imageHealth.status}:null}));
+const safeProducts = collectionProducts(products, validated, reviewQuarantine);
 await fs.mkdir("data", { recursive: true });
 await fs.writeFile("data/adpick-biz-products.json", JSON.stringify({
   source: "adpick_biz",
@@ -102,6 +106,9 @@ await fs.writeFile("data/adpick-biz-products.json", JSON.stringify({
   queries,
   count: safeProducts.length,
   imageHealth,
+  ...(reviewQuarantine ? { reviewCollection: { mode: 'review-quarantine', requiresFinalImageGate: true,
+    completedQueries: queryDiagnostics.length, plannedQueries: queries.length,
+    minSourceHealthRate: minImageHealthRate, sourceHealthPassed: imageHealth.rate >= minImageHealthRate } } : {}),
   acceptedQueries,
   productFacts,
   products: safeProducts
@@ -109,5 +116,5 @@ await fs.writeFile("data/adpick-biz-products.json", JSON.stringify({
 console.log(`Saved ${safeProducts.length} unique ADPICK BIZ products; images ${imageHealth.ok}/${imageHealth.checked} healthy`);
 
 await fs.mkdir("artifacts", { recursive: true });
-await fs.writeFile("artifacts/adpick-image-diagnostic.json", JSON.stringify({generatedAt:new Date().toISOString(),...productFacts,probed:imageHealth.checked,ok:imageHealth.ok,failed:imageHealth.failed,statuses:imageHealth.statuses},null,2)+"\n");
+await fs.writeFile("artifacts/adpick-image-diagnostic.json", JSON.stringify({generatedAt:new Date().toISOString(),...productFacts,reviewQuarantine,sourceHealthPassed:imageHealth.rate>=minImageHealthRate,probed:imageHealth.checked,ok:imageHealth.ok,failed:imageHealth.failed,statuses:imageHealth.statuses},null,2)+"\n");
 console.log("[adpick-source-facts]", JSON.stringify(productFacts));

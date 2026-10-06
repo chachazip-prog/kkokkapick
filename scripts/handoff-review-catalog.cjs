@@ -19,7 +19,42 @@ assert.equal(expiry,Date.parse(source.expiresAt),'Source/catalog expiry mismatch
 assert.ok(expiry>observed&&expiry-observed<=24*3600000,'TTL must not exceed 24 hours');
 assert.ok(Date.now()-observed<90*60000,'Review images exceed internal90min display window');
 assert.equal(catalog.storagePolicy,'ttl_cache');assert.equal(source.storagePolicy,'ttl_cache');
-assert.ok(source.imageHealth?.rate>=0.8,'Insufficient verified original image health');
+if(source.reviewCollection?.mode==='review-quarantine') {
+ assert.equal(source.reviewCollection.requiresFinalImageGate,true,'Review collection must require the final image gate');
+ const {ADPICK_DISCOVERY_QUERIES}=require('../src/adpick-discovery-plan.js');
+ assert.deepEqual(source.queries,[...ADPICK_DISCOVERY_QUERIES],'Review queries must match the approved discovery plan');
+ assert.equal(source.reviewCollection.completedQueries,source.queries.length,'Incomplete review query collection');
+ assert.equal(source.reviewCollection.plannedQueries,source.queries.length,'Incomplete review query plan');
+ assert.equal(source.publicationImageAudit?.mode,'review-quarantine','Raw review collection must be quarantined before handoff');
+ assert.equal(source.imageHealth?.checked,source.count,'Raw image audit must retain every source offer');
+ assert.equal(source.imageHealth.ok+source.imageHealth.failed,source.count,'Raw image outcomes must remain complete');
+ assert.equal(source.imageHealth.rate,source.imageHealth.ok/source.count,'Raw image rate must not be rewritten');
+ const publication=source.publicationImageAudit;
+ assert.ok(publication.checked>0&&publication.excluded>=0&&publication.ok===publication.checked-publication.excluded&&publication.excluded/publication.checked<=0.05,'Quarantine audit must retain the5% exclusion limit');
+ const hasHealthyDomain=domain=>catalog.products.some(p=>p.domain===domain&&(p.imageUrl||p.imageUrls?.length));
+ assert.ok(hasHealthyDomain('apparel'),'Review requires healthy apparel products');
+ for(const domain of ['toy','learning'])if(source.products.some(p=>p.domain===domain))assert.ok(hasHealthyDomain(domain),`Review must preserve healthy ${domain} coverage`);
+ const report=JSON.parse(fs.readFileSync('artifacts/review-image-health.json','utf8'));
+ const catalogBytes=fs.readFileSync('.review-catalog/catalog.json');
+ assert.equal(report.catalogSha256,require('node:crypto').createHash('sha256').update(catalogBytes).digest('hex'),'Final image audit must match the exact quarantined catalog');
+ assert.equal(report.catalogSyncedAt,catalog.syncedAt,'Final image audit must preserve source observation');
+ assert.equal(report.catalogExpiresAt,catalog.expiresAt,'Final image audit must preserve source expiry');
+ const urls=new Set(catalog.products.flatMap(p=>[p.imageUrl,...(p.imageUrls||[])]).filter(Boolean));
+ assert.ok(urls.size>0,'No healthy original photos remain');
+ assert.equal(publication.ok,urls.size,'Quarantine healthy photo set must match the final catalog');
+ assert.equal(report.catalogProductCount,catalog.products.length,'Final image audit must match canonical product count');
+ assert.equal(report.uniqueHttpsImageUrls,urls.size,'Final image audit must include every original photo');
+ assert.equal(report.sampleSize,urls.size,'Sampled image checks cannot publish review data');
+ assert.equal(report.ok,urls.size,'Every published original photo must pass');
+ assert.equal(report.failed,0,'Failed photos cannot be handed off');
+ assert.equal(report.successRate,1,'Review publication requires100% original image health');
+ assert.equal(report.minSuccessRate,1,'Review gate cannot be lowered');
+ assert.deepEqual(report.failures,[],'Review image failures must be empty');
+ const verified=Date.parse(report.generatedAt);
+ assert.ok(Number.isFinite(verified)&&verified>=Date.parse(source.publicationImageAudit.checkedAt)&&verified<=Date.now()+300000&&Date.now()-verified<10*60000,'Final image audit must be fresh and follow quarantine');
+} else {
+ assert.ok(source.imageHealth?.rate>=0.8,'Insufficient verified original image health');
+}
 assert.ok(Array.isArray(documents['price-history.json'].events),'Invalid price history');
 const previous=JSON.parse(fs.readFileSync('data/catalog.json','utf8'));
 assert.ok(Date.parse(catalog.syncedAt)>=Date.parse(previous.syncedAt),'Never replace a newer source snapshot');
