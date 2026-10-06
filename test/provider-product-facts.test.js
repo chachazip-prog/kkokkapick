@@ -21,3 +21,14 @@ test('TTL is explicit and anchored to actual source observation',()=>{
  assert.equal(catalogCacheWindow('2026-10-04T00:00:00Z').expiresAt,'2026-10-05T00:00:00.000Z');
  assert.throws(()=>catalogCacheWindow('invalid'));
 });
+
+test('original photo verification preserves observation and seller evidence',async()=>{
+ const row={name:'아가방 아기 우주복',externalProductId:'1',affiliateUrl:'https://example.test/buy',imageUrl:'https://example.test/photo.jpg',checkedAt:'2026-10-05T00:00:00Z',material:'면 100%',availableSizes:['80'],productFactFields:{material:'material'},imageEvidence:{url:'https://example.test/photo.jpg',observedAt:'2026-10-05T00:00:00Z',verifiedAt:'2026-10-05T00:20:00Z',status:200}};
+ const [p]=groupProducts([row]);assert.deepEqual(p.imageEvidence,[row.imageEvidence]);assert.equal(p.offers[0].checkedAt,row.checkedAt);
+ const {toClientProduct}=await import('../src/client-product.js');const client=toClientProduct(p);assert.equal(client.offers[0].checkedAt,row.checkedAt);assert.equal(client.offers[0].material,row.material);assert.deepEqual(client.offers[0].availableSizes,['80']);
+ const {catalogAvailabilityReport}=await import('../src/catalog-availability-report.js');
+ const url='https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=1',catalog={syncedAt:row.checkedAt,products:[{imageUrl:url,imageEvidence:[{...row.imageEvidence,url}]}]};
+ const report=catalogAvailabilityReport(catalog,{products:[row]},Date.parse('2026-10-05T00:30:00Z'));assert.equal(report.remainingImageDisplaySeconds,3600);assert.equal(report.sourceAgeAtLastVerificationSeconds,1200);assert.equal(report.continuousAvailabilityVerified,false);
+ assert.equal(catalogAvailabilityReport(catalog,{},Date.parse('2026-10-05T02:00:00Z')).imageStatus,'display_window_expired');
+ assert.equal(catalogAvailabilityReport({...catalog,products:[{imageUrl:url}]},{},Date.parse('2026-10-05T00:30:00Z')).lastVerificationAt,null);
+});

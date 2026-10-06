@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { catalogAvailabilityReport } from "../src/catalog-availability-report.js";
 
 const catalog=JSON.parse(fs.readFileSync("data/catalog.json","utf8"));
 const source=JSON.parse(fs.readFileSync("data/adpick-biz-products.json","utf8"));
@@ -13,6 +14,7 @@ const channelPrefixed=products.filter(p=>channelPrefix.test(String(p.name||"")))
 const counts=(key)=>Object.entries(products.reduce((a,p)=>{const v=p[key]||"미분류";a[v]=(a[v]||0)+1;return a;},{})).sort((a,b)=>b[1]-a[1]);
 const pct=(n,d)=>d?Math.round(n/d*1000)/10:0;
 const report={
+  availability:catalogAvailabilityReport(catalog,source),
   syncedAt:catalog.syncedAt||source.syncedAt||null,
   sourceProducts:source.count??source.products?.length??0,
   canonicalProducts:catalog.productCount??products.length,

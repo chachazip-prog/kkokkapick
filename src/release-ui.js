@@ -30,14 +30,17 @@ function fitForProduct(p){
    return{kind:'candidate',html:'<div class="offer"><div><b>꼬까핏 · 공식 사이즈표 확인 중</b><br><span>판매처 자료는 확인했지만 브랜드 공식 원문 검증 전이라 사이즈를 추천하지 않아요.</span></div></div>'};
  return{kind:'unknown',html:'<div class="offer"><div><b>꼬까핏 · 사이즈 정보 확인 필요</b><br><span>검증된 브랜드 사이즈표가 없어 임의로 추천하지 않아요.</span></div></div>'};
 }
-function materialLabel(p){const value=p.material||p.materials||p.composition;return Array.isArray(value)?value.join(', '):value||'판매처 상세페이지 확인'}
-function sizeLabel(p){return (p.availableSizes||[]).length?p.availableSizes.join(', '):'판매처 옵션 및 실측 확인'}
+function materialLabel(p){if(p.materialConflict)return '판매처별 소재 정보가 달라요';const value=p.material||p.materials||p.composition;return Array.isArray(value)?value.join(', '):value||'정보 미제공 · 판매처 상세페이지 확인'}
+function sizeLabel(p){return (p.availableSizes||[]).length?p.availableSizes.join(', '):'정보 미제공 · 판매처 옵션 및 실측 확인'}
+function sellerFactsHtml(p){
+ return (p.offers||[]).filter(o=>safeDestination(o.affiliateUrl)).map(o=>'<p class="note"><a href="'+esc(safeDestination(o.affiliateUrl))+'" target="_blank" rel="noopener noreferrer">'+esc(o.merchant||'판매처')+' · 소재와 판매 옵션 확인 ↗</a>'+(o.material?'<br>소재 · '+esc(o.material):'')+((o.availableSizes||[]).length?'<br>판매 사이즈 · '+esc(o.availableSizes.join(', ')):'')+'</p>').join('');
+}
 function productInfoHtml(p){
- if(!KkokkapickProductDomain.isApparel(p)){const e=p.ageEvidence;const age=e?esc(e.rawText)+(e.source==='product_title'?' · 상품명 기준':' · 판매처 제공'):'판매처 권장 연령 확인';return `<div class="product-info"><div class="info-row"><b>카테고리</b><span>${esc(p.cat)}</span></div><div class="info-row"><b>대상 연령</b><span>${age}</span></div><div class="info-row"><b>소재</b><span>${esc(materialLabel(p))}</span></div><div class="info-row"><b>구성 · 규격</b><span>판매처 상세페이지 확인</span></div><div class="info-row"><b>사용상 주의</b><span>판매처 사용 연령·주의사항·인증 정보 확인</span></div></div><p class="note">월령만으로 사용 적합성이나 안전성을 보장하지 않습니다. 구매 전 작은 부품, 보호자 지도 및 원본 주의사항을 확인해 주세요.</p>`;}
+ if(!KkokkapickProductDomain.isApparel(p)){const e=p.ageEvidence;const age=e?esc(e.rawText)+(e.source==='product_title'?' · 상품명 기준':' · 판매처 제공'):'판매처 권장 연령 확인';return `<div class="product-info"><div class="info-row"><b>카테고리</b><span>${esc(p.cat)}</span></div><div class="info-row"><b>대상 연령</b><span>${age}</span></div><div class="info-row"><b>소재</b><span>${esc(materialLabel(p))}</span></div><div class="info-row"><b>구성 · 규격</b><span>판매처 상세페이지 확인</span></div><div class="info-row"><b>사용상 주의</b><span>판매처 사용 연령·주의사항·인증 정보 확인</span></div></div><p class="note">월령만으로 사용 적합성이나 안전성을 보장하지 않습니다. 구매 전 작은 부품, 보호자 지도 및 원본 주의사항을 확인해 주세요.</p>`+sellerFactsHtml(p);}
  const rows=[['브랜드',p.brand||'판매처에서 확인'],['카테고리',p.cat||'판매처에서 확인'],['소재',materialLabel(p)],['사이즈',sizeLabel(p)]];
  const color=p.color||p.colors;if(color)rows.push(['색상',Array.isArray(color)?color.join(', '):color]);
  for(const [key,label] of [['season','시즌'],['thickness','두께'],['careInstructions','세탁 / 취급']])if(p[key])rows.push([label,p[key]]);
- return '<div class="product-info">'+rows.map(([label,value])=>'<div class="info-row"><b>'+esc(label)+'</b><span>'+esc(value)+'</span></div>').join('')+'</div><p class="note">소재와 사이즈는 판매처가 제공한 정보만 표시합니다. 구매 전 상세페이지의 혼용률·실측·옵션을 확인해 주세요.</p>';
+ return '<div class="product-info">'+rows.map(([label,value])=>'<div class="info-row"><b>'+esc(label)+'</b><span>'+esc(value)+'</span></div>').join('')+'</div><p class="note">소재와 사이즈는 판매처가 제공한 정보만 표시합니다. 판매 사이즈는 판매처별 옵션이며 현재 재고는 판매처에서 확인해 주세요. 구매 전 상세페이지의 혼용률·실측·옵션을 확인해 주세요.</p>'+sellerFactsHtml(p);
 }
 
 function readStore(key, fallback) { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } }

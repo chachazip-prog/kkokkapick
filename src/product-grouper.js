@@ -102,6 +102,7 @@ export function groupProducts(rows) {
       materialConflict:materials.length>1,
       availableSizes,
       productFactSources,
+      imageEvidence:g.offers.map(o=>o.imageEvidence).filter(e=>e && g.imageUrls.includes(e.url)),
       imageUrl:g.imageUrls[0]||null,
       offerCount:g.offers.length,
       minPrice:prices.length?Math.min(...prices):null,
@@ -109,4 +110,4 @@ export function groupProducts(rows) {
     };
   });
 }
-function toOffer(p){return {provider:p.provider,checkedAt:p.checkedAt,ageEvidence:p.ageEvidence||null,material:p.material||null,availableSizes:p.availableSizes||[],productFactFields:p.productFactFields||{},merchant:p.merchant,merchantDomain:p.merchantDomain,price:validPrice(p.price),originalPrice:validPrice(p.originalPrice),affiliateUrl:p.affiliateUrl,externalProductId:p.externalProductId}}
+function toOffer(p){return {provider:p.provider,imageEvidence:p.imageEvidence||null,checkedAt:p.checkedAt,ageEvidence:p.ageEvidence||null,material:p.material||null,availableSizes:p.availableSizes||[],productFactFields:p.productFactFields||{},merchant:p.merchant,merchantDomain:p.merchantDomain,price:validPrice(p.price),originalPrice:validPrice(p.originalPrice),affiliateUrl:p.affiliateUrl,externalProductId:p.externalProductId}}

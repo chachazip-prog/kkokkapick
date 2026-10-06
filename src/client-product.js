@@ -34,6 +34,7 @@ export function toClientProduct(product={}) {
     domain:product.domain||"apparel",
     ageEvidence:product.ageEvidence||null,
     material:product.material||null,
+    materialConflict:Boolean(product.materialConflict),
     imageUrls:Array.isArray(product.imageUrls)?product.imageUrls:[],
     brand:product.brand||null,
     category:product.category||"기타",
@@ -57,7 +58,12 @@ export function toClientOffer(offer={}) {
     originalPrice:nullableNumber(offer.originalPrice),
     affiliateUrl:String(offer.affiliateUrl||""),
     provider:offer.provider||null,
-    updatedAt:offer.updatedAt||null
+    updatedAt:offer.updatedAt||null,
+    checkedAt:offer.checkedAt||null,
+    material:offer.material||null,
+    availableSizes:Array.isArray(offer.availableSizes)?offer.availableSizes:[],
+    productFactFields:offer.productFactFields||{},
+    externalProductId:offer.externalProductId||null
   };
 }
 
