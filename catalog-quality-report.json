@@ -1,24 +1,24 @@
 {
-  "syncedAt": "2026-10-06T07:10:52.201Z",
-  "sourceProducts": 835,
-  "canonicalProducts": 765,
+  "syncedAt": "2026-10-06T08:09:49.155Z",
+  "sourceProducts": 838,
+  "canonicalProducts": 768,
   "queries": 73,
-  "recognizedBrandProducts": 436,
+  "recognizedBrandProducts": 438,
   "recognizedBrandRatePct": 57,
   "officialBrandGuideProducts": 31,
-  "officialBrandGuideRatePct": 4.1,
+  "officialBrandGuideRatePct": 4,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 835,
-    "ok": 835,
+    "checked": 838,
+    "ok": 838,
     "failed": 0,
     "statuses": {
-      "200": 835
+      "200": 838
     },
     "rate": 1
   },
-  "canonicalImageProducts": 765,
+  "canonicalImageProducts": 768,
   "canonicalImageRatePct": 100,
   "multiImageProducts": 58,
   "multiImageRatePct": 7.6,
@@ -27,7 +27,7 @@
   "topBrands": [
     {
       "name": "미분류",
-      "count": 329
+      "count": 330
     },
     {
       "name": "베네통키즈",
@@ -86,6 +86,10 @@
       "count": 13
     },
     {
+      "name": "아림클로젯",
+      "count": 11
+    },
+    {
       "name": "압소바",
       "count": 11
     },
@@ -100,28 +104,24 @@
     {
       "name": "알콩단잠",
       "count": 10
-    },
-    {
-      "name": "아림클로젯",
-      "count": 9
     }
   ],
   "categories": [
     {
       "name": "상의",
-      "count": 174
+      "count": 175
     },
     {
       "name": "아우터",
-      "count": 133
+      "count": 134
     },
     {
       "name": "하의",
-      "count": 117
+      "count": 116
     },
     {
       "name": "바디수트",
-      "count": 96
+      "count": 95
     },
     {
       "name": "상하복",
@@ -129,7 +129,7 @@
     },
     {
       "name": "원피스",
-      "count": 81
+      "count": 83
     },
     {
       "name": "기타",
@@ -137,21 +137,21 @@
     },
     {
       "name": "실내복",
-      "count": 38
+      "count": 39
     }
   ],
   "stages": [
     {
       "name": "키즈",
-      "count": 352
+      "count": 354
     },
     {
       "name": "베이비",
-      "count": 266
+      "count": 268
     },
     {
       "name": "전체",
-      "count": 57
+      "count": 56
     },
     {
       "name": "유아",
