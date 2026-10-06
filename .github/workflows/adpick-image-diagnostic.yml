@@ -132,6 +132,8 @@ jobs:
     if: github.repository == 'chachazip-prog/kkokkapick' && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild' && !inputs.diagnostic_only && inputs.review_artifact_run_id == '' && needs.diagnostic.outputs.review_artifact_id != ''
     runs-on: ubuntu-latest
     timeout-minutes: 8
+    outputs:
+      published_sha: ${{ steps.publish_review.outputs.sha }}
     permissions:
       contents: write
       actions: read
@@ -165,12 +167,67 @@ jobs:
           if-no-files-found: warn
           retention-days: 1
       - name: Validate and commit review data only
+        id: publish_review
         run: |
           node scripts/handoff-review-catalog.cjs
           node scripts/catalog-quality-report.js > catalog-quality-report.json
           git config user.name "kkokkapick-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/adpick-biz-products.json data/catalog.json data/price-history.json catalog-quality-report.json
-          if git diff --cached --quiet; then exit 0; fi
+          if git diff --cached --quiet; then
+            printf 'sha=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           git commit -m "chore: publish immediately verified temporary review catalog"
           git push origin HEAD:codex/release-ui-rebuild
+          printf 'sha=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  verify-fresh-review:
+    needs: publish-fresh-review-catalog
+    if: github.repository == 'chachazip-prog/kkokkapick' && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/release-ui-rebuild' && needs.publish-fresh-review-catalog.outputs.published_sha != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.publish-fresh-review-catalog.outputs.published_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install browser QA dependencies
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Verify failure recovery separately from real-photo QA
+        run: node scripts/release-ui-image-recovery-qa.cjs
+      - name: Decode every original catalog photo without changing source evidence
+        run: node scripts/catalog-image-decode-qa.cjs
+      - name: Capture real products and verify interactions at four mobile widths
+        env:
+          QA_START_SERVER: "1"
+          QA_REQUIRE_HEALTHY_IMAGES: "1"
+          QA_REQUIRE_PLAY: "1"
+          QA_OUTPUT: artifacts/actual-visual-qa
+        run: node scripts/release-ui-browser-qa.cjs
+      - name: Preserve exact publication identity
+        if: always()
+        env:
+          REVIEW_SHA: ${{ needs.publish-fresh-review-catalog.outputs.published_sha }}
+          SOURCE_RUN_ID: ${{ github.run_id }}
+        run: |
+          mkdir -p artifacts
+          node -e 'const fs=require("node:fs"),catalog=require("./data/catalog.json");fs.writeFileSync("artifacts/review-qa-provenance.json",JSON.stringify({reviewSha:process.env.REVIEW_SHA,sourceRunId:process.env.SOURCE_RUN_ID,catalogSyncedAt:catalog.syncedAt,catalogExpiresAt:catalog.expiresAt},null,2)+"\n")'
+      - name: Preserve actual-photo QA evidence even when a gate fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fresh-review-actual-photo-qa
+          path: |
+            artifacts/actual-image-decoding.json
+            artifacts/actual-visual-qa
+            artifacts/review-qa-provenance.json
+          if-no-files-found: warn
+          retention-days: 1
