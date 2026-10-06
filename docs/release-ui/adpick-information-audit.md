@@ -1,3 +1,13 @@
+# Current interpretation — 2026-10-07 KST
+
+This audit distinguishes source facts, derived shopping information and historical proposals. ADPICK search returns seven documented raw fields: title, photo, price, cp_name, cp_code, cp_icon and commissionlink. The service adds its observed time and derives grouping, price comparison, category and brand presentation; these are not additional supplier product facts. Composition, live sale-size options and explicit play ages are not present in the inspected search source and are never invented.
+
+The selected UI direction remains owner reference R01 and hero proposal3 (Korean boy and girl). Current tokens use a cool neutral background (#F5F6F8), white bordered commerce surfaces, bounded primary blue/red/yellow component accents, GowunDodum for logo/hero and NanumSquareRound for body. The earlier A/B/C warm palette proposals below are historical and do not override that current direction.
+
+Official public documentation was examined through the search index on 2026-10-06; the index reported crawled today, while direct guide access returned403. [ADPICK BIZ API guide](https://biz.adpick.co.kr/?ac=api&sub=guide) documents search's seven fields and a separate link API with product_img and product_price_org. That link API requires a known original seller product URL; it is a possible follow-up, not an implemented stable-image or rich-detail solution. The guide does not establish an image lifetime/renewal contract or material, live size or play-age fields. It places seller-content rights and responsibility outside an automatic ADPICK license. Neither the internal24h metadata ceiling nor90min image-display ceiling proves supplier permission; applicable account/seller rights must be confirmed before launch. No additional product API call, seller crawl or outbound supplier inquiry was performed in this investigation.
+
+Current catalog counts and fresh-photo gates are recorded in [QA history](qa.md) and the PR. Expired snapshots and once-successful image probes must not be described as presently healthy.
+
 # ADPICK product facts and palette review — 2026-10-04
 
 ## Verified repository snapshot

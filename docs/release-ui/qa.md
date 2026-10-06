@@ -1,3 +1,34 @@
+# Verification record — 2026-10-07 KST
+
+Scope: newborn/infant apparel first, separate toys/learning discovery and primary-colour component refinement. UI remains the owner-selected R01 reference with hero proposal3. This record supersedes older completion wording and palette proposals below. Technical implementation approvals were delegated to the team; actual iPhone review and Product Owner approval have not been observed. No main merge or production deployment.
+
+## Fresh source and exact identities
+
+- Code commit: aa6d725f28673ef1caaae5f5e66cab66cb7f110e; hosted Code quality run37542518418 SUCCESS,63configured Node scripts plus structure/syntax/security checks. The reviewed local repair tree exactly matches this remote commit.
+- Full collection/publication/actual-photo QA run37542521424 SUCCESS. All85approved queries completed;1,146returned rows,941unique before relevance selection,783eligible seller offers. Display catalog718products: apparel634,toys47,learning37;57multi-image products. The nine zero-result queries are retained as negative collection evidence; API-wide inventory size is not established.
+- Exact published/QA commit: a58f192515eca248e35c06cf8a9979665353a74f, parent aa6d725. Only catalog data and its quality report differ; UI/source code is unchanged. At this published identity, root ran the same63configured test scripts and35catalog/syntax checks locally, allPASS. This local verification is not labelled a new hosted Code quality run.
+- Source observed2026-10-06T22:45:03.803Z; metadata expires2026-10-07T22:45:03.803Z; internal temporary-image display deadline2026-10-07 09:15:03KST. Rechecks do not extend these clocks. Provider images may expire earlier; continuous availability is not established.
+- Initial783/783source-offer images healthy. Quarantine783/783with0exclusions; independent prepublication gate783/783unique photos healthy. Exact catalog SHA256 f52e1bb1587398db5ea218d477fc3e09e989155d660bae7f6d0f6da24e7336e6 matches published bytes and decoding input.
+- Browser decoding783/783on the first attempt, zero recovery/final failures. Positive natural dimensions, bounded same-URL400retries, source URLs/clocks unchanged; original-photo files were not persisted. Temporary screenshots are QA artifacts.
+
+## Responsive and independent visual QA
+
+Fresh actual-photo artifact11449718565 contains92PNGs and80screen-state metrics at320/375/390/430px. Metrics show zero horizontal overflow, broken/pending visible images, image quarantine, critical detected clipping and runtime errors. Failure injection/recovery is separate from real-source evidence.
+
+Root opened all20core Home/Search/Detail/Wishlist/My PNGs plus8photo/sheet/play/filter/gallery captures. The independent fresh_release_visual_qa reviewer opened39fresh PNGs, not the earlier e551 images:20core, photo-feed320/430, photo-card all4widths, multi-child-manager all4widths, play-detail320, play-age-filter320, multiple-photos-second375/390/430 and filters all4widths. Independent Visual QA PASS; critical issues0, required visual fixes0. Minor nonblocking follow-ups: home section spacing and remaining SET/coupon/title noise. Earlier corrective work on feed continuation, modal/focus handling and narrow layouts remains verified by the new regression run.
+
+Live external preview at2026-10-06T23:05:42Z/390px displayed8home cards from634apparel products, positive image dimensions, both self-hosted font families loaded, no overflow/runtime errors. Root opened that screenshot. GitHack may show an external-content notice; normal first-visit Open the page button continues to the app. After the old source expired at07:30KST, the earlier07:46check showed honest unavailable/retry state rather than stale products; that negative-state check was not a photo-health PASS.
+
+## Preserved behaviour and remaining launch gates
+
+Regression includes search/category/seller and price filtering, same-offer display prices, infinite product/photo scrolling, gapless3x4initial photo feed, gallery dots/second actual photo, multiple child registration/selection, newborn fit, favourites/recent/local targets, seller handoff, empty/restore play-age filtering, expiry sheet closure/focus and saved-record/input preservation. Play does not inherit apparel fit/size or admit unknown source ages; floor coverings remain excluded. Order/delivery UI remains removed.
+
+The prior run37539008425 failed with491/790source photos and299HTTP404,62.2%; it did not publish. Review quarantine now records negative raw evidence and selects healthy originals before a fresh100%final gate. Production80%, approved85query plan,250minimum/65%previous coverage,5%additional exclusion,90minute ceiling, exact catalog hash and source clocks remain enforced. No partial or expired source is relabelled PASS.
+
+Material/live sale sizes remain0in search source; all84displayed play products lack explicit source age. Presentation shows missing-information/seller-verification guidance and never invents facts/stock/age. Favourites, child information and target prices are browser-local; this candidate does not prove production account sync or push delivery. Supplier rights/stable URL renewal/detail feed, actual operator/support/privacy policy and physical iPhone/PO approval remain launch gates. The public guide was examined through a search index; direct guide access returned403. Internal TTL is not supplier-rights evidence. No new paid infrastructure, personal-data upload, seller crawl, original-photo storage or outbound supplier message.
+
+---
+
 # Release UI verification history
 
 The dated sections below are historical checks, not completion evidence for the 2026-10-05 apparel/play and primary-component task. That task requires refreshed original images, current responsive browser QA and independent visual review before its review-candidate marker is published. Product Owner iPhone approval remains pending.
