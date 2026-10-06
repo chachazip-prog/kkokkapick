@@ -1,33 +1,33 @@
 {
-  "syncedAt": "2026-10-06T00:02:36.474Z",
-  "sourceProducts": 817,
-  "canonicalProducts": 743,
+  "syncedAt": "2026-10-06T01:14:28.867Z",
+  "sourceProducts": 819,
+  "canonicalProducts": 744,
   "queries": 73,
   "recognizedBrandProducts": 422,
-  "recognizedBrandRatePct": 56.8,
+  "recognizedBrandRatePct": 56.7,
   "officialBrandGuideProducts": 23,
   "officialBrandGuideRatePct": 3.1,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 817,
-    "ok": 817,
+    "checked": 819,
+    "ok": 819,
     "failed": 0,
     "statuses": {
-      "200": 817
+      "200": 819
     },
     "rate": 1
   },
-  "canonicalImageProducts": 743,
+  "canonicalImageProducts": 744,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 59,
-  "multiImageRatePct": 7.9,
+  "multiImageProducts": 60,
+  "multiImageRatePct": 8.1,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 321
+      "count": 322
     },
     {
       "name": "밀크베이비",
@@ -78,12 +78,12 @@
       "count": 13
     },
     {
-      "name": "MLB키즈",
+      "name": "모이몰른",
       "count": 13
     },
     {
-      "name": "모이몰른",
-      "count": 12
+      "name": "MLB키즈",
+      "count": 13
     },
     {
       "name": "쇼콜라",
@@ -125,7 +125,7 @@
     },
     {
       "name": "상하복",
-      "count": 80
+      "count": 81
     },
     {
       "name": "원피스",
@@ -143,11 +143,11 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 351
+      "count": 350
     },
     {
       "name": "베이비",
-      "count": 245
+      "count": 246
     },
     {
       "name": "전체",
@@ -155,7 +155,7 @@
     },
     {
       "name": "유아",
-      "count": 47
+      "count": 48
     },
     {
       "name": "신생아",
