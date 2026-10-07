@@ -1,6 +1,6 @@
 {
   "source": "adpick_biz",
-  "syncedAt": "2026-10-07T07:11:23.297Z",
+  "syncedAt": "2026-10-07T08:07:19.987Z",
   "queries": [
     "아기옷",
     "유아복",
@@ -79,13 +79,12 @@
   "count": 536,
   "imageHealth": {
     "checked": 536,
-    "ok": 528,
-    "failed": 8,
+    "ok": 536,
+    "failed": 0,
     "statuses": {
-      "200": 528,
-      "400": 8
+      "200": 536
     },
-    "rate": 0.9850746268656716
+    "rate": 1
   },
   "products": [
     {
@@ -100,7 +99,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4796612?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_44e0c0e6",
-      "checkedAt": "2026-10-07T06:59:31.663Z"
+      "checkedAt": "2026-10-07T07:55:12.043Z"
     },
     {
       "provider": "adpick_biz",
@@ -114,7 +113,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785615?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_38dac5df",
-      "checkedAt": "2026-10-07T06:59:31.663Z"
+      "checkedAt": "2026-10-07T07:55:12.043Z"
     },
     {
       "provider": "adpick_biz",
@@ -128,7 +127,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785619?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8feb46bb",
-      "checkedAt": "2026-10-07T06:59:31.663Z"
+      "checkedAt": "2026-10-07T07:55:12.043Z"
     },
     {
       "provider": "adpick_biz",
@@ -142,7 +141,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735113?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_47db6895",
-      "checkedAt": "2026-10-07T06:59:31.663Z"
+      "checkedAt": "2026-10-07T07:55:12.043Z"
     },
     {
       "provider": "adpick_biz",
@@ -156,7 +155,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785624?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5739b413",
-      "checkedAt": "2026-10-07T06:59:31.663Z"
+      "checkedAt": "2026-10-07T07:55:12.043Z"
     },
     {
       "provider": "adpick_biz",
@@ -170,7 +169,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4747821?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c5b7454",
-      "checkedAt": "2026-10-07T06:59:31.663Z"
+      "checkedAt": "2026-10-07T07:55:12.043Z"
     },
     {
       "provider": "adpick_biz",
@@ -184,7 +183,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4812189?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7679e884",
-      "checkedAt": "2026-10-07T06:59:31.663Z"
+      "checkedAt": "2026-10-07T07:55:12.043Z"
     },
     {
       "provider": "adpick_biz",
@@ -198,7 +197,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860139?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d49fed10",
-      "checkedAt": "2026-10-07T06:59:31.663Z"
+      "checkedAt": "2026-10-07T07:55:12.043Z"
     },
     {
       "provider": "adpick_biz",
@@ -212,7 +211,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867633?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d5e53328",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -226,7 +225,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785626?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a8d13df1",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -240,7 +239,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785629?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c9241c74",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -254,7 +253,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867636?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f26e5777",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -268,7 +267,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860176?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_840d72f1",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -282,7 +281,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785632?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a77ef14c",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -296,7 +295,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4869166?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_fb67838d",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -310,7 +309,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872664?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_42134b46",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -324,7 +323,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891746?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_598bb1b4",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -338,7 +337,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4816040?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_23dc4bac",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -352,7 +351,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4870050?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a0b8661d",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -366,7 +365,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872667?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6b75a353",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -380,7 +379,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891747?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_86d26f07",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -394,7 +393,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4864988?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_38214ea0",
-      "checkedAt": "2026-10-07T06:59:40.405Z"
+      "checkedAt": "2026-10-07T07:55:21.066Z"
     },
     {
       "provider": "adpick_biz",
@@ -408,7 +407,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867634?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_85b800a5",
-      "checkedAt": "2026-10-07T06:59:49.409Z"
+      "checkedAt": "2026-10-07T07:55:29.883Z"
     },
     {
       "provider": "adpick_biz",
@@ -422,7 +421,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4869190?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_56698710",
-      "checkedAt": "2026-10-07T06:59:49.409Z"
+      "checkedAt": "2026-10-07T07:55:29.883Z"
     },
     {
       "provider": "adpick_biz",
@@ -436,7 +435,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716343?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bc59481f",
-      "checkedAt": "2026-10-07T06:59:49.409Z"
+      "checkedAt": "2026-10-07T07:55:29.883Z"
     },
     {
       "provider": "adpick_biz",
@@ -450,7 +449,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4869191?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_783fba23",
-      "checkedAt": "2026-10-07T06:59:49.409Z"
+      "checkedAt": "2026-10-07T07:55:29.883Z"
     },
     {
       "provider": "adpick_biz",
@@ -464,7 +463,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716350?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d3e8682f",
-      "checkedAt": "2026-10-07T06:59:49.409Z"
+      "checkedAt": "2026-10-07T07:55:29.883Z"
     },
     {
       "provider": "adpick_biz",
@@ -478,7 +477,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891754?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a249b017",
-      "checkedAt": "2026-10-07T06:59:49.409Z"
+      "checkedAt": "2026-10-07T07:55:29.883Z"
     },
     {
       "provider": "adpick_biz",
@@ -492,7 +491,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735225?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1c2aa541",
-      "checkedAt": "2026-10-07T06:59:49.409Z"
+      "checkedAt": "2026-10-07T07:55:29.883Z"
     },
     {
       "provider": "adpick_biz",
@@ -506,7 +505,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735228?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_382f6d5a",
-      "checkedAt": "2026-10-07T06:59:49.409Z"
+      "checkedAt": "2026-10-07T07:55:29.883Z"
     },
     {
       "provider": "adpick_biz",
@@ -520,7 +519,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891755?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c5978e04",
-      "checkedAt": "2026-10-07T06:59:49.409Z"
+      "checkedAt": "2026-10-07T07:55:29.883Z"
     },
     {
       "provider": "adpick_biz",
@@ -534,7 +533,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735227?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b3b7bda3",
-      "checkedAt": "2026-10-07T06:59:58.547Z"
+      "checkedAt": "2026-10-07T07:55:39.853Z"
     },
     {
       "provider": "adpick_biz",
@@ -548,7 +547,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735230?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3d3811af",
-      "checkedAt": "2026-10-07T06:59:58.547Z"
+      "checkedAt": "2026-10-07T07:55:39.853Z"
     },
     {
       "provider": "adpick_biz",
@@ -562,7 +561,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735233?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8d35df92",
-      "checkedAt": "2026-10-07T06:59:58.547Z"
+      "checkedAt": "2026-10-07T07:55:39.854Z"
     },
     {
       "provider": "adpick_biz",
@@ -576,7 +575,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785635?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8fde4561",
-      "checkedAt": "2026-10-07T06:59:58.547Z"
+      "checkedAt": "2026-10-07T07:55:39.854Z"
     },
     {
       "provider": "adpick_biz",
@@ -590,7 +589,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4851378?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d952b0e1",
-      "checkedAt": "2026-10-07T06:59:58.547Z"
+      "checkedAt": "2026-10-07T07:55:39.854Z"
     },
     {
       "provider": "adpick_biz",
@@ -604,7 +603,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785646?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4bdaaabf",
-      "checkedAt": "2026-10-07T06:59:58.547Z"
+      "checkedAt": "2026-10-07T07:55:39.854Z"
     },
     {
       "provider": "adpick_biz",
@@ -618,7 +617,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785651?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a4ba3f2f",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -632,7 +631,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785654?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_cb9379a0",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -646,7 +645,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785660?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e97d6ffb",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -660,7 +659,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4869211?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_633ecf0e",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -674,7 +673,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867568?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_24a9b40d",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -688,7 +687,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785668?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1b39eb23",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -702,7 +701,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4869212?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2da0e9b",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -716,7 +715,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867569?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_41aab022",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -730,7 +729,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4865021?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_be70aebf",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -744,7 +743,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4787498?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7c9a27e8",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -758,7 +757,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872687?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a3e64609",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -772,7 +771,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4869974?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bd2df4da",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -786,7 +785,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4787501?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_21877b65",
-      "checkedAt": "2026-10-07T07:00:08.030Z"
+      "checkedAt": "2026-10-07T07:55:49.286Z"
     },
     {
       "provider": "adpick_biz",
@@ -800,7 +799,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4744040?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a84c3e16",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -814,7 +813,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785695?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f2845dc7",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -828,7 +827,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785703?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_18c2d3ef",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -842,7 +841,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4744037?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5cde8dc0",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -856,7 +855,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785702?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d07f51fc",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -870,7 +869,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785697?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_629959b5",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -884,7 +883,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716406?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f7ecc581",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -898,7 +897,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785939?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9d20425c",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -912,7 +911,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4796736?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b62e80db",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -926,7 +925,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4865072?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9f68c207",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -940,7 +939,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860284?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e9c8e0b1",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -954,7 +953,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891797?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8aa6680e",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -968,7 +967,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4865076?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_dadb192b",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -982,7 +981,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891798?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3d8529bf",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -996,7 +995,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891799?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4d54094c",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -1010,7 +1009,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860287?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d4395000",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -1024,7 +1023,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891801?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d6301a20",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -1038,7 +1037,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785864?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c7a1b5e1",
-      "checkedAt": "2026-10-07T07:00:17.370Z"
+      "checkedAt": "2026-10-07T07:55:58.988Z"
     },
     {
       "provider": "adpick_biz",
@@ -1052,7 +1051,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785709?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_418fe5d5",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1066,7 +1065,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785710?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b832927f",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1080,7 +1079,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785711?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_baff450c",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1094,7 +1093,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872760?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_245f8cf9",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1108,7 +1107,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785714?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_af3fa483",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1122,7 +1121,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785715?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7d76e1f0",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1136,7 +1135,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785716?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_77de5421",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1150,7 +1149,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872762?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6126a5fb",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1164,7 +1163,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4854395?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4644d3cd",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1178,7 +1177,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785721?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_691842d3",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1192,7 +1191,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785722?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3fb5eac6",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1206,7 +1205,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4787506?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9b6b76e8",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1220,7 +1219,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4855706?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_957add50",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1234,7 +1233,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785712?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_93ca6e4d",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1248,7 +1247,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4787509?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e7c9310d",
-      "checkedAt": "2026-10-07T07:00:26.879Z"
+      "checkedAt": "2026-10-07T07:56:08.486Z"
     },
     {
       "provider": "adpick_biz",
@@ -1262,7 +1261,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785726?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f11734f2",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1276,7 +1275,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785728?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f963a738",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1290,7 +1289,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785730?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_af5d9615",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1304,7 +1303,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785732?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b6115ca7",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1318,7 +1317,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785733?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_57e223d4",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1332,7 +1331,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785736?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9651704b",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1346,7 +1345,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785738?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c923ac3d",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1360,7 +1359,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785740?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6bf7d10e",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1374,7 +1373,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785741?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_76530299",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1388,13 +1387,13 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4787524?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8a36ae44",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
       "query": "아기 여름옷",
       "name": "아기여름옷 쿨 요루거즈 아동 반팔 파자마 상하세트 6종 205147",
-      "imageUrl": null,
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519058510",
       "merchant": "GS SHOP",
       "merchantDomain": null,
       "price": 31990,
@@ -1402,7 +1401,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860295?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5b748377",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1416,7 +1415,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4787526?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3567781a",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1430,7 +1429,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4865107?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a2abc8ac",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1444,7 +1443,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4835018?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_514f6814",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1458,7 +1457,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862180?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1eedcde2",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1472,7 +1471,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862182?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c9f4488c",
-      "checkedAt": "2026-10-07T07:00:35.917Z"
+      "checkedAt": "2026-10-07T07:56:17.607Z"
     },
     {
       "provider": "adpick_biz",
@@ -1486,7 +1485,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872800?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_27278c3e",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1500,7 +1499,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785658?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_84e63bd4",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1514,7 +1513,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785751?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_48f70778",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1528,7 +1527,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785752?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a71004e9",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1542,7 +1541,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785747?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9ab69bb7",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1556,7 +1555,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785755?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_504a9d74",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1570,7 +1569,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785759?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5a740240",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1584,7 +1583,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4802044?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ea463f1b",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1598,7 +1597,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785754?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2dd577c7",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1612,7 +1611,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4787527?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3a961f85",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1626,7 +1625,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891810?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6d836b56",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1640,7 +1639,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785760?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_17165a6c",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1654,7 +1653,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785762?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6facd0c2",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1668,7 +1667,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860301?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e1e74b6d",
-      "checkedAt": "2026-10-07T07:00:45.605Z"
+      "checkedAt": "2026-10-07T07:56:26.959Z"
     },
     {
       "provider": "adpick_biz",
@@ -1682,7 +1681,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716191?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8481638a",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1696,7 +1695,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785763?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9082bbad",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1710,7 +1709,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716185?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_97a005af",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1724,7 +1723,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785731?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2324d1ea",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1738,7 +1737,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716199?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d7ee3332",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1752,7 +1751,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785764?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6be2d1d0",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1766,7 +1765,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716195?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e83585e",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1780,7 +1779,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716247?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7aeeb358",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1794,7 +1793,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785765?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_784977e3",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1808,7 +1807,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4796624?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_251b5a3",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1822,7 +1821,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4787525?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_226cd557",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1836,7 +1835,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716182?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_50aebce6",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1850,13 +1849,13 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4865110?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b796e61c",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
       "query": "유아 여름옷",
       "name": "아림클로젯/여름 소풍- 여름 유아 활동복 세트/의류 셋업",
-      "imageUrl": null,
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519058872",
       "merchant": "더블유컨셉코리아",
       "merchantDomain": null,
       "price": 41650,
@@ -1864,7 +1863,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891812?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4005890",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1878,7 +1877,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862181?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a2bf71cd",
-      "checkedAt": "2026-10-07T07:00:54.850Z"
+      "checkedAt": "2026-10-07T07:56:36.277Z"
     },
     {
       "provider": "adpick_biz",
@@ -1892,7 +1891,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785746?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_21f0cda4",
-      "checkedAt": "2026-10-07T07:01:04.047Z"
+      "checkedAt": "2026-10-07T07:56:46.114Z"
     },
     {
       "provider": "adpick_biz",
@@ -1906,7 +1905,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785749?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1704c661",
-      "checkedAt": "2026-10-07T07:01:04.047Z"
+      "checkedAt": "2026-10-07T07:56:46.114Z"
     },
     {
       "provider": "adpick_biz",
@@ -1920,7 +1919,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860300?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6dec7382",
-      "checkedAt": "2026-10-07T07:01:04.047Z"
+      "checkedAt": "2026-10-07T07:56:46.114Z"
     },
     {
       "provider": "adpick_biz",
@@ -1934,7 +1933,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785768?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c7f5b2c4",
-      "checkedAt": "2026-10-07T07:01:04.047Z"
+      "checkedAt": "2026-10-07T07:56:46.114Z"
     },
     {
       "provider": "adpick_biz",
@@ -1948,7 +1947,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785753?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_80651a5e",
-      "checkedAt": "2026-10-07T07:01:04.047Z"
+      "checkedAt": "2026-10-07T07:56:46.114Z"
     },
     {
       "provider": "adpick_biz",
@@ -1962,7 +1961,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785757?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f663258a",
-      "checkedAt": "2026-10-07T07:01:04.047Z"
+      "checkedAt": "2026-10-07T07:56:46.114Z"
     },
     {
       "provider": "adpick_biz",
@@ -1976,7 +1975,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785766?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a5e1b296",
-      "checkedAt": "2026-10-07T07:01:04.047Z"
+      "checkedAt": "2026-10-07T07:56:46.114Z"
     },
     {
       "provider": "adpick_biz",
@@ -1990,7 +1989,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785761?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c00146df",
-      "checkedAt": "2026-10-07T07:01:04.047Z"
+      "checkedAt": "2026-10-07T07:56:46.114Z"
     },
     {
       "provider": "adpick_biz",
@@ -2004,7 +2003,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4787511?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_128b98f4",
-      "checkedAt": "2026-10-07T07:01:04.047Z"
+      "checkedAt": "2026-10-07T07:56:46.114Z"
     },
     {
       "provider": "adpick_biz",
@@ -2018,7 +2017,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716361?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b2c08ec3",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2032,7 +2031,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739126?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f6b50d41",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2046,7 +2045,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4855991?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_64ed90ba",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2060,7 +2059,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4863978?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1de25260",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2074,7 +2073,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4863979?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ef4017b3",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2088,7 +2087,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785774?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8efee9fd",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2102,7 +2101,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716370?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_42bbc485",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2116,7 +2115,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860305?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_96ac7841",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2130,7 +2129,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734957?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5fe615f4",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2144,7 +2143,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860304?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_75e67056",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2158,7 +2157,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860427?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_694ac62c",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2172,7 +2171,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716367?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_81ba768d",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2186,7 +2185,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4723875?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4844e21f",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2200,7 +2199,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4723876?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_16069102",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2214,7 +2213,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4799352?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9ea5561e",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2228,7 +2227,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4865147?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_560dde88",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2242,7 +2241,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4865148?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_172ab62d",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2256,7 +2255,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716376?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e178683b",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2270,7 +2269,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862699?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ddfb9d71",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2284,7 +2283,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891813?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_25d68ba3",
-      "checkedAt": "2026-10-07T07:01:13.174Z"
+      "checkedAt": "2026-10-07T07:56:55.450Z"
     },
     {
       "provider": "adpick_biz",
@@ -2298,7 +2297,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716393?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4de95a96",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2312,7 +2311,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716279?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_38fa9e55",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2326,7 +2325,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4799429?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d5c49331",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2340,7 +2339,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872865?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_48852fff",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2354,7 +2353,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872866?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a04b67e2",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2368,7 +2367,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785781?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ffff205",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2382,7 +2381,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716276?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2fcaf2e0",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2396,7 +2395,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4726117?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e08b9a9d",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2410,7 +2409,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716379?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3a137142",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2424,7 +2423,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716289?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e921d216",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2438,7 +2437,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785778?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_55b37e89",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2452,7 +2451,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872868?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a82c60a8",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2466,7 +2465,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785785?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_837f5db9",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2480,7 +2479,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716284?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bb954385",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2494,7 +2493,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785786?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6710b208",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2508,7 +2507,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716387?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_94d3fcf",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2522,7 +2521,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785782?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5fa080c4",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2536,7 +2535,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4726116?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_238425f2",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2550,7 +2549,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891814?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_65896e82",
-      "checkedAt": "2026-10-07T07:01:21.860Z"
+      "checkedAt": "2026-10-07T07:57:05.561Z"
     },
     {
       "provider": "adpick_biz",
@@ -2564,7 +2563,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785787?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_aebc95bb",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2578,7 +2577,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716408?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8f5a02d7",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2592,7 +2591,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716400?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ef2f6fdf",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2606,7 +2605,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872892?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c49c5fc1",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2620,7 +2619,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716410?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_78fe1e32",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2634,7 +2633,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891815?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d984466d",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2648,7 +2647,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4787529?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3a8a7363",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2662,7 +2661,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891816?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_dae4d2c",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2676,7 +2675,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4806588?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d00b7070",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2690,7 +2689,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4865171?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ba5728ed",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2704,7 +2703,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862582?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_877403e0",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2718,7 +2717,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891817?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_97c7bf9f",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2732,7 +2731,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4806591?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_43abc372",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2746,7 +2745,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4865173?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_789aa21f",
-      "checkedAt": "2026-10-07T07:01:31.017Z"
+      "checkedAt": "2026-10-07T07:57:19.749Z"
     },
     {
       "provider": "adpick_biz",
@@ -2760,7 +2759,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785802?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_795b8c01",
-      "checkedAt": "2026-10-07T07:01:39.872Z"
+      "checkedAt": "2026-10-07T07:57:28.910Z"
     },
     {
       "provider": "adpick_biz",
@@ -2774,7 +2773,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739119?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_365dc2cb",
-      "checkedAt": "2026-10-07T07:01:39.872Z"
+      "checkedAt": "2026-10-07T07:57:28.910Z"
     },
     {
       "provider": "adpick_biz",
@@ -2788,7 +2787,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872902?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a8a16e73",
-      "checkedAt": "2026-10-07T07:01:39.872Z"
+      "checkedAt": "2026-10-07T07:57:28.910Z"
     },
     {
       "provider": "adpick_biz",
@@ -2802,7 +2801,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785799?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1c54b8fc",
-      "checkedAt": "2026-10-07T07:01:39.872Z"
+      "checkedAt": "2026-10-07T07:57:28.910Z"
     },
     {
       "provider": "adpick_biz",
@@ -2816,7 +2815,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4791162?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bab07adf",
-      "checkedAt": "2026-10-07T07:01:39.872Z"
+      "checkedAt": "2026-10-07T07:57:28.910Z"
     },
     {
       "provider": "adpick_biz",
@@ -2830,7 +2829,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739121?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7619e72c",
-      "checkedAt": "2026-10-07T07:01:39.872Z"
+      "checkedAt": "2026-10-07T07:57:28.910Z"
     },
     {
       "provider": "adpick_biz",
@@ -2844,7 +2843,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872903?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5be61720",
-      "checkedAt": "2026-10-07T07:01:39.872Z"
+      "checkedAt": "2026-10-07T07:57:28.910Z"
     },
     {
       "provider": "adpick_biz",
@@ -2858,7 +2857,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785805?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c7b349ec",
-      "checkedAt": "2026-10-07T07:01:39.872Z"
+      "checkedAt": "2026-10-07T07:57:28.910Z"
     },
     {
       "provider": "adpick_biz",
@@ -2872,7 +2871,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4787532?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8f2e686f",
-      "checkedAt": "2026-10-07T07:01:39.872Z"
+      "checkedAt": "2026-10-07T07:57:28.910Z"
     },
     {
       "provider": "adpick_biz",
@@ -2886,7 +2885,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716351?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e37f313c",
-      "checkedAt": "2026-10-07T07:01:39.872Z"
+      "checkedAt": "2026-10-07T07:57:28.910Z"
     },
     {
       "provider": "adpick_biz",
@@ -2900,7 +2899,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785797?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b09fde7e",
-      "checkedAt": "2026-10-07T07:01:39.872Z"
+      "checkedAt": "2026-10-07T07:57:28.910Z"
     },
     {
       "provider": "adpick_biz",
@@ -2914,7 +2913,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785845?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2812dfc8",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.830Z"
     },
     {
       "provider": "adpick_biz",
@@ -2928,7 +2927,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872944?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_cd13fa89",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.830Z"
     },
     {
       "provider": "adpick_biz",
@@ -2942,7 +2941,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785847?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_95af18ee",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.830Z"
     },
     {
       "provider": "adpick_biz",
@@ -2956,7 +2955,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872945?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_90558c7e",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.830Z"
     },
     {
       "provider": "adpick_biz",
@@ -2970,7 +2969,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785850?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a0134f4a",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.830Z"
     },
     {
       "provider": "adpick_biz",
@@ -2984,7 +2983,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872946?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c8ddb00b",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.830Z"
     },
     {
       "provider": "adpick_biz",
@@ -2998,7 +2997,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785852?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8324d834",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.830Z"
     },
     {
       "provider": "adpick_biz",
@@ -3012,7 +3011,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4802050?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1d8006a",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.830Z"
     },
     {
       "provider": "adpick_biz",
@@ -3026,7 +3025,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860364?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f8a6a00",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.831Z"
     },
     {
       "provider": "adpick_biz",
@@ -3040,7 +3039,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860365?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_cb7af8d3",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.831Z"
     },
     {
       "provider": "adpick_biz",
@@ -3054,7 +3053,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891824?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1e2a3c05",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.831Z"
     },
     {
       "provider": "adpick_biz",
@@ -3068,7 +3067,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891825?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_18fb949a",
-      "checkedAt": "2026-10-07T07:01:49.173Z"
+      "checkedAt": "2026-10-07T07:57:37.831Z"
     },
     {
       "provider": "adpick_biz",
@@ -3082,7 +3081,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785863?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_df4261cc",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3096,7 +3095,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785865?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8c75fc76",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3110,7 +3109,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4886762?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d0223e96",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3124,7 +3123,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4720324?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8a6130b3",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3138,7 +3137,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785870?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3420ea58",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3152,7 +3151,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785871?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_46ee5fcb",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3166,7 +3165,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785873?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d7877c49",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3180,7 +3179,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4791177?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9899a7b5",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3194,7 +3193,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785876?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d3c1c16a",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3208,7 +3207,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785878?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4f2c5120",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3222,7 +3221,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891834?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_eecc1f78",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3236,7 +3235,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872948?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_65f65fd",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3250,7 +3249,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872951?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e78c5193",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3264,7 +3263,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891835?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_334310eb",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3278,7 +3277,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891836?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_263a325e",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3292,7 +3291,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872950?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_63a01ec0",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3306,7 +3305,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860367?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2519fab1",
-      "checkedAt": "2026-10-07T07:01:58.497Z"
+      "checkedAt": "2026-10-07T07:57:47.931Z"
     },
     {
       "provider": "adpick_biz",
@@ -3320,7 +3319,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785895?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c8b666d5",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3334,7 +3333,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872973?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_80e243af",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3348,7 +3347,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4799355?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2d0e1887",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3362,7 +3361,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716285?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b6669c1a",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3376,7 +3375,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872975?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_65913551",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3390,7 +3389,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872977?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f476d573",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3404,7 +3403,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785898?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7a110426",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3418,7 +3417,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785899?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5f0b5091",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3432,7 +3431,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4747742?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_77b815b2",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3446,13 +3445,13 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891848?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_be97ebef",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
       "query": "여아 바지",
       "name": "[현대백화점] [리틀그라운드] 룰라비- 플라워벨보아조거팬츠 (76C22-410-02)CH 딜/여아바지/선물 76C2241002 +할인쿠폰",
-      "imageUrl": null,
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519061706",
       "merchant": "Hmall",
       "merchantDomain": null,
       "price": 61160,
@@ -3460,7 +3459,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891849?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_765469fc",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3474,7 +3473,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4869570?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7ae63e22",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3488,7 +3487,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860368?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c6b63f34",
-      "checkedAt": "2026-10-07T07:02:07.598Z"
+      "checkedAt": "2026-10-07T07:57:56.685Z"
     },
     {
       "provider": "adpick_biz",
@@ -3502,7 +3501,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785908?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ef7ba950",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3516,7 +3515,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872990?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_dbb40534",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3530,7 +3529,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872991?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8fac287",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3544,7 +3543,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872996?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7a92001e",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3558,7 +3557,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872993?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f588ec75",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3572,7 +3571,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785923?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1e4f7337",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3586,7 +3585,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4886803?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b440d4ca",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3600,7 +3599,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872995?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_446d19ab",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3614,7 +3613,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4886804?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b722b",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3628,7 +3627,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4872997?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_537e01a9",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3642,7 +3641,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4886805?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2c627bb8",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3656,7 +3655,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891859?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_822d3aad",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.758Z"
     },
     {
       "provider": "adpick_biz",
@@ -3670,7 +3669,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785912?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5086446f",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.759Z"
     },
     {
       "provider": "adpick_biz",
@@ -3684,7 +3683,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891860?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_53f3c19d",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.759Z"
     },
     {
       "provider": "adpick_biz",
@@ -3698,7 +3697,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891861?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_96ec4cf2",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.759Z"
     },
     {
       "provider": "adpick_biz",
@@ -3712,7 +3711,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891862?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_dcdb0c8f",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.759Z"
     },
     {
       "provider": "adpick_biz",
@@ -3726,7 +3725,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891863?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_22996a9c",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.759Z"
     },
     {
       "provider": "adpick_biz",
@@ -3740,7 +3739,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785919?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ad1d972a",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.759Z"
     },
     {
       "provider": "adpick_biz",
@@ -3754,7 +3753,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785913?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_842c27c",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.759Z"
     },
     {
       "provider": "adpick_biz",
@@ -3768,7 +3767,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891864?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_688c5cb1",
-      "checkedAt": "2026-10-07T07:02:16.848Z"
+      "checkedAt": "2026-10-07T07:58:05.759Z"
     },
     {
       "provider": "adpick_biz",
@@ -3782,7 +3781,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735029?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a54bc8df",
-      "checkedAt": "2026-10-07T07:02:25.751Z"
+      "checkedAt": "2026-10-07T07:58:14.516Z"
     },
     {
       "provider": "adpick_biz",
@@ -3796,7 +3795,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4873005?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e54d4044",
-      "checkedAt": "2026-10-07T07:02:25.751Z"
+      "checkedAt": "2026-10-07T07:58:14.516Z"
     },
     {
       "provider": "adpick_biz",
@@ -3810,7 +3809,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785925?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f9ebda19",
-      "checkedAt": "2026-10-07T07:02:25.751Z"
+      "checkedAt": "2026-10-07T07:58:14.516Z"
     },
     {
       "provider": "adpick_biz",
@@ -3824,7 +3823,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785927?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8f2be81b",
-      "checkedAt": "2026-10-07T07:02:25.751Z"
+      "checkedAt": "2026-10-07T07:58:14.516Z"
     },
     {
       "provider": "adpick_biz",
@@ -3838,7 +3837,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4873006?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_95acb185",
-      "checkedAt": "2026-10-07T07:02:25.751Z"
+      "checkedAt": "2026-10-07T07:58:14.516Z"
     },
     {
       "provider": "adpick_biz",
@@ -3852,7 +3851,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785929?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a9210d0d",
-      "checkedAt": "2026-10-07T07:02:25.751Z"
+      "checkedAt": "2026-10-07T07:58:14.516Z"
     },
     {
       "provider": "adpick_biz",
@@ -3866,7 +3865,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785933?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_79fbfd0a",
-      "checkedAt": "2026-10-07T07:02:25.751Z"
+      "checkedAt": "2026-10-07T07:58:14.516Z"
     },
     {
       "provider": "adpick_biz",
@@ -3880,7 +3879,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785934?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1106d06b",
-      "checkedAt": "2026-10-07T07:02:25.751Z"
+      "checkedAt": "2026-10-07T07:58:14.516Z"
     },
     {
       "provider": "adpick_biz",
@@ -3894,7 +3893,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785936?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2aa8dc69",
-      "checkedAt": "2026-10-07T07:02:25.751Z"
+      "checkedAt": "2026-10-07T07:58:14.516Z"
     },
     {
       "provider": "adpick_biz",
@@ -3908,13 +3907,13 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891877?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6d81a8a5",
-      "checkedAt": "2026-10-07T07:02:25.751Z"
+      "checkedAt": "2026-10-07T07:58:14.516Z"
     },
     {
       "provider": "adpick_biz",
       "query": "남아 바지",
       "name": "스톤아일랜드/스톤아일랜드키즈 와펜로고 스웨트 조거 남아 팬츠 L1S166200007 S0040 V0061/10A/키즈 의류",
-      "imageUrl": null,
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519063070",
       "merchant": "더블유컨셉코리아",
       "merchantDomain": null,
       "price": 193500,
@@ -3922,7 +3921,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891878?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_234bf9f0",
-      "checkedAt": "2026-10-07T07:02:25.751Z"
+      "checkedAt": "2026-10-07T07:58:14.516Z"
     },
     {
       "provider": "adpick_biz",
@@ -3936,7 +3935,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785940?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8fa59454",
-      "checkedAt": "2026-10-07T07:02:35.277Z"
+      "checkedAt": "2026-10-07T07:58:23.814Z"
     },
     {
       "provider": "adpick_biz",
@@ -3950,7 +3949,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785943?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e7210695",
-      "checkedAt": "2026-10-07T07:02:35.277Z"
+      "checkedAt": "2026-10-07T07:58:23.814Z"
     },
     {
       "provider": "adpick_biz",
@@ -3964,7 +3963,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785946?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ce985f3e",
-      "checkedAt": "2026-10-07T07:02:35.277Z"
+      "checkedAt": "2026-10-07T07:58:23.814Z"
     },
     {
       "provider": "adpick_biz",
@@ -3978,7 +3977,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785947?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5eadfd49",
-      "checkedAt": "2026-10-07T07:02:35.277Z"
+      "checkedAt": "2026-10-07T07:58:23.814Z"
     },
     {
       "provider": "adpick_biz",
@@ -3992,7 +3991,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716358?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_12439da7",
-      "checkedAt": "2026-10-07T07:02:35.277Z"
+      "checkedAt": "2026-10-07T07:58:23.814Z"
     },
     {
       "provider": "adpick_biz",
@@ -4006,7 +4005,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4720338?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3f9f149a",
-      "checkedAt": "2026-10-07T07:02:35.277Z"
+      "checkedAt": "2026-10-07T07:58:23.814Z"
     },
     {
       "provider": "adpick_biz",
@@ -4020,7 +4019,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785937?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3fdf1de",
-      "checkedAt": "2026-10-07T07:02:35.277Z"
+      "checkedAt": "2026-10-07T07:58:23.814Z"
     },
     {
       "provider": "adpick_biz",
@@ -4034,7 +4033,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891884?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_87d528c7",
-      "checkedAt": "2026-10-07T07:02:35.277Z"
+      "checkedAt": "2026-10-07T07:58:23.814Z"
     },
     {
       "provider": "adpick_biz",
@@ -4048,7 +4047,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891885?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_aa4a4e74",
-      "checkedAt": "2026-10-07T07:02:35.277Z"
+      "checkedAt": "2026-10-07T07:58:23.814Z"
     },
     {
       "provider": "adpick_biz",
@@ -4062,7 +4061,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891886?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f7ea24b5",
-      "checkedAt": "2026-10-07T07:02:35.277Z"
+      "checkedAt": "2026-10-07T07:58:23.814Z"
     },
     {
       "provider": "adpick_biz",
@@ -4076,7 +4075,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734960?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4f516346",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4090,7 +4089,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785952?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4356811b",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4104,7 +4103,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4873042?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_cb76371d",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4118,7 +4117,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734968?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_12ccfc9e",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4132,7 +4131,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4876621?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_865ecb25",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4146,7 +4145,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785957?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_59b43e24",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4160,7 +4159,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734976?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_434aa6ed",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4174,7 +4173,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734963?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_78b3bb53",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4188,13 +4187,13 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4876624?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b602d4e",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
       "query": "아동 맨투맨",
       "name": "펜디 FENDIJUH108 5V0 F0QG0 아동 맨투맨",
-      "imageUrl": null,
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519064278",
       "merchant": "GS SHOP",
       "merchantDomain": null,
       "price": 301440,
@@ -4202,7 +4201,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891909?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f5e75973",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4216,7 +4215,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4808169?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b662b44b",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4230,13 +4229,13 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734971?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6dc6b910",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
       "query": "아동 맨투맨",
       "name": "[스톤아일랜드] [T56]스톤아일랜드 L2S166100009S0425 키즈 맨투맨 티셔츠 남아 여아[이마트몰]",
-      "imageUrl": null,
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519064202",
       "merchant": "SSG",
       "merchantDomain": null,
       "price": 270880,
@@ -4244,13 +4243,13 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891910?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3024d60d",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
       "query": "아동 맨투맨",
       "name": "베럴토끼 아동 긴팔 맨투맨 205467",
-      "imageUrl": null,
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519064164",
       "merchant": "예스이십사",
       "merchantDomain": null,
       "price": 16800,
@@ -4258,7 +4257,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4865292?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7fb9c7f7",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4272,7 +4271,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891912?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2973333f",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4286,7 +4285,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4747780?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_389e5a18",
-      "checkedAt": "2026-10-07T07:02:44.653Z"
+      "checkedAt": "2026-10-07T07:58:32.948Z"
     },
     {
       "provider": "adpick_biz",
@@ -4300,7 +4299,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716360?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_210f530",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4314,7 +4313,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716362?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_380b4df6",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4328,7 +4327,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4873089?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d4231068",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4342,7 +4341,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4873088?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_68ba59b",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4356,7 +4355,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4873090?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2bbd7366",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4370,7 +4369,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4848559?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c77aa454",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4384,7 +4383,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785909?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_fbe24f63",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4398,7 +4397,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4873091?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_575dadd1",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4412,7 +4411,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785964?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_47bc3ae2",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4426,7 +4425,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735009?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9e00af49",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4440,7 +4439,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716369?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_67c5519b",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4454,7 +4453,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735004?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3eca1792",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4468,7 +4467,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735014?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_95ecb53f",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4482,7 +4481,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735017?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b99f5422",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4496,7 +4495,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785969?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_52416dd9",
-      "checkedAt": "2026-10-07T07:02:53.988Z"
+      "checkedAt": "2026-10-07T07:58:42.032Z"
     },
     {
       "provider": "adpick_biz",
@@ -4510,7 +4509,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735085?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_375f8eb5",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4524,7 +4523,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716420?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_cfb591f5",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4538,7 +4537,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4864085?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d2056be4",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4552,7 +4551,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4873119?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7fb96052",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4566,7 +4565,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716429?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_42a45672",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4580,7 +4579,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4791191?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ad564b29",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4594,7 +4593,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4873121?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4b42c23d",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4608,7 +4607,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4812127?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_224aec20",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4622,7 +4621,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4802070?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_27aa35f8",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4636,7 +4635,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785974?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6ec9650f",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4650,7 +4649,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4747820?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6a8aad27",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4664,7 +4663,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4812129?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a6e05c6a",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4678,7 +4677,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4808135?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_33877172",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4692,7 +4691,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867525?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c344e1e2",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4706,7 +4705,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4865302?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_57f85e71",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4720,7 +4719,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4755561?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_63e0a5c6",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4734,7 +4733,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891970?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_82e61863",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4748,7 +4747,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4808972?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7cbf6acf",
-      "checkedAt": "2026-10-07T07:03:03.640Z"
+      "checkedAt": "2026-10-07T07:58:51.557Z"
     },
     {
       "provider": "adpick_biz",
@@ -4762,7 +4761,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735077?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4375c290",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4776,7 +4775,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4720334?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_725a4a96",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4790,7 +4789,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785981?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f5ac0933",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4804,7 +4803,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4812495?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_fab44bd6",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4818,7 +4817,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735069?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4e62c4d3",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4832,7 +4831,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734946?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7b93498e",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4846,7 +4845,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4854609?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3bd3f3d7",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4860,7 +4859,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785986?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c7295b52",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4874,7 +4873,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785982?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ded88ca6",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4888,7 +4887,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735083?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_26e313eb",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4902,7 +4901,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734928?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a540d4b2",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4916,7 +4915,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4812169?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3ff490b6",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4930,7 +4929,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4747815?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4f2fec37",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4944,7 +4943,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862591?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_cc8aab70",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4958,7 +4957,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862590?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_fe536e03",
-      "checkedAt": "2026-10-07T07:03:12.754Z"
+      "checkedAt": "2026-10-07T07:59:01.195Z"
     },
     {
       "provider": "adpick_biz",
@@ -4972,7 +4971,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716128?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e9ec6f62",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -4986,7 +4985,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716129?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6dbe134d",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5000,7 +4999,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716130?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6b8deb87",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5014,7 +5013,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716132?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_581c1575",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5028,7 +5027,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716131?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3e472e34",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5042,7 +5041,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716133?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5b35a54a",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5056,7 +5055,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716145?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2b70d90b",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5070,7 +5069,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716138?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_10f9998f",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5084,7 +5083,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716140?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1f099c94",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5098,7 +5097,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716139?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_56b7f79c",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5112,7 +5111,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716141?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_23979f67",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5126,7 +5125,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716137?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_dd25291e",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5140,7 +5139,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716146?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f2e8b57e",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5154,7 +5153,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4726092?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ed665c5",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5168,7 +5167,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4720297?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a2a6041e",
-      "checkedAt": "2026-10-07T07:03:21.940Z"
+      "checkedAt": "2026-10-07T07:59:10.787Z"
     },
     {
       "provider": "adpick_biz",
@@ -5182,7 +5181,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734763?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_66d6f1fd",
-      "checkedAt": "2026-10-07T07:03:31.301Z"
+      "checkedAt": "2026-10-07T07:59:20.577Z"
     },
     {
       "provider": "adpick_biz",
@@ -5196,7 +5195,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734765?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_95c0a0b3",
-      "checkedAt": "2026-10-07T07:03:31.301Z"
+      "checkedAt": "2026-10-07T07:59:20.577Z"
     },
     {
       "provider": "adpick_biz",
@@ -5210,7 +5209,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734768?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1cedff94",
-      "checkedAt": "2026-10-07T07:03:31.301Z"
+      "checkedAt": "2026-10-07T07:59:20.577Z"
     },
     {
       "provider": "adpick_biz",
@@ -5224,7 +5223,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734771?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_25dcaeb6",
-      "checkedAt": "2026-10-07T07:03:31.301Z"
+      "checkedAt": "2026-10-07T07:59:20.577Z"
     },
     {
       "provider": "adpick_biz",
@@ -5238,7 +5237,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739000?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2f6233a2",
-      "checkedAt": "2026-10-07T07:03:31.301Z"
+      "checkedAt": "2026-10-07T07:59:20.577Z"
     },
     {
       "provider": "adpick_biz",
@@ -5252,7 +5251,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734772?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3b424583",
-      "checkedAt": "2026-10-07T07:03:31.301Z"
+      "checkedAt": "2026-10-07T07:59:20.577Z"
     },
     {
       "provider": "adpick_biz",
@@ -5266,7 +5265,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4747728?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ece4041a",
-      "checkedAt": "2026-10-07T07:03:31.301Z"
+      "checkedAt": "2026-10-07T07:59:20.577Z"
     },
     {
       "provider": "adpick_biz",
@@ -5280,7 +5279,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891984?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ed6cabcc",
-      "checkedAt": "2026-10-07T07:03:31.301Z"
+      "checkedAt": "2026-10-07T07:59:20.577Z"
     },
     {
       "provider": "adpick_biz",
@@ -5294,7 +5293,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734792?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_eb59ffa5",
-      "checkedAt": "2026-10-07T07:03:40.228Z"
+      "checkedAt": "2026-10-07T07:59:29.391Z"
     },
     {
       "provider": "adpick_biz",
@@ -5308,7 +5307,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734780?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_990795aa",
-      "checkedAt": "2026-10-07T07:03:40.228Z"
+      "checkedAt": "2026-10-07T07:59:29.391Z"
     },
     {
       "provider": "adpick_biz",
@@ -5322,7 +5321,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4796629?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_52afa784",
-      "checkedAt": "2026-10-07T07:03:40.228Z"
+      "checkedAt": "2026-10-07T07:59:29.391Z"
     },
     {
       "provider": "adpick_biz",
@@ -5336,7 +5335,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734784?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8877e67e",
-      "checkedAt": "2026-10-07T07:03:40.228Z"
+      "checkedAt": "2026-10-07T07:59:29.391Z"
     },
     {
       "provider": "adpick_biz",
@@ -5350,7 +5349,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739007?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_43674fc3",
-      "checkedAt": "2026-10-07T07:03:40.228Z"
+      "checkedAt": "2026-10-07T07:59:29.391Z"
     },
     {
       "provider": "adpick_biz",
@@ -5364,7 +5363,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734791?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_24a63764",
-      "checkedAt": "2026-10-07T07:03:40.228Z"
+      "checkedAt": "2026-10-07T07:59:29.391Z"
     },
     {
       "provider": "adpick_biz",
@@ -5378,7 +5377,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4812236?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3696042b",
-      "checkedAt": "2026-10-07T07:03:40.228Z"
+      "checkedAt": "2026-10-07T07:59:29.391Z"
     },
     {
       "provider": "adpick_biz",
@@ -5392,7 +5391,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734786?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e28e4198",
-      "checkedAt": "2026-10-07T07:03:40.228Z"
+      "checkedAt": "2026-10-07T07:59:29.391Z"
     },
     {
       "provider": "adpick_biz",
@@ -5406,7 +5405,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4785062?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_552037a7",
-      "checkedAt": "2026-10-07T07:03:40.228Z"
+      "checkedAt": "2026-10-07T07:59:29.391Z"
     },
     {
       "provider": "adpick_biz",
@@ -5420,7 +5419,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860494?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_74b7f4b2",
-      "checkedAt": "2026-10-07T07:03:40.228Z"
+      "checkedAt": "2026-10-07T07:59:29.391Z"
     },
     {
       "provider": "adpick_biz",
@@ -5434,7 +5433,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716151?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_dacc30ce",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5448,7 +5447,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4843057?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_56d9f0b2",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5462,7 +5461,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860503?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3e1de911",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5476,7 +5475,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860495?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7e40645d",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5490,7 +5489,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716160?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_47985276",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5504,7 +5503,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4873185?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_68ab18b7",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5518,7 +5517,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860504?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_36b86b7c",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5532,7 +5531,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739013?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_36a8f732",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5546,7 +5545,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4720303?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bf36f604",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5560,7 +5559,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891986?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1506b22",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5574,7 +5573,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891987?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e44f6f0d",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5588,7 +5587,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739014?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_cb393713",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5602,7 +5601,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860498?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ab4d19de",
-      "checkedAt": "2026-10-07T07:03:48.971Z"
+      "checkedAt": "2026-10-07T07:59:38.834Z"
     },
     {
       "provider": "adpick_biz",
@@ -5616,7 +5615,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734798?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_dbe0017f",
-      "checkedAt": "2026-10-07T07:03:57.920Z"
+      "checkedAt": "2026-10-07T07:59:47.774Z"
     },
     {
       "provider": "adpick_biz",
@@ -5630,7 +5629,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4808140?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7f5cd872",
-      "checkedAt": "2026-10-07T07:03:57.920Z"
+      "checkedAt": "2026-10-07T07:59:47.774Z"
     },
     {
       "provider": "adpick_biz",
@@ -5644,7 +5643,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4734799?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_deacb40c",
-      "checkedAt": "2026-10-07T07:03:57.920Z"
+      "checkedAt": "2026-10-07T07:59:47.774Z"
     },
     {
       "provider": "adpick_biz",
@@ -5658,7 +5657,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860496?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_446f6a5c",
-      "checkedAt": "2026-10-07T07:03:57.920Z"
+      "checkedAt": "2026-10-07T07:59:47.774Z"
     },
     {
       "provider": "adpick_biz",
@@ -5672,7 +5671,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891989?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ca5a4a1b",
-      "checkedAt": "2026-10-07T07:03:57.920Z"
+      "checkedAt": "2026-10-07T07:59:47.774Z"
     },
     {
       "provider": "adpick_biz",
@@ -5686,7 +5685,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860497?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8c2d974f",
-      "checkedAt": "2026-10-07T07:03:57.920Z"
+      "checkedAt": "2026-10-07T07:59:47.774Z"
     },
     {
       "provider": "adpick_biz",
@@ -5700,7 +5699,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4891990?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a550bd05",
-      "checkedAt": "2026-10-07T07:03:57.920Z"
+      "checkedAt": "2026-10-07T07:59:47.774Z"
     },
     {
       "provider": "adpick_biz",
@@ -5714,7 +5713,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716165?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_91477b0d",
-      "checkedAt": "2026-10-07T07:03:57.920Z"
+      "checkedAt": "2026-10-07T07:59:47.774Z"
     },
     {
       "provider": "adpick_biz",
@@ -5728,7 +5727,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4860499?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d1f80469",
-      "checkedAt": "2026-10-07T07:03:57.920Z"
+      "checkedAt": "2026-10-07T07:59:47.774Z"
     },
     {
       "provider": "adpick_biz",
@@ -5742,7 +5741,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867553?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b75410ff",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5756,7 +5755,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716184?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a736cebc",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5770,7 +5769,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4876410?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9636c55b",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5784,7 +5783,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739020?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_58bbd3d0",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5798,7 +5797,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4876409?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3b349e91",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5812,7 +5811,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4876504?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6b2837fd",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5826,7 +5825,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4775513?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_dd4cf5e5",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5840,7 +5839,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4877988?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f7cd8ccc",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5854,7 +5853,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4877996?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f6fd9247",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5868,7 +5867,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4869519?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a2990227",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5882,7 +5881,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4877997?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1972b7f4",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5896,7 +5895,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4892019?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_313785d6",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5910,7 +5909,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4869521?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_63fd95c8",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5924,7 +5923,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4892020?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ed0bec96",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5938,7 +5937,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4892021?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_fe8d681",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5952,7 +5951,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4892022?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b30d0bd0",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
@@ -5966,13 +5965,13 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4892023?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bf73b1e3",
-      "checkedAt": "2026-10-07T07:05:15.394Z"
+      "checkedAt": "2026-10-07T08:01:06.064Z"
     },
     {
       "provider": "adpick_biz",
       "query": "키즈 상하복",
       "name": "[빈폴키즈] 플리스 상하세트 애쉬 (BI6X41U074)",
-      "imageUrl": null,
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519076059",
       "merchant": "롯데홈쇼핑",
       "merchantDomain": null,
       "price": 96380,
@@ -5980,7 +5979,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4892975?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ff36a15b",
-      "checkedAt": "2026-10-07T07:06:59.757Z"
+      "checkedAt": "2026-10-07T08:02:56.975Z"
     },
     {
       "provider": "adpick_biz",
@@ -5994,7 +5993,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4892976?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_18fd9dce",
-      "checkedAt": "2026-10-07T07:06:59.757Z"
+      "checkedAt": "2026-10-07T08:02:56.975Z"
     },
     {
       "provider": "adpick_biz",
@@ -6008,7 +6007,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716365?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7b08d3bf",
-      "checkedAt": "2026-10-07T07:07:09.331Z"
+      "checkedAt": "2026-10-07T08:03:07.375Z"
     },
     {
       "provider": "adpick_biz",
@@ -6022,7 +6021,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716366?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9ebb72a2",
-      "checkedAt": "2026-10-07T07:07:09.331Z"
+      "checkedAt": "2026-10-07T08:03:07.375Z"
     },
     {
       "provider": "adpick_biz",
@@ -6036,7 +6035,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716371?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3d8d1d1a",
-      "checkedAt": "2026-10-07T07:07:09.331Z"
+      "checkedAt": "2026-10-07T08:03:07.375Z"
     },
     {
       "provider": "adpick_biz",
@@ -6050,7 +6049,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4747775?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4fd8ee24",
-      "checkedAt": "2026-10-07T07:07:09.331Z"
+      "checkedAt": "2026-10-07T08:03:07.375Z"
     },
     {
       "provider": "adpick_biz",
@@ -6064,7 +6063,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4755546?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_65baa0d5",
-      "checkedAt": "2026-10-07T07:07:09.331Z"
+      "checkedAt": "2026-10-07T08:03:07.375Z"
     },
     {
       "provider": "adpick_biz",
@@ -6078,7 +6077,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4876618?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ffdb7115",
-      "checkedAt": "2026-10-07T07:07:09.331Z"
+      "checkedAt": "2026-10-07T08:03:07.375Z"
     },
     {
       "provider": "adpick_biz",
@@ -6092,7 +6091,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4812711?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4bc6c007",
-      "checkedAt": "2026-10-07T07:07:09.331Z"
+      "checkedAt": "2026-10-07T08:03:07.375Z"
     },
     {
       "provider": "adpick_biz",
@@ -6106,7 +6105,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4892981?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e5683bbc",
-      "checkedAt": "2026-10-07T07:07:24.931Z"
+      "checkedAt": "2026-10-07T08:03:22.183Z"
     },
     {
       "provider": "adpick_biz",
@@ -6120,7 +6119,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4747781?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1710228b",
-      "checkedAt": "2026-10-07T07:07:24.931Z"
+      "checkedAt": "2026-10-07T08:03:22.183Z"
     },
     {
       "provider": "adpick_biz",
@@ -6134,7 +6133,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4892989?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b5fd6f54",
-      "checkedAt": "2026-10-07T07:08:21.177Z"
+      "checkedAt": "2026-10-07T08:04:17.647Z"
     },
     {
       "provider": "adpick_biz",
@@ -6148,7 +6147,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4747831?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e045d5c5",
-      "checkedAt": "2026-10-07T07:09:22.321Z"
+      "checkedAt": "2026-10-07T08:05:19.664Z"
     },
     {
       "provider": "adpick_biz",
@@ -6162,7 +6161,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4864982?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_3066dbbe",
-      "checkedAt": "2026-10-07T07:09:22.321Z"
+      "checkedAt": "2026-10-07T08:05:19.664Z"
     },
     {
       "provider": "adpick_biz",
@@ -6176,7 +6175,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4869969?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e90fd3a0",
-      "checkedAt": "2026-10-07T07:09:22.321Z"
+      "checkedAt": "2026-10-07T08:05:19.664Z"
     },
     {
       "provider": "adpick_biz",
@@ -6190,7 +6189,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862628?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_85e8ae11",
-      "checkedAt": "2026-10-07T07:09:31.025Z"
+      "checkedAt": "2026-10-07T08:05:28.887Z"
     },
     {
       "provider": "adpick_biz",
@@ -6204,7 +6203,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735167?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_64b853de",
-      "checkedAt": "2026-10-07T07:09:31.025Z"
+      "checkedAt": "2026-10-07T08:05:28.887Z"
     },
     {
       "provider": "adpick_biz",
@@ -6218,7 +6217,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735170?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d878527a",
-      "checkedAt": "2026-10-07T07:09:31.025Z"
+      "checkedAt": "2026-10-07T08:05:28.887Z"
     },
     {
       "provider": "adpick_biz",
@@ -6232,7 +6231,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735105?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8ca2eb7a",
-      "checkedAt": "2026-10-07T07:09:31.025Z"
+      "checkedAt": "2026-10-07T08:05:28.887Z"
     },
     {
       "provider": "adpick_biz",
@@ -6246,7 +6245,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867570?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5d4cbf10",
-      "checkedAt": "2026-10-07T07:09:31.025Z"
+      "checkedAt": "2026-10-07T08:05:28.887Z"
     },
     {
       "provider": "adpick_biz",
@@ -6260,7 +6259,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735173?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7f09d537",
-      "checkedAt": "2026-10-07T07:09:31.025Z"
+      "checkedAt": "2026-10-07T08:05:28.887Z"
     },
     {
       "provider": "adpick_biz",
@@ -6274,7 +6273,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735176?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bd7db4e8",
-      "checkedAt": "2026-10-07T07:09:31.025Z"
+      "checkedAt": "2026-10-07T08:05:28.887Z"
     },
     {
       "provider": "adpick_biz",
@@ -6288,7 +6287,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862502?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6ad66938",
-      "checkedAt": "2026-10-07T07:09:40.357Z"
+      "checkedAt": "2026-10-07T08:05:38.128Z"
     },
     {
       "provider": "adpick_biz",
@@ -6302,7 +6301,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735178?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_26dc6b22",
-      "checkedAt": "2026-10-07T07:09:40.357Z"
+      "checkedAt": "2026-10-07T08:05:38.128Z"
     },
     {
       "provider": "adpick_biz",
@@ -6316,7 +6315,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4755578?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_25238364",
-      "checkedAt": "2026-10-07T07:09:40.357Z"
+      "checkedAt": "2026-10-07T08:05:38.128Z"
     },
     {
       "provider": "adpick_biz",
@@ -6330,7 +6329,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735136?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_537d178c",
-      "checkedAt": "2026-10-07T07:09:40.357Z"
+      "checkedAt": "2026-10-07T08:05:38.128Z"
     },
     {
       "provider": "adpick_biz",
@@ -6344,7 +6343,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867591?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_39279ed1",
-      "checkedAt": "2026-10-07T07:09:40.357Z"
+      "checkedAt": "2026-10-07T08:05:38.128Z"
     },
     {
       "provider": "adpick_biz",
@@ -6358,7 +6357,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716222?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9e7abd69",
-      "checkedAt": "2026-10-07T07:09:40.357Z"
+      "checkedAt": "2026-10-07T08:05:38.128Z"
     },
     {
       "provider": "adpick_biz",
@@ -6372,7 +6371,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4755577?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9c090f21",
-      "checkedAt": "2026-10-07T07:09:40.357Z"
+      "checkedAt": "2026-10-07T08:05:38.128Z"
     },
     {
       "provider": "adpick_biz",
@@ -6386,7 +6385,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867592?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7b51e7a0",
-      "checkedAt": "2026-10-07T07:09:40.357Z"
+      "checkedAt": "2026-10-07T08:05:38.128Z"
     },
     {
       "provider": "adpick_biz",
@@ -6400,7 +6399,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867594?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a4767b12",
-      "checkedAt": "2026-10-07T07:09:49.761Z"
+      "checkedAt": "2026-10-07T08:05:47.448Z"
     },
     {
       "provider": "adpick_biz",
@@ -6414,7 +6413,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862634?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c93f2988",
-      "checkedAt": "2026-10-07T07:09:49.761Z"
+      "checkedAt": "2026-10-07T08:05:47.448Z"
     },
     {
       "provider": "adpick_biz",
@@ -6428,7 +6427,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735186?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_adee034f",
-      "checkedAt": "2026-10-07T07:09:49.761Z"
+      "checkedAt": "2026-10-07T08:05:47.448Z"
     },
     {
       "provider": "adpick_biz",
@@ -6442,7 +6441,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735189?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_cd0d85de",
-      "checkedAt": "2026-10-07T07:09:49.761Z"
+      "checkedAt": "2026-10-07T08:05:47.448Z"
     },
     {
       "provider": "adpick_biz",
@@ -6456,7 +6455,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735184?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a000d05d",
-      "checkedAt": "2026-10-07T07:09:49.761Z"
+      "checkedAt": "2026-10-07T08:05:47.448Z"
     },
     {
       "provider": "adpick_biz",
@@ -6470,7 +6469,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862636?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_90a80ae",
-      "checkedAt": "2026-10-07T07:09:49.761Z"
+      "checkedAt": "2026-10-07T08:05:47.448Z"
     },
     {
       "provider": "adpick_biz",
@@ -6484,7 +6483,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735191?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6b7efe3f",
-      "checkedAt": "2026-10-07T07:09:49.761Z"
+      "checkedAt": "2026-10-07T08:05:47.448Z"
     },
     {
       "provider": "adpick_biz",
@@ -6498,7 +6497,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867596?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_640f763c",
-      "checkedAt": "2026-10-07T07:09:49.761Z"
+      "checkedAt": "2026-10-07T08:05:47.448Z"
     },
     {
       "provider": "adpick_biz",
@@ -6512,7 +6511,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867625?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5b5e0b0b",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6526,7 +6525,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867626?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_22d5e77e",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6540,7 +6539,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4849159?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_220a075",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6554,7 +6553,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716401?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4644836c",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6568,7 +6567,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4771524?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_92c562eb",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6582,7 +6581,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735204?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f4275ccc",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6596,7 +6595,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4837411?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b7d24fe5",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6610,7 +6609,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867627?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_5f945589",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6624,7 +6623,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867628?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8e8ac1fc",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6638,7 +6637,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716409?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f723dbc4",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6652,7 +6651,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4856105?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d9fd19a0",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6666,7 +6665,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735199?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e75f0737",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6680,7 +6679,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4716404?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a777a0e3",
-      "checkedAt": "2026-10-07T07:09:58.928Z"
+      "checkedAt": "2026-10-07T08:05:56.354Z"
     },
     {
       "provider": "adpick_biz",
@@ -6694,7 +6693,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735216?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4ac811bb",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6708,7 +6707,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735211?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a6dcc69a",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6722,7 +6721,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4884951?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a283cb50",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6736,7 +6735,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735213?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_fbabfcc4",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6750,7 +6749,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735214?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1f8ad9b9",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6764,7 +6763,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4775565?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9941c108",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6778,7 +6777,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735210?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ac0b6e05",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6792,7 +6791,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735218?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_c43905ad",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6806,7 +6805,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867498?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4da8e1b5",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6820,7 +6819,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735219?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a3631ac2",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6834,7 +6833,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735220?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f36aa082",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6848,7 +6847,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735221?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_6765786d",
-      "checkedAt": "2026-10-07T07:10:09.086Z"
+      "checkedAt": "2026-10-07T08:06:05.637Z"
     },
     {
       "provider": "adpick_biz",
@@ -6862,7 +6861,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867635?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_71432bba",
-      "checkedAt": "2026-10-07T07:10:18.343Z"
+      "checkedAt": "2026-10-07T08:06:14.870Z"
     },
     {
       "provider": "adpick_biz",
@@ -6876,7 +6875,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4884952?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ff5f9601",
-      "checkedAt": "2026-10-07T07:10:18.343Z"
+      "checkedAt": "2026-10-07T08:06:14.870Z"
     },
     {
       "provider": "adpick_biz",
@@ -6890,7 +6889,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867637?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_bf043864",
-      "checkedAt": "2026-10-07T07:10:18.343Z"
+      "checkedAt": "2026-10-07T08:06:14.870Z"
     },
     {
       "provider": "adpick_biz",
@@ -6904,7 +6903,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4771528?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_669d01cf",
-      "checkedAt": "2026-10-07T07:10:18.343Z"
+      "checkedAt": "2026-10-07T08:06:14.870Z"
     },
     {
       "provider": "adpick_biz",
@@ -6918,7 +6917,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735229?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f14e6fc5",
-      "checkedAt": "2026-10-07T07:10:18.343Z"
+      "checkedAt": "2026-10-07T08:06:14.870Z"
     },
     {
       "provider": "adpick_biz",
@@ -6932,7 +6931,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735236?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_21e70351",
-      "checkedAt": "2026-10-07T07:10:18.343Z"
+      "checkedAt": "2026-10-07T08:06:14.870Z"
     },
     {
       "provider": "adpick_biz",
@@ -6946,7 +6945,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735241?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1ee6d78f",
-      "checkedAt": "2026-10-07T07:10:27.380Z"
+      "checkedAt": "2026-10-07T08:06:23.982Z"
     },
     {
       "provider": "adpick_biz",
@@ -6960,7 +6959,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735243?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_95ff8c9d",
-      "checkedAt": "2026-10-07T07:10:27.380Z"
+      "checkedAt": "2026-10-07T08:06:23.982Z"
     },
     {
       "provider": "adpick_biz",
@@ -6974,7 +6973,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4755586?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_97f30ea9",
-      "checkedAt": "2026-10-07T07:10:27.380Z"
+      "checkedAt": "2026-10-07T08:06:23.982Z"
     },
     {
       "provider": "adpick_biz",
@@ -6988,7 +6987,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867657?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d125b1e",
-      "checkedAt": "2026-10-07T07:10:27.380Z"
+      "checkedAt": "2026-10-07T08:06:23.982Z"
     },
     {
       "provider": "adpick_biz",
@@ -7002,7 +7001,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735248?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4c346c34",
-      "checkedAt": "2026-10-07T07:10:27.380Z"
+      "checkedAt": "2026-10-07T08:06:23.982Z"
     },
     {
       "provider": "adpick_biz",
@@ -7016,7 +7015,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735257?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4fba182c",
-      "checkedAt": "2026-10-07T07:10:36.463Z"
+      "checkedAt": "2026-10-07T08:06:33.600Z"
     },
     {
       "provider": "adpick_biz",
@@ -7030,7 +7029,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735258?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f95ec279",
-      "checkedAt": "2026-10-07T07:10:36.463Z"
+      "checkedAt": "2026-10-07T08:06:33.600Z"
     },
     {
       "provider": "adpick_biz",
@@ -7044,7 +7043,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867686?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_860122c4",
-      "checkedAt": "2026-10-07T07:10:36.463Z"
+      "checkedAt": "2026-10-07T08:06:33.600Z"
     },
     {
       "provider": "adpick_biz",
@@ -7058,7 +7057,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735260?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4cab5a7e",
-      "checkedAt": "2026-10-07T07:10:36.463Z"
+      "checkedAt": "2026-10-07T08:06:33.600Z"
     },
     {
       "provider": "adpick_biz",
@@ -7072,7 +7071,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739265?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_4fd8cd81",
-      "checkedAt": "2026-10-07T07:10:36.463Z"
+      "checkedAt": "2026-10-07T08:06:33.600Z"
     },
     {
       "provider": "adpick_biz",
@@ -7086,7 +7085,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735262?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a6c1b598",
-      "checkedAt": "2026-10-07T07:10:36.463Z"
+      "checkedAt": "2026-10-07T08:06:33.600Z"
     },
     {
       "provider": "adpick_biz",
@@ -7100,7 +7099,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862664?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e24da0c1",
-      "checkedAt": "2026-10-07T07:10:36.463Z"
+      "checkedAt": "2026-10-07T08:06:33.600Z"
     },
     {
       "provider": "adpick_biz",
@@ -7114,7 +7113,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867689?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_86ca0c81",
-      "checkedAt": "2026-10-07T07:10:36.463Z"
+      "checkedAt": "2026-10-07T08:06:33.600Z"
     },
     {
       "provider": "adpick_biz",
@@ -7128,7 +7127,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739267?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ff63a8e3",
-      "checkedAt": "2026-10-07T07:10:36.463Z"
+      "checkedAt": "2026-10-07T08:06:33.600Z"
     },
     {
       "provider": "adpick_biz",
@@ -7142,7 +7141,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739268?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_fa40ad9a",
-      "checkedAt": "2026-10-07T07:10:36.463Z"
+      "checkedAt": "2026-10-07T08:06:33.600Z"
     },
     {
       "provider": "adpick_biz",
@@ -7156,7 +7155,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867697?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e7902faa",
-      "checkedAt": "2026-10-07T07:10:46.009Z"
+      "checkedAt": "2026-10-07T08:06:43.109Z"
     },
     {
       "provider": "adpick_biz",
@@ -7170,7 +7169,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4878126?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_f55dab53",
-      "checkedAt": "2026-10-07T07:10:46.009Z"
+      "checkedAt": "2026-10-07T08:06:43.109Z"
     },
     {
       "provider": "adpick_biz",
@@ -7184,7 +7183,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867698?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7bf408b3",
-      "checkedAt": "2026-10-07T07:10:46.009Z"
+      "checkedAt": "2026-10-07T08:06:43.109Z"
     },
     {
       "provider": "adpick_biz",
@@ -7198,7 +7197,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867699?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_aa964360",
-      "checkedAt": "2026-10-07T07:10:46.009Z"
+      "checkedAt": "2026-10-07T08:06:43.109Z"
     },
     {
       "provider": "adpick_biz",
@@ -7212,7 +7211,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4779912?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8cc36b42",
-      "checkedAt": "2026-10-07T07:10:46.009Z"
+      "checkedAt": "2026-10-07T08:06:43.109Z"
     },
     {
       "provider": "adpick_biz",
@@ -7226,7 +7225,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867700?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ddf4f3e9",
-      "checkedAt": "2026-10-07T07:10:46.009Z"
+      "checkedAt": "2026-10-07T08:06:43.109Z"
     },
     {
       "provider": "adpick_biz",
@@ -7240,7 +7239,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4735271?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ffbaa628",
-      "checkedAt": "2026-10-07T07:10:46.009Z"
+      "checkedAt": "2026-10-07T08:06:43.109Z"
     },
     {
       "provider": "adpick_biz",
@@ -7254,7 +7253,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867701?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_b74a095e",
-      "checkedAt": "2026-10-07T07:10:46.009Z"
+      "checkedAt": "2026-10-07T08:06:43.109Z"
     },
     {
       "provider": "adpick_biz",
@@ -7268,7 +7267,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4870095?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_362a4052",
-      "checkedAt": "2026-10-07T07:10:46.009Z"
+      "checkedAt": "2026-10-07T08:06:43.109Z"
     },
     {
       "provider": "adpick_biz",
@@ -7282,7 +7281,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4870096?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_73b1c26f",
-      "checkedAt": "2026-10-07T07:10:46.009Z"
+      "checkedAt": "2026-10-07T08:06:43.109Z"
     },
     {
       "provider": "adpick_biz",
@@ -7296,7 +7295,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867741?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_46ddb962",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.983Z"
     },
     {
       "provider": "adpick_biz",
@@ -7310,7 +7309,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739276?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_13299991",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.983Z"
     },
     {
       "provider": "adpick_biz",
@@ -7324,7 +7323,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4802199?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_e1b83d92",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.983Z"
     },
     {
       "provider": "adpick_biz",
@@ -7338,7 +7337,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867742?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ef17817f",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.983Z"
     },
     {
       "provider": "adpick_biz",
@@ -7352,7 +7351,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4837468?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_23bb2f61",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.983Z"
     },
     {
       "provider": "adpick_biz",
@@ -7366,7 +7365,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4884965?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_8be6e85b",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.983Z"
     },
     {
       "provider": "adpick_biz",
@@ -7380,7 +7379,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739275?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_73a50460",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.983Z"
     },
     {
       "provider": "adpick_biz",
@@ -7394,7 +7393,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4805441?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ae3a5753",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.984Z"
     },
     {
       "provider": "adpick_biz",
@@ -7408,7 +7407,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739282?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7b3f49fa",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.984Z"
     },
     {
       "provider": "adpick_biz",
@@ -7422,7 +7421,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739278?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_d0be2b67",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.984Z"
     },
     {
       "provider": "adpick_biz",
@@ -7436,7 +7435,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4870120?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_9a95da5",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.984Z"
     },
     {
       "provider": "adpick_biz",
@@ -7450,7 +7449,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4862676?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_7b1b45ca",
-      "checkedAt": "2026-10-07T07:10:54.882Z"
+      "checkedAt": "2026-10-07T08:06:51.984Z"
     },
     {
       "provider": "adpick_biz",
@@ -7464,7 +7463,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739289?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_a5f0c3bf",
-      "checkedAt": "2026-10-07T07:11:04.655Z"
+      "checkedAt": "2026-10-07T08:07:01.197Z"
     },
     {
       "provider": "adpick_biz",
@@ -7478,7 +7477,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4884968?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_13ff370c",
-      "checkedAt": "2026-10-07T07:11:04.655Z"
+      "checkedAt": "2026-10-07T08:07:01.197Z"
     },
     {
       "provider": "adpick_biz",
@@ -7492,7 +7491,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739291?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_77f4b5e",
-      "checkedAt": "2026-10-07T07:11:04.655Z"
+      "checkedAt": "2026-10-07T08:07:01.197Z"
     },
     {
       "provider": "adpick_biz",
@@ -7506,7 +7505,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4884969?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_1132847f",
-      "checkedAt": "2026-10-07T07:11:04.655Z"
+      "checkedAt": "2026-10-07T08:07:01.197Z"
     },
     {
       "provider": "adpick_biz",
@@ -7520,7 +7519,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4796824?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ac399e05",
-      "checkedAt": "2026-10-07T07:11:04.655Z"
+      "checkedAt": "2026-10-07T08:07:01.197Z"
     },
     {
       "provider": "adpick_biz",
@@ -7534,7 +7533,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4739294?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_2504a4b5",
-      "checkedAt": "2026-10-07T07:11:04.655Z"
+      "checkedAt": "2026-10-07T08:07:01.197Z"
     },
     {
       "provider": "adpick_biz",
@@ -7548,7 +7547,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4884970?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_351d77a9",
-      "checkedAt": "2026-10-07T07:11:04.655Z"
+      "checkedAt": "2026-10-07T08:07:01.197Z"
     },
     {
       "provider": "adpick_biz",
@@ -7562,7 +7561,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4867756?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_ac3f15aa",
-      "checkedAt": "2026-10-07T07:11:04.655Z"
+      "checkedAt": "2026-10-07T08:07:01.197Z"
     },
     {
       "provider": "adpick_biz",
@@ -7576,7 +7575,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4837470?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_64988cd4",
-      "checkedAt": "2026-10-07T07:11:04.655Z"
+      "checkedAt": "2026-10-07T08:07:01.197Z"
     },
     {
       "provider": "adpick_biz",
@@ -7590,7 +7589,7 @@
       "commissionText": null,
       "affiliateUrl": "https://biz.adpick.co.kr/r4870122?p_data=kkokkapick_catalog",
       "externalProductId": "adpickbiz_765fb477",
-      "checkedAt": "2026-10-07T07:11:04.655Z"
+      "checkedAt": "2026-10-07T08:07:01.197Z"
     }
   ]
 }
