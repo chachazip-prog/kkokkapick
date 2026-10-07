@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:07:46.789Z",
+  "updatedAt": "2026-10-07T04:07:50.606Z",
   "retention": "bounded_demo_events",
   "events": [
     {
@@ -4250,6 +4250,22 @@
       "price": 170100,
       "direction": "up",
       "changeAmount": 18824
+    },
+    {
+      "productId": "adpickbiz_85b800a5",
+      "observedAt": "2026-10-07T04:07:50.606Z",
+      "previousPrice": 63882,
+      "price": 73320,
+      "direction": "up",
+      "changeAmount": 9438
+    },
+    {
+      "productId": "adpickbiz_8bf5643c",
+      "observedAt": "2026-10-07T04:07:50.606Z",
+      "previousPrice": 60780,
+      "price": 130230,
+      "direction": "up",
+      "changeAmount": 69450
     }
   ]
 }
