@@ -1,6 +1,6 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-07T11:07:32.122Z",
+  "syncedAt": "2026-10-07T12:07:11.545Z",
   "sourceCount": 726,
   "productCount": 654,
   "priceChangeCount": 0,
@@ -12361,10 +12361,8 @@
       "normalizedName": "아이보리 브라운 아동 티셔츠 바디슈트세트 204596",
       "variant": "",
       "modelCode": "204596",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519538688",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519538688"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "바디수트",
       "query": "아기 티셔츠",
       "offers": [
@@ -16475,10 +16473,8 @@
       "normalizedName": "레노마키즈 페리미츠 남아 프로스트 스?셔츠 초등 유아맨투맨 티셔츠 p2635t114 cj",
       "variant": "",
       "modelCode": "P2635T114_CJ",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519545164",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519545164"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "유아 셔츠",
       "offers": [
