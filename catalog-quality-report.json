@@ -1,27 +1,27 @@
 {
-  "syncedAt": "2026-10-07T20:04:45.867Z",
-  "sourceProducts": 815,
-  "canonicalProducts": 734,
+  "syncedAt": "2026-10-07T23:05:55.179Z",
+  "sourceProducts": 814,
+  "canonicalProducts": 733,
   "queries": 73,
-  "recognizedBrandProducts": 404,
+  "recognizedBrandProducts": 403,
   "recognizedBrandRatePct": 55,
   "officialBrandGuideProducts": 22,
   "officialBrandGuideRatePct": 3,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 815,
-    "ok": 815,
+    "checked": 814,
+    "ok": 814,
     "failed": 0,
     "statuses": {
-      "200": 815
+      "200": 814
     },
     "rate": 1
   },
-  "canonicalImageProducts": 734,
+  "canonicalImageProducts": 733,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 67,
-  "multiImageRatePct": 9.1,
+  "multiImageProducts": 66,
+  "multiImageRatePct": 9,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
@@ -67,7 +67,7 @@
     },
     {
       "name": "해피프린스",
-      "count": 18
+      "count": 17
     },
     {
       "name": "페리미츠",
@@ -87,7 +87,7 @@
     },
     {
       "name": "쇼콜라",
-      "count": 12
+      "count": 11
     },
     {
       "name": "MLB키즈",
@@ -109,11 +109,11 @@
   "categories": [
     {
       "name": "상의",
-      "count": 171
+      "count": 170
     },
     {
       "name": "아우터",
-      "count": 147
+      "count": 145
     },
     {
       "name": "하의",
@@ -121,11 +121,11 @@
     },
     {
       "name": "바디수트",
-      "count": 89
+      "count": 88
     },
     {
       "name": "원피스",
-      "count": 73
+      "count": 74
     },
     {
       "name": "상하복",
@@ -133,7 +133,7 @@
     },
     {
       "name": "기타",
-      "count": 40
+      "count": 42
     },
     {
       "name": "실내복",
@@ -143,11 +143,11 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 338
+      "count": 339
     },
     {
       "name": "베이비",
-      "count": 249
+      "count": 247
     },
     {
       "name": "유아",
