@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-07T06:09:00.897Z",
+  "syncedAt": "2026-10-07T07:11:23.297Z",
   "sourceCount": 536,
   "productCount": 483,
-  "priceChangeCount": 3,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_44e0c0e6",
@@ -2981,10 +2981,8 @@
       "normalizedName": "아기여름옷 쿨 요루거즈 아동 반팔 파자마 상하세트 6종 205147",
       "variant": "6종",
       "modelCode": "205147",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519058510",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519058510"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "실내복",
       "query": "아기 여름옷",
       "offers": [
@@ -4064,10 +4062,8 @@
       "normalizedName": "아림클로젯 여름 소풍 여름 유아 활동복 세트 의류 셋업",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519058872",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519058872"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상하복",
       "query": "유아 여름옷",
       "offers": [
@@ -7550,10 +7546,8 @@
       "normalizedName": "리틀그라운드 룰라비 플라워벨보아조거팬츠 76c22 410 02 ch 딜 여아바지 선물 76c2241002",
       "variant": "",
       "modelCode": "76C22-410-02",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519061706",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519061706"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "하의",
       "query": "여아 바지",
       "offers": [
@@ -8308,10 +8302,8 @@
       "normalizedName": "스톤아일랜드 스톤아일랜드키즈 와펜로고 스웨트 조거 남아 팬츠 l1s166200007 s0040 v0061 10a 키즈 의류",
       "variant": "",
       "modelCode": "L1S166200007",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519063070",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519063070"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "하의",
       "query": "남아 바지",
       "offers": [
@@ -9025,10 +9017,8 @@
       "normalizedName": "펜디 fendijuh108 5v0 f0qg0 아동 맨투맨",
       "variant": "",
       "modelCode": "FENDIJUH108",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519064278",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519064278"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "아동 맨투맨",
       "offers": [
@@ -9089,10 +9079,8 @@
       "normalizedName": "스톤아일랜드 t56 스톤아일랜드 l2s166100009s0425 키즈 맨투맨 티셔츠 남아 여아 이마트몰",
       "variant": "",
       "modelCode": "L2S166100009S0425",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519064202",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519064202"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "아동 맨투맨",
       "offers": [
@@ -9121,10 +9109,8 @@
       "normalizedName": "베럴토끼 아동 긴팔 맨투맨 205467",
       "variant": "",
       "modelCode": "205467",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519064164",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519064164"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "아동 맨투맨",
       "offers": [
@@ -12928,10 +12914,8 @@
       "normalizedName": "빈폴키즈 플리스 상하세트 애쉬 bi6x41u074",
       "variant": "",
       "modelCode": "BI6X41U074",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519076059",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519076059"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상하복",
       "query": "키즈 상하복",
       "offers": [
@@ -13412,38 +13396,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_64b853de",
-      "name": "블루독베이비/비비캐릭터 우주복_WH (44A7004102)/의류 바디수트",
-      "normalizedName": "블루독베이비 비비캐릭터 우주복 wh 44a7004102 의류 바디수트",
-      "variant": "",
-      "modelCode": "44A7004102",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519167048",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519167048"
-      ],
-      "category": "바디수트",
-      "query": "블루독베이비 아기옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 19550,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4735167?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_64b853de"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 19550,
-      "maxPrice": 19550,
-      "brand": "블루독베이비",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_85e8ae11",
       "name": "[블루독베이비] [AK원주점] [블루독베이비] 하트도기 골벨로아 우주복 [46C1360001-03]",
       "normalizedName": "블루독베이비 ak원주점 블루독베이비 하트도기 골벨로아 우주복 46c1360001 03",
@@ -13468,6 +13420,38 @@
       "offerCount": 1,
       "minPrice": 142113,
       "maxPrice": 142113,
+      "brand": "블루독베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_64b853de",
+      "name": "블루독베이비/비비캐릭터 우주복_WH (44A7004102)/의류 바디수트",
+      "normalizedName": "블루독베이비 비비캐릭터 우주복 wh 44a7004102 의류 바디수트",
+      "variant": "",
+      "modelCode": "44A7004102",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519167048",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519167048"
+      ],
+      "category": "바디수트",
+      "query": "블루독베이비 아기옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 19550,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4735167?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_64b853de"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 19550,
+      "maxPrice": 19550,
       "brand": "블루독베이비",
       "fitStatus": "unverified",
       "fitSource": null,
@@ -14559,38 +14543,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_a283cb50",
-      "name": "[헤지스키즈] [26FW] [KIDS] 니트배색 중량 패딩 핑크 HBJU6FK01P1 [HBJU6FK01P1]",
-      "normalizedName": "헤지스키즈 26fw kids 니트배색 중량 패딩 핑크 hbju6fk01p1 hbju6fk01p1",
-      "variant": "",
-      "modelCode": "HBJU6FK01P1",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519171687",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519171687"
-      ],
-      "category": "아우터",
-      "query": "헤지스키즈 아동복",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 325160,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4884951?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_a283cb50"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 325160,
-      "maxPrice": 325160,
-      "brand": "헤지스키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_a6dcc69a",
       "name": "헤지스키즈/[포인터웍스] 미니멀웍스 경량 후드 다운_BLACK (ITF30JN02M_BK)/아우터 패딩/점퍼",
       "normalizedName": "헤지스키즈 포인터웍스 미니멀웍스 경량 후드 다운 black itf30jn02m bk 아우터 패딩 점퍼",
@@ -14615,6 +14567,38 @@
       "offerCount": 1,
       "minPrice": 79500,
       "maxPrice": 79500,
+      "brand": "헤지스키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_a283cb50",
+      "name": "[헤지스키즈] [26FW] [KIDS] 니트배색 중량 패딩 핑크 HBJU6FK01P1 [HBJU6FK01P1]",
+      "normalizedName": "헤지스키즈 26fw kids 니트배색 중량 패딩 핑크 hbju6fk01p1 hbju6fk01p1",
+      "variant": "",
+      "modelCode": "HBJU6FK01P1",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519171687",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=519171687"
+      ],
+      "category": "아우터",
+      "query": "헤지스키즈 아동복",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 325160,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4884951?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_a283cb50"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 325160,
+      "maxPrice": 325160,
       "brand": "헤지스키즈",
       "fitStatus": "unverified",
       "fitSource": null,
