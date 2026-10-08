@@ -1,42 +1,41 @@
 {
-  "syncedAt": "2026-10-08T00:04:25.611Z",
+  "syncedAt": "2026-10-08T01:20:07.692Z",
   "sourceProducts": 814,
-  "canonicalProducts": 733,
+  "canonicalProducts": 732,
   "queries": 73,
-  "recognizedBrandProducts": 403,
-  "recognizedBrandRatePct": 55,
-  "officialBrandGuideProducts": 22,
-  "officialBrandGuideRatePct": 3,
+  "recognizedBrandProducts": 404,
+  "recognizedBrandRatePct": 55.2,
+  "officialBrandGuideProducts": 23,
+  "officialBrandGuideRatePct": 3.1,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
     "checked": 814,
-    "ok": 793,
-    "failed": 21,
+    "ok": 814,
+    "failed": 0,
     "statuses": {
-      "200": 793,
-      "400": 21
+      "200": 814
     },
-    "rate": 0.9742014742014742
+    "rate": 1
   },
-  "canonicalImageProducts": 715,
-  "canonicalImageRatePct": 97.5,
-  "multiImageProducts": 64,
-  "multiImageRatePct": 8.7,
+  "canonicalImageProducts": 732,
+  "canonicalImageRatePct": 100,
+  "multiImageProducts": 67,
+  "multiImageRatePct": 9.2,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 330
+      "count": 328
     },
     {
       "name": "베네통키즈",
-      "count": 27
+      "count": 26
     },
     {
       "name": "밀크베이비",
-      "count": 25
+      "count": 26
     },
     {
       "name": "블루독베이비",
@@ -44,7 +43,7 @@
     },
     {
       "name": "삠뽀요",
-      "count": 21
+      "count": 22
     },
     {
       "name": "모이몰른",
@@ -84,7 +83,7 @@
     },
     {
       "name": "압소바",
-      "count": 12
+      "count": 11
     },
     {
       "name": "쇼콜라",
@@ -100,7 +99,7 @@
     },
     {
       "name": "아가방",
-      "count": 9
+      "count": 10
     },
     {
       "name": "몽클레르키즈",
@@ -110,7 +109,7 @@
   "categories": [
     {
       "name": "상의",
-      "count": 170
+      "count": 171
     },
     {
       "name": "아우터",
@@ -118,11 +117,11 @@
     },
     {
       "name": "하의",
-      "count": 108
+      "count": 109
     },
     {
       "name": "바디수트",
-      "count": 88
+      "count": 87
     },
     {
       "name": "원피스",
@@ -134,7 +133,7 @@
     },
     {
       "name": "기타",
-      "count": 42
+      "count": 40
     },
     {
       "name": "실내복",
@@ -144,7 +143,7 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 339
+      "count": 341
     },
     {
       "name": "베이비",
@@ -152,7 +151,7 @@
     },
     {
       "name": "유아",
-      "count": 58
+      "count": 55
     },
     {
       "name": "전체",
