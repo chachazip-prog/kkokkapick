@@ -1,8 +1,8 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-08T17:11:12.843Z",
-  "sourceCount": 766,
-  "productCount": 695,
+  "syncedAt": "2026-10-08T18:07:26.435Z",
+  "sourceCount": 768,
+  "productCount": 697,
   "priceChangeCount": 0,
   "products": [
     {
@@ -454,38 +454,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_bf1a228d",
-      "name": "[기타] [W63]STELLA McCARTNEY 6K04213S2415 1202 여성 스웨터 니트 가디건 MAGLIERIA[이마트몰]",
-      "normalizedName": "기타 w63 stella mccartney 6k04213s2415 1202 여성 스웨터 니트 가디건 maglieria 이마트몰",
-      "variant": "",
-      "modelCode": "STELLA",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523405715",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523405715"
-      ],
-      "category": "아우터",
-      "query": "유아복",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 743040,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4864990?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_bf1a228d"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 743040,
-      "maxPrice": 743040,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "유아"
-    },
-    {
       "id": "adpickbiz_8d35df92",
       "name": "프랜치캣/WH 데이지상하세트Q55DAT020 Q55DAP010 W1/아우터 패딩/점퍼",
       "normalizedName": "프랜치캣 wh 데이지상하세트q55dat020 q55dap010 w1 아우터 패딩 점퍼",
@@ -606,6 +574,38 @@
       "offerCount": 1,
       "minPrice": 29900,
       "maxPrice": 29900,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "유아"
+    },
+    {
+      "id": "adpickbiz_840d72f1",
+      "name": "밀크마일 산타진저쿠키킵고잉기모상하복",
+      "normalizedName": "밀크마일 산타진저쿠키킵고잉기모상하복",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523816858",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523816858"
+      ],
+      "category": "상하복",
+      "query": "유아복",
+      "offers": [
+        {
+          "merchant": "보리보리",
+          "merchantDomain": null,
+          "price": 29330,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4860176?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_840d72f1"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 29330,
+      "maxPrice": 29330,
       "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
@@ -1039,38 +1039,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_cb9379a0",
-      "name": "케어베어/텐더하트베어 집업 베이비 수트/의류 바디수트",
-      "normalizedName": "케어베어 텐더하트베어 집업 베이비 수트 의류 바디수트",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523819017",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523819017"
-      ],
-      "category": "바디수트",
-      "query": "베이비옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 33454,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785654?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_cb9379a0"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 33454,
-      "maxPrice": 33454,
-      "brand": "케어베어",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_5dc8f666",
       "name": "[블루독베이비] [AK수원점] [블루독베이비] (BR)우디옷입히기SET46970-BHB-05 [46970-BHB-05]",
       "normalizedName": "블루독베이비 ak수원점 블루독베이비 br 우디옷입히기set46970 bhb 05 46970 bhb 05",
@@ -1096,6 +1064,38 @@
       "minPrice": 59966,
       "maxPrice": 59966,
       "brand": "블루독베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_cb9379a0",
+      "name": "케어베어/텐더하트베어 집업 베이비 수트/의류 바디수트",
+      "normalizedName": "케어베어 텐더하트베어 집업 베이비 수트 의류 바디수트",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523819017",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523819017"
+      ],
+      "category": "바디수트",
+      "query": "베이비옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 33454,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785654?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_cb9379a0"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 33454,
+      "maxPrice": 33454,
+      "brand": "케어베어",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -1240,38 +1240,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_9fb19ada",
-      "name": "[블루독베이비] [AK수원점] [블루독베이비] (IV)버디옷입히기SET46970-BHB-06 [46970-BHB-06]",
-      "normalizedName": "블루독베이비 ak수원점 블루독베이비 iv 버디옷입히기set46970 bhb 06 46970 bhb 06",
-      "variant": "",
-      "modelCode": "SET46970-BHB-06",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523818939",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523818939"
-      ],
-      "category": "기타",
-      "query": "베이비옷",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 59966,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785667?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_9fb19ada"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 59966,
-      "maxPrice": 59966,
-      "brand": "블루독베이비",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_1b39eb23",
       "name": "매그넬리/드리미 캐로셀 (Dreamy Carousel) 롱슬리브 베이비 바디수트/의류 바디수트",
       "normalizedName": "매그넬리 드리미 캐로셀 dreamy carousel 롱슬리브 베이비 바디수트 의류 바디수트",
@@ -1297,6 +1265,38 @@
       "minPrice": 50150,
       "maxPrice": 50150,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_9fb19ada",
+      "name": "[블루독베이비] [AK수원점] [블루독베이비] (IV)버디옷입히기SET46970-BHB-06 [46970-BHB-06]",
+      "normalizedName": "블루독베이비 ak수원점 블루독베이비 iv 버디옷입히기set46970 bhb 06 46970 bhb 06",
+      "variant": "",
+      "modelCode": "SET46970-BHB-06",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523818939",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523818939"
+      ],
+      "category": "기타",
+      "query": "베이비옷",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 59966,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785667?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_9fb19ada"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 59966,
+      "maxPrice": 59966,
+      "brand": "블루독베이비",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -1866,38 +1866,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_629959b5",
-      "name": "삠뽀요/리리 여아 코듀로이 원피스/원피스 원피스",
-      "normalizedName": "삠뽀요 리리 여아 코듀로이 원피스 원피스 원피스",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523819622",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523819622"
-      ],
-      "category": "원피스",
-      "query": "여아옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 33368,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785697?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_629959b5"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 33368,
-      "maxPrice": 33368,
-      "brand": "삠뽀요",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "전체"
-    },
-    {
       "id": "adpickbiz_5d606c21",
       "name": "[삐삐네옷가게] 여아 플라워 자수 레이스 퍼프소매 A라인 원피스 러블리[이마트몰] [블랑레이스날개원피스]",
       "normalizedName": "삐삐네옷가게 여아 플라워 자수 레이스 퍼프소매 a라인 원피스 러블리 이마트몰 블랑레이스날개원피스",
@@ -1923,6 +1891,38 @@
       "minPrice": 32310,
       "maxPrice": 32310,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "전체"
+    },
+    {
+      "id": "adpickbiz_629959b5",
+      "name": "삠뽀요/리리 여아 코듀로이 원피스/원피스 원피스",
+      "normalizedName": "삠뽀요 리리 여아 코듀로이 원피스 원피스 원피스",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523819622",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523819622"
+      ],
+      "category": "원피스",
+      "query": "여아옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 33368,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785697?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_629959b5"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 33368,
+      "maxPrice": 33368,
+      "brand": "삠뽀요",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -2761,38 +2761,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_9651704b",
-      "name": "[기타] 유아여름옷 유아동 어린이 썸머 반팔티 7부 티셔츠 키즈 남매룩",
-      "normalizedName": "기타 유아여름옷 유아동 어린이 썸머 반팔티 7부 티셔츠 키즈 남매룩",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523820988",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523820988"
-      ],
-      "category": "상의",
-      "query": "아기 여름옷",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 11200,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785736?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_9651704b"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 11200,
-      "maxPrice": 11200,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_2d720ab",
       "name": "아림클로젯/오늘은 감성 퐁당 - 아기 체크 프릴 원피스/의류 원피스",
       "normalizedName": "아림클로젯 오늘은 감성 퐁당 아기 체크 프릴 원피스 의류 원피스",
@@ -2818,6 +2786,38 @@
       "minPrice": 45050,
       "maxPrice": 45050,
       "brand": "아림클로젯",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_9651704b",
+      "name": "[기타] 유아여름옷 유아동 어린이 썸머 반팔티 7부 티셔츠 키즈 남매룩",
+      "normalizedName": "기타 유아여름옷 유아동 어린이 썸머 반팔티 7부 티셔츠 키즈 남매룩",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523820988",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523820988"
+      ],
+      "category": "상의",
+      "query": "아기 여름옷",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 11200,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785736?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_9651704b"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 11200,
+      "maxPrice": 11200,
+      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -3017,38 +3017,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_8d6df8eb",
-      "name": "[기타] 압소바 겨울 뱅모자바디슈트세트AX710624[이마트몰]",
-      "normalizedName": "기타 압소바 겨울 뱅모자바디슈트세트ax710624 이마트몰",
-      "variant": "",
-      "modelCode": "AX710624",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523821397",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523821397"
-      ],
-      "category": "바디수트",
-      "query": "아기 겨울옷",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 65280,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785750?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_8d6df8eb"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 65280,
-      "maxPrice": 65280,
-      "brand": "압소바",
-      "fitStatus": "candidate",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_1704c661",
       "name": "밀크베이비/겨울 특별한날 밍크기모 아기점프수트/의류 바디수트",
       "normalizedName": "밀크베이비 겨울 특별한날 밍크기모 아기점프수트 의류 바디수트",
@@ -3075,6 +3043,38 @@
       "maxPrice": 23920,
       "brand": "밀크베이비",
       "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_8d6df8eb",
+      "name": "[기타] 압소바 겨울 뱅모자바디슈트세트AX710624[이마트몰]",
+      "normalizedName": "기타 압소바 겨울 뱅모자바디슈트세트ax710624 이마트몰",
+      "variant": "",
+      "modelCode": "AX710624",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523821397",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523821397"
+      ],
+      "category": "바디수트",
+      "query": "아기 겨울옷",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 65280,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785750?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_8d6df8eb"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 65280,
+      "maxPrice": 65280,
+      "brand": "압소바",
+      "fitStatus": "candidate",
       "fitSource": null,
       "sizeGuide": null,
       "availableSizes": [],
@@ -3218,38 +3218,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_9dea73b5",
-      "name": "[압소바] [압소바 25년FW 겨울임신출산선물] 카린 다운 우주복 (A2722206) [A2722206]",
-      "normalizedName": "압소바 압소바 25년fw 겨울임신출산선물 카린 다운 우주복 a2722206 a2722206",
-      "variant": "",
-      "modelCode": "A2722206",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523821398",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523821398"
-      ],
-      "category": "바디수트",
-      "query": "아기 겨울옷",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 133550,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785756?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_9dea73b5"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 133550,
-      "maxPrice": 133550,
-      "brand": "압소바",
-      "fitStatus": "candidate",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_f663258a",
       "name": "아림클로젯/유니크한 우리 아가 - 베이비 겨울 바디슈트/의류 바디수트",
       "normalizedName": "아림클로젯 유니크한 우리 아가 베이비 겨울 바디슈트 의류 바디수트",
@@ -3276,6 +3244,38 @@
       "maxPrice": 45900,
       "brand": "아림클로젯",
       "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_9dea73b5",
+      "name": "[압소바] [압소바 25년FW 겨울임신출산선물] 카린 다운 우주복 (A2722206) [A2722206]",
+      "normalizedName": "압소바 압소바 25년fw 겨울임신출산선물 카린 다운 우주복 a2722206 a2722206",
+      "variant": "",
+      "modelCode": "A2722206",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523821398",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523821398"
+      ],
+      "category": "바디수트",
+      "query": "아기 겨울옷",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 133550,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785756?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_9dea73b5"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 133550,
+      "maxPrice": 133550,
+      "brand": "압소바",
+      "fitStatus": "candidate",
       "fitSource": null,
       "sizeGuide": null,
       "availableSizes": [],
@@ -4223,38 +4223,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_64ed90ba",
-      "name": "폴로랄프로렌/[폴로랄프로렌] SS26반팔 티셔츠 211B14605_032 7592265/의류 반팔티셔츠",
-      "normalizedName": "폴로랄프로렌 폴로랄프로렌 ss26반팔 티셔츠 211b14605 032 7592265 의류 반팔티셔츠",
-      "variant": "",
-      "modelCode": "211B14605_032",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523826308",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523826308"
-      ],
-      "category": "상의",
-      "query": "아동 티셔츠",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 115900,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4855991?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_64ed90ba"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 115900,
-      "maxPrice": 115900,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_f6b50d41",
       "name": "나이키 키즈 유아동티셔츠 조던FCL그래픽맨투맨 N251SW331P LE1222069447",
       "normalizedName": "나이키 키즈 유아동티셔츠 조던 fcl 그래픽 맨투맨 티셔츠 8 15세 n251sw331p le12",
@@ -4289,6 +4257,38 @@
       "minPrice": 62465,
       "maxPrice": 62960,
       "brand": "나이키키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_64ed90ba",
+      "name": "폴로랄프로렌/[폴로랄프로렌] SS26반팔 티셔츠 211B14605_032 7592265/의류 반팔티셔츠",
+      "normalizedName": "폴로랄프로렌 폴로랄프로렌 ss26반팔 티셔츠 211b14605 032 7592265 의류 반팔티셔츠",
+      "variant": "",
+      "modelCode": "211B14605_032",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523826308",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523826308"
+      ],
+      "category": "상의",
+      "query": "아동 티셔츠",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 115900,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4855991?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_64ed90ba"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 115900,
+      "maxPrice": 115900,
+      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -4474,38 +4474,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_e61fda46",
-      "name": "베이비맥스 스트라이프 리본 티셔츠 플레어 셋업 여아티셔츠 긴팔티 이너 레이어드티 가을 R24612",
-      "normalizedName": "베이비맥스 스트라이프 리본 티셔츠 플레어 셋업 여아티셔츠 긴팔티 이너 레이어드티 가을 r24612",
-      "variant": "",
-      "modelCode": "R24612",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523413355",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523413355"
-      ],
-      "category": "상하복",
-      "query": "아동 티셔츠",
-      "offers": [
-        {
-          "merchant": "오늘의집",
-          "merchantDomain": null,
-          "price": 44000,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4920538?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_e61fda46"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 44000,
-      "maxPrice": 44000,
-      "brand": "베이비맥스",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_5fe615f4",
       "name": "[나이키] 조던 키즈 티셔츠 반팔 프랙티스 플라이트 85A088-001 23번 화이트 -",
       "normalizedName": "나이키 조던 키즈 티셔츠 반팔 프랙티스 플라이트 85a088 001 23번 화이트",
@@ -4602,6 +4570,38 @@
       "stage": "키즈"
     },
     {
+      "id": "adpickbiz_42bbc485",
+      "name": "헤지스 키즈 반팔 티셔츠 퍼플 HBTS6FK50V2",
+      "normalizedName": "헤지스 키즈 반팔 티셔츠 퍼플 hbts6fk50v2",
+      "variant": "",
+      "modelCode": "HBTS6FK50V2",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523825703",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523825703"
+      ],
+      "category": "상의",
+      "query": "아동 티셔츠",
+      "offers": [
+        {
+          "merchant": "보리보리",
+          "merchantDomain": null,
+          "price": 53100,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716370?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_42bbc485"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 53100,
+      "maxPrice": 53100,
+      "brand": "헤지스키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
       "id": "adpickbiz_4de95a96",
       "name": "린넨 쿨 아동바지 204389",
       "normalizedName": "린넨 쿨 아동바지 204389",
@@ -4666,70 +4666,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_69213431",
-      "name": "베이비맥스 아이보리 퀼팅 티어드 롱스커트 여아치마 치마바지 겨울 기모 주니어 초등학생 R25139",
-      "normalizedName": "베이비맥스 아이보리 퀼팅 티어드 롱스커트 여아치마 치마바지 겨울 기모 주니어 초등학생 r25139",
-      "variant": "",
-      "modelCode": "R25139",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523414614",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523414614"
-      ],
-      "category": "하의",
-      "query": "아동 바지",
-      "offers": [
-        {
-          "merchant": "오늘의집",
-          "merchantDomain": null,
-          "price": 35000,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4920539?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_69213431"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 35000,
-      "maxPrice": 35000,
-      "brand": "베이비맥스",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
-      "id": "adpickbiz_48852fff",
-      "name": "[기타] 으 크롭 주니어 초등학생 방송댄스 티셔츠 아동 바지 (52731177)[이마트몰]",
-      "normalizedName": "기타 으 크롭 주니어 초등학생 방송댄스 티셔츠 아동 바지 52731177 이마트몰",
-      "variant": "",
-      "modelCode": "52731177",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828428",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828428"
-      ],
-      "category": "하의",
-      "query": "아동 바지",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 29184,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4872865?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_48852fff"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 29184,
-      "maxPrice": 29184,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_d5c49331",
       "name": "몽클레어/MONCLER KIDS 몽클레어키즈 키즈 바지 2A00012 595Y2 999 8A10A/키즈 의류",
       "normalizedName": "몽클레어 moncler kids 몽클레어키즈 키즈 바지 2a00012 595y2 999 8a10a 키즈 의류",
@@ -4764,6 +4700,38 @@
       "minPrice": 202100,
       "maxPrice": 1124000,
       "brand": "몽클레르키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_48852fff",
+      "name": "[기타] 으 크롭 주니어 초등학생 방송댄스 티셔츠 아동 바지 (52731177)[이마트몰]",
+      "normalizedName": "기타 으 크롭 주니어 초등학생 방송댄스 티셔츠 아동 바지 52731177 이마트몰",
+      "variant": "",
+      "modelCode": "52731177",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828428",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828428"
+      ],
+      "category": "하의",
+      "query": "아동 바지",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 29184,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4872865?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_48852fff"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 29184,
+      "maxPrice": 29184,
+      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -4981,36 +4949,36 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_6e168025",
-      "name": "베이비맥스 레이스 튤 티어드 롱스커트 여아치마 치마바지 가을 그레이 주니어 초등학생 R25393",
-      "normalizedName": "베이비맥스 레이스 튤 티어드 롱스커트 여아치마 치마바지 가을 그레이 주니어 초등학생 r25393",
+      "id": "adpickbiz_e921d216",
+      "name": "삠뽀요/트윈 퍼피 유아 키즈 팬츠/하의 면바지",
+      "normalizedName": "삠뽀요 트윈 퍼피 유아 키즈 팬츠 하의 면바지",
       "variant": "",
-      "modelCode": "R25393",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523414615",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828583",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523414615"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828583"
       ],
       "category": "하의",
       "query": "아동 바지",
       "offers": [
         {
-          "merchant": "오늘의집",
+          "merchant": "더블유컨셉코리아",
           "merchantDomain": null,
-          "price": 35000,
+          "price": 25714,
           "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4920540?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_6e168025"
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716289?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_e921d216"
         }
       ],
       "offerCount": 1,
-      "minPrice": 35000,
-      "maxPrice": 35000,
-      "brand": "베이비맥스",
+      "minPrice": 25714,
+      "maxPrice": 25714,
+      "brand": "삠뽀요",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
       "availableSizes": [],
-      "stage": "베이비"
+      "stage": "키즈"
     },
     {
       "id": "adpickbiz_55b37e89",
@@ -5038,38 +5006,6 @@
       "minPrice": 272040,
       "maxPrice": 272040,
       "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_e921d216",
-      "name": "삠뽀요/트윈 퍼피 유아 키즈 팬츠/하의 면바지",
-      "normalizedName": "삠뽀요 트윈 퍼피 유아 키즈 팬츠 하의 면바지",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828583",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828583"
-      ],
-      "category": "하의",
-      "query": "아동 바지",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 25714,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716289?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_e921d216"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 25714,
-      "maxPrice": 25714,
-      "brand": "삠뽀요",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -5197,6 +5133,70 @@
       "offerCount": 1,
       "minPrice": 25100,
       "maxPrice": 25100,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_d0ae186b",
+      "name": "삠뽀요 큐피트 유아 키즈 팬츠 (3컬러)",
+      "normalizedName": "삠뽀요 큐피트 유아 키즈 팬츠 3컬러",
+      "variant": "컬러",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828272",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828272"
+      ],
+      "category": "하의",
+      "query": "아동 바지",
+      "offers": [
+        {
+          "merchant": "보리보리",
+          "merchantDomain": null,
+          "price": 14820,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716295?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_d0ae186b"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 14820,
+      "maxPrice": 14820,
+      "brand": "삠뽀요",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_5fa080c4",
+      "name": "[뉴발란스] 매장정품 오버핏 버뮤다 팬츠 아동 바지 NK9VG3801U19 NK9VG3801U 19 6635216",
+      "normalizedName": "뉴발란스 매장 오버핏 버뮤다 팬츠 아동 바지 nk9vg3801u19 nk9vg3801u 19 6635216",
+      "variant": "",
+      "modelCode": "NK9VG3801U19",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828432",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523828432"
+      ],
+      "category": "하의",
+      "query": "아동 바지",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 60960,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785782?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_5fa080c4"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 60960,
+      "maxPrice": 60960,
       "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
@@ -6377,6 +6377,38 @@
       "sizeGuide": null,
       "availableSizes": [],
       "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_e61fda46",
+      "name": "베이비맥스 스트라이프 리본 티셔츠 플레어 셋업 여아티셔츠 긴팔티 이너 레이어드티 가을 R24612",
+      "normalizedName": "베이비맥스 스트라이프 리본 티셔츠 플레어 셋업 여아티셔츠 긴팔티 이너 레이어드티 가을 r24612",
+      "variant": "",
+      "modelCode": "R24612",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523572950",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523572950"
+      ],
+      "category": "상하복",
+      "query": "여아 티셔츠",
+      "offers": [
+        {
+          "merchant": "오늘의집",
+          "merchantDomain": null,
+          "price": 44000,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4920538?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_e61fda46"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 44000,
+      "maxPrice": 44000,
+      "brand": "베이비맥스",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
     },
     {
       "id": "adpickbiz_8c75fc76",
@@ -19031,38 +19063,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_42bbc485",
-      "name": "헤지스 키즈 반팔 티셔츠 퍼플 HBTS6FK50V2",
-      "normalizedName": "헤지스 키즈 반팔 티셔츠 퍼플 hbts6fk50v2",
-      "variant": "",
-      "modelCode": "HBTS6FK50V2",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523592990",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523592990"
-      ],
-      "category": "상의",
-      "query": "키즈 티셔츠",
-      "offers": [
-        {
-          "merchant": "보리보리",
-          "merchantDomain": null,
-          "price": 53100,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716370?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_42bbc485"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 53100,
-      "maxPrice": 53100,
-      "brand": "헤지스키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_4fd8ee24",
       "name": "캉골 키즈 예쁜티셔츠 기능성반팔티 폴로티 프린팅티셔츠 꾸안꾸 시어서커 카라티 여름코디 데일리룩 빅사이즈 스트라이프티 아메카지 기능성티 루즈핏 무지티 오버핏",
       "normalizedName": "캉골 키즈 예쁜티셔츠 기능성반팔티 폴로티 프린팅티셔츠 꾸안꾸 시어서커 카라티 여름코디 데일리룩 빅사이즈 스트라이프티 아메카지 기능성티 루즈핏 무지티 오버핏",
@@ -19927,6 +19927,38 @@
       "stage": "키즈"
     },
     {
+      "id": "adpickbiz_69213431",
+      "name": "베이비맥스 아이보리 퀼팅 티어드 롱스커트 여아치마 치마바지 겨울 기모 주니어 초등학생 R25139",
+      "normalizedName": "베이비맥스 아이보리 퀼팅 티어드 롱스커트 여아치마 치마바지 겨울 기모 주니어 초등학생 r25139",
+      "variant": "",
+      "modelCode": "R25139",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523595084",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523595084"
+      ],
+      "category": "하의",
+      "query": "키즈 바지",
+      "offers": [
+        {
+          "merchant": "오늘의집",
+          "merchantDomain": null,
+          "price": 35000,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4920539?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_69213431"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 35000,
+      "maxPrice": 35000,
+      "brand": "베이비맥스",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
       "id": "adpickbiz_102f6e8b",
       "name": "몽클레어키즈 키즈 바지 2A00012 595Y2 999 8A10A",
       "normalizedName": "몽클레르 몽클레어키즈 키즈 바지 2a00012 595y2 999 8a10a 2a00012595y29998a10a",
@@ -20007,6 +20039,38 @@
       "sizeGuide": null,
       "availableSizes": [],
       "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_6e168025",
+      "name": "베이비맥스 레이스 튤 티어드 롱스커트 여아치마 치마바지 가을 그레이 주니어 초등학생 R25393",
+      "normalizedName": "베이비맥스 레이스 튤 티어드 롱스커트 여아치마 치마바지 가을 그레이 주니어 초등학생 r25393",
+      "variant": "",
+      "modelCode": "R25393",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523595085",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=523595085"
+      ],
+      "category": "하의",
+      "query": "키즈 바지",
+      "offers": [
+        {
+          "merchant": "오늘의집",
+          "merchantDomain": null,
+          "price": 35000,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4920540?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_6e168025"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 35000,
+      "maxPrice": 35000,
+      "brand": "베이비맥스",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
     },
     {
       "id": "adpickbiz_a459b85b",

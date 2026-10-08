@@ -1,24 +1,24 @@
 {
-  "syncedAt": "2026-10-08T17:11:12.843Z",
-  "sourceProducts": 766,
-  "canonicalProducts": 695,
+  "syncedAt": "2026-10-08T18:07:26.435Z",
+  "sourceProducts": 768,
+  "canonicalProducts": 697,
   "queries": 73,
-  "recognizedBrandProducts": 386,
+  "recognizedBrandProducts": 387,
   "recognizedBrandRatePct": 55.5,
   "officialBrandGuideProducts": 23,
   "officialBrandGuideRatePct": 3.3,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 766,
-    "ok": 766,
+    "checked": 768,
+    "ok": 768,
     "failed": 0,
     "statuses": {
-      "200": 766
+      "200": 768
     },
     "rate": 1
   },
-  "canonicalImageProducts": 695,
+  "canonicalImageProducts": 697,
   "canonicalImageRatePct": 100,
   "multiImageProducts": 61,
   "multiImageRatePct": 8.8,
@@ -27,7 +27,7 @@
   "topBrands": [
     {
       "name": "미분류",
-      "count": 309
+      "count": 310
     },
     {
       "name": "베이비맥스",
@@ -43,7 +43,7 @@
     },
     {
       "name": "삠뽀요",
-      "count": 22
+      "count": 23
     },
     {
       "name": "빈폴키즈",
@@ -113,15 +113,15 @@
     },
     {
       "name": "아우터",
-      "count": 124
+      "count": 123
     },
     {
       "name": "하의",
-      "count": 104
+      "count": 106
     },
     {
       "name": "상하복",
-      "count": 80
+      "count": 81
     },
     {
       "name": "바디수트",
@@ -143,7 +143,7 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 289
+      "count": 291
     },
     {
       "name": "베이비",
