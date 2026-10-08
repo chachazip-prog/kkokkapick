@@ -1,6 +1,6 @@
 {
   "availability": {
-    "measuredAt": "2026-10-06T23:02:45.792Z",
+    "measuredAt": "2026-10-08T11:39:58.709Z",
     "sourceFields": [
       "commissionlink",
       "cp_code",
@@ -12,13 +12,13 @@
     ],
     "materialOffers": 0,
     "availableSizeOffers": 0,
-    "imageUrls": 783,
-    "imageUrlsWithVerification": 783,
-    "collectionDurationSeconds": 902,
-    "lastVerificationAt": "2026-10-06T23:00:48.981Z",
-    "sourceAgeAtLastVerificationSeconds": 945,
-    "temporaryImageDisplayDeadline": "2026-10-07T00:15:03.803Z",
-    "remainingImageDisplaySeconds": 4338,
+    "imageUrls": 1044,
+    "imageUrlsWithVerification": 1044,
+    "collectionDurationSeconds": 907,
+    "lastVerificationAt": "2026-10-08T11:37:40.918Z",
+    "sourceAgeAtLastVerificationSeconds": 993,
+    "temporaryImageDisplayDeadline": "2026-10-08T12:51:07.566Z",
+    "remainingImageDisplaySeconds": 4268,
     "imageStatus": "current_health_not_measured",
     "missingFields": [
       "material",
@@ -27,137 +27,142 @@
     "displayCeilingIsLifetimeGuarantee": false,
     "continuousAvailabilityVerified": false
   },
-  "syncedAt": "2026-10-06T22:45:03.803Z",
-  "sourceProducts": 783,
-  "canonicalProducts": 718,
+  "syncedAt": "2026-10-08T11:21:07.566Z",
+  "sourceProducts": 1052,
+  "canonicalProducts": 955,
   "queries": 85,
-  "recognizedBrandProducts": 399,
-  "recognizedBrandRatePct": 55.6,
-  "officialBrandGuideProducts": 48,
-  "officialBrandGuideRatePct": 6.7,
+  "recognizedBrandProducts": 491,
+  "recognizedBrandRatePct": 51.4,
+  "officialBrandGuideProducts": 33,
+  "officialBrandGuideRatePct": 3.5,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 783,
-    "ok": 783,
-    "failed": 0,
+    "checked": 1052,
+    "ok": 1044,
+    "failed": 8,
     "statuses": {
-      "200": 783
+      "200": 1044,
+      "404": 8
     },
-    "rate": 1
+    "rate": 0.9923954372623575
   },
-  "canonicalImageProducts": 718,
+  "canonicalImageProducts": 955,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 57,
-  "multiImageRatePct": 7.9,
+  "multiImageProducts": 81,
+  "multiImageRatePct": 8.5,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 319
-    },
-    {
-      "name": "빈폴키즈",
-      "count": 34
-    },
-    {
-      "name": "베이비맥스",
-      "count": 32
-    },
-    {
-      "name": "아가방",
-      "count": 25
-    },
-    {
-      "name": "압소바",
-      "count": 24
-    },
-    {
-      "name": "에뜨와",
-      "count": 23
+      "count": 464
     },
     {
       "name": "블루독베이비",
-      "count": 21
+      "count": 39
     },
     {
-      "name": "삠뽀요",
-      "count": 20
+      "name": "압소바",
+      "count": 28
     },
     {
       "name": "베네통키즈",
-      "count": 20
+      "count": 28
     },
     {
-      "name": "밍크뮤",
-      "count": 18
+      "name": "빈폴키즈",
+      "count": 25
     },
     {
-      "name": "헤지스키즈",
-      "count": 15
-    },
-    {
-      "name": "모이몰른",
-      "count": 14
-    },
-    {
-      "name": "쇼콜라",
-      "count": 13
-    },
-    {
-      "name": "MLB키즈",
-      "count": 13
-    },
-    {
-      "name": "플레이키즈프로",
-      "count": 13
+      "name": "베이비맥스",
+      "count": 24
     },
     {
       "name": "밀크베이비",
-      "count": 12
+      "count": 24
+    },
+    {
+      "name": "삠뽀요",
+      "count": 21
+    },
+    {
+      "name": "쇼콜라",
+      "count": 21
+    },
+    {
+      "name": "모이몰른",
+      "count": 21
+    },
+    {
+      "name": "에뜨와",
+      "count": 19
+    },
+    {
+      "name": "헤지스키즈",
+      "count": 19
     },
     {
       "name": "해피프린스",
-      "count": 11
+      "count": 18
+    },
+    {
+      "name": "밍크뮤",
+      "count": 17
+    },
+    {
+      "name": "휠라키즈",
+      "count": 17
+    },
+    {
+      "name": "페리미츠",
+      "count": 16
+    },
+    {
+      "name": "플레이키즈프로",
+      "count": 16
+    },
+    {
+      "name": "아가방",
+      "count": 14
+    },
+    {
+      "name": "달퐁",
+      "count": 13
     },
     {
       "name": "몽클레르키즈",
-      "count": 9
-    },
-    {
-      "name": "나이키키즈",
-      "count": 9
-    },
-    {
-      "name": "캉골키즈",
-      "count": 8
+      "count": 12
     }
   ],
   "categories": [
     {
-      "name": "아우터",
-      "count": 148
+      "name": "상의",
+      "count": 168
     },
     {
-      "name": "하의",
-      "count": 111
+      "name": "아우터",
+      "count": 162
     },
     {
       "name": "바디수트",
-      "count": 99
+      "count": 145
     },
     {
-      "name": "상의",
-      "count": 86
+      "name": "하의",
+      "count": 117
     },
     {
       "name": "상하복",
-      "count": 73
+      "count": 94
     },
     {
       "name": "원피스",
-      "count": 48
+      "count": 78
+    },
+    {
+      "name": "실내복",
+      "count": 51
     },
     {
       "name": "수영복",
@@ -165,14 +170,10 @@
     },
     {
       "name": "감각놀이",
-      "count": 27
+      "count": 26
     },
     {
       "name": "퍼즐·맞추기",
-      "count": 20
-    },
-    {
-      "name": "실내복",
       "count": 16
     },
     {
@@ -180,58 +181,58 @@
       "count": 12
     },
     {
+      "name": "그림책·보드북",
+      "count": 10
+    },
+    {
+      "name": "역할놀이",
+      "count": 10
+    },
+    {
       "name": "한복",
-      "count": 11
+      "count": 9
     },
     {
       "name": "기초 교구",
       "count": 9
     },
     {
-      "name": "역할놀이",
-      "count": 8
-    },
-    {
-      "name": "그림책·보드북",
-      "count": 8
-    },
-    {
-      "name": "패션잡화",
-      "count": 1
-    },
-    {
       "name": "기타",
-      "count": 1
+      "count": 6
     },
     {
       "name": "신발",
+      "count": 2
+    },
+    {
+      "name": "패션잡화",
       "count": 1
     }
   ],
   "stages": [
     {
-      "name": "베이비",
-      "count": 265
+      "name": "키즈",
+      "count": 376
     },
     {
-      "name": "키즈",
-      "count": 262
+      "name": "베이비",
+      "count": 297
     },
     {
       "name": "전체",
-      "count": 90
+      "count": 139
     },
     {
       "name": "유아",
-      "count": 73
-    },
-    {
-      "name": "토들러",
-      "count": 17
+      "count": 69
     },
     {
       "name": "신생아",
-      "count": 11
+      "count": 58
+    },
+    {
+      "name": "토들러",
+      "count": 16
     }
   ]
 }
