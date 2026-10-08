@@ -1,27 +1,27 @@
 {
-  "syncedAt": "2026-10-08T13:13:56.551Z",
-  "sourceProducts": 816,
-  "canonicalProducts": 731,
+  "syncedAt": "2026-10-08T14:09:10.813Z",
+  "sourceProducts": 819,
+  "canonicalProducts": 734,
   "queries": 73,
-  "recognizedBrandProducts": 411,
-  "recognizedBrandRatePct": 56.2,
+  "recognizedBrandProducts": 414,
+  "recognizedBrandRatePct": 56.4,
   "officialBrandGuideProducts": 22,
   "officialBrandGuideRatePct": 3,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 816,
-    "ok": 816,
+    "checked": 819,
+    "ok": 819,
     "failed": 0,
     "statuses": {
-      "200": 816
+      "200": 819
     },
     "rate": 1
   },
-  "canonicalImageProducts": 731,
+  "canonicalImageProducts": 734,
   "canonicalImageRatePct": 100,
   "multiImageProducts": 70,
-  "multiImageRatePct": 9.6,
+  "multiImageRatePct": 9.5,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
@@ -38,12 +38,12 @@
       "count": 26
     },
     {
-      "name": "블루독베이비",
-      "count": 23
+      "name": "베이비맥스",
+      "count": 25
     },
     {
-      "name": "베이비맥스",
-      "count": 22
+      "name": "블루독베이비",
+      "count": 23
     },
     {
       "name": "삠뽀요",
@@ -113,11 +113,11 @@
     },
     {
       "name": "아우터",
-      "count": 144
+      "count": 145
     },
     {
       "name": "하의",
-      "count": 106
+      "count": 107
     },
     {
       "name": "바디수트",
@@ -125,7 +125,7 @@
     },
     {
       "name": "상하복",
-      "count": 81
+      "count": 82
     },
     {
       "name": "원피스",
@@ -147,7 +147,7 @@
     },
     {
       "name": "베이비",
-      "count": 244
+      "count": 247
     },
     {
       "name": "유아",
