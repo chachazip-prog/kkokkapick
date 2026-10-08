@@ -3,6 +3,10 @@
  const EXCLUDE=/(반려|애완|강아지용|고양이용|견용|성인|어른|수집용|피규어|레진|DIY|원단|단추|인형\s*옷|완구\s*의류|장식|인테리어|프로젝터|야간\s*조명|수납|가구|다운로드|전자책|구독|랜덤|미스터리|식품|간식|젖병|기저귀|치발기|치아발육기|세척제|세정제|세탁용품|보관함)/i;
  const FLOOR_COVERING=/(?:퍼즐|놀이|크롤링|층간\s*소음|바닥|조립|EVA\s*폼)\s*매트|카펫|카페트|바닥\s*(?:패드|타일|재)|퍼즐\s*타일|floor\s*(?:mat|tile|pad)|play\s*mat/i;
  function isFloorCovering(name){return FLOOR_COVERING.test(String(name||''))}
+ // A child-garment keyword can describe the intended use of sewing fabric.
+ // Require both a fabric item and explicit per-length pricing; material wording
+ // on a finished garment remains eligible.
+ function isLengthPricedFabric(name){const s=String(name||'');return /원단|의류소재|재봉재료|\bfabric\b/i.test(s)&&/(?:\d+(?:\.\d+)?\s*(?:계량기|미터|야드|m|yards?)\s*(?:가격|단위\s*판매|당)|(?:미터|야드)\s*(?:당|단위\s*(?:가격|판매))|\bper\s*(?:met(?:er|re)|yard)\b)/i.test(s)}
  const GARMENT=/(내의|내복|상하복|상하세트|티셔츠|맨투맨|바디수트|우주복|배냇|원피스|카디건|가디건|윈드러너|바람막이|점퍼|자켓|팬츠|바지|레깅스|모자|수영복|leggings|cardigan|컬러\s*블[록럭]|썬블[록럭])/i;
  const CANDIDATE=/(딸랑이|장난감|완구|보드북|그림책|촉감책|헝겊책|퍼즐|교구|쌓기\s*놀이|역할\s*놀이|소꿉\s*놀이|주방\s*놀이|양치\s*놀이|숫자놀이|모양맞추기|블[록럭])/i;
  function isNonApparelCandidate(name){const s=String(name||'');return !GARMENT.test(s)&&CANDIDATE.test(s);}
@@ -12,5 +16,5 @@
  function isApparel(p){return!p?.domain||p.domain==='apparel';}
  function matchesMonths(p,months){const e=p&&p.ageEvidence,m=months===null||months===undefined||months===''?NaN:Number(months);return!!e&&Number.isFinite(m)&&Number.isFinite(e.minMonths)&&m>=e.minMonths&&(e.maxMonths===null||Number.isFinite(e.maxMonths)&&m<=e.maxMonths);}
  function category(domain,name){if(domain==='learning')return /책|북/.test(name)?'그림책·보드북':/퍼즐|맞추기/.test(name)?'퍼즐·맞추기':'기초 교구';return /블[록럭]|쌓기/.test(name)?'블록·쌓기':/역할|소꿉|주방/.test(name)?'역할놀이':'감각놀이';}
- return{isFloorCovering,isNonApparelCandidate,nonApparelDomain,ageEvidence,isApparel,matchesMonths,category};
+ return{isFloorCovering,isLengthPricedFabric,isNonApparelCandidate,nonApparelDomain,ageEvidence,isApparel,matchesMonths,category};
 });

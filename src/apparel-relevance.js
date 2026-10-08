@@ -23,6 +23,7 @@ const CHILD_BRAND = /아가방|에뜨와|압소바|밍크뮤|모이몰른|블루
 const CHILD = /(신생아|아기|유아|키즈|아동|어린이|토들러|출산|백일|주니어|남아|여아|남자\s*아기|베이비|baby|kids|junior)/i;
 export function isKidsApparel(name = '') {
   const title = String(name);
+  if (domains.isLengthPricedFabric(title)) return false;
   if (REVIEW_QUARANTINE.has(normalizeProductName(title))) return false;
   if (SUPPLY_ITEM.test(title) || SEWING_MATERIAL.test(title)) return false;
   // An animal motif on explicitly child-targeted clothing remains eligible.
@@ -40,6 +41,7 @@ export function isKidsApparel(name = '') {
 }
 
 export function classifyCatalogRelevance(product={}) {
+ if(domains.isLengthPricedFabric(product.name))return {eligible:false,domain:null,reason:'length_priced_sewing_fabric'};
  const domain=domains.nonApparelDomain(product.name);
  if(domain)return {eligible:true,domain,reason:null};
  if(domains.isNonApparelCandidate(product.name))return {eligible:false,domain:null,reason:"non_apparel_scope_or_safety_unverified"};

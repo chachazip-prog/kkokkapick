@@ -30,7 +30,7 @@ function fitForProduct(p){
    return{kind:'candidate',html:'<div class="offer"><div><b>꼬까핏 · 공식 사이즈표 확인 중</b><br><span>판매처 자료는 확인했지만 브랜드 공식 원문 검증 전이라 사이즈를 추천하지 않아요.</span></div></div>'};
  return{kind:'unknown',html:'<div class="offer"><div><b>꼬까핏 · 사이즈 정보 확인 필요</b><br><span>검증된 브랜드 사이즈표가 없어 임의로 추천하지 않아요.</span></div></div>'};
 }
-function isDiscoveryProduct(p){return KkokkapickProductDomain.isApparel(p)||!KkokkapickProductDomain.isFloorCovering(p.name)}
+function isDiscoveryProduct(p){return !KkokkapickProductDomain.isLengthPricedFabric(p.name)&&(KkokkapickProductDomain.isApparel(p)||!KkokkapickProductDomain.isFloorCovering(p.name))}
 function materialLabel(p){if(p.materialConflict)return '판매처별 소재 정보가 달라요';const value=p.material||p.materials||p.composition;return Array.isArray(value)?value.join(', '):value||'정보 미제공 · 판매처 상세페이지 확인'}
 function sizeLabel(p){return (p.availableSizes||[]).length?p.availableSizes.join(', '):'정보 미제공 · 판매처 옵션 및 실측 확인'}
 function offerMatchesFilters(o,filters){

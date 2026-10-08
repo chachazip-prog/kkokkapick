@@ -36,3 +36,27 @@ assert.equal(domains.isFloorCovering(flooring),true);
 assert.equal(classifyCatalogRelevance({name:flooring}).eligible,false,'interlocking floor tiles are not learning materials');
 for(const name of ['유아 놀이 매트 퍼즐','어린이 floor tile 퍼즐','아기 카페트 퍼즐'])assert.equal(classifyCatalogRelevance({name}).eligible,false,name);
 for(const name of ['클래식월드 가든 야채 퍼즐 18개월 유아','유아 도로놀이 퍼즐형 트랙','뽀로로 유아 가방퍼즐','아기 헝겊책 그림책','옥스포드 아기 유아 놀이 블록'])assert.equal(classifyCatalogRelevance({name}).eligible,true,name);
+
+// Fresh source2026-10-08: a per-length fabric listing used child-garment
+// keywords. Omit this item at collection and runtime without rewriting it.
+const fabric='[해외] 여아용 원피스 의류 그물 원단, 흰색 핑크 딸기 생일 케이크 글자 활 자수 메쉬 원단 핑크, SC283, 1 계량기 가격';
+for(const name of [fabric,'아기 원피스 제작용 면 원단 1미터 가격','키즈 셔츠 원단 야드당 가격','kids dress fabric per metre']){
+ assert.equal(domains.isLengthPricedFabric(name),true,name);
+ assert.equal(classifyCatalogRelevance({name}).eligible,false,name);
+}
+const sourceListing=Object.freeze({name:fabric,id:'adpickbiz_cc4376e9',domain:'apparel',imageUrl:'https://supplier.example/original-photo.jpg',checkedAt:'2026-10-08T11:21:07.566Z'});
+const originalListing=JSON.stringify(sourceListing);
+assert.equal(classifyCatalogRelevance(sourceListing).reason,'length_priced_sewing_fabric');
+assert.equal(JSON.stringify(sourceListing),originalListing,'Raw source facts must be preserved');
+for(const name of ['[기타] IL GUFO KIDS 테크원단 남아 상하복 세트 블루 A26GDF0039V0021499[이마트몰]','유아 원피스 면 원단 총장 50cm','아동 코트 테크원단']){
+ assert.equal(domains.isLengthPricedFabric(name),false,name);
+ assert.equal(classifyCatalogRelevance({name}).eligible,true,name);
+}
+const fs=await import('node:fs');
+const vm=await import('node:vm');
+const runtime=fs.readFileSync('src/release-ui.js','utf8').match(/^function isDiscoveryProduct\(p\)\{[^\n]+\}/m)?.[0];
+assert.ok(runtime,'Discovery must enforce the shared fabric check');
+const browser=vm.createContext({KkokkapickProductDomain:domains});vm.runInContext(runtime,browser);
+assert.equal(browser.isDiscoveryProduct(sourceListing),false,'Previously published fabric must be omitted in the browser too');
+assert.equal(browser.isDiscoveryProduct({name:'IL GUFO KIDS 테크원단 남아 상하복 세트',domain:'apparel'}),true);
+assert.equal(browser.isDiscoveryProduct({name:flooring,domain:'learning'}),false,'Existing floor-covering exclusion remains');
