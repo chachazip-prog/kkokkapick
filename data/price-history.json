@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T16:09:29.172Z",
+  "updatedAt": "2026-10-08T17:11:12.843Z",
   "retention": "bounded_demo_events",
   "events": [
     {
