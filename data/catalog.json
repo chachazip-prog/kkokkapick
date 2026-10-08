@@ -1,6 +1,6 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-08T03:06:12.940Z",
+  "syncedAt": "2026-10-08T04:07:22.650Z",
   "sourceCount": 814,
   "productCount": 732,
   "priceChangeCount": 0,
@@ -3812,10 +3812,8 @@
       "normalizedName": "한국 아가일패턴 유아정장 5종세트 3 36개월 203036",
       "variant": "5종",
       "modelCode": "203036",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=521620194",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=521620194"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "기타",
       "query": "유아 여름옷",
       "offers": [
@@ -4438,10 +4436,8 @@
       "normalizedName": "베이비맥스 플라워 패치 레이스 반팔 티셔츠 r13987",
       "variant": "",
       "modelCode": "R13987",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=521622223",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=521622223"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "아동 티셔츠",
       "offers": [
@@ -13510,8 +13506,7 @@
       "modelCode": "2AB2672LG01",
       "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=521645586",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=521645586",
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=521645374"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=521645586"
       ],
       "category": "하의",
       "query": "아기 레깅스",
