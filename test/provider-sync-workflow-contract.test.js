@@ -24,4 +24,55 @@ for(const p of ['.github/workflows/sync-adpick.yml','.github/workflows/sync-adpi
    if(s.includes('git rebase origin/main'))throw new Error(p+' must not rebase stale provider data onto a newer main');
  }
 }
-console.log('provider sync workflow safety PASS');
+// Execute the actual legacy publication step with an isolated git executable.
+// String checks alone previously passed when a literal \\n left the guard/push
+// inside a shell comment, so publication and stale-head refusal must be observed.
+const assert=require('node:assert/strict');
+const os=require('node:os');
+const path=require('node:path');
+const vm=require('node:vm');
+const {spawnSync}=require('node:child_process');
+const legacy=fs.readFileSync('.github/workflows/sync-adpick.yml','utf8');
+for(const workflow of ['.github/workflows/sync-adpick.yml','.github/workflows/sync-adpick-biz.yml']){
+ const expression=fs.readFileSync(workflow,'utf8').match(/^    if: (.+)$/m)?.[1];
+ assert.ok(expression,workflow+' must guard the entire job before provider access');
+ for(const [repository,ref,allowed] of [
+  ['chachazip-prog/kkokkapick','refs/heads/main',true],
+  ['chachazip-prog/kkokkapick','refs/heads/codex/release-ui-rebuild',false],
+  ['chachazip-prog/kkokkapick','refs/tags/release',false],
+  ['fork/kkokkapick','refs/heads/main',false],
+ ])assert.equal(vm.runInNewContext(expression,{github:{repository,ref}}),allowed,workflow+' provider sync job boundary');
+}
+const block=legacy.split('      - name: Commit refreshed catalog\n        run: |\n')[1];
+assert.ok(block,'Legacy publication step must exist');
+const script=block.split('\n').map(line=>line.startsWith('          ')?line.slice(10):line).join('\n');
+assert.equal(spawnSync('bash',['-n'],{input:script,encoding:'utf8'}).status,0,'Legacy publication shell syntax');
+const fixture=fs.mkdtempSync(path.join(os.tmpdir(),'kkokkapick-sync-workflow-'));
+try{
+ const executable=path.join(fixture,'git');
+ fs.writeFileSync(executable,`#!/usr/bin/env bash
+printf '%s\\n' "$*" >> "$SYNC_CALL_LOG"
+case "$*" in
+  "diff --quiet -- data/adpick-products.json") exit "$SYNC_DIFF_STATUS" ;;
+  "rev-parse origin/main") printf '%s\\n' "$SYNC_REMOTE_SHA" ;;
+esac
+exit 0
+`,{mode:0o755});
+ for(const [name,remoteSha,diffStatus,expectedStatus,shouldPush] of [
+  ['matching-main','reviewed-code',1,0,true],
+  ['main-moved','newer-code',1,1,false],
+  ['unchanged-catalog','reviewed-code',0,0,false],
+ ]){
+  const callLog=path.join(fixture,name+'.log');
+  const result=spawnSync('bash',['-c',script],{cwd:fixture,encoding:'utf8',env:{
+   PATH:fixture+':/usr/bin:/bin',GITHUB_SHA:'reviewed-code',SYNC_REMOTE_SHA:remoteSha,
+   SYNC_DIFF_STATUS:String(diffStatus),SYNC_CALL_LOG:callLog,
+  }});
+  const calls=fs.readFileSync(callLog,'utf8').trim().split('\n');
+  assert.equal(result.status,expectedStatus,name+' exit status: '+result.stderr);
+  assert.equal(calls.includes('push origin HEAD:main'),shouldPush,name+' publication');
+  assert.equal(calls.includes('rev-parse origin/main'),Boolean(diffStatus),name+' main-head comparison');
+  if(name==='main-moved')assert.match(result.stdout,/main moved during provider sync/);
+ }
+}finally{fs.rmSync(fixture,{recursive:true,force:true})}
+console.log('provider sync workflow safety and actual publication behavior PASS');

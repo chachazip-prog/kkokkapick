@@ -1,3 +1,27 @@
+# 릴리즈 준비 추가 검증 — 2026-10-08 한국시간
+
+이 절은 아래 10월7일의 정상 상품 검증과 현재 상태를 구분합니다. 기존 원본 관측22:45:03UTC Oct6의 내부 사진 기한은 Oct7 09:15:03KST, metadata 기한은 Oct8 07:45:03KST로 모두 지났습니다. 이전 READY 문구와 사진 QA는 현재 지속 가용성/공개 출시 완료 근거가 아닙니다.
+
+## 수정된 코드와 실제 실패 상태
+
+통합 코드74ae5f64c650e0cec76cfe34fc53de495d6e723f에서 만료 URL 진입/데모 상태, 브라우저 저장 오류, 꼬까픽 소유 캐시 정리 및 기존 상품 동기화 구문/실행 경계를 수정했습니다. R01/선택 히어로3을 유지하고 화면 오류/재시도 중복을 한 차례 교정했습니다. 기술 승인은 위임된 범위에서 처리했으며 main/운영 배포는 하지 않았습니다.
+
+- 로컬 구성 검사99개(65테스트 스크립트 포함) PASS. 의미 있는 새 회귀는 만료/실패 URL과 성공 재시도/첫 상품 진입8개, 저장소 차단/형식/원자적 상태/상세 탐색9개, 다른 앱 캐시 보존1개 및 실제 격리 shell 게시/변경 head 거절입니다. 해당 문제의 기존 코드 실패를 재현했습니다.
+- 기존 실제 원본 hash f52e1bb1587398db5ea218d477fc3e09e989155d660bae7f6d0f6da24e7336e6을 바꾸지 않고 독립 검토자가74ae5f6 고정 archive로 Chromium QA를 수행했습니다. 320/375/390/430px, 실제 만료68상태+명시적 장애 주입6상태=74PNG/검사. 34개 실제 PNG를 개별로 열었습니다(핵심 만료6화면×4, 마이 데모4, 네트워크2, 저장 실패 아이 폼4). root도 이 최종 묶음6개 PNG를 열었습니다.
+- 가로 넘침/주요 잘림/런타임 오류/보이는 깨진 사진/만료 상품 노출0. 요청 URL과 데모 view/layout, 한국시간 원본 시각/기한/검토 보류 안내, 입력·찜/희망가격/최근 기록 보존 PASS. 정상 상품 상세·사진 QA를 이 실패 상태 PASS로 대체하지 않습니다.
+- 별도의 합성 사진/시각 오류 주입 회귀는 네 폭에서 PASS했습니다. 이는 실제 상품/이미지 지속 가용성 증거가 아닙니다. 서비스 워커 lifecycle은 별도 Node 실험에서 검사했고 Chromium 실패 상태 QA에서는 service worker를 막아 UI를 분리했습니다.
+- Security/Privacy는 변경 범위 검토 PASS, 필수 추가 사항0. 저장소 수정 작성자의 직접 검증은 작성자 독립 QA로 계산하지 않았습니다. 웹 브라우저 독립 검토자가 저장 접근 거부/아이 저장 실패도 실제로 확인했습니다. Ops의 코드 준비 검토 PASS이며 동기화 변경은 운영에 활성화하지 않았습니다.
+
+## 새 원본 검증
+
+실행37769439139는 원래85검색 계획으로 수집/게시/실제 QA를 진행합니다. 이 실행이 검사하는 기존45e 코드와 새 통합 UI 코드를 구분하고, 게시 후 최종 코드와 동일 원본에서 실제 사진 디코딩 및 네 폭 QA를 추가로 수행해야 합니다. 실행 시작만으로 성공을 기록하지 않습니다. 최신 결과와 공개 URL은 PR #206 본문에 기록합니다.
+
+## 남은 공개 출시 조건
+
+지속 이미지 갱신 계약/재표시 권리, 소재·실제 판매 사이즈 및 놀이 연령 원본, 실제 운영 주체/지원/최종 정책, 운영 계정·푸시 활성화 시 실제 환경·기기 검증, 실제 iPhone Product Owner 승인은 남았습니다. 현재 웹 후보는 기기 로컬 기록을 사용합니다. 없는 원본을 만들어 채우거나 공급자 권리를 임의로 승인하지 않습니다. [릴리즈 준비표](release-preparation.md)에 입력 정보와 운영 절차를 정리했습니다. 내일2026-10-09 07:00KST 일회성 원본 갱신 및08:00 정각 보고를 예약했습니다.
+
+---
+
 # Verification record — 2026-10-07 KST
 
 Scope: newborn/infant apparel first, separate toys/learning discovery and primary-colour component refinement. UI remains the owner-selected R01 reference with hero proposal3. This record supersedes older completion wording and palette proposals below. Technical implementation approvals were delegated to the team; actual iPhone review and Product Owner approval have not been observed. No main merge or production deployment.

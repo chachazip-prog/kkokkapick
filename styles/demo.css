@@ -6,6 +6,10 @@ header { max-width: 1080px; margin: auto; padding: 28px 28px 20px; display: flex
 .brand { font-family: var(--font-display); color: var(--color-brand-ink); font-size: 25px; font-weight: 400; letter-spacing: -.7px; }.brand span { color: var(--color-accent-secondary); }header p { color: var(--color-text-secondary); font-size: 12px; }
 main { max-width: 980px; margin: 32px auto; display: grid; grid-template-columns: minmax(260px,1fr) minmax(320px,480px); gap: 54px; padding: 0 28px; }
 h1 { font-size: 25px; font-weight: 500; margin: 0 0 10px; }.guide>p { color: var(--color-text-secondary); }
+.review-status { margin: 18px 0; padding: 12px 0; border-top: var(--border-default); border-bottom: var(--border-default); font-size: 12px; color: var(--color-text-secondary); }
+.review-status p { margin: 0 0 6px; overflow-wrap: anywhere; }
+.review-status p:last-child { margin-bottom: 0; }
+#reviewState { color: var(--color-text-primary); font-weight: 500; }
 nav { margin: 24px 0; }nav a { display: block; padding: 13px 12px; border-bottom: var(--border-default); border-left: 2px solid transparent; transition: background .15s; }nav strong { font-weight: 500; display: block; }nav span { color: var(--color-text-secondary); font-size: 12px; }nav a[aria-current=page] { border-left-color: var(--color-accent); background: var(--surface-accent); }nav a:hover { background: var(--surface-pink); }
 .open-screen { display: inline-block; color: var(--color-accent); padding: 10px 0; }.caveat { font-size: 12px; max-width: 330px; padding-top: 14px; border-top: var(--border-default); }.pr { font-size: 12px; text-decoration: underline; }
 .preview { min-width: 0; }.preview-bar { display: flex; justify-content: space-between; align-items: center; padding: 0 8px 12px; font-size: 12px; }.preview-bar label { color: var(--color-text-secondary); }select { font: inherit; padding: 5px; border: var(--border-default); border-radius: var(--radius-small); background: var(--surface-card); color: var(--color-text-primary); }

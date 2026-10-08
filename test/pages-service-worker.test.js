@@ -5,11 +5,11 @@ import fs from 'node:fs';
 const sw=fs.readFileSync(new URL('../sw.js',import.meta.url),'utf8');
 
 test('Pages service worker does not pin the app shell to stale cache',()=>{
-  assert.match(sw,/kkokkapick-release-ui-reference-v7/);
+  assert.match(sw,/kkokkapick-release-ui-reference-v8/);
   assert.match(sw,/event\.request\.mode==='navigate'/);
   assert.match(sw,/isAppCode/);
   assert.match(sw,/event\.respondWith\(networkFirst\(event\.request\)\)/);
-  assert.match(sw,/keys\.filter\(key=>key!==CACHE\)/);
+  assert.match(sw,/keys\.filter\(key=>key\.startsWith\('kkokkapick-release-ui-reference-'\)&&key!==CACHE\)/);
 });
 
 test('critical module graph is precached for offline fallback',()=>{
@@ -26,6 +26,13 @@ test('critical module graph is precached for offline fallback',()=>{
 });
 
 import vm from 'node:vm';
+test('activation removes only older owned caches on a shared hosting origin',async()=>{
+ const handlers={},deleted=[];let claimed=false;
+ vm.runInNewContext(sw,{self:{addEventListener:(name,handler)=>handlers[name]=handler,clients:{claim:async()=>{claimed=true}}},
+  caches:{keys:async()=>['kkokkapick-release-ui-reference-v7','kkokkapick-release-ui-reference-v8','flutter-app-cache','another-site-shell'],delete:async key=>{deleted.push(key);return true}}});
+ let completion;handlers.activate({waitUntil:value=>completion=value});await completion;
+ assert.deepEqual(deleted,['kkokkapick-release-ui-reference-v7']);assert.equal(claimed,true);
+});
 test('live catalog requests bypass storage and fail honestly while offline', async()=>{
  const handlers={},calls=[];
  const context={self:{location:{origin:'https://example.test'},addEventListener:(name,handler)=>handlers[name]=handler},URL,
