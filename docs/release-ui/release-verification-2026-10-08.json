@@ -1,0 +1,304 @@
+{
+  "recordedAt": "2026-10-08T12:03:03.698Z",
+  "scope": "Newborn/infant apparel first, toys and learning discovery, primary-colour component refinement; technical review candidate only",
+  "pr": "https://github.com/chachazip-prog/kkokkapick/pull/206",
+  "codeSha": "802b3a59da7b5b6ac4b2d48ce65dfbdd94a223fd",
+  "dataSha": "bd06b3d27bf656f42c9e3b1be08bccf56b19e7f1",
+  "catalogSha256": "5e4f0b5c41cc93291f8bb6723f77bbb2f04151bf783e2d52f242818ee7c4cbaa",
+  "collection": {
+    "runId": 37769439139,
+    "dispatchCodeSha": "45e4d46d244e53e8392badffab2ce8a7bd41343a",
+    "conclusion": "success",
+    "approvedQueries": 85,
+    "queriesCompleted": 85,
+    "returnedRows": 1700,
+    "uniqueBeforeSelection": 1249,
+    "eligibleSellerOffers": 1052,
+    "rawFailedPhotoOffers": 8,
+    "rawFailedHttpStatus": 404,
+    "rawFailureEvidencePreserved": true
+  },
+  "sourceObservedAt": "2026-10-08T11:21:07.566Z",
+  "internalImageDisplayDeadline": "2026-10-08T12:51:07.566Z",
+  "metadataExpiry": "2026-10-09T11:21:07.566Z",
+  "providerTtlOrRightsEstablished": false,
+  "sourceClockExtendedByQa": false,
+  "hostedCodeQuality": {
+    "runId": 37772506498,
+    "headSha": "802b3a59da7b5b6ac4b2d48ce65dfbdd94a223fd",
+    "conclusion": "success"
+  },
+  "localConfiguredChecks": {
+    "codeSha": "802b3a59da7b5b6ac4b2d48ce65dfbdd94a223fd",
+    "testScripts": 65,
+    "syntaxAndStructureChecks": 34,
+    "total": 99,
+    "failed": 0
+  },
+  "actualPhotoDecode": {
+    "reviewedAt": "2026-10-08T11:56:05.992Z",
+    "catalogHash": "5e4f0b5c41cc93291f8bb6723f77bbb2f04151bf783e2d52f242818ee7c4cbaa",
+    "actualDecoderStarted": "2026-10-08T11:43:12.281Z",
+    "actualDecoderFinished": "2026-10-08T11:45:54.199Z",
+    "firstPass": {
+      "checked": 1044,
+      "ok": 1044,
+      "failed": 0
+    },
+    "finalCounts": {
+      "checked": 1044,
+      "ok": 1044,
+      "failed": 0
+    },
+    "totalAttempts": 1044,
+    "originalProductCount": 955,
+    "visibleProducts": 954,
+    "visibleUrls": 1043,
+    "decodedOriginalUrls": 1044,
+    "visibleUrlsMissingOrUnhealthy": 0,
+    "sourceUrlsUnchanged": true,
+    "sourceObservationUnchanged": true,
+    "metadataExpiryUnchanged": true,
+    "originalPhotosPersisted": false,
+    "continuousAvailabilityVerified": false,
+    "decoderCodeSha": "6de8c51e3206d8d6bbec69322b61b55b0d323f0f",
+    "decoderAndCatalogUnchangedAtFinalCode": true
+  },
+  "actualBrowserQa": {
+    "codeSha": "802b3a59da7b5b6ac4b2d48ce65dfbdd94a223fd",
+    "widths": [
+      320,
+      375,
+      390,
+      430
+    ],
+    "metricStates": 80,
+    "pngCaptures": 92,
+    "metricFailures": [],
+    "runtimeErrors": 0,
+    "rootOpenedLocalPngs": 28,
+    "rootOpened": [
+      "home-320.png",
+      "search-320.png",
+      "detail-320.png",
+      "wishlist-320.png",
+      "my-320.png",
+      "home-375.png",
+      "search-375.png",
+      "detail-375.png",
+      "wishlist-375.png",
+      "my-375.png",
+      "home-390.png",
+      "search-390.png",
+      "detail-390.png",
+      "wishlist-390.png",
+      "my-390.png",
+      "home-430.png",
+      "search-430.png",
+      "detail-430.png",
+      "wishlist-430.png",
+      "my-430.png",
+      "photo-feed-320.png",
+      "photo-feed-430.png",
+      "photo-card-320.png",
+      "filters-320.png",
+      "multiple-photos-second-390.png",
+      "play-detail-320.png",
+      "play-age-filter-320.png",
+      "multi-child-manager-320.png"
+    ],
+    "evidenceStorage": "Local temporary QA files; not described as hosted screenshot artifacts"
+  },
+  "independentVisualQa": {
+    "reviewedAt": "2026-10-08T11:56:54.732Z",
+    "codeRevision": "802b3a59da7b5b6ac4b2d48ce65dfbdd94a223fd",
+    "catalogSha256": "5e4f0b5c41cc93291f8bb6723f77bbb2f04151bf783e2d52f242818ee7c4cbaa",
+    "scope": "Final corrected802 actual source/screenshot cohort; newly opened31PNGs. Earlier6de baseline not reused as acceptance.",
+    "independentVisualQa": "PASS for captured current review candidate",
+    "openedPngs": 31,
+    "opened": [
+      "home-320.png",
+      "search-320.png",
+      "detail-320.png",
+      "wishlist-320.png",
+      "my-320.png",
+      "home-375.png",
+      "search-375.png",
+      "detail-375.png",
+      "wishlist-375.png",
+      "my-375.png",
+      "home-390.png",
+      "search-390.png",
+      "detail-390.png",
+      "wishlist-390.png",
+      "my-390.png",
+      "home-430.png",
+      "search-430.png",
+      "detail-430.png",
+      "wishlist-430.png",
+      "my-430.png",
+      "photo-feed-320.png",
+      "photo-feed-375.png",
+      "photo-feed-390.png",
+      "photo-feed-430.png",
+      "photo-card-320.png",
+      "filters-320.png",
+      "multiple-photos-second-390.png",
+      "play-detail-320.png",
+      "play-age-filter-320.png",
+      "multi-child-manager-320.png",
+      "demo-390.png"
+    ],
+    "widths": [
+      320,
+      375,
+      390,
+      430
+    ],
+    "totalCapturePngs": 92,
+    "metricsRows": 80,
+    "metricFailures": [],
+    "visualCriticalIssues": 0,
+    "mandatoryVisualFixes": 0,
+    "runtimeEligibility": {
+      "originalCatalogProducts": 955,
+      "displayedProducts": 954,
+      "domains": {
+        "apparel": 871,
+        "toy": 48,
+        "learning": 35
+      },
+      "displayedUniqueImages": 1043,
+      "excludedFabricId": "adpickbiz_cc4376e9",
+      "fabricAbsent": true,
+      "fabricDeepLinkDetailOpen": false,
+      "finishedGarmentId": "adpickbiz_8fa59454",
+      "finishedGarmentPresent": true,
+      "searchForMaterialWordRetainsFinishedGarment": true,
+      "providerImageRequestsSentByIndependentRuntimeAudit": 0
+    },
+    "actualPhotoDecode": {
+      "reviewedAt": "2026-10-08T11:56:05.992Z",
+      "catalogHash": "5e4f0b5c41cc93291f8bb6723f77bbb2f04151bf783e2d52f242818ee7c4cbaa",
+      "actualDecoderStarted": "2026-10-08T11:43:12.281Z",
+      "actualDecoderFinished": "2026-10-08T11:45:54.199Z",
+      "firstPass": {
+        "checked": 1044,
+        "ok": 1044,
+        "failed": 0
+      },
+      "finalCounts": {
+        "checked": 1044,
+        "ok": 1044,
+        "failed": 0
+      },
+      "totalAttempts": 1044,
+      "originalProductCount": 955,
+      "visibleProducts": 954,
+      "visibleUrls": 1043,
+      "decodedOriginalUrls": 1044,
+      "visibleUrlsMissingOrUnhealthy": 0,
+      "sourceUrlsUnchanged": true,
+      "sourceObservationUnchanged": true,
+      "metadataExpiryUnchanged": true,
+      "originalPhotosPersisted": false,
+      "continuousAvailabilityVerified": false
+    },
+    "sourceObservedAt": "2026-10-08T11:21:07.566Z",
+    "internalImageDisplayDeadline": "2026-10-08T12:51:07.566Z",
+    "sourceUrlsOrTimesRenewedByQa": false,
+    "physicalIphoneReviewed": false,
+    "productOwnerApprovalObserved": false,
+    "mainMergePerformed": false,
+    "continuousImageAvailabilityVerified": false,
+    "knownLaunchGates": [
+      "Stable legitimate image original/renewal and source rights confirmation",
+      "Material/live-sale-size source absent; displayed play explicit recommended age absent",
+      "Actual operator/support/applicable disclosures and production/privacy contracts",
+      "Physical iPhone/Product Owner review"
+    ],
+    "nonBlockingNotes": [
+      "Some original merchant title synonym/coupon noise remains in presentation",
+      "Source images can expire before the internal90-minute ceiling; this report does not guarantee continuous availability"
+    ]
+  },
+  "livePublicPreview": {
+    "code": "802b3a59da7b5b6ac4b2d48ce65dfbdd94a223fd",
+    "results": [
+      {
+        "name": "home",
+        "time": "2026-10-08T11:59:30.966Z",
+        "title": "꼬까픽 · Release UI Review",
+        "status": {
+          "state": "ready",
+          "observedAt": "2026-10-08T11:21:07.566Z",
+          "displayDeadline": "2026-10-08T12:51:07.566Z",
+          "displayedProducts": 954,
+          "unavailablePhotos": 0
+        },
+        "cards": 8,
+        "overflow": false,
+        "quarantinedImages": 0,
+        "visibleImages": [
+          {
+            "naturalWidth": 1599,
+            "naturalHeight": 984
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 640
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 640
+          }
+        ],
+        "fonts": [
+          {
+            "family": "GowunDodum",
+            "status": "loaded"
+          },
+          {
+            "family": "NanumSquareRound",
+            "status": "loaded"
+          },
+          {
+            "family": "NanumSquareRound",
+            "status": "loaded"
+          }
+        ]
+      },
+      {
+        "name": "demo",
+        "time": "2026-10-08T11:59:32.160Z",
+        "title": "꼬까픽 · 화면 데모",
+        "overflow": false,
+        "body": "꼬까픽!\n\nRelease UI · 미리보기\n\n화면을 둘러보세요\n\n보고 싶은 화면을 선택하세요.\n사진을 누르면 상품 카드를 볼 수 있어요.\n\n상품 원본 표시 기한 내 · 사진 연결을 확인하며 둘러보세요.\n\n상품 수집 10. 8. 20:21:07 한국시간 · 내부 사진 표시 기한 10. 8. 21:51:07 한국시간\n\n사진 표시 기한은 내부 기준이며 원본 사진은 더 일찍 만료될 수 있습니다.\n\n홈\n추천 상품과 아이 옷 찾기\n검색\n카테고리 · 브랜드 · 필터\n사진 피드\n사진으로 탐색하고 상품 카드 열기\n상품 상세\n판매처 가격 비교 · 소재 · 사이즈\n찜한 상품\n직접 찜한 상품 모아보기\n마이\n아이 정보 · 최근 본 상품 · 희망 가격\n복수 사진 테스트\n실제 카탈로그에서 사진 2장 이상인 상품 열기\n선택한 화면 새 탭에서 열기 ↗\n\n원본이 만료되면 상품 사진 검토를 보류하고 새 수집이 필요합니다. 소재·실제 판매 사이즈가 없는 상품은 판매처 확인 안내를 표시합니다. 찜과 아이 정보, 희망 가격은 이 브라우저에 저장됩니다.\n\n히어로 시안 3개 보기 ↗ 변경 사항 · PR #206 ↗\n홈\n화면 폭 \n320\n375\n390\n430\npx",
+        "frames": [
+          "https://raw.githack.com/chachazip-prog/kkokkapick/802b3a59da7b5b6ac4b2d48ce65dfbdd94a223fd/index.html?view=home"
+        ]
+      }
+    ],
+    "errors": [],
+    "rootOpenedPublicPngs": 2,
+    "normalExternalNoticeButtonUsed": true,
+    "earlierDemoLoadTimeouts": 1,
+    "subsequentObservedDemoLoaded": true
+  },
+  "sourceFactCoverage": {
+    "productsWithMaterial": 0,
+    "productsWithActualSaleSizes": 0,
+    "playProducts": 83,
+    "playProductsWithExplicitAge": 0
+  },
+  "scheduledOneOffTasks": {
+    "timeZone": "Asia/Seoul",
+    "sourcePreparation": "2026-10-09T07:00:00+09:00",
+    "report": "2026-10-09T08:00:00+09:00",
+    "executionSuccessNotPredicted": true
+  },
+  "physicalIphoneReviewed": false,
+  "productOwnerApprovalObserved": false,
+  "mainMergePerformed": false,
+  "productionDeploymentPerformed": false
+}
