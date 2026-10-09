@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-09T03:12:53.662Z",
+  "syncedAt": "2026-10-09T04:08:52.729Z",
   "sourceCount": 771,
   "productCount": 697,
-  "priceChangeCount": 21,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_44e0c0e6",
@@ -2770,38 +2770,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_2d720ab",
-      "name": "아림클로젯/오늘은 감성 퐁당 - 아기 체크 프릴 원피스/의류 원피스",
-      "normalizedName": "아림클로젯 오늘은 감성 퐁당 아기 체크 프릴 원피스 의류 원피스",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525159732",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525159732"
-      ],
-      "category": "원피스",
-      "query": "아기 여름옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 45050,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4854436?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_2d720ab"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 45050,
-      "maxPrice": 45050,
-      "brand": "아림클로젯",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_9651704b",
       "name": "[기타] 유아여름옷 유아동 어린이 썸머 반팔티 7부 티셔츠 키즈 남매룩",
       "normalizedName": "기타 유아여름옷 유아동 어린이 썸머 반팔티 7부 티셔츠 키즈 남매룩",
@@ -2827,6 +2795,38 @@
       "minPrice": 11200,
       "maxPrice": 11200,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_2d720ab",
+      "name": "아림클로젯/오늘은 감성 퐁당 - 아기 체크 프릴 원피스/의류 원피스",
+      "normalizedName": "아림클로젯 오늘은 감성 퐁당 아기 체크 프릴 원피스 의류 원피스",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525159732",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525159732"
+      ],
+      "category": "원피스",
+      "query": "아기 여름옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 45050,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4854436?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_2d720ab"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 45050,
+      "maxPrice": 45050,
+      "brand": "아림클로젯",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -3026,38 +3026,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_1704c661",
-      "name": "밀크베이비/겨울 특별한날 밍크기모 아기점프수트/의류 바디수트",
-      "normalizedName": "밀크베이비 겨울 특별한날 밍크기모 아기점프수트 의류 바디수트",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525161067",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525161067"
-      ],
-      "category": "바디수트",
-      "query": "아기 겨울옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 23920,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785749?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_1704c661"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 23920,
-      "maxPrice": 23920,
-      "brand": "밀크베이비",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_8d6df8eb",
       "name": "[기타] 압소바 겨울 뱅모자바디슈트세트AX710624[이마트몰]",
       "normalizedName": "기타 압소바 겨울 뱅모자바디슈트세트ax710624 이마트몰",
@@ -3084,6 +3052,38 @@
       "maxPrice": 65280,
       "brand": "압소바",
       "fitStatus": "candidate",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_1704c661",
+      "name": "밀크베이비/겨울 특별한날 밍크기모 아기점프수트/의류 바디수트",
+      "normalizedName": "밀크베이비 겨울 특별한날 밍크기모 아기점프수트 의류 바디수트",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525161067",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525161067"
+      ],
+      "category": "바디수트",
+      "query": "아기 겨울옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 23920,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785749?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_1704c661"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 23920,
+      "maxPrice": 23920,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
       "availableSizes": [],
@@ -3227,38 +3227,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_f663258a",
-      "name": "아림클로젯/유니크한 우리 아가 - 베이비 겨울 바디슈트/의류 바디수트",
-      "normalizedName": "아림클로젯 유니크한 우리 아가 베이비 겨울 바디슈트 의류 바디수트",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525161068",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525161068"
-      ],
-      "category": "바디수트",
-      "query": "아기 겨울옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 45900,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785757?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_f663258a"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 45900,
-      "maxPrice": 45900,
-      "brand": "아림클로젯",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_9dea73b5",
       "name": "[압소바] [압소바 25년FW 겨울임신출산선물] 카린 다운 우주복 (A2722206) [A2722206]",
       "normalizedName": "압소바 압소바 25년fw 겨울임신출산선물 카린 다운 우주복 a2722206 a2722206",
@@ -3285,6 +3253,38 @@
       "maxPrice": 133550,
       "brand": "압소바",
       "fitStatus": "candidate",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_f663258a",
+      "name": "아림클로젯/유니크한 우리 아가 - 베이비 겨울 바디슈트/의류 바디수트",
+      "normalizedName": "아림클로젯 유니크한 우리 아가 베이비 겨울 바디슈트 의류 바디수트",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525161068",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525161068"
+      ],
+      "category": "바디수트",
+      "query": "아기 겨울옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 45900,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785757?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_f663258a"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 45900,
+      "maxPrice": 45900,
+      "brand": "아림클로젯",
+      "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
       "availableSizes": [],
