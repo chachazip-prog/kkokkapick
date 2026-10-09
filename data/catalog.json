@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-09T01:15:32.099Z",
+  "syncedAt": "2026-10-09T02:07:18.829Z",
   "sourceCount": 814,
   "productCount": 732,
-  "priceChangeCount": 10,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_44e0c0e6",
@@ -5940,38 +5940,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_7619e72c",
-      "name": "[휠라] 키즈 1200FK2FSH2S02XBLK 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
-      "normalizedName": "휠라 키즈 1200fk2fsh2s02xblk 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
-      "variant": "",
-      "modelCode": "1200FK2FSH2S02XBLK",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=524872181",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=524872181"
-      ],
-      "category": "상하복",
-      "query": "아동 상하복",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 97364,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739121?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_7619e72c"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 97364,
-      "maxPrice": 97364,
-      "brand": "휠라키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_bab07adf",
       "name": "예루예나/아동 상하복 면 핫 썸머 레인보우 세트/셋업 셋업",
       "normalizedName": "예루예나 아동 상하복 면 핫 썸머 레인보우 세트 셋업 셋업",
@@ -5997,6 +5965,38 @@
       "minPrice": 19465,
       "maxPrice": 19465,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_7619e72c",
+      "name": "[휠라] 키즈 1200FK2FSH2S02XBLK 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
+      "normalizedName": "휠라 키즈 1200fk2fsh2s02xblk 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
+      "variant": "",
+      "modelCode": "1200FK2FSH2S02XBLK",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=524872181",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=524872181"
+      ],
+      "category": "상하복",
+      "query": "아동 상하복",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 97364,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4739121?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_7619e72c"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 97364,
+      "maxPrice": 97364,
+      "brand": "휠라키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
