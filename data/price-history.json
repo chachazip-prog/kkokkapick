@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-09T00:05:56.560Z",
+  "updatedAt": "2026-10-09T01:15:32.099Z",
   "retention": "bounded_demo_events",
   "events": [
     {
@@ -5706,6 +5706,86 @@
       "price": 115100,
       "direction": "up",
       "changeAmount": 8
+    },
+    {
+      "productId": "adpickbiz_b3b7bda3",
+      "observedAt": "2026-10-09T01:15:32.099Z",
+      "previousPrice": 60114,
+      "price": 69900,
+      "direction": "up",
+      "changeAmount": 9786
+    },
+    {
+      "productId": "adpickbiz_8fde4561",
+      "observedAt": "2026-10-09T01:15:32.099Z",
+      "previousPrice": 104480,
+      "price": 105650,
+      "direction": "up",
+      "changeAmount": 1170
+    },
+    {
+      "productId": "adpickbiz_5dc8f666",
+      "observedAt": "2026-10-09T01:15:32.099Z",
+      "previousPrice": 59966,
+      "price": 61921,
+      "direction": "up",
+      "changeAmount": 1955
+    },
+    {
+      "productId": "adpickbiz_9fb19ada",
+      "observedAt": "2026-10-09T01:15:32.099Z",
+      "previousPrice": 59966,
+      "price": 61921,
+      "direction": "up",
+      "changeAmount": 1955
+    },
+    {
+      "productId": "adpickbiz_629959b5",
+      "observedAt": "2026-10-09T01:15:32.099Z",
+      "previousPrice": 33368,
+      "price": 38800,
+      "direction": "up",
+      "changeAmount": 5432
+    },
+    {
+      "productId": "adpickbiz_9bdffb3",
+      "observedAt": "2026-10-09T01:15:32.099Z",
+      "previousPrice": 20800,
+      "price": 20810,
+      "direction": "up",
+      "changeAmount": 10
+    },
+    {
+      "productId": "adpickbiz_18c2d3ef",
+      "observedAt": "2026-10-09T01:15:32.099Z",
+      "previousPrice": 44892,
+      "price": 52200,
+      "direction": "up",
+      "changeAmount": 7308
+    },
+    {
+      "productId": "adpickbiz_f6b50d41",
+      "observedAt": "2026-10-09T01:15:32.099Z",
+      "previousPrice": 62465,
+      "price": 64502,
+      "direction": "up",
+      "changeAmount": 2037
+    },
+    {
+      "productId": "adpickbiz_55b37e89",
+      "observedAt": "2026-10-09T01:15:32.099Z",
+      "previousPrice": 272040,
+      "price": 277438,
+      "direction": "up",
+      "changeAmount": 5398
+    },
+    {
+      "productId": "adpickbiz_e921d216",
+      "observedAt": "2026-10-09T01:15:32.099Z",
+      "previousPrice": 25714,
+      "price": 29900,
+      "direction": "up",
+      "changeAmount": 4186
     }
   ]
 }

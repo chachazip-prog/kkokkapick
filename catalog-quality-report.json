@@ -1,10 +1,10 @@
 {
-  "syncedAt": "2026-10-09T00:05:56.560Z",
+  "syncedAt": "2026-10-09T01:15:32.099Z",
   "sourceProducts": 814,
-  "canonicalProducts": 731,
+  "canonicalProducts": 732,
   "queries": 73,
-  "recognizedBrandProducts": 414,
-  "recognizedBrandRatePct": 56.6,
+  "recognizedBrandProducts": 413,
+  "recognizedBrandRatePct": 56.4,
   "officialBrandGuideProducts": 20,
   "officialBrandGuideRatePct": 2.7,
   "explicitProductSizeProducts": 0,
@@ -18,16 +18,16 @@
     },
     "rate": 1
   },
-  "canonicalImageProducts": 731,
+  "canonicalImageProducts": 732,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 68,
-  "multiImageRatePct": 9.3,
+  "multiImageProducts": 67,
+  "multiImageRatePct": 9.2,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 317
+      "count": 319
     },
     {
       "name": "베이비맥스",
@@ -102,14 +102,14 @@
       "count": 9
     },
     {
-      "name": "나이키키즈",
+      "name": "몽클레르키즈",
       "count": 9
     }
   ],
   "categories": [
     {
       "name": "상의",
-      "count": 165
+      "count": 166
     },
     {
       "name": "아우터",
@@ -143,7 +143,7 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 334
+      "count": 335
     },
     {
       "name": "베이비",
