@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-09T11:11:19.014Z",
+  "syncedAt": "2026-10-09T12:07:27.143Z",
   "sourceCount": 843,
   "productCount": 748,
-  "priceChangeCount": 10,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_44e0c0e6",
@@ -5853,38 +5853,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_795b8c01",
-      "name": "예루예나/아동 상하복 면 쿨피스 루즈 세트/셋업 셋업",
-      "normalizedName": "예루예나 아동 상하복 면 쿨피스 루즈 세트 셋업 셋업",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801283",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801283"
-      ],
-      "category": "상하복",
-      "query": "아동 상하복",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 19465,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785802?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_795b8c01"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 19465,
-      "maxPrice": 19465,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_365dc2cb",
       "name": "[휠라] 키즈 1200FK2FSH2S02XMIT 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
       "normalizedName": "휠라 키즈 1200fk2fsh2s02xmit 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
@@ -5910,6 +5878,38 @@
       "minPrice": 97364,
       "maxPrice": 97364,
       "brand": "휠라키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_795b8c01",
+      "name": "예루예나/아동 상하복 면 쿨피스 루즈 세트/셋업 셋업",
+      "normalizedName": "예루예나 아동 상하복 면 쿨피스 루즈 세트 셋업 셋업",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801283",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801283"
+      ],
+      "category": "상하복",
+      "query": "아동 상하복",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 19465,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785802?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_795b8c01"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 19465,
+      "maxPrice": 19465,
+      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -5990,38 +5990,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_bab07adf",
-      "name": "예루예나/아동 상하복 면 핫 썸머 레인보우 세트/셋업 셋업",
-      "normalizedName": "예루예나 아동 상하복 면 핫 썸머 레인보우 세트 셋업 셋업",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801284",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801284"
-      ],
-      "category": "상하복",
-      "query": "아동 상하복",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 19465,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4791162?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_bab07adf"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 19465,
-      "maxPrice": 19465,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_7619e72c",
       "name": "[휠라] 키즈 1200FK2FSH2S02XBLK 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
       "normalizedName": "휠라 키즈 1200fk2fsh2s02xblk 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
@@ -6047,6 +6015,38 @@
       "minPrice": 97364,
       "maxPrice": 97364,
       "brand": "휠라키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_bab07adf",
+      "name": "예루예나/아동 상하복 면 핫 썸머 레인보우 세트/셋업 셋업",
+      "normalizedName": "예루예나 아동 상하복 면 핫 썸머 레인보우 세트 셋업 셋업",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801284",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801284"
+      ],
+      "category": "상하복",
+      "query": "아동 상하복",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 19465,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4791162?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_bab07adf"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 19465,
+      "maxPrice": 19465,
+      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
