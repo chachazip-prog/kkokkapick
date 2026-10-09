@@ -1,38 +1,37 @@
 {
-  "syncedAt": "2026-10-09T10:07:27.922Z",
-  "sourceProducts": 793,
-  "canonicalProducts": 708,
+  "syncedAt": "2026-10-09T11:11:19.014Z",
+  "sourceProducts": 843,
+  "canonicalProducts": 748,
   "queries": 73,
-  "recognizedBrandProducts": 409,
-  "recognizedBrandRatePct": 57.8,
+  "recognizedBrandProducts": 427,
+  "recognizedBrandRatePct": 57.1,
   "officialBrandGuideProducts": 22,
-  "officialBrandGuideRatePct": 3.1,
+  "officialBrandGuideRatePct": 2.9,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 793,
-    "ok": 779,
-    "failed": 14,
+    "checked": 843,
+    "ok": 843,
+    "failed": 0,
     "statuses": {
-      "200": 779,
-      "400": 14
+      "200": 843
     },
-    "rate": 0.9823455233291298
+    "rate": 1
   },
-  "canonicalImageProducts": 694,
-  "canonicalImageRatePct": 98,
-  "multiImageProducts": 70,
-  "multiImageRatePct": 9.9,
+  "canonicalImageProducts": 748,
+  "canonicalImageRatePct": 100,
+  "multiImageProducts": 76,
+  "multiImageRatePct": 10.2,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 299
+      "count": 321
     },
     {
       "name": "베이비맥스",
-      "count": 34
+      "count": 36
     },
     {
       "name": "밀크베이비",
@@ -59,6 +58,14 @@
       "count": 19
     },
     {
+      "name": "페리미츠",
+      "count": 19
+    },
+    {
+      "name": "휠라키즈",
+      "count": 18
+    },
+    {
       "name": "삠뽀요",
       "count": 15
     },
@@ -67,16 +74,8 @@
       "count": 15
     },
     {
-      "name": "페리미츠",
-      "count": 15
-    },
-    {
       "name": "달퐁",
       "count": 14
-    },
-    {
-      "name": "휠라키즈",
-      "count": 13
     },
     {
       "name": "에뜨와",
@@ -99,18 +98,18 @@
       "count": 10
     },
     {
-      "name": "아림클로젯",
+      "name": "알콩단잠",
       "count": 9
     },
     {
-      "name": "플레이키즈프로",
+      "name": "아림클로젯",
       "count": 9
     }
   ],
   "categories": [
     {
       "name": "상의",
-      "count": 158
+      "count": 170
     },
     {
       "name": "아우터",
@@ -118,11 +117,11 @@
     },
     {
       "name": "하의",
-      "count": 103
+      "count": 113
     },
     {
       "name": "상하복",
-      "count": 92
+      "count": 88
     },
     {
       "name": "바디수트",
@@ -130,37 +129,37 @@
     },
     {
       "name": "원피스",
-      "count": 57
+      "count": 77
     },
     {
       "name": "기타",
-      "count": 42
+      "count": 43
     },
     {
       "name": "실내복",
-      "count": 38
+      "count": 39
     }
   ],
   "stages": [
     {
       "name": "키즈",
-      "count": 323
+      "count": 331
     },
     {
       "name": "베이비",
-      "count": 264
+      "count": 267
     },
     {
       "name": "유아",
-      "count": 56
+      "count": 58
+    },
+    {
+      "name": "전체",
+      "count": 49
     },
     {
       "name": "신생아",
       "count": 38
-    },
-    {
-      "name": "전체",
-      "count": 22
     },
     {
       "name": "토들러",
