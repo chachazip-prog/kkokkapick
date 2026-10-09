@@ -1,6 +1,6 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-09T05:08:21.958Z",
+  "syncedAt": "2026-10-09T06:10:43.312Z",
   "sourceCount": 712,
   "productCount": 641,
   "priceChangeCount": 0,
@@ -892,38 +892,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_bab07adf",
-      "name": "예루예나/아동 상하복 면 핫 썸머 레인보우 세트/셋업 셋업",
-      "normalizedName": "예루예나 아동 상하복 면 핫 썸머 레인보우 세트 셋업 셋업",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526007283",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526007283"
-      ],
-      "category": "상하복",
-      "query": "아동 상하복",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 19465,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4791162?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_bab07adf"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 19465,
-      "maxPrice": 19465,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_7619e72c",
       "name": "[휠라] 키즈 1200FK2FSH2S02XBLK 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
       "normalizedName": "휠라 키즈 1200fk2fsh2s02xblk 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
@@ -949,6 +917,38 @@
       "minPrice": 97364,
       "maxPrice": 97364,
       "brand": "휠라키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_bab07adf",
+      "name": "예루예나/아동 상하복 면 핫 썸머 레인보우 세트/셋업 셋업",
+      "normalizedName": "예루예나 아동 상하복 면 핫 썸머 레인보우 세트 셋업 셋업",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526007283",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526007283"
+      ],
+      "category": "상하복",
+      "query": "아동 상하복",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 19465,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4791162?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_bab07adf"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 19465,
+      "maxPrice": 19465,
+      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -5849,38 +5849,6 @@
       "stage": "신생아"
     },
     {
-      "id": "adpickbiz_3e472e34",
-      "name": "콩제슬래드/민니 신생아 바디수트 COEUR LINTCOEUR LINT/의류 바디수트",
-      "normalizedName": "콩제슬래드 민니 신생아 바디수트 coeur lintcoeur lint 의류 바디수트",
-      "variant": "",
-      "modelCode": "COEUR",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525658264",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525658264"
-      ],
-      "category": "바디수트",
-      "query": "신생아 바디수트",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 75650,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716131?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_3e472e34"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 75650,
-      "maxPrice": 75650,
-      "brand": "콩제슬래드",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "신생아"
-    },
-    {
       "id": "adpickbiz_581c1575",
       "name": "[콩제슬래드] 국내공식 콩제슬래드 베이직 신생아 바디수트 KUBI [KS103703KUBI]",
       "normalizedName": "콩제슬래드 국내 콩제슬래드 베이직 신생아 바디수트 kubi ks103703kubi",
@@ -5905,6 +5873,38 @@
       "offerCount": 1,
       "minPrice": 55159,
       "maxPrice": 55159,
+      "brand": "콩제슬래드",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "신생아"
+    },
+    {
+      "id": "adpickbiz_3e472e34",
+      "name": "콩제슬래드/민니 신생아 바디수트 COEUR LINTCOEUR LINT/의류 바디수트",
+      "normalizedName": "콩제슬래드 민니 신생아 바디수트 coeur lintcoeur lint 의류 바디수트",
+      "variant": "",
+      "modelCode": "COEUR",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525658264",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525658264"
+      ],
+      "category": "바디수트",
+      "query": "신생아 바디수트",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 75650,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716131?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_3e472e34"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 75650,
+      "maxPrice": 75650,
       "brand": "콩제슬래드",
       "fitStatus": "unverified",
       "fitSource": null,
@@ -6663,38 +6663,6 @@
       "stage": "신생아"
     },
     {
-      "id": "adpickbiz_2f6233a2",
-      "name": "콩제슬래드/베이직 신생아 점프수트 ROSA PINK/의류 바디수트",
-      "normalizedName": "콩제슬래드 베이직 신생아 점프수트 rosa pink 의류 바디수트",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525659109",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525659109"
-      ],
-      "category": "바디수트",
-      "query": "신생아 우주복",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 76415,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739000?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_2f6233a2"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 76415,
-      "maxPrice": 76415,
-      "brand": "콩제슬래드",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "신생아"
-    },
-    {
       "id": "adpickbiz_3b424583",
       "name": "[기타] TNNXXS032TNNXQ042_신생아 포미내의우주복2종세트[이마트몰]",
       "normalizedName": "기타 tnnxxs032tnnxq042 신생아 포미내의우주복2종세트 이마트몰",
@@ -6720,6 +6688,38 @@
       "minPrice": 112000,
       "maxPrice": 112000,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "신생아"
+    },
+    {
+      "id": "adpickbiz_2f6233a2",
+      "name": "콩제슬래드/베이직 신생아 점프수트 ROSA PINK/의류 바디수트",
+      "normalizedName": "콩제슬래드 베이직 신생아 점프수트 rosa pink 의류 바디수트",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525659109",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525659109"
+      ],
+      "category": "바디수트",
+      "query": "신생아 우주복",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 76415,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4739000?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_2f6233a2"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 76415,
+      "maxPrice": 76415,
+      "brand": "콩제슬래드",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -7746,38 +7746,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_6dec7382",
-      "name": "[기타] 해피랜드 겨울 남아 아기 상하복 / 와이엇 체크 상하 HY7212P6[이마트몰]",
-      "normalizedName": "기타 해피랜드 겨울 남아 아기 상하복 와이엇 체크 상하 hy7212p6 이마트몰",
-      "variant": "",
-      "modelCode": "HY7212P6",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525664269",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525664269"
-      ],
-      "category": "상하복",
-      "query": "아기 상하복",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 45312,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4860300?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_6dec7382"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 45312,
-      "maxPrice": 45312,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_97a005af",
       "name": "밀크베이비/귀욤뿜뿜 유아상하복세트/셋업 셋업",
       "normalizedName": "밀크베이비 귀욤뿜뿜 유아상하복세트 셋업 셋업",
@@ -7803,6 +7771,38 @@
       "minPrice": 24720,
       "maxPrice": 24720,
       "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_6dec7382",
+      "name": "[기타] 해피랜드 겨울 남아 아기 상하복 / 와이엇 체크 상하 HY7212P6[이마트몰]",
+      "normalizedName": "기타 해피랜드 겨울 남아 아기 상하복 와이엇 체크 상하 hy7212p6 이마트몰",
+      "variant": "",
+      "modelCode": "HY7212P6",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525664269",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525664269"
+      ],
+      "category": "상하복",
+      "query": "아기 상하복",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 45312,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4860300?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_6dec7382"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 45312,
+      "maxPrice": 45312,
+      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -9615,38 +9615,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_6f9648cc",
-      "name": "디즈니스토어/[공식] 디즈니 미니마우스 스트라이프 유아용 드레스 (1000100164)/원피스 원피스",
-      "normalizedName": "디즈니스토어 디즈니 미니마우스 스트라이프 유아용 드레스 1000100164 원피스 원피스",
-      "variant": "",
-      "modelCode": "1000100164",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525671097",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525671097"
-      ],
-      "category": "원피스",
-      "query": "아기 원피스",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 29500,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4876464?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_6f9648cc"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 29500,
-      "maxPrice": 29500,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_86d0a352",
       "name": "[몽클레르] 몽클레어 키즈 아기 원피스 로사 15197323[이마트몰]",
       "normalizedName": "몽클레르 몽클레어 키즈 아기 원피스 로사 15197323 이마트몰",
@@ -9672,6 +9640,38 @@
       "minPrice": 210359,
       "maxPrice": 210359,
       "brand": "몽클레르키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_6f9648cc",
+      "name": "디즈니스토어/[공식] 디즈니 미니마우스 스트라이프 유아용 드레스 (1000100164)/원피스 원피스",
+      "normalizedName": "디즈니스토어 디즈니 미니마우스 스트라이프 유아용 드레스 1000100164 원피스 원피스",
+      "variant": "",
+      "modelCode": "1000100164",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525671097",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525671097"
+      ],
+      "category": "원피스",
+      "query": "아기 원피스",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 29500,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4876464?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_6f9648cc"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 29500,
+      "maxPrice": 29500,
+      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -10095,38 +10095,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_47b555f4",
-      "name": "[해피프린스] 로완 니트 아기 가디건_P436962147[이마트몰]",
-      "normalizedName": "해피프린스 로완 니트 아기 가디건 p436962147 이마트몰",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525672255",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525672255"
-      ],
-      "category": "아우터",
-      "query": "아기 가디건",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 36765,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716225?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_47b555f4"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 36765,
-      "maxPrice": 36765,
-      "brand": "해피프린스",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_25403047",
       "name": "리뗀클로르/아기 가디건/의류 아우터",
       "normalizedName": "리뗀클로르 아기 가디건 의류 아우터",
@@ -10152,6 +10120,38 @@
       "minPrice": 19800,
       "maxPrice": 19800,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_47b555f4",
+      "name": "[해피프린스] 로완 니트 아기 가디건_P436962147[이마트몰]",
+      "normalizedName": "해피프린스 로완 니트 아기 가디건 p436962147 이마트몰",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525672255",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525672255"
+      ],
+      "category": "아우터",
+      "query": "아기 가디건",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 36765,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716225?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_47b555f4"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 36765,
+      "maxPrice": 36765,
+      "brand": "해피프린스",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -11521,38 +11521,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_a3646086",
-      "name": "밀크베이비/귀여운아기곰돌 유아기모맨투맨티셔츠/상의 맨투맨/후드티",
-      "normalizedName": "밀크베이비 귀여운아기곰돌 유아기모맨투맨티셔츠 상의 맨투맨 후드티",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525677714",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525677714"
-      ],
-      "category": "상의",
-      "query": "유아 맨투맨",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 14320,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4734865?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_a3646086"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 14320,
-      "maxPrice": 14320,
-      "brand": "밀크베이비",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_66d52c93",
       "name": "[레노마키즈]페리미츠 남아 미오 배색 스? 셔츠 초등 유아맨투맨티셔츠 P2632T112_12_CJ",
       "normalizedName": "레노마키즈 페리미츠 남아 미오 배색 스웻 셔츠 초등 유아맨투맨티셔츠 p2632t112 12 cj 이마트몰",
@@ -11592,6 +11560,38 @@
       "sizeGuide": null,
       "availableSizes": [],
       "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_a3646086",
+      "name": "밀크베이비/귀여운아기곰돌 유아기모맨투맨티셔츠/상의 맨투맨/후드티",
+      "normalizedName": "밀크베이비 귀여운아기곰돌 유아기모맨투맨티셔츠 상의 맨투맨 후드티",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525677714",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525677714"
+      ],
+      "category": "상의",
+      "query": "유아 맨투맨",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 14320,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4734865?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_a3646086"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 14320,
+      "maxPrice": 14320,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
     },
     {
       "id": "adpickbiz_5b87ec77",
@@ -11786,38 +11786,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_fe1a1ba4",
-      "name": "[모이몰른] 유아 도리안 맨투맨 M254TSB08P_P409040528[이마트몰]",
-      "normalizedName": "모이몰른 유아 도리안 맨투맨 m254tsb08p p409040528 이마트몰",
-      "variant": "",
-      "modelCode": "M254TSB08P_P409040528",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525677557",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525677557"
-      ],
-      "category": "상의",
-      "query": "유아 맨투맨",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 28350,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4876536?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_fe1a1ba4"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 28350,
-      "maxPrice": 28350,
-      "brand": "모이몰른",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "유아"
-    },
-    {
       "id": "adpickbiz_aa65c524",
       "name": "삠뽀요/포비 유아 키즈 맨투맨 티셔츠/상의 긴팔티셔츠",
       "normalizedName": "삠뽀요 포비 유아 키즈 맨투맨 티셔츠 상의 긴팔티셔츠",
@@ -11848,6 +11816,38 @@
       "sizeGuide": null,
       "availableSizes": [],
       "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_fe1a1ba4",
+      "name": "[모이몰른] 유아 도리안 맨투맨 M254TSB08P_P409040528[이마트몰]",
+      "normalizedName": "모이몰른 유아 도리안 맨투맨 m254tsb08p p409040528 이마트몰",
+      "variant": "",
+      "modelCode": "M254TSB08P_P409040528",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525677557",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525677557"
+      ],
+      "category": "상의",
+      "query": "유아 맨투맨",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 28350,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4876536?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_fe1a1ba4"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 28350,
+      "maxPrice": 28350,
+      "brand": "모이몰른",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "유아"
     },
     {
       "id": "adpickbiz_265f6b35",
@@ -12925,38 +12925,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_123644ba",
-      "name": "밀크베이비/세인트 벨로아밍크골지 유아레깅스/하의 레깅스",
-      "normalizedName": "밀크베이비 세인트 벨로아밍크골지 유아레깅스 하의 레깅스",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525680467",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525680467"
-      ],
-      "category": "하의",
-      "query": "유아 레깅스",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 15120,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4734894?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_123644ba"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 15120,
-      "maxPrice": 15120,
-      "brand": "밀크베이비",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_f0bd5181",
       "name": "[기타] 여아 로 유치원 자유복 레깅스 유아 예쁜 아동쫄바지 (53074922)[이마트몰]",
       "normalizedName": "기타 여아 로 유치원 자유복 레깅스 유아 예쁜 아동쫄바지 53074922 이마트몰",
@@ -12987,6 +12955,38 @@
       "sizeGuide": null,
       "availableSizes": [],
       "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_123644ba",
+      "name": "밀크베이비/세인트 벨로아밍크골지 유아레깅스/하의 레깅스",
+      "normalizedName": "밀크베이비 세인트 벨로아밍크골지 유아레깅스 하의 레깅스",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525680467",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=525680467"
+      ],
+      "category": "하의",
+      "query": "유아 레깅스",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 15120,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4734894?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_123644ba"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 15120,
+      "maxPrice": 15120,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
     },
     {
       "id": "adpickbiz_f8d896b6",
