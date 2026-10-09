@@ -1,42 +1,10 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-09T13:15:47.116Z",
+  "syncedAt": "2026-10-09T14:12:06.103Z",
   "sourceCount": 814,
   "productCount": 730,
-  "priceChangeCount": 8,
+  "priceChangeCount": 0,
   "products": [
-    {
-      "id": "adpickbiz_44e0c0e6",
-      "name": "쓰리고/감성전자 올인원 미니세탁기 휴대용 소형 아기옷세탁기 탈수 건조 속옷 양말 러닝/생활가전 세탁기/건조기",
-      "normalizedName": "쓰리고 감성전자 올인원 미니세탁기 휴대용 소형 아기옷세탁기 탈수 건조 속옷 양말 러닝 생활가전 세탁기 건조기",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526788778",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526788778"
-      ],
-      "category": "기타",
-      "query": "아기옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 171140,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4796612?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_44e0c0e6"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 171140,
-      "maxPrice": 171140,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
     {
       "id": "adpickbiz_38dac5df",
       "name": "[기타] 골지 컬러풀 반팔 바디슈트 203513 아영 6개월아기옷 (52935592)[이마트몰]",
@@ -62,6 +30,38 @@
       "offerCount": 1,
       "minPrice": 31588,
       "maxPrice": 31588,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_44e0c0e6",
+      "name": "쓰리고/감성전자 올인원 미니세탁기 휴대용 소형 아기옷세탁기 탈수 건조 속옷 양말 러닝/생활가전 세탁기/건조기",
+      "normalizedName": "쓰리고 감성전자 올인원 미니세탁기 휴대용 소형 아기옷세탁기 탈수 건조 속옷 양말 러닝 생활가전 세탁기 건조기",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526788778",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526788778"
+      ],
+      "category": "기타",
+      "query": "아기옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 171140,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4796612?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_44e0c0e6"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 171140,
+      "maxPrice": 171140,
       "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
@@ -486,6 +486,38 @@
       "stage": "유아"
     },
     {
+      "id": "adpickbiz_88787f6a",
+      "name": "[끌로에] [W63]끌로에 CHC24AMP01520 6H2 여성 스웨터 니트 가디건 MAGLIERIA",
+      "normalizedName": "끌로에 w63 끌로에 chc24amp01520 6h2 여성 스웨터 니트 가디건 maglieria",
+      "variant": "",
+      "modelCode": "CHC24AMP01520",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=527210870",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=527210870"
+      ],
+      "category": "아우터",
+      "query": "유아복",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 1254880,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4961119?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_88787f6a"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 1254880,
+      "maxPrice": 1254880,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "유아"
+    },
+    {
       "id": "adpickbiz_484c04c",
       "name": "[달퐁] 헤이클루쮸리상하세트 상하복 상하세트 유아옷",
       "normalizedName": "달퐁 헤이클루쮸리상하세트 상하복 상하세트 유아옷",
@@ -574,38 +606,6 @@
       "offerCount": 1,
       "minPrice": 29900,
       "maxPrice": 29900,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "유아"
-    },
-    {
-      "id": "adpickbiz_840d72f1",
-      "name": "밀크마일 산타진저쿠키킵고잉기모상하복",
-      "normalizedName": "밀크마일 산타진저쿠키킵고잉기모상하복",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526789555",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526789555"
-      ],
-      "category": "상하복",
-      "query": "유아복",
-      "offers": [
-        {
-          "merchant": "보리보리",
-          "merchantDomain": null,
-          "price": 29330,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4860176?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_840d72f1"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 29330,
-      "maxPrice": 29330,
       "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
@@ -2619,38 +2619,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_38fc071e",
-      "name": "아림클로젯/반짝이는 날에 - 아기 하객룩/의류 원피스",
-      "normalizedName": "아림클로젯 반짝이는 날에 아기 하객룩 의류 원피스",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526796466",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526796466"
-      ],
-      "category": "원피스",
-      "query": "아기 여름옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 62050,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4854435?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_38fc071e"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 62050,
-      "maxPrice": 62050,
-      "brand": "아림클로젯",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_f963a738",
       "name": "[기타] 아기 유아 어린이 점프수트 여름옷 편한 바캉스룩 아기나들이옷[이마트몰] [W949ECF]",
       "normalizedName": "기타 아기 유아 어린이 점프수트 여름옷 편한 바캉스룩 아기나들이옷 이마트몰 w949ecf",
@@ -2676,6 +2644,38 @@
       "minPrice": 16590,
       "maxPrice": 16590,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_38fc071e",
+      "name": "아림클로젯/반짝이는 날에 - 아기 하객룩/의류 원피스",
+      "normalizedName": "아림클로젯 반짝이는 날에 아기 하객룩 의류 원피스",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526796466",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526796466"
+      ],
+      "category": "원피스",
+      "query": "아기 여름옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 62050,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4854435?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_38fc071e"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 62050,
+      "maxPrice": 62050,
+      "brand": "아림클로젯",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -2811,38 +2811,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_2d720ab",
-      "name": "아림클로젯/오늘은 감성 퐁당 - 아기 체크 프릴 원피스/의류 원피스",
-      "normalizedName": "아림클로젯 오늘은 감성 퐁당 아기 체크 프릴 원피스 의류 원피스",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526796467",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526796467"
-      ],
-      "category": "원피스",
-      "query": "아기 여름옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 45050,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4854436?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_2d720ab"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 45050,
-      "maxPrice": 45050,
-      "brand": "아림클로젯",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_9651704b",
       "name": "[기타] 유아여름옷 유아동 어린이 썸머 반팔티 7부 티셔츠 키즈 남매룩",
       "normalizedName": "기타 유아여름옷 유아동 어린이 썸머 반팔티 7부 티셔츠 키즈 남매룩",
@@ -2868,6 +2836,38 @@
       "minPrice": 11200,
       "maxPrice": 11200,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_2d720ab",
+      "name": "아림클로젯/오늘은 감성 퐁당 - 아기 체크 프릴 원피스/의류 원피스",
+      "normalizedName": "아림클로젯 오늘은 감성 퐁당 아기 체크 프릴 원피스 의류 원피스",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526796467",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526796467"
+      ],
+      "category": "원피스",
+      "query": "아기 여름옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 45050,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4854436?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_2d720ab"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 45050,
+      "maxPrice": 45050,
+      "brand": "아림클로젯",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -3067,38 +3067,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_1704c661",
-      "name": "밀크베이비/겨울 특별한날 밍크기모 아기점프수트/의류 바디수트",
-      "normalizedName": "밀크베이비 겨울 특별한날 밍크기모 아기점프수트 의류 바디수트",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526797117",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526797117"
-      ],
-      "category": "바디수트",
-      "query": "아기 겨울옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 23920,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785749?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_1704c661"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 23920,
-      "maxPrice": 23920,
-      "brand": "밀크베이비",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_8d6df8eb",
       "name": "[기타] 압소바 겨울 뱅모자바디슈트세트AX710624[이마트몰]",
       "normalizedName": "기타 압소바 겨울 뱅모자바디슈트세트ax710624 이마트몰",
@@ -3125,6 +3093,38 @@
       "maxPrice": 65280,
       "brand": "압소바",
       "fitStatus": "candidate",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_1704c661",
+      "name": "밀크베이비/겨울 특별한날 밍크기모 아기점프수트/의류 바디수트",
+      "normalizedName": "밀크베이비 겨울 특별한날 밍크기모 아기점프수트 의류 바디수트",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526797117",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526797117"
+      ],
+      "category": "바디수트",
+      "query": "아기 겨울옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 23920,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785749?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_1704c661"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 23920,
+      "maxPrice": 23920,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
       "availableSizes": [],
@@ -3268,38 +3268,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_f663258a",
-      "name": "아림클로젯/유니크한 우리 아가 - 베이비 겨울 바디슈트/의류 바디수트",
-      "normalizedName": "아림클로젯 유니크한 우리 아가 베이비 겨울 바디슈트 의류 바디수트",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526797118",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526797118"
-      ],
-      "category": "바디수트",
-      "query": "아기 겨울옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 45900,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785757?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_f663258a"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 45900,
-      "maxPrice": 45900,
-      "brand": "아림클로젯",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_9dea73b5",
       "name": "[압소바] [압소바 25년FW 겨울임신출산선물] 카린 다운 우주복 (A2722206) [A2722206]",
       "normalizedName": "압소바 압소바 25년fw 겨울임신출산선물 카린 다운 우주복 a2722206 a2722206",
@@ -3326,6 +3294,38 @@
       "maxPrice": 133550,
       "brand": "압소바",
       "fitStatus": "candidate",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_f663258a",
+      "name": "아림클로젯/유니크한 우리 아가 - 베이비 겨울 바디슈트/의류 바디수트",
+      "normalizedName": "아림클로젯 유니크한 우리 아가 베이비 겨울 바디슈트 의류 바디수트",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526797118",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526797118"
+      ],
+      "category": "바디수트",
+      "query": "아기 겨울옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 45900,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785757?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_f663258a"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 45900,
+      "maxPrice": 45900,
+      "brand": "아림클로젯",
+      "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
       "availableSizes": [],
@@ -5835,38 +5835,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_365dc2cb",
-      "name": "[휠라] 키즈 1200FK2FSH2S02XMIT 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
-      "normalizedName": "휠라 키즈 1200fk2fsh2s02xmit 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
-      "variant": "",
-      "modelCode": "1200FK2FSH2S02XMIT",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801203",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801203"
-      ],
-      "category": "상하복",
-      "query": "아동 상하복",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 97364,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739119?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_365dc2cb"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 97364,
-      "maxPrice": 97364,
-      "brand": "휠라키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_795b8c01",
       "name": "예루예나/아동 상하복 면 쿨피스 루즈 세트/셋업 셋업",
       "normalizedName": "예루예나 아동 상하복 면 쿨피스 루즈 세트 셋업 셋업",
@@ -5892,6 +5860,38 @@
       "minPrice": 19465,
       "maxPrice": 19465,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_365dc2cb",
+      "name": "[휠라] 키즈 1200FK2FSH2S02XMIT 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
+      "normalizedName": "휠라 키즈 1200fk2fsh2s02xmit 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
+      "variant": "",
+      "modelCode": "1200FK2FSH2S02XMIT",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801203",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801203"
+      ],
+      "category": "상하복",
+      "query": "아동 상하복",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 97364,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4739119?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_365dc2cb"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 97364,
+      "maxPrice": 97364,
+      "brand": "휠라키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -5972,38 +5972,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_7619e72c",
-      "name": "[휠라] 키즈 1200FK2FSH2S02XBLK 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
-      "normalizedName": "휠라 키즈 1200fk2fsh2s02xblk 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
-      "variant": "",
-      "modelCode": "1200FK2FSH2S02XBLK",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801204",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801204"
-      ],
-      "category": "상하복",
-      "query": "아동 상하복",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 97364,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739121?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_7619e72c"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 97364,
-      "maxPrice": 97364,
-      "brand": "휠라키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_bab07adf",
       "name": "예루예나/아동 상하복 면 핫 썸머 레인보우 세트/셋업 셋업",
       "normalizedName": "예루예나 아동 상하복 면 핫 썸머 레인보우 세트 셋업 셋업",
@@ -6029,6 +5997,38 @@
       "minPrice": 19465,
       "maxPrice": 19465,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_7619e72c",
+      "name": "[휠라] 키즈 1200FK2FSH2S02XBLK 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
+      "normalizedName": "휠라 키즈 1200fk2fsh2s02xblk 아동상하복세트추천 키즈셋업추천 핫섬머 에어",
+      "variant": "",
+      "modelCode": "1200FK2FSH2S02XBLK",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801204",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526801204"
+      ],
+      "category": "상하복",
+      "query": "아동 상하복",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 97364,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4739121?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_7619e72c"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 97364,
+      "maxPrice": 97364,
+      "brand": "휠라키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -23253,38 +23253,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_5d4cbf10",
-      "name": "[블루독베이비] [AK원주점] [블루독베이비] 별님 우주복 46C7067505 [46C7067505]",
-      "normalizedName": "블루독베이비 ak원주점 블루독베이비 별님 우주복 46c7067505 46c7067505",
-      "variant": "",
-      "modelCode": "46C7067505",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526827332",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526827332"
-      ],
-      "category": "바디수트",
-      "query": "블루독베이비 아기옷",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 68600,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4867570?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_5d4cbf10"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 68600,
-      "maxPrice": 68600,
-      "brand": "블루독베이비",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_7f09d537",
       "name": "블루독베이비/포켓퀼팅 세트우주복_NY (44C7004101)/의류 셋업",
       "normalizedName": "블루독베이비 포켓퀼팅 세트우주복 ny 44c7004101 의류 셋업",
@@ -23309,6 +23277,38 @@
       "offerCount": 1,
       "minPrice": 28050,
       "maxPrice": 28050,
+      "brand": "블루독베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_5d4cbf10",
+      "name": "[블루독베이비] [AK원주점] [블루독베이비] 별님 우주복 46C7067505 [46C7067505]",
+      "normalizedName": "블루독베이비 ak원주점 블루독베이비 별님 우주복 46c7067505 46c7067505",
+      "variant": "",
+      "modelCode": "46C7067505",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526827332",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526827332"
+      ],
+      "category": "바디수트",
+      "query": "블루독베이비 아기옷",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 68600,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4867570?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_5d4cbf10"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 68600,
+      "maxPrice": 68600,
       "brand": "블루독베이비",
       "fitStatus": "unverified",
       "fitSource": null,
@@ -23893,38 +23893,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_a6dcc69a",
-      "name": "헤지스키즈/[포인터웍스] 미니멀웍스 경량 후드 다운_BLACK (ITF30JN02M_BK)/아우터 패딩/점퍼",
-      "normalizedName": "헤지스키즈 포인터웍스 미니멀웍스 경량 후드 다운 black itf30jn02m bk 아우터 패딩 점퍼",
-      "variant": "",
-      "modelCode": "ITF30JN02M_BK",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526829635",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526829635"
-      ],
-      "category": "아우터",
-      "query": "헤지스키즈 아동복",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 79500,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4735211?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_a6dcc69a"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 79500,
-      "maxPrice": 79500,
-      "brand": "헤지스키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_a283cb50",
       "name": "[헤지스키즈] [26FW] [KIDS] 니트배색 중량 패딩 핑크 HBJU6FK01P1 [HBJU6FK01P1]",
       "normalizedName": "헤지스키즈 26fw kids 니트배색 중량 패딩 핑크 hbju6fk01p1 hbju6fk01p1",
@@ -23949,6 +23917,38 @@
       "offerCount": 1,
       "minPrice": 325160,
       "maxPrice": 325160,
+      "brand": "헤지스키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_a6dcc69a",
+      "name": "헤지스키즈/[포인터웍스] 미니멀웍스 경량 후드 다운_BLACK (ITF30JN02M_BK)/아우터 패딩/점퍼",
+      "normalizedName": "헤지스키즈 포인터웍스 미니멀웍스 경량 후드 다운 black itf30jn02m bk 아우터 패딩 점퍼",
+      "variant": "",
+      "modelCode": "ITF30JN02M_BK",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526829635",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=526829635"
+      ],
+      "category": "아우터",
+      "query": "헤지스키즈 아동복",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 79500,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4735211?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_a6dcc69a"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 79500,
+      "maxPrice": 79500,
       "brand": "헤지스키즈",
       "fitStatus": "unverified",
       "fitSource": null,
