@@ -1,6 +1,6 @@
 {
   "availability": {
-    "measuredAt": "2026-10-08T11:39:58.709Z",
+    "measuredAt": "2026-10-09T00:54:41.967Z",
     "sourceFields": [
       "commissionlink",
       "cp_code",
@@ -12,13 +12,13 @@
     ],
     "materialOffers": 0,
     "availableSizeOffers": 0,
-    "imageUrls": 1044,
-    "imageUrlsWithVerification": 1044,
-    "collectionDurationSeconds": 907,
-    "lastVerificationAt": "2026-10-08T11:37:40.918Z",
-    "sourceAgeAtLastVerificationSeconds": 993,
-    "temporaryImageDisplayDeadline": "2026-10-08T12:51:07.566Z",
-    "remainingImageDisplaySeconds": 4268,
+    "imageUrls": 1053,
+    "imageUrlsWithVerification": 1053,
+    "collectionDurationSeconds": 950,
+    "lastVerificationAt": "2026-10-09T00:52:28.181Z",
+    "sourceAgeAtLastVerificationSeconds": 1034,
+    "temporaryImageDisplayDeadline": "2026-10-09T02:05:14.464Z",
+    "remainingImageDisplaySeconds": 4232,
     "imageStatus": "current_health_not_measured",
     "missingFields": [
       "material",
@@ -27,40 +27,43 @@
     "displayCeilingIsLifetimeGuarantee": false,
     "continuousAvailabilityVerified": false
   },
-  "syncedAt": "2026-10-08T11:21:07.566Z",
-  "sourceProducts": 1052,
-  "canonicalProducts": 955,
+  "syncedAt": "2026-10-09T00:35:14.464Z",
+  "sourceProducts": 1053,
+  "canonicalProducts": 965,
   "queries": 85,
-  "recognizedBrandProducts": 491,
-  "recognizedBrandRatePct": 51.4,
+  "recognizedBrandProducts": 502,
+  "recognizedBrandRatePct": 52,
   "officialBrandGuideProducts": 33,
-  "officialBrandGuideRatePct": 3.5,
+  "officialBrandGuideRatePct": 3.4,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 1052,
-    "ok": 1044,
-    "failed": 8,
+    "checked": 1053,
+    "ok": 1053,
+    "failed": 0,
     "statuses": {
-      "200": 1044,
-      "404": 8
+      "200": 1053
     },
-    "rate": 0.9923954372623575
+    "rate": 1
   },
-  "canonicalImageProducts": 955,
+  "canonicalImageProducts": 965,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 81,
-  "multiImageRatePct": 8.5,
+  "multiImageProducts": 79,
+  "multiImageRatePct": 8.2,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 464
+      "count": 463
     },
     {
       "name": "블루독베이비",
-      "count": 39
+      "count": 41
+    },
+    {
+      "name": "베이비맥스",
+      "count": 33
     },
     {
       "name": "압소바",
@@ -68,31 +71,27 @@
     },
     {
       "name": "베네통키즈",
-      "count": 28
-    },
-    {
-      "name": "빈폴키즈",
-      "count": 25
-    },
-    {
-      "name": "베이비맥스",
-      "count": 24
+      "count": 26
     },
     {
       "name": "밀크베이비",
+      "count": 26
+    },
+    {
+      "name": "빈폴키즈",
       "count": 24
     },
     {
-      "name": "삠뽀요",
-      "count": 21
+      "name": "모이몰른",
+      "count": 22
     },
     {
       "name": "쇼콜라",
       "count": 21
     },
     {
-      "name": "모이몰른",
-      "count": 21
+      "name": "삠뽀요",
+      "count": 20
     },
     {
       "name": "에뜨와",
@@ -100,7 +99,7 @@
     },
     {
       "name": "헤지스키즈",
-      "count": 19
+      "count": 18
     },
     {
       "name": "해피프린스",
@@ -123,26 +122,26 @@
       "count": 16
     },
     {
+      "name": "달퐁",
+      "count": 14
+    },
+    {
       "name": "아가방",
       "count": 14
     },
     {
-      "name": "달퐁",
-      "count": 13
-    },
-    {
-      "name": "몽클레르키즈",
+      "name": "MLB키즈",
       "count": 12
     }
   ],
   "categories": [
     {
       "name": "상의",
-      "count": 168
+      "count": 167
     },
     {
       "name": "아우터",
-      "count": 162
+      "count": 161
     },
     {
       "name": "바디수트",
@@ -150,19 +149,19 @@
     },
     {
       "name": "하의",
-      "count": 117
+      "count": 122
     },
     {
       "name": "상하복",
-      "count": 94
+      "count": 97
     },
     {
       "name": "원피스",
-      "count": 78
+      "count": 80
     },
     {
       "name": "실내복",
-      "count": 51
+      "count": 53
     },
     {
       "name": "수영복",
@@ -212,11 +211,11 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 376
+      "count": 369
     },
     {
       "name": "베이비",
-      "count": 297
+      "count": 313
     },
     {
       "name": "전체",
@@ -228,7 +227,7 @@
     },
     {
       "name": "신생아",
-      "count": 58
+      "count": 59
     },
     {
       "name": "토들러",
