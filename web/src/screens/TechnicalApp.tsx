@@ -66,6 +66,41 @@ import type {
 import { sellerUrl, sourceTime, won } from "@/lib/format";
 import hero from "../../../assets/hero-proposals/hero-3.webp";
 
+type ProductOverlayOrigin = {
+  listKey: string;
+  listHref: string;
+  productId: string;
+  entryKey?: string;
+};
+
+function overlayOriginFromState(state: unknown): ProductOverlayOrigin | null {
+  if (!state || typeof state !== "object") return null;
+  const origin = (state as Record<string, unknown>).technicalProductOverlay;
+  if (!origin || typeof origin !== "object") return null;
+  const value = origin as Record<string, unknown>;
+  return typeof value.listKey === "string" &&
+    typeof value.listHref === "string" &&
+    typeof value.productId === "string"
+    ? (value as ProductOverlayOrigin)
+    : null;
+}
+
+function technicalLocationAtEvent(rendered: {
+  pathname: string;
+  search: string;
+}): { pathname: string; search: string } | null {
+  const hash = window.location.hash;
+  if (
+    !hash.startsWith("#/") ||
+    hash === `#${rendered.pathname}${rendered.search}`
+  )
+    return rendered;
+  const latest = new URL(hash.slice(1), window.location.href);
+  return latest.pathname.startsWith("/technical/")
+    ? { pathname: latest.pathname, search: latest.search }
+    : null;
+}
+
 function readPriceBounds(
   minText: string,
   maxText: string,
@@ -648,6 +683,9 @@ export function TechnicalApp() {
   const maxRef = useRef<HTMLInputElement>(null);
   const childOpener = useRef<HTMLElement | null>(null);
   const productOpener = useRef<HTMLElement | null>(null);
+  // Only consume a history entry created by this mounted app. A direct link,
+  // reload or altered history state must close in place instead of leaving it.
+  const productOrigin = useRef<ProductOverlayOrigin | null>(null);
   const openChild = () => {
     childOpener.current = document.activeElement as HTMLElement | null;
     setChildOpen(true);
@@ -663,11 +701,23 @@ export function TechnicalApp() {
   const composing = useRef(false);
   const searchRef = useRef<HTMLInputElement>(null);
   const [searchDraft, setSearchDraft] = useState(params.get("q") || "");
-  const filter = (key: string, value: string) => {
-    const next = new URLSearchParams(params);
+  const filter = (key: string, value: string, replace = false) => {
+    // Input can arrive after the hash changes but before React commits the
+    // destination screen. Keep that destination and its latest conditions.
+    const currentLocation = technicalLocationAtEvent(location);
+    if (!currentLocation) return;
+    const current = new URLSearchParams(currentLocation.search);
+    const next = new URLSearchParams(current);
     if (value && value !== "전체") next.set(key, value);
     else next.delete(key);
-    setParams(next);
+    if (next.toString() !== current.toString())
+      navigate(
+        {
+          pathname: currentLocation.pathname,
+          search: next.toString() ? `?${next}` : "",
+        },
+        { replace },
+      );
   };
   const resetFilters = (clearSearch = false) => {
     const next = new URLSearchParams(params);
@@ -730,18 +780,59 @@ export function TechnicalApp() {
   );
   const openProduct = (product: ClientProduct, photoOnly = false) => {
     productOpener.current = document.activeElement as HTMLElement | null;
+    const origin: ProductOverlayOrigin = {
+      listKey: location.key,
+      listHref: location.pathname + location.search,
+      productId: product.id,
+    };
+    productOrigin.current = origin;
     const next = new URLSearchParams(params);
     next.set("product", product.id);
     if (photoOnly) next.set("photo", "1");
     else next.delete("photo");
-    setParams(next);
+    setParams(next, { state: { technicalProductOverlay: origin } });
     records.recordRecent(product.id);
   };
   const closeProduct = () => {
+    // Hash navigation can precede React's committed route. If Escape arrives
+    // in that gap, close the latest product URL rather than backing into the
+    // previously rendered product or overwriting the newer tab's filters.
+    const currentLocation = technicalLocationAtEvent(location);
+    if (!currentLocation) return;
+    if (
+      currentLocation.pathname !== location.pathname ||
+      currentLocation.search !== location.search
+    ) {
+      const latestParams = new URLSearchParams(currentLocation.search);
+      if (latestParams.has("product")) {
+        latestParams.delete("product");
+        latestParams.delete("photo");
+        navigate(
+          {
+            pathname: currentLocation.pathname,
+            search: latestParams.toString() ? `?${latestParams}` : "",
+          },
+          { replace: true, state: null },
+        );
+      }
+      return;
+    }
+    const origin = productOrigin.current;
+    const marker = overlayOriginFromState(location.state);
+    if (
+      origin?.entryKey === location.key &&
+      origin.productId === params.get("product") &&
+      marker?.listKey === origin.listKey &&
+      marker.listHref === origin.listHref &&
+      marker.productId === origin.productId
+    ) {
+      navigate(-1);
+      return;
+    }
     const next = new URLSearchParams(params);
     next.delete("product");
     next.delete("photo");
-    setParams(next, { replace: true });
+    setParams(next, { replace: true, state: null });
   };
   const selected =
     products.find((product) => product.id === params.get("product")) || null;
@@ -788,15 +879,25 @@ export function TechnicalApp() {
 
   const queryParam = params.get("q") || "";
   useEffect(() => {
+    const origin = productOrigin.current;
+    const marker = overlayOriginFromState(location.state);
+    if (
+      origin &&
+      !origin.entryKey &&
+      marker?.listKey === origin.listKey &&
+      marker.listHref === origin.listHref &&
+      marker.productId === origin.productId &&
+      params.get("product") === origin.productId
+    )
+      origin.entryKey = location.key;
+  }, [location.key, location.state, params]);
+  useEffect(() => {
     setSearchDraft(queryParam);
   }, [queryParam]);
   useEffect(() => {
     setPriceBounds({ min: minParam, max: maxParam });
     setFilterError("");
   }, [minParam, maxParam]);
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [signature]);
   useEffect(() => {
     document.title = `${nav.find((item) => item.path === page)?.label || "화면"} · 꼬까픽 React 전환 검토`;
   }, [nav, page]);
@@ -946,7 +1047,7 @@ export function TechnicalApp() {
               }}
               onSubmit={(event) => {
                 event.preventDefault();
-                if (!composing.current) filter("q", searchDraft);
+                if (!composing.current) filter("q", searchDraft, true);
               }}
             >
               <Label htmlFor="catalog-search" className="sr-only">
@@ -963,11 +1064,11 @@ export function TechnicalApp() {
                 }}
                 onCompositionEnd={(event) => {
                   composing.current = false;
-                  filter("q", event.currentTarget.value);
+                  filter("q", event.currentTarget.value, true);
                 }}
                 onChange={(event) => {
                   setSearchDraft(event.target.value);
-                  if (!composing.current) filter("q", event.target.value);
+                  if (!composing.current) filter("q", event.target.value, true);
                 }}
               />
               {searchDraft ? (
@@ -979,7 +1080,7 @@ export function TechnicalApp() {
                   onClick={() => {
                     composing.current = false;
                     setSearchDraft("");
-                    filter("q", "");
+                    filter("q", "", true);
                     searchRef.current?.focus();
                   }}
                 >

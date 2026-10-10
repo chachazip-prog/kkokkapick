@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
-import { controlSource } from "./fixtures";
+import { controlSource, fixtureCatalog } from "./fixtures";
 
 test("proposal deep links and browser Back restore direction, surface and device", async ({
   page,
@@ -105,6 +105,245 @@ test("photo mode starts as a gapless 3×4 grid, appends on scrolling and keeps i
   await expect(
     page.getByRole("button", { name: "더보기", exact: true }),
   ).toHaveCount(0);
+});
+
+test("live search does not make browser Back erase the query character by character", async ({
+  page,
+}) => {
+  await controlSource(page);
+  await page.setViewportSize({ width: 320, height: 844 });
+  await page.goto("/#/technical/home");
+  await page.getByRole("link", { name: "검색", exact: true }).click();
+  await expect(page).toHaveURL(/technical\/search$/);
+  const input = page.getByRole("searchbox");
+  await input.pressSequentially("UI", { delay: 25 });
+  await expect(input).toHaveValue("UI");
+  await expect(page).toHaveURL(/technical\/search\?q=UI$/);
+  await input.press("Enter");
+  await page.goBack();
+  await expect(page).toHaveURL(/technical\/home$/);
+});
+
+test("closing an opened product consumes its overlay history and preserves list filters", async ({
+  page,
+}) => {
+  await controlSource(page);
+  await page.goto("/#/technical/home?q=UI&sort=low&mode=photos");
+  await page.getByRole("link", { name: "검색", exact: true }).click();
+  await page.locator("[data-photo]").first().click();
+  const detail = page.getByRole("dialog", { name: "사진 속 상품" });
+  await expect(detail).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(detail).not.toBeVisible();
+  await expect(page).toHaveURL(/technical\/search\?q=UI&sort=low&mode=photos$/);
+  await expect(page.getByRole("searchbox")).toHaveValue("UI");
+  await page.goBack();
+  await expect(page).toHaveURL(/technical\/home\?q=UI&sort=low&mode=photos$/);
+});
+
+test("direct and reloaded product links close in place without consuming unrelated history", async ({
+  page,
+}) => {
+  await controlSource(page);
+  await page.goto("/#/technical/my");
+  await page.goto("/#/technical/search?sort=low&product=qa-01");
+  const detail = page.getByRole("dialog", { name: "상품 상세" });
+  await expect(detail).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page).toHaveURL(/technical\/search\?sort=low$/);
+  await page.locator('[data-product="qa-01"]').click();
+  await expect(detail).toBeVisible();
+  await page.reload();
+  await expect(detail).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page).toHaveURL(/technical\/search\?sort=low$/);
+  await expect(detail).not.toBeVisible();
+});
+
+test("browser Back and Forward preserve an appended photo feed and its product opener", async ({
+  page,
+}) => {
+  await controlSource(page);
+  await page.goto("/#/technical/search?mode=photos");
+  await expect(page.locator("[data-photo]")).toHaveCount(12);
+  await page.mouse.wheel(0, 180);
+  await expect(page.locator("[data-photo]")).toHaveCount(24);
+  const opener = page.locator("[data-photo]").nth(20);
+  await opener.scrollIntoViewIfNeeded();
+  const id = await opener.getAttribute("data-photo");
+  await opener.evaluate((element) => {
+    element.addEventListener(
+      "click",
+      () => {
+        (
+          window as Window & { controlledOpenerScrollY: number }
+        ).controlledOpenerScrollY = scrollY;
+      },
+      { capture: true, once: true },
+    );
+  });
+  await opener.click();
+  const scroll = await page.evaluate(
+    () =>
+      (window as Window & { controlledOpenerScrollY: number })
+        .controlledOpenerScrollY,
+  );
+  const detail = page.getByRole("dialog", { name: "사진 속 상품" });
+  await expect(detail).toBeVisible();
+  await page.goBack();
+  await expect(detail).not.toBeVisible();
+  await expect(page.locator(`[data-photo="${id}"]`)).toBeFocused();
+  await expect.poll(() => page.evaluate(() => scrollY)).toBe(scroll);
+  expect(await page.locator("[data-photo]").count()).toBeGreaterThanOrEqual(24);
+  await page.goForward();
+  await expect(detail).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(detail).not.toBeVisible();
+  await expect(page).toHaveURL(/technical\/search\?mode=photos$/);
+});
+
+test("an altered product route cannot consume the original product history entry", async ({
+  page,
+}) => {
+  await controlSource(page);
+  await page.goto("/#/technical/search?sort=low");
+  await page.locator('[data-product="qa-01"]').click();
+  const detail = page.getByRole("dialog", { name: "상품 상세" });
+  await expect(detail).toBeVisible();
+  await page.evaluate(() => {
+    window.location.hash = "#/technical/search?sort=low&product=qa-02";
+  });
+  await expect(page).toHaveURL(/product=qa-02$/);
+  await page.keyboard.press("Escape");
+  await expect(detail).not.toBeVisible();
+  await expect(page).toHaveURL(/technical\/search\?sort=low$/);
+});
+
+test("source expiration closes an open product and keeps saved records and its safe Back route", async ({
+  page,
+}) => {
+  await controlSource(page);
+  await page.goto("/#/technical/search?sort=low");
+  await page
+    .locator('[data-product-card="qa-01"]')
+    .getByRole("button", { name: "찜하기", exact: true })
+    .click();
+  await page.locator('[data-product="qa-01"]').click();
+  await expect(page.getByRole("dialog", { name: "상품 상세" })).toBeVisible();
+  await page.clock.runFor(89 * 60000);
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await expect(page.locator("[data-product-card]")).toHaveCount(0);
+  await expect(
+    page.getByText("상품 사진 표시 기한이 지났어요.", { exact: true }),
+  ).toBeVisible();
+  await page.goBack();
+  await expect(page).toHaveURL(/technical\/search\?sort=low$/);
+  expect(
+    JSON.parse(
+      (await page.evaluate(() => localStorage.getItem("favs"))) || "[]",
+    ),
+  ).toContain("qa-01");
+});
+
+test("returning from account restores the same photo list position without automatically appending", async ({
+  page,
+}) => {
+  await controlSource(page);
+  await page.goto("/#/technical/search?mode=photos");
+  await expect(page.locator("[data-photo]")).toHaveCount(12);
+  await page.mouse.wheel(0, 180);
+  await expect(page.locator("[data-photo]")).toHaveCount(24);
+  const scroll = await page.evaluate(() => scrollY);
+  expect(scroll).toBeGreaterThan(0);
+  await page.getByRole("link", { name: "마이", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "마이", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("link", { name: "검색", exact: true }).click();
+  await expect(page.locator("[data-photo]")).toHaveCount(24);
+  await expect.poll(() => page.evaluate(() => scrollY)).toBe(scroll);
+  await page.evaluate(
+    () =>
+      new Promise<void>((resolve) => {
+        let frames = 0;
+        const next = () =>
+          ++frames === 6 ? resolve() : requestAnimationFrame(next);
+        requestAnimationFrame(next);
+      }),
+  );
+  await expect(page.locator("[data-photo]")).toHaveCount(24);
+  await page.getByRole("searchbox").fill("UI 검증용");
+  await expect(page.locator("[data-photo]")).toHaveCount(12);
+  await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
+  await page.getByRole("button", { name: "상품 목록", exact: true }).click();
+  await expect(page.locator("[data-product-card]")).toHaveCount(20);
+  await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
+});
+
+test("only eight recently visited list contexts are kept in memory", async ({
+  page,
+}) => {
+  await controlSource(page);
+  await page.goto("/#/technical/search?mode=photos");
+  await expect(page.locator("[data-photo]")).toHaveCount(12);
+  await page.mouse.wheel(0, 180);
+  await expect(page.locator("[data-photo]")).toHaveCount(24);
+  for (let index = 0; index < 9; index++) {
+    const query = "UI" + " ".repeat(index);
+    await page.getByRole("searchbox").fill(query);
+    await expect
+      .poll(() =>
+        page.evaluate(() =>
+          new URLSearchParams(location.hash.split("?")[1]).get("q"),
+        ),
+      )
+      .toBe(query);
+    await page.evaluate(
+      () =>
+        new Promise((resolve) =>
+          requestAnimationFrame(() => requestAnimationFrame(resolve)),
+        ),
+    );
+    await expect(page.locator("[data-photo]")).toHaveCount(12);
+  }
+  await page.getByRole("button", { name: "검색어 지우기" }).click();
+  await expect(page).toHaveURL(/technical\/search\?mode=photos$/);
+  await expect(page.locator("[data-photo]")).toHaveCount(12);
+  await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
+  expect(
+    await page.evaluate(() =>
+      Object.keys(localStorage).filter((key) =>
+        /scroll|pagination|context/i.test(key),
+      ),
+    ),
+  ).toEqual([]);
+});
+
+test("loading source while switching tabs does not remember a zero product page size", async ({
+  page,
+}) => {
+  await controlSource(page);
+  let releaseSource!: () => void;
+  const sourceReady = new Promise<void>((resolve) => {
+    releaseSource = resolve;
+  });
+  await page.route("**/data/catalog.json?*", async (route) => {
+    await sourceReady;
+    await route.fulfill({ json: fixtureCatalog() });
+  });
+  await page.goto("/#/technical/search?mode=photos");
+  await expect(
+    page.getByText("상품 원본을 확인하고 있어요.", { exact: true }),
+  ).toBeVisible();
+  await page.getByRole("link", { name: "마이", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "마이", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("link", { name: "검색", exact: true }).click();
+  await expect(page).toHaveURL(/technical\/search\?mode=photos$/);
+  releaseSource();
+  await expect(page.locator("[data-photo]")).toHaveCount(12);
+  await expect(page.getByText("40개", { exact: true })).toBeVisible();
 });
 
 test("denied storage shows persistent failure and retains child input", async ({
