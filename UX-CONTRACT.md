@@ -32,3 +32,9 @@ No user-visible more button. Infinite append needs scrolling and keeps product k
 - `python /tmp/kkokkapick-premium-audit.py . --mode strict --output /tmp/kkokkapick-premium-audit.json` (skill auditor, static ownership only)
 
 Actual supplier-source QA must state input hash, collection time, internal image deadline, code SHA and visible browser states. It cannot relabel fixture results or a historical expired publication as fresh supplier QA. Root integration report and independent visual review are recorded in docs/react-web/verification.md before handoff.
+
+## Second-round review surfaces (06 / 08 / 09)
+
+These are unselected prototypes hosted beneath CatalogProvider. RefinedScenes reuses OriginalPhoto and the canonical `recoverPhoto`/generation/quarantine owner. It does not maintain a second photo retry, cache or freshness policy. Genuine healthy alternate originals remain available; offline failures wait for reconnection. ProductCollection observes the nearest internal frame or native review dialog. Scroll/wheel/touch intent permits the next batch even when the first twelve tiles fit without overflow; batches are coalesced. Surface changes reset only the revised internal scroll root.
+
+Proposed brand names and categories derive from fresh scoped catalog data; no popularity rankings are generated. Selected saved items resolve against the full fresh source, preserving identity outside active search filters. Clothing and play searches maintain separate in-memory query/category contexts. Proposal favorites are temporary review state, distinct from the durable technical workbench records. App-owned native review dialogs remain preview patterns; the chosen production direction will reuse canonical shadcn/Radix owners.

@@ -80,11 +80,11 @@ The service does not fulfill orders or deliveries. Local target prices are saved
 
 ## Authority and scope
 
-User constraints and AGENTS.md take priority. AGENTS.md Design Selection Gate requires ten distinct reviewable proposals and explicit selection before material visual implementation. [Proposal comparison](docs/react-web/design-proposals.md) is the maintained review set. Selection ID: **none**. Independent engineering continues in web/src/domain, hooks and canonical shadcn/Radix primitives. The root legacy demo and Flutter app are retained; main is not merged and production is not deployed.
+User constraints and AGENTS.md take priority. AGENTS.md Design Selection Gate requires ten distinct reviewable proposals and explicit selection before material visual implementation. [Proposal comparison](docs/react-web/design-proposals.md) is the maintained review set. Selection ID: **none**. PO expressed interest in 06/08/09 and requested another design round; these three are revised review prototypes, not approved production directions. Independent engineering continues in web/src/domain, hooks and canonical shadcn/Radix primitives. The root legacy demo and Flutter app are retained; main is not merged and production is not deployed.
 
 ## Colors
 
-Ownership model B: `web/src/index.css` is the canonical runtime source; this file records intent and mirrors that source. Technical workbench uses inherited cool neutral background #f5f6f8, white content surfaces, #20232b text, #566173 secondary text, #ccd2db borders, functional blue #244dd7, limited purple #6639bf and red/pink #c72863 actions. Proposal tokens are explicitly isolated in `web/src/proposals/proposals.css` and cannot silently become production tokens.
+Ownership model B: `web/src/index.css` is the canonical runtime source; this file records intent and mirrors that source. Technical workbench uses inherited cool neutral background #f5f6f8, white content surfaces, #20232b text, #566173 secondary text, #ccd2db borders, functional blue #244dd7, limited purple #6639bf and red/pink #c72863 actions. Proposal tokens are explicitly isolated in `web/src/proposals/proposals.css`, `refinements.css`, and `review-shell.css` and cannot silently become production tokens.
 
 ## Typography
 
@@ -122,4 +122,4 @@ Legacy local keys `favs`, `priceAlerts`, `recentProducts`, `kkokkapickChildProfi
 
 Canonical behavior owners and test commands are maintained in [UX-CONTRACT.md](UX-CONTRACT.md). The source refresh/publication evidence is separate from React UI verification in [catalog-evidence.md](docs/react-web/catalog-evidence.md). Actual browser decode, visual inspection, keyboard/IME/filter/carousel/storage/expiry failure paths and independent reviewer evidence are required. CI success alone is insufficient.
 
-Remaining: owner selects one of ten; that direction is fully implemented across all five screens and responsive states; fresh source meets unchanged publication coverage/100% image gates; source material/selling-size/rights contract, operator details and physical iPhone Product Owner review are explicitly verified. Technical approval delegation does not provide physical-device or material-design approval.
+Remaining: owner selects a direction after the requested 06/08/09 second round; that direction is fully implemented across all five screens and responsive states; fresh source meets unchanged publication coverage/100% image gates; source material/selling-size/rights contract, operator details and physical iPhone Product Owner review are explicitly verified. Technical approval delegation does not provide physical-device or material-design approval.

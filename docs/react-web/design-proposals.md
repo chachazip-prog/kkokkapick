@@ -1,6 +1,6 @@
 # KKOKKAPICK React web — 10 design proposals
 
-Status: **reviewable proposals; Product Owner selection pending**. No proposal is the production visual system. The highlighted review tab is a viewing state, not an approval. The team recommends **01 — 사진으로 쏙쏙**.
+Status: **reviewable proposals; Product Owner selection pending**. No proposal is the production visual system. The highlighted review tab is a viewing state, not an approval. The initial round recommended 01. The Product Owner requested a deeper second round for **06/08/09**; the current review recommendation is **08**, still unselected. See [second-round evidence](round-two-review.md).
 
 The new React redesign request reopens visual exploration. [AGENTS.md](../../AGENTS.md) requires ten structurally distinct proposals, including home/discovery, catalog/search, detail, and changed navigation/overlay patterns, before production visual implementation. Existing engineering, normalized catalog contracts, image policy, and shadcn/Radix infrastructure can proceed independently.
 
@@ -10,13 +10,13 @@ The audience is Korean caregivers, especially mothers in their twenties and thir
 
 All ten provide clothing/play entry through the common search filter; 02 and 09 also make the switch a primary home control. All ten retain rounded Korean typography and wordmark, the approved Korean boy-and-girl hero 3, neutral/white surfaces, fine photo borders, restrained functional color, understandable Korean labels, photography before decorative UI, canonical product identity, seller offers separated from product titles, dot-controlled original-image galleries when multiple genuine images exist, multiple-child selection, and separate clothing versus play/learning context. None introduces order, delivery, payment, unsupported reviews, invented stock, fabricated size/material, inferred safety certification, or developmental promises.
 
-The exact requested gapless three-column/four-row photo-only discovery is the signature of **01**. Other directions intentionally explore a different primary task; their departures are visible and documented below. Choosing another direction would be a conscious composition change.
+The initial round placed gapless three-column/four-row photo-only discovery in 01. The revised **08** now makes this the main discovery surface with an information-view alternative. Other directions intentionally explore a different primary task; their departures are visible and documented below. Choosing another direction would be a conscious composition change.
 
 At intake the checked-in commercial snapshot was synced at `2026-10-09T00:35:14.464Z` and expired by `2026-10-09T02:05:14.464Z`. The proposal gallery rejects expired product metadata and original supplier photos. It displays only supplied fresh data with a future expiry, or clearly identified local campaign imagery to review geometry. Campaign crops are not products; no prices, sellers, brands, stock, or clothing facts are attached to them. A later refresh does not turn campaign art into merchandise evidence.
 
 ## Review surface and interface
 
-Implementation is isolated in `web/src/proposals/ProposalGallery.tsx`, `directions.ts`, and `proposals.css`. It exports named and default `ProposalGallery`:
+Implementation is isolated in `web/src/proposals/ProposalGallery.tsx`, `directions.ts`, and `proposals.css`. Revised 06/08/09 scenes and chrome are separately owned by `RefinedScenes.tsx`, `refinements.css`, and `review-shell.css`; superseded switch cases and CSS rules were removed rather than appended as overrides. It exports named and default `ProposalGallery`:
 
 ```ts
 interface ProposalGalleryProps {

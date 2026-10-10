@@ -12,6 +12,12 @@ import {
   type ProposalSurface,
 } from "./directions";
 import "./proposals.css";
+import "./review-shell.css";
+import {
+  RefinedScene,
+  RefinedOverlayBody,
+  refinedCategories,
+} from "./RefinedScenes";
 
 /**
  * Review-only design gallery. It does not implement the selected production UI.
@@ -146,17 +152,17 @@ function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
 function readReviewLocation() {
   if (typeof window === "undefined")
     return {
-      id: "01" as ProposalId,
+      id: "06" as ProposalId,
       surface: "home" as ProposalSurface,
       device: "mobile" as Device,
     };
   const params = new URLSearchParams(
     window.location.hash.split("?")[1] || window.location.search,
   );
-  const id = (params.get("proposal") || "01").padStart(2, "0") as ProposalId;
+  const id = (params.get("proposal") || "06").padStart(2, "0") as ProposalId;
   const surface = params.get("surface") as ProposalSurface;
   return {
-    id: directions.some((d) => d.id === id) ? id : ("01" as ProposalId),
+    id: directions.some((d) => d.id === id) ? id : ("06" as ProposalId),
     surface: ["home", "search", "detail"].includes(surface)
       ? surface
       : ("home" as ProposalSurface),
@@ -244,7 +250,7 @@ function Campaign({
   );
 }
 
-interface SceneContext {
+export interface SceneContext {
   direction: DesignDirection;
   products: ProposalProduct[];
   catalogProducts: ProposalProduct[];
@@ -915,50 +921,6 @@ function BrandIndex({ context }: { context: SceneContext }) {
   );
 }
 
-function BrandShelves({ context }: { context: SceneContext }) {
-  const groups = new Map<string, ProposalProduct[]>();
-  for (const product of context.products) {
-    const brand = product.brand || "브랜드 미확인";
-    groups.set(brand, [...(groups.get(brand) || []), product]);
-  }
-  return (
-    <div className="kp-brand-shelves">
-      {groups.size ? (
-        [...groups.entries()].slice(0, 4).map(([brand, products]) => (
-          <section key={brand}>
-            <SectionTitle
-              title={brand}
-              action="브랜드 상품"
-              onAction={() => {
-                context.onQuery(brand === "브랜드 미확인" ? "" : brand);
-                context.onSurface("search");
-              }}
-            />
-            <div className="kp-product-rail">
-              {products.slice(0, 5).map((product, index) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  index={index}
-                  context={context}
-                />
-              ))}
-            </div>
-          </section>
-        ))
-      ) : (
-        <section>
-          <SectionTitle
-            title="브랜드별 진열장"
-            subtitle="확인된 브랜드와 상품이 각각의 선반에 모여요"
-          />
-          <ProductGrid context={context} count={3} />
-        </section>
-      )}
-    </div>
-  );
-}
-
 function ChapterNav({ context }: { context: SceneContext }) {
   return (
     <nav className="kp-chapter-nav" aria-label="쇼핑 노트 목차">
@@ -986,6 +948,8 @@ function ChapterNav({ context }: { context: SceneContext }) {
 }
 
 function HomeScene({ context }: { context: SceneContext }) {
+  if (["06", "08", "09"].includes(context.direction.id))
+    return <RefinedScene context={context} surface="home" />;
   const c = context;
   switch (c.direction.id) {
     case "01":
@@ -1166,19 +1130,6 @@ function HomeScene({ context }: { context: SceneContext }) {
           </div>
         </>
       );
-    case "06":
-      return (
-        <>
-          <Campaign hero={c.hero} compact />
-          <div className="kp-directory-layout">
-            <BrandIndex context={c} />
-            <section>
-              <SearchField context={c} />
-              <BrandShelves context={c} />
-            </section>
-          </div>
-        </>
-      );
     case "07":
       return (
         <>
@@ -1203,107 +1154,6 @@ function HomeScene({ context }: { context: SceneContext }) {
             onAction={() => c.onSurface("search")}
           />
           <PhotoFeed context={c} limit={6} />
-        </>
-      );
-    case "08":
-      return (
-        <>
-          <div className="kp-board-top">
-            <div>
-              <span className="kp-eyebrow">나중에 다시 보고 싶은 옷</span>
-              <h2>마음에 담아두세요.</h2>
-            </div>
-            <button
-              type="button"
-              className="kp-outline-button"
-              onClick={() => c.onOverlay("saved")}
-            >
-              <Icon name="heart" size={17} />
-              담은 옷 {c.saved.length}
-            </button>
-          </div>
-          <div className="kp-board-layout">
-            <section>
-              <SearchField context={c} />
-              <PhotoFeed context={c} mosaic />
-            </section>
-            <aside className="kp-saved-drawer">
-              <Icon name="heart" size={26} />
-              <h3>담은 옷</h3>
-              {c.saved.length ? (
-                <p>{c.saved.length}개의 상품을 담았어요.</p>
-              ) : (
-                <p>
-                  아직 담은 옷이 없어요.
-                  <br />
-                  사진을 열고 찜해두세요.
-                </p>
-              )}
-              <button
-                type="button"
-                className="kp-text-button"
-                onClick={() => c.onOverlay("saved")}
-              >
-                담은 옷 보기
-                <Icon name="arrow" size={15} />
-              </button>
-              <CampaignPhoto hero={c.hero} />
-            </aside>
-          </div>
-        </>
-      );
-    case "09":
-      return (
-        <>
-          <DomainSwitch context={c} />
-          <div className="kp-world-intro">
-            <div>
-              <span className="kp-eyebrow">
-                {c.domain === "apparel" ? "CLOTHES" : "PLAY & LEARNING"}
-              </span>
-              <h2>
-                {c.domain === "apparel" ? (
-                  <>
-                    입는 즐거움,
-                    <br />
-                    옷부터 골라요.
-                  </>
-                ) : (
-                  <>
-                    노는 즐거움,
-                    <br />
-                    따로 살펴봐요.
-                  </>
-                )}
-              </h2>
-              <p>
-                {c.domain === "apparel"
-                  ? "의류 품목과 사이즈 정보는 이곳에서."
-                  : "상품에 확인된 정보만 안내해요."}
-              </p>
-            </div>
-            {c.domain === "apparel" ? (
-              <CampaignPhoto hero={c.hero} />
-            ) : (
-              <div className="kp-play-map">
-                <Icon name="play" size={72} />
-                <span>장난감 / 교구 / 학습</span>
-                <small>발달 효과·안전 인증을 추정하지 않아요</small>
-              </div>
-            )}
-          </div>
-          <div className="kp-world-layout">
-            <CategoryBar context={c} vertical />
-            <section>
-              <SearchField context={c} />
-              <SectionTitle
-                title={
-                  c.domain === "apparel" ? "옷 둘러보기" : "놀이·학습 둘러보기"
-                }
-              />
-              <PhotoFeed context={c} limit={9} />
-            </section>
-          </div>
         </>
       );
     case "10":
@@ -1363,6 +1213,8 @@ function HomeScene({ context }: { context: SceneContext }) {
 }
 
 function SearchScene({ context }: { context: SceneContext }) {
+  if (["06", "08", "09"].includes(context.direction.id))
+    return <RefinedScene context={context} surface="search" />;
   const c = context;
   const resultsTitle = c.query
     ? `‘${c.query}’ 찾기`
@@ -1507,25 +1359,6 @@ function SearchScene({ context }: { context: SceneContext }) {
           </div>
         </>
       );
-    case "06":
-      return (
-        <>
-          <div className="kp-brand-search-title">
-            <span className="kp-eyebrow">BRAND / CATALOG</span>
-            <h2>{c.query || "브랜드와 상품 찾기"}</h2>
-            <button
-              type="button"
-              className="kp-text-button"
-              onClick={() => c.onOverlay("brands")}
-            >
-              브랜드 색인
-            </button>
-          </div>
-          {controls}
-          {noResults}
-          <ProductGrid context={c} count={12} />
-        </>
-      );
     case "07":
       return (
         <>
@@ -1552,61 +1385,6 @@ function SearchScene({ context }: { context: SceneContext }) {
               <SelectionCard context={c} />
             </section>
           </div>
-        </>
-      );
-    case "08":
-      return (
-        <>
-          <div className="kp-board-top">
-            <h2>{resultsTitle}</h2>
-            <button
-              type="button"
-              className="kp-outline-button"
-              onClick={() => c.onOverlay("saved")}
-            >
-              담은 옷 {c.saved.length}
-            </button>
-          </div>
-          {controls}
-          {noResults}
-          <div className="kp-board-search">
-            <ProductGrid context={c} count={12} />
-            <aside className="kp-saved-drawer">
-              <h3>찾다가 담아두기</h3>
-              <p>찜해둔 옷은 검색을 마친 뒤에도 다시 확인할 수 있어요.</p>
-              <button
-                type="button"
-                className="kp-text-button"
-                onClick={() => c.onOverlay("saved")}
-              >
-                담은 옷 확인
-              </button>
-            </aside>
-          </div>
-        </>
-      );
-    case "09":
-      return (
-        <>
-          <DomainSwitch context={c} />
-          <SectionTitle
-            title={resultsTitle}
-            subtitle={
-              c.domain === "apparel"
-                ? "의류 정보로 찾기"
-                : "놀이·학습 정보로 찾기"
-            }
-          />
-          {controls}
-          {c.domain === "play" && (
-            <div className="kp-domain-note">
-              <Icon name="play" size={22} />
-              확인된 연령·소재가 있을 때만 보여드려요. 의류 사이즈 필터는
-              적용하지 않아요.
-            </div>
-          )}
-          {noResults}
-          <ProductGrid context={c} count={12} />
         </>
       );
     case "10":
@@ -1802,6 +1580,8 @@ function DetailActions({ context }: { context: SceneContext }) {
 }
 
 function DetailScene({ context }: { context: SceneContext }) {
+  if (["06", "08", "09"].includes(context.direction.id))
+    return <RefinedScene context={context} surface="detail" />;
   const c = context;
   const facts = (
     <>
@@ -1917,31 +1697,6 @@ function DetailScene({ context }: { context: SceneContext }) {
           </div>
         </>
       );
-    case "06":
-      return (
-        <>
-          {back}
-          <div className="kp-detail-brand-heading">
-            <span className="kp-eyebrow">BRAND PROFILE</span>
-            <h2>{c.selected?.brand || "브랜드 확인 전"}</h2>
-            <button
-              type="button"
-              className="kp-text-button"
-              onClick={() => c.onOverlay("brands")}
-            >
-              다른 브랜드 찾기
-            </button>
-          </div>
-          <div className="kp-detail-brand">
-            <ImageGallery context={c} />
-            <div>
-              {facts}
-              {fit}
-            </div>
-          </div>
-          <OfferTable product={c.selected} />
-        </>
-      );
     case "07":
       return (
         <>
@@ -1961,46 +1716,6 @@ function DetailScene({ context }: { context: SceneContext }) {
               {facts}
               <OfferTable product={c.selected} />
               {fit}
-            </div>
-          </div>
-        </>
-      );
-    case "08":
-      return (
-        <>
-          {back}
-          <div className="kp-detail-board">
-            <ImageGallery context={c} wide />
-            <aside>
-              <span className="kp-eyebrow">마음에 담기 전에</span>
-              {facts}
-              {fit}
-              <OfferTable product={c.selected} />
-              <button
-                type="button"
-                className="kp-text-button"
-                onClick={() => c.onOverlay("saved")}
-              >
-                담은 옷 보기
-              </button>
-            </aside>
-          </div>
-        </>
-      );
-    case "09":
-      return (
-        <>
-          <DomainSwitch context={c} />
-          {back}
-          <div className="kp-detail-world">
-            <ImageGallery context={c} />
-            <div>
-              <span className="kp-eyebrow">
-                {c.domain === "apparel" ? "의류 정보" : "놀이·학습 정보"}
-              </span>
-              {facts}
-              {fit}
-              <OfferTable product={c.selected} />
             </div>
           </div>
         </>
@@ -2065,19 +1780,22 @@ function ReviewDialog({
         else
           document
             .querySelector<HTMLButtonElement>(
-              ".kp-proposal-screen .kp-back-link, .kp-proposal-screen .kp-brand",
+              ".kp-proposal-screen .kp-back-link, .kp-proposal-screen .kp-brand, .kp-refined-wordmark",
             )
             ?.focus();
       });
     };
   }, []);
+  const refinedOverlay =
+    ["06", "08", "09"].includes(context.direction.id) &&
+    ["brands", "saved", "category", "product"].includes(kind);
   const savedProducts = context.catalogProducts.filter((product) =>
     context.saved.includes(product.id),
   );
   return (
     <dialog
       ref={dialog}
-      className={`kp-review-dialog kp-dialog-${kind} direction-${context.direction.id} preview-${device}`}
+      className={`kp-review-dialog kp-dialog-${kind} direction-${context.direction.id} preview-${device} ${["06", "08", "09"].includes(context.direction.id) ? "kp-refined-dialog" : ""}`}
       aria-labelledby="kp-dialog-title"
       onCancel={(event) => {
         event.preventDefault();
@@ -2119,6 +1837,12 @@ function ReviewDialog({
         </button>
       </header>
       <div className="kp-dialog-body">
+        {refinedOverlay && (
+          <RefinedOverlayBody
+            kind={kind as "brands" | "saved" | "category" | "product"}
+            context={context}
+          />
+        )}
         {kind === "filter" && (
           <>
             <p>영역과 품목을 골라 결과를 좁혀요.</p>
@@ -2149,9 +1873,11 @@ function ReviewDialog({
             <fieldset>
               <legend>품목</legend>
               <div className="kp-choice-grid">
-                {(draftDomain === "play"
-                  ? playCategories
-                  : clothingCategories
+                {(["06", "08", "09"].includes(context.direction.id)
+                  ? refinedCategories(context, draftDomain)
+                  : draftDomain === "play"
+                    ? playCategories
+                    : clothingCategories
                 ).map((category) => (
                   <label key={category}>
                     <input
@@ -2202,7 +1928,7 @@ function ReviewDialog({
             </p>
           </>
         )}
-        {kind === "category" && (
+        {!refinedOverlay && kind === "category" && (
           <>
             <DomainSwitch context={context} />
             <CategoryBar context={context} vertical />
@@ -2211,8 +1937,10 @@ function ReviewDialog({
             </p>
           </>
         )}
-        {kind === "brands" && <BrandIndex context={context} />}
-        {kind === "saved" && (
+        {!refinedOverlay && kind === "brands" && (
+          <BrandIndex context={context} />
+        )}
+        {!refinedOverlay && kind === "saved" && (
           <>
             {savedProducts.length ? (
               <div className="kp-product-grid">
@@ -2242,7 +1970,7 @@ function ReviewDialog({
           </>
         )}
         {kind === "chapters" && <ChapterNav context={context} />}
-        {kind === "product" && (
+        {!refinedOverlay && kind === "product" && (
           <>
             <ImageGallery context={context} />
             <ProductFacts product={context.selected} />
@@ -2314,11 +2042,18 @@ export function ProposalGallery({
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("전체");
   const [domain, setDomain] = useState<Domain>("apparel");
+  const domainMemory = useRef<
+    Record<Domain, { query: string; category: string }>
+  >({
+    apparel: { query: "", category: "전체" },
+    play: { query: "", category: "전체" },
+  });
   const [selectedId, setSelectedId] = useState<string | undefined>();
   const [saved, setSaved] = useState<string[]>([]);
   const [childSelection, setChildSelection] = useState<number[]>([]);
   const [now, setNow] = useState(Date.now());
   const direction = directions.find((item) => item.id === directionId)!;
+  const refined = ["06", "08", "09"].includes(directionId);
   const hasFreshData =
     catalogStatus === "fresh" &&
     !!catalogExpiresAt &&
@@ -2335,10 +2070,11 @@ export function ProposalGallery({
           .toLocaleLowerCase("ko-KR")
           .includes(query.toLocaleLowerCase("ko-KR"))),
   );
+  // Saved records may be outside the currently narrowed discovery result.
+  // Only the fresh, policy-approved catalog is eligible for selection.
   const selected =
-    (surface === "detail" ? domainProducts : filteredProducts).find(
-      (product) => product.id === selectedId,
-    ) || filteredProducts[0];
+    safeProducts.find((product) => product.id === selectedId) ||
+    filteredProducts[0];
   useEffect(() => {
     const timer = window.setInterval(() => setNow(Date.now()), 30000);
     return () => window.clearInterval(timer);
@@ -2388,6 +2124,10 @@ export function ProposalGallery({
       window.removeEventListener("popstate", readExternalNavigation);
     };
   }, []);
+  useEffect(() => {
+    // The revised frame scrolls internally; route changes start at the product image.
+    document.querySelector(".kp-refined-content")?.scrollTo({ top: 0 });
+  }, [surface, directionId]);
   const onDirection = (id: ProposalId) => {
     setDirectionId(id);
     setOverlay(null);
@@ -2447,6 +2187,14 @@ export function ProposalGallery({
     onCategory: setCategory,
     domain,
     onDomain: (value) => {
+      if (directionId === "09") {
+        domainMemory.current[domain] = { query, category };
+        setDomain(value);
+        setCategory(domainMemory.current[value].category);
+        setQuery(domainMemory.current[value].query);
+        setSelectedId(undefined);
+        return;
+      }
       setDomain(value);
       setCategory("전체");
       setQuery("");
@@ -2482,53 +2230,53 @@ export function ProposalGallery({
         <a className="kp-review-home" href="#/proposals">
           KKOKKAPICK <span>DESIGN REVIEW</span>
         </a>
-        <span className="kp-review-status">
-          제안 10개 · 아직 선택되지 않았습니다
-        </span>
+        <span className="kp-review-status">2차 개선 · 06·08·09 비교 중</span>
       </header>
-      <section className="kp-review-intro">
+      <section className="kp-review-round">
         <div>
-          <span className="kp-review-eyebrow">
-            새 React 웹 / 제품 디자인 선택
-          </span>
-          <h1>
-            사진을 발견하는
-            <br />열 가지 방식.
-          </h1>
-          <p>
-            같은 서비스, 서로 다른 탐색 흐름. 홈·찾기·상세와 열린 화면까지
-            비교해 주세요.
-          </p>
+          <span>UI/UX 2차 개선</span>
+          <h1>마음에 든 세 방향, 더 자연스럽게.</h1>
+          <p>브랜드로 찾기 · 모아두고 비교하기 · 옷과 놀이 나눠 보기</p>
         </div>
-        <div className="kp-review-recommendation">
-          <span>팀 추천 · 선택 전</span>
-          <strong>01 사진으로 쏙쏙</strong>
-          <p>
-            간격 없는 3×4 사진판과 선택 상품 카드가 요청하신 탐색 흐름에 가장
-            가깝습니다.
-          </p>
-          <button type="button" onClick={() => onDirection("01")}>
-            추천안 둘러보기 <Icon name="arrow" size={16} />
-          </button>
-        </div>
+        <p className="kp-review-round-status">
+          관심 후보를 재작업했습니다. 최종 디자인은 선택 전입니다.
+        </p>
       </section>
-      <nav className="kp-direction-picker" aria-label="디자인 제안 10개">
-        {directions.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            className={directionId === item.id ? "is-current" : ""}
-            onClick={() => onDirection(item.id)}
-            aria-pressed={directionId === item.id}
-            style={{ "--kp-sketch-accent": item.accent } as CSSProperties}
-          >
-            <DirectionSketch id={item.id} />
-            <span className="kp-direction-number">{item.id}</span>
-            <strong>{item.name}</strong>
-            <span>{item.englishName}</span>
-          </button>
-        ))}
+      <nav className="kp-round-picker" aria-label="2차 개선 후보">
+        {directions
+          .filter((item) => ["06", "08", "09"].includes(item.id))
+          .map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              aria-pressed={directionId === item.id}
+              onClick={() => onDirection(item.id)}
+            >
+              <span>{item.id}</span>
+              <strong>{item.name}</strong>
+            </button>
+          ))}
       </nav>
+      <details className="kp-original-directions">
+        <summary>처음 제안한 10안 모두 보기</summary>
+        <nav className="kp-direction-picker" aria-label="디자인 제안 10개">
+          {directions.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              className={directionId === item.id ? "is-current" : ""}
+              onClick={() => onDirection(item.id)}
+              aria-pressed={directionId === item.id}
+              style={{ "--kp-sketch-accent": item.accent } as CSSProperties}
+            >
+              <DirectionSketch id={item.id} />
+              <span className="kp-direction-number">{item.id}</span>
+              <strong>{item.name}</strong>
+              <span>{item.englishName}</span>
+            </button>
+          ))}
+        </nav>
+      </details>
       <section
         className="kp-review-workspace"
         aria-label={`${direction.id}번 ${direction.name} 디자인 검토`}
@@ -2591,52 +2339,103 @@ export function ProposalGallery({
         </div>
         <div className={`kp-preview-mat device-${device}`}>
           <div
-            className={`kp-proposal-screen direction-${directionId} screen-${surface}`}
+            className={`kp-proposal-screen direction-${directionId} screen-${surface} ${refined ? "kp-refined-screen" : ""}`}
             style={{ "--kp-accent": direction.accent } as CSSProperties}
           >
-            <header className="kp-app-header">
-              <button
-                type="button"
-                className="kp-brand"
-                onClick={() => context.onSurface("home")}
-                aria-label="꼬까픽 홈"
-              >
-                <span className="kp-brand-mark" aria-hidden="true">
-                  <span />
-                  <span />
-                </span>
-                꼬까픽
-              </button>
-              <nav aria-label="주요 화면">
+            {refined ? (
+              <header className="kp-refined-header">
                 <button
                   type="button"
-                  onClick={() => context.onSurface("search")}
-                  aria-label="상품 찾기"
+                  className="kp-refined-wordmark"
+                  onClick={() => context.onSurface("home")}
+                  aria-label="꼬까픽 홈"
                 >
-                  <Icon name="search" />
+                  꼬까픽<span aria-hidden="true">!</span>
                 </button>
+                <nav aria-label="주요 화면">
+                  <button
+                    type="button"
+                    onClick={() => context.onSurface("home")}
+                    className="kp-desktop-home"
+                  >
+                    <Icon name="home" />
+                    <span>홈</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => context.onSurface("search")}
+                    aria-label="상품 검색"
+                  >
+                    <Icon name="search" />
+                    <span>검색</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => context.onOverlay("saved")}
+                    aria-label={`찜한 상품 ${saved.length}개`}
+                  >
+                    <Icon name="heart" />
+                    <span>찜</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => context.onOverlay("children")}
+                    aria-label="아이 선택 화면"
+                  >
+                    <Icon name="person" />
+                    <span>마이</span>
+                  </button>
+                </nav>
+              </header>
+            ) : (
+              <header className="kp-app-header">
                 <button
                   type="button"
-                  onClick={() => context.onOverlay("saved")}
-                  aria-label={`찜한 상품 ${saved.length}개`}
+                  className="kp-brand"
+                  onClick={() => context.onSurface("home")}
+                  aria-label="꼬까픽 홈"
                 >
-                  <Icon name="heart" />
+                  <span className="kp-brand-mark" aria-hidden="true">
+                    <span />
+                    <span />
+                  </span>
+                  꼬까픽
                 </button>
-                <button
-                  type="button"
-                  onClick={() => context.onOverlay("children")}
-                  aria-label="아이 선택 화면"
-                >
-                  <Icon name="person" />
-                </button>
-              </nav>
-            </header>
+                <nav aria-label="주요 화면">
+                  <button
+                    type="button"
+                    onClick={() => context.onSurface("search")}
+                    aria-label="상품 찾기"
+                  >
+                    <Icon name="search" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => context.onOverlay("saved")}
+                    aria-label={`찜한 상품 ${saved.length}개`}
+                  >
+                    <Icon name="heart" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => context.onOverlay("children")}
+                    aria-label="아이 선택 화면"
+                  >
+                    <Icon name="person" />
+                  </button>
+                </nav>
+              </header>
+            )}
             <div className="kp-data-notice" role="status">
               {hasFreshData
-                ? `현재 유효한 실제 카탈로그 · ${safeProducts.length}개 상품`
-                : "최신 카탈로그 연결 전 · 캠페인으로 구성만 검토합니다. 상품·가격을 만들지 않습니다."}
+                ? `확인된 상품 ${safeProducts.length}개`
+                : refined
+                  ? catalogStatus === "expired"
+                    ? "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+                    : "상품 정보를 불러오지 못했어요. 지금은 캠페인만 보여드려요."
+                  : "최신 카탈로그 연결 전 · 캠페인으로 구성만 검토합니다. 상품·가격을 만들지 않습니다."}
             </div>
-            <div className="kp-app-content">
+            <div className={refined ? "kp-refined-content" : "kp-app-content"}>
               {surface === "home" ? (
                 <HomeScene context={context} />
               ) : surface === "search" ? (
@@ -2645,7 +2444,10 @@ export function ProposalGallery({
                 <DetailScene context={context} />
               )}
             </div>
-            <nav className="kp-bottom-nav" aria-label="앱 주요 목적지">
+            <nav
+              className={refined ? "kp-refined-nav" : "kp-bottom-nav"}
+              aria-label="앱 주요 목적지"
+            >
               <button
                 type="button"
                 aria-current={surface === "home" ? "page" : undefined}
@@ -2660,7 +2462,13 @@ export function ProposalGallery({
                 onClick={() => context.onSurface("search")}
               >
                 <Icon name="search" />
-                <span>{directionId === "10" ? "상품 색인" : "찾기"}</span>
+                <span>
+                  {directionId === "10"
+                    ? "상품 색인"
+                    : refined
+                      ? "검색"
+                      : "찾기"}
+                </span>
               </button>
               <button type="button" onClick={() => context.onOverlay("saved")}>
                 <Icon name="heart" />

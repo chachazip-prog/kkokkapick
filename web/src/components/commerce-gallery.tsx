@@ -3,14 +3,16 @@ import type { CSSProperties } from "react";
 import { useKkokkapick } from "./catalog-provider";
 import type { ClientProduct } from "@/domain";
 
-function OriginalPhoto({
+export function OriginalPhoto({
   url,
   name,
   generation,
+  loading = "lazy",
 }: {
   url: string;
   name: string;
   generation: number;
+  loading?: "eager" | "lazy";
 }) {
   const { recoverPhoto } = useKkokkapick();
   const [status, setStatus] = useState<
@@ -63,7 +65,7 @@ function OriginalPhoto({
           key={attempt}
           src={url}
           alt={name}
-          loading="lazy"
+          loading={loading}
           decoding="async"
           onLoad={() => setStatus("ready")}
           onError={() => void recover()}

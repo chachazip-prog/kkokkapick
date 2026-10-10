@@ -1,0 +1,1353 @@
+{
+  "scope": "06/08/09 second-round unselected review prototypes; not supplier-image approval",
+  "actualHoldDelivery": {
+    "checkedAt": "2026-10-10T13:06:59.131Z",
+    "originals": 0,
+    "errors": [],
+    "results": [
+      {
+        "id": "06",
+        "surface": "home",
+        "device": "mobile",
+        "goods": 0,
+        "images": 1,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "06",
+        "surface": "search",
+        "device": "mobile",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "06",
+        "surface": "detail",
+        "device": "mobile",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "08",
+        "surface": "home",
+        "device": "mobile",
+        "goods": 0,
+        "images": 1,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "08",
+        "surface": "search",
+        "device": "mobile",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "08",
+        "surface": "detail",
+        "device": "mobile",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "09",
+        "surface": "home",
+        "device": "mobile",
+        "goods": 0,
+        "images": 1,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "09",
+        "surface": "search",
+        "device": "mobile",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "09",
+        "surface": "detail",
+        "device": "mobile",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "06",
+        "surface": "home",
+        "device": "desktop",
+        "goods": 0,
+        "images": 1,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "06",
+        "surface": "search",
+        "device": "desktop",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "06",
+        "surface": "detail",
+        "device": "desktop",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "08",
+        "surface": "home",
+        "device": "desktop",
+        "goods": 0,
+        "images": 1,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "08",
+        "surface": "search",
+        "device": "desktop",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "08",
+        "surface": "detail",
+        "device": "desktop",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "09",
+        "surface": "home",
+        "device": "desktop",
+        "goods": 0,
+        "images": 1,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "09",
+        "surface": "search",
+        "device": "desktop",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      },
+      {
+        "id": "09",
+        "surface": "detail",
+        "device": "desktop",
+        "goods": 0,
+        "images": 0,
+        "overflow": false,
+        "decoded": true,
+        "sourceNotice": [
+          "상품 사진이 만료됐어요. 새 사진 연결 후 보여드릴게요."
+        ]
+      }
+    ]
+  },
+  "screenshotSha256": {
+    "08-search-desktop.jpg": "dcc70496d65aa1e0615f7ff54463b7c03bfedfb1d145484ccae086e81a244308",
+    "06-detail-desktop.jpg": "0378e3fa648434372398803d57d4a6cbd176c6fc2d850b5dcc2885aa91225bbc",
+    "06-search-mobile.jpg": "ee502582661592437e6f198655cfd09372111abf1a250e09874a285c41f562a8",
+    "08-home-desktop.jpg": "6cf0b37c2aac424427dfc87099a8607268cf44c14c8545d6da12ea95d0dd7ad9",
+    "08-search-mobile.jpg": "adfac511e063ba56f2291a6051b213c2322f133bdb1a5743f6b7654e33ae9de0",
+    "06-home-desktop.jpg": "915d976bd711f995883ff94ce379678bb1a9f350e8d3a0b9e034c0de108830c8",
+    "09-home-desktop.jpg": "f0977b50d166a715a1aff80fa7ed98348aea3f514212b977c44c2432bdee2458",
+    "06-detail-mobile.jpg": "453ffcfe748f541b182433cdff29451f76634129238d6b657581873e2f52e7e7",
+    "09-detail-desktop.jpg": "ac503d0ecdc1e96117541b80249c312f5b13da50d9b3d7d3e0449d60d168e9a9",
+    "09-home-mobile.jpg": "885236912d8a53704e3ff722bb4b547ebe56e55e322af60fb229ab33871cfecf",
+    "09-search-desktop.jpg": "88b4fce6f51faf5898b459652b8978a7d9681e689f85f546ede21874101b2a37",
+    "08-detail-desktop.jpg": "7fbef30cf50800f6434ae46ed8bb6cd0050214641df9242b49f402b7e333b890",
+    "06-search-desktop.jpg": "de3cc3822d1f065dafe6f7125381087a534ad4909877db1cf60ae6d662a80d5b",
+    "09-search-mobile.jpg": "f56dd6786ba17c30f74993f522e2166e5a86ab0285da56d1a2453d3a30e9249e",
+    "09-detail-mobile.jpg": "33a67ab4756faab3663357ec9add8a5e6c4ccd69bed2bbf58151ef22174c2f90",
+    "08-home-mobile.jpg": "75c54fd0cb9ee3100aec2ce3f388baa57d8d148b9de1be8d0ac7a4df41c29cac",
+    "06-home-mobile.jpg": "fc79ec424192c21ad16a2d1905eaffa11ce5dbb31f177fc20fa5234e92887d5e",
+    "08-detail-mobile.jpg": "4db5313958efb6d70f2f4954798a7754f807a32357f67b344da6ef85e0d2394b"
+  },
+  "standalone": {
+    "artifactSha256": "7675a282d8016bc0a8ca3c471b9dd2e98382821d96c2f829a57a8a6005322a87",
+    "checkedAt": "2026-10-10T13:04:55.268Z",
+    "viewport": 390,
+    "compositionCount": 30,
+    "technicalRoutes": 4,
+    "errors": [],
+    "originalRequests": 0,
+    "overflows": 0,
+    "fontDecoding": {
+      "ui": true,
+      "display": true
+    },
+    "campaignDecodingFailures": 0
+  },
+  "independentRuntime": [
+    {
+      "controlled": false,
+      "width": 320,
+      "id": "06",
+      "geometry": {
+        "frame": {
+          "top": 25.265625,
+          "bottom": 845.265625,
+          "height": 820
+        },
+        "header": {
+          "top": 26.265625,
+          "bottom": 91.265625,
+          "height": 65
+        },
+        "campaign": {
+          "top": 134.765625,
+          "bottom": 278.765625,
+          "height": 144
+        },
+        "copy": {
+          "top": 135.765625,
+          "bottom": 277.765625,
+          "height": 142
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 122.765625,
+          "bottom": 779.265625,
+          "height": 656.5
+        },
+        "all12InContent": null,
+        "images": 1,
+        "goods": 0,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 26.265625,
+        "frameTop": 25.265625
+      },
+      "errors": []
+    },
+    {
+      "controlled": false,
+      "width": 320,
+      "id": "08",
+      "geometry": {
+        "frame": {
+          "top": 25.265625,
+          "bottom": 845.265625,
+          "height": 820
+        },
+        "header": {
+          "top": 26.265625,
+          "bottom": 91.265625,
+          "height": 65
+        },
+        "campaign": {
+          "top": 341.046875,
+          "bottom": 485.046875,
+          "height": 144
+        },
+        "copy": {
+          "top": 342.046875,
+          "bottom": 484.046875,
+          "height": 142
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 122.765625,
+          "bottom": 779.265625,
+          "height": 656.5
+        },
+        "all12InContent": null,
+        "images": 1,
+        "goods": 0,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 26.265625,
+        "frameTop": 25.265625
+      },
+      "errors": []
+    },
+    {
+      "controlled": false,
+      "width": 320,
+      "id": "09",
+      "geometry": {
+        "frame": {
+          "top": 25.265625,
+          "bottom": 845.265625,
+          "height": 820
+        },
+        "header": {
+          "top": 26.265625,
+          "bottom": 91.265625,
+          "height": 65
+        },
+        "campaign": {
+          "top": 197.765625,
+          "bottom": 341.765625,
+          "height": 144
+        },
+        "copy": {
+          "top": 198.765625,
+          "bottom": 340.765625,
+          "height": 142
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 122.765625,
+          "bottom": 779.265625,
+          "height": 656.5
+        },
+        "all12InContent": null,
+        "images": 1,
+        "goods": 0,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 26.265625,
+        "frameTop": 25.265625
+      },
+      "errors": []
+    },
+    {
+      "controlled": false,
+      "width": 430,
+      "id": "06",
+      "geometry": {
+        "frame": {
+          "top": 24.5625,
+          "bottom": 844.5625,
+          "height": 820
+        },
+        "header": {
+          "top": 25.5625,
+          "bottom": 90.5625,
+          "height": 65
+        },
+        "campaign": {
+          "top": 138.0625,
+          "bottom": 282.0625,
+          "height": 144
+        },
+        "copy": {
+          "top": 139.0625,
+          "bottom": 281.0625,
+          "height": 142
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 122.0625,
+          "bottom": 778.5625,
+          "height": 656.5
+        },
+        "all12InContent": null,
+        "images": 1,
+        "goods": 0,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 25.5625,
+        "frameTop": 24.5625
+      },
+      "errors": []
+    },
+    {
+      "controlled": false,
+      "width": 430,
+      "id": "08",
+      "geometry": {
+        "frame": {
+          "top": 24.5625,
+          "bottom": 844.5625,
+          "height": 820
+        },
+        "header": {
+          "top": 25.5625,
+          "bottom": 90.5625,
+          "height": 65
+        },
+        "campaign": {
+          "top": 344.34375,
+          "bottom": 488.34375,
+          "height": 144
+        },
+        "copy": {
+          "top": 345.34375,
+          "bottom": 487.34375,
+          "height": 142
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 122.0625,
+          "bottom": 778.5625,
+          "height": 656.5
+        },
+        "all12InContent": null,
+        "images": 1,
+        "goods": 0,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 25.5625,
+        "frameTop": 24.5625
+      },
+      "errors": []
+    },
+    {
+      "controlled": false,
+      "width": 430,
+      "id": "09",
+      "geometry": {
+        "frame": {
+          "top": 24.5625,
+          "bottom": 844.5625,
+          "height": 820
+        },
+        "header": {
+          "top": 25.5625,
+          "bottom": 90.5625,
+          "height": 65
+        },
+        "campaign": {
+          "top": 201.0625,
+          "bottom": 345.0625,
+          "height": 144
+        },
+        "copy": {
+          "top": 202.0625,
+          "bottom": 344.0625,
+          "height": 142
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 122.0625,
+          "bottom": 778.5625,
+          "height": 656.5
+        },
+        "all12InContent": null,
+        "images": 1,
+        "goods": 0,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 25.5625,
+        "frameTop": 24.5625
+      },
+      "errors": []
+    },
+    {
+      "controlled": false,
+      "width": 1440,
+      "id": "06",
+      "geometry": {
+        "frame": {
+          "top": 160.6875,
+          "bottom": 1000.6875,
+          "height": 840
+        },
+        "header": {
+          "top": 161.6875,
+          "bottom": 233.6875,
+          "height": 72
+        },
+        "campaign": {
+          "top": 291.1875,
+          "bottom": 501.1875,
+          "height": 210
+        },
+        "copy": {
+          "top": 292.1875,
+          "bottom": 500.1875,
+          "height": 208
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 265.1875,
+          "bottom": 999.6875,
+          "height": 734.5
+        },
+        "all12InContent": null,
+        "images": 1,
+        "goods": 0,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 161.6875,
+        "frameTop": 160.6875
+      },
+      "errors": []
+    },
+    {
+      "controlled": false,
+      "width": 1440,
+      "id": "08",
+      "geometry": {
+        "frame": {
+          "top": 160.6875,
+          "bottom": 1000.6875,
+          "height": 840
+        },
+        "header": {
+          "top": 161.6875,
+          "bottom": 233.6875,
+          "height": 72
+        },
+        "campaign": {
+          "top": 497.46875,
+          "bottom": 707.46875,
+          "height": 210
+        },
+        "copy": {
+          "top": 498.46875,
+          "bottom": 706.46875,
+          "height": 208
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 265.1875,
+          "bottom": 999.6875,
+          "height": 734.5
+        },
+        "all12InContent": null,
+        "images": 1,
+        "goods": 0,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 161.6875,
+        "frameTop": 160.6875
+      },
+      "errors": []
+    },
+    {
+      "controlled": false,
+      "width": 1440,
+      "id": "09",
+      "geometry": {
+        "frame": {
+          "top": 160.6875,
+          "bottom": 1000.6875,
+          "height": 840
+        },
+        "header": {
+          "top": 161.6875,
+          "bottom": 233.6875,
+          "height": 72
+        },
+        "campaign": {
+          "top": 354.1875,
+          "bottom": 564.1875,
+          "height": 210
+        },
+        "copy": {
+          "top": 355.1875,
+          "bottom": 563.1875,
+          "height": 208
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 265.1875,
+          "bottom": 999.6875,
+          "height": 734.5
+        },
+        "all12InContent": null,
+        "images": 1,
+        "goods": 0,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 161.6875,
+        "frameTop": 160.6875
+      },
+      "errors": []
+    },
+    {
+      "controlled": true,
+      "width": 320,
+      "id": "06",
+      "geometry": {
+        "frame": {
+          "top": 25.265625,
+          "bottom": 845.265625,
+          "height": 820
+        },
+        "header": {
+          "top": 26.265625,
+          "bottom": 91.265625,
+          "height": 65
+        },
+        "campaign": {
+          "top": 134.765625,
+          "bottom": 278.765625,
+          "height": 144
+        },
+        "copy": {
+          "top": 135.765625,
+          "bottom": 277.765625,
+          "height": 142
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 122.765625,
+          "bottom": 779.265625,
+          "height": 656.5
+        },
+        "all12InContent": null,
+        "images": 21,
+        "goods": 40,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 26.265625,
+        "frameTop": 25.265625
+      },
+      "errors": []
+    },
+    {
+      "controlled": true,
+      "width": 320,
+      "id": "08",
+      "geometry": {
+        "frame": {
+          "top": 25.265625,
+          "bottom": 845.265625,
+          "height": 820
+        },
+        "header": {
+          "top": 26.265625,
+          "bottom": 91.265625,
+          "height": 65
+        },
+        "campaign": null,
+        "copy": null,
+        "copyClipped": false,
+        "feed": {
+          "top": 235.765625,
+          "bottom": 616.453125,
+          "height": 380.6875
+        },
+        "content": {
+          "top": 122.765625,
+          "bottom": 779.265625,
+          "height": 656.5
+        },
+        "all12InContent": true,
+        "images": 12,
+        "goods": 12,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 26.265625,
+        "frameTop": 25.265625
+      },
+      "errors": []
+    },
+    {
+      "controlled": true,
+      "width": 320,
+      "id": "09",
+      "geometry": {
+        "frame": {
+          "top": 25.265625,
+          "bottom": 845.265625,
+          "height": 820
+        },
+        "header": {
+          "top": 26.265625,
+          "bottom": 91.265625,
+          "height": 65
+        },
+        "campaign": {
+          "top": 197.765625,
+          "bottom": 341.765625,
+          "height": 144
+        },
+        "copy": {
+          "top": 198.765625,
+          "bottom": 340.765625,
+          "height": 142
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 122.765625,
+          "bottom": 779.265625,
+          "height": 656.5
+        },
+        "all12InContent": null,
+        "images": 21,
+        "goods": 40,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 26.265625,
+        "frameTop": 25.265625
+      },
+      "errors": []
+    },
+    {
+      "controlled": true,
+      "width": 430,
+      "id": "06",
+      "geometry": {
+        "frame": {
+          "top": 24.5625,
+          "bottom": 844.5625,
+          "height": 820
+        },
+        "header": {
+          "top": 25.5625,
+          "bottom": 90.5625,
+          "height": 65
+        },
+        "campaign": {
+          "top": 138.0625,
+          "bottom": 282.0625,
+          "height": 144
+        },
+        "copy": {
+          "top": 139.0625,
+          "bottom": 281.0625,
+          "height": 142
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 122.0625,
+          "bottom": 778.5625,
+          "height": 656.5
+        },
+        "all12InContent": null,
+        "images": 21,
+        "goods": 40,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 25.5625,
+        "frameTop": 24.5625
+      },
+      "errors": []
+    },
+    {
+      "controlled": true,
+      "width": 430,
+      "id": "08",
+      "geometry": {
+        "frame": {
+          "top": 24.5625,
+          "bottom": 844.5625,
+          "height": 820
+        },
+        "header": {
+          "top": 25.5625,
+          "bottom": 90.5625,
+          "height": 65
+        },
+        "campaign": null,
+        "copy": null,
+        "copyClipped": false,
+        "feed": {
+          "top": 239.0625,
+          "bottom": 755.75,
+          "height": 516.6875
+        },
+        "content": {
+          "top": 122.0625,
+          "bottom": 778.5625,
+          "height": 656.5
+        },
+        "all12InContent": true,
+        "images": 12,
+        "goods": 12,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 25.5625,
+        "frameTop": 24.5625
+      },
+      "errors": []
+    },
+    {
+      "controlled": true,
+      "width": 430,
+      "id": "09",
+      "geometry": {
+        "frame": {
+          "top": 24.5625,
+          "bottom": 844.5625,
+          "height": 820
+        },
+        "header": {
+          "top": 25.5625,
+          "bottom": 90.5625,
+          "height": 65
+        },
+        "campaign": {
+          "top": 201.0625,
+          "bottom": 345.0625,
+          "height": 144
+        },
+        "copy": {
+          "top": 202.0625,
+          "bottom": 344.0625,
+          "height": 142
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 122.0625,
+          "bottom": 778.5625,
+          "height": 656.5
+        },
+        "all12InContent": null,
+        "images": 21,
+        "goods": 40,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 25.5625,
+        "frameTop": 24.5625
+      },
+      "errors": []
+    },
+    {
+      "controlled": true,
+      "width": 1440,
+      "id": "06",
+      "geometry": {
+        "frame": {
+          "top": 160.6875,
+          "bottom": 1000.6875,
+          "height": 840
+        },
+        "header": {
+          "top": 161.6875,
+          "bottom": 233.6875,
+          "height": 72
+        },
+        "campaign": {
+          "top": 291.1875,
+          "bottom": 501.1875,
+          "height": 210
+        },
+        "copy": {
+          "top": 292.1875,
+          "bottom": 500.1875,
+          "height": 208
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 265.1875,
+          "bottom": 999.6875,
+          "height": 734.5
+        },
+        "all12InContent": null,
+        "images": 21,
+        "goods": 40,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 161.6875,
+        "frameTop": 160.6875
+      },
+      "errors": []
+    },
+    {
+      "controlled": true,
+      "width": 1440,
+      "id": "08",
+      "geometry": {
+        "frame": {
+          "top": 160.6875,
+          "bottom": 1000.6875,
+          "height": 840
+        },
+        "header": {
+          "top": 161.6875,
+          "bottom": 233.6875,
+          "height": 72
+        },
+        "campaign": null,
+        "copy": null,
+        "copyClipped": false,
+        "feed": {
+          "top": 392.1875,
+          "bottom": 1431.5625,
+          "height": 1039.375
+        },
+        "content": {
+          "top": 265.1875,
+          "bottom": 999.6875,
+          "height": 734.5
+        },
+        "all12InContent": false,
+        "images": 12,
+        "goods": 12,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 161.6875,
+        "frameTop": 160.6875
+      },
+      "errors": []
+    },
+    {
+      "controlled": true,
+      "width": 1440,
+      "id": "09",
+      "geometry": {
+        "frame": {
+          "top": 160.6875,
+          "bottom": 1000.6875,
+          "height": 840
+        },
+        "header": {
+          "top": 161.6875,
+          "bottom": 233.6875,
+          "height": 72
+        },
+        "campaign": {
+          "top": 354.1875,
+          "bottom": 564.1875,
+          "height": 210
+        },
+        "copy": {
+          "top": 355.1875,
+          "bottom": 563.1875,
+          "height": 208
+        },
+        "copyClipped": false,
+        "feed": null,
+        "content": {
+          "top": 265.1875,
+          "bottom": 999.6875,
+          "height": 734.5
+        },
+        "all12InContent": null,
+        "images": 21,
+        "goods": 40,
+        "frameScroll": 0
+      },
+      "afterCapture": {
+        "scrollTop": 0,
+        "headerTop": 161.6875,
+        "frameTop": 160.6875
+      },
+      "errors": []
+    },
+    {
+      "controlled": true,
+      "width": 320,
+      "id": "06",
+      "overlay": true,
+      "geometry": {
+        "height": 269,
+        "scrollHeight": 269,
+        "width": 318,
+        "scrollWidth": 318,
+        "padding": "18px"
+      },
+      "escapes": 0,
+      "closed": true,
+      "restored": true
+    },
+    {
+      "controlled": true,
+      "width": 320,
+      "id": "08",
+      "overlay": true,
+      "geometry": {
+        "height": 451,
+        "scrollHeight": 451,
+        "width": 318,
+        "scrollWidth": 318,
+        "padding": "18px"
+      },
+      "escapes": 0,
+      "closed": true,
+      "restored": false
+    },
+    {
+      "controlled": true,
+      "width": 320,
+      "id": "09",
+      "overlay": true,
+      "geometry": {
+        "height": 186,
+        "scrollHeight": 186,
+        "width": 318,
+        "scrollWidth": 318,
+        "padding": "18px"
+      },
+      "escapes": 0,
+      "closed": true,
+      "restored": true
+    },
+    {
+      "controlled": true,
+      "width": 390,
+      "id": "06",
+      "overlay": true,
+      "geometry": {
+        "height": 269,
+        "scrollHeight": 269,
+        "width": 388,
+        "scrollWidth": 388,
+        "padding": "18px"
+      },
+      "escapes": 0,
+      "closed": true,
+      "restored": true
+    },
+    {
+      "controlled": true,
+      "width": 390,
+      "id": "08",
+      "overlay": true,
+      "geometry": {
+        "height": 451,
+        "scrollHeight": 451,
+        "width": 388,
+        "scrollWidth": 388,
+        "padding": "18px"
+      },
+      "escapes": 0,
+      "closed": true,
+      "restored": false
+    },
+    {
+      "controlled": true,
+      "width": 390,
+      "id": "09",
+      "overlay": true,
+      "geometry": {
+        "height": 186,
+        "scrollHeight": 186,
+        "width": 388,
+        "scrollWidth": 388,
+        "padding": "18px"
+      },
+      "escapes": 0,
+      "closed": true,
+      "restored": true
+    }
+  ],
+  "independentFocusRecheck": [
+    {
+      "width": 320,
+      "id": "06",
+      "escapes": 0,
+      "restored": true,
+      "active": {
+        "tag": "BUTTON",
+        "name": "열린 화면 보기 "
+      }
+    },
+    {
+      "width": 320,
+      "id": "08",
+      "escapes": 0,
+      "restored": true,
+      "active": {
+        "tag": "BUTTON",
+        "name": "아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 상품 정보 보기"
+      }
+    },
+    {
+      "width": 320,
+      "id": "09",
+      "escapes": 0,
+      "restored": true,
+      "active": {
+        "tag": "BUTTON",
+        "name": "열린 화면 보기 "
+      }
+    },
+    {
+      "width": 390,
+      "id": "06",
+      "escapes": 0,
+      "restored": true,
+      "active": {
+        "tag": "BUTTON",
+        "name": "열린 화면 보기 "
+      }
+    },
+    {
+      "width": 390,
+      "id": "08",
+      "escapes": 0,
+      "restored": true,
+      "active": {
+        "tag": "BUTTON",
+        "name": "아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 아주 긴 테스트 상품명 상품 정보 보기"
+      }
+    },
+    {
+      "width": 390,
+      "id": "09",
+      "escapes": 0,
+      "restored": true,
+      "active": {
+        "tag": "BUTTON",
+        "name": "열린 화면 보기 "
+      }
+    }
+  ],
+  "source": {
+    "newCollectionInThisRound": false,
+    "newPostedDataSha": null,
+    "priorRun": "37899663133",
+    "priorCollectionCodeSha": "0b5112c5b5224d7d0d8a61454d961025da5930b9",
+    "unpublishedSourceAt": "2026-10-09T07:33:14.805Z",
+    "internalPhotoDeadline": "2026-10-09T09:03:14.805Z",
+    "status": "expired"
+  },
+  "selectedProposalId": null,
+  "iphoneOwnerApproval": false,
+  "mainMerged": false,
+  "localChecks": {
+    "checkedAt": "2026-10-10T13:10:23Z",
+    "unitTests": {
+      "passed": 108,
+      "total": 108,
+      "files": 11
+    },
+    "browserTests": {
+      "passed": 25,
+      "total": 25,
+      "controlled": true
+    },
+    "viewports": [
+      320,
+      375,
+      390,
+      430,
+      1440
+    ],
+    "axeScans": 70,
+    "axeViolations": 0,
+    "strictStaticFindings": 0,
+    "format": "PASS",
+    "typecheck": "PASS",
+    "buildReview": "PASS",
+    "buildOffline": "PASS",
+    "controlledScreenshotSha256": {
+      "commerce-controlled-five-s-fdb14-essibility-checks-at-1440px/1440-search-controlled.png": "a52603c56df3378bea2fe54a7ab3ca7ce35f4cb75f1b94136730d4ff04f5c3ee",
+      "commerce-controlled-five-s-fdb14-essibility-checks-at-1440px/1440-home-controlled.png": "d83ad050d049de9b4aa27f4d015436eab8d4a5efc05c299ac5090f78ee8c5146",
+      "commerce-controlled-five-s-fdb14-essibility-checks-at-1440px/1440-detail-controlled-viewport.png": "ba96e9eef5eb6fc7c17c114832cb236fa06e01c43f700ac0f1c185bca547ebcb",
+      "commerce-controlled-five-s-fdb14-essibility-checks-at-1440px/1440-detail-controlled.png": "ec56cc3ee60790ac85b15ae2760181a84aa571504b8315a0cb37225386ec46de",
+      "commerce-controlled-five-s-fdb14-essibility-checks-at-1440px/1440-wishlist-controlled.png": "c7f4f86bbfac1038ae0a90035d71477788d270454341c3ea0897e6c1da32a7ce",
+      "commerce-controlled-five-s-fdb14-essibility-checks-at-1440px/1440-wishlist-controlled-viewport.png": "5266dcbd82aef772fe2b5762560b45f83a83761c3eb9b7c192c8c06f48b762c9",
+      "commerce-controlled-five-s-fdb14-essibility-checks-at-1440px/1440-my-controlled-viewport.png": "658ac1a2526c1ff9fcb3f2839cb1dd0a0d4591910b7ff71ddaf4c10c0d7b24e8",
+      "commerce-controlled-five-s-fdb14-essibility-checks-at-1440px/1440-home-controlled-viewport.png": "d92f8c8defe0c033802187797370f0ffe5890d6a9f7e677d2105374d80994887",
+      "commerce-controlled-five-s-fdb14-essibility-checks-at-1440px/1440-my-controlled.png": "658ac1a2526c1ff9fcb3f2839cb1dd0a0d4591910b7ff71ddaf4c10c0d7b24e8",
+      "commerce-controlled-five-s-fdb14-essibility-checks-at-1440px/1440-search-controlled-viewport.png": "6942b10737de26cbec379675a15889334a99ef9cdd2fdd64045d94efd5399d52",
+      "commerce-controlled-five-s-cf2a3-cessibility-checks-at-430px/430-my-controlled-viewport.png": "bc6bc9ea2cfefc8f807c82c21b2be8f9f4762e38a0a5295c6ebca93521b59f1b",
+      "commerce-controlled-five-s-cf2a3-cessibility-checks-at-430px/430-search-controlled-viewport.png": "3cb07115f3333498e54987f8eaba5b5b91606efc7b1be9b871bb93f199192d99",
+      "commerce-controlled-five-s-cf2a3-cessibility-checks-at-430px/430-detail-controlled-viewport.png": "79bc6d1bb0156c7a2444f29ca74610ec411083cc9282b700180714c24f9f8895",
+      "commerce-controlled-five-s-cf2a3-cessibility-checks-at-430px/430-my-controlled.png": "bc6bc9ea2cfefc8f807c82c21b2be8f9f4762e38a0a5295c6ebca93521b59f1b",
+      "commerce-controlled-five-s-cf2a3-cessibility-checks-at-430px/430-detail-controlled.png": "1fd705963d24f8608a11ca2a68059adfbf3e82cf4c3d4f87c44a668a94c57fa6",
+      "commerce-controlled-five-s-cf2a3-cessibility-checks-at-430px/430-wishlist-controlled-viewport.png": "d635322653deb4165e839652b81eddf4b74ced369a1757f7a3dfd4be462423a4",
+      "commerce-controlled-five-s-cf2a3-cessibility-checks-at-430px/430-home-controlled-viewport.png": "7ec7b87f9a27b0a0c06d6625cb39d497470f8cd1775e1fd64d854d989b7549b8",
+      "commerce-controlled-five-s-cf2a3-cessibility-checks-at-430px/430-wishlist-controlled.png": "73f230d91ae898207fbbb66d0388ce00d8fa7f22c8ad2bb0ccc888fb9fb78fdd",
+      "commerce-controlled-five-s-cf2a3-cessibility-checks-at-430px/430-home-controlled.png": "84cfcef8b50be98bd658ed26c3c5d67ef793012aea191e22d9c332d36bcd39e5",
+      "commerce-controlled-five-s-cf2a3-cessibility-checks-at-430px/430-search-controlled.png": "362672dbb0de0307acef9787de85570613ce7e27654bd100ed5174a5e5bdb5ec",
+      "commerce-controlled-five-s-02f4d-cessibility-checks-at-390px/390-my-controlled.png": "fb03d60e2a8772f0f28b832f0891d9b1a8982b9d3e127301e2b2d774a4305ee7",
+      "commerce-controlled-five-s-02f4d-cessibility-checks-at-390px/390-wishlist-controlled.png": "5745ce3018be1b4daba5d4944c5027d030d24559e2e971de57ef876b4402b067",
+      "commerce-controlled-five-s-02f4d-cessibility-checks-at-390px/390-search-controlled.png": "cbf9a3669c323968c4efde2cf4dced1f7ed41d4ee1c226056797d85517a8ac50",
+      "commerce-controlled-five-s-02f4d-cessibility-checks-at-390px/390-home-controlled-viewport.png": "a89403b83efb9d9a3b80bc08ed362125e26220ec7027f99b7cc7524c946eb848",
+      "commerce-controlled-five-s-02f4d-cessibility-checks-at-390px/390-my-controlled-viewport.png": "fb03d60e2a8772f0f28b832f0891d9b1a8982b9d3e127301e2b2d774a4305ee7",
+      "commerce-controlled-five-s-02f4d-cessibility-checks-at-390px/390-home-controlled.png": "a4741bf4b56f2461c34ed7eb94fb62709924af6ef524613979e6648d4bbb9e3c",
+      "commerce-controlled-five-s-02f4d-cessibility-checks-at-390px/390-detail-controlled.png": "cfbabb52a229af9c9f19ccc8e2628f3575ac1a47df30f2abb95d181f2f3f42f7",
+      "commerce-controlled-five-s-02f4d-cessibility-checks-at-390px/390-search-controlled-viewport.png": "712b5ca459cb613b9ae3941b71240ce55ec8865312caa0601c7ba38be5da9413",
+      "commerce-controlled-five-s-02f4d-cessibility-checks-at-390px/390-wishlist-controlled-viewport.png": "99fb1812b35bf5ba8b1f12d9f7c39e4b572f9f323cbe63fd7a9d9f77bc475689",
+      "commerce-controlled-five-s-02f4d-cessibility-checks-at-390px/390-detail-controlled-viewport.png": "e3581a288ff3bff9b0be4188a25b68907699d3cd4057a5dc3bf91ef16f796453",
+      "commerce-controlled-five-s-b6473-cessibility-checks-at-320px/320-detail-controlled.png": "9bff5074212e5717cb2703f85ab5d14eb039d25c5bf0ded67e9b343d2aac0965",
+      "commerce-controlled-five-s-b6473-cessibility-checks-at-320px/320-my-controlled.png": "9504a2cff97557e22f1618f75ff7feac963d691dcb33f391d5988d3b25b1bd98",
+      "commerce-controlled-five-s-b6473-cessibility-checks-at-320px/320-search-controlled.png": "d59993c01b61d68e0a83c42c9a28a0614e24809dce917e5503d9bdfe766fa454",
+      "commerce-controlled-five-s-b6473-cessibility-checks-at-320px/320-search-controlled-viewport.png": "cbdf9a2e26b8994e1cdcfcf2ef70736b62b42f70ef3cb8fb22a2e12fc2582bd2",
+      "commerce-controlled-five-s-b6473-cessibility-checks-at-320px/320-wishlist-controlled-viewport.png": "bd6aa436513f3847422ba3bc75bc8c55d513dd0990078701cfdd948bd0150f9d",
+      "commerce-controlled-five-s-b6473-cessibility-checks-at-320px/320-home-controlled-viewport.png": "7563284a58bb254ce55db9ad61904490ab4d7627c6daf7f25d9c752747c75cf5",
+      "commerce-controlled-five-s-b6473-cessibility-checks-at-320px/320-wishlist-controlled.png": "ec70c5f1efd0384a651fd17db0abc05e8c5ab554b41d9168543a2623f8675a05",
+      "commerce-controlled-five-s-b6473-cessibility-checks-at-320px/320-my-controlled-viewport.png": "e83c4516bd6c6f6b2d74f21215a07cee7add55a2b1d75962264801432a339b7c",
+      "commerce-controlled-five-s-b6473-cessibility-checks-at-320px/320-home-controlled.png": "509c6dbbd044214b457a52e82ed87d2dc95a1000a76d4dad825b652a31695411",
+      "commerce-controlled-five-s-b6473-cessibility-checks-at-320px/320-detail-controlled-viewport.png": "45fd0b30b9ff33e5559ba37660a9da37102884e602e6fc11afefb1cb7699c770",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/08-overlay-430-controlled.png": "70469441dbbcb57f295e6feb3d8cdfff66a1329233ee5785ee2eb4294cf0e761",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/09-home-430-controlled.png": "96e84ca549b0d1514891ff7ce45c44d4d5861c06fd18b0ff372cbd72666c7210",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/06-overlay-430-controlled.png": "1fb55e98450d4e92f0d312d89aed3f31ce2a793c33ab7822299dc25414efda5c",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/06-search-430-controlled.png": "050ef3d96f87e7d7f3328930d7eda0bd95259c43af46dfc0d1f4667f2c210955",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/09-search-430-controlled.png": "11d7013e234de156717953e9b2cbbc243942db8b31ab4720bfc70ed41d01fecc",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/06-home-430-controlled.png": "7f9c5fdba009776e9d7a24ac0a9aea772b0c93d21d63b7c8d8e3e7783f12071a",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/06-detail-430-controlled.png": "ca49434640f528e2f09597943796c91476f0258c9c3202f66670fc8fbcabd344",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/09-detail-430-controlled.png": "0ecc5cb3997252245cb97576cf25a86f8d01ae3f782fc7237bcfb9d99d38056a",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/09-overlay-430-controlled.png": "bd1024d4cd179785351f407a1e63dd2fa210dfa8aba22d89c2f99f69a7a2468c",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/08-search-430-controlled.png": "bab2377630f833f8b149a78dd3c736d754f28ba0fe37ce92443e891715970f4b",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/08-home-430-controlled.png": "9ca479474ec382f49ec27c03f44ebab6c7f1e8a4f45a9b170826fab84b54e4fe",
+      "round-two-second-round-con-6f2b7-and-overlay-access-at-430px/08-detail-430-controlled.png": "dd0236fe770c4fd16a802950abe1b156f22e2574d0989ac83c3ed0af8a1e497d",
+      "round-two-revised-photo-of-afa50-he-image-and-recover-online/08-offline-photo-390-controlled.png": "f47e77269119ff851edaf296c946e934e18cae3ab33cd2b79a725e76d39f3d15",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/08-home-375-controlled.png": "83b8b28b1e233036808a69d7e9fa9b190dc6fdeaaf9932548ae513a12eb3010b",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/06-detail-375-controlled.png": "cc4bf6dcbed27a8232cb92814786076d7586bbdfd87fd15f61d3d56b74ad1c9c",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/09-home-375-controlled.png": "64ce22a14dc9f9a40ef9b32ab32b5f7d183a6a97c981ea0dc50a3e0ad152d8f7",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/09-detail-375-controlled.png": "1f28804fdaa2393b23c8b0993b42f518d3e4f57bd8fb6d40e9726d38e5f0b75a",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/09-overlay-375-controlled.png": "5a49c77c4532ef2399c600e30ed4eab329317a604dd204ce2b4f39c3d0efc155",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/08-detail-375-controlled.png": "28ffb9b404f8c92257064072a58f6275e89cf330d0a8cdb31180e1696b9c94d1",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/06-home-375-controlled.png": "2cacb4252dec7b51befc476a5eed722d2e3f2bb6645ce0858809aa9fb27d8b81",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/06-search-375-controlled.png": "8aadbd5a5c6a38d06c3c2c83922e2c76cd79cafa19a1d39502c55be21a96beea",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/08-overlay-375-controlled.png": "de399d09867609187ac52989d40802e2d1057e96a0e740fc481be5f11c1c12ae",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/08-search-375-controlled.png": "a577751ce69b0e37981bc2a6143ab97c4adc5a990e0cd0d6d4d106de1044810a",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/06-overlay-375-controlled.png": "045ea3c8bf9aff2c19f146376f9f9465f53a10562fef6e25e5d9f00efb4e52a7",
+      "round-two-second-round-con-02144-and-overlay-access-at-375px/09-search-375-controlled.png": "2dcf57829bc6e78e23c23937726475cd37eb97d56f67ee0dbee2cdb28d16c3ec",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/06-search-390-controlled.png": "295abcc6f50d356335164d22ac0165e5158f5b7a4f26e9700d250f61fb89ff26",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/08-home-390-controlled.png": "7887ac41a1e053ca5c627eac02f4a6f345eab49007aa1b0b7416eb47bd5c8ec0",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/09-home-390-controlled.png": "7cfd1f84d50fc628f557a49cfc8fa16b4cf88478247693c19abc590ef09ebc76",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/09-detail-390-controlled.png": "f1ccb4d05cf1ca749e3c831c3bd4f06806a771eda16c951204470708ac38e6ba",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/06-overlay-390-controlled.png": "20a19e0d1a864a33be66a10da972fd384f25de876419196fbadb7fe00b91d43c",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/09-search-390-controlled.png": "b74da62261fb6b52ddd5a9d4cddfe7208ad436432fe3d522485039c0a7ea3414",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/06-home-390-controlled.png": "cad3ab7bd427e0f08c5fce7580ae586077f9154b04fc448877da345f8689af0e",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/08-overlay-390-controlled.png": "2689a592645da6600ede9a90d93574484c9c38efd525fe0a86b2e0af38c25a86",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/08-detail-390-controlled.png": "f38b7c3e3160f7aa9abb772a75b262eea037f8bf2539fef3eb08fa0be6e674ca",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/08-search-390-controlled.png": "0a9c4fc2f2d477f4e87fd65a99ac95565736005a2926a7fa057c193f38bea9a7",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/09-overlay-390-controlled.png": "11fdc6cc5dbed57170216d7b90d5b92524a5637c22ba10b433ab41e3ff78285d",
+      "round-two-second-round-con-ac3ac-and-overlay-access-at-390px/06-detail-390-controlled.png": "dddb2f584f646ffd357e814a8ce2d5de2f015fd8dc53aca2669e8ade2107bfa1",
+      "commerce-controlled-five-s-e246e-cessibility-checks-at-375px/375-search-controlled-viewport.png": "22106f6185aa797cdc5e3df3046a51e3a8fd2eff5821b8f4c4301861e661930d",
+      "commerce-controlled-five-s-e246e-cessibility-checks-at-375px/375-search-controlled.png": "8c0aca07fe9f81464143bf115204ea3f97dbf6b7cead42d46e7419a50fbe1e90",
+      "commerce-controlled-five-s-e246e-cessibility-checks-at-375px/375-my-controlled-viewport.png": "cc9e3aa5e3099f27a68192819a8dd1b7d13e126569acfd00bfd0c2aaaa621b92",
+      "commerce-controlled-five-s-e246e-cessibility-checks-at-375px/375-home-controlled-viewport.png": "68a045359744256ab00da329993103756c8be2486af90e5f272d8b0ad1b2a373",
+      "commerce-controlled-five-s-e246e-cessibility-checks-at-375px/375-home-controlled.png": "d3b4b546505761411c421e882120d04a075ab769ebdfb0bc450ef00f092ab01c",
+      "commerce-controlled-five-s-e246e-cessibility-checks-at-375px/375-detail-controlled.png": "d6fb0bbad70d8171f60aae077197445065f67cfb5a0318fb84aae3b752da9cbb",
+      "commerce-controlled-five-s-e246e-cessibility-checks-at-375px/375-detail-controlled-viewport.png": "8d9ce333ff5498f2f9b00a3ff1d57376c0ca87588dc0a4a387c042fcb193d895",
+      "commerce-controlled-five-s-e246e-cessibility-checks-at-375px/375-wishlist-controlled-viewport.png": "52bc598fd2b231819b9ed5b8372610462437ed3b85ed97234982d668e809ce94",
+      "commerce-controlled-five-s-e246e-cessibility-checks-at-375px/375-wishlist-controlled.png": "ba7c0a7369a0bf6a280cc2bdaba15df9ef7912b3fe73ff4c2981db88823c9dbf",
+      "commerce-controlled-five-s-e246e-cessibility-checks-at-375px/375-my-controlled.png": "cc9e3aa5e3099f27a68192819a8dd1b7d13e126569acfd00bfd0c2aaaa621b92",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/06-home-320-controlled.png": "427a7b23148c4069896009cb513f2e9b91353f24b81368f69420490ca0eb9add",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/08-home-320-controlled.png": "efe6d75516bad1c6585b457c4f67738ae3aca9f5f7afbcc235935ecd9c96e814",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/06-detail-320-controlled.png": "cf2bfdeb8b36881b99766ef9e03efd074cbf766b0ed2ceac46c862f69089d770",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/06-search-320-controlled.png": "4a51d63112a66a427fff9bd8dc552bdf52a8eafa36a3d689b1039c4c59f66f36",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/08-overlay-320-controlled.png": "ee12242739c01414ead05f956961fb4312868fc05824b31e47918b199dd9cba0",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/06-overlay-320-controlled.png": "9b27826fcf44d27c0bde012db71f964cdf76255fcbdc0597a535540f223f56ee",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/09-overlay-320-controlled.png": "af5a6c3bcadb2bba618b6259c5848be13ca9fa1410dab15a8fb96278cf5324a6",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/09-search-320-controlled.png": "6cdb52e72e2028fdeb38a37ba13977a01a83b617b86cebe008b32610e4f8c24d",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/08-detail-320-controlled.png": "5934af10db5adcc13d951d447d4e30a77b7028904064e42101475a36e2506344",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/09-home-320-controlled.png": "37dc908162e1114cd7b19dd8adfe268ab2c4eda29ce59822512ce1dbd273f1f3",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/08-search-320-controlled.png": "74bbd4b55d94f40a66cf19854ce305b114a08151d84669e0aecd6227e0f52495",
+      "round-two-second-round-con-d835e-and-overlay-access-at-320px/09-detail-320-controlled.png": "36438836e881a781cce641eceed2335873464964f7c7f96c3052ea37e66fae81",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/09-search-1440-controlled.png": "9984d3f86f5fe956e02d377acd74642ce0b638d4141dc9b3b89000882bdcc90e",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/06-search-1440-controlled.png": "02396ff43e8e355dd2ffac0450a3e4581ad12c5f444886681233a7a4d4b48999",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/08-search-1440-controlled.png": "e6a9af332f38210c233ae6dbd7b4d1c0b59dd2940abe57471dfc7f00ab7c9d7e",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/08-overlay-1440-controlled.png": "f8fdb8265b77022876860d2aa6eb7d233e73d79fff1739d4c461e00941205996",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/06-home-1440-controlled.png": "2465292027a3b18d6edf0203a2dcf4969f73ead1e18580fd072717004339c81d",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/09-home-1440-controlled.png": "50064380fd1a196bf4fa03218f5b15f68e343c0ce09fe6c4b19d282024367a63",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/08-detail-1440-controlled.png": "98d0ac8a8c42d22d36c87eaa4360529a9aadbff5044dff07ce56cdab23f6909a",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/06-overlay-1440-controlled.png": "f9d8ea5cd42684211366eb933a12e6925e132778317f47d459e2e2952050559e",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/08-home-1440-controlled.png": "e6a9af332f38210c233ae6dbd7b4d1c0b59dd2940abe57471dfc7f00ab7c9d7e",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/09-overlay-1440-controlled.png": "57cb9888ed0da4085e567bf120b8f911dfbfb5aac7b112fae3234a516daeeab8",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/09-detail-1440-controlled.png": "fd1e93db5ae81d671082081e034ca44cb7fbf793b708d3631cc2dd64b67ff251",
+      "round-two-second-round-con-bfec0-nd-overlay-access-at-1440px/06-detail-1440-controlled.png": "bbec5ef52c107df2ac8e202ebd4a56db80051cd9fd2e36a863207409dff28cff"
+    }
+  }
+}

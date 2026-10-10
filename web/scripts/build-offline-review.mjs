@@ -36,7 +36,7 @@ if (!js || !css) throw new Error("Missing standalone app output");
 const escapedJs = js.replace(/<\/script/gi, "<\\/script");
 const escapedCss = css.replace(/<\/style/gi, "<\\/style");
 const document = `<!doctype html>
-<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><title>꼬까픽 디자인 10안 · 오프라인 검토</title><style>${escapedCss}</style></head><body><div id="root"></div><script>${escapedJs}</script></body></html>`;
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><title>꼬까픽 UI/UX · 오프라인 검토</title><style>${escapedCss}</style></head><body><div id="root"></div><script>${escapedJs}</script></body></html>`;
 await mkdir(output, { recursive: true });
 await writeFile(output + "offline.html", document);
 console.log(

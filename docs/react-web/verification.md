@@ -1,5 +1,7 @@
 # React migration verification — 2026-10-10
 
+**Latest:** PO requested a deeper second round for 06/08/09. Current revised prototype evidence is in [round-two-review.md](round-two-review.md); the initial ten-direction and 11-browser-test results below are historical, not the new round’s completion proof. No visual direction is selected.
+
 This is an engineering workbench and ten-direction **design-selection candidate**.
 No new visual direction has been selected. It is not release completion, current
 supplier-photo approval, or physical iPhone Product Owner approval.
