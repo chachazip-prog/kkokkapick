@@ -20,7 +20,7 @@ Local integration checks against the submitted source:
 - Vitest: **108/108**, eleven files. Covers legacy domain behavior, offer-specific
   filtering, source clocks, malformed-source isolation, multi-child local CRUD,
   local-write failure, image recovery, and initial catalog failure.
-- Playwright: **10/10**. Covers favorites/targets/children across reload,
+- Playwright: **11/11** after adding proposal deep-link/Back restoration. Covers favorites/targets/children across reload,
   zero-month child selection, 12-photo initial grid and scroll-triggered automatic
   append, opener focus, storage denial, exact expiry, and expired original-photo
   request suppression. The five-screen matrix runs at **320/375/390/430/1440px**.
@@ -109,3 +109,43 @@ Technical approval delegation does not complete these external or owner gates.
 Main remains unmerged; production is not deployed. No notification automation is
 reactivated. Exact public bundle SHA, PR CI state and public browser result belong
 in the current PR report, separate from local controlled evidence and data SHA.
+
+## Delivery-path follow-up
+
+The first submitted commit `15e02311f21305fa3b5252337609cf7d4bf9fe7b` passed
+[React CI 38028127590](https://github.com/chachazip-prog/kkokkapick/actions/runs/38028127590)
+on 2026-10-10; its controlled screenshot artifact is `11660408956`. This is
+independent of the supplier refresh and skipped actual-source browser job.
+
+The immutable raw.githack.com preview returned **HTTP403** on a normal public
+browser attempt and normal HTTP header check. No proxy, identity spoofing or
+access-control workaround was used. It is not reported as a working public demo.
+A separate Vercel personal Hobby account was inspected, but no project or
+deployment was created: the documented Hobby/fair-use commercial restriction
+includes affiliate linking. The unused draft hosting configuration was removed.
+No paid plan or service was enabled.
+
+The fallback is a [web-readable numbered screenshot comparison](preview.md)
+and `react-preview/offline.html`, a single HTML containing React, fonts and the
+already approved campaign art. It contains no supplier photos, source catalog,
+fixture merchandise or child records. Source connection remains HOLD; serving
+the file does not make the catalog current. Its browser check via an ordinary
+local static server exercised **30 proposal compositions + four workbench
+routes**, decoded embedded campaign images and both fonts, and observed zero
+page errors, horizontal overflow or supplier-original requests. Direct `file://`
+navigation was blocked by this environment's browser policy; that path was not
+bypassed and is not claimed as tested here. PC users can download the file or
+serve it locally; mobile Safari/physical iPhone remains unverified.
+
+The capture delivery includes **30 campaign-only home/search/detail screenshots**,
+with no merchandising facts invented. Capture is not counted as opening all
+30 images. Root actually opened all ten delivery-home JPGs before handoff; search/detail captures are generated evidence, not claimed as thirty individually inspected delivery images. The earlier independent composition review remains separately recorded.
+Late integration fixed external proposal hash links and browser Back while
+retaining the same reviewed layouts. The new browser regression passes; no
+visual direction was chosen by this engineering fix.
+
+Standalone final check: **2026-10-10 20:40:02 KST**, HTML SHA-256
+`00576298de43c8279018dcb2ecc4f8fbb773566fb35ce57b135665cab3654092`.
+The byte hash was unchanged through all 30 compositions and four workbench
+routes; UI/display fonts loaded, page errors/overflow/original requests were zero.
+This normal local-server check is not a successful GitHack public-browser check.

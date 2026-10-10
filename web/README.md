@@ -16,6 +16,7 @@ npm test
 npm run format:check
 npm run test:browser
 npm run build:review
+npm run build:offline
 ```
 
 Playwright uses an available `/usr/bin/chromium` or its installed Chromium. Install the latter with `npx playwright install chromium` if needed. Browser checks use **controlled synthetic fixtures**, visibly labeled and excluded from the production bundle. They do not establish supplier photo validity or a release-ready catalog. CI saves controlled screenshots for three days.

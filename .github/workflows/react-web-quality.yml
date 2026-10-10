@@ -35,7 +35,10 @@ jobs:
       - run: npm run typecheck
       - run: npm run format:check
       - run: npm test
-      - run: npm run build
+      - run: npm run build:review
+      - run: npm run build:offline
+      - name: Check that the committed review matches its source
+        run: git diff --exit-code -- ../react-preview
       - name: Install Chromium for controlled UX regression checks
         run: npx playwright install --with-deps chromium
       - name: Controlled browser and accessibility checks (not supplier-image verification)

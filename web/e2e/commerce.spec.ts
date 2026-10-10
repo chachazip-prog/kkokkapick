@@ -2,6 +2,33 @@ import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { controlSource } from "./fixtures";
 
+test("proposal deep links and browser Back restore direction, surface and device", async ({
+  page,
+}) => {
+  await controlSource(page);
+  await page.goto("/#/proposals?proposal=01&surface=home&device=mobile");
+  await expect(
+    page.locator(".kp-proposal-screen.direction-01.screen-home"),
+  ).toBeVisible();
+  await page.evaluate(() => {
+    window.location.hash =
+      "#/proposals?proposal=02&surface=detail&device=desktop";
+  });
+  await expect(
+    page.locator(".kp-proposal-screen.direction-02.screen-detail"),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "데스크톱", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await page.goBack();
+  await expect(
+    page.locator(".kp-proposal-screen.direction-01.screen-home"),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "휴대폰", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+});
+
 test("local shopping and several children survive navigation and reload", async ({
   page,
 }) => {

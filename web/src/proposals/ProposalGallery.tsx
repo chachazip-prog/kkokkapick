@@ -2368,6 +2368,26 @@ export function ProposalGallery({
       `${window.location.pathname}${window.location.search}#/proposals?proposal=${directionId}&surface=${surface}&device=${device}`,
     );
   }, [directionId, surface, device]);
+  useEffect(() => {
+    const readExternalNavigation = () => {
+      if (!window.location.hash.startsWith("#/proposals")) return;
+      const next = readReviewLocation();
+      setDirectionId(next.id);
+      setSurface(next.surface);
+      setDevice(next.device);
+      setOverlay(null);
+      setQuery("");
+      setCategory("전체");
+      setDomain("apparel");
+      setSelectedId(undefined);
+    };
+    window.addEventListener("hashchange", readExternalNavigation);
+    window.addEventListener("popstate", readExternalNavigation);
+    return () => {
+      window.removeEventListener("hashchange", readExternalNavigation);
+      window.removeEventListener("popstate", readExternalNavigation);
+    };
+  }, []);
   const onDirection = (id: ProposalId) => {
     setDirectionId(id);
     setOverlay(null);

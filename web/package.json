@@ -12,7 +12,8 @@
     "test:browser": "playwright test",
     "format:check": "prettier --check src e2e index.html vite.config.ts playwright.config.ts",
     "format": "prettier --write src e2e index.html vite.config.ts playwright.config.ts",
-    "build:review": "node scripts/build-review.mjs"
+    "build:review": "node scripts/build-review.mjs",
+    "build:offline": "node scripts/build-offline-review.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
