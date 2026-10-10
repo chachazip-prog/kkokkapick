@@ -2,6 +2,9 @@
 .env.*
 !.env.example
 node_modules/
+web/dist/
+web/*.tsbuildinfo
+web/test-results/
 .DS_Store
 
 # Mobile signing / store credentials

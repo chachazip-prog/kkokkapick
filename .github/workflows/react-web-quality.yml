@@ -1,0 +1,48 @@
+name: React web quality
+
+on:
+  pull_request:
+    paths:
+      - "web/**"
+      - "react-preview/**"
+      - "DESIGN.md"
+      - "UX-CONTRACT.md"
+      - ".github/workflows/react-web-quality.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: react-web-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm run typecheck
+      - run: npm run format:check
+      - run: npm test
+      - run: npm run build
+      - name: Install Chromium for controlled UX regression checks
+        run: npx playwright install --with-deps chromium
+      - name: Controlled browser and accessibility checks (not supplier-image verification)
+        run: npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: react-controlled-ui-qa
+          path: web/test-results/
+          retention-days: 3

@@ -1,0 +1,14 @@
+{
+  "kind": "independent controlled browser check; not supplier QA",
+  "viewport": "390x844",
+  "clock": "2026-10-10T05:01:00Z",
+  "checks": [
+    "Three fixture offers from two merchants render as two sellers.",
+    "Negative/reversed price bounds retain text, focus the bad field and do not commit; ordered bounds commit.",
+    "Target validation focuses input; Escape restores product opener with filters intact.",
+    "Product-to-child dialog handoff keeps focus within the child dialog.",
+    "Recent item restores its actual My-page opener after Escape.",
+    "Unknown technical route visibly reports missing screen."
+  ],
+  "failures": []
+}
