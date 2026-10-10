@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-10T09:10:02.708Z",
+  "syncedAt": "2026-10-10T10:05:55.708Z",
   "sourceCount": 820,
   "productCount": 741,
-  "priceChangeCount": 1,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_44e0c0e6",
@@ -829,10 +829,8 @@
       "normalizedName": "기타 아동복 유아상하복 키즈옷 유아옷 수영복 세트 플랩캡 바캉스 상의 하의 아기수영복 유아수영복 이마트몰 wfo3wbh",
       "variant": "",
       "modelCode": "WFO3WBH",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=529932808",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=529932808"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상하복",
       "query": "키즈옷",
       "offers": [
@@ -6571,10 +6569,8 @@
       "normalizedName": "오션스카이 여아 그래픽 티셔츠 fejg5156b0b ys",
       "variant": "",
       "modelCode": "FEJG5156B0B_YS",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=529939780",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=529939780"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "여아 티셔츠",
       "offers": [
@@ -18939,10 +18935,8 @@
       "normalizedName": "캉골 키즈 예쁜티셔츠 기능성반팔티 프린팅티셔츠 시어서커 기능성티 아메카지 오버핏 빅사이즈 루즈핏 여름코디 스트라이프티 폴로티 카라티 무지티 꾸안꾸 데일리룩",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=529962222",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=529962222"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "상의",
       "query": "키즈 티셔츠",
       "offers": [
