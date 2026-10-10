@@ -1,24 +1,24 @@
 {
-  "syncedAt": "2026-10-10T11:07:18.741Z",
-  "sourceProducts": 821,
-  "canonicalProducts": 742,
+  "syncedAt": "2026-10-10T12:10:44.866Z",
+  "sourceProducts": 818,
+  "canonicalProducts": 739,
   "queries": 73,
   "recognizedBrandProducts": 412,
-  "recognizedBrandRatePct": 55.5,
+  "recognizedBrandRatePct": 55.8,
   "officialBrandGuideProducts": 21,
   "officialBrandGuideRatePct": 2.8,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 821,
-    "ok": 821,
+    "checked": 818,
+    "ok": 818,
     "failed": 0,
     "statuses": {
-      "200": 821
+      "200": 818
     },
     "rate": 1
   },
-  "canonicalImageProducts": 742,
+  "canonicalImageProducts": 739,
   "canonicalImageRatePct": 100,
   "multiImageProducts": 63,
   "multiImageRatePct": 8.5,
@@ -27,7 +27,7 @@
   "topBrands": [
     {
       "name": "미분류",
-      "count": 330
+      "count": 327
     },
     {
       "name": "베네통키즈",
@@ -121,11 +121,11 @@
     },
     {
       "name": "상하복",
-      "count": 87
+      "count": 86
     },
     {
       "name": "바디수트",
-      "count": 83
+      "count": 81
     },
     {
       "name": "원피스",
@@ -147,11 +147,11 @@
     },
     {
       "name": "베이비",
-      "count": 251
+      "count": 249
     },
     {
       "name": "유아",
-      "count": 53
+      "count": 52
     },
     {
       "name": "전체",
