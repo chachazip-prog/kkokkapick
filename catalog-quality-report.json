@@ -1,48 +1,72 @@
 {
-  "syncedAt": "2026-10-10T04:07:28.841Z",
-  "sourceProducts": 676,
-  "canonicalProducts": 606,
+  "syncedAt": "2026-10-10T05:13:59.323Z",
+  "sourceProducts": 814,
+  "canonicalProducts": 735,
   "queries": 73,
-  "recognizedBrandProducts": 318,
-  "recognizedBrandRatePct": 52.5,
-  "officialBrandGuideProducts": 15,
-  "officialBrandGuideRatePct": 2.5,
+  "recognizedBrandProducts": 408,
+  "recognizedBrandRatePct": 55.5,
+  "officialBrandGuideProducts": 21,
+  "officialBrandGuideRatePct": 2.9,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 676,
-    "ok": 676,
+    "checked": 814,
+    "ok": 814,
     "failed": 0,
     "statuses": {
-      "200": 676
+      "200": 814
     },
     "rate": 1
   },
-  "canonicalImageProducts": 606,
+  "canonicalImageProducts": 735,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 52,
+  "multiImageProducts": 63,
   "multiImageRatePct": 8.6,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 288
-    },
-    {
-      "name": "블루독베이비",
-      "count": 22
-    },
-    {
-      "name": "베이비맥스",
-      "count": 21
+      "count": 327
     },
     {
       "name": "베네통키즈",
-      "count": 19
+      "count": 32
+    },
+    {
+      "name": "베이비맥스",
+      "count": 29
+    },
+    {
+      "name": "블루독베이비",
+      "count": 24
     },
     {
       "name": "밀크베이비",
+      "count": 23
+    },
+    {
+      "name": "헤지스키즈",
+      "count": 21
+    },
+    {
+      "name": "삠뽀요",
+      "count": 20
+    },
+    {
+      "name": "모이몰른",
+      "count": 19
+    },
+    {
+      "name": "빈폴키즈",
+      "count": 18
+    },
+    {
+      "name": "휠라키즈",
+      "count": 18
+    },
+    {
+      "name": "페리미츠",
       "count": 17
     },
     {
@@ -50,120 +74,96 @@
       "count": 16
     },
     {
-      "name": "빈폴키즈",
-      "count": 15
-    },
-    {
-      "name": "압소바",
-      "count": 14
-    },
-    {
-      "name": "헤지스키즈",
-      "count": 14
-    },
-    {
-      "name": "휠라키즈",
+      "name": "달퐁",
       "count": 13
     },
     {
-      "name": "달퐁",
+      "name": "에뜨와",
       "count": 12
     },
     {
-      "name": "삠뽀요",
+      "name": "압소바",
       "count": 11
     },
     {
-      "name": "알콩단잠",
+      "name": "MLB키즈",
+      "count": 11
+    },
+    {
+      "name": "쇼콜라",
       "count": 10
     },
     {
-      "name": "몽클레르키즈",
-      "count": 9
-    },
-    {
-      "name": "MLB키즈",
+      "name": "알콩단잠",
       "count": 9
     },
     {
       "name": "아가방",
-      "count": 8
+      "count": 9
     },
     {
-      "name": "나이키키즈",
-      "count": 8
-    },
-    {
-      "name": "콩제슬래드",
-      "count": 8
-    },
-    {
-      "name": "쇼콜라",
-      "count": 8
-    },
-    {
-      "name": "아림클로젯",
-      "count": 7
+      "name": "몽클레르키즈",
+      "count": 9
     }
   ],
   "categories": [
     {
-      "name": "아우터",
-      "count": 104
-    },
-    {
       "name": "상의",
-      "count": 102
+      "count": 165
     },
     {
-      "name": "바디수트",
-      "count": 88
-    },
-    {
-      "name": "상하복",
-      "count": 81
+      "name": "아우터",
+      "count": 143
     },
     {
       "name": "하의",
+      "count": 108
+    },
+    {
+      "name": "상하복",
+      "count": 87
+    },
+    {
+      "name": "바디수트",
       "count": 81
     },
     {
       "name": "원피스",
-      "count": 61
+      "count": 75
     },
     {
       "name": "기타",
-      "count": 49
+      "count": 45
     },
     {
       "name": "실내복",
-      "count": 40
+      "count": 31
     }
   ],
   "stages": [
     {
       "name": "키즈",
-      "count": 259
+      "count": 348
     },
     {
       "name": "베이비",
-      "count": 226
-    },
-    {
-      "name": "전체",
-      "count": 54
-    },
-    {
-      "name": "신생아",
-      "count": 42
+      "count": 245
     },
     {
       "name": "유아",
-      "count": 23
+      "count": 53
+    },
+    {
+      "name": "전체",
+      "count": 49
+    },
+    {
+      "name": "신생아",
+      "count": 36
     },
     {
       "name": "토들러",
-      "count": 2
+      "count": 4
     }
   ]
 }
