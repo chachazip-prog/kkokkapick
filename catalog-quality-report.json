@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-11T09:13:37.024Z",
+  "syncedAt": "2026-10-11T10:06:16.700Z",
   "sourceProducts": 831,
   "canonicalProducts": 752,
   "queries": 73,
@@ -11,15 +11,16 @@
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
     "checked": 831,
-    "ok": 831,
-    "failed": 0,
+    "ok": 829,
+    "failed": 2,
     "statuses": {
-      "200": 831
+      "200": 829,
+      "400": 2
     },
-    "rate": 1
+    "rate": 0.9975932611311673
   },
-  "canonicalImageProducts": 752,
-  "canonicalImageRatePct": 100,
+  "canonicalImageProducts": 750,
+  "canonicalImageRatePct": 99.7,
   "multiImageProducts": 64,
   "multiImageRatePct": 8.5,
   "channelPrefixedDisplayTitles": 0,

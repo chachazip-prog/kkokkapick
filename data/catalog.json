@@ -1,6 +1,6 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-11T09:13:37.024Z",
+  "syncedAt": "2026-10-11T10:06:16.700Z",
   "sourceCount": 831,
   "productCount": 752,
   "priceChangeCount": 0,
@@ -17298,10 +17298,8 @@
       "normalizedName": "밀크베이비 세인트 벨로아밍크골지 유아레깅스",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533380694",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533380694"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "하의",
       "query": "유아 레깅스",
       "offers": [
@@ -18409,10 +18407,8 @@
       "normalizedName": "레드 심플 단색 후드 유아 패딩 우주복 310154",
       "variant": "",
       "modelCode": "310154",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533382894",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533382894"
-      ],
+      "imageUrl": null,
+      "imageUrls": [],
       "category": "바디수트",
       "query": "유아 점퍼",
       "offers": [
