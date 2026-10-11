@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { useKkokkapick } from "./catalog-provider";
 import type { ClientProduct } from "@/domain";
@@ -19,9 +19,17 @@ export function OriginalPhoto({
     "loading" | "ready" | "recovering" | "offline" | "unavailable"
   >("loading");
   const [attempt, setAttempt] = useState(0);
+  const image = useRef<HTMLImageElement>(null);
   const active = useRef(true);
   const pending = useRef(false);
   const reloaded = useRef(false);
+  useLayoutEffect(() => {
+    const element = image.current;
+    // React 19 can set a JSX src during preparation and again at host mount
+    // or Suspense reveal. Assign once to the connected node instead; explicit
+    // recovery attempts still create a new image node with the same original.
+    if (element && element.getAttribute("src") !== url) element.src = url;
+  }, [attempt, url]);
   useEffect(() => {
     active.current = true;
     return () => {
@@ -63,7 +71,7 @@ export function OriginalPhoto({
       ) : (
         <img
           key={attempt}
-          src={url}
+          ref={image}
           alt={name}
           loading={loading}
           decoding="async"

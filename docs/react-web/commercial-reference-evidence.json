@@ -328,8 +328,10 @@
       "format": "PASS",
       "review_build": "PASS",
       "offline_build": "PASS",
-      "unit_tests_passed": 108,
-      "browser_tests_passed": 34
+      "unit_tests_passed": 109,
+      "browser_tests_passed": 34,
+      "unit_test_command": "npm test -- --maxWorkers=1",
+      "prior_parallel_unit_timeout_status": "107/109 pass and two 5s timeouts during concurrent browser load; rerun sequentially 109/109 pass without changing timeouts"
     },
     "automated_viewport_widths": [320, 375, 390, 430, 1440],
     "root_core_mobile_screens_opened": 20,
@@ -340,7 +342,11 @@
     "code_and_test_sha256": {
       "web/src/screens/TechnicalApp.tsx": "58c122093254d0ed97abad601a844b7243c144e43e2f2115fbfa357bc323b983",
       "web/src/hooks/use-infinite-catalog.ts": "ccba7c09c928dac96198984e72a70fb962381c8a1541279264b030063958ac9b",
-      "web/e2e/commerce.spec.ts": "6ce6f391f4c3c9fb1b2c8fba459c7f441b181248933373ad67db79dbd6f7c102"
+      "web/e2e/commerce.spec.ts": "6ce6f391f4c3c9fb1b2c8fba459c7f441b181248933373ad67db79dbd6f7c102",
+      "web/src/components/commerce-gallery.tsx": "92f5cec949a7575a1a9719f199994094715698587d4b2676fbf8cfa657f72918",
+      "web/src/components/commerce-gallery.test.tsx": "6d4ad0b518f2a8fdba0c03687679c24e93877d2b0fea41f4716abeb7de727874",
+      "web/src/hooks/use-catalog.ts": "83230d53bb81ddb136a260a0811f3699d1ff607759a31cb944a4bebb6ebdb2f3",
+      "web/src/domain/image-availability.ts": "6ca6cf99f930457a13d1f66fecfc188bc89044f9d614b6ee03532790d797bfc4"
     },
     "screenshot_manifest": [
       {
@@ -408,7 +414,7 @@
       },
       {
         "filename": "320-wishlist-controlled-viewport.png",
-        "sha256": "8be4f058376eee9301ca7a2a1856627763c940041bf4c7875c235b2bcdfe669d",
+        "sha256": "bd6aa436513f3847422ba3bc75bc8c55d513dd0990078701cfdd948bd0150f9d",
         "kind": "controlled_ui_only",
         "root_opened": true,
         "independent_opened": true
@@ -542,8 +548,8 @@
     ],
     "independent_report": "commercial-reference-independent-review.md",
     "standalone_http_check": {
-      "checkedAt": "2026-10-10T22:47:26.301Z",
-      "artifactSha256": "5116186bebe907e2706b282e8328b86275f048e2a5e4f521787dff0a07163935",
+      "checkedAt": "2026-10-11T05:05:59.718Z",
+      "artifactSha256": "9af9f33f6646dcb513390c6d19bdaa3bb64bd6bf599dbebde80443188ea4533f",
       "viewport": 390,
       "errors": [],
       "supplierRequests": 0,
@@ -595,7 +601,145 @@
       }
     },
     "same_code_head_and_ci_recorded_in": "https://github.com/chachazip-prog/kkokkapick/pull/207",
-    "physical_iphone_PO_reviewed": false
+    "physical_iphone_PO_reviewed": false,
+    "final_browser_runner_status": {
+      "status": "passed",
+      "failedTests": []
+    },
+    "final_browser_runner_completed_at": "2026-10-10T23:03:04.368469+00:00",
+    "image_src_assignment_correction": {
+      "first_ci_url": "https://github.com/chachazip-prog/kkokkapick/actions/runs/38092842959",
+      "first_ci_status": "FAILURE 33/34 browser tests",
+      "failed_http_requests": 5,
+      "unchanged_http_cap": 4,
+      "unchanged_shared_probe_cap": 2,
+      "first_ci_artifact": {
+        "id": 11684423775,
+        "size_in_bytes": 9350708,
+        "expires_at": "2026-10-13T22:53:03Z",
+        "normal_download": "HTTP 403; no bypass; CI trace not opened"
+      },
+      "fifth_ci_request_source_directly_established": false,
+      "normal_independent_fixture_evidence": {
+        "baseline": {
+          "checked_at": "2026-10-10T22:56:36.212Z",
+          "file_sha256": "edd03491e92ee0225b6e560c5e120e038a1916508b8192d620f2353f7beeb101",
+          "start_hashes": {
+            "web/src/components/commerce-gallery.tsx": "9a74c59912c5ef46394c8cb0d5dd959ac7b2a10d5993f36f434fe3a97ab3d55d",
+            "web/src/hooks/use-catalog.ts": "83230d53bb81ddb136a260a0811f3699d1ff607759a31cb944a4bebb6ebdb2f3",
+            "web/src/domain/image-availability.ts": "6ca6cf99f930457a13d1f66fecfc188bc89044f9d614b6ee03532790d797bfc4"
+          },
+          "end_hashes": {
+            "web/src/components/commerce-gallery.tsx": "9a74c59912c5ef46394c8cb0d5dd959ac7b2a10d5993f36f434fe3a97ab3d55d",
+            "web/src/hooks/use-catalog.ts": "83230d53bb81ddb136a260a0811f3699d1ff607759a31cb944a4bebb6ebdb2f3",
+            "web/src/domain/image-availability.ts": "6ca6cf99f930457a13d1f66fecfc188bc89044f9d614b6ee03532790d797bfc4"
+          },
+          "trials": [
+            {
+              "round": 0,
+              "http_requests": 4,
+              "after_selection_requests": 4,
+              "probe_loads": 2
+            },
+            {
+              "round": 1,
+              "http_requests": 4,
+              "after_selection_requests": 4,
+              "probe_loads": 2
+            },
+            {
+              "round": 2,
+              "http_requests": 4,
+              "after_selection_requests": 4,
+              "probe_loads": 2
+            },
+            {
+              "round": 3,
+              "http_requests": 4,
+              "after_selection_requests": 4,
+              "probe_loads": 2
+            },
+            {
+              "round": 4,
+              "http_requests": 4,
+              "after_selection_requests": 4,
+              "probe_loads": 2
+            }
+          ]
+        },
+        "results": {
+          "checked_at": "2026-10-10T22:59:04.347Z",
+          "file_sha256": "7af835d0c2fbab5e617c40bd0692a096694e230b9fd9f2009d2b20dd83b34699",
+          "start_hashes": {
+            "web/src/components/commerce-gallery.tsx": "92f5cec949a7575a1a9719f199994094715698587d4b2676fbf8cfa657f72918",
+            "web/src/hooks/use-catalog.ts": "83230d53bb81ddb136a260a0811f3699d1ff607759a31cb944a4bebb6ebdb2f3",
+            "web/src/domain/image-availability.ts": "6ca6cf99f930457a13d1f66fecfc188bc89044f9d614b6ee03532790d797bfc4"
+          },
+          "end_hashes": {
+            "web/src/components/commerce-gallery.tsx": "92f5cec949a7575a1a9719f199994094715698587d4b2676fbf8cfa657f72918",
+            "web/src/hooks/use-catalog.ts": "83230d53bb81ddb136a260a0811f3699d1ff607759a31cb944a4bebb6ebdb2f3",
+            "web/src/domain/image-availability.ts": "6ca6cf99f930457a13d1f66fecfc188bc89044f9d614b6ee03532790d797bfc4"
+          },
+          "trials": [
+            {
+              "round": 0,
+              "http_requests": 3,
+              "after_selection_requests": 3,
+              "probe_loads": 2
+            },
+            {
+              "round": 1,
+              "http_requests": 3,
+              "after_selection_requests": 3,
+              "probe_loads": 2
+            },
+            {
+              "round": 2,
+              "http_requests": 3,
+              "after_selection_requests": 3,
+              "probe_loads": 2
+            },
+            {
+              "round": 3,
+              "http_requests": 3,
+              "after_selection_requests": 3,
+              "probe_loads": 2
+            },
+            {
+              "round": 4,
+              "http_requests": 3,
+              "after_selection_requests": 3,
+              "probe_loads": 2
+            }
+          ]
+        }
+      }
+    },
+    "final_independent_normal_chromium": {
+      "checkedAt": "2026-10-11T05:06:46.467Z",
+      "scope": "intercepted controlled fixture only; no supplier source collection",
+      "countAfterRecovery": 3,
+      "countAfterDetail": 3,
+      "dots": 2,
+      "overflow": false,
+      "errors": [],
+      "trace": [
+        {
+          "url": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=ui-test-qa-01-0",
+          "time": 1791695204272
+        },
+        {
+          "url": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=ui-test-qa-01-0",
+          "time": 1791695204806
+        },
+        {
+          "url": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=ui-test-qa-01-0",
+          "time": 1791695205706
+        }
+      ],
+      "pass": true
+    },
+    "final_independent_report": "commercial-reference-independent-review.md"
   },
   "design_selection_id": null,
   "main_merged": false,

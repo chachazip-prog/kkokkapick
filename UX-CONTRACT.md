@@ -26,6 +26,8 @@ Fast typing immediately after a tab change resolves the route at event time, so 
 
 No user-visible more button. Infinite append needs scrolling and keeps product keys stable; modal-only URL parameters do not reset the list. Photo mode shows a bordered, gapless 3×4 initial grid; selecting a photograph reveals its real product card and seller data. Multi-image gallery is scroll-snap/swipe/arrow/dot operable. One unavailable original can be quarantined without discarding a healthy alternate or seller facts; offline status is not permanent failure.
 
+OriginalPhoto assigns the original URL once to each connected image node. StrictMode or Suspense reappearance must not reassign that node's source and create another rendered request. An explicit recovery attempt creates a new node as before. URL/generation-shared probes remain limited to two; successful-probe rendered reload and offline reconnection retain the existing quarantine, source-clock and expiry policy. This client deduplication is not a guarantee of provider image availability.
+
 ## Commands and evidence ownership
 
 - `cd web && npm run typecheck`

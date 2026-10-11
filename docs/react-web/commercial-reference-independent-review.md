@@ -45,3 +45,44 @@ Root-provided final core20mobile plus5PC screenshot review: performed directly; 
 Actual current supplier photograph decoding/crop/diversity, material/actual sales-size provenance, stable photograph availability/rights, selected visual design, actual iPhone Product Owner approval: HOLD / not performed in this review.
 
 Reviewer changed only temporary local files, started a local Vite server, and performed read-only product checks. No Git edit/commit/push, supplier collection, source-clock/TTL/cadence change, production deployment, main merge, child upload, external asset publication, or new paid service was performed by this reviewer.
+
+---
+
+## Independent final interaction and visual review
+
+Reviewed 2026-10-11 UTC. Scope: commercial-reference analysis and design-independent app behavior, including the final `OriginalPhoto` idempotent source assignment. This is not release visual approval or fresh supplier-image QA.
+
+### Read-only evidence and actual screen inspection
+
+Read `AGENTS.md`, `.agents/ux-ui.md`, commercial-reference overview/independent review/evidence, `commerce-gallery.tsx`, `use-catalog.ts`, `image-availability.ts`, relevant component recovery tests, and the bounded browser recovery assertion. Source/design/docs/Git were not edited by this reviewer.
+
+The freshly generated `/tmp/kkokkapick-reference-final-browser/.last-run.json` records `status: passed`, `failedTests: []`. This file alone does not assert supplier photos or a release-ready design.
+
+Actually opened every final Home/Search/Detail/Wishlist/My viewport image under `/tmp/kkokkapick-reference-final-browser/commerce-controlled-five-*`: 20 mobile captures at 320, 375, 390, 430 px, and 5 PC captures at 1440 px. All are explicitly labeled CONTROLLED UI TEST. These are final source-fix captures, not the earlier pre-fix screenshot set.
+
+No new blocking text clipping, horizontal overflow, or fixed CTA/navigation collision caused by the scoped navigation/photo-source changes was visible in these 25 captures. Existing release-design issues remain: home first merchandise/price is below the mobile first viewport; search uses several full-width tool rows; the extremely long wishlist test name substantially delays its price. The source fixture is useful for flow/layout checks, not supplier photograph aesthetics or variety. Release visual quality remains HOLD.
+
+### Bounded photo recovery independently checked
+
+Reviewed `/tmp/kkokkapick-independent-image-recovery/baseline.json` and `results.json` using summarized actual request/event records. Both have identical start/end hashes within each run. Five baseline rounds each show HTTP 4 (two rendered requests + two shared probes); five fixed rounds each show HTTP 3 (one rendered request + two shared probes). Opening selected card/detail adds zero requests for the quarantined URL. `use-catalog.ts` and `image-availability.ts` hashes are unchanged across both runs.
+
+The initial CI failure reported five requests against the unchanged <=4 assertion. Its fifth request's specific origin is unconfirmed because CI artifact download was denied with HTTP 403. The direct comparable local evidence is 4→3, not a proven CI 5→3 reproduction. The test ceiling remains <=4; the shared probe budget remains two. No test-budget relaxation, CSS, source clock, TTL, provider cadence, catalog query, provider access, or supplier storage change was introduced by this fix.
+
+I additionally performed one normal local Chromium context against the current Vite source with only intercepted controlled fixtures. `/tmp/kkokkapick-reference-final-independent-network.json` records 2026-10-11T05:06:46.467Z: three failed original URL requests after recovery, still three after selected-card/detail opening, two surviving dots, no horizontal overflow, no page errors, PASS. No provider source collection occurred.
+
+`OriginalPhoto` assigns the URL once to the connected image node when its src differs. StrictMode/Suspense reappearance does not repeat assignment. Explicit retry still remounts a fresh attempt node. Existing alt/name, lazy/eager loading, async decoding, error handling, offline reconnection, stale-generation quarantine and shared retry behavior are retained. New StrictMode/Suspense source-write regression test asserts exactly one assignment without modifying the browser request limit.
+
+### Final fingerprints
+
+- `commerce-gallery.tsx`: `92f5cec949a7575a1a9719f199994094715698587d4b2676fbf8cfa657f72918`
+- `use-catalog.ts`: `83230d53bb81ddb136a260a0811f3699d1ff607759a31cb944a4bebb6ebdb2f3`
+- `image-availability.ts`: `6ca6cf99f930457a13d1f66fecfc188bc89044f9d614b6ee03532790d797bfc4`
+- `commerce-gallery.test.tsx`: `6d4ad0b518f2a8fdba0c03687679c24e93877d2b0fea41f4716abeb7de727874`
+
+### Bounded verdict
+
+PASS for the reviewed design-independent navigation and photo-recovery implementation, the final controlled core 20 mobile/5 PC capture inspection, and the independently replayed bounded recovery flow. No new functional blocker identified.
+
+HOLD for final visual design selection/quality, current real supplier photo decoding/crop/diversity, stable image availability/redisplay rights, source materials/actual selling sizes/explicit play ages, operator information and actual iPhone Product Owner approval. Technical approval delegation does not supply these facts. Existing source photographs remain expired and may not be presented as current normal goods. Main merge/production deployment are not authorized or performed.
+
+Repository overview currently still states unit 108; root reports final 109 unit and full 34 browser PASS after the added source-write regression. Root should record latest final code/QA SHA and actual new CI result in the PR rather than treating initial CI as green. This reviewer did not independently rerun the full suite, refresh provider sources, or bypass artifact access.

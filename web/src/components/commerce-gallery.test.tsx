@@ -5,10 +5,11 @@ import {
   render,
   screen,
 } from "@testing-library/react";
+import { StrictMode, Suspense } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createImageAvailabilityState, toClientProduct } from "@/domain";
 import type { ImageRecoveryStatus } from "@/domain";
-import { CommerceGallery, PhotoTile } from "./commerce-gallery";
+import { CommerceGallery, OriginalPhoto, PhotoTile } from "./commerce-gallery";
 
 const context = vi.hoisted(() => ({ value: {} as Record<string, unknown> }));
 vi.mock("./catalog-provider", () => ({ useKkokkapick: () => context.value }));
@@ -34,6 +35,42 @@ afterEach(() => {
 });
 
 describe("original commerce photo recovery", () => {
+  it("sets the original source once across StrictMode and Suspense reappearance", () => {
+    const attribute = vi.spyOn(Element.prototype, "setAttribute");
+    const property = vi.spyOn(HTMLImageElement.prototype, "src", "set");
+    const pending = new Promise<void>(() => {});
+    function Suspend({ blocked }: { blocked: boolean }) {
+      if (blocked) throw pending;
+      return null;
+    }
+    const view = (blocked: boolean) => (
+      <StrictMode>
+        <Suspense fallback={<p>통제된 화면 대기</p>}>
+          <OriginalPhoto
+            url={url}
+            name="아기 옷"
+            generation={1}
+            loading="eager"
+          />
+          <Suspend blocked={blocked} />
+        </Suspense>
+      </StrictMode>
+    );
+    const { rerender } = render(view(false));
+    const original = screen.getByRole("img");
+    rerender(view(true));
+    expect(screen.getByText("통제된 화면 대기")).toBeTruthy();
+    rerender(view(false));
+    expect(screen.getByRole("img")).toBe(original);
+    const attributeWrites = attribute.mock.calls.filter(
+      (call) => call[0] === "src" && call[1] === url,
+    ).length;
+    const propertyWrites = property.mock.calls.filter(
+      (call) => call[0] === url,
+    ).length;
+    expect(attributeWrites + propertyWrites).toBe(1);
+  });
+
   it("retries the original URL after reconnection while preserving an offline photo", async () => {
     const recover = vi.fn(async (): Promise<ImageRecoveryStatus> => "offline");
     context.value.recoverPhoto = recover;
