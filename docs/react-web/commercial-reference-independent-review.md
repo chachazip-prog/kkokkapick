@@ -86,3 +86,14 @@ PASS for the reviewed design-independent navigation and photo-recovery implement
 HOLD for final visual design selection/quality, current real supplier photo decoding/crop/diversity, stable image availability/redisplay rights, source materials/actual selling sizes/explicit play ages, operator information and actual iPhone Product Owner approval. Technical approval delegation does not supply these facts. Existing source photographs remain expired and may not be presented as current normal goods. Main merge/production deployment are not authorized or performed.
 
 Repository overview currently still states unit 108; root reports final 109 unit and full 34 browser PASS after the added source-write regression. Root should record latest final code/QA SHA and actual new CI result in the PR rather than treating initial CI as green. This reviewer did not independently rerun the full suite, refresh provider sources, or bypass artifact access.
+
+
+## Subsequent exact-head CI contrast diagnosis
+
+The root reported new exact-head f069 CI run 38113844504: 33/34 browser pass, one 430px core accessibility failure identifying `#radix-_r_5_` title and `#radix-_r_6_` description. This subsequent CI failure is not superseded by the earlier local browser PASS. CI trace artifacts remain unavailable after a normal HTTP 403; no bypass was attempted.
+
+Read-only normal Chromium diagnosis of the 430px original flow and final settled nodes found title color RGB(32,35,43) on white, 21px/600, contrast 15.710:1; description RGB(86,97,115) on white, 14px/400, contrast 6.263:1. Both settled text contrasts meet their WCAG AA requirements. Six repeated stable measurements recorded no axe violations; a separate three actual search→detail dialog openings were sampled from DOM insertion with MutationObserver/rAF.
+
+The three actual openings were still animating after `toBeVisible` and `document.fonts.ready`: dialog parent opacity 0.92481, 0.802383, 0.803772 with `enter` 100ms animation running. Their traces start at opacity 0 and finish at opacity 1. Both immediate and animation-settled axe runs happened to pass locally. Thus visible/fonts-ready do not establish the finished visual state; a motion timing race is an observed possibility, while the exact CI failure cause is not proven by this local run.
+
+Artifacts: `/tmp/kkokkapick-reference-430-contrast-diagnostic.json`, `/tmp/kkokkapick-reference-430-motion-trace.json` (checked 2026-10-11T05:15:42.953Z). No source/test mutation was made. Recommended owner change is a rendering-state synchronization before unchanged full axe checks in `commerce.spec.ts`: await real finite dialog/content animations' `finished` promises, verify effective final opacity 1, then inspect normal final colors. No color rule skipping, test ceiling relaxation, fixed arbitrary sleep, !important or CSS override append is warranted by the settled contrast evidence. New CI result after any test change must be reported separately.

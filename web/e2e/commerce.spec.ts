@@ -426,6 +426,23 @@ for (const width of [320, 375, 390, 430, 1440]) {
       else if (screen !== "my")
         await expect(page.locator("[data-product-card]").first()).toBeVisible();
       await page.evaluate(() => document.fonts.ready);
+      if (screen === "detail") {
+        const detail = page.getByRole("dialog", { name: "상품 상세" });
+        // Visibility and loaded fonts do not imply that the Radix fade has
+        // finished. Audit the actual settled colors without disabling motion.
+        await detail.evaluate(async (element) => {
+          const entering = element
+            .getAnimations({ subtree: true })
+            .filter(
+              (animation) =>
+                animation.effect?.getComputedTiming().iterations !== Infinity,
+            );
+          await Promise.all(
+            entering.map((animation) => animation.finished.catch(() => {})),
+          );
+        });
+        await expect(detail).toHaveCSS("opacity", "1");
+      }
       const bounds = await page.evaluate(() => ({
         width: innerWidth,
         scroll: document.documentElement.scrollWidth,
@@ -439,6 +456,7 @@ for (const width of [320, 375, 390, 430, 1440]) {
           (v) =>
             `${v.id}: ${v.nodes.map((n) => n.target.join(" ")).join(", ")}`,
         ),
+        `${width}px ${screen}: ${JSON.stringify(a11y.violations)}`,
       ).toEqual([]);
       await page.screenshot({
         path: testInfo.outputPath(`${width}-${screen}-controlled-viewport.png`),

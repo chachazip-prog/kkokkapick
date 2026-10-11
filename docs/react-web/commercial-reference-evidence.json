@@ -333,7 +333,13 @@
       "unit_test_command": "npm test -- --maxWorkers=1",
       "prior_parallel_unit_timeout_status": "107/109 pass and two 5s timeouts during concurrent browser load; rerun sequentially 109/109 pass without changing timeouts"
     },
-    "automated_viewport_widths": [320, 375, 390, 430, 1440],
+    "automated_viewport_widths": [
+      320,
+      375,
+      390,
+      430,
+      1440
+    ],
     "root_core_mobile_screens_opened": 20,
     "root_core_pc_screens_opened": 5,
     "independent_core_mobile_screens_opened": 20,
@@ -342,7 +348,7 @@
     "code_and_test_sha256": {
       "web/src/screens/TechnicalApp.tsx": "58c122093254d0ed97abad601a844b7243c144e43e2f2115fbfa357bc323b983",
       "web/src/hooks/use-infinite-catalog.ts": "ccba7c09c928dac96198984e72a70fb962381c8a1541279264b030063958ac9b",
-      "web/e2e/commerce.spec.ts": "6ce6f391f4c3c9fb1b2c8fba459c7f441b181248933373ad67db79dbd6f7c102",
+      "web/e2e/commerce.spec.ts": "68d1eb718f6b20c31de82c2051cceb9b7d618b7d61546ab537989ecac2b94b8d",
       "web/src/components/commerce-gallery.tsx": "92f5cec949a7575a1a9719f199994094715698587d4b2676fbf8cfa657f72918",
       "web/src/components/commerce-gallery.test.tsx": "6d4ad0b518f2a8fdba0c03687679c24e93877d2b0fea41f4716abeb7de727874",
       "web/src/hooks/use-catalog.ts": "83230d53bb81ddb136a260a0811f3699d1ff607759a31cb944a4bebb6ebdb2f3",
@@ -739,7 +745,62 @@
       ],
       "pass": true
     },
-    "final_independent_report": "commercial-reference-independent-review.md"
+    "final_independent_report": "commercial-reference-independent-review.md",
+    "pre_animation_settlement_test_sha256": "6ce6f391f4c3c9fb1b2c8fba459c7f441b181248933373ad67db79dbd6f7c102",
+    "dialog_contrast_diagnosis": {
+      "failed_exact_head": "f069be9adca4ec04956c012b0eb407424b8dfadc",
+      "failed_ci_url": "https://github.com/chachazip-prog/kkokkapick/actions/runs/38113844504",
+      "failed_ci_status": "FAILURE; browser33/34;430px dialog title and description color-contrast",
+      "image_recovery_http_cap_test": "PASS on the same failed CI",
+      "settled_title_contrast": 15.71,
+      "settled_description_contrast": 6.263,
+      "observed_dialog_opacity_after_visible_and_fonts_ready": [
+        0.92481,
+        0.802383,
+        0.803772
+      ],
+      "animation_duration_ms": 100,
+      "exact_ci_failure_cause_proven": false,
+      "test_change": "Await real finite dialog animations and assert opacity1 before unchanged full axe scan; adds failure details; no CSS, skip, threshold, timeout or source policy change",
+      "prior_ci_artifact": {
+        "id": 11692906058,
+        "size_in_bytes": 12181879,
+        "created_at": "2026-10-11T05:12:08Z",
+        "expires_at": "2026-10-14T05:12:07Z",
+        "normal_download": "HTTP403; zero artifact files; no bypass; actual CI screenshot/trace not opened"
+      },
+      "local_diagnostic_files": [
+        {
+          "file": "kkokkapick-reference-430-contrast-diagnostic.json",
+          "sha256": "6e7fc3a41dd720b07d80283ca92addcb7b8ab18b12eda4f8ca42879771c453c9"
+        },
+        {
+          "file": "kkokkapick-reference-430-motion-trace.json",
+          "sha256": "f6be8fc919e3cf533a9def7c6a191514ade56b510cd448e2dde721103a4d2245"
+        }
+      ],
+      "targeted_after_change": {
+        "browser_checks_passed": 5,
+        "viewports": [
+          320,
+          375,
+          390,
+          430,
+          1440
+        ],
+        "screens_per_viewport": 5,
+        "runner_status": {
+          "status": "passed",
+          "failedTests": []
+        },
+        "completed_at": "2026-10-11T05:17:33.974602+00:00",
+        "viewport_image_count": 25,
+        "all_25_viewport_images_hash_identical_to_inspected_set": true,
+        "root_reopened_new_430_detail": true,
+        "independent_narrow_diff_review": "PASS; unchanged CSS, motion, full axe tags, thresholds and timeouts",
+        "test_sha256": "68d1eb718f6b20c31de82c2051cceb9b7d618b7d61546ab537989ecac2b94b8d"
+      }
+    }
   },
   "design_selection_id": null,
   "main_merged": false,
