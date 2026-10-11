@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-11T08:05:50.152Z",
+  "syncedAt": "2026-10-11T09:13:37.024Z",
   "sourceProducts": 831,
   "canonicalProducts": 752,
   "queries": 73,
@@ -35,7 +35,7 @@
     },
     {
       "name": "베네통키즈",
-      "count": 32
+      "count": 31
     },
     {
       "name": "밀크베이비",
@@ -98,12 +98,12 @@
       "count": 9
     },
     {
-      "name": "플레이키즈프로",
+      "name": "몽클레르키즈",
       "count": 9
     },
     {
-      "name": "캉골키즈",
-      "count": 8
+      "name": "플레이키즈프로",
+      "count": 9
     }
   ],
   "categories": [
