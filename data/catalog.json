@@ -1,8 +1,8 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-11T00:04:15.789Z",
-  "sourceCount": 826,
-  "productCount": 747,
+  "syncedAt": "2026-10-11T01:13:12.020Z",
+  "sourceCount": 830,
+  "productCount": 750,
   "priceChangeCount": 0,
   "products": [
     {
@@ -622,7 +622,7 @@
       "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531740416",
       "imageUrls": [
         "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531740416",
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531922862",
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532330732",
         "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531991116"
       ],
       "category": "상하복",
@@ -689,6 +689,70 @@
       "minPrice": 65286,
       "maxPrice": 65286,
       "brand": "프렌치캣",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_56698710",
+      "name": "[ AK백화점 ][베네통 키즈] 주니어 루즈핏 그래픽 맨투맨 상하세트QAMT15661 QATP09661(MG)",
+      "normalizedName": "ak백화점 베네통 키즈 주니어 루즈핏 그래픽 맨투맨 상하세트qamt15661 qatp09661 mg",
+      "variant": "",
+      "modelCode": "QAMT15661",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532330731",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532330731"
+      ],
+      "category": "상하복",
+      "query": "아동복",
+      "offers": [
+        {
+          "merchant": "GS SHOP",
+          "merchantDomain": null,
+          "price": 75440,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4869190?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_56698710"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 75440,
+      "maxPrice": 75440,
+      "brand": "베네통키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_d81ffee5",
+      "name": "[하프클럽/알콩단잠]남아 유아잠옷 수면파자마 홈웨어 편한 아동복 상하세트 (3~14세)",
+      "normalizedName": "하프클럽 알콩단잠 남아 유아잠옷 수면파자마 홈웨어 편한 아동복 상하세트 3 14세",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532330651",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532330651"
+      ],
+      "category": "실내복",
+      "query": "아동복",
+      "offers": [
+        {
+          "merchant": "롯데홈쇼핑",
+          "merchantDomain": null,
+          "price": 24360,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785639?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_d81ffee5"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 24360,
+      "maxPrice": 24360,
+      "brand": "알콩단잠",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -792,134 +856,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_ba7472e1",
-      "name": "베네통 키즈 AK평택점 D와플그래픽맨투맨상하세트QAMT02641SE",
-      "normalizedName": "베네통 키즈 ak평택점 d와플그래픽맨투맨상하세트qamt02641se",
-      "variant": "",
-      "modelCode": "QAMT02641SE",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531740418",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531740418"
-      ],
-      "category": "상하복",
-      "query": "아동복",
-      "offers": [
-        {
-          "merchant": "보리보리",
-          "merchantDomain": null,
-          "price": 73320,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4787493?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_ba7472e1"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 73320,
-      "maxPrice": 73320,
-      "brand": "베네통키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_d3e8682f",
-      "name": "베이비맥스 알록 애플 니트 상하세트 R7661",
-      "normalizedName": "베이비맥스 알록 애플 니트 상하세트 r7661",
-      "variant": "",
-      "modelCode": "R7661",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531740458",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531740458"
-      ],
-      "category": "상하복",
-      "query": "아동복",
-      "offers": [
-        {
-          "merchant": "오늘의집",
-          "merchantDomain": null,
-          "price": 58000,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716350?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_d3e8682f"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 58000,
-      "maxPrice": 58000,
-      "brand": "베이비맥스",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
-      "id": "adpickbiz_d2151ecc",
-      "name": "[디작소] 여아 남아 유아 아동 포그니 상하복 등원룩 아동복[이마트몰]",
-      "normalizedName": "디작소 여아 남아 유아 아동 포그니 상하복 등원룩 아동복 이마트몰",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531740498",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531740498"
-      ],
-      "category": "상하복",
-      "query": "아동복",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 42104,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4787494?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_d2151ecc"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 42104,
-      "maxPrice": 42104,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
-      "id": "adpickbiz_a0b8661d",
-      "name": "레이어드후디 여아 후드티 와이드 상하복세트 206299",
-      "normalizedName": "레이어드후디 여아 후드티 와이드 상하복세트 206299",
-      "variant": "",
-      "modelCode": "206299",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531740439",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531740439"
-      ],
-      "category": "상하복",
-      "query": "아동복",
-      "offers": [
-        {
-          "merchant": "예스이십사",
-          "merchantDomain": null,
-          "price": 22500,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4870050?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_a0b8661d"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 22500,
-      "maxPrice": 22500,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_9662d2f4",
       "name": "[기타] 아동복 유아상하복 키즈옷 유아옷 수영복 세트 플랩캡 바캉스 상의 하의 아기수영복 유아수영복[이마트몰] [WFO3WBH]",
       "normalizedName": "기타 아동복 유아상하복 키즈옷 유아옷 수영복 세트 플랩캡 바캉스 상의 하의 아기수영복 유아수영복 이마트몰 wfo3wbh",
@@ -950,38 +886,6 @@
       "sizeGuide": null,
       "availableSizes": [],
       "stage": "베이비"
-    },
-    {
-      "id": "adpickbiz_56698710",
-      "name": "[ AK백화점 ][베네통 키즈] 주니어 루즈핏 그래픽 맨투맨 상하세트QAMT15661 QATP09661(MG)",
-      "normalizedName": "ak백화점 베네통 키즈 주니어 루즈핏 그래픽 맨투맨 상하세트qamt15661 qatp09661 mg",
-      "variant": "",
-      "modelCode": "QAMT15661",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531922861",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531922861"
-      ],
-      "category": "상하복",
-      "query": "키즈옷",
-      "offers": [
-        {
-          "merchant": "GS SHOP",
-          "merchantDomain": null,
-          "price": 75440,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4869190?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_56698710"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 75440,
-      "maxPrice": 75440,
-      "brand": "베네통키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
     },
     {
       "id": "adpickbiz_292f37cb",
@@ -11963,6 +11867,431 @@
       "stage": "신생아"
     },
     {
+      "id": "adpickbiz_a6e111ef",
+      "name": "레몬곰돌이 누빔 순면 내의 긴팔 우주복 206036",
+      "normalizedName": "레몬곰돌이 누빔 순면 내의 긴팔 우주복 206036",
+      "variant": "",
+      "modelCode": "206036",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345018",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345018",
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345019"
+      ],
+      "category": "바디수트",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "예스이십사",
+          "merchantDomain": null,
+          "price": 20800,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716149?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_a6e111ef"
+        },
+        {
+          "merchant": "예스이십사",
+          "merchantDomain": null,
+          "price": 20800,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716158?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_5fc9221"
+        }
+      ],
+      "offerCount": 2,
+      "minPrice": 20800,
+      "maxPrice": 20800,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_a89c3b59",
+      "name": "밀크베이비 유아 배앓이방지 쫀쫀스판내복 아기내의",
+      "normalizedName": "밀크베이비 유아 배앓이방지 쫀쫀스판내복 아기내의",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532344998",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532344998"
+      ],
+      "category": "실내복",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "보리보리",
+          "merchantDomain": null,
+          "price": 20900,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716150?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_a89c3b59"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 20900,
+      "maxPrice": 20900,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_dacc30ce",
+      "name": "말랑하니 유아 실내복 아기 내복 모달 골지 9부 소다",
+      "normalizedName": "말랑하니 유아 실내복 아기 내복 모달 골지 9부 소다",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345030",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345030"
+      ],
+      "category": "실내복",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "오늘의집",
+          "merchantDomain": null,
+          "price": 18900,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716151?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_dacc30ce"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 18900,
+      "maxPrice": 18900,
+      "brand": "말랑하니",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_c105345b",
+      "name": "밀크베이비/유아 배앓이방지 후라이스내복 아기내의/실내복 잠옷",
+      "normalizedName": "밀크베이비 유아 배앓이방지 후라이스내복 아기내의 실내복 잠옷",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345211",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345211"
+      ],
+      "category": "실내복",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 20720,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716152?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_c105345b"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 20720,
+      "maxPrice": 20720,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_36b86b7c",
+      "name": "[달퐁] 톡톡튤립양면내의 아기내복 아기실내복 실내복",
+      "normalizedName": "달퐁 톡톡튤립양면내의 아기내복 아기실내복 실내복",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345129",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345129"
+      ],
+      "category": "실내복",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "GS SHOP",
+          "merchantDomain": null,
+          "price": 20800,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4860504?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_36b86b7c"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 20800,
+      "maxPrice": 20800,
+      "brand": "달퐁",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_7e40645d",
+      "name": "[달퐁]달퐁 핑핑튤립양면내의 아기내복 아기실내복 실내복",
+      "normalizedName": "달퐁 달퐁 핑핑튤립양면내의 아기내복 아기실내복 실내복",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345050",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345050"
+      ],
+      "category": "실내복",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "롯데홈쇼핑",
+          "merchantDomain": null,
+          "price": 19340,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4860495?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_7e40645d"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 19340,
+      "maxPrice": 19340,
+      "brand": "달퐁",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_27f84bb6",
+      "name": "밀크베이비 유아 배앓이방지 후라이스내복 아기내의",
+      "normalizedName": "밀크베이비 유아 배앓이방지 후라이스내복 아기내의",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532344999",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532344999"
+      ],
+      "category": "실내복",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "보리보리",
+          "merchantDomain": null,
+          "price": 25900,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716159?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_27f84bb6"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 25900,
+      "maxPrice": 25900,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_47985276",
+      "name": "보누맘 아동내의 인견싱글 5부 7부 실내복 유아내복",
+      "normalizedName": "보누맘 아동내의 인견싱글 5부 7부 실내복 유아내복",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345031",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345031"
+      ],
+      "category": "실내복",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "오늘의집",
+          "merchantDomain": null,
+          "price": 9900,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716160?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_47985276"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 9900,
+      "maxPrice": 9900,
+      "brand": "보누맘",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_68ab18b7",
+      "name": "[쇼콜라] 남여아 아기내의선물1+1세트 14종택1 TNPRXS529W14SETA [TNPRXS529W14SETA]",
+      "normalizedName": "쇼콜라 남여아 아기내의선물1 1세트 14종 tnprxs529w14seta tnprxs529w14seta",
+      "variant": "1+1",
+      "modelCode": "TNPRXS529W14SETA",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345090",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345090"
+      ],
+      "category": "실내복",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 58423,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4873185?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_68ab18b7"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 58423,
+      "maxPrice": 58423,
+      "brand": "쇼콜라",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_82c40be1",
+      "name": "밀크베이비/유아 배앓이방지 쫀쫀스판내복 아기내의/실내복 잠옷",
+      "normalizedName": "밀크베이비 유아 배앓이방지 쫀쫀스판내복 아기내의 실내복 잠옷",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345213",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345213"
+      ],
+      "category": "실내복",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 16720,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716161?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_82c40be1"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 16720,
+      "maxPrice": 16720,
+      "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_3e1de911",
+      "name": "[달퐁]큐비앤맘 카리나긴팔 내의 실내복 아기실내복 아기내복",
+      "normalizedName": "달퐁 큐비앤맘 카리나긴팔 내의 실내복 아기실내복 아기내복",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345130",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345130"
+      ],
+      "category": "실내복",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "GS SHOP",
+          "merchantDomain": null,
+          "price": 19900,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4860503?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_3e1de911"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 19900,
+      "maxPrice": 19900,
+      "brand": "달퐁",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_36a8f732",
+      "name": "[달퐁]큐비앤맘 피치플라워배앓이방지 내의 아기내복 아기실내복 실내복",
+      "normalizedName": "달퐁 큐비앤맘 피치플라워배앓이방지 내의 아기내복 아기실내복 실내복",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345051",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345051"
+      ],
+      "category": "실내복",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "롯데홈쇼핑",
+          "merchantDomain": null,
+          "price": 24180,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4739013?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_36a8f732"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 24180,
+      "maxPrice": 24180,
+      "brand": "달퐁",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_8a95d83f",
+      "name": "배냇 후르츠무지 내의 긴팔 우주복 205974",
+      "normalizedName": "배냇 후르츠무지 내의 긴팔 우주복 205974",
+      "variant": "",
+      "modelCode": "205974",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345020",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=532345020"
+      ],
+      "category": "바디수트",
+      "query": "아기 내복",
+      "offers": [
+        {
+          "merchant": "예스이십사",
+          "merchantDomain": null,
+          "price": 15600,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716167?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_8a95d83f"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 15600,
+      "maxPrice": 15600,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "신생아"
+    },
+    {
       "id": "adpickbiz_705b61ce",
       "name": "스윗베어 홈웨어 긴팔 우주복파자마 205935",
       "normalizedName": "스윗베어 홈웨어 긴팔 우주복파자마 205935",
@@ -12036,70 +12365,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_dacc30ce",
-      "name": "말랑하니 유아 실내복 아기 내복 모달 골지 9부 소다",
-      "normalizedName": "말랑하니 유아 실내복 아기 내복 모달 골지 9부 소다",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957459",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957459"
-      ],
-      "category": "실내복",
-      "query": "아기 실내복",
-      "offers": [
-        {
-          "merchant": "오늘의집",
-          "merchantDomain": null,
-          "price": 18900,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716151?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_dacc30ce"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 18900,
-      "maxPrice": 18900,
-      "brand": "말랑하니",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
-      "id": "adpickbiz_c105345b",
-      "name": "밀크베이비/유아 배앓이방지 후라이스내복 아기내의/실내복 잠옷",
-      "normalizedName": "밀크베이비 유아 배앓이방지 후라이스내복 아기내의 실내복 잠옷",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957722",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957722"
-      ],
-      "category": "실내복",
-      "query": "아기 실내복",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 20720,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716152?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_c105345b"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 20720,
-      "maxPrice": 20720,
-      "brand": "밀크베이비",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_6b0e04d2",
       "name": "[달퐁]큐비앤맘 로이즈매쉬긴팔 내의 실내복 아기실내복 아기내",
       "normalizedName": "달퐁 큐비앤맘 로이즈매쉬긴팔 내의 실내복 아기실내복 아기내",
@@ -12124,38 +12389,6 @@
       "offerCount": 1,
       "minPrice": 19900,
       "maxPrice": 19900,
-      "brand": "달퐁",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
-      "id": "adpickbiz_7e40645d",
-      "name": "[달퐁]달퐁 핑핑튤립양면내의 아기내복 아기실내복 실내복",
-      "normalizedName": "달퐁 달퐁 핑핑튤립양면내의 아기내복 아기실내복 실내복",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957497",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957497"
-      ],
-      "category": "실내복",
-      "query": "아기 실내복",
-      "offers": [
-        {
-          "merchant": "롯데홈쇼핑",
-          "merchantDomain": null,
-          "price": 19340,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4860495?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_7e40645d"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 19340,
-      "maxPrice": 19340,
       "brand": "달퐁",
       "fitStatus": "unverified",
       "fitSource": null,
@@ -12228,70 +12461,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_47985276",
-      "name": "보누맘 아동내의 인견싱글 5부 7부 실내복 유아내복",
-      "normalizedName": "보누맘 아동내의 인견싱글 5부 7부 실내복 유아내복",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957461",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957461"
-      ],
-      "category": "실내복",
-      "query": "아기 실내복",
-      "offers": [
-        {
-          "merchant": "오늘의집",
-          "merchantDomain": null,
-          "price": 9900,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716160?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_47985276"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 9900,
-      "maxPrice": 9900,
-      "brand": "보누맘",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
-      "id": "adpickbiz_82c40be1",
-      "name": "밀크베이비/유아 배앓이방지 쫀쫀스판내복 아기내의/실내복 잠옷",
-      "normalizedName": "밀크베이비 유아 배앓이방지 쫀쫀스판내복 아기내의 실내복 잠옷",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957723",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957723"
-      ],
-      "category": "실내복",
-      "query": "아기 실내복",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 16720,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716161?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_82c40be1"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 16720,
-      "maxPrice": 16720,
-      "brand": "밀크베이비",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_deacb40c",
       "name": "[themandy] 5+1 쫀득젤리 9부 배앓이방지 아기실내복[이마트몰]",
       "normalizedName": "themandy 5 1 쫀득젤리 9부 배앓이방지 아기실내복 이마트몰",
@@ -12317,70 +12486,6 @@
       "minPrice": 17946,
       "maxPrice": 17946,
       "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
-      "id": "adpickbiz_36b86b7c",
-      "name": "[달퐁] 톡톡튤립양면내의 아기내복 아기실내복 실내복",
-      "normalizedName": "달퐁 톡톡튤립양면내의 아기내복 아기실내복 실내복",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957673",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957673"
-      ],
-      "category": "실내복",
-      "query": "아기 실내복",
-      "offers": [
-        {
-          "merchant": "GS SHOP",
-          "merchantDomain": null,
-          "price": 20800,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4860504?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_36b86b7c"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 20800,
-      "maxPrice": 20800,
-      "brand": "달퐁",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
-      "id": "adpickbiz_36a8f732",
-      "name": "[달퐁]큐비앤맘 피치플라워배앓이방지 내의 아기내복 아기실내복 실내복",
-      "normalizedName": "달퐁 큐비앤맘 피치플라워배앓이방지 내의 아기내복 아기실내복 실내복",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957499",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=531957499"
-      ],
-      "category": "실내복",
-      "query": "아기 실내복",
-      "offers": [
-        {
-          "merchant": "롯데홈쇼핑",
-          "merchantDomain": null,
-          "price": 24180,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4739013?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_36a8f732"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 24180,
-      "maxPrice": 24180,
-      "brand": "달퐁",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
