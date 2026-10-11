@@ -1,0 +1,220 @@
+/* Review tooling and the shared chrome for the second-round candidates.
+   Product composition and tokens belong to refinements.css. This is not a
+   selected production theme and does not restyle the technical workbench. */
+.kp-review-round {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  padding: 24px 0 18px;
+}
+.kp-review-round > div > span {
+  color: #596577;
+  font-size: 12px;
+}
+.kp-review-round h1 {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600;
+  margin: 6px 0;
+}
+.kp-review-round p {
+  font-size: 13px;
+  color: #526075;
+}
+.kp-review-round-status {
+  max-width: 240px;
+  text-wrap: pretty;
+}
+.kp-round-picker {
+  display: flex;
+  border-bottom: 1px solid #cbd3df;
+  gap: 8px;
+}
+.kp-round-picker button {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #526075;
+}
+.kp-round-picker button[aria-pressed="true"] {
+  border-bottom-color: #6543ce;
+  color: #462b9a;
+}
+.kp-round-picker strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+.kp-round-picker span {
+  font-size: 12px;
+}
+.kp-original-directions {
+  padding: 12px 0;
+}
+.kp-original-directions summary {
+  font-size: 12px;
+  color: #526075;
+  padding: 8px 4px;
+  cursor: pointer;
+}
+.kp-original-directions .kp-direction-picker {
+  padding: 12px 0;
+}
+.kp-refined-screen {
+  --kr-chrome-text: #252b36;
+  --kr-chrome-muted: #586274;
+  --kr-chrome-line: #d4dae3;
+  --kr-chrome-surface: #fff;
+  --kr-chrome-canvas: #f3f5f7;
+  --kr-chrome-brand: #6543ce;
+  display: flex;
+  flex-direction: column;
+  height: min(840px, calc(100dvh - 24px));
+  min-height: 540px;
+  overflow: hidden;
+  background: var(--kr-chrome-canvas);
+  color: var(--kr-chrome-text);
+}
+.kp-refined-header {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 16px;
+  min-height: 62px;
+  background: var(--kr-chrome-surface);
+  border-bottom: 1px solid var(--kr-chrome-line);
+}
+.kp-refined-header .kp-refined-wordmark {
+  font-family: "GowunDodum", "NanumSquareRound", sans-serif;
+  font-weight: 400;
+  font-size: 27px;
+  letter-spacing: -1.2px;
+  color: var(--kr-chrome-brand);
+  min-height: 44px;
+}
+.kp-refined-wordmark > span {
+  color: #cf3348;
+  padding-left: 1px;
+}
+.kp-refined-header nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.kp-refined-header nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  min-width: 44px;
+  font-size: 14px;
+}
+.kp-refined-header nav button > span,
+.kp-refined-header nav .kp-desktop-home {
+  display: none;
+}
+.kp-refined-screen .kp-data-notice {
+  flex: 0 0 auto;
+  background: #eef0f5;
+  color: var(--kr-chrome-muted);
+  padding: 7px 16px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.kp-refined-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+.kp-refined-nav {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: var(--kr-chrome-surface);
+  border-top: 1px solid var(--kr-chrome-line);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  min-height: 64px;
+}
+.kp-refined-nav button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  min-height: 64px;
+  font-size: 11px;
+  color: var(--kr-chrome-muted);
+}
+.kp-refined-nav button[aria-current="page"] {
+  color: var(--kr-chrome-brand);
+}
+.kp-refined-dialog > header .kp-eyebrow {
+  display: none;
+}
+.kp-refined-dialog > header h2 {
+  font-size: 19px;
+  font-weight: 600;
+}
+.kp-refined-dialog .kp-dialog-body {
+  padding: 18px;
+}
+.kp-refined-dialog .kp-dialog-body:has(fieldset) {
+  padding: 18px;
+}
+@container (min-width: 680px) {
+  .kp-refined-header {
+    padding-inline: 28px;
+    min-height: 72px;
+  }
+  .kp-refined-header nav {
+    gap: 15px;
+  }
+  .kp-refined-header nav button > span {
+    display: inline;
+  }
+  .kp-refined-header nav .kp-desktop-home {
+    display: flex;
+  }
+  .kp-refined-screen .kp-data-notice {
+    padding-inline: 28px;
+  }
+  .kp-refined-nav {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .kp-review-round {
+    display: block;
+    padding: 20px 6px 16px;
+  }
+  .kp-review-round-status {
+    max-width: none;
+    margin-top: 10px;
+  }
+  .kp-round-picker {
+    gap: 0;
+  }
+  .kp-round-picker button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 4px;
+    gap: 5px;
+  }
+  .kp-round-picker strong {
+    font-size: 12px;
+  }
+  .kp-round-picker span {
+    font-size: 11px;
+  }
+  .kp-refined-screen {
+    height: calc(100dvh - 24px);
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "width": 320,
+    "height": 844,
+    "longTitle": {
+      "focusedTop": 567.375,
+      "focusedBottom": 919.5,
+      "navTop": 776,
+      "afterManualScrollBottom": 735.5
+    },
+    "focusedTarget": {
+      "top": 628.6259155273438,
+      "bottom": 672.5895385742188,
+      "stickyActionsTop": 735.171875,
+      "fullyVisible": true
+    }
+  },
+  {
+    "width": 430,
+    "height": 844,
+    "longTitle": {
+      "focusedTop": 622.375,
+      "focusedBottom": 890.5,
+      "navTop": 776,
+      "afterManualScrollBottom": 726.5
+    },
+    "focusedTarget": {
+      "top": 647.796875,
+      "bottom": 691.796875,
+      "stickyActionsTop": 734.984375,
+      "fullyVisible": true
+    }
+  }
+]
