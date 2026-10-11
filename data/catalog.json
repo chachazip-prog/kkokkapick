@@ -1,8 +1,8 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-11T11:05:48.587Z",
-  "sourceCount": 831,
-  "productCount": 752,
+  "syncedAt": "2026-10-11T12:06:12.087Z",
+  "sourceCount": 832,
+  "productCount": 753,
   "priceChangeCount": 0,
   "products": [
     {
@@ -38,38 +38,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_44e0c0e6",
-      "name": "쓰리고/감성전자 올인원 미니세탁기 휴대용 소형 아기옷세탁기 탈수 건조 속옷 양말 러닝/생활가전 세탁기/건조기",
-      "normalizedName": "쓰리고 감성전자 올인원 미니세탁기 휴대용 소형 아기옷세탁기 탈수 건조 속옷 양말 러닝 생활가전 세탁기 건조기",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533344343",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533344343"
-      ],
-      "category": "기타",
-      "query": "아기옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 171140,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4796612?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_44e0c0e6"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 171140,
-      "maxPrice": 171140,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_38dac5df",
       "name": "[기타] 골지 컬러풀 반팔 바디슈트 203513 아영 6개월아기옷 (52935592)[이마트몰]",
       "normalizedName": "기타 골지 컬러풀 반팔 바디슈트 203513 아영 6개월아기옷 52935592 이마트몰",
@@ -94,6 +62,38 @@
       "offerCount": 1,
       "minPrice": 31588,
       "maxPrice": 31588,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_44e0c0e6",
+      "name": "쓰리고/감성전자 올인원 미니세탁기 휴대용 소형 아기옷세탁기 탈수 건조 속옷 양말 러닝/생활가전 세탁기/건조기",
+      "normalizedName": "쓰리고 감성전자 올인원 미니세탁기 휴대용 소형 아기옷세탁기 탈수 건조 속옷 양말 러닝 생활가전 세탁기 건조기",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533344343",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533344343"
+      ],
+      "category": "기타",
+      "query": "아기옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 171140,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4796612?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_44e0c0e6"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 171140,
+      "maxPrice": 171140,
       "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
@@ -792,6 +792,36 @@
       "stage": "키즈"
     },
     {
+      "id": "adpickbiz_3860f4f8",
+      "name": "코코비 라인그램set/여름/상하복/아동복/등원복",
+      "normalizedName": "코코비 라인그램set 여름 상하복 아동복 등원복",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": null,
+      "imageUrls": [],
+      "category": "상하복",
+      "query": "아동복",
+      "offers": [
+        {
+          "merchant": "보리보리",
+          "merchantDomain": null,
+          "price": 11900,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4993673?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_3860f4f8"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 11900,
+      "maxPrice": 11900,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
       "id": "adpickbiz_c5cb0101",
       "name": "코코비 멍뭉미set/여름/상하복/아동복/등원복",
       "normalizedName": "코코비 멍뭉미set 여름 상하복 아동복 등원복",
@@ -1112,38 +1142,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_cb9379a0",
-      "name": "케어베어/텐더하트베어 집업 베이비 수트/의류 바디수트",
-      "normalizedName": "케어베어 텐더하트베어 집업 베이비 수트 의류 바디수트",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533347490",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533347490"
-      ],
-      "category": "바디수트",
-      "query": "베이비옷",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 33454,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785654?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_cb9379a0"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 33454,
-      "maxPrice": 33454,
-      "brand": "케어베어",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_5dc8f666",
       "name": "[블루독베이비] [AK수원점] [블루독베이비] (BR)우디옷입히기SET46970-BHB-05 [46970-BHB-05]",
       "normalizedName": "블루독베이비 ak수원점 블루독베이비 br 우디옷입히기set46970 bhb 05 46970 bhb 05",
@@ -1169,6 +1167,38 @@
       "minPrice": 61921,
       "maxPrice": 61921,
       "brand": "블루독베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_cb9379a0",
+      "name": "케어베어/텐더하트베어 집업 베이비 수트/의류 바디수트",
+      "normalizedName": "케어베어 텐더하트베어 집업 베이비 수트 의류 바디수트",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533347490",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533347490"
+      ],
+      "category": "바디수트",
+      "query": "베이비옷",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 33454,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785654?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_cb9379a0"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 33454,
+      "maxPrice": 33454,
+      "brand": "케어베어",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -22933,8 +22963,10 @@
       "normalizedName": "ak백화점 에뜨와 샤베트슬림우주복set blue",
       "variant": "",
       "modelCode": "",
-      "imageUrl": null,
-      "imageUrls": [],
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533390292",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533390292"
+      ],
       "category": "바디수트",
       "query": "에뜨와 아기옷",
       "offers": [
