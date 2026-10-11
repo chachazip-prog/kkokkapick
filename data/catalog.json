@@ -1,8 +1,8 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-11T15:07:11.407Z",
-  "sourceCount": 832,
-  "productCount": 753,
+  "syncedAt": "2026-10-11T16:06:07.432Z",
+  "sourceCount": 833,
+  "productCount": 754,
   "priceChangeCount": 0,
   "products": [
     {
@@ -126,6 +126,38 @@
       "offerCount": 1,
       "minPrice": 15000,
       "maxPrice": 15000,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_5739b413",
+      "name": "이키 2종 펌킨/유령 할로윈 코스튬 아기옷",
+      "normalizedName": "이키 2종 펌킨 유령 할로윈 코스튬 아기옷",
+      "variant": "2종",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=534105544",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=534105544"
+      ],
+      "category": "기타",
+      "query": "아기옷",
+      "offers": [
+        {
+          "merchant": "보리보리",
+          "merchantDomain": null,
+          "price": 34500,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785624?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_5739b413"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 34500,
+      "maxPrice": 34500,
       "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
@@ -760,38 +792,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_3860f4f8",
-      "name": "코코비 라인그램set/여름/상하복/아동복/등원복",
-      "normalizedName": "코코비 라인그램set 여름 상하복 아동복 등원복",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533687611",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=533687611"
-      ],
-      "category": "상하복",
-      "query": "아동복",
-      "offers": [
-        {
-          "merchant": "보리보리",
-          "merchantDomain": null,
-          "price": 11900,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4993673?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_3860f4f8"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 11900,
-      "maxPrice": 11900,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_cf67ccc3",
       "name": "[프랜치캣] [프렌치캣아동복]보라 뷔스띄에 티셔츠 상하세트 Q54DDT280 Q54DDP230 [Q54DDT280Q54DDP230]",
       "normalizedName": "프랜치캣 프렌치캣아동복 보라 뷔스띄에 티셔츠 상하세트 q54ddt280 q54ddp230 q54ddt280q54ddp230",
@@ -817,6 +817,38 @@
       "minPrice": 56079,
       "maxPrice": 56079,
       "brand": "프렌치캣",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_c5cb0101",
+      "name": "코코비 멍뭉미set/여름/상하복/아동복/등원복",
+      "normalizedName": "코코비 멍뭉미set 여름 상하복 아동복 등원복",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=534106807",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=534106807"
+      ],
+      "category": "상하복",
+      "query": "아동복",
+      "offers": [
+        {
+          "merchant": "보리보리",
+          "merchantDomain": null,
+          "price": 11900,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4990943?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_c5cb0101"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 11900,
+      "maxPrice": 11900,
+      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,

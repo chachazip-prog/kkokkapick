@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-10-11T15:07:11.407Z",
-  "sourceProducts": 832,
-  "canonicalProducts": 753,
+  "syncedAt": "2026-10-11T16:06:07.432Z",
+  "sourceProducts": 833,
+  "canonicalProducts": 754,
   "queries": 73,
   "recognizedBrandProducts": 419,
   "recognizedBrandRatePct": 55.6,
@@ -10,15 +10,15 @@
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 832,
-    "ok": 832,
+    "checked": 833,
+    "ok": 833,
     "failed": 0,
     "statuses": {
-      "200": 832
+      "200": 833
     },
     "rate": 1
   },
-  "canonicalImageProducts": 753,
+  "canonicalImageProducts": 754,
   "canonicalImageRatePct": 100,
   "multiImageProducts": 64,
   "multiImageRatePct": 8.5,
@@ -27,7 +27,7 @@
   "topBrands": [
     {
       "name": "미분류",
-      "count": 334
+      "count": 335
     },
     {
       "name": "베이비맥스",
@@ -133,7 +133,7 @@
     },
     {
       "name": "기타",
-      "count": 42
+      "count": 43
     },
     {
       "name": "실내복",
@@ -147,7 +147,7 @@
     },
     {
       "name": "베이비",
-      "count": 261
+      "count": 262
     },
     {
       "name": "유아",
