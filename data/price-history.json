@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-11T16:06:07.432Z",
+  "updatedAt": "2026-10-11T17:13:37.149Z",
   "retention": "bounded_demo_events",
   "events": [
     {
@@ -6690,6 +6690,14 @@
       "price": 88020,
       "direction": "down",
       "changeAmount": -10360
+    },
+    {
+      "productId": "adpickbiz_eff32cf3",
+      "observedAt": "2026-10-11T17:13:37.149Z",
+      "previousPrice": 181479,
+      "price": 159570,
+      "direction": "down",
+      "changeAmount": -21909
     }
   ]
 }

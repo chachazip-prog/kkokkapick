@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-11T16:06:07.432Z",
+  "syncedAt": "2026-10-11T17:13:37.149Z",
   "sourceProducts": 833,
   "canonicalProducts": 754,
   "queries": 73,
@@ -20,8 +20,8 @@
   },
   "canonicalImageProducts": 754,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 64,
-  "multiImageRatePct": 8.5,
+  "multiImageProducts": 65,
+  "multiImageRatePct": 8.6,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
@@ -117,19 +117,19 @@
     },
     {
       "name": "하의",
-      "count": 108
+      "count": 107
     },
     {
       "name": "상하복",
-      "count": 90
+      "count": 92
     },
     {
       "name": "바디수트",
-      "count": 84
+      "count": 85
     },
     {
       "name": "원피스",
-      "count": 79
+      "count": 77
     },
     {
       "name": "기타",
@@ -151,11 +151,11 @@
     },
     {
       "name": "유아",
-      "count": 56
+      "count": 57
     },
     {
       "name": "전체",
-      "count": 49
+      "count": 48
     },
     {
       "name": "신생아",
