@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-14T19:59:32.136Z",
+  "syncedAt": "2026-10-14T22:51:37.861Z",
   "sourceCount": 827,
   "productCount": 756,
-  "priceChangeCount": 19,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_bb6768f0",
@@ -651,10 +651,10 @@
       "normalizedName": "베네통 키즈 ak평택점 d와플그래픽맨투맨상하세트qamt02641bkse",
       "variant": "",
       "modelCode": "QAMT02641BKSE",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946222",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974088",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946222",
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946546",
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974088",
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974294",
         "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546358917"
       ],
       "category": "상하복",
@@ -696,14 +696,14 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_d2151ecc",
-      "name": "[디작소] 여아 남아 유아 아동 포그니 상하복 등원룩 아동복[이마트몰]",
-      "normalizedName": "디작소 여아 남아 유아 아동 포그니 상하복 등원룩 아동복 이마트몰",
+      "id": "adpickbiz_cf67ccc3",
+      "name": "[프랜치캣] [프렌치캣아동복]보라 뷔스띄에 티셔츠 상하세트 Q54DDT280 Q54DDP230 [Q54DDT280Q54DDP230]",
+      "normalizedName": "프랜치캣 프렌치캣아동복 보라 뷔스띄에 티셔츠 상하세트 q54ddt280 q54ddp230 q54ddt280q54ddp230",
       "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946472",
+      "modelCode": "Q54DDT280",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974255",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946472"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974255"
       ],
       "category": "상하복",
       "query": "아동복",
@@ -711,16 +711,16 @@
         {
           "merchant": "SSG",
           "merchantDomain": null,
-          "price": 40423,
+          "price": 54270,
           "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4787494?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_d2151ecc"
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785637?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_cf67ccc3"
         }
       ],
       "offerCount": 1,
-      "minPrice": 40423,
-      "maxPrice": 40423,
-      "brand": null,
+      "minPrice": 54270,
+      "maxPrice": 54270,
+      "brand": "프렌치캣",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -733,9 +733,9 @@
       "normalizedName": "하프클럽 알콩단잠 여자아이잠옷 주니어파자마 홈웨어 아동복 반팔 상하",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946151",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974048",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946151"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974048"
       ],
       "category": "실내복",
       "query": "아동복",
@@ -765,9 +765,9 @@
       "normalizedName": "하프클럽 알콩단잠 남아 유아잠옷 수면파자마 홈웨어 편한 아동복 상하세트 3 14세",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946389",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974206",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946389"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974206"
       ],
       "category": "실내복",
       "query": "아동복",
@@ -797,9 +797,9 @@
       "normalizedName": "더오투투 더오투투 소프트 웜 플리스 상하복 세트 브라운 겨울 유아실내복 등원룩 세트아동복",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946226",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974090",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946226"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974090"
       ],
       "category": "실내복",
       "query": "아동복",
@@ -824,14 +824,14 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_4408de61",
-      "name": "[프랜치캣] [프렌치캣아동복]VL샤 상하세트Q54DDP210 Q54DDT260 [Q54DDP210Q54DDT260]",
-      "normalizedName": "프랜치캣 프렌치캣아동복 vl샤 상하세트q54ddp210 q54ddt260 q54ddp210q54ddt260",
+      "id": "adpickbiz_d2151ecc",
+      "name": "[디작소] 여아 남아 유아 아동 포그니 상하복 등원룩 아동복[이마트몰]",
+      "normalizedName": "디작소 여아 남아 유아 아동 포그니 상하복 등원룩 아동복 이마트몰",
       "variant": "",
-      "modelCode": "Q54DDP210",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946473",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974256",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946473"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974256"
       ],
       "category": "상하복",
       "query": "아동복",
@@ -839,16 +839,16 @@
         {
           "merchant": "SSG",
           "merchantDomain": null,
-          "price": 63180,
+          "price": 40423,
           "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785640?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_4408de61"
+          "affiliateUrl": "https://biz.adpick.co.kr/r4787494?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_d2151ecc"
         }
       ],
       "offerCount": 1,
-      "minPrice": 63180,
-      "maxPrice": 63180,
-      "brand": "프렌치캣",
+      "minPrice": 40423,
+      "maxPrice": 40423,
+      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -861,9 +861,9 @@
       "normalizedName": "ak백화점 베네통 키즈 주니어 루즈핏 그래픽 맨투맨 상하세트qamt15661 qatp09661 mg",
       "variant": "",
       "modelCode": "QAMT15661",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946548",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974295",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946548"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974295"
       ],
       "category": "상하복",
       "query": "아동복",
@@ -893,9 +893,9 @@
       "normalizedName": "하프클럽 알콩단잠 남아파자마 홈웨어 체크 아동복 유아 순면잠옷 38세",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946155",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974050",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946155"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974050"
       ],
       "category": "실내복",
       "query": "아동복",
@@ -925,9 +925,9 @@
       "normalizedName": "어린이 하프 실리콘 승마 바지 부드러운 통기성 브리치 4 방향 탄성 승마 바지 유니섹스 승마 바지",
       "variant": "",
       "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946436",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974237",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=545946436"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=546974237"
       ],
       "category": "하의",
       "query": "아동복",
