@@ -1,40 +1,8 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-17T19:56:50.216Z",
+  "updatedAt": "2026-10-17T22:04:17.127Z",
   "retention": "bounded_demo_events",
   "events": [
-    {
-      "productId": "adpickbiz_ae3a5753",
-      "observedAt": "2026-10-05T23:07:08.711Z",
-      "previousPrice": 107390,
-      "price": 97390,
-      "direction": "down",
-      "changeAmount": -10000
-    },
-    {
-      "productId": "adpickbiz_2e2a35e9",
-      "observedAt": "2026-10-05T23:07:08.711Z",
-      "previousPrice": 95290,
-      "price": 85761,
-      "direction": "down",
-      "changeAmount": -9529
-    },
-    {
-      "productId": "adpickbiz_4408de61",
-      "observedAt": "2026-10-06T06:06:14.957Z",
-      "previousPrice": 63180,
-      "price": 65286,
-      "direction": "up",
-      "changeAmount": 2106
-    },
-    {
-      "productId": "adpickbiz_6e2bc05b",
-      "observedAt": "2026-10-06T06:06:14.957Z",
-      "previousPrice": 62400,
-      "price": 58032,
-      "direction": "down",
-      "changeAmount": -4368
-    },
     {
       "productId": "adpickbiz_adf24cda",
       "observedAt": "2026-10-06T06:06:14.957Z",
@@ -8002,6 +7970,38 @@
       "price": 96180,
       "direction": "up",
       "changeAmount": 37180
+    },
+    {
+      "productId": "adpickbiz_2dd577c7",
+      "observedAt": "2026-10-17T22:04:17.127Z",
+      "previousPrice": 96180,
+      "price": 59000,
+      "direction": "down",
+      "changeAmount": -37180
+    },
+    {
+      "productId": "adpickbiz_27278c3e",
+      "observedAt": "2026-10-17T22:04:17.127Z",
+      "previousPrice": 128790,
+      "price": 143100,
+      "direction": "up",
+      "changeAmount": 14310
+    },
+    {
+      "productId": "adpickbiz_ad1d972a",
+      "observedAt": "2026-10-17T22:04:17.127Z",
+      "previousPrice": 174050,
+      "price": 187000,
+      "direction": "up",
+      "changeAmount": 12950
+    },
+    {
+      "productId": "adpickbiz_e1b83d92",
+      "observedAt": "2026-10-17T22:04:17.127Z",
+      "previousPrice": 108568,
+      "price": 113449,
+      "direction": "up",
+      "changeAmount": 4881
     }
   ]
 }
