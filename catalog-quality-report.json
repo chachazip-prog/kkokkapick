@@ -1,33 +1,33 @@
 {
-  "syncedAt": "2026-10-17T06:29:22.299Z",
-  "sourceProducts": 829,
-  "canonicalProducts": 757,
+  "syncedAt": "2026-10-17T11:29:01.342Z",
+  "sourceProducts": 824,
+  "canonicalProducts": 754,
   "queries": 73,
   "recognizedBrandProducts": 428,
-  "recognizedBrandRatePct": 56.5,
+  "recognizedBrandRatePct": 56.8,
   "officialBrandGuideProducts": 17,
-  "officialBrandGuideRatePct": 2.2,
+  "officialBrandGuideRatePct": 2.3,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 829,
-    "ok": 829,
+    "checked": 824,
+    "ok": 824,
     "failed": 0,
     "statuses": {
-      "200": 829
+      "200": 824
     },
     "rate": 1
   },
-  "canonicalImageProducts": 757,
+  "canonicalImageProducts": 754,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 57,
-  "multiImageRatePct": 7.5,
+  "multiImageProducts": 55,
+  "multiImageRatePct": 7.3,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 329
+      "count": 326
     },
     {
       "name": "베네통키즈",
@@ -109,11 +109,11 @@
   "categories": [
     {
       "name": "상의",
-      "count": 164
+      "count": 163
     },
     {
       "name": "아우터",
-      "count": 154
+      "count": 152
     },
     {
       "name": "하의",
@@ -143,11 +143,11 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 354
+      "count": 353
     },
     {
       "name": "베이비",
-      "count": 265
+      "count": 263
     },
     {
       "name": "유아",
