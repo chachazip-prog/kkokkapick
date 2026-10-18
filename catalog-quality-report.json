@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-17T22:04:17.127Z",
+  "syncedAt": "2026-10-18T00:30:17.062Z",
   "sourceProducts": 898,
   "canonicalProducts": 821,
   "queries": 73,
@@ -11,18 +11,17 @@
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
     "checked": 898,
-    "ok": 892,
-    "failed": 6,
+    "ok": 898,
+    "failed": 0,
     "statuses": {
-      "200": 892,
-      "503": 6
+      "200": 898
     },
-    "rate": 0.9933184855233853
+    "rate": 1
   },
-  "canonicalImageProducts": 816,
-  "canonicalImageRatePct": 99.4,
-  "multiImageProducts": 65,
-  "multiImageRatePct": 7.9,
+  "canonicalImageProducts": 821,
+  "canonicalImageRatePct": 100,
+  "multiImageProducts": 66,
+  "multiImageRatePct": 8,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
