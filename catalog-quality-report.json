@@ -1,10 +1,10 @@
 {
-  "syncedAt": "2026-10-20T12:29:36.869Z",
+  "syncedAt": "2026-10-20T17:49:12.628Z",
   "sourceProducts": 827,
   "canonicalProducts": 755,
   "queries": 73,
-  "recognizedBrandProducts": 425,
-  "recognizedBrandRatePct": 56.3,
+  "recognizedBrandProducts": 429,
+  "recognizedBrandRatePct": 56.8,
   "officialBrandGuideProducts": 18,
   "officialBrandGuideRatePct": 2.4,
   "explicitProductSizeProducts": 0,
@@ -27,11 +27,11 @@
   "topBrands": [
     {
       "name": "미분류",
-      "count": 330
+      "count": 326
     },
     {
       "name": "베네통키즈",
-      "count": 38
+      "count": 40
     },
     {
       "name": "베이비맥스",
@@ -55,11 +55,11 @@
     },
     {
       "name": "해피프린스",
-      "count": 20
+      "count": 19
     },
     {
       "name": "삠뽀요",
-      "count": 17
+      "count": 18
     },
     {
       "name": "모이몰른",
@@ -70,11 +70,11 @@
       "count": 17
     },
     {
-      "name": "페리미츠",
-      "count": 17
+      "name": "달퐁",
+      "count": 16
     },
     {
-      "name": "달퐁",
+      "name": "페리미츠",
       "count": 16
     },
     {
@@ -91,7 +91,7 @@
     },
     {
       "name": "쇼콜라",
-      "count": 10
+      "count": 11
     },
     {
       "name": "나이키키즈",
@@ -113,15 +113,15 @@
     },
     {
       "name": "아우터",
-      "count": 149
+      "count": 148
     },
     {
       "name": "하의",
-      "count": 113
+      "count": 112
     },
     {
       "name": "바디수트",
-      "count": 85
+      "count": 86
     },
     {
       "name": "원피스",
@@ -129,7 +129,7 @@
     },
     {
       "name": "상하복",
-      "count": 82
+      "count": 83
     },
     {
       "name": "기타",
@@ -143,15 +143,15 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 353
+      "count": 352
     },
     {
       "name": "베이비",
-      "count": 264
+      "count": 263
     },
     {
       "name": "유아",
-      "count": 49
+      "count": 50
     },
     {
       "name": "전체",
@@ -159,7 +159,7 @@
     },
     {
       "name": "신생아",
-      "count": 35
+      "count": 36
     },
     {
       "name": "토들러",
