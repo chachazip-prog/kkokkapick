@@ -1,33 +1,33 @@
 {
-  "syncedAt": "2026-10-20T21:09:37.871Z",
-  "sourceProducts": 825,
-  "canonicalProducts": 753,
+  "syncedAt": "2026-10-21T00:25:47.602Z",
+  "sourceProducts": 818,
+  "canonicalProducts": 747,
   "queries": 73,
-  "recognizedBrandProducts": 430,
-  "recognizedBrandRatePct": 57.1,
+  "recognizedBrandProducts": 428,
+  "recognizedBrandRatePct": 57.3,
   "officialBrandGuideProducts": 18,
   "officialBrandGuideRatePct": 2.4,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 825,
-    "ok": 825,
+    "checked": 818,
+    "ok": 818,
     "failed": 0,
     "statuses": {
-      "200": 825
+      "200": 818
     },
     "rate": 1
   },
-  "canonicalImageProducts": 753,
+  "canonicalImageProducts": 747,
   "canonicalImageRatePct": 100,
-  "multiImageProducts": 57,
-  "multiImageRatePct": 7.6,
+  "multiImageProducts": 56,
+  "multiImageRatePct": 7.5,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 323
+      "count": 319
     },
     {
       "name": "베네통키즈",
@@ -35,15 +35,15 @@
     },
     {
       "name": "베이비맥스",
-      "count": 36
+      "count": 32
     },
     {
       "name": "밀크베이비",
-      "count": 27
+      "count": 28
     },
     {
       "name": "블루독베이비",
-      "count": 24
+      "count": 23
     },
     {
       "name": "빈폴키즈",
@@ -59,7 +59,7 @@
     },
     {
       "name": "삠뽀요",
-      "count": 17
+      "count": 19
     },
     {
       "name": "모이몰른",
@@ -98,11 +98,11 @@
       "count": 9
     },
     {
-      "name": "알콩단잠",
+      "name": "몽클레르키즈",
       "count": 8
     },
     {
-      "name": "몽클레르키즈",
+      "name": "밍크뮤",
       "count": 8
     }
   ],
@@ -121,7 +121,7 @@
     },
     {
       "name": "바디수트",
-      "count": 86
+      "count": 85
     },
     {
       "name": "원피스",
@@ -133,11 +133,11 @@
     },
     {
       "name": "기타",
-      "count": 41
+      "count": 37
     },
     {
       "name": "실내복",
-      "count": 37
+      "count": 36
     }
   ],
   "stages": [
@@ -147,19 +147,19 @@
     },
     {
       "name": "베이비",
-      "count": 267
+      "count": 262
     },
     {
       "name": "유아",
-      "count": 49
+      "count": 50
     },
     {
       "name": "전체",
-      "count": 49
+      "count": 48
     },
     {
       "name": "신생아",
-      "count": 36
+      "count": 35
     },
     {
       "name": "토들러",
