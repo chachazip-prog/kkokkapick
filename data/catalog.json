@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-24T17:53:48.678Z",
+  "syncedAt": "2026-10-24T19:59:09.644Z",
   "sourceCount": 630,
   "productCount": 599,
-  "priceChangeCount": 3,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_e1e74b6d",
@@ -15336,38 +15336,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_52ef2f76",
-      "name": "[캉골키즈] 코듀로이 베이직 셔츠 QD 0002 베이지 [AQDCSH00020BE]",
-      "normalizedName": "캉골키즈 코듀로이 베이직 셔츠 qd 0002 베이지 aqdcsh00020be",
-      "variant": "",
-      "modelCode": "AQDCSH00020BE",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=580943225",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=580943225"
-      ],
-      "category": "상의",
-      "query": "키즈 셔츠",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 46672,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4735013?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_52ef2f76"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 46672,
-      "maxPrice": 46672,
-      "brand": "캉골키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_4039cebd",
       "name": "아웃도어프로덕츠키즈/플란넬 체크셔츠 (버건디) OD263ISH06_BUG/아우터 기타아우터",
       "normalizedName": "아웃도어프로덕츠키즈 플란넬 체크셔츠 버건디 od263ish06 bug 아우터 기타아우터",
@@ -15393,6 +15361,38 @@
       "minPrice": 77430,
       "maxPrice": 77430,
       "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_52ef2f76",
+      "name": "[캉골키즈] 코듀로이 베이직 셔츠 QD 0002 베이지 [AQDCSH00020BE]",
+      "normalizedName": "캉골키즈 코듀로이 베이직 셔츠 qd 0002 베이지 aqdcsh00020be",
+      "variant": "",
+      "modelCode": "AQDCSH00020BE",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=580943225",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=580943225"
+      ],
+      "category": "상의",
+      "query": "키즈 셔츠",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 46672,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4735013?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_52ef2f76"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 46672,
+      "maxPrice": 46672,
+      "brand": "캉골키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -15857,38 +15857,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_5f238fe1",
-      "name": "로고 레깅스",
-      "normalizedName": "로고 레깅스",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://cdn.hfashionmall.com/goods/THBR/25/03/28/GM0125032891275_1_ORGINL_1755759518137.jpg?RS=600x600&AR=0&CS=400x600",
-      "imageUrls": [
-        "https://cdn.hfashionmall.com/goods/THBR/25/03/28/GM0125032891275_1_ORGINL_1755759518137.jpg?RS=600x600&AR=0&CS=400x600"
-      ],
-      "category": "하의",
-      "query": "키즈 레깅스",
-      "offers": [
-        {
-          "merchant": "H패션몰",
-          "merchantDomain": null,
-          "price": 42660,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r5306792?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_5f238fe1"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 42660,
-      "maxPrice": 42660,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_23f7d676",
       "name": "키즈 삼바 레깅스팬츠 딥블루 S26032 234FZ",
       "normalizedName": "키즈 삼바 레깅스팬츠 딥블루 s26032 234fz",
@@ -15913,6 +15881,38 @@
       "offerCount": 1,
       "minPrice": 116100,
       "maxPrice": 116100,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_5f238fe1",
+      "name": "로고 레깅스",
+      "normalizedName": "로고 레깅스",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://cdn.hfashionmall.com/goods/THBR/25/03/28/GM0125032891275_1_ORGINL_1755759518137.jpg?RS=600x600&AR=0&CS=400x600",
+      "imageUrls": [
+        "https://cdn.hfashionmall.com/goods/THBR/25/03/28/GM0125032891275_1_ORGINL_1755759518137.jpg?RS=600x600&AR=0&CS=400x600"
+      ],
+      "category": "하의",
+      "query": "키즈 레깅스",
+      "offers": [
+        {
+          "merchant": "H패션몰",
+          "merchantDomain": null,
+          "price": 42660,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r5306792?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_5f238fe1"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 42660,
+      "maxPrice": 42660,
       "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
@@ -16884,38 +16884,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_63e0a5c6",
-      "name": "퀵실버/퀵실버 키즈 TITANO 스노우 자켓 (KG51JS015KVJ)/아우터 패딩/점퍼",
-      "normalizedName": "퀵실버 퀵실버 키즈 titano 스노우 자켓 kg51js015kvj 아우터 패딩 점퍼",
-      "variant": "",
-      "modelCode": "TITANO",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=580950352",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=580950352"
-      ],
-      "category": "아우터",
-      "query": "키즈 자켓",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 184200,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4755561?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_63e0a5c6"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 184200,
-      "maxPrice": 184200,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_dee8f1fc",
       "name": "[레노마키즈] 남아 셔츠형경량자켓 R2641J004_SH[이마트몰]",
       "normalizedName": "레노마키즈 남아 셔츠형경량자켓 r2641j004 sh 이마트몰",
@@ -16940,6 +16908,38 @@
       "offerCount": 1,
       "minPrice": 93230,
       "maxPrice": 93230,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_63e0a5c6",
+      "name": "퀵실버/퀵실버 키즈 TITANO 스노우 자켓 (KG51JS015KVJ)/아우터 패딩/점퍼",
+      "normalizedName": "퀵실버 퀵실버 키즈 titano 스노우 자켓 kg51js015kvj 아우터 패딩 점퍼",
+      "variant": "",
+      "modelCode": "TITANO",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=580950352",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=580950352"
+      ],
+      "category": "아우터",
+      "query": "키즈 자켓",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 184200,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4755561?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_63e0a5c6"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 184200,
+      "maxPrice": 184200,
       "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
