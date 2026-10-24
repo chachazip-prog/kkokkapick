@@ -1,58 +1,53 @@
 {
-  "syncedAt": "2026-10-23T21:54:31.673Z",
-  "sourceProducts": 614,
-  "canonicalProducts": 584,
+  "syncedAt": "2026-10-24T00:22:25.188Z",
+  "sourceProducts": 592,
+  "canonicalProducts": 561,
   "queries": 73,
-  "recognizedBrandProducts": 262,
-  "recognizedBrandRatePct": 44.9,
+  "recognizedBrandProducts": 250,
+  "recognizedBrandRatePct": 44.6,
   "officialBrandGuideProducts": 15,
-  "officialBrandGuideRatePct": 2.6,
+  "officialBrandGuideRatePct": 2.7,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 614,
-    "ok": 613,
-    "failed": 1,
+    "checked": 592,
+    "ok": 592,
+    "failed": 0,
     "statuses": {
-      "200": 613,
-      "timeout": 1
+      "200": 592
     },
-    "rate": 0.998371335504886
+    "rate": 1
   },
-  "canonicalImageProducts": 583,
-  "canonicalImageRatePct": 99.8,
+  "canonicalImageProducts": 561,
+  "canonicalImageRatePct": 100,
   "multiImageProducts": 27,
-  "multiImageRatePct": 4.6,
+  "multiImageRatePct": 4.8,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 322
+      "count": 311
     },
     {
       "name": "베네통키즈",
       "count": 21
     },
     {
-      "name": "블루독베이비",
-      "count": 18
-    },
-    {
       "name": "베이비맥스",
-      "count": 17
+      "count": 16
     },
     {
       "name": "빈폴키즈",
       "count": 14
     },
     {
-      "name": "밀크베이비",
-      "count": 14
+      "name": "블루독베이비",
+      "count": 13
     },
     {
-      "name": "몽클레르키즈",
-      "count": 12
+      "name": "밀크베이비",
+      "count": 13
     },
     {
       "name": "헤지스키즈",
@@ -67,12 +62,12 @@
       "count": 10
     },
     {
-      "name": "달퐁",
-      "count": 9
+      "name": "몽클레르키즈",
+      "count": 10
     },
     {
       "name": "휠라키즈",
-      "count": 9
+      "count": 10
     },
     {
       "name": "아가방",
@@ -99,6 +94,10 @@
       "count": 7
     },
     {
+      "name": "달퐁",
+      "count": 7
+    },
+    {
       "name": "MLB키즈",
       "count": 7
     },
@@ -110,57 +109,57 @@
   "categories": [
     {
       "name": "아우터",
-      "count": 123
+      "count": 122
     },
     {
       "name": "상의",
-      "count": 118
+      "count": 120
     },
     {
       "name": "하의",
-      "count": 80
+      "count": 79
     },
     {
       "name": "상하복",
-      "count": 66
+      "count": 61
     },
     {
       "name": "바디수트",
-      "count": 64
+      "count": 60
     },
     {
       "name": "원피스",
-      "count": 57
+      "count": 58
     },
     {
       "name": "기타",
-      "count": 44
+      "count": 34
     },
     {
       "name": "실내복",
-      "count": 32
+      "count": 27
     }
   ],
   "stages": [
     {
       "name": "키즈",
-      "count": 280
+      "count": 278
     },
     {
       "name": "베이비",
-      "count": 179
+      "count": 159
     },
     {
       "name": "유아",
-      "count": 44
+      "count": 42
     },
     {
       "name": "전체",
-      "count": 41
+      "count": 40
     },
     {
       "name": "신생아",
-      "count": 37
+      "count": 39
     },
     {
       "name": "토들러",
