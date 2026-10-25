@@ -1,9 +1,9 @@
 {
   "storagePolicy": "ttl_cache",
-  "syncedAt": "2026-10-24T23:01:42.131Z",
+  "syncedAt": "2026-10-25T01:49:54.429Z",
   "sourceCount": 622,
   "productCount": 593,
-  "priceChangeCount": 14,
+  "priceChangeCount": 0,
   "products": [
     {
       "id": "adpickbiz_e1e74b6d",
@@ -3657,38 +3657,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_25d68ba3",
-      "name": "[끌로에] [S27]끌로에 C21302H02 키즈 반팔 긴팔 티셔츠 키즈티셔츠 아동티셔츠[이마트몰]",
-      "normalizedName": "끌로에 s27 끌로에 c21302h02 키즈 반팔 긴팔 티셔츠 키즈티셔츠 아동티셔츠 이마트몰",
-      "variant": "",
-      "modelCode": "C21302H02",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581829106",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581829106"
-      ],
-      "category": "상의",
-      "query": "아동 티셔츠",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 176700,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4891813?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_25d68ba3"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 176700,
-      "maxPrice": 176700,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_8f65ead2",
       "name": "디즈니스토어/[공식] 스타워즈 다크 사이드 링거 아동용 티셔츠 (1000105720)/상의 반팔/민소매티셔츠",
       "normalizedName": "디즈니스토어 스타워즈 다크 사이드 링거 아동용 티셔츠 1000105720 상의 반팔 민소매티셔츠",
@@ -3721,30 +3689,30 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_183c51f8",
-      "name": "베이직 반팔 티셔츠",
-      "normalizedName": "베이직 반팔 티셔츠",
+      "id": "adpickbiz_25d68ba3",
+      "name": "[끌로에] [S27]끌로에 C21302H02 키즈 반팔 긴팔 티셔츠 키즈티셔츠 아동티셔츠[이마트몰]",
+      "normalizedName": "끌로에 s27 끌로에 c21302h02 키즈 반팔 긴팔 티셔츠 키즈티셔츠 아동티셔츠 이마트몰",
       "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://cdn.hfashionmall.com/goods/THBR/24/02/16/GM0124021692882_1_ORGINL_1708072035788.jpg?RS=600x600&AR=0&CS=400x600",
+      "modelCode": "C21302H02",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581829106",
       "imageUrls": [
-        "https://cdn.hfashionmall.com/goods/THBR/24/02/16/GM0124021692882_1_ORGINL_1708072035788.jpg?RS=600x600&AR=0&CS=400x600"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581829106"
       ],
       "category": "상의",
       "query": "아동 티셔츠",
       "offers": [
         {
-          "merchant": "H패션몰",
+          "merchant": "SSG",
           "merchantDomain": null,
-          "price": 29750,
+          "price": 176700,
           "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r5306038?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_183c51f8"
+          "affiliateUrl": "https://biz.adpick.co.kr/r4891813?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_25d68ba3"
         }
       ],
       "offerCount": 1,
-      "minPrice": 29750,
-      "maxPrice": 29750,
+      "minPrice": 176700,
+      "maxPrice": 176700,
       "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
@@ -3778,6 +3746,38 @@
       "minPrice": 49000,
       "maxPrice": 49000,
       "brand": "펜디키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_183c51f8",
+      "name": "베이직 반팔 티셔츠",
+      "normalizedName": "베이직 반팔 티셔츠",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://cdn.hfashionmall.com/goods/THBR/24/02/16/GM0124021692882_1_ORGINL_1708072035788.jpg?RS=600x600&AR=0&CS=400x600",
+      "imageUrls": [
+        "https://cdn.hfashionmall.com/goods/THBR/24/02/16/GM0124021692882_1_ORGINL_1708072035788.jpg?RS=600x600&AR=0&CS=400x600"
+      ],
+      "category": "상의",
+      "query": "아동 티셔츠",
+      "offers": [
+        {
+          "merchant": "H패션몰",
+          "merchantDomain": null,
+          "price": 29750,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r5306038?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_183c51f8"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 29750,
+      "maxPrice": 29750,
+      "brand": null,
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -5138,38 +5138,6 @@
       "stage": "전체"
     },
     {
-      "id": "adpickbiz_d947270f",
-      "name": "[Jem.A젬마] 여성 인견 이지웨어 원피스 1종 26m",
-      "normalizedName": "jem.a젬마 여성 인견 이지웨어 원피스 1종 26m",
-      "variant": "1종",
-      "modelCode": "",
-      "imageUrl": "https://www.eyoumall.co.kr/shop/img/goods/648904.jpg",
-      "imageUrls": [
-        "https://www.eyoumall.co.kr/shop/img/goods/648904.jpg"
-      ],
-      "category": "원피스",
-      "query": "여아 원피스",
-      "offers": [
-        {
-          "merchant": "이유몰",
-          "merchantDomain": null,
-          "price": 9900,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r5306127?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_d947270f"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 9900,
-      "maxPrice": 9900,
-      "brand": null,
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "전체"
-    },
-    {
       "id": "adpickbiz_5c7d1faf",
       "name": "베이비맥스 러플 밑단 울 터치 원피스 여아원피스 드레스 니트원피스 겨울원피스 겨울 그레이 R24120",
       "normalizedName": "베이비맥스 러플 밑단 울 터치 원피스 여아원피스 드레스 니트원피스 겨울원피스 겨울 그레이 r24120",
@@ -5200,6 +5168,38 @@
       "sizeGuide": null,
       "availableSizes": [],
       "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_d947270f",
+      "name": "[Jem.A젬마] 여성 인견 이지웨어 원피스 1종 26m",
+      "normalizedName": "jem.a젬마 여성 인견 이지웨어 원피스 1종 26m",
+      "variant": "1종",
+      "modelCode": "",
+      "imageUrl": "https://www.eyoumall.co.kr/shop/img/goods/648904.jpg",
+      "imageUrls": [
+        "https://www.eyoumall.co.kr/shop/img/goods/648904.jpg"
+      ],
+      "category": "원피스",
+      "query": "여아 원피스",
+      "offers": [
+        {
+          "merchant": "이유몰",
+          "merchantDomain": null,
+          "price": 9900,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r5306127?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_d947270f"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 9900,
+      "maxPrice": 9900,
+      "brand": null,
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "전체"
     },
     {
       "id": "adpickbiz_a572b69e",
@@ -6052,38 +6052,6 @@
       "stage": "전체"
     },
     {
-      "id": "adpickbiz_3a5e3cba",
-      "name": "삠뽀요/윈디 여아 프릴 팬츠/하의 면바지",
-      "normalizedName": "삠뽀요 윈디 여아 프릴 팬츠 하의 면바지",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581835181",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581835181"
-      ],
-      "category": "하의",
-      "query": "여아 바지",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 25500,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4785887?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_3a5e3cba"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 25500,
-      "maxPrice": 25500,
-      "brand": "삠뽀요",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "전체"
-    },
-    {
       "id": "adpickbiz_65913551",
       "name": "[기타] [X45]MONCLER JR 8H0000589AKM 778 남아 바지 조거팬츠 키즈바지 남아 여아 SWE[이마트몰]",
       "normalizedName": "기타 x45 moncler jr 8h0000589akm 778 남아 바지 조거팬츠 키즈바지 남아 여아 swe 이마트몰",
@@ -6123,6 +6091,38 @@
       "sizeGuide": null,
       "availableSizes": [],
       "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_3a5e3cba",
+      "name": "삠뽀요/윈디 여아 프릴 팬츠/하의 면바지",
+      "normalizedName": "삠뽀요 윈디 여아 프릴 팬츠 하의 면바지",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581835181",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581835181"
+      ],
+      "category": "하의",
+      "query": "여아 바지",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 25500,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4785887?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_3a5e3cba"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 25500,
+      "maxPrice": 25500,
+      "brand": "삠뽀요",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "전체"
     },
     {
       "id": "adpickbiz_e479bf0a",
@@ -10623,38 +10623,6 @@
       "stage": "베이비"
     },
     {
-      "id": "adpickbiz_3e7f5fab",
-      "name": "[해피프린스] 에스핀 코듀로이 아기 바지_P329905442[이마트몰]",
-      "normalizedName": "해피프린스 에스핀 코듀로이 아기 바지 p329905442 이마트몰",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581852086",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581852086"
-      ],
-      "category": "하의",
-      "query": "아기 바지",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 21188,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4862503?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_3e7f5fab"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 21188,
-      "maxPrice": 21188,
-      "brand": "해피프린스",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "베이비"
-    },
-    {
       "id": "adpickbiz_21b1b9ee",
       "name": "밀크베이비/느낌좋은 아기바지 유아팬츠/하의 면바지",
       "normalizedName": "밀크베이비 느낌좋은 아기바지 유아팬츠 하의 면바지",
@@ -10680,6 +10648,38 @@
       "minPrice": 15920,
       "maxPrice": 15920,
       "brand": "밀크베이비",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "베이비"
+    },
+    {
+      "id": "adpickbiz_3e7f5fab",
+      "name": "[해피프린스] 에스핀 코듀로이 아기 바지_P329905442[이마트몰]",
+      "normalizedName": "해피프린스 에스핀 코듀로이 아기 바지 p329905442 이마트몰",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581852086",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581852086"
+      ],
+      "category": "하의",
+      "query": "아기 바지",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 21188,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4862503?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_3e7f5fab"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 21188,
+      "maxPrice": 21188,
+      "brand": "해피프린스",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
@@ -12721,38 +12721,6 @@
       "stage": "유아"
     },
     {
-      "id": "adpickbiz_3b1c0ea9",
-      "name": "아림클로젯/귀여운 동생이 있다면 - 유아 체크 셔츠/의류 상의",
-      "normalizedName": "아림클로젯 귀여운 동생이 있다면 유아 체크 셔츠 의류 상의",
-      "variant": "",
-      "modelCode": "",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581858534",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581858534"
-      ],
-      "category": "상의",
-      "query": "유아 셔츠",
-      "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 29400,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4734882?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_3b1c0ea9"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 29400,
-      "maxPrice": 29400,
-      "brand": "아림클로젯",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "유아"
-    },
-    {
       "id": "adpickbiz_727abe4b",
       "name": "[오즈키즈] 이지마일 유아 아동 남아 코듀로이 셔츠[이마트몰] [이지마일]",
       "normalizedName": "오즈키즈 이지마일 유아 아동 남아 코듀로이 셔츠 이마트몰 이지마일",
@@ -12783,6 +12751,38 @@
       "sizeGuide": null,
       "availableSizes": [],
       "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_3b1c0ea9",
+      "name": "아림클로젯/귀여운 동생이 있다면 - 유아 체크 셔츠/의류 상의",
+      "normalizedName": "아림클로젯 귀여운 동생이 있다면 유아 체크 셔츠 의류 상의",
+      "variant": "",
+      "modelCode": "",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581858534",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581858534"
+      ],
+      "category": "상의",
+      "query": "유아 셔츠",
+      "offers": [
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 29400,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4734882?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_3b1c0ea9"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 29400,
+      "maxPrice": 29400,
+      "brand": "아림클로젯",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "유아"
     },
     {
       "id": "adpickbiz_72a1f950",
@@ -13009,38 +13009,6 @@
       "stage": "유아"
     },
     {
-      "id": "adpickbiz_2f14af39",
-      "name": "[모이몰른] 유아바지 페인팅패딩오버올팬츠 M234OVB18P_P373856196[이마트몰]",
-      "normalizedName": "모이몰른 유아바지 페인팅패딩오버올팬츠 m234ovb18p p373856196 이마트몰",
-      "variant": "",
-      "modelCode": "M234OVB18P_P373856196",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581859776",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581859776"
-      ],
-      "category": "아우터",
-      "query": "유아 바지",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 30118,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4716280?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_2f14af39"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 30118,
-      "maxPrice": 30118,
-      "brand": "모이몰른",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "유아"
-    },
-    {
       "id": "adpickbiz_cff57d4e",
       "name": "미니도우/야광 비버 캠핑 여아 남아 아동 유아 바지 팬츠/하의 면바지",
       "normalizedName": "미니도우 야광 비버 캠핑 여아 남아 아동 유아 바지 팬츠 하의 면바지",
@@ -13071,6 +13039,38 @@
       "sizeGuide": null,
       "availableSizes": [],
       "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_2f14af39",
+      "name": "[모이몰른] 유아바지 페인팅패딩오버올팬츠 M234OVB18P_P373856196[이마트몰]",
+      "normalizedName": "모이몰른 유아바지 페인팅패딩오버올팬츠 m234ovb18p p373856196 이마트몰",
+      "variant": "",
+      "modelCode": "M234OVB18P_P373856196",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581859776",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581859776"
+      ],
+      "category": "아우터",
+      "query": "유아 바지",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 30118,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4716280?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_2f14af39"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 30118,
+      "maxPrice": 30118,
+      "brand": "모이몰른",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "유아"
     },
     {
       "id": "adpickbiz_4c5684cc",
@@ -14344,27 +14344,19 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_728739ec",
+      "id": "adpickbiz_1b72265f",
       "name": "룩캐스트/[한정특가]/[5차 리오더] 베이비 알파카 트위드 자켓 / BABY ALPACA TWEED JACKET_2colors/아우터 자켓",
-      "normalizedName": "룩캐스트 한정특가 5차 리오더 베이비 알파카 트위드 자켓 baby alpaca tweed jacket 2colors 아우터 자켓",
+      "normalizedName": "룩캐스트 11 4 발송 베이비 알파카 트위드 자켓 baby alpaca tweed jacket 2colors 23fwjk007",
       "variant": "",
       "modelCode": "ALPACA",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581864575",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581864445",
       "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581864575",
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581864445"
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581864445",
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581864575"
       ],
       "category": "아우터",
       "query": "유아 자켓",
       "offers": [
-        {
-          "merchant": "더블유컨셉코리아",
-          "merchantDomain": null,
-          "price": 158549,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4734939?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_728739ec"
-        },
         {
           "merchant": "SSG",
           "merchantDomain": null,
@@ -14372,6 +14364,14 @@
           "originalPrice": null,
           "affiliateUrl": "https://biz.adpick.co.kr/r4734938?p_data=kkokkapick_catalog",
           "externalProductId": "adpickbiz_1b72265f"
+        },
+        {
+          "merchant": "더블유컨셉코리아",
+          "merchantDomain": null,
+          "price": 158549,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4734939?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_728739ec"
         }
       ],
       "offerCount": 2,
@@ -14641,38 +14641,6 @@
       "stage": "키즈"
     },
     {
-      "id": "adpickbiz_27e12f45",
-      "name": "[베네통키즈] 웜 벨로아 뷔스티에 티셔츠 상하세트 QATS21661 QATP17661(MT) [ QATS21661 QATP17661]",
-      "normalizedName": "베네통키즈 웜 벨로아 뷔스티에 티셔츠 상하세트 qats21661 qatp17661 mt qats21661 qatp17661",
-      "variant": "",
-      "modelCode": "QATS21661",
-      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581866291",
-      "imageUrls": [
-        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581866291"
-      ],
-      "category": "상하복",
-      "query": "키즈 티셔츠",
-      "offers": [
-        {
-          "merchant": "SSG",
-          "merchantDomain": null,
-          "price": 158954,
-          "originalPrice": null,
-          "affiliateUrl": "https://biz.adpick.co.kr/r4869724?p_data=kkokkapick_catalog",
-          "externalProductId": "adpickbiz_27e12f45"
-        }
-      ],
-      "offerCount": 1,
-      "minPrice": 158954,
-      "maxPrice": 158954,
-      "brand": "베네통키즈",
-      "fitStatus": "unverified",
-      "fitSource": null,
-      "sizeGuide": null,
-      "availableSizes": [],
-      "stage": "키즈"
-    },
-    {
       "id": "adpickbiz_8a0168ed",
       "name": "모스키노/MOSCHINO KIDS 모스키노키즈 반팔티셔츠 H1M060 LBA11 10063 ()/키즈 의류",
       "normalizedName": "모스키노 moschino kids 모스키노키즈 반팔티셔츠 h1m060 lba11 10063 키즈 의류",
@@ -14698,6 +14666,38 @@
       "minPrice": 116580,
       "maxPrice": 116580,
       "brand": "모스키노키즈",
+      "fitStatus": "unverified",
+      "fitSource": null,
+      "sizeGuide": null,
+      "availableSizes": [],
+      "stage": "키즈"
+    },
+    {
+      "id": "adpickbiz_27e12f45",
+      "name": "[베네통키즈] 웜 벨로아 뷔스티에 티셔츠 상하세트 QATS21661 QATP17661(MT) [ QATS21661 QATP17661]",
+      "normalizedName": "베네통키즈 웜 벨로아 뷔스티에 티셔츠 상하세트 qats21661 qatp17661 mt qats21661 qatp17661",
+      "variant": "",
+      "modelCode": "QATS21661",
+      "imageUrl": "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581866291",
+      "imageUrls": [
+        "https://d2iaagr1j041pi.cloudfront.net/apis/search_img.php?code=581866291"
+      ],
+      "category": "상하복",
+      "query": "키즈 티셔츠",
+      "offers": [
+        {
+          "merchant": "SSG",
+          "merchantDomain": null,
+          "price": 158954,
+          "originalPrice": null,
+          "affiliateUrl": "https://biz.adpick.co.kr/r4869724?p_data=kkokkapick_catalog",
+          "externalProductId": "adpickbiz_27e12f45"
+        }
+      ],
+      "offerCount": 1,
+      "minPrice": 158954,
+      "maxPrice": 158954,
+      "brand": "베네통키즈",
       "fitStatus": "unverified",
       "fitSource": null,
       "sizeGuide": null,
