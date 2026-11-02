@@ -1,57 +1,56 @@
 {
-  "syncedAt": "2026-11-01T21:06:56.169Z",
-  "sourceProducts": 625,
-  "canonicalProducts": 588,
+  "syncedAt": "2026-11-02T01:19:50.549Z",
+  "sourceProducts": 614,
+  "canonicalProducts": 577,
   "queries": 73,
-  "recognizedBrandProducts": 252,
-  "recognizedBrandRatePct": 42.9,
-  "officialBrandGuideProducts": 15,
-  "officialBrandGuideRatePct": 2.6,
+  "recognizedBrandProducts": 247,
+  "recognizedBrandRatePct": 42.8,
+  "officialBrandGuideProducts": 16,
+  "officialBrandGuideRatePct": 2.8,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 625,
-    "ok": 566,
-    "failed": 59,
+    "checked": 614,
+    "ok": 614,
+    "failed": 0,
     "statuses": {
-      "200": 588,
-      "400": 37
+      "200": 614
     },
-    "rate": 0.9056
+    "rate": 1
   },
-  "canonicalImageProducts": 539,
-  "canonicalImageRatePct": 91.7,
-  "multiImageProducts": 25,
-  "multiImageRatePct": 4.3,
+  "canonicalImageProducts": 577,
+  "canonicalImageRatePct": 100,
+  "multiImageProducts": 34,
+  "multiImageRatePct": 5.9,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 336
+      "count": 330
     },
     {
       "name": "베네통키즈",
-      "count": 23
+      "count": 22
     },
     {
       "name": "블루독베이비",
-      "count": 21
-    },
-    {
-      "name": "헤지스키즈",
-      "count": 17
+      "count": 18
     },
     {
       "name": "빈폴키즈",
-      "count": 15
+      "count": 16
     },
     {
       "name": "밀크베이비",
-      "count": 15
+      "count": 14
     },
     {
-      "name": "압소바",
+      "name": "헤지스키즈",
+      "count": 13
+    },
+    {
+      "name": "몽클레르키즈",
       "count": 12
     },
     {
@@ -59,112 +58,112 @@
       "count": 12
     },
     {
-      "name": "해피프린스",
-      "count": 12
-    },
-    {
-      "name": "몽클레르키즈",
-      "count": 11
-    },
-    {
-      "name": "휠라키즈",
-      "count": 11
+      "name": "삠뽀요",
+      "count": 10
     },
     {
       "name": "달퐁",
       "count": 10
     },
     {
-      "name": "아가방",
+      "name": "압소바",
       "count": 10
     },
     {
-      "name": "삠뽀요",
-      "count": 8
+      "name": "휠라키즈",
+      "count": 10
+    },
+    {
+      "name": "해피프린스",
+      "count": 10
+    },
+    {
+      "name": "아가방",
+      "count": 9
     },
     {
       "name": "페리미츠",
-      "count": 8
+      "count": 9
     },
     {
       "name": "모이몰른",
       "count": 8
     },
     {
-      "name": "캉골키즈",
-      "count": 6
+      "name": "에뜨와",
+      "count": 7
     },
     {
       "name": "MLB키즈",
+      "count": 7
+    },
+    {
+      "name": "아디다스키즈",
       "count": 6
     },
     {
-      "name": "에뜨와",
-      "count": 5
-    },
-    {
-      "name": "플레이키즈프로",
+      "name": "나이키키즈",
       "count": 5
     }
   ],
   "categories": [
     {
-      "name": "상의",
-      "count": 122
-    },
-    {
       "name": "아우터",
-      "count": 118
+      "count": 126
     },
     {
-      "name": "상하복",
-      "count": 77
-    },
-    {
-      "name": "바디수트",
-      "count": 74
+      "name": "상의",
+      "count": 116
     },
     {
       "name": "하의",
-      "count": 72
+      "count": 70
     },
     {
-      "name": "기타",
-      "count": 49
+      "name": "상하복",
+      "count": 68
+    },
+    {
+      "name": "바디수트",
+      "count": 67
     },
     {
       "name": "원피스",
-      "count": 48
+      "count": 51
+    },
+    {
+      "name": "기타",
+      "count": 45
     },
     {
       "name": "실내복",
-      "count": 28
+      "count": 34
     }
   ],
   "stages": [
     {
       "name": "키즈",
-      "count": 283
+      "count": 286
     },
     {
       "name": "베이비",
-      "count": 184
+      "count": 177
     },
     {
       "name": "유아",
-      "count": 44
+      "count": 41
     },
     {
       "name": "전체",
-      "count": 39
+      "count": 40
     },
     {
       "name": "신생아",
-      "count": 33
+      "count": 30
     },
     {
       "name": "토들러",
-      "count": 5
+      "count": 3
     }
   ]
 }
