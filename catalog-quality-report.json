@@ -1,34 +1,35 @@
 {
-  "syncedAt": "2026-11-07T10:58:30.245Z",
-  "sourceProducts": 630,
+  "syncedAt": "2026-11-07T16:55:51.098Z",
+  "sourceProducts": 628,
   "canonicalProducts": 591,
   "queries": 73,
-  "recognizedBrandProducts": 247,
-  "recognizedBrandRatePct": 41.8,
+  "recognizedBrandProducts": 242,
+  "recognizedBrandRatePct": 40.9,
   "officialBrandGuideProducts": 16,
   "officialBrandGuideRatePct": 2.7,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 630,
+    "checked": 628,
     "ok": 612,
-    "failed": 18,
+    "failed": 16,
     "statuses": {
       "200": 612,
-      "451": 18
+      "451": 15,
+      "timeout": 1
     },
-    "rate": 0.9714285714285714
+    "rate": 0.9745222929936306
   },
-  "canonicalImageProducts": 573,
-  "canonicalImageRatePct": 97,
-  "multiImageProducts": 36,
-  "multiImageRatePct": 6.1,
+  "canonicalImageProducts": 575,
+  "canonicalImageRatePct": 97.3,
+  "multiImageProducts": 35,
+  "multiImageRatePct": 5.9,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 344
+      "count": 349
     },
     {
       "name": "베네통키즈",
@@ -43,20 +44,20 @@
       "count": 15
     },
     {
-      "name": "블루독베이비",
-      "count": 14
-    },
-    {
       "name": "헤지스키즈",
       "count": 14
     },
     {
-      "name": "삠뽀요",
-      "count": 12
+      "name": "블루독베이비",
+      "count": 13
     },
     {
       "name": "압소바",
       "count": 12
+    },
+    {
+      "name": "삠뽀요",
+      "count": 11
     },
     {
       "name": "달퐁",
@@ -103,14 +104,14 @@
       "count": 5
     },
     {
-      "name": "보보쇼즈",
+      "name": "아디다스키즈",
       "count": 5
     }
   ],
   "categories": [
     {
       "name": "아우터",
-      "count": 126
+      "count": 129
     },
     {
       "name": "상의",
@@ -122,11 +123,11 @@
     },
     {
       "name": "바디수트",
-      "count": 76
+      "count": 75
     },
     {
       "name": "상하복",
-      "count": 67
+      "count": 65
     },
     {
       "name": "원피스",
@@ -134,11 +135,11 @@
     },
     {
       "name": "기타",
-      "count": 43
+      "count": 42
     },
     {
       "name": "실내복",
-      "count": 26
+      "count": 27
     }
   ],
   "stages": [
@@ -152,11 +153,11 @@
     },
     {
       "name": "유아",
-      "count": 46
+      "count": 47
     },
     {
       "name": "신생아",
-      "count": 39
+      "count": 38
     },
     {
       "name": "전체",
