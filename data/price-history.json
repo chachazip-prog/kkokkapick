@@ -1,40 +1,8 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-08T06:59:37.999Z",
+  "updatedAt": "2026-11-08T14:10:53.224Z",
   "retention": "bounded_demo_events",
   "events": [
-    {
-      "productId": "adpickbiz_840d72f1",
-      "observedAt": "2026-10-21T00:25:47.602Z",
-      "previousPrice": 29330,
-      "price": 27240,
-      "direction": "down",
-      "changeAmount": -2090
-    },
-    {
-      "productId": "adpickbiz_b681f293",
-      "observedAt": "2026-10-21T00:25:47.602Z",
-      "previousPrice": 39830,
-      "price": 36990,
-      "direction": "down",
-      "changeAmount": -2840
-    },
-    {
-      "productId": "adpickbiz_8fde4561",
-      "observedAt": "2026-10-21T00:25:47.602Z",
-      "previousPrice": 101480,
-      "price": 105650,
-      "direction": "up",
-      "changeAmount": 4170
-    },
-    {
-      "productId": "adpickbiz_ea463f1b",
-      "observedAt": "2026-10-21T00:25:47.602Z",
-      "previousPrice": 53220,
-      "price": 52130,
-      "direction": "down",
-      "changeAmount": -1090
-    },
     {
       "productId": "adpickbiz_b2c08ec3",
       "observedAt": "2026-10-21T00:25:47.602Z",
@@ -8002,6 +7970,38 @@
       "price": 153480,
       "direction": "up",
       "changeAmount": 16150
+    },
+    {
+      "productId": "adpickbiz_207655dd",
+      "observedAt": "2026-11-08T14:10:53.224Z",
+      "previousPrice": 55700,
+      "price": 63500,
+      "direction": "up",
+      "changeAmount": 7800
+    },
+    {
+      "productId": "adpickbiz_c96cd9f1",
+      "observedAt": "2026-11-08T14:10:53.224Z",
+      "previousPrice": 119180,
+      "price": 106640,
+      "direction": "down",
+      "changeAmount": -12540
+    },
+    {
+      "productId": "adpickbiz_25238364",
+      "observedAt": "2026-11-08T14:10:53.224Z",
+      "previousPrice": 28500,
+      "price": 30000,
+      "direction": "up",
+      "changeAmount": 1500
+    },
+    {
+      "productId": "adpickbiz_e75f0737",
+      "observedAt": "2026-11-08T14:10:53.224Z",
+      "previousPrice": 153480,
+      "price": 137330,
+      "direction": "down",
+      "changeAmount": -16150
     }
   ]
 }
