@@ -1,49 +1,50 @@
 {
-  "syncedAt": "2026-11-08T19:25:54.107Z",
-  "sourceProducts": 622,
-  "canonicalProducts": 587,
+  "syncedAt": "2026-11-09T03:15:10.874Z",
+  "sourceProducts": 620,
+  "canonicalProducts": 585,
   "queries": 73,
-  "recognizedBrandProducts": 243,
-  "recognizedBrandRatePct": 41.4,
-  "officialBrandGuideProducts": 17,
-  "officialBrandGuideRatePct": 2.9,
+  "recognizedBrandProducts": 244,
+  "recognizedBrandRatePct": 41.7,
+  "officialBrandGuideProducts": 14,
+  "officialBrandGuideRatePct": 2.4,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 622,
-    "ok": 604,
-    "failed": 18,
+    "checked": 620,
+    "ok": 578,
+    "failed": 42,
     "statuses": {
-      "200": 604,
-      "451": 18
+      "200": 578,
+      "400": 26,
+      "451": 16
     },
-    "rate": 0.9710610932475884
+    "rate": 0.932258064516129
   },
-  "canonicalImageProducts": 569,
-  "canonicalImageRatePct": 96.9,
-  "multiImageProducts": 32,
-  "multiImageRatePct": 5.5,
+  "canonicalImageProducts": 546,
+  "canonicalImageRatePct": 93.3,
+  "multiImageProducts": 26,
+  "multiImageRatePct": 4.4,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 344
+      "count": 341
     },
     {
       "name": "베네통키즈",
-      "count": 21
+      "count": 24
     },
     {
       "name": "블루독베이비",
-      "count": 15
+      "count": 18
     },
     {
       "name": "밀크베이비",
-      "count": 15
+      "count": 16
     },
     {
-      "name": "헤지스키즈",
+      "name": "삠뽀요",
       "count": 15
     },
     {
@@ -51,35 +52,27 @@
       "count": 15
     },
     {
-      "name": "압소바",
+      "name": "헤지스키즈",
+      "count": 15
+    },
+    {
+      "name": "해피프린스",
       "count": 12
     },
     {
-      "name": "삠뽀요",
+      "name": "압소바",
+      "count": 11
+    },
+    {
+      "name": "휠라키즈",
       "count": 11
     },
     {
       "name": "몽클레르키즈",
-      "count": 11
+      "count": 10
     },
     {
       "name": "쇼콜라",
-      "count": 11
-    },
-    {
-      "name": "달퐁",
-      "count": 10
-    },
-    {
-      "name": "해피프린스",
-      "count": 10
-    },
-    {
-      "name": "에뜨와",
-      "count": 9
-    },
-    {
-      "name": "페리미츠",
       "count": 9
     },
     {
@@ -87,84 +80,88 @@
       "count": 8
     },
     {
-      "name": "휠라키즈",
+      "name": "페리미츠",
       "count": 8
+    },
+    {
+      "name": "달퐁",
+      "count": 7
     },
     {
       "name": "MLB키즈",
-      "count": 8
+      "count": 7
+    },
+    {
+      "name": "에뜨와",
+      "count": 6
     },
     {
       "name": "모이몰른",
-      "count": 7
+      "count": 6
     },
     {
       "name": "아디다스키즈",
       "count": 5
     },
     {
-      "name": "나이키키즈",
+      "name": "보보쇼즈",
       "count": 4
     }
   ],
   "categories": [
     {
-      "name": "아우터",
-      "count": 126
+      "name": "상의",
+      "count": 118
     },
     {
-      "name": "상의",
-      "count": 119
+      "name": "아우터",
+      "count": 112
     },
     {
       "name": "바디수트",
-      "count": 74
-    },
-    {
-      "name": "하의",
-      "count": 74
+      "count": 77
     },
     {
       "name": "상하복",
-      "count": 66
+      "count": 75
+    },
+    {
+      "name": "하의",
+      "count": 75
     },
     {
       "name": "원피스",
-      "count": 54
+      "count": 58
     },
     {
       "name": "기타",
-      "count": 45
+      "count": 48
     },
     {
       "name": "실내복",
-      "count": 29
+      "count": 22
     }
   ],
   "stages": [
     {
       "name": "키즈",
-      "count": 294
+      "count": 301
     },
     {
       "name": "베이비",
-      "count": 168
+      "count": 158
     },
     {
       "name": "유아",
-      "count": 47
-    },
-    {
-      "name": "신생아",
-      "count": 39
+      "count": 49
     },
     {
       "name": "전체",
-      "count": 38
+      "count": 39
     },
     {
-      "name": "토들러",
-      "count": 1
+      "name": "신생아",
+      "count": 38
     }
   ]
 }
