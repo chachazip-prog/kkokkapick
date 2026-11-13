@@ -1,40 +1,8 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-13T10:17:11.152Z",
+  "updatedAt": "2026-11-13T18:20:54.501Z",
   "retention": "bounded_demo_events",
   "events": [
-    {
-      "productId": "adpickbiz_f963a738",
-      "observedAt": "2026-10-29T00:43:07.846Z",
-      "previousPrice": 17070,
-      "price": 17130,
-      "direction": "up",
-      "changeAmount": 60
-    },
-    {
-      "productId": "adpickbiz_4644836c",
-      "observedAt": "2026-10-29T00:43:07.846Z",
-      "previousPrice": 97390,
-      "price": 92580,
-      "direction": "down",
-      "changeAmount": -4810
-    },
-    {
-      "productId": "adpickbiz_fb806318",
-      "observedAt": "2026-10-29T00:43:07.846Z",
-      "previousPrice": 98658,
-      "price": 94656,
-      "direction": "down",
-      "changeAmount": -4002
-    },
-    {
-      "productId": "adpickbiz_4a772d61",
-      "observedAt": "2026-10-29T00:43:07.846Z",
-      "previousPrice": 19640,
-      "price": 20400,
-      "direction": "up",
-      "changeAmount": 760
-    },
     {
       "productId": "adpickbiz_8b3526cd",
       "observedAt": "2026-10-29T00:43:07.846Z",
@@ -8002,6 +7970,38 @@
       "price": 134100,
       "direction": "down",
       "changeAmount": -19380
+    },
+    {
+      "productId": "adpickbiz_4582167",
+      "observedAt": "2026-11-13T18:20:54.501Z",
+      "previousPrice": 92100,
+      "price": 104000,
+      "direction": "up",
+      "changeAmount": 11900
+    },
+    {
+      "productId": "adpickbiz_70c42338",
+      "observedAt": "2026-11-13T18:20:54.501Z",
+      "previousPrice": 87275,
+      "price": 86283,
+      "direction": "down",
+      "changeAmount": -992
+    },
+    {
+      "productId": "adpickbiz_761c0139",
+      "observedAt": "2026-11-13T18:20:54.501Z",
+      "previousPrice": 73265,
+      "price": 72932,
+      "direction": "down",
+      "changeAmount": -333
+    },
+    {
+      "productId": "adpickbiz_265f6b35",
+      "observedAt": "2026-11-13T18:20:54.501Z",
+      "previousPrice": 50810,
+      "price": 45160,
+      "direction": "down",
+      "changeAmount": -5650
     }
   ]
 }
