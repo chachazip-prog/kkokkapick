@@ -1,57 +1,58 @@
 {
-  "syncedAt": "2026-11-22T10:36:07.253Z",
-  "sourceProducts": 633,
-  "canonicalProducts": 598,
+  "syncedAt": "2026-11-22T18:18:50.590Z",
+  "sourceProducts": 649,
+  "canonicalProducts": 616,
   "queries": 73,
-  "recognizedBrandProducts": 249,
-  "recognizedBrandRatePct": 41.6,
-  "officialBrandGuideProducts": 13,
-  "officialBrandGuideRatePct": 2.2,
+  "recognizedBrandProducts": 254,
+  "recognizedBrandRatePct": 41.2,
+  "officialBrandGuideProducts": 15,
+  "officialBrandGuideRatePct": 2.4,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 633,
-    "ok": 611,
-    "failed": 22,
+    "checked": 649,
+    "ok": 607,
+    "failed": 42,
     "statuses": {
-      "200": 611,
-      "451": 22
+      "200": 607,
+      "400": 13,
+      "451": 29
     },
-    "rate": 0.9652448657187994
+    "rate": 0.9352850539291218
   },
-  "canonicalImageProducts": 577,
-  "canonicalImageRatePct": 96.5,
-  "multiImageProducts": 31,
-  "multiImageRatePct": 5.2,
+  "canonicalImageProducts": 578,
+  "canonicalImageRatePct": 93.8,
+  "multiImageProducts": 26,
+  "multiImageRatePct": 4.2,
   "channelPrefixedDisplayTitles": 0,
   "channelPrefixedDisplayTitleSamples": [],
   "topBrands": [
     {
       "name": "미분류",
-      "count": 349
-    },
-    {
-      "name": "블루독베이비",
-      "count": 17
+      "count": 362
     },
     {
       "name": "베네통키즈",
-      "count": 17
-    },
-    {
-      "name": "몽클레르키즈",
-      "count": 14
-    },
-    {
-      "name": "삠뽀요",
-      "count": 13
-    },
-    {
-      "name": "압소바",
-      "count": 13
+      "count": 22
     },
     {
       "name": "헤지스키즈",
+      "count": 17
+    },
+    {
+      "name": "블루독베이비",
+      "count": 16
+    },
+    {
+      "name": "밀크베이비",
+      "count": 16
+    },
+    {
+      "name": "빈폴키즈",
+      "count": 15
+    },
+    {
+      "name": "몽클레르키즈",
       "count": 13
     },
     {
@@ -59,27 +60,27 @@
       "count": 13
     },
     {
-      "name": "빈폴키즈",
+      "name": "삠뽀요",
       "count": 12
     },
     {
-      "name": "밀크베이비",
-      "count": 11
-    },
-    {
-      "name": "해피프린스",
-      "count": 11
-    },
-    {
-      "name": "달퐁",
-      "count": 10
-    },
-    {
-      "name": "휠라키즈",
-      "count": 9
+      "name": "압소바",
+      "count": 12
     },
     {
       "name": "캉골키즈",
+      "count": 10
+    },
+    {
+      "name": "달퐁",
+      "count": 9
+    },
+    {
+      "name": "에뜨와",
+      "count": 9
+    },
+    {
+      "name": "MLB키즈",
       "count": 9
     },
     {
@@ -87,58 +88,58 @@
       "count": 8
     },
     {
+      "name": "휠라키즈",
+      "count": 8
+    },
+    {
       "name": "모이몰른",
       "count": 8
     },
     {
-      "name": "MLB키즈",
-      "count": 8
+      "name": "해피프린스",
+      "count": 7
+    },
+    {
+      "name": "아림클로젯",
+      "count": 6
     },
     {
       "name": "아가방",
-      "count": 7
-    },
-    {
-      "name": "보보쇼즈",
-      "count": 7
-    },
-    {
-      "name": "에뜨와",
       "count": 6
     }
   ],
   "categories": [
     {
       "name": "아우터",
-      "count": 127
+      "count": 122
     },
     {
       "name": "상의",
-      "count": 115
+      "count": 118
     },
     {
       "name": "하의",
-      "count": 81
+      "count": 87
+    },
+    {
+      "name": "바디수트",
+      "count": 72
     },
     {
       "name": "상하복",
       "count": 71
     },
     {
-      "name": "바디수트",
-      "count": 66
-    },
-    {
       "name": "원피스",
-      "count": 59
+      "count": 64
     },
     {
       "name": "기타",
-      "count": 48
+      "count": 52
     },
     {
       "name": "실내복",
-      "count": 31
+      "count": 30
     }
   ],
   "stages": [
@@ -148,23 +149,23 @@
     },
     {
       "name": "베이비",
-      "count": 171
+      "count": 180
     },
     {
       "name": "유아",
-      "count": 47
+      "count": 52
     },
     {
       "name": "전체",
-      "count": 37
+      "count": 39
     },
     {
       "name": "신생아",
-      "count": 36
+      "count": 37
     },
     {
       "name": "토들러",
-      "count": 3
+      "count": 4
     }
   ]
 }
