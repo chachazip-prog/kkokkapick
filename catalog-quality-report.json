@@ -1,27 +1,26 @@
 {
-  "syncedAt": "2026-11-27T14:37:25.384Z",
-  "sourceProducts": 655,
-  "canonicalProducts": 621,
+  "syncedAt": "2026-11-27T23:13:38.188Z",
+  "sourceProducts": 659,
+  "canonicalProducts": 625,
   "queries": 73,
-  "recognizedBrandProducts": 260,
+  "recognizedBrandProducts": 262,
   "recognizedBrandRatePct": 41.9,
-  "officialBrandGuideProducts": 14,
-  "officialBrandGuideRatePct": 2.3,
+  "officialBrandGuideProducts": 15,
+  "officialBrandGuideRatePct": 2.4,
   "explicitProductSizeProducts": 0,
   "explicitProductSizeRatePct": 0,
   "sourceImageHealth": {
-    "checked": 655,
-    "ok": 646,
-    "failed": 9,
+    "checked": 659,
+    "ok": 648,
+    "failed": 11,
     "statuses": {
-      "200": 646,
-      "451": 8,
-      "timeout": 1
+      "200": 648,
+      "451": 11
     },
-    "rate": 0.9862595419847329
+    "rate": 0.9833080424886191
   },
-  "canonicalImageProducts": 612,
-  "canonicalImageRatePct": 98.6,
+  "canonicalImageProducts": 614,
+  "canonicalImageRatePct": 98.2,
   "multiImageProducts": 30,
   "multiImageRatePct": 4.8,
   "channelPrefixedDisplayTitles": 0,
@@ -29,7 +28,7 @@
   "topBrands": [
     {
       "name": "미분류",
-      "count": 361
+      "count": 363
     },
     {
       "name": "베네통키즈",
@@ -88,16 +87,16 @@
       "count": 9
     },
     {
+      "name": "에뜨와",
+      "count": 8
+    },
+    {
       "name": "모이몰른",
       "count": 8
     },
     {
       "name": "MLB키즈",
       "count": 8
-    },
-    {
-      "name": "에뜨와",
-      "count": 7
     },
     {
       "name": "아가방",
@@ -115,19 +114,19 @@
     },
     {
       "name": "상의",
-      "count": 117
+      "count": 121
     },
     {
       "name": "하의",
-      "count": 87
+      "count": 86
     },
     {
       "name": "상하복",
-      "count": 74
+      "count": 76
     },
     {
       "name": "바디수트",
-      "count": 69
+      "count": 70
     },
     {
       "name": "원피스",
@@ -135,7 +134,7 @@
     },
     {
       "name": "기타",
-      "count": 50
+      "count": 48
     },
     {
       "name": "실내복",
@@ -145,15 +144,15 @@
   "stages": [
     {
       "name": "키즈",
-      "count": 326
+      "count": 328
     },
     {
       "name": "베이비",
-      "count": 175
+      "count": 177
     },
     {
       "name": "유아",
-      "count": 46
+      "count": 45
     },
     {
       "name": "신생아",
@@ -161,7 +160,7 @@
     },
     {
       "name": "전체",
-      "count": 35
+      "count": 36
     },
     {
       "name": "토들러",
